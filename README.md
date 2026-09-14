@@ -9,8 +9,9 @@ The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla
 [Watch the real VLM demonstration](docs/media/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
 
 **Next experiment:** [LightNav-0 / pi0.5 integration and task selection](docs/vla-integration.md).
-Model-service clients and a saved-frame inference probe are implemented; candidate
-weights have not yet been run, and candidate Fetch control remains unvalidated.
+Both candidate models returned real predictions on an A6000 through the saved-frame
+probe ([results](docs/results/vla-probe-002.json)); candidate Fetch control remains
+unvalidated. LightNav returned 10x3 waypoints; pi05_droid returned 15x8 actions.
 
 ## Current status
 

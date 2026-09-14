@@ -99,7 +99,11 @@ class OpenPiClient:
         from websockets.sync.client import connect
         from openpi_client import msgpack_numpy
         connection = connect(url, compression=None, open_timeout=timeout,
-                             close_timeout=5, max_size=16 * 1024 * 1024)
+                             close_timeout=5, max_size=16 * 1024 * 1024,
+                             ping_interval=None)
+        # Upstream performs synchronous JAX inference on its websocket event
+        # loop. First compilation can delay pong handling beyond the default
+        # keepalive deadline. recv(timeout=...) remains the bounded I/O guard.
         try:
             return cls(connection, msgpack_numpy, timeout)
         except Exception:
