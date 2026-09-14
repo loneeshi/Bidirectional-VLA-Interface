@@ -1,0 +1,85 @@
+{
+  "kind": "single_scene_engineering_diagnostic",
+  "benchmark_result": false,
+  "date": "2026-09-14",
+  "provider": "openai",
+  "model": "gpt-5.6-luna",
+  "seed": 1,
+  "policy_type": "rl_per_obj",
+  "build_config_index": 69,
+  "task_plan_index": 2,
+  "steps": 336,
+  "reason": "experiment_call_limit",
+  "task_success": false,
+  "wall_seconds": 183.66789651894942,
+  "api_requests": 6,
+  "first_object_chain_completed_at_step": 233,
+  "limitations": [
+    "One allowed oracle skill/target pair at each decision",
+    "Oracle benchmark completion feedback",
+    "Full five-object TidyHouse task not completed",
+    "Different plan from seed-0 failures; not a coordinator comparison"
+  ],
+  "skills": [
+    {
+      "skill": "navigate",
+      "steps": 29,
+      "status": "succeeded",
+      "reason": "oracle_subtask_advanced"
+    },
+    {
+      "skill": "pick",
+      "steps": 48,
+      "status": "succeeded",
+      "reason": "oracle_subtask_advanced"
+    },
+    {
+      "skill": "navigate",
+      "steps": 140,
+      "status": "succeeded",
+      "reason": "oracle_subtask_advanced"
+    },
+    {
+      "skill": "place",
+      "steps": 16,
+      "status": "succeeded",
+      "reason": "oracle_subtask_advanced"
+    },
+    {
+      "skill": "navigate",
+      "steps": 70,
+      "status": "succeeded",
+      "reason": "oracle_subtask_advanced"
+    },
+    {
+      "skill": "pick",
+      "steps": 33,
+      "status": "succeeded",
+      "reason": "oracle_subtask_advanced"
+    }
+  ],
+  "policies": [
+    {
+      "algorithm": "ppo",
+      "checkpoint": "rl/tidy_house/navigate/all/policy.pt",
+      "sha256": "816d120d5a316fd38e97d268616af72c5a0fc9c15f48eeda5212960d49e5c6b7"
+    },
+    {
+      "algorithm": "sac",
+      "checkpoint": "rl/tidy_house/pick/002_master_chef_can/policy.pt",
+      "sha256": "af4a679414747056a42ff80b657b6764296e297ee91055c012ea370fdaeea54f"
+    },
+    {
+      "algorithm": "sac",
+      "checkpoint": "rl/tidy_house/place/002_master_chef_can/policy.pt",
+      "sha256": "155db70f9b84f54942f5df5c7ab740f24efb9dc5aef7b0091926b2521c9c59f8"
+    },
+    {
+      "algorithm": "sac",
+      "checkpoint": "rl/tidy_house/pick/007_tuna_fish_can/policy.pt",
+      "sha256": "26da30b9bc513341981f7999249e2ed2ffa62a0132b4029be858ceeccbff16d9"
+    }
+  ],
+  "event_log_sha256": "34d1f3d0fceeb891cd38434890441e36ccbcd7d825347ed04e4aea710e986f89",
+  "video_sha256": "ea8aaed4ea75aacdcc9d5e8fd92d206bb91a8be01d2f2941ad06c47706dd6d7a"
+}

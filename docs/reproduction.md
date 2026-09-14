@@ -1,6 +1,6 @@
 # Setup and reproduction
 
-The simulator was tested on Linux with an NVIDIA RTX A6000. The validated result is a 60-step Fetch `Empty-v1` rollout. ReplicaCAD loading, pretrained skill execution, and the VLM loop have separate acceptance gates and must not be inferred from this smoke test.
+The simulator was tested on Linux with an NVIDIA RTX A6000. G0 passed with a 60-step Fetch `Empty-v1` rollout; G1 then passed with 200 zero-action steps in a real ReplicaCAD TidyHouse validation scene. Pretrained skill execution and the VLM loop have separate acceptance gates and must not be inferred from either smoke test.
 
 ## Tested versions
 
@@ -15,6 +15,7 @@ The simulator was tested on Linux with an NVIDIA RTX A6000. The validated result
 | ManiSkill commit | `17121e3f96e3ee3ed0c03610b17f8bc2864617af` |
 | MS-HAB commit | `e9ff3d23496d38e4431c8d913e147ffa007f7f72` |
 | SAPIEN | 3.0.0b1 |
+| Optional local OpenAI SDK | 3.13.0; tested with six live `gpt-5.6-luna` image requests |
 
 Use a dedicated Python environment. Preserve the complete resolved package list and both upstream commits for every experiment. Upstream branch names are moving references; the recorded revisions establish the tested baseline.
 
@@ -26,7 +27,7 @@ For headless operation, expose graphics as well as compute capabilities to the c
 
 Place source checkouts, the Python environment, simulator caches, assets, and results on persistent storage when the host is ephemeral. Persisting source files does not by itself preserve system packages installed outside that storage.
 
-Repository-specific installation and simulation entrypoints are listed below. Their availability is separate from each acceptance gate: G1–G4 still need successful recorded runs. The presence of these scripts is not a claim of a fully reproduced MS-HAB evaluation.
+Repository-specific installation and simulation entrypoints are listed below. G2–G4 have passed in a constrained single-scene diagnostic, described in [evaluation](evaluation.md#live-vlm-protocol-diagnostic). The presence of these scripts is not a claim of a fully reproduced MS-HAB evaluation.
 
 ## External assets and checkpoints
 
@@ -66,7 +67,7 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
-The initial suite passed 28 tests on CPU. It exercises protocol validation, runtime control flow, and injected provider behavior; no simulator rollout or paid model request is performed by these tests.
+The current suite passed 56 tests on CPU. It exercises protocol validation, runtime control flow, injected provider behavior, bridge accounting/recovery, and download checks; no simulator rollout or paid model request is performed by these tests.
 
 Then prepare external assets and inspect a real task:
 
@@ -89,7 +90,46 @@ python scripts/run_official.py \
   --output runs/g3
 ```
 
-The chain runner does not by itself establish a VLM result or full validation coverage. Its checkpoint loading, scene selection, and trajectory outcome must be included in the run manifest. VLM runner instructions will be added after the image/request/feedback path is exercised; there is currently no validated VLM launch command.
+The chain runner does not by itself establish a VLM result or full validation coverage. Its checkpoint loading, scene selection, and trajectory outcome must be included in the run manifest.
+
+The first recorded seed-0 run completed 7,000 steps but did not complete the task. The [diagnostic result](evaluation.md#first-official-policy-diagnostic) reports the official metrics and the first failure; running to the full horizon does not by itself pass G2 or G3.
+
+## Coordinator diagnostic
+
+The coordinator entrypoint exercises official skills through the `bvi` protocol and serial runtime. First use the oracle mode to diagnose the adapter:
+
+```bash
+python scripts/run_coordinator.py \
+  --dry-run \
+  --checkpoint-root "$MSHAB_CHECKPOINT_DIR" \
+  --max-env-steps 500 \
+  --max-calls 3 \
+  --output runs/coordinator-oracle
+```
+
+Here `--dry-run` means **no model API requests**, not no execution. It loads the real simulator and checkpoints, uses the GPU, and selects skills from oracle task metadata. This bounded single-scene diagnostic is not an official benchmark score or a VLM result. The default policy mode is `rl_all_obj`.
+
+A seed-0 oracle run using `--policy-type rl_per_obj` completed Navigate, Pick, and navigation while holding before failing during Place at total step 470. To diagnose all four invocations, use at least `--max-calls 4` with adequate step and wall-clock budgets. The three-call example above intentionally stops earlier and cannot verify the final Place invocation. See the [per-object result](evaluation.md#per-object-oracle-protocol-diagnostic).
+
+The runner writes `events.jsonl`, `frames/`, `videos/`, `run-metadata.json`, and `summary.json` in the output directory. Use a fresh output directory for each attempt. Metadata labels the dispatcher, oracle target/completion sources, scene coverage, and whether the run used a VLM.
+
+Live VLM mode passed the constrained G4 interface gate with `gpt-5.6-luna`, `--seed 1`, `--policy-type rl_per_obj`, and `--max-calls 6`. The run completed the first object's four-skill chain, then stopped at the request limit with the full task incomplete. Every decision had one allowed oracle skill/target pair. Live mode omits `--dry-run` and requires all of the following:
+
+| Argument or prerequisite | Purpose |
+|---|---|
+| `--provider openai` or `--provider anthropic` | Select a transport |
+| `--model MODEL_ID` | Select an explicit, account-accessible image-input model |
+| `--authorization-id APPROVED_ID` | Reference the approved experiment scope |
+| `--max-api-cost-usd LIMIT` | Bound the total configured cost reservations |
+| `--request-cost-ceiling-usd LIMIT` | Reserve a conservative amount before each request |
+| `--max-calls N`, `--max-output-tokens N` | Bound attempts and response size |
+| Matching optional SDK and local credentials | Enable the selected provider |
+
+Install an optional SDK with `python -m pip install -e '.[openai]'` or `python -m pip install -e '.[anthropic]'`. Provide `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` through the process environment or the ignored `.env.local` file. The runner reads only those known names and does not print the key; `--credentials-file` can select another local path.
+
+OpenAI defaults are `--image-detail low` and `--reasoning-effort none`; the chosen model must support those values. Both providers default to a 2,048-token output limit. `--max-input-bytes` defaults to 128,000 and limits serialized content size, not precise billable input tokens. See [API configuration](#api-configuration) before enabling real requests.
+
+With `--transport bridge`, the simulation host writes requests to its output directory and a local helper performs the API call over an SSH file bridge. The key stays on the local computer. Both sides validate the same model and spending scope; matching attempt IDs link their logs without counting one request twice. See [local inference with remote simulation](bridge.md) for the two-terminal commands and the tested run configuration. Both offline recovery tests and the six-request live run have been verified.
 
 ## Verification order
 
@@ -100,7 +140,25 @@ The chain runner does not by itself establish a VLM result or full validation co
 5. Execute a continuous chain, preserving the physical state between skills.
 6. Enable the VLM provider only after the previous checks pass and the request budget is configured.
 
-The observed empty-scene interface used a 13-dimensional normalized action, a 20 Hz control rate, a 100 Hz physics rate, and head/hand RGBD cameras at 128 × 128. RGB was `uint8`; depth was `int16`. Record the actual interface again in a task environment, particularly after applying the policy observation wrappers.
+## Recorded G1 result
+
+The real-scene smoke test used TidyHouse `val`, seed 0, build configuration index 69 and task-plan index 23 under the pinned assets. These are implementation indices, not a claim of validation-set coverage.
+
+| Field | Recorded value |
+|---|---|
+| Environment | `SequentialTask-v0`, Fetch, one environment |
+| Actions | 200 zero vectors; `Box(-1, 1, (13,), float32)` |
+| Controller | `pd_joint_delta_pos` |
+| Rates | Control 20 Hz; simulation 100 Hz |
+| Wrapped state | Shape `[1, 42]`, `float32` |
+| Wrapped head depth | Shape `[1, 3, 1, 128, 128]`, `int16` |
+| Wrapped hand depth | Shape `[1, 3, 1, 128, 128]`, `int16` |
+| Visualization | Nonblank 512 × 512 RGB frames; exported video |
+| Timed loop | 13.15 s for stepping, rendering, and video encoding; excludes environment initialization/reset |
+
+The script emits `metadata.json`, `scene-smoke.png`, and `scene-smoke.mp4` in its output directory. `passed=true` refers to the smoke-test assertions. `benchmark_result=false` is intentional: no learned navigation/manipulation policy was evaluated, and the script does not assert task success. The timing is a single recorded diagnostic, not a simulator performance benchmark.
+
+The earlier empty-scene test also recorded raw head/hand RGBD at 128 × 128, with RGB `uint8` and depth `int16`. The G1 policy observation above is the wrapped depth/state representation; VLM RGB is captured separately by the coordinator adapter.
 
 PPO's raw mean action can exceed the environment's `Box` bounds. This alone is not a malformed model output: the original controller path clips actions, and an adapter feeding the strict `bvi` runtime must apply the corresponding clipping before runtime validation. Preserve raw action values and clipping/out-of-range counts for diagnosis. The official runner records `raw_outside_unit_box` per step; aggregate those events when reporting the rate. NaN/Inf values or a wrong action dimension remain errors and must not be hidden by clipping.
 

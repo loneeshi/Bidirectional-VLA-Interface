@@ -21,10 +21,15 @@ from .coordinator import VLMRequest, VLMResponse
 class OpenAITransport:
     provider = "openai"
 
-    def __init__(self, model: str, timeout_seconds: float = 60.0, client: Any = None):
+    def __init__(self, model: str, timeout_seconds: float = 60.0, client: Any = None,
+                 image_detail: str = "low", reasoning_effort: str | None = None):
         if not model:
             raise ValueError("An explicit model ID is required")
         self.model, self.timeout_seconds, self._client = model, timeout_seconds, client
+        if image_detail not in ("low", "high", "auto", "original"):
+            raise ValueError("Unsupported image detail")
+        self.image_detail, self.reasoning_effort = image_detail, reasoning_effort
+        self.request_options = {"image_detail": image_detail, "reasoning_effort": reasoning_effort}
 
     def generate(self, request: VLMRequest) -> VLMResponse:
         if self._client is None:
@@ -33,14 +38,15 @@ class OpenAITransport:
         content = [{"type": "input_text", "text": request.prompt}]
         for frame in request.images:
             encoded = base64.b64encode(frame.data).decode("ascii")
-            content.append({"type": "input_image", "detail": "auto",
+            content.append({"type": "input_image", "detail": self.image_detail,
                             "image_url": f"data:{frame.media_type};base64,{encoded}"})
+        options = {} if self.reasoning_effort is None else {"reasoning": {"effort": self.reasoning_effort}}
         response = self._client.responses.create(
             model=self.model, instructions=request.system,
             input=[{"role": "user", "content": content}],
             text={"format": {"type": "json_schema", "name": "skill_request",
                               "strict": True, "schema": dict(request.schema)}},
-            max_output_tokens=request.max_output_tokens, store=False,
+            max_output_tokens=request.max_output_tokens, store=False, **options,
         )
         usage = response.usage.model_dump() if response.usage is not None else None
         return VLMResponse(response.output_text, response.id, usage,

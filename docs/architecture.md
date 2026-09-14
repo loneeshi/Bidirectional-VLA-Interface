@@ -1,6 +1,6 @@
 # Interface and runtime design
 
-This document describes the intended MS-HAB baseline contract. A design requirement is not a claim that the simulator adapter or VLM path has passed an end-to-end test. See the [current status](../README.md#current-status) for verified gates.
+This document describes the MS-HAB baseline contract and its extension points. The current adapter and live VLM path have passed a constrained one-object diagnostic; broader planning and learned verification remain future work. See the [current status](../README.md#current-status) for verified gates and limitations.
 
 ## Module boundaries
 
@@ -54,7 +54,7 @@ The official RL pipeline uses stacked head/hand depth and robot/target state. It
 
 The environment advances its own task pointer when its configured completion checks are met. The coordinator cannot set that pointer, teleport the robot, reset a failed skill into a favorable state, or relax success thresholds inside a reported episode. Reinitialization is allowed for isolated diagnostics only and must be marked as such.
 
-The first feedback adapter may use simulator checks, labeled **oracle completion**. RGB/proprioception-only verification is a subsequent research condition. Simulator ground truth used for evaluation must be recorded separately from information made available to the coordinator.
+The current feedback adapter uses simulator checks, labeled **oracle completion**. The first live diagnostic also exposed exactly one permitted skill/target pair from the oracle task plan at each decision. This verifies the invocation/feedback interface but does not test open skill selection or independent task decomposition. RGB/proprioception-only verification and broader coordination choices are subsequent research conditions. Simulator ground truth used for evaluation must be recorded separately from information made available to the coordinator.
 
 ## Limits and failure handling
 

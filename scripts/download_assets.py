@@ -3,6 +3,7 @@
 
 --root is MS_ASSET_DIR (ManiSkill appends /data), not the data directory itself.
 Requires huggingface_hub in the active simulation environment; no GPU is used.
+Filesystem free-space checks do not detect a cloud provider's per-volume quota.
 """
 
 from __future__ import annotations
@@ -62,12 +63,14 @@ def atomic_json(path: Path, value: dict) -> None:
 
 
 def require_space(path: Path, needed: int) -> None:
+    # A shared filesystem may report host capacity rather than the rented quota.
+    # Check the provider's configured volume size separately before this script.
     path.mkdir(parents=True, exist_ok=True)
     free = shutil.disk_usage(path).free
     reserve = 1_000_000_000
     if free < needed + reserve:
         raise RuntimeError(
-            f"Insufficient free disk at {path}: {free} B; need {needed} B "
+            f"Insufficient filesystem free disk at {path}: {free} B; need {needed} B "
             f"plus {reserve} B reserve. No automatic resize or deletion is performed."
         )
 
@@ -124,11 +127,58 @@ def extraction_complete(marker: Path, source: dict, destination: Path) -> bool:
     if record.get("sha256") != source["sha256"]:
         return False
     # Manifest is saved only after all files pass ZIP CRC checks during extraction.
-    return all(
-        (destination / entry["path"]).is_file()
-        and (destination / entry["path"]).stat().st_size == entry["size"]
-        for entry in record.get("files", [])
-    ) and record.get("extracted_bytes") == source["extracted_size"]
+    if record.get("extracted_bytes") != source["extracted_size"]:
+        return False
+    for entry in record.get("files", []):
+        try:
+            metadata = (destination / entry["path"]).stat()
+        except FileNotFoundError:
+            return False
+        if not stat.S_ISREG(metadata.st_mode) or metadata.st_size != entry["size"]:
+            return False
+    return True
+
+
+def validate_zip_members(members: list[zipfile.ZipInfo], parent: Path, directory: str) -> None:
+    """Validate paths without re-resolving shared ancestors for every member.
+
+    Existing path components are checked once, including leaf symlinks. Once an
+    ancestor is absent, its descendants cannot contain pre-existing symlinks.
+    The archive itself may not create symlinks. As with any pre-extraction path
+    validation, callers must not allow concurrent mutation of the destination.
+    """
+    resolved_root = parent.resolve()
+    # Keys follow archive paths; values are the resolved path and its absence.
+    resolved = {(): (resolved_root, False)}
+    for member in members:
+        pure = PurePosixPath(member.filename)
+        mode = member.external_attr >> 16
+        if (pure.is_absolute() or ".." in pure.parts or "\\" in member.filename
+                or not pure.parts or pure.parts[0] != directory
+                or any(":" in part for part in pure.parts)
+                or stat.S_ISLNK(mode)):
+            raise RuntimeError(f"Unsafe ZIP member {member.filename}")
+        for depth in range(1, len(pure.parts) + 1):
+            key = pure.parts[:depth]
+            if key in resolved:
+                continue
+            ancestor, absent = resolved[key[:-1]]
+            candidate = ancestor / key[-1]
+            if not absent:
+                try:
+                    entry = candidate.lstat()
+                except FileNotFoundError:
+                    absent = True
+                else:
+                    # Windows junctions/reparse points also require resolution.
+                    reparse = getattr(entry, "st_file_attributes", 0) & getattr(
+                        stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0
+                    )
+                    if stat.S_ISLNK(entry.st_mode) or reparse:
+                        candidate = candidate.resolve()
+            if not candidate.is_relative_to(resolved_root):
+                raise RuntimeError(f"Unsafe ZIP member {member.filename}")
+            resolved[key] = (candidate, absent)
 
 
 def extract_asset(source: dict, parent: Path, cache: Path) -> dict:
@@ -144,15 +194,8 @@ def extract_asset(source: dict, parent: Path, cache: Path) -> dict:
         members = z.infolist()
         if sum(member.file_size for member in members) != source["extracted_size"]:
             raise RuntimeError("ZIP expanded size differs from the pinned manifest")
-        for member in members:
-            pure = PurePosixPath(member.filename)
-            target = (parent / member.filename).resolve()
-            mode = member.external_attr >> 16
-            if (pure.is_absolute() or ".." in pure.parts or "\\" in member.filename
-                    or not pure.parts or pure.parts[0] != source["directory"]
-                    or not target.is_relative_to(parent.resolve())
-                    or stat.S_ISLNK(mode)):
-                raise RuntimeError(f"Unsafe ZIP member {member.filename}")
+        log("validate_archive", asset=source["name"], entries=len(members))
+        validate_zip_members(members, parent, source["directory"])
         log("extract", asset=source["name"], entries=len(members))
         # Paths are validated first; zipfile verifies CRC while reading each member.
         # Interrupted extractions can resume by replacing only pinned source members.
@@ -248,7 +291,8 @@ def main() -> None:
     manifest["completed_at_unix"] = time.time()
     atomic_json(manifest_path, manifest)
     log("complete", manifest=str(manifest_path), ms_asset_dir=str(root),
-        checkpoint_root=str(checkpoints), free_bytes=shutil.disk_usage(root).free)
+        checkpoint_root=str(checkpoints), filesystem_free_bytes=shutil.disk_usage(root).free,
+        provider_volume_quota_checked=False)
 
 
 if __name__ == "__main__":

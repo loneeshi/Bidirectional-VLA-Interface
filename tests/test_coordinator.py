@@ -162,10 +162,13 @@ class CoordinatorTests(unittest.TestCase):
         client = SimpleNamespace(responses=SimpleNamespace(create=Mock(return_value=SimpleNamespace(
             output_text=json.dumps(self.payload), id="fake-openai-id",
             usage=SimpleNamespace(model_dump=lambda: {"input_tokens": 10}), status="completed"))))
-        response = OpenAITransport("fake-explicit-model", client=client).generate(request)
+        response = OpenAITransport("fake-explicit-model", client=client,
+                                   reasoning_effort="none").generate(request)
         kwargs = client.responses.create.call_args.kwargs
         image = kwargs["input"][0]["content"][1]
         self.assertEqual(base64.b64decode(image["image_url"].split(",")[1]), PNG)
+        self.assertEqual(image["detail"], "low")
+        self.assertEqual(kwargs["reasoning"], {"effort": "none"})
         self.assertTrue(kwargs["text"]["format"]["strict"])
         self.assertFalse(kwargs["store"])
         self.assertEqual(response.request_id, "fake-openai-id")
