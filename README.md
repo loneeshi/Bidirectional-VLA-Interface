@@ -12,6 +12,8 @@ The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla
 Both candidate models returned real predictions on an A6000 through the saved-frame
 probe ([results](docs/results/vla-probe-002.json)); candidate Fetch control remains
 unvalidated. LightNav returned 10x3 waypoints; pi05_droid returned 15x8 actions.
+An [experimental Fetch navigation adapter](docs/lightnav-control.md) is now wired
+into the runner and CPU-tested; its physical control and video trial are pending.
 
 ## Current status
 
