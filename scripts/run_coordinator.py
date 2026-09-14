@@ -64,9 +64,25 @@ def main() -> None:
     parser.add_argument("--checkpoint-root", type=Path, default=os.getenv("MSHAB_CHECKPOINT_DIR"))
     parser.add_argument("--output", type=Path, default=Path("runs/coordinator"))
     parser.add_argument("--no-video", action="store_true")
+    parser.add_argument("--navigation-policy", choices=("official", "lightnav"), default="official")
+    parser.add_argument("--lightnav-url", default="ws://127.0.0.1:8050")
+    parser.add_argument("--navigation-instructions", type=Path,
+                        help="JSON mapping subtask indices to explicit visual language goals")
+    parser.add_argument("--expected-plan-uid", help="Require the exact first subtask UID before LightNav")
+    parser.add_argument("--max-navigation-predictions", type=int, default=40)
     parser.add_argument("--video-debug-overlay", action="store_true",
                         help="Burn verbose simulator statistics into diagnostic video")
     args = parser.parse_args()
+    navigation_instructions = {}
+    if args.navigation_policy == "lightnav":
+        if args.navigation_instructions is None or not args.expected_plan_uid or args.max_navigation_predictions < 1:
+            parser.error("LightNav requires instructions, expected-plan-uid and a positive prediction cap")
+        navigation_instructions = json.loads(args.navigation_instructions.read_text(encoding="utf-8"))
+        if not isinstance(navigation_instructions, dict) or not all(
+            isinstance(k, str) and k.isdigit() and isinstance(v, str) and v.strip()
+            for k, v in navigation_instructions.items()
+        ):
+            parser.error("Navigation instructions must map numeric string indices to nonempty strings")
     if args.checkpoint_root is None:
         parser.error("set --checkpoint-root or MSHAB_CHECKPOINT_DIR")
     if any(value <= 0 for value in (args.max_calls, args.max_env_steps, args.max_wall_seconds,
@@ -124,8 +140,13 @@ def main() -> None:
                 "transport": args.transport,
                 "image_detail": args.image_detail, "reasoning_effort": args.reasoning_effort,
                 "max_env_steps": args.max_env_steps, "max_wall_seconds": args.max_wall_seconds}
+    metadata.update(navigation_policy=args.navigation_policy,
+                    navigation_instructions=navigation_instructions,
+                    max_navigation_predictions=args.max_navigation_predictions)
     (args.output / "run-metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     adapter = None
+    navigation_client = None
+    navigation_skill = None
     started = time.monotonic()
     history = []
     decisions = 0
@@ -136,6 +157,15 @@ def main() -> None:
         adapter = make_mshab_adapter(cfg, logger, args.output, seed=args.seed)
         specs = adapter.skill_specs(args.skill_wall_seconds)
         skills = {name: OfficialRLSkill(name, adapter, checkpoint_root, args.policy_type) for name in specs}
+        if args.navigation_policy == "lightnav":
+            from bvi.lightnav_skill import LightNavSkill
+            from bvi.vla_clients import LightNavClient
+            if adapter.original_plan.subtasks[0].uid != args.expected_plan_uid:
+                raise ProtocolError("Sampled plan does not match navigation language instructions")
+            navigation_client = LightNavClient.connect(args.lightnav_url)
+            navigation_skill = LightNavSkill(adapter, navigation_client, navigation_instructions,
+                                             args.max_navigation_predictions)
+            skills["navigate"] = navigation_skill
         runtime = SerialRuntime(adapter, skills, specs, logger)
         if not args.dry_run:
             if args.transport == "bridge":
@@ -209,6 +239,11 @@ def main() -> None:
         logger.emit("experiment_error", error_type=type(exc).__name__)
         raise
     finally:
+        if navigation_client is not None:
+            try:
+                navigation_client.close()
+            except Exception as exc:
+                logger.emit("navigation_client_close_error", error_type=type(exc).__name__)
         if adapter is not None:
             if coordinator is not None:
                 api_calls = coordinator.calls_reserved
@@ -218,6 +253,8 @@ def main() -> None:
                        "task_success": bool(scalar(adapter.last_info.get("success", False))),
                        "steps": adapter.steps, "wall_seconds": time.monotonic() - started,
                        "skill_results": jsonable(history),
+                       "navigation_policy": args.navigation_policy,
+                       "navigation_predictions": navigation_skill.total_predictions if navigation_skill else 0,
                        "api_cost_usd": None if not args.dry_run else 0,
                        "api_cost_status": "pending_reconciliation" if not args.dry_run else "no_api_calls"}
             try:
