@@ -1,0 +1,57 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Credentials and local provider/machine configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+ssh_config
+known_hosts*
+*.local.*
+.secrets/
+.credentials/
+.runtime/
+
+# External assets, source checkouts, checkpoints, and private run artifacts
+assets/
+data/
+datasets/
+checkpoints/
+mshab_checkpoints/
+third_party/
+runs/
+outputs/
+logs/
+wandb/
+finance/
+private/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.h5
+*.hdf5
+*.log
+*.mp4
+*.webm
+
+# Local editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
