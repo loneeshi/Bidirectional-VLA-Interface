@@ -4,6 +4,13 @@ Status (2026-09-14): model-service clients and saved-frame probe entry point add
 Real candidate inference and candidate-controlled Fetch rollouts have NOT run.
 The original GPT + PPO/SAC diagnostic remains the only live closed-loop result.
 
+Execution update: both retained A6000 pods rejected restart because their hosts
+had no free GPU. Candidate GPU inference is capacity-blocked. Lightweight clients
+installed locally; 64 CPU tests pass, including real localhost WebSocket exchanges
+and the official openpi numpy-msgpack codec with synthetic outputs. No real model
+prediction is claimed. LightNav requires transformers5.8/numpy>=2; openpi pins
+transformers4.53.2/numpy<2. Keep their model environments separate.
+
 ## Model boundaries
 
 LightNav-0: RGB history + language -> cumulative local SE(2) waypoints, using the
