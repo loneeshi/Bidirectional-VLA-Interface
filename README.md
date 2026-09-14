@@ -8,6 +8,10 @@ The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla
 
 [Watch the real VLM demonstration](docs/media/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
 
+**Next experiment:** [LightNav-0 / pi0.5 integration and task selection](docs/vla-integration.md).
+Model-service clients and a saved-frame inference probe are implemented; candidate
+weights have not yet been run, and candidate Fetch control remains unvalidated.
+
 ## Current status
 
 **Development snapshot — September 14, 2026.** The first VLM–skill–simulation loop is running on an RTX A6000 with OpenAI `gpt-5.6-luna`. Six real model requests produced six successful skill invocations. The first **Navigate → Pick → Navigate while holding → Place** chain completed in 233 control steps; execution stopped at the six-request limit after 336 steps. **The full five-object TidyHouse task remains incomplete.**

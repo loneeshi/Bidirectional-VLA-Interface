@@ -64,6 +64,8 @@ def main() -> None:
     parser.add_argument("--checkpoint-root", type=Path, default=os.getenv("MSHAB_CHECKPOINT_DIR"))
     parser.add_argument("--output", type=Path, default=Path("runs/coordinator"))
     parser.add_argument("--no-video", action="store_true")
+    parser.add_argument("--video-debug-overlay", action="store_true",
+                        help="Burn verbose simulator statistics into diagnostic video")
     args = parser.parse_args()
     if args.checkpoint_root is None:
         parser.error("set --checkpoint-root or MSHAB_CHECKPOINT_DIR")
@@ -104,7 +106,7 @@ def main() -> None:
     logger = JsonlLogger(args.output / "events.jsonl", args.output.name)
     cfg = EnvConfig(env_id="SequentialTask-v0", num_envs=1, max_episode_steps=7000,
         task_plan_fp=str(plan_path), obs_mode="rgbd", render_mode="rgb_array",
-        record_video=not args.no_video, info_on_video=True, continuous_task=True,
+        record_video=not args.no_video, info_on_video=args.video_debug_overlay, continuous_task=True,
         frame_stack=3, stationary_base=False, stationary_torso=False, stationary_head=True,
         env_kwargs={"require_build_configs_repeated_equally_across_envs": False,
                     "add_event_tracker_info": True,
