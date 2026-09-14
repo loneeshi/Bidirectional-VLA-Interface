@@ -1,15 +1,42 @@
 # VLA replacement experiments
 
-Status (2026-09-14): model-service clients and saved-frame probe entry point added.
-Real candidate inference and candidate-controlled Fetch rollouts have NOT run.
+Status (2026-09-14): both candidate models returned real predictions on an RTX
+A6000 through our clients. Candidate-controlled Fetch rollouts have NOT run.
 The original GPT + PPO/SAC diagnostic remains the only live closed-loop result.
+See [actual probe results](results/vla-probe-002.json).
 
-Execution update: both retained A6000 pods rejected restart because their hosts
-had no free GPU. Candidate GPU inference is capacity-blocked. Lightweight clients
-installed locally; 64 CPU tests pass, including real localhost WebSocket exchanges
-and the official openpi numpy-msgpack codec with synthetic outputs. No real model
-prediction is claimed. LightNav requires transformers5.8/numpy>=2; openpi pins
-transformers4.53.2/numpy<2. Keep their model environments separate.
+Both retained pods initially rejected restart (host capacity). With explicit
+authorization, a temporary A6000 was used, evidence downloaded and hash-verified,
+then the temporary pod was deleted. 64 CPU tests also pass, including real
+localhost sockets and the official numpy-msgpack codec with synthetic outputs.
+Those CPU tests are separate from the GPU inference evidence.
+
+| Model | Actual probe result | Client elapsed time |
+|---|---|---|
+| LightNav-0, HF backend | 10x3 finite local SE(2) waypoints; stop=false, visible=false | 1.141 s after server warmup |
+| pi05_droid, JAX | First request lost to keepalive timeout during initial compile | 45.765 s, outcome uncertain |
+| pi05_droid, JAX | Explicit new request after client fix: 15x8 finite actions | 1.360 s, warm model |
+
+LightNav predicted predominantly turning, not arrival. Pi received saved Fetch
+camera images but **synthetic zero DROID proprioception**, and its actions were
+never applied. This establishes model loading, image transport and output parsing,
+not skill success, robot transfer or benchmark performance. The actual pi05_droid
+config sets action_horizon=15; do not copy the DROID example's fixed10 assertion.
+
+The upstream openpi server performs synchronous inference on its websocket event
+loop. Client heartbeat timeout disconnected the first request; client automatic
+pings are now disabled while an explicit bounded receive timeout remains enabled.
+The failed record is retained. The successful repeat was warm: a fresh cold-start
+request with the heartbeat fix has not yet been measured.
+
+Observed process allocations: LightNav about8989MiB; pi JAX about36713MiB with
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.75. These are observations, NOT minimum VRAM
+requirements or reliable peak measurements. JAX preallocation dominates its figure.
+The sampled GPU log was restarted during the handoff and does not cover the whole
+LightNav startup; final GPU usage was zero before resource deletion.
+
+LightNav requires transformers5.8/numpy>=2; openpi pins transformers4.53.2/numpy<2.
+Keep their model environments separate.
 
 ## Model boundaries
 
@@ -41,8 +68,22 @@ The probe client needs `websockets>=14`; the openpi branch additionally needs
 `numpy`, `Pillow`, and the `packages/openpi-client` package from the pinned official
 openpi checkout. Do not install the complete model training stack into MS-HAB.
 
-Start LightNav using the official `lightnav-serve --task vln` workflow; start
-openpi using its documented pi05_droid server configuration. Tunnel their ports
+The tested LightNav environment used torch2.10.0/torchvision0.25.0 and the pinned
+repository's core dependencies (HF backend, no vLLM). The tested openpi environment
+used `GIT_LFS_SKIP_SMUDGE=1 uv sync --frozen --no-dev`, then `uv pip install -e .`
+with uv0.8.22. Start servers separately, releasing the first model before the second:
+
+```bash
+# LightNav environment: checkpoint revision826dc5fbfa37afa8293d2e336d329b6ffc0bfb64
+lightnav-serve --task vln --backend hf --model_path /path/to/nav-model \
+  --host 127.0.0.1 --port 8050 --max_batch_size 1 --ready_file /tmp/nav.ready
+# openpi checkout/environment; initial request can include JAX compilation
+OPENPI_DATA_HOME=/path/to/pi-cache XLA_PYTHON_CLIENT_MEM_FRACTION=0.75 \
+  .venv/bin/python scripts/serve_policy.py --port 8000 policy:checkpoint \
+  --policy.config=pi05_droid --policy.dir=gs://openpi-assets/checkpoints/pi05_droid
+```
+
+Tunnel their ports
 over SSH, e.g. `ssh -L 8050:127.0.0.1:8050 -L 8000:127.0.0.1:8000 <pod>`.
 Only start paid servers within a recorded spending scope.
 
@@ -54,7 +95,7 @@ python scripts/probe_vla.py --backend lightnav --url ws://127.0.0.1:8050 \
   --output runs/lightnav-probe-001.json
 python scripts/probe_vla.py --backend pi05-droid --url ws://127.0.0.1:8000 \
   --head /path/to/head.png --hand /path/to/hand.png \
-  --instruction "Pick up the can" --output runs/pi05-probe-001.json
+  --instruction "Pick up the can" --timeout-seconds 180 --output runs/pi05-probe-001.json
 ```
 
 Each command issues at most one inference and writes image hashes, output and

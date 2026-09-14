@@ -22,7 +22,11 @@ def main():
     parser.add_argument("--hand", type=Path)
     parser.add_argument("--instruction", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--timeout-seconds", type=float, default=30,
+                        help="Bounded I/O wait; initial JAX compilation may need longer")
     args = parser.parse_args()
+    if not 0 < args.timeout_seconds <= 300:
+        parser.error("timeout-seconds must be in (0, 300]")
     if args.output.exists():
         parser.error("Output exists; use a new path to preserve previous evidence")
     if args.backend == "pi05-droid" and args.hand is None:
@@ -39,14 +43,14 @@ def main():
     start = time.monotonic()
     try:
         if args.backend == "lightnav":
-            client = LightNavClient.connect(args.url)
+            client = LightNavClient.connect(args.url, timeout=args.timeout_seconds)
             client.reset()
             result = asdict(client.infer(frames["head"], args.instruction))
         else:
             observation = droid_probe_observation(frames["head"], frames["hand"],
                                                   [0.] * 7, 0., args.instruction)
             record["state_source"] = "synthetic_zero_state_not_fetch_proprioception"
-            client = OpenPiClient.connect(args.url)
+            client = OpenPiClient.connect(args.url, timeout=args.timeout_seconds)
             result = {"actions": client.infer(observation, action_dim=8)}
         record.update(status="prediction_received", prediction=result)
     except Exception as exc:
