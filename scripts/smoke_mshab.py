@@ -38,8 +38,8 @@ def main():
                   'seed':args.seed,'steps':args.steps,'observation':shape(obs),
                   'action_space':str(u.single_action_space),'control_mode':u.control_mode,
                   'control_freq':u.control_freq,'sim_config':str(u.sim_config),
-                  'build_config_idxs':u.build_config_idxs.tolist(),
-                  'task_plan_idxs':u.task_plan_idxs.tolist(),
+                  'build_config_idxs':[int(x) for x in u.build_config_idxs],
+                  'task_plan_idxs':[int(x) for x in u.task_plan_idxs],
                   'info_keys':list(info)}
         t0=time.monotonic()
         with imageio.get_writer(args.output/'scene-smoke.mp4',fps=20) as writer:

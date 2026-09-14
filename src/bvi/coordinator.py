@@ -12,7 +12,7 @@ import json
 import math
 import uuid
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Any, Protocol
 
 from .logging import JsonlLogger, json_default
@@ -27,6 +27,7 @@ class VLMRequest:
     images: tuple[ImageFrame, ...]
     schema: Mapping[str, Any]
     max_output_tokens: int
+    attempt_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -145,7 +146,7 @@ class VLMCoordinator:
                         self.cost_reserved_usd += record["reserved_cost_usd"]
 
     def decide(self, observation: Observation,
-               history: Sequence[SkillFeedback] = ()) -> SkillRequest:
+               history: Sequence[SkillFeedback | Mapping[str, Any]] = ()) -> SkillRequest:
         if not observation.images:
             raise ProtocolError("VLM coordination requires actual encoded camera images")
         for image in observation.images:
@@ -161,6 +162,7 @@ class VLMCoordinator:
 
         schema = request_schema(observation, self.specs)
         context = {"task": observation.task, "frame_id": observation.frame_id,
+                   "image_order": [image.camera for image in observation.images],
                    "targets": observation.targets, "allowed_calls": observation.allowed_calls,
                    "skill_contracts": list(self.specs.values()), "feedback_history": list(history)}
         prompt = json.dumps(context, default=json_default, ensure_ascii=False, allow_nan=False)
@@ -186,14 +188,16 @@ class VLMCoordinator:
         if input_bytes > self.budget.max_input_bytes:
             raise ProtocolError("Input exceeds the configured API byte budget")
         attempt_id = uuid.uuid4().hex
+        vlm_request = replace(vlm_request, attempt_id=attempt_id)
         self.logger.emit("api_request_started", attempt_id=attempt_id,
                          authorization_id=self.budget.authorization_id,
                          provider=self.transport.provider, model=self.transport.model,
+                         request_options=getattr(self.transport, "request_options", {}),
                          reserved_cost_usd=self.budget.request_cost_ceiling_usd,
                          currency="USD", amount=None, status="pending_provider_usage",
                          max_output_tokens=self.budget.max_output_tokens,
                          input_bytes=input_bytes,
-                         frame_id=observation.frame_id, prompt=prompt, schema=schema,
+                         frame_id=observation.frame_id, system=system, prompt=prompt, schema=schema,
                          images=[{"camera": image.camera, "media_type": image.media_type,
                                   "bytes": len(image.data),
                                   "sha256": hashlib.sha256(image.data).hexdigest()}

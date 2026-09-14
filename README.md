@@ -2,25 +2,33 @@
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
-The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM will select skills and react to execution feedback; interchangeable low-level policies will execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. Learning VLA adapters and requirement verifiers is future work.
+The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM issues structured skill requests from image observations and execution feedback; interchangeable low-level policies execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. Learning VLA adapters and requirement verifiers is future work.
 
 [Status](#current-status) · [Architecture](#architecture) · [Setup](docs/reproduction.md) · [Evaluation](docs/evaluation.md) · [Roadmap](#roadmap)
 
+[Watch the real VLM demonstration](docs/media/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
+
 ## Current status
 
-**Development snapshot — September 14, 2026.** CUDA, Vulkan, GPU physics, and RGBD rendering have been exercised on a single RTX A6000. A Fetch robot completed 60 control steps in `Empty-v1`, and a video was exported. This establishes the basic simulator installation; it does not establish task success in MS-HAB.
+**Development snapshot — September 14, 2026.** The first VLM–skill–simulation loop is running on an RTX A6000 with OpenAI `gpt-5.6-luna`. Six real model requests produced six successful skill invocations. The first **Navigate → Pick → Navigate while holding → Place** chain completed in 233 control steps; execution stopped at the six-request limit after 336 steps. **The full five-object TidyHouse task remains incomplete.**
 
-The `bvi` Python core now includes typed requests and feedback, a serial skill runtime, event logging, and injectable OpenAI/Anthropic transports. Its initial **28 CPU tests passed without paid API calls**. The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads; real-task validation is still in progress.
+This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
+
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **56 CPU tests passed without paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|
 | G0: GPU and rendering | CUDA computation, NVIDIA Vulkan device, RGB/depth frames | Passed in an empty-scene smoke test |
-| G1: MS-HAB environment | ReplicaCAD task reset/step, recorded observations and action contract, 200 steps | In progress; only the Fetch empty-scene interface has been exercised |
-| G2: Official skills | Navigate, Pick, and Place each succeed at least once | Pending |
-| G3: Skill composition | Navigate → Pick → Navigate while holding → Place, without teleportation | Pending |
-| G4: VLM coordination | Real image input, structured requests, execution feedback, and subsequent decisions | Pending |
+| G1: MS-HAB environment | ReplicaCAD task reset/step, recorded observations and action contract, 200 steps | Passed: TidyHouse val, seed 0, build index 69, plan index 23; zero actions |
+| G2: Official skills | Navigate, Pick, and Place each succeed at least once | Passed in the seed-1 per-object diagnostic; executed actions were finite and within controller bounds |
+| G3: Skill composition | Navigate → Pick → Navigate while holding → Place, without teleportation | Passed for the first object in one continuous episode, 233 steps |
+| G4: VLM coordination | Real image input, structured requests, execution feedback, and subsequent decisions | Passed as a constrained interface smoke test: six real GPT requests, with oracle targets and completion |
 
-There is currently **no end-to-end VLM demonstration, trained VLA model, or benchmark score**. CPU protocol tests and scripted coordinators are infrastructure checks, not evidence of G2–G4.
+The [live run and evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) establish a **single-scene engineering demonstration**. There is no trained VLA model or aggregate benchmark score. The original G1 smoke test used 200 zero actions; successful policy execution and the VLM loop were verified separately.
+
+The first official-policy run completed its 7,000-step horizon on one validation scene/plan and returned **0/1 task successes** (`success_once=0`, `success_at_end=0`). The trace advances from Navigate to Pick at step index 128, then records a cumulative-force failure at index 143. This is a preliminary diagnostic failure, not an estimate of full-benchmark performance. See the [run result and limitations](docs/evaluation.md#first-official-policy-diagnostic).
+
+A subsequent seed-0 per-object oracle run completed Navigate, Pick, and navigation while holding before failing at Place after 470 steps. The successful VLM demonstration uses seed 1 and a different sampled plan; these runs are not a matched comparison of coordinators.
 
 ## Architecture
 
@@ -46,7 +54,7 @@ MS-HAB provides structured task plans and simulator success checks. The baseline
 
 The tested simulator platform is **Ubuntu 22.04, NVIDIA RTX A6000 48 GB, Python 3.11, PyTorch 2.4.1 + CUDA 12.4, ManiSkill 3.0.0b18, and SAPIEN 3.0.0b1**. Installation uses the MS-HAB-compatible ManiSkill branch and records exact commits. A current default ManiSkill installation is not a substitute for this pinned environment.
 
-Follow [setup and reproduction](docs/reproduction.md) for the tested version manifest, external assets, headless rendering, and the distinction between available checks and pending runners. API credentials are not required for environment setup or official policy checks. The VLM stage will use an explicit provider/model configuration and separately enabled paid requests.
+Follow [setup and reproduction](docs/reproduction.md) for the tested version manifest, external assets, headless rendering, and diagnostic commands. API credentials are not required for environment setup or official policy checks. Live VLM runs use an explicit provider/model configuration and separately enabled paid requests.
 
 Datasets, model weights, local credentials, and raw run directories are not distributed with this repository. Obtain upstream assets from their official hosts and retain their terms.
 
@@ -57,7 +65,11 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
-Simulator entrypoints are provided separately for asset setup, the G1 task smoke test, and official-policy execution. See [the execution sequence](docs/reproduction.md#execution-sequence) before running them; later gates remain unverified until their recorded acceptance criteria pass.
+Simulator entrypoints are provided separately for asset setup, the G1 task smoke test, and official-policy execution. See [the execution sequence](docs/reproduction.md#execution-sequence) before running them; installation and a successful single-scene diagnostic do not establish full evaluation coverage.
+
+The [coordinator diagnostic](docs/reproduction.md#coordinator-diagnostic) also has an explicit `--dry-run` mode: it executes real simulation and official skills through the protocol with an oracle dispatcher, making no model API requests. It uses a GPU and does not satisfy G4.
+
+For local API inference with remote simulation, use the [SSH bridge instructions](docs/bridge.md). The seed-1 live run used this bridge while keeping the API key on the local computer.
 
 ## Evaluation
 
@@ -69,11 +81,12 @@ Every result must identify the scene and task-plan coverage, seeds, checkpoint r
 
 - [x] Verify CUDA, Vulkan, and a 60-step Fetch empty-scene rollout.
 - [x] Implement the protocol, serial runtime, and injected-provider checks on CPU.
-- [ ] Verify ReplicaCAD task loading and the official observation/action interfaces.
-- [ ] Execute official Navigate, Pick, and Place checkpoints independently.
-- [ ] Compose skills without resetting the physical state or teleporting.
-- [ ] Add image-based VLM requests and feedback-driven decisions.
-- [ ] Release a reproducible demonstration with logs, video, and failure analysis.
+- [x] Verify ReplicaCAD task loading and the official observation/action interfaces.
+- [x] Record at least one successful invocation of Navigate, Pick, and Place.
+- [x] Compose a one-object chain without resetting the physical state or teleporting.
+- [x] Connect real image-based VLM requests and subsequent execution feedback.
+- [ ] Expand beyond a single allowed skill and evaluate coordinator decision quality.
+- [x] Release the diagnostic demonstration with an evidence summary, video, and failure analysis.
 - [ ] Evaluate matched settings across the declared validation scenes and task plans.
 - [ ] Study learned invocation semantics, requirement verification, and VLA adapters.
 - [ ] Extend the runtime to overlapping navigation and manipulation.
