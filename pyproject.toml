@@ -12,7 +12,7 @@ dependencies = []
 [project.optional-dependencies]
 openai = ["openai>=1.66"]
 anthropic = ["anthropic>=0.49"]
+vla = ["websockets>=14", "numpy>=1.24", "Pillow>=10"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
