@@ -23,7 +23,7 @@ The [marker-free A chain](docs/media/A-ppo-sac-clean.mp4) has been re-recorded.
 in 278 steps, with grasp maintained throughout carrying navigation.
 The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
 [C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
-Velocity, recovery-data, relative-base and workspace-camera pilots also failed Pick. Live recovery collection for the workspace-camera model is underway; C/D task success remains unproven. [Audited workspace failures and videos](docs/abcd-debugging.md).
+Velocity, recovery-data, relative-base and workspace-camera pilots also failed Pick. A further workspace-camera model is training on 1,228 frames including successful recovery tails; C/D task success remains unproven. [Audited workspace failures and videos](docs/abcd-debugging.md) · [Adaptation contract and commands](docs/workspace-adaptation.md).
 
 ## Current status
 

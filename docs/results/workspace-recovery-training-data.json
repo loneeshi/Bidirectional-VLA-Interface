@@ -1,0 +1,131 @@
+{
+  "stage": "training_data_audit",
+  "evaluation_result": false,
+  "all_runs_excluded_from_cd_evaluation": true,
+  "training_frames": 1228,
+  "training_sources": 24,
+  "recovery_frames": 535,
+  "recovery_pick_segments": 11,
+  "recovery_place_segments": 3,
+  "task_configs": [
+    [
+      "tidy_house-sequential-val-90-0",
+      "val/tidy_house/episode_18.json"
+    ]
+  ],
+  "runs": [
+    {
+      "run_id": "recovery-lightnav-07-prefix5",
+      "native_steps": 327,
+      "pi_predictions": 5,
+      "lightnav_predictions": 55,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-lightnav-08-prefix10",
+      "native_steps": 333,
+      "pi_predictions": 10,
+      "lightnav_predictions": 55,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-lightnav-09-prefix20",
+      "native_steps": 279,
+      "pi_predictions": 20,
+      "lightnav_predictions": 16,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-lightnav-10-prefix30",
+      "native_steps": 374,
+      "pi_predictions": 30,
+      "lightnav_predictions": 54,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-lightnav-11-prefix20",
+      "native_steps": 341,
+      "pi_predictions": 20,
+      "lightnav_predictions": 58,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-lightnav-12-prefix30",
+      "native_steps": 491,
+      "pi_predictions": 30,
+      "lightnav_predictions": 80,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": "remaining_experiment_budget_minus_0.5s"
+    },
+    {
+      "run_id": "recovery-ppo-01-prefix5",
+      "native_steps": 215,
+      "pi_predictions": 5,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-ppo-02-prefix10",
+      "native_steps": 500,
+      "pi_predictions": 10,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-ppo-03-prefix20",
+      "native_steps": 207,
+      "pi_predictions": 40,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-ppo-04-prefix30",
+      "native_steps": 57,
+      "pi_predictions": 28,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-ppo-05-prefix20",
+      "native_steps": 316,
+      "pi_predictions": 40,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": true,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-ppo-06-prefix30",
+      "native_steps": 210,
+      "pi_predictions": 30,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": false,
+      "oracle_timeout_policy": null
+    },
+    {
+      "run_id": "recovery-supplement-lightnav-02-prefix5",
+      "native_steps": 383,
+      "pi_predictions": 10,
+      "lightnav_predictions": 56,
+      "mixed_teacher_chain_success": true,
+      "oracle_timeout_policy": "remaining_experiment_budget_minus_0.5s"
+    },
+    {
+      "run_id": "recovery-supplement-ppo-01-prefix5",
+      "native_steps": 257,
+      "pi_predictions": 10,
+      "lightnav_predictions": 0,
+      "mixed_teacher_chain_success": true,
+      "oracle_timeout_policy": "remaining_experiment_budget_minus_0.5s"
+    }
+  ],
+  "archive_sha256": "3b3d644819c1b011ae1c34cd095e6a28ba826086de11ef7eb3052d41aca83754"
+}
