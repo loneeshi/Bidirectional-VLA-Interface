@@ -74,6 +74,8 @@ def main() -> None:
     parser.add_argument('--max-manipulation-predictions',type=int,default=100)
     parser.add_argument('--manipulation-chunk-steps',type=int,default=3)
     parser.add_argument('--manipulation-ensemble-samples',type=int,default=1)
+    parser.add_argument('--workspace-camera',action='store_true',
+                        help='Add a declared fixed oblique Fetch workspace camera (224 RGB)')
     parser.add_argument('--collect-recovery-after',type=int,
                         help='Training collection only: execute N pi05 steps, then record official SAC recovery')
     parser.add_argument("--navigation-camera",choices=('fetch_head','fetch_nav'),default='fetch_head',
@@ -151,6 +153,9 @@ def main() -> None:
     if args.navigation_camera == 'fetch_nav':
         import bvi.nav_camera_env
         env_id='BVISequentialNavCamera-v0'
+    if args.workspace_camera:
+        import bvi.nav_camera_env
+        env_id='BVISequentialWorkspaceCamera-v0'
     cfg = EnvConfig(env_id=env_id, num_envs=1, max_episode_steps=7000,
         task_plan_fp=str(plan_path), obs_mode="rgbd", render_mode="rgb_array",
         record_video=not args.no_video, info_on_video=args.video_debug_overlay, continuous_task=True,

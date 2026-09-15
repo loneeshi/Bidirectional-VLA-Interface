@@ -18,6 +18,10 @@ import numpy as np
 def segment_base_origin(directory, events, segment):
     """Use the skill start, including for tails collected after a replayed prefix."""
     meta=json.loads((directory/'run-metadata.json').read_text())
+    if meta.get('replayed_teacher'):
+        if not json.loads((directory/'summary.json').read_text()).get('training_replay_complete'):
+            raise ValueError('Incomplete teacher sensor replay')
+        return np.asarray(meta['replayed_skill_origins'][str(segment[0]['subtask_index'])],np.float32),'measured_replay_skill_start'
     if not meta.get('mixed_teacher_collection'):
         return np.asarray(segment[0]['qpos'][0][:2],np.float32), 'first_expert_skill_frame'
     source_events=events
@@ -37,11 +41,11 @@ def segment_base_origin(directory, events, segment):
     return np.asarray(first['state'][:2],np.float32),'original_learner_world_state'
 
 
-def convert(runs, repo_id, include_velocity=False, relative_base=False):
+def convert(runs, repo_id, include_velocity=False, relative_base=False, base_camera='fetch_head'):
     from PIL import Image
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
     features = {
-        'image': {'dtype': 'image', 'shape': (128,128,3), 'names': ['height','width','channel']},
+        'image': {'dtype': 'image', 'shape': (224,224,3) if base_camera=='fetch_workspace' else (128,128,3), 'names': ['height','width','channel']},
         'wrist_image': {'dtype': 'image', 'shape': (128,128,3), 'names': ['height','width','channel']},
         'state': {'dtype': 'float32', 'shape': (30 if include_velocity else 15,), 'names': ['state']},
         'actions': {'dtype': 'float32', 'shape': (13,), 'names': ['actions']},
@@ -51,7 +55,8 @@ def convert(runs, repo_id, include_velocity=False, relative_base=False):
     manifest = {'repo_id': repo_id, 'split': 'seed1_training_diagnostic', 'segments': [],
                 'action_convention': 'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity',
                 'state_components':['qpos','qvel'] if include_velocity else ['qpos'],
-                'base_position_reference':'skill_start_xy' if relative_base else 'world'}
+                'base_position_reference':'skill_start_xy' if relative_base else 'world',
+                'base_camera':base_camera,'wrist_camera':'fetch_hand'}
     joint_order = None
     for directory in map(Path, runs):
         events = [json.loads(line) for line in (directory/'events.jsonl').read_text().splitlines()]
@@ -76,9 +81,10 @@ def convert(runs, repo_id, include_velocity=False, relative_base=False):
                 def frame(camera):
                     path=directory/'frames'/f"{row['frame_id']}-{camera}.png"
                     arr=np.asarray(Image.open(path).convert('RGB'))
-                    if arr.shape != (128,128,3): raise ValueError(f'Unexpected image shape {arr.shape}')
+                    expected=(224,224,3) if camera=='fetch_workspace' else (128,128,3)
+                    if arr.shape != expected: raise ValueError(f'Unexpected image shape {arr.shape}')
                     return arr
-                dataset.add_frame({'image':frame('fetch_head'), 'wrist_image':frame('fetch_hand'),
+                dataset.add_frame({'image':frame(base_camera), 'wrist_image':frame('fetch_hand'),
                     'state':state, 'actions':action, 'task':row['target_description']})
             dataset.save_episode()
             manifest['segments'].append({'run':str(directory),'subtask_index':index,
@@ -92,7 +98,7 @@ def convert(runs, repo_id, include_velocity=False, relative_base=False):
     print(json.dumps(manifest,indent=2))
 
 
-def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=False,init_checkpoint=None,relative_base=False):
+def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=False,init_checkpoint=None,relative_base=False,base_camera='fetch_head'):
     from openpi import transforms
     from openpi.models import pi0_config
     from openpi.policies import libero_policy
@@ -115,6 +121,7 @@ def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=
         paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora')
     name='pi05_fetch_lora_velocity' if include_velocity else ('pi05_fetch_lora_state' if state_input else 'pi05_fetch_lora')
     if relative_base: name='pi05_fetch_lora_relative'
+    if base_camera=='fetch_workspace': name='pi05_fetch_lora_workspace'
     return c.TrainConfig(name=name,exp_name='seed1-diagnostic',model=model,
         data=FetchData(repo_id=repo_id,base_config=c.DataConfig(prompt_from_task=True),
                        extra_delta_transform=False),
@@ -127,6 +134,7 @@ def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=
         wandb_enabled=False,policy_metadata={'robot':'fetch','state_dim':30 if include_velocity else 15,'action_dim':13,
             'state_components':['qpos','qvel'] if include_velocity else ['qpos'],
             'base_position_reference':'skill_start_xy' if relative_base else 'world',
+            'base_camera':base_camera,'wrist_camera':'fetch_hand',
             'state_conditioning':state_input,
             'action_convention':'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity',
             'training_repo':repo_id,'evaluation_scope':'training-scene-diagnostic'})
@@ -145,6 +153,7 @@ def main():
     p.add_argument('--init-checkpoint',help='Explicit parameter directory for a warm-start experiment')
     p.add_argument('--include-velocity',action='store_true',help='Use named qpos and qvel (30 robot state values)')
     p.add_argument('--relative-base',action='store_true',help='Subtract measured skill-start base x/y; keep yaw and qvel unchanged')
+    p.add_argument('--base-camera',choices=('fetch_head','fetch_workspace'),default='fetch_head')
     p.add_argument('--no-state-input',action='store_true',help='Historical vision-only pilot reproduction, not recommended for Fetch')
     p.add_argument('--port',type=int,default=8051)
     p.add_argument('--denoising-steps',type=int,default=10,
@@ -153,10 +162,10 @@ def main():
     if not 1<=a.denoising_steps<=100: p.error('--denoising-steps must be in 1..100')
     if a.include_velocity and a.no_state_input: p.error('Velocity experiment requires state conditioning')
     if a.relative_base and not a.include_velocity: p.error('--relative-base requires --include-velocity')
-    if a.mode=='convert': return convert(a.runs,a.repo_id,a.include_velocity,a.relative_base)
+    if a.mode=='convert': return convert(a.runs,a.repo_id,a.include_velocity,a.relative_base,a.base_camera)
     sys.path.insert(0,a.openpi_root)
     cfg=config(a.repo_id,a.work,a.steps,a.batch,state_input=not a.no_state_input,
-        include_velocity=a.include_velocity,init_checkpoint=a.init_checkpoint,relative_base=a.relative_base)
+        include_velocity=a.include_velocity,init_checkpoint=a.init_checkpoint,relative_base=a.relative_base,base_camera=a.base_camera)
     if a.mode=='norm':
         from scripts.compute_norm_stats import create_torch_dataloader
         from openpi.shared import normalize
@@ -186,7 +195,9 @@ def main():
             saved=json.loads(contract.read_text())
             for key in ('robot','state_dim','state_components','action_dim','action_convention','base_position_reference','training_repo'):
                 if saved.get(key)!=cfg.policy_metadata[key]: raise ValueError(f'Checkpoint state contract differs: {key}')
-        elif a.relative_base:
+            for key,default in (('base_camera','fetch_head'),('wrist_camera','fetch_hand')):
+                if saved.get(key,default)!=cfg.policy_metadata[key]: raise ValueError(f'Checkpoint camera contract differs: {key}')
+        elif a.relative_base or a.base_camera!='fetch_head':
             raise ValueError('Relative-base checkpoint requires its recorded training state contract')
         cfg=dataclasses.replace(cfg,policy_metadata={**cfg.policy_metadata,
             'checkpoint':str(Path(a.checkpoint).resolve()),
