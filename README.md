@@ -2,7 +2,7 @@
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
-**Current priority:** [VLM execution organizer](docs/coordinator-status.md), using official PPO/SAC while pi0.5 optimization is paused. The new mode supports bounded skill calls, grasp-event yields and explicit abort; this does not claim free task-order planning. Validation status is reported in the linked document.
+**Current priority:** [VLAs-as-Tools: TAPT and VLA tool-family interface reproduction](docs/vlas-as-tools-reproduction.md). The existing [execution organizer](docs/coordinator-status.md) is infrastructure evidence with PPO/SAC; it is not yet a TAPT reproduction. Source/code audit is complete; training and closed-loop reproduction remain pending.
 
 The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM issues structured skill requests from image observations and execution feedback; interchangeable low-level policies execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. LightNav integration and Fetch pi0.5 adaptation are now under development; learning requirement verifiers is future work.
 
