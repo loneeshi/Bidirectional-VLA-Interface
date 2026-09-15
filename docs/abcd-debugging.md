@@ -113,9 +113,36 @@ For the velocity pilot use a new dataset/work directory, pass
 checkpoint remains a distinct failed model; new weights must be evaluated before
 any completion claim. The new configuration is named `pi05_fetch_lora_velocity`.
 
+### Recovery data collection (prepared, not yet GPU-validated)
+
+The optional `--collect-recovery-after N` mode runs N learner control steps,
+then lets the official SAC teacher execute the remainder of that manipulation
+skill. Only the teacher tail emits training rows. It requires `--dry-run`,
+`--record-demonstrations`, and `--manipulation-policy fetch-pi05`; N is bounded
+to 0..50. This can collect correction examples after learner-induced drift.
+
+Such runs declare `mixed_teacher_collection=true` and
+`manipulation_policy=fetch-pi05_then_sac_teacher`, and log the exact takeover
+frame. They are training collection, not C/D evidence. `audit_chain.py` rejects
+them for the candidate-task acceptance gate even if the physical task succeeds.
+The local unit test verifies that learner-prefix actions are excluded from
+training rows and that takeover is explicit. Its actual recovery effectiveness
+has not yet been tested in simulation.
+
+The separate `scripts/collect_recovery.py` path replays a saved failed-policy
+prefix, verifies the initial RGB hashes, and then records an actual SAC recovery.
+It makes zero live VLA predictions, declares `replay_only_prefix=true`, and stops
+after the recovery Pick. Initial C2-prefix trials of 5/10/20/30 steps recovered
+with 48/36/35/28 SAC steps respectively. These are correction demonstrations,
+not successful C/D rollouts. Only the SAC tail is eligible for training rows.
+
 The current data intentionally overlaps the seed-1 diagnostic. A successful
 overfit demo would demonstrate closed-loop control, not held-out generalization.
 Benchmark evaluation requires a separately declared training/evaluation split.
+Specifically, these examples use the benchmark's **validation** initialization
+`val/tidy_house/episode_18.json` for engineering adaptation. They cannot be counted
+as held-out validation scores. A benchmark study must use permitted training
+data and untouched evaluation episodes, with a declared sensor protocol.
 
 ## Result fields
 

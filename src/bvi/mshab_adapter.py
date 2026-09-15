@@ -229,6 +229,7 @@ class MSHABAdapter:
             observation = self.observe()
             paths = self.save_observation_images()
             demonstration = dict(frame_id=observation.frame_id,
+                demonstration_source=getattr(self,'demonstration_source','unspecified'),
                 subtask_index=before, skill=self.original_plan.subtasks[before].type,
                 target_description=describe_target(self.original_plan,before).description,
                 qpos=jsonable(self.uenv.agent.robot.qpos),

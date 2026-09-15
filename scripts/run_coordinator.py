@@ -73,6 +73,8 @@ def main() -> None:
     parser.add_argument('--fetch-pi-url',default='ws://127.0.0.1:8051')
     parser.add_argument('--max-manipulation-predictions',type=int,default=100)
     parser.add_argument('--manipulation-chunk-steps',type=int,default=3)
+    parser.add_argument('--collect-recovery-after',type=int,
+                        help='Training collection only: execute N pi05 steps, then record official SAC recovery')
     parser.add_argument("--navigation-camera",choices=('fetch_head','fetch_nav'),default='fetch_head',
                         help='fetch_nav adds a declared forward-facing robot sensor; original RL sensors stay unchanged')
     parser.add_argument("--lightnav-url", default="ws://127.0.0.1:8050")
@@ -89,6 +91,9 @@ def main() -> None:
     parser.add_argument("--show-goal-markers", action="store_true",
                         help="Show benchmark debug goals in human-render video")
     args = parser.parse_args()
+    if args.collect_recovery_after is not None and (not args.dry_run or not args.record_demonstrations
+            or args.manipulation_policy!='fetch-pi05' or not 0<=args.collect_recovery_after<=50):
+        parser.error('Recovery collection requires --dry-run --record-demonstrations --manipulation-policy fetch-pi05 and prefix0..50')
     navigation_instructions = {}
     recovery_instructions={}
     if args.navigation_recovery_instructions:
@@ -175,6 +180,10 @@ def main() -> None:
                     navigation_instructions=navigation_instructions,
                     navigation_recovery_instructions=recovery_instructions,
                     max_navigation_predictions=args.max_navigation_predictions)
+    metadata['mixed_teacher_collection']=args.collect_recovery_after is not None
+    metadata['teacher_takeover_after']=args.collect_recovery_after
+    if args.collect_recovery_after is not None:
+        metadata['manipulation_policy']='fetch-pi05_then_sac_teacher'
     source_root=Path(__file__).resolve().parents[1]
     source_files=[Path(__file__).resolve(),*sorted((source_root/'src/bvi').glob('*.py'))]
     metadata['runtime_source_sha256']={str(p.relative_to(source_root)):hashlib.sha256(p.read_bytes()).hexdigest()
@@ -203,7 +212,11 @@ def main() -> None:
             for name in ('pick','place'):
                 skill=FetchPiSkill(name,adapter,manipulation_client,args.max_manipulation_predictions,
                                    chunk_steps=args.manipulation_chunk_steps)
-                skills[name]=skill
+                if args.collect_recovery_after is not None:
+                    from bvi.recovery_collection import RecoveryCollectionSkill
+                    skills[name]=RecoveryCollectionSkill(skill,skills[name],adapter,args.collect_recovery_after)
+                else:
+                    skills[name]=skill
                 manipulation_skills.append(skill)
         if args.navigation_policy == "lightnav":
             from bvi.lightnav_skill import LightNavSkill
@@ -321,7 +334,8 @@ def main() -> None:
                        "steps": adapter.steps, "wall_seconds": time.monotonic() - started,
                        "skill_results": jsonable(history),
                        "navigation_policy": args.navigation_policy,
-                       "manipulation_policy":args.manipulation_policy,
+                       "manipulation_policy":metadata['manipulation_policy'],
+                       "mixed_teacher_collection":metadata['mixed_teacher_collection'],
                        "manipulation_predictions":sum(s.total_predictions for s in manipulation_skills),
                        "navigation_predictions": navigation_skill.total_predictions if navigation_skill else 0,
                        "api_cost_usd": None if not args.dry_run else 0,

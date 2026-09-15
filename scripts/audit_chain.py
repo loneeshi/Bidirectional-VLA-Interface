@@ -23,6 +23,7 @@ def audit(directory):
             isinstance(v,(int,float)) and math.isfinite(v) and abs(v)<=1.00001 for v in a[0])
     skills=summary.get('skill_results',[])
     checks={
+        'not_mixed_teacher_collection':not metadata.get('mixed_teacher_collection',False),
         'one_reset_no_auto_reset':len(resets)==1 and resets[0].get('auto_reset') is False,
         'continuous_step_sequence':bool(steps) and [e['info']['elapsed_steps'][0] for e in steps]==list(range(1,len(steps)+1)),
         'step_count_matches_summary':len(steps)==summary.get('steps'),
