@@ -1,0 +1,145 @@
+{
+  "task_id": 1,
+  "task": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+  "instruction": "put both the cream cheese box and the butter in the basket",
+  "shapes": {
+    "robot0_joint_pos": [
+      7
+    ],
+    "robot0_joint_pos_cos": [
+      7
+    ],
+    "robot0_joint_pos_sin": [
+      7
+    ],
+    "robot0_joint_vel": [
+      7
+    ],
+    "robot0_eef_pos": [
+      3
+    ],
+    "robot0_eef_quat": [
+      4
+    ],
+    "robot0_gripper_qpos": [
+      2
+    ],
+    "robot0_gripper_qvel": [
+      2
+    ],
+    "agentview_image": [
+      256,
+      256,
+      3
+    ],
+    "robot0_eye_in_hand_image": [
+      256,
+      256,
+      3
+    ],
+    "alphabet_soup_1_pos": [
+      3
+    ],
+    "alphabet_soup_1_quat": [
+      4
+    ],
+    "alphabet_soup_1_to_robot0_eef_pos": [
+      3
+    ],
+    "alphabet_soup_1_to_robot0_eef_quat": [
+      4
+    ],
+    "cream_cheese_1_pos": [
+      3
+    ],
+    "cream_cheese_1_quat": [
+      4
+    ],
+    "cream_cheese_1_to_robot0_eef_pos": [
+      3
+    ],
+    "cream_cheese_1_to_robot0_eef_quat": [
+      4
+    ],
+    "tomato_sauce_1_pos": [
+      3
+    ],
+    "tomato_sauce_1_quat": [
+      4
+    ],
+    "tomato_sauce_1_to_robot0_eef_pos": [
+      3
+    ],
+    "tomato_sauce_1_to_robot0_eef_quat": [
+      4
+    ],
+    "ketchup_1_pos": [
+      3
+    ],
+    "ketchup_1_quat": [
+      4
+    ],
+    "ketchup_1_to_robot0_eef_pos": [
+      3
+    ],
+    "ketchup_1_to_robot0_eef_quat": [
+      4
+    ],
+    "orange_juice_1_pos": [
+      3
+    ],
+    "orange_juice_1_quat": [
+      4
+    ],
+    "orange_juice_1_to_robot0_eef_pos": [
+      3
+    ],
+    "orange_juice_1_to_robot0_eef_quat": [
+      4
+    ],
+    "milk_1_pos": [
+      3
+    ],
+    "milk_1_quat": [
+      4
+    ],
+    "milk_1_to_robot0_eef_pos": [
+      3
+    ],
+    "milk_1_to_robot0_eef_quat": [
+      4
+    ],
+    "butter_1_pos": [
+      3
+    ],
+    "butter_1_quat": [
+      4
+    ],
+    "butter_1_to_robot0_eef_pos": [
+      3
+    ],
+    "butter_1_to_robot0_eef_quat": [
+      4
+    ],
+    "basket_1_pos": [
+      3
+    ],
+    "basket_1_quat": [
+      4
+    ],
+    "basket_1_to_robot0_eef_pos": [
+      3
+    ],
+    "basket_1_to_robot0_eef_quat": [
+      4
+    ],
+    "robot0_proprio-state": [
+      39
+    ],
+    "object-state": [
+      112
+    ]
+  },
+  "done": false,
+  "action_dim": 7
+}

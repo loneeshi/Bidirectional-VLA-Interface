@@ -1,0 +1,5 @@
+{
+  "instruction_limit_mode": "schema-characters",
+  "coordinator_mode": "memory-recovery",
+  "authorization_id": "TAPT009"
+}

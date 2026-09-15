@@ -1,0 +1,26 @@
+{
+  "standard-character-fix": {
+    "successes": 5,
+    "episodes": 5,
+    "steps": 1260,
+    "requests": 57
+  },
+  "tapt-old-character-fix": {
+    "successes": 5,
+    "episodes": 5,
+    "steps": 1258,
+    "requests": 50
+  },
+  "tapt-old-memory-recovery": {
+    "successes": 4,
+    "episodes": 5,
+    "steps": 1188,
+    "requests": 49
+  },
+  "tapt-new-memory-recovery": {
+    "successes": 5,
+    "episodes": 5,
+    "steps": 1268,
+    "requests": 43
+  }
+}
