@@ -1,0 +1,444 @@
+[
+  {
+    "action_step": 19,
+    "pre_action_relative_base_delta": [
+      -0.001231472473591566,
+      5.650520324707031e-05,
+      0.003347158432006836
+    ],
+    "largest_joint_position_differences": {
+      "torso_lift_joint": 0.006981357932090759,
+      "wrist_roll_joint": -0.0128670334815979,
+      "forearm_roll_joint": -0.022928372025489807
+    },
+    "pre_action_finger_qpos_C": [
+      0.04978732764720917,
+      0.049929432570934296
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.04971466585993767,
+      0.04986198619008064
+    ],
+    "action_gripper_C": 0.9832648038864136,
+    "action_gripper_teacher": 0.9869122505187988,
+    "action_base_C": [
+      0.9503301382064819,
+      0.09061888605356216
+    ],
+    "action_base_teacher": [
+      0.9935082793235779,
+      0.1113147959113121
+    ],
+    "arm_action_error_l2": 0.09925403763519629,
+    "grasp_C": false,
+    "grasp_teacher": false
+  },
+  {
+    "action_step": 20,
+    "pre_action_relative_base_delta": [
+      -0.0007356214337050915,
+      0.0002824068069458008,
+      0.0003027915954589844
+    ],
+    "largest_joint_position_differences": {
+      "upperarm_roll_joint": 0.009498536586761475,
+      "wrist_roll_joint": -0.012022405862808228,
+      "forearm_roll_joint": -0.020942211151123047
+    },
+    "pre_action_finger_qpos_C": [
+      0.04962262883782387,
+      0.04984370619058609
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.04962124675512314,
+      0.049850624054670334
+    ],
+    "action_gripper_C": 0.975882887840271,
+    "action_gripper_teacher": 0.9890438318252563,
+    "action_base_C": [
+      0.9769020676612854,
+      0.15324750542640686
+    ],
+    "action_base_teacher": [
+      0.9916855692863464,
+      0.14457367360591888
+    ],
+    "arm_action_error_l2": 0.12061690284474345,
+    "grasp_C": false,
+    "grasp_teacher": false
+  },
+  {
+    "action_step": 21,
+    "pre_action_relative_base_delta": [
+      -0.0003036069683730602,
+      0.0007828474044799805,
+      0.0013277530670166016
+    ],
+    "largest_joint_position_differences": {
+      "wrist_roll_joint": -0.008786410093307495,
+      "torso_lift_joint": 0.011034026741981506,
+      "forearm_roll_joint": -0.02282482385635376
+    },
+    "pre_action_finger_qpos_C": [
+      0.04939022660255432,
+      0.0497647300362587
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.04953514784574509,
+      0.049923595041036606
+    ],
+    "action_gripper_C": 0.9904597997665405,
+    "action_gripper_teacher": 0.9902328848838806,
+    "action_base_C": [
+      0.9543144702911377,
+      0.390180379152298
+    ],
+    "action_base_teacher": [
+      0.983881413936615,
+      0.22907131910324097
+    ],
+    "arm_action_error_l2": 0.18318374123111167,
+    "grasp_C": false,
+    "grasp_teacher": false
+  },
+  {
+    "action_step": 22,
+    "pre_action_relative_base_delta": [
+      -0.000888447742909193,
+      0.0013390779495239258,
+      0.024073123931884766
+    ],
+    "largest_joint_position_differences": {
+      "torso_lift_joint": 0.009254656732082367,
+      "shoulder_pan_joint": -0.014914393424987793,
+      "forearm_roll_joint": -0.022445499897003174
+    },
+    "pre_action_finger_qpos_C": [
+      0.04913708195090294,
+      0.05000000074505806
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.04938454180955887,
+      0.05000000074505806
+    ],
+    "action_gripper_C": 0.9597328305244446,
+    "action_gripper_teacher": 0.9898406267166138,
+    "action_base_C": [
+      0.9392313361167908,
+      0.23825165629386902
+    ],
+    "action_base_teacher": [
+      0.9666344523429871,
+      0.2313281148672104
+    ],
+    "arm_action_error_l2": 0.21458278298167816,
+    "grasp_C": false,
+    "grasp_teacher": false
+  },
+  {
+    "action_step": 23,
+    "pre_action_relative_base_delta": [
+      -0.0012625264935195446,
+      0.002254962921142578,
+      0.027324676513671875
+    ],
+    "largest_joint_position_differences": {
+      "wrist_roll_joint": -0.009622752666473389,
+      "elbow_flex_joint": 0.012860804796218872,
+      "forearm_roll_joint": -0.020836174488067627
+    },
+    "pre_action_finger_qpos_C": [
+      0.049154721200466156,
+      0.05000000074505806
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.049517206847667694,
+      0.049920909106731415
+    ],
+    "action_gripper_C": -1.0,
+    "action_gripper_teacher": -0.9701060652732849,
+    "action_base_C": [
+      -0.03933810442686081,
+      -0.4446040093898773
+    ],
+    "action_base_teacher": [
+      0.31310659646987915,
+      -0.26308393478393555
+    ],
+    "arm_action_error_l2": 0.6193589019706618,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 24,
+    "pre_action_relative_base_delta": [
+      0.00016148807480931282,
+      0.004469633102416992,
+      0.0026090145111083984
+    ],
+    "largest_joint_position_differences": {
+      "shoulder_lift_joint": -0.01624584197998047,
+      "forearm_roll_joint": -0.020557910203933716,
+      "elbow_flex_joint": 0.0362524688243866
+    },
+    "pre_action_finger_qpos_C": [
+      0.02638397365808487,
+      0.03538171201944351
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.03463076800107956,
+      0.038255732506513596
+    ],
+    "action_gripper_C": -1.0,
+    "action_gripper_teacher": -0.880711019039154,
+    "action_base_C": [
+      -0.7412437200546265,
+      -0.6749759912490845
+    ],
+    "action_base_teacher": [
+      -0.6591321229934692,
+      -0.04507116228342056
+    ],
+    "arm_action_error_l2": 0.8464649017958916,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 25,
+    "pre_action_relative_base_delta": [
+      0.0021075201220810413,
+      0.006639003753662109,
+      -0.08548736572265625
+    ],
+    "largest_joint_position_differences": {
+      "shoulder_pan_joint": 0.02954399585723877,
+      "forearm_roll_joint": -0.03006044030189514,
+      "elbow_flex_joint": 0.041551560163497925
+    },
+    "pre_action_finger_qpos_C": [
+      0.012771861627697945,
+      0.04442226141691208
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.03361230716109276,
+      0.03936482220888138
+    ],
+    "action_gripper_C": -1.0,
+    "action_gripper_teacher": -0.4492552876472473,
+    "action_base_C": [
+      -0.7934679388999939,
+      -0.7503737211227417
+    ],
+    "action_base_teacher": [
+      -0.5138088464736938,
+      -0.02051527239382267
+    ],
+    "arm_action_error_l2": 0.3943954934992194,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 26,
+    "pre_action_relative_base_delta": [
+      0.00562753202393651,
+      0.007199764251708984,
+      -0.19908499717712402
+    ],
+    "largest_joint_position_differences": {
+      "elbow_flex_joint": 0.028816521167755127,
+      "upperarm_roll_joint": -0.043415367603302,
+      "forearm_roll_joint": -0.048165857791900635
+    },
+    "pre_action_finger_qpos_C": [
+      0.0041862549260258675,
+      0.048255328088998795
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.034330837428569794,
+      0.03896831348538399
+    ],
+    "action_gripper_C": -1.0,
+    "action_gripper_teacher": -0.6994718909263611,
+    "action_base_C": [
+      -0.7592901587486267,
+      -0.9948115348815918
+    ],
+    "action_base_teacher": [
+      -0.46622544527053833,
+      -0.02275940217077732
+    ],
+    "arm_action_error_l2": 3.6124887285310643,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 27,
+    "pre_action_relative_base_delta": [
+      0.011282820720225573,
+      0.008012175559997559,
+      -0.3476996421813965
+    ],
+    "largest_joint_position_differences": {
+      "wrist_flex_joint": -0.08483624458312988,
+      "upperarm_roll_joint": -0.1193777322769165,
+      "forearm_roll_joint": -0.12170973420143127
+    },
+    "pre_action_finger_qpos_C": [
+      5.571238943957724e-05,
+      0.03548036143183708
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.03472336754202843,
+      0.03838498517870903
+    ],
+    "action_gripper_C": 0.9672673940658569,
+    "action_gripper_teacher": -0.7007502913475037,
+    "action_base_C": [
+      1.0,
+      0.344127893447876
+    ],
+    "action_base_teacher": [
+      -0.4179404079914093,
+      -0.007078232709318399
+    ],
+    "arm_action_error_l2": 3.9036539200975726,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 28,
+    "pre_action_relative_base_delta": [
+      0.014167268294841051,
+      -0.001168966293334961,
+      -0.3235640525817871
+    ],
+    "largest_joint_position_differences": {
+      "wrist_flex_joint": -0.16439664363861084,
+      "upperarm_roll_joint": -0.18109726905822754,
+      "forearm_roll_joint": -0.1971512734889984
+    },
+    "pre_action_finger_qpos_C": [
+      0.01895492896437645,
+      0.04129001498222351
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.030804067850112915,
+      0.041956424713134766
+    ],
+    "action_gripper_C": -0.9554099440574646,
+    "action_gripper_teacher": -0.6719803810119629,
+    "action_base_C": [
+      -0.7323305010795593,
+      -0.9191403985023499
+    ],
+    "action_base_teacher": [
+      -0.346188485622406,
+      0.009715832769870758
+    ],
+    "arm_action_error_l2": 3.44203259148413,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 29,
+    "pre_action_relative_base_delta": [
+      0.012756664771586657,
+      -0.008975982666015625,
+      -0.4537186622619629
+    ],
+    "largest_joint_position_differences": {
+      "upperarm_roll_joint": -0.22748184204101562,
+      "wrist_flex_joint": -0.2357712984085083,
+      "forearm_roll_joint": -0.24468892812728882
+    },
+    "pre_action_finger_qpos_C": [
+      0.008464827202260494,
+      0.02205476723611355
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.028056995943188667,
+      0.044739946722984314
+    ],
+    "action_gripper_C": -1.0,
+    "action_gripper_teacher": -0.979834258556366,
+    "action_base_C": [
+      -0.8888798952102661,
+      -0.929395854473114
+    ],
+    "action_base_teacher": [
+      -0.22558559477329254,
+      -0.027378318831324577
+    ],
+    "arm_action_error_l2": 3.289745151506641,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 30,
+    "pre_action_relative_base_delta": [
+      0.020109106320887804,
+      -0.009734630584716797,
+      -0.5939805507659912
+    ],
+    "largest_joint_position_differences": {
+      "upperarm_roll_joint": -0.2580227851867676,
+      "forearm_roll_joint": -0.27550245076417923,
+      "wrist_flex_joint": -0.30287718772888184
+    },
+    "pre_action_finger_qpos_C": [
+      0.0014427610440179706,
+      0.009325608611106873
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.027239080518484116,
+      0.04565420001745224
+    ],
+    "action_gripper_C": -0.8660188317298889,
+    "action_gripper_teacher": -0.9742341637611389,
+    "action_base_C": [
+      -0.6477416157722473,
+      -0.39135637879371643
+    ],
+    "action_base_teacher": [
+      -0.23279185593128204,
+      0.01251981221139431
+    ],
+    "arm_action_error_l2": 2.443461946208484,
+    "grasp_C": false,
+    "grasp_teacher": true
+  },
+  {
+    "action_step": 31,
+    "pre_action_relative_base_delta": [
+      0.03462203266099095,
+      -0.007199406623840332,
+      -0.6662919521331787
+    ],
+    "largest_joint_position_differences": {
+      "elbow_flex_joint": -0.27833251655101776,
+      "upperarm_roll_joint": -0.3055451512336731,
+      "wrist_flex_joint": -0.3520064353942871
+    },
+    "pre_action_finger_qpos_C": [
+      0.0,
+      0.003926804289221764
+    ],
+    "pre_action_finger_qpos_teacher": [
+      0.029872272163629532,
+      0.04302561283111572
+    ],
+    "action_gripper_C": -1.0,
+    "action_gripper_teacher": -0.9035985469818115,
+    "action_base_C": [
+      -0.7672516107559204,
+      -0.9420474767684937
+    ],
+    "action_base_teacher": [
+      -0.16499784588813782,
+      0.03148600831627846
+    ],
+    "arm_action_error_l2": 2.6443379328146386,
+    "grasp_C": false,
+    "grasp_teacher": true
+  }
+]
