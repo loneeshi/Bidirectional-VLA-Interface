@@ -180,6 +180,21 @@ Specifically, these examples use the benchmark's **validation** initialization
 as held-out validation scores. A benchmark study must use permitted training
 data and untouched evaluation episodes, with a declared sensor protocol.
 
+## Pinned upstream static-check caveat
+
+The pinned ManiSkill Fetch `is_static()` compares joint velocities directly to
+positive thresholds without taking absolute values (`body_qvel <= threshold`
+and `base_qvel <= base_threshold`). Negative velocities can therefore pass
+regardless of magnitude. In C4/C5 the navigation handoff reports static while
+base qvel is approximately (-0.563, -0.819, -0.196), about 0.99 m/s planar speed.
+B11 also reports static with approximately -1.20 rad/s base angular velocity.
+This is a verified sign-check issue in the pinned implementation, not proof that
+it is the sole cause of pi05 failure. Existing runs retain the official checks;
+no success result was manufactured by changing them. Future handoff evaluation
+must inspect absolute measured velocity independently of this boolean.
+
+Source: [pinned Fetch implementation, is_static](https://github.com/haosulab/ManiSkill/blob/17121e3f96e3ee3ed0c03610b17f8bc2864617af/mani_skill/agents/robots/fetch/fetch.py#L400).
+
 ## Result fields
 
 `first_object_chain_success` requires four consecutive successful
