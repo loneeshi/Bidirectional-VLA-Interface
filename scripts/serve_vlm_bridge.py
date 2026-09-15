@@ -60,6 +60,17 @@ class SSHSpool:
 
     def reply(self, attempt_id: str, local_file: Path) -> None:
         validate_bridge_id(attempt_id)
+        # Retry only delivery of an immutable cached response, never the API.
+        for attempt in range(3):
+            try:
+                self._reply_once(attempt_id, local_file)
+                return
+            except (RuntimeError, subprocess.TimeoutExpired):
+                if attempt == 2:
+                    raise
+                time.sleep(1)
+
+    def _reply_once(self, attempt_id: str, local_file: Path) -> None:
         target = f"{self.directory}/{attempt_id}/response.upload.json"
         transfer = subprocess.run(["scp", "-F", str(self.config), "-o", "BatchMode=yes",
             str(local_file), f"{self.alias}:{target}"], capture_output=True, text=True, timeout=30)

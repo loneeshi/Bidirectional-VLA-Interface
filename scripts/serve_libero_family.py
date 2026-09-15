@@ -164,6 +164,7 @@ if __name__ == "__main__":
     p.add_argument("--checkpoint", required=True)
     p.add_argument("--adapters", required=True)
     p.add_argument("--audit-data")
+    p.add_argument("--skip-predictions", type=int, default=0)
     p.add_argument(
         "--audit-output", default="/workspace/tapt/evidence/family-routing-audit.json"
     )
@@ -171,6 +172,10 @@ if __name__ == "__main__":
     policy = FamilyPolicy(a.checkpoint, a.adapters)
     if a.audit_data:
         audit_routing(policy, a.audit_data, a.audit_output)
+    if a.skip_predictions < 0:
+        raise ValueError("Prediction count must be nonnegative")
+    for _ in range(a.skip_predictions):
+        policy.rng, _ = jax.random.split(policy.rng)
     websocket_policy_server.WebsocketPolicyServer(
         policy, host="127.0.0.1", port=8000, metadata=policy.metadata
     ).serve_forever()
