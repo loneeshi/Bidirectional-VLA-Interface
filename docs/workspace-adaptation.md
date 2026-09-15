@@ -166,3 +166,28 @@ manipulation controls match pi output after the declared clamp/head mask,
 that grasp persists through carry, and that the target is released at the goal.
 Inspect the video in addition to the automated checks. Training loss and
 teacher-forced action error are not substitutes for online task success.
+
+## Optional language-input diagnostic
+
+V7/V8 training uses the recorded task-ID template, such as
+`Pick and stably hold object 002_master_chef_can-0.` and
+`Place object 002_master_chef_can-0 at its task-plan target region.`
+This does not explicitly describe object appearance or the destination. In this
+single-scene pilot the model can learn a scene-specific mapping; the instruction
+does not define a general goal-grounding interface for arbitrary destinations.
+
+For a separately labelled **inference-only** language diagnostic, add:
+
+```bash
+--manipulation-instructions configs/manipulation-seed1-descriptive.json \
+--expected-plan-uid tidy_house-sequential-val-90-0
+```
+
+These hand-authored descriptions refer to the blue can and gray armchair seat.
+They are not VLM-generated instructions or numeric simulator poses. The exact
+prompt and its `instruction_source` are logged. A supplied map with a missing
+skill entry is rejected; there is no silent fallback. Combining this override
+with demonstration export is rejected because that exporter currently labels
+data with the task-plan template. The default V8 evaluation does not enable
+this override. Its effect is unverified and would be an inference-time language
+change relative to training, not evidence of an improved trained policy by itself.
