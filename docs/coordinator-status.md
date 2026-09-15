@@ -15,7 +15,7 @@ The remaining text describes the earlier baseline and why this extension was nec
 | Normal PPO/SAC |8|229|Navigate→Pick→carry Navigate→Place completed|
 | Synthetic closure fault + PPO/SAC |8|317|Six-step injected closure caused `missed_grasp`; VLM selected retry, Pick completed51steps later, then carry and Place completed|
 
-[Normal video](media/organizer-normal.mp4) · [Injected-fault recovery video](media/organizer-injected-fault-recovery.mp4) · [Normal audit](results/organizer006-normal.json) · [Fault audit](results/organizer006-fault.json) · [Per-call API usage](results/organizer006-api-usage.json).
+[Normal video — organizer-normal.mp4](media/organizer-2026-09-15/organizer-normal.mp4) · [Injected-fault recovery video — organizer-injected-fault-recovery.mp4](media/organizer-2026-09-15/organizer-injected-fault-recovery.mp4) · [Normal audit](results/organizer006-normal.json) · [Fault audit](results/organizer006-fault.json) · [Per-call API usage](results/organizer006-api-usage.json).
 
 Both use GPT-5.6 Luna through the local-key SSH bridge, actual current workspace/wrist images, official PPO navigation and SAC manipulation. Normal invocations are capped at40steps; the fault test uses60steps. The fault is explicitly injected once by `InjectedClosureFault`, not a natural model failure. Both passed native first-object progress and grasp-on-every-carry-step checks; video contact sheets were visually inspected. The fault test reached the fourth subtask at the last allowed call, so its original summary says `experiment_call_limit` despite completing that boundary. The raw record is preserved; the runner now prioritizes an achieved boundary before loop exhaustion.
 

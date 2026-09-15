@@ -505,7 +505,7 @@
   ],
   "total_real_lightnav_predictions": 56,
   "video": {
-    "path": "../media/lightnav-control-003-trial2.mp4",
+    "path": "../media/lightnav-control-003/lightnav-control-003-trial2.mp4",
     "seconds": 13.55,
     "fps": 20,
     "size": [

@@ -48,8 +48,8 @@ completion semantics: [pinned MS-HAB environment](https://github.com/arth-shukla
 
 Service-start/connection failures are logged separately from executed model
 failures. Success is not established by any individual successful component.
-The [complete B chain](media/B-lightnav-sac.mp4) is now verified for one object.
-[A's clean reference video](media/A-ppo-sac-clean.mp4) uses the same camera augmentation.
+The [complete B chain — B-lightnav-sac.mp4](media/abcd-baseline-reference/B-lightnav-sac.mp4) is now verified for one object.
+[A's clean reference video — A-ppo-sac-clean.mp4](media/abcd-baseline-reference/A-ppo-sac-clean.mp4) uses the same camera augmentation.
 
 ## Fetch pi0.5 adaptation
 
@@ -86,8 +86,8 @@ variants still failed Pick:
 | C3 | PPO, 29 steps | 10 steps per prediction | Pick failed after 86 steps |
 | D1 | LightNav, 77 steps | 10 steps per prediction | Pick failed after 80 steps |
 
-[C2 failure video](media/C-pi05-state-failed.mp4) and
-[D1 failure video](media/D-lightnav-pi05-state-failed.mp4) show real model control,
+[C2 failure video — C-pi05-state-failed.mp4](media/pi05-state-adaptation/C-pi05-state-failed.mp4) and
+[D1 failure video — D-lightnav-pi05-state-failed.mp4](media/pi05-state-adaptation/D-lightnav-pi05-state-failed.mp4) show real model control,
 not successful tasks. Neither rollout switched to SAC manipulation. Training
 loss at step 1990 was 0.0310; that number did not predict task success.
 
@@ -289,8 +289,8 @@ V7 results (same checkpoint, 10 denoising steps):
 The executed controls match the logged pi actions after declared clipping and
 stationary-head masking. There is no SAC manipulation fallback in these runs.
 [Full audits](results/abcd-workspace-failures.json),
-[C10 failure video](media/C-pi05-workspace-failed.mp4),
-[D7 failure video](media/D-lightnav-pi05-workspace-failed.mp4).
+[C10 failure video — C-pi05-workspace-failed.mp4](media/pi05-workspace-adaptation/C-pi05-workspace-failed.mp4),
+[D7 failure video — D-lightnav-pi05-workspace-failed.mp4](media/pi05-workspace-adaptation/D-lightnav-pi05-workspace-failed.mp4).
 The V7 inference archive SHA256 is
 `7892c5f1bfadbafc1feeee7ee4b3f5c510e68972a60a20d19a9abda9c1718550`.
 

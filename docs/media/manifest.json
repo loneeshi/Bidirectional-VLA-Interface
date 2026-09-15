@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "path_base": "docs/media",
+  "videos": [
+    {
+      "filename": "vlm-seed1.mp4",
+      "path": "vlm-baseline-2026-09-14/vlm-seed1.mp4",
+      "previous_path": "vlm-seed1.mp4",
+      "sha256": "ea8aaed4ea75aacdcc9d5e8fd92d206bb91a8be01d2f2941ad06c47706dd6d7a",
+      "bytes": 2229549
+    },
+    {
+      "filename": "lightnav-control-003-trial2.mp4",
+      "path": "lightnav-control-003/lightnav-control-003-trial2.mp4",
+      "previous_path": "lightnav-control-003-trial2.mp4",
+      "sha256": "e499865e6f824015580e23155182062dec5d3fb3b96ae3dd88b26fc46545029b",
+      "bytes": 927255
+    },
+    {
+      "filename": "fetch-hold-calibration.mp4",
+      "path": "fetch-grasp-hold-calibration/fetch-hold-calibration.mp4",
+      "previous_path": "fetch-hold-calibration.mp4",
+      "sha256": "6e051f9f515198720c1f21e095dd6784c6ccde54d871b672e1a2d850ff15d8f9",
+      "bytes": 383997
+    },
+    {
+      "filename": "A-ppo-sac-clean.mp4",
+      "path": "abcd-baseline-reference/A-ppo-sac-clean.mp4",
+      "previous_path": "A-ppo-sac-clean.mp4",
+      "sha256": "537d0722d4b6d6d696b798cadeba6b479483220157a82a83c99db2681baab983",
+      "bytes": 874407
+    },
+    {
+      "filename": "B-lightnav-sac.mp4",
+      "path": "abcd-baseline-reference/B-lightnav-sac.mp4",
+      "previous_path": "B-lightnav-sac.mp4",
+      "sha256": "1b9f694b4b2d55b74a6c3cc1f61fbc554140d46a5b3b9227be3757ba81f7834d",
+      "bytes": 842713
+    },
+    {
+      "filename": "C-pi05-state-failed.mp4",
+      "path": "pi05-state-adaptation/C-pi05-state-failed.mp4",
+      "previous_path": "C-pi05-state-failed.mp4",
+      "sha256": "946bf5495adb564df1466cd2aa950aa2df5003e95d2102762d6306abbaa86403",
+      "bytes": 375879
+    },
+    {
+      "filename": "D-lightnav-pi05-state-failed.mp4",
+      "path": "pi05-state-adaptation/D-lightnav-pi05-state-failed.mp4",
+      "previous_path": "D-lightnav-pi05-state-failed.mp4",
+      "sha256": "020cec03a07751c985db7bd1e840719006e481b8f1d923e61281dff2147d5d60",
+      "bytes": 537176
+    },
+    {
+      "filename": "C-pi05-recovery-failed.mp4",
+      "path": "pi05-recovery-adaptation/C-pi05-recovery-failed.mp4",
+      "previous_path": "C-pi05-recovery-failed.mp4",
+      "sha256": "070d9cda5f7f4c3697e027d6e558d41b67729d199fe3c9a8ccbfef0388092ac7",
+      "bytes": 435291
+    },
+    {
+      "filename": "D-lightnav-pi05-recovery-failed.mp4",
+      "path": "pi05-recovery-adaptation/D-lightnav-pi05-recovery-failed.mp4",
+      "previous_path": "D-lightnav-pi05-recovery-failed.mp4",
+      "sha256": "b33112eb385a8a315f133f20e96a59b572821fb7ec2b9e6ddd5494a961e3d736",
+      "bytes": 567176
+    },
+    {
+      "filename": "C-pi05-workspace-failed.mp4",
+      "path": "pi05-workspace-adaptation/C-pi05-workspace-failed.mp4",
+      "previous_path": "C-pi05-workspace-failed.mp4",
+      "sha256": "f076658ff19f66eb3e4745aee8bbf08aab919ad5c7745242f47bebf3d3930196",
+      "bytes": 304754
+    },
+    {
+      "filename": "D-lightnav-pi05-workspace-failed.mp4",
+      "path": "pi05-workspace-adaptation/D-lightnav-pi05-workspace-failed.mp4",
+      "previous_path": "D-lightnav-pi05-workspace-failed.mp4",
+      "sha256": "5b64e4ace17aa306948d32ea85914530161ce8871dee648560856f220e7b5141",
+      "bytes": 520988
+    },
+    {
+      "filename": "C-v8-recovery-failed.mp4",
+      "path": "pi05-v8-recovery/C-v8-recovery-failed.mp4",
+      "previous_path": "C-v8-recovery-failed.mp4",
+      "sha256": "3105416705a1d8a9ad348fa6d2e734015a6bb9c07ed7afc17d9f8ee213b0f9cc",
+      "bytes": 632306
+    },
+    {
+      "filename": "D-v8-recovery-failed.mp4",
+      "path": "pi05-v8-recovery/D-v8-recovery-failed.mp4",
+      "previous_path": "D-v8-recovery-failed.mp4",
+      "sha256": "480916744a40bd456a0c36410ada05fe43655c41bbd3344a71828c20ada068a2",
+      "bytes": 779250
+    },
+    {
+      "filename": "organizer-normal.mp4",
+      "path": "organizer-2026-09-15/organizer-normal.mp4",
+      "previous_path": "organizer-normal.mp4",
+      "sha256": "b0570415cb710e199ca433bb7d6f897a5f7a46d1c3d9d10b02d3fc2c80b8b325",
+      "bytes": 668761
+    },
+    {
+      "filename": "organizer-injected-fault-recovery.mp4",
+      "path": "organizer-2026-09-15/organizer-injected-fault-recovery.mp4",
+      "previous_path": "organizer-injected-fault-recovery.mp4",
+      "sha256": "be9395c98df789d75750b58ff0d00ebef1cb41b5149b38905e5300b364cfb1e3",
+      "bytes": 1074922
+    }
+  ]
+}

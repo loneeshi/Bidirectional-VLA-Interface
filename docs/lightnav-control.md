@@ -1,6 +1,6 @@
 # LightNav control diagnostic: actual motion, no task success
 
-[Rollout video](media/lightnav-control-003-trial2.mp4) · [Structured evidence](results/lightnav-control-003.json) · [Official-policy grasp/hold calibration](media/fetch-hold-calibration.mp4)
+[Rollout video — lightnav-control-003-trial2.mp4](media/lightnav-control-003/lightnav-control-003-trial2.mp4) · [Structured evidence](results/lightnav-control-003.json) · [Official-policy grasp/hold calibration — fetch-hold-calibration.mp4](media/fetch-grasp-hold-calibration/fetch-hold-calibration.mp4)
 
 The 512×512, 20 FPS video contains actual MS-HAB frames without the verbose
 parameter overlay. It shows LightNav controlling Fetch for 270 steps (13.5 seconds
