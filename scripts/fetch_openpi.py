@@ -15,19 +15,20 @@ import sys
 import numpy as np
 
 
-def convert(runs, repo_id):
+def convert(runs, repo_id, include_velocity=False):
     from PIL import Image
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
     features = {
         'image': {'dtype': 'image', 'shape': (128,128,3), 'names': ['height','width','channel']},
         'wrist_image': {'dtype': 'image', 'shape': (128,128,3), 'names': ['height','width','channel']},
-        'state': {'dtype': 'float32', 'shape': (15,), 'names': ['state']},
+        'state': {'dtype': 'float32', 'shape': (30 if include_velocity else 15,), 'names': ['state']},
         'actions': {'dtype': 'float32', 'shape': (13,), 'names': ['actions']},
     }
     dataset = LeRobotDataset.create(repo_id=repo_id, robot_type='fetch', fps=20,
         features=features, image_writer_threads=2, image_writer_processes=0)
     manifest = {'repo_id': repo_id, 'split': 'seed1_training_diagnostic', 'segments': [],
-                'action_convention': 'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity'}
+                'action_convention': 'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity',
+                'state_components':['qpos','qvel'] if include_velocity else ['qpos']}
     joint_order = None
     for directory in map(Path, runs):
         events = [json.loads(line) for line in (directory/'events.jsonl').read_text().splitlines()]
@@ -41,9 +42,10 @@ def convert(runs, repo_id):
                 if joint_order is None: joint_order = row['joint_names']
                 if row['joint_names'] != joint_order: raise ValueError('Joint order changed')
                 state = np.asarray(row['qpos'][0], np.float32)
+                if include_velocity: state=np.concatenate([state,np.asarray(row['qvel'][0],np.float32)])
                 # Match post-wrapper actions, including official stationary-head masking.
                 action = np.asarray(applied[row['next_frame_id']], np.float32)
-                if state.shape != (15,) or action.shape != (13,): raise ValueError('Contract mismatch')
+                if state.shape != (30 if include_velocity else 15,) or action.shape != (13,): raise ValueError('Contract mismatch')
                 if not np.isfinite(state).all() or not np.isfinite(action).all(): raise ValueError('Nonfinite data')
                 if (abs(action)>1.00001).any(): raise ValueError('Unnormalized controller actions')
                 def frame(camera):
@@ -63,7 +65,7 @@ def convert(runs, repo_id):
     print(json.dumps(manifest,indent=2))
 
 
-def config(repo_id, work, steps=1000, batch=4,state_input=True):
+def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=False,init_checkpoint=None):
     from openpi import transforms
     from openpi.models import pi0_config
     from openpi.policies import libero_policy
@@ -84,16 +86,18 @@ def config(repo_id, work, steps=1000, batch=4,state_input=True):
 
     model=pi0_config.Pi0Config(pi05=True,action_horizon=10,discrete_state_input=state_input,
         paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora')
-    return c.TrainConfig(name='pi05_fetch_lora_state' if state_input else 'pi05_fetch_lora',exp_name='seed1-diagnostic',model=model,
+    name='pi05_fetch_lora_velocity' if include_velocity else ('pi05_fetch_lora_state' if state_input else 'pi05_fetch_lora')
+    return c.TrainConfig(name=name,exp_name='seed1-diagnostic',model=model,
         data=FetchData(repo_id=repo_id,base_config=c.DataConfig(prompt_from_task=True),
                        extra_delta_transform=False),
-        weight_loader=weight_loaders.CheckpointWeightLoader('gs://openpi-assets/checkpoints/pi05_base/params'),
+        weight_loader=weight_loaders.CheckpointWeightLoader(init_checkpoint or 'gs://openpi-assets/checkpoints/pi05_base/params'),
         freeze_filter=model.get_freeze_filter(),ema_decay=None,batch_size=batch,num_workers=0,
         num_train_steps=steps,log_interval=10,save_interval=min(500,max(100,steps//4)),keep_period=None,
         assets_base_dir=str(Path(work)/'assets'), checkpoint_base_dir=str(Path(work)/'checkpoints'),
         lr_schedule=optimizer.CosineDecaySchedule(warmup_steps=20,peak_lr=1e-4,
                                                   decay_steps=steps,decay_lr=1e-5),
-        wandb_enabled=False,policy_metadata={'robot':'fetch','state_dim':15,'action_dim':13,
+        wandb_enabled=False,policy_metadata={'robot':'fetch','state_dim':30 if include_velocity else 15,'action_dim':13,
+            'state_components':['qpos','qvel'] if include_velocity else ['qpos'],
             'state_conditioning':state_input,
             'action_convention':'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity',
             'training_repo':repo_id,'evaluation_scope':'training-scene-diagnostic'})
@@ -109,12 +113,16 @@ def main():
     p.add_argument('--steps',type=int,default=1000)
     p.add_argument('--batch',type=int,default=4)
     p.add_argument('--checkpoint')
+    p.add_argument('--init-checkpoint',help='Explicit parameter directory for a warm-start experiment')
+    p.add_argument('--include-velocity',action='store_true',help='Use named qpos and qvel (30 robot state values)')
     p.add_argument('--no-state-input',action='store_true',help='Historical vision-only pilot reproduction, not recommended for Fetch')
     p.add_argument('--port',type=int,default=8051)
     a=p.parse_args()
-    if a.mode=='convert': return convert(a.runs,a.repo_id)
+    if a.include_velocity and a.no_state_input: p.error('Velocity experiment requires state conditioning')
+    if a.mode=='convert': return convert(a.runs,a.repo_id,a.include_velocity)
     sys.path.insert(0,a.openpi_root)
-    cfg=config(a.repo_id,a.work,a.steps,a.batch,state_input=not a.no_state_input)
+    cfg=config(a.repo_id,a.work,a.steps,a.batch,state_input=not a.no_state_input,
+        include_velocity=a.include_velocity,init_checkpoint=a.init_checkpoint)
     if a.mode=='norm':
         from scripts.compute_norm_stats import create_torch_dataloader
         from openpi.shared import normalize
