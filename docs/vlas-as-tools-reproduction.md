@@ -1,12 +1,12 @@
 # VLAs-as-Tools reproduction: priority and acceptance gates
 
-Status: source and local-code audit, 2026-09-15. No TAPT training or new paid experiment has been run for this milestone. This supersedes organizer-only development as the immediate research priority.
+Status: source and local-code audit, 2026-09-15. **Availability correction:** [relevant code was found in the co-first author's public OpenPI fork](vlas-as-tools-code-audit.md); inspect and reuse it before reimplementing. LIBERO is the first reproduction environment. No TAPT training or new paid experiment has been run for this milestone. This supersedes organizer-only development as the immediate research priority.
 
 ## Verified source
 
 [Lei et al., arXiv:2605.13119v1](https://arxiv.org/pdf/2605.13119), Sections 3–4, 5.1 and Appendices A–D:
 
-The invocation pairs a family selector with a grounded instruction. Family-specific low-rank residuals share a backbone. An auxiliary head predicts invocation-local progress for event-triggered intervention. TAPT combines invocation-aligned action supervision and progress regression; intermediate DROID-split post-training precedes benchmark adaptation. The experiments use LIBERO, RoboTwin and CALVIN, not MS-HAB. The abstract says code will be released. Searches by title, identifier and TAPT did not establish an official implementation or released split/checkpoint package; availability remains unconfirmed.
+The invocation pairs a family selector with a grounded instruction. Family-specific low-rank residuals share a backbone. An auxiliary head predicts invocation-local progress for event-triggered intervention. TAPT combines invocation-aligned action supervision and progress regression; intermediate DROID-split post-training precedes benchmark adaptation. The experiments use LIBERO, RoboTwin and CALVIN, not MS-HAB. The abstract says code will be released. Initial searches missed relevant code in an author fork. The follow-up audit linked above corrects that finding; a complete paper release and split/checkpoint package remain unverified.
 
 ## Local-code findings
 
