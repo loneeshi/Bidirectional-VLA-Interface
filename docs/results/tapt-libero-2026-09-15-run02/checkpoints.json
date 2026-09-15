@@ -1,0 +1,136 @@
+{
+  "step-0000": {
+    "step": 0,
+    "sha256": "cae202aca78f66392ee67beec87e311b7e174beda2a9db6c622a40ccd4d9ab84",
+    "metrics": {
+      "validation_joint_loss": 0.0021415199866169133,
+      "validation_trajectories": 5,
+      "validation_windows": 40
+    },
+    "families": [
+      "reach",
+      "grasp",
+      "move",
+      "release"
+    ],
+    "backbone_frozen": true,
+    "initialization": "official pi05_libero",
+    "progress_weight": 0.1,
+    "droid_post_training": false,
+    "label_source": "reviewed temporal proxy",
+    "micro_batch": 1,
+    "effective_batch": 8
+  },
+  "step-0020": {
+    "step": 20,
+    "sha256": "ef5338043f3776d60687b3b4c061abf2afa061fc475e944a6f5649d905c734f3",
+    "metrics": {
+      "validation_joint_loss": 0.0022358946600434136,
+      "family_validation": {
+        "reach": 0.002397551923058927,
+        "grasp": 0.0025121619924902915,
+        "move": 0.0015429219405632467,
+        "release": 0.0024909427840611896
+      },
+      "validation_trajectories": 5,
+      "validation_windows": 40
+    },
+    "families": [
+      "reach",
+      "grasp",
+      "move",
+      "release"
+    ],
+    "backbone_frozen": true,
+    "initialization": "official pi05_libero",
+    "progress_weight": 0.1,
+    "droid_post_training": false,
+    "label_source": "reviewed temporal proxy",
+    "micro_batch": 1,
+    "effective_batch": 8
+  },
+  "step-0200": {
+    "step": 200,
+    "sha256": "ee48e60dd979985cfd17ee126b1c703bd7c29f82907821cb2e801e66d90b67f2",
+    "metrics": {
+      "validation_joint_loss": 0.002105952104102471,
+      "family_validation": {
+        "reach": 0.0020354385545942933,
+        "grasp": 0.0023016932769678532,
+        "move": 0.001584979564358946,
+        "release": 0.002501697020488791
+      },
+      "validation_trajectories": 5,
+      "validation_windows": 40
+    },
+    "families": [
+      "reach",
+      "grasp",
+      "move",
+      "release"
+    ],
+    "backbone_frozen": true,
+    "initialization": "official pi05_libero",
+    "progress_weight": 0.1,
+    "droid_post_training": false,
+    "label_source": "reviewed temporal proxy",
+    "micro_batch": 1,
+    "effective_batch": 8
+  },
+  "step-0400": {
+    "step": 400,
+    "sha256": "d627fc395842f4beb8e6001465ac09397267328aaba8996a58bd79265c13b455",
+    "metrics": {
+      "validation_joint_loss": 0.002205605642666342,
+      "family_validation": {
+        "reach": 0.0022732634242856875,
+        "grasp": 0.0023031515011098236,
+        "move": 0.0017788824916351587,
+        "release": 0.002467125153634697
+      },
+      "validation_trajectories": 5,
+      "validation_windows": 40
+    },
+    "families": [
+      "reach",
+      "grasp",
+      "move",
+      "release"
+    ],
+    "backbone_frozen": true,
+    "initialization": "official pi05_libero",
+    "progress_weight": 0.1,
+    "droid_post_training": false,
+    "label_source": "reviewed temporal proxy",
+    "micro_batch": 1,
+    "effective_batch": 8
+  },
+  "last": {
+    "step": 400,
+    "sha256": "d627fc395842f4beb8e6001465ac09397267328aaba8996a58bd79265c13b455",
+    "metrics": {
+      "validation_joint_loss": 0.002205605642666342,
+      "family_validation": {
+        "reach": 0.0022732634242856875,
+        "grasp": 0.0023031515011098236,
+        "move": 0.0017788824916351587,
+        "release": 0.002467125153634697
+      },
+      "validation_trajectories": 5,
+      "validation_windows": 40
+    },
+    "families": [
+      "reach",
+      "grasp",
+      "move",
+      "release"
+    ],
+    "backbone_frozen": true,
+    "initialization": "official pi05_libero",
+    "progress_weight": 0.1,
+    "droid_post_training": false,
+    "label_source": "reviewed temporal proxy",
+    "micro_batch": 1,
+    "effective_batch": 8
+  }
+}
