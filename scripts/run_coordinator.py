@@ -11,6 +11,7 @@ import argparse
 import importlib.util
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import time
@@ -19,6 +20,13 @@ from bvi import (APIBudget, JsonlLogger, ProtocolError, Requirement, SerialRunti
                  SkillRequest, SkillStatus, VLMCoordinator)
 from bvi.mshab_adapter import OfficialRLSkill, jsonable, make_mshab_adapter, scalar
 from bvi.providers import AnthropicTransport, OpenAITransport
+
+
+def oracle_skill_timeout(spec_timeout: float, remaining_wall: float) -> float | None:
+    """Fit a new oracle request inside the experiment, reserving dispatch overhead."""
+    if not math.isfinite(remaining_wall) or remaining_wall <= .5:
+        return None
+    return min(spec_timeout, remaining_wall - .5)
 
 
 def load_local_credentials(path: Path) -> None:
@@ -190,6 +198,7 @@ def main() -> None:
                     max_navigation_predictions=args.max_navigation_predictions)
     metadata['mixed_teacher_collection']=args.collect_recovery_after is not None
     metadata['training_collection']=args.training_collection
+    metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
     metadata['teacher_takeover_after']=args.collect_recovery_after
     metadata['manipulation_ensemble_samples']=args.manipulation_ensemble_samples
     if args.collect_recovery_after is not None:
@@ -279,9 +288,14 @@ def main() -> None:
             if args.dry_run:
                 admissible = observation.allowed_calls[0]
                 spec = specs[admissible.skill]
+                timeout = oracle_skill_timeout(spec.timeout_seconds,
+                    args.max_wall_seconds - (time.monotonic() - started))
+                if timeout is None:
+                    reason = "experiment_wall_clock_limit"
+                    break
                 request = SkillRequest(f"oracle-{index}", admissible.skill, admissible.target_id,
                     observation.frame_id, (Requirement("benchmark-completion", "benchmark_success"),),
-                    min(spec.max_steps, args.max_env_steps - adapter.steps), spec.timeout_seconds)
+                    min(spec.max_steps, args.max_env_steps - adapter.steps), timeout)
                 logger.emit("oracle_protocol_decision", request=request, vlm=False)
             else:
                 request = coordinator.decide(observation, history)

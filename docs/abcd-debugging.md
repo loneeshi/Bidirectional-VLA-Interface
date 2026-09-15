@@ -302,6 +302,15 @@ V8 is collecting live V7 prefixes followed by SAC recovery, with unchanged RGB
 and proprioceptive inputs. Only completed successful recovery segments may train
 the model; mixed teacher trajectories remain excluded from C/D evaluation.
 
+Recovery collection also exposed an oracle scheduling issue: a 90-second default
+skill request was rejected when less than 90 seconds remained, even if Place
+could finish within the available time. New oracle requests now use the smaller
+of the skill limit and the remaining experiment time minus 0.5 seconds. The
+runtime still enforces that shorter deadline; VLM requests are not rewritten.
+The change is recorded by `oracle_timeout_policy` and the runner source hash.
+Original recovery attempts are preserved; two supplemental prefix-5 teachers
+use the corrected scheduling within the existing collection time/step budget.
+
 The pinned sequential environment's `_get_obs_extra` supplies TCP pose, object
 pose and goal position relative to the base, plus the grasp flag. The official
 depth wrapper concatenates these extra fields into the RL state. In contrast,
