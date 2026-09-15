@@ -91,10 +91,15 @@ variants still failed Pick:
 not successful tasks. Neither rollout switched to SAC manipulation. Training
 loss at step 1990 was 0.0310; that number did not predict task success.
 
-The next bounded pilot keeps the same 785 training frames, adds the measured
-15-joint velocity to the 15-joint position, and warm-starts from this Fetch
-checkpoint. This tests whether missing dynamics information contributes to the
-drift. Improvement is **unverified**. It adds robot proprioception, not hidden
+The velocity-input pilot kept the same 785 training frames, added the measured
+15-joint velocity to the 15-joint position, and warm-started from this Fetch
+checkpoint. After 2,000 steps it still failed Pick: C4 used 10 actions per
+prediction (87 manipulation steps, 9 predictions); C5 used one action per
+prediction (120 manipulation steps, 120 predictions). D2 was not run.
+C4 never grasped and accumulated force 5,222.48, exceeding the unchanged limit
+of 5,000. The initial action MSE to an expert at identical qpos was 0.00316;
+this offline comparison did not establish closed-loop success. The inputs
+add robot proprioception, not hidden
 target-object coordinates. The runtime requires explicit `state_components`
 metadata for this 30-value contract. A tokenizer check held qpos fixed and
 confirmed that varying qvel changes 30 token positions.
@@ -132,9 +137,20 @@ has not yet been tested in simulation.
 The separate `scripts/collect_recovery.py` path replays a saved failed-policy
 prefix, verifies the initial RGB hashes, and then records an actual SAC recovery.
 It makes zero live VLA predictions, declares `replay_only_prefix=true`, and stops
-after the recovery Pick. Initial C2-prefix trials of 5/10/20/30 steps recovered
-with 48/36/35/28 SAC steps respectively. These are correction demonstrations,
+after the recovery Pick. C2-prefix trials of 5/10/20/30 steps recovered
+with 48/36/35/28 SAC steps respectively; D1-prefix trials of 10/20 steps
+recovered with 31/57 steps. All six succeeded as teacher recoveries, contributing
+235 frames. These are correction demonstrations,
 not successful C/D rollouts. Only the SAC tail is eligible for training rows.
+
+The recovery-data pilot uses 1,020 frames across 26 segments (the original
+785 plus these 235), with the same 30-value qpos/qvel and 13-action contract.
+It warm-starts from the velocity pilot and allows up to 4,000 training steps.
+Its evaluation is pending; teacher recovery success is not pi05 task success.
+The input archive SHA256 is
+`5846f822403bb842234eecac98ce6f29ce651d0d645e11b5ebe709d25374d1cf`.
+The velocity-pilot checkpoint archive SHA256 is
+`d9231a13c20d8a37268636bd099d0ad914cd02753761c2205190080e5eddf7d9`.
 
 The current data intentionally overlaps the seed-1 diagnostic. A successful
 overfit demo would demonstrate closed-loop control, not held-out generalization.
