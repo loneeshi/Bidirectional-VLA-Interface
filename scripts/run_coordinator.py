@@ -76,6 +76,8 @@ def main() -> None:
     parser.add_argument('--manipulation-ensemble-samples',type=int,default=1)
     parser.add_argument('--workspace-camera',action='store_true',
                         help='Add a declared fixed oblique Fetch workspace camera (224 RGB)')
+    parser.add_argument('--training-collection',action='store_true',
+                        help='Label this run as training data, excluded from evaluation results')
     parser.add_argument('--collect-recovery-after',type=int,
                         help='Training collection only: execute N pi05 steps, then record official SAC recovery')
     parser.add_argument("--navigation-camera",choices=('fetch_head','fetch_nav'),default='fetch_head',
@@ -187,6 +189,7 @@ def main() -> None:
                     navigation_recovery_instructions=recovery_instructions,
                     max_navigation_predictions=args.max_navigation_predictions)
     metadata['mixed_teacher_collection']=args.collect_recovery_after is not None
+    metadata['training_collection']=args.training_collection
     metadata['teacher_takeover_after']=args.collect_recovery_after
     metadata['manipulation_ensemble_samples']=args.manipulation_ensemble_samples
     if args.collect_recovery_after is not None:

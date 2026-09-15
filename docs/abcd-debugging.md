@@ -160,7 +160,7 @@ The input archive SHA256 is
 The velocity-pilot checkpoint archive SHA256 is
 `d9231a13c20d8a37268636bd099d0ad914cd02753761c2205190080e5eddf7d9`.
 
-### Relative base input pilot (training; task evaluation pending)
+### Relative base input pilot (C9/D6 failed)
 
 The native pi05 tokenizer discretizes normalized state into 256 bins. In this
 dataset the base x/y quantile ranges span about 3.18/4.16 meters, giving roughly
@@ -176,8 +176,13 @@ metadata `base_position_reference=skill_start_xy`; old checkpoints keep world
 coordinates. Recovery tails use the **original learner skill-start** origin,
 verified against their source event hash, rather than the SAC takeover frame.
 Tests verify translation invariance, unchanged other state components, and
-rejection of altered recovery sources. The 1,020-frame relative-input pilot is training for up to 2,000 updates from
-the recovery checkpoint. No successful GPU result is claimed yet. Its final
+rejection of altered recovery sources. The 1,020-frame relative-input pilot completed 2,000 updates from
+the recovery checkpoint. C9 completed PPO navigation in 29 steps, then failed
+Pick after 200 pi05 predictions without grasping. D6 completed LightNav navigation
+in 85 steps (17 predictions), then failed Pick after 73 pi05 predictions with
+cumulative force 5,042.78 and no grasp. Both used chunk size 1 and 10 denoising
+steps. Relative coordinates did not establish task success. The full checkpoint
+archive SHA256 is `7afd283434da5d427851b9fd382c8fdc06c458883a3e11eb677ee561a4e58cb3`. Its final
 checkpoint stores the executed training state contract; the server rejects
 mismatched world/relative flags and requires this manifest for relative models.
 
@@ -233,6 +238,15 @@ relative-base experiment does not use this new camera. No camera-aware policy
 success is claimed. `replay_teacher_views.py` can create separately labelled
 training-only observations from recorded controls; it verifies native task
 transitions and records current state rather than copying old state labels.
+
+Longer replays did not reliably reproduce the source's task boundaries. The
+attempts, including bounded repetitions of the final recorded action, are saved
+as unsuccessful re-render experiments. The camera pilot therefore switched to
+new **live official SAC demonstrations**, with PPO or LightNav navigation.
+These runs carry `--training-collection`; their successful individual Pick/Place
+segments may train pi05, but they are not C/D results. This changes both the
+camera and the data samples, so it is not a strictly matched-data causal ablation.
+The live-camera checkpoint has not yet passed online evaluation.
 
 `first_object_chain_success` requires four consecutive successful
 Navigate/Pick/Navigate/Place invocations. `task_success` retains the environment's

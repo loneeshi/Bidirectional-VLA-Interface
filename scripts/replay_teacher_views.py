@@ -17,6 +17,7 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--max-wall-seconds',type=float,default=180)
     p.add_argument('--max-steps',type=int,default=600)
+    p.add_argument('--max-boundary-holds',type=int,default=10)
     a=p.parse_args()
     from bvi import JsonlLogger
     from bvi.mshab_adapter import make_mshab_adapter,jsonable
@@ -42,7 +43,7 @@ def main():
         source_run=str(a.source),source_events_sha256=hashlib.sha256(raw).hexdigest(),
         config=jsonable(cfg),seed=source_meta.get('seed',1),replayed_skill_origins={})
     logger=JsonlLogger(a.output/'events.jsonl',a.output.name)
-    started=time.monotonic();adapter=None;frames=0;max_drift=0.;completed=set()
+    started=time.monotonic();adapter=None;frames=0;max_drift=0.;completed=set();holds=0
     try:
         adapter=make_mshab_adapter(cfg,logger,a.output,seed=meta['seed'])
         for row in rows:
@@ -52,20 +53,41 @@ def main():
             if index!=row['subtask_before']:raise RuntimeError('Replay task pointer differs from source')
             qpos=np.asarray(jsonable(adapter.uenv.agent.robot.qpos)[0])
             meta['replayed_skill_origins'].setdefault(str(index),qpos[:2].tolist())
-            source_row=selected.get(obs.frame_id)
+            source_frame=f"seed-{meta['seed']}-step-{int(row['frame_id'].rsplit('-',1)[1])-1}"
+            source_row=selected.get(source_frame)
             adapter.record_demonstrations=source_row is not None
             if source_row is not None:
                 max_drift=max(max_drift,float(np.max(np.abs(qpos-np.asarray(source_row['qpos'][0])))))
                 frames+=1
             transition=adapter.step(row['controller_action'][0])
+            # GPU physics can reach a boundary one or more steps later than the
+            # source. Hold only the last recorded control, with explicit caps;
+            # never change state, force completion, or query a teacher model.
+            boundary_holds=0
+            while row['subtask_after']>index and transition.info['adapter_subtask_after']==index:
+                if (boundary_holds>=a.max_boundary_holds or adapter.ended or adapter.steps>=a.max_steps
+                        or time.monotonic()-started>a.max_wall_seconds):break
+                logger.emit('recorded_boundary_action_hold',source_frame=row['frame_id'],
+                            subtask_index=index,hold=boundary_holds+1)
+                transition=adapter.step(row['controller_action'][0])
+                boundary_holds+=1;holds+=1
+                if source_row is not None:frames+=1
             if source_row is not None and transition.info['adapter_subtask_after']>index:completed.add(index)
         if completed!=successful:raise RuntimeError('Replayed teacher did not complete every selected segment')
         summary={**meta,'steps':adapter.steps,'frames':frames,'completed_teacher_segments':sorted(completed),
             'max_qpos_difference_from_source':max_drift,'wall_seconds':time.monotonic()-started,
-            'training_replay_complete':True}
+            'training_replay_complete':True,'recorded_boundary_action_holds':holds}
         (a.output/'summary.json').write_text(json.dumps(summary,indent=2))
         logger.emit('experiment_finished',**summary)
         print(json.dumps(summary),flush=True)
+    except Exception as exc:
+        summary={**meta,'training_replay_complete':False,'error':str(exc),
+            'steps':None if adapter is None else adapter.steps,'frames':frames,
+            'completed_teacher_segments':sorted(completed),'recorded_boundary_action_holds':holds,
+            'max_qpos_difference_from_source':max_drift,'wall_seconds':time.monotonic()-started}
+        (a.output/'summary.json').write_text(json.dumps(summary,indent=2))
+        logger.emit('experiment_failed',**summary)
+        raise
     finally:
         (a.output/'run-metadata.json').write_text(json.dumps(meta,indent=2))
         if adapter is not None:adapter.close()
