@@ -52,7 +52,8 @@
     "optimizer": "adamw",
     "droid_intermediate_training": false,
     "augmentation": false,
-    "labels": "manually reviewed gripper/lift temporal proxy, no simulator-contact truth"
+    "labels": "manually reviewed gripper/lift temporal proxy, no simulator-contact truth",
+    "resume_note": "Actual run paused at200; optimizer restored, sampler restarted with seed7; exact executed scripts archived in provenance"
   },
   "progress_monitor": {
     "thresholds": {
@@ -76,7 +77,7 @@
     "image_encoding": "JPEG quality75 128x128,2cameras",
     "max_calls_per_episode": 20,
     "max_calls_batch": 200,
-    "max_input_bytes": 18000,
+    "max_input_bytes": 16000,
     "max_output_tokens": 600,
     "sdk_retries": 0,
     "api_limit_usd": 1,
@@ -84,7 +85,10 @@
     "input_usd_per_million": 0.2,
     "cached_input_usd_per_million": 0.02,
     "output_usd_per_million": 1.2,
-    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna"
+    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "cache_write_usd_per_million": 0.25,
+    "instruction_max_utf8_bytes": 160,
+    "provider_sampling_seed": null
   },
   "compute": {
     "gpu": "RTX A6000",
@@ -103,5 +107,14 @@
     "Author chunk-prefix server returns an array but checked evaluator casts to scalar; this interface explicitly uses current-step index0 and logs the whole sequence"
   ],
   "policy_sampling_seed": 0,
-  "training_seed": 7
+  "training_seed": 7,
+  "policy_sampling_seed_scope": "initialized once per configuration, continuous random stream across its5 episodes",
+  "rule_feedback": {
+    "release_full_open_threshold_m": 0.039,
+    "author_value": 0.39,
+    "measured_open_m": 0.03923535785893019,
+    "release_open_delta_m": 0.001,
+    "note": "Local rule unit correction, not a change to learned-progress thresholds. Opening is not proof of placement."
+  },
+  "dataset_revision": "a4336d589d589045d1c56423ffdf3b88a0e19b1f"
 }

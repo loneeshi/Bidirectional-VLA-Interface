@@ -151,6 +151,9 @@ class BridgeProcessor:
             json.dump(record, stream)
             stream.flush()
             os.fsync(stream.fileno())
+        # Preserve the exact image/text request locally before paid execution.
+        # This contains no API credential and survives temporary-pod deletion.
+        atomic_json(self.directory / f"{attempt_id}.request.json", envelope)
         self.logger.emit("bridge_attempt_started", **record, provider=self.transport.provider,
                          model=self.transport.model, accounting_role="mirror_of_remote_attempt")
         try:

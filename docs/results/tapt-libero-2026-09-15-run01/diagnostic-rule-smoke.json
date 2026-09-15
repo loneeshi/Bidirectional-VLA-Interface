@@ -1,0 +1,27 @@
+{
+  "positions": {
+    "cream_cheese_1": [
+      0.09910931425692633,
+      -0.18146601062546336,
+      0.445
+    ],
+    "butter_1": [
+      0.0489602377124352,
+      0.05760379687259051,
+      0.44
+    ],
+    "basket_1": [
+      0.007047460269848741,
+      0.26467591357914333,
+      0.48
+    ]
+  },
+  "rules_at_reset": {
+    "reach": false,
+    "grasp": false,
+    "release": false
+  },
+  "native_success": false,
+  "diagnostic_only": true,
+  "api_calls": 0
+}

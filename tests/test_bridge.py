@@ -50,6 +50,8 @@ class BridgeTests(unittest.TestCase):
 
     def test_cached_response_replays_after_restart_without_second_api_call(self):
         first = self.processor.process(self.envelope)
+        snapshot = self.processor.directory / ("a" * 32 + ".request.json")
+        self.assertEqual(json.loads(snapshot.read_text()), self.envelope)
         other_provider = FakeProvider()
         restarted = BridgeProcessor(other_provider, self.budget, self.directory / "local")
         self.assertEqual(restarted.process(self.envelope), first)

@@ -1,0 +1,27 @@
+{
+  "grasp": {
+    "parameters": 49987584,
+    "bytes": 199950336,
+    "leaves": 20
+  },
+  "move": {
+    "parameters": 49987584,
+    "bytes": 199950336,
+    "leaves": 20
+  },
+  "reach": {
+    "parameters": 49987584,
+    "bytes": 199950336,
+    "leaves": 20
+  },
+  "release": {
+    "parameters": 49987584,
+    "bytes": 199950336,
+    "leaves": 20
+  },
+  "head": {
+    "parameters": 2688769,
+    "bytes": 10755076,
+    "leaves": 8
+  }
+}
