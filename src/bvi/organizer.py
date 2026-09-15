@@ -9,6 +9,22 @@ from .protocol import AllowedCall, Target, SkillSpec, SkillStatus, SkillFeedback
 
 ABORT='abort_task'
 
+class InjectedClosureFault:
+    """Explicit test-only six-step closure before the first Pick policy action.
+
+    Never enabled by default. Does not reset after a retry. This is a synthetic
+    low-level fault, not evidence of a natural SAC or pi05 failure.
+    """
+    def __init__(self,skill,logger):self.skill=skill;self.logger=logger;self.used=0
+    def start(self,request,observation):self.skill.start(request,observation)
+    def act(self,observation):
+        if self.used<6:
+            self.used+=1
+            self.logger.emit('injected_closure_fault',frame_id=observation.frame_id,step=self.used,synthetic=True)
+            return (0.,)*7+(-1.,)+(0.,)*5
+        return self.skill.act(observation)
+    def feedback(self,request,transition):return self.skill.feedback(request,transition)
+
 class OrganizerView:
     def __init__(self, env, specs, max_slice_steps=40):
         if not 1<=max_slice_steps<=500:raise ValueError('Invalid organizer slice')
@@ -68,4 +84,4 @@ class GraspMonitor:
         self.closed=self.closed+1 if self.action is not None and float(self.action[7])<-.5 else 0
         reason='grasp_lost' if self.lost>=self.loss_steps else ('missed_grasp' if not self.seen_grasp and self.closed>=self.closure_steps else None)
         if reason is None:return f
-        return SkillFeedback(SkillStatus.TIMED_OUT,tuple(RequirementResult(r.id,RequirementState.UNSATISFIED) for r in request.requirements),reason,'organizer_monitor_using_benchmark_grasp')
+        return SkillFeedback(SkillStatus.INTERRUPTED,tuple(RequirementResult(r.id,RequirementState.UNSATISFIED) for r in request.requirements),reason,'organizer_monitor_using_benchmark_grasp')
