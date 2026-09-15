@@ -1,0 +1,95 @@
+[
+  {
+    "termination_reason": "native_success",
+    "episode": 0,
+    "success": true,
+    "steps": 246,
+    "vlm_calls": 12,
+    "error": null,
+    "video": "vlm-tapt-episode000.mp4",
+    "switch_reasons": {
+      "step_limit": 4,
+      "learned_threshold": 7,
+      "native_success": 1
+    },
+    "initial_state_sha256": "5abdf8f466f490901dee9f931b32eb181b2928eaa17bb6379742f988581d564a",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 184.05694738589227
+  },
+  {
+    "termination_reason": "native_success",
+    "episode": 1,
+    "success": true,
+    "steps": 236,
+    "vlm_calls": 8,
+    "error": null,
+    "video": "vlm-tapt-episode001.mp4",
+    "switch_reasons": {
+      "learned_threshold": 7,
+      "native_success": 1
+    },
+    "initial_state_sha256": "cd3e7f86ef217ee7b7d26cc505b3f56ea8f49664ef10f6749270dfcd39dd17a6",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 98.94723384827375
+  },
+  {
+    "termination_reason": "error",
+    "episode": 2,
+    "success": false,
+    "steps": 190,
+    "vlm_calls": 8,
+    "error": "TimeoutError('Bridge response timed out; inspect both logs before any retry')",
+    "video": "vlm-tapt-episode002-failed.mp4",
+    "switch_reasons": {
+      "learned_threshold": 6,
+      "step_limit": 1
+    },
+    "initial_state_sha256": "ab6bf2ca98e96f1692d8ec7a5b7ec25eee1ea61c57d45c2816ac3dcc938ea3ee",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 201.7675130441785
+  },
+  {
+    "termination_reason": "native_success",
+    "episode": 3,
+    "success": true,
+    "steps": 259,
+    "vlm_calls": 12,
+    "error": null,
+    "video": "vlm-tapt-episode003.mp4",
+    "switch_reasons": {
+      "step_limit": 4,
+      "learned_threshold": 7,
+      "native_success": 1
+    },
+    "initial_state_sha256": "3e0d23df2cf22ae6e897e15a1739d5bf25474b4e33196644890b8485f0e880f5",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 194.4167511034757
+  },
+  {
+    "termination_reason": "native_success",
+    "episode": 4,
+    "success": true,
+    "steps": 257,
+    "vlm_calls": 9,
+    "error": null,
+    "video": "vlm-tapt-episode004.mp4",
+    "switch_reasons": {
+      "learned_threshold": 7,
+      "step_limit": 1,
+      "native_success": 1
+    },
+    "initial_state_sha256": "d2cecde6c34039556fadf729cf7eb15d628b42094f6f0c092d9969c9cf659856",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 101.69648198783398
+  }
+]

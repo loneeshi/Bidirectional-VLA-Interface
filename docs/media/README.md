@@ -58,3 +58,8 @@ All 15 evaluation videos: [batch index](tapt-libero-2026-09-15-run01/README.md).
 Rendered using [MS-HAB](https://github.com/arth-shukla/mshab), [ManiSkill](https://github.com/haosulab/ManiSkill), and upstream ReplicaCAD/Fetch assets. Those projects and assets retain their respective licenses. No model weights or source scene assets are redistributed here.
 
 The LIBERO batch uses LIBERO, robosuite and MuJoCo; their assets and licenses are distinct from the MS-HAB recordings above.
+
+
+## LIBERO repaired evaluation run03
+
+[All20episodes and exact filenames](tapt-libero-2026-09-15-run03/README.md). Native outcomes:5/5,5/5,4/5,5/5; one SSH infrastructure failure retained.

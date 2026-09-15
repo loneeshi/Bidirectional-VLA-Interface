@@ -256,6 +256,206 @@
       "episode": 4,
       "native_success": false,
       "action_steps": 120
+    },
+    {
+      "filename": "vlm-standard-episode000.mp4",
+      "path": "tapt-libero-2026-09-15-run03/standard-character-fix/vlm-standard-episode000.mp4",
+      "sha256": "f6a1bfa1ddeb645153549ccae83039fd019a5e728fb9315cc9ed4459660e72bc",
+      "bytes": 139422,
+      "configuration": "standard-character-fix",
+      "episode": 0,
+      "native_success": true,
+      "action_steps": 246
+    },
+    {
+      "filename": "vlm-standard-episode001.mp4",
+      "path": "tapt-libero-2026-09-15-run03/standard-character-fix/vlm-standard-episode001.mp4",
+      "sha256": "66b708d6ca68c66c5c95bfb30410e9e7298226e9289b9294daf19f0d16e6babe",
+      "bytes": 146463,
+      "configuration": "standard-character-fix",
+      "episode": 1,
+      "native_success": true,
+      "action_steps": 269
+    },
+    {
+      "filename": "vlm-standard-episode002.mp4",
+      "path": "tapt-libero-2026-09-15-run03/standard-character-fix/vlm-standard-episode002.mp4",
+      "sha256": "96b7d5188b8c8aba6d64a4e5a07c06b86dfbcf70bb1087094d35f44d74ae4026",
+      "bytes": 132954,
+      "configuration": "standard-character-fix",
+      "episode": 2,
+      "native_success": true,
+      "action_steps": 238
+    },
+    {
+      "filename": "vlm-standard-episode003.mp4",
+      "path": "tapt-libero-2026-09-15-run03/standard-character-fix/vlm-standard-episode003.mp4",
+      "sha256": "5146a265341c3ec8d6c6f445702f251b27d399bd2b8739e809250692f01aea62",
+      "bytes": 146863,
+      "configuration": "standard-character-fix",
+      "episode": 3,
+      "native_success": true,
+      "action_steps": 251
+    },
+    {
+      "filename": "vlm-standard-episode004.mp4",
+      "path": "tapt-libero-2026-09-15-run03/standard-character-fix/vlm-standard-episode004.mp4",
+      "sha256": "25fc071371a390e6a3bbcd945c9d029b2fa97fc0e11617d8d341082604ab1281",
+      "bytes": 145267,
+      "configuration": "standard-character-fix",
+      "episode": 4,
+      "native_success": true,
+      "action_steps": 256
+    },
+    {
+      "filename": "vlm-tapt-episode000.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-character-fix/vlm-tapt-episode000.mp4",
+      "sha256": "c1100979304b5cdf7a8abeb26896dd1e415ad838b8f538e99aa10e5b663ca4b1",
+      "bytes": 141052,
+      "configuration": "tapt-old-character-fix",
+      "episode": 0,
+      "native_success": true,
+      "action_steps": 249
+    },
+    {
+      "filename": "vlm-tapt-episode001.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-character-fix/vlm-tapt-episode001.mp4",
+      "sha256": "f3df2fc477b97fe8b173510eeb304f739edc5c984ff9d20b41b753d2fe379882",
+      "bytes": 131185,
+      "configuration": "tapt-old-character-fix",
+      "episode": 1,
+      "native_success": true,
+      "action_steps": 248
+    },
+    {
+      "filename": "vlm-tapt-episode002.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-character-fix/vlm-tapt-episode002.mp4",
+      "sha256": "a31da2aed616e53f262c77bccd4a05de09eb1f1e1f28c50a260bd82a4555d254",
+      "bytes": 125369,
+      "configuration": "tapt-old-character-fix",
+      "episode": 2,
+      "native_success": true,
+      "action_steps": 239
+    },
+    {
+      "filename": "vlm-tapt-episode003.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-character-fix/vlm-tapt-episode003.mp4",
+      "sha256": "2515d81ac42f7cd0106863b7fa38cdeed352c1f4ca5f22e5a72aefe4933d933d",
+      "bytes": 147122,
+      "configuration": "tapt-old-character-fix",
+      "episode": 3,
+      "native_success": true,
+      "action_steps": 253
+    },
+    {
+      "filename": "vlm-tapt-episode004.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-character-fix/vlm-tapt-episode004.mp4",
+      "sha256": "c8984b8fa6497eff0d0dabc05ce6fd983eef497c44dbede2d05b206eb8c420e8",
+      "bytes": 149777,
+      "configuration": "tapt-old-character-fix",
+      "episode": 4,
+      "native_success": true,
+      "action_steps": 269
+    },
+    {
+      "filename": "vlm-tapt-episode000.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-memory-recovery/vlm-tapt-episode000.mp4",
+      "sha256": "9695171bb7a0ceed9dcdf32e94fa552344656260aa1d694fa3bbdff6e17701f7",
+      "bytes": 138003,
+      "configuration": "tapt-old-memory-recovery",
+      "episode": 0,
+      "native_success": true,
+      "action_steps": 246
+    },
+    {
+      "filename": "vlm-tapt-episode001.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-memory-recovery/vlm-tapt-episode001.mp4",
+      "sha256": "dd8e5dd753139e722a9b52923467860d8e7d2e7fb3a23d9159caef6103cfd1ff",
+      "bytes": 127439,
+      "configuration": "tapt-old-memory-recovery",
+      "episode": 1,
+      "native_success": true,
+      "action_steps": 236
+    },
+    {
+      "filename": "vlm-tapt-episode002-failed.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-memory-recovery/vlm-tapt-episode002-failed.mp4",
+      "sha256": "a61865bccfcbd82a2df84a6c25898ebfdd14f29408fc9dce31eb54ed6769d44c",
+      "bytes": 104426,
+      "configuration": "tapt-old-memory-recovery",
+      "episode": 2,
+      "native_success": false,
+      "action_steps": 190
+    },
+    {
+      "filename": "vlm-tapt-episode003.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-memory-recovery/vlm-tapt-episode003.mp4",
+      "sha256": "33c152761bf9cc932bb35b3d66d5ee94314a6754c43e7d1115144fa97c85fe33",
+      "bytes": 151028,
+      "configuration": "tapt-old-memory-recovery",
+      "episode": 3,
+      "native_success": true,
+      "action_steps": 259
+    },
+    {
+      "filename": "vlm-tapt-episode004.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-old-memory-recovery/vlm-tapt-episode004.mp4",
+      "sha256": "e44746b636eac44731fd05c6a270489e18cd426ba002e2eab06125a7a2aa8d9d",
+      "bytes": 145694,
+      "configuration": "tapt-old-memory-recovery",
+      "episode": 4,
+      "native_success": true,
+      "action_steps": 257
+    },
+    {
+      "filename": "vlm-tapt-episode000.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-new-memory-recovery/vlm-tapt-episode000.mp4",
+      "sha256": "69abe99a48262fb066871a6a7855e7ceeacdeb4e16f650cd805d33f9f1af58b6",
+      "bytes": 135083,
+      "configuration": "tapt-new-memory-recovery",
+      "episode": 0,
+      "native_success": true,
+      "action_steps": 242
+    },
+    {
+      "filename": "vlm-tapt-episode001.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-new-memory-recovery/vlm-tapt-episode001.mp4",
+      "sha256": "8ec0e4987861312b218d60829031cd4789ac24713ba5064222a75e902b5cef42",
+      "bytes": 142863,
+      "configuration": "tapt-new-memory-recovery",
+      "episode": 1,
+      "native_success": true,
+      "action_steps": 254
+    },
+    {
+      "filename": "vlm-tapt-episode002.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-new-memory-recovery/vlm-tapt-episode002.mp4",
+      "sha256": "5d1ec3eeb4e1efe6bddca51f6f38669d40feccef1de6cb81e0f872deea70021c",
+      "bytes": 126631,
+      "configuration": "tapt-new-memory-recovery",
+      "episode": 2,
+      "native_success": true,
+      "action_steps": 239
+    },
+    {
+      "filename": "vlm-tapt-episode003.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-new-memory-recovery/vlm-tapt-episode003.mp4",
+      "sha256": "1b35522e22cf8b7f8d24daffcaecc0cac8e941e15acd211d1c27dd29102e8b99",
+      "bytes": 139391,
+      "configuration": "tapt-new-memory-recovery",
+      "episode": 3,
+      "native_success": true,
+      "action_steps": 248
+    },
+    {
+      "filename": "vlm-tapt-episode004.mp4",
+      "path": "tapt-libero-2026-09-15-run03/tapt-new-memory-recovery/vlm-tapt-episode004.mp4",
+      "sha256": "d55079aa80afe3644e9513fdba56363d0d6ff94a1813fc5cff18b3483089e1ae",
+      "bytes": 150731,
+      "configuration": "tapt-new-memory-recovery",
+      "episode": 4,
+      "native_success": true,
+      "action_steps": 285
     }
   ]
 }
