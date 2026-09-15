@@ -50,6 +50,9 @@ def load_local_credentials(path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true", help="Real GPU rollout, oracle dispatch, no API")
+    parser.add_argument('--organizer', action='store_true', help='VLM execution organization with bounded skill slices, grasp-event yields and explicit abort')
+    parser.add_argument('--organizer-slice-steps', type=int, default=40)
+    parser.add_argument('--stop-after-subtasks', type=int, help='Explicit partial-task diagnostic boundary; never full benchmark success')
     parser.add_argument("--provider", choices=("openai", "anthropic"), default="openai")
     parser.add_argument("--transport", choices=("direct", "bridge"), default="direct")
     parser.add_argument("--bridge-timeout-seconds", type=float, default=120)
@@ -106,6 +109,10 @@ def main() -> None:
     parser.add_argument("--show-goal-markers", action="store_true",
                         help="Show benchmark debug goals in human-render video")
     args = parser.parse_args()
+    if args.organizer and (args.dry_run or not 1<=args.organizer_slice_steps<=500):
+        parser.error('Organizer requires live VLM and slice steps1..500')
+    if args.stop_after_subtasks is not None and args.stop_after_subtasks<1:
+        parser.error('Partial-task boundary must be positive')
     if args.collect_recovery_after is not None and (not args.dry_run or not args.record_demonstrations
             or args.manipulation_policy!='fetch-pi05' or not 0<=args.collect_recovery_after<=50):
         parser.error('Recovery collection requires --dry-run --record-demonstrations --manipulation-policy fetch-pi05 and prefix0..50')
@@ -211,6 +218,7 @@ def main() -> None:
     metadata['mixed_teacher_collection']=args.collect_recovery_after is not None
     metadata['training_collection']=args.training_collection
     metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
+    metadata['stop_after_subtasks']=args.stop_after_subtasks
     metadata['teacher_takeover_after']=args.collect_recovery_after
     metadata['manipulation_ensemble_samples']=args.manipulation_ensemble_samples
     metadata['manipulation_instructions']=manipulation_instructions
@@ -232,6 +240,7 @@ def main() -> None:
     api_calls = 0
     reason = "not_started"
     coordinator = None
+    organizer = None
     try:
         adapter = make_mshab_adapter(cfg, logger, args.output, seed=args.seed)
         if args.expected_plan_uid and adapter.original_plan.subtasks[0].uid != args.expected_plan_uid:
@@ -272,6 +281,17 @@ def main() -> None:
                                                            args.lightnav_subtasks, logger)
             else:
                 skills["navigate"] = navigation_skill
+        if args.organizer:
+            if args.dry_run:
+                raise ProtocolError('Organizer requires actual VLM mode')
+            from bvi.organizer import OrganizerView, GraspMonitor
+            organizer = OrganizerView(adapter, specs, args.organizer_slice_steps)
+            if 'pick' in skills:
+                skills['pick'] = GraspMonitor(skills['pick'])
+            metadata['organizer'] = {'enabled': True, 'scope': 'benchmark_constrained_execution',
+                'slice_steps': args.organizer_slice_steps, 'grasp_source': 'oracle_benchmark',
+                'reposition_skill': False, 'abort_is_success': False}
+            (args.output / 'run-metadata.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
         runtime = SerialRuntime(adapter, skills, specs, logger)
         if not args.dry_run:
             if args.transport == "bridge":
@@ -283,7 +303,7 @@ def main() -> None:
                 transport = (OpenAITransport(args.model, image_detail=args.image_detail,
                                             reasoning_effort=args.reasoning_effort)
                              if args.provider == "openai" else AnthropicTransport(args.model))
-            coordinator = VLMCoordinator(transport, specs, logger, budget)
+            coordinator = VLMCoordinator(transport, organizer.specs if organizer else specs, logger, budget)
         for index in range(args.max_calls):
             if adapter.ended:
                 reason = "environment_success" if bool(scalar(adapter.last_info.get("success", False))) else "environment_ended"
@@ -294,7 +314,10 @@ def main() -> None:
             if time.monotonic() - started >= args.max_wall_seconds:
                 reason = "experiment_wall_clock_limit"
                 break
-            observation = adapter.observe()
+            observation = organizer.observe() if organizer else adapter.observe()
+            if args.stop_after_subtasks is not None and observation.metadata.get('subtask_index',0)>=args.stop_after_subtasks:
+                reason='declared_partial_task_boundary'
+                break
             adapter.save_observation_images()
             if not observation.allowed_calls:
                 reason = "no_admissible_skill"
@@ -314,6 +337,11 @@ def main() -> None:
             else:
                 request = coordinator.decide(observation, history)
                 api_calls = coordinator.calls_reserved
+                if organizer and request.skill == 'abort_task':
+                    logger.emit('organizer_abort', request=request, task_success=False)
+                    decisions += 1
+                    reason = 'organizer_aborted_task'
+                    break
                 remaining_steps = args.max_env_steps - adapter.steps
                 if request.max_steps > remaining_steps:
                     # Never silently rewrite the VLM's request. Stop this bounded
@@ -328,6 +356,8 @@ def main() -> None:
                 break
             decisions += 1
             result = runtime.execute(request)
+            if organizer:
+                organizer.note_result(result)
             history.append({"call_id": request.call_id, "skill": request.skill,
                             "target_id": request.target_id, "requirements": request.requirements,
                             "feedback": result.feedback, "steps": result.steps,
