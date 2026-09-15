@@ -77,6 +77,12 @@ The server metadata must declare active state conditioning, the Fetch 15-state /
 has a different, vision-only configuration and failed. A DROID checkpoint is not
 compatible with this adapter. First JAX inference also incurs compilation time.
 
+`--denoising-steps` exposes the pinned pi05 sampler's native `num_steps` argument
+(default 10, bounded to 1..100) and records it in server metadata. Changing
+this affects inference computation, not the trained action convention or
+checkpoint. A larger value is an unverified inference ablation, not a success
+claim; report it together with chunk size and the actual rollout outcome.
+
 The inference memory fraction permits the two model servers and one simulator
 to share the 48GB A6000; recheck real memory before launching. Run training by
 itself, then release its process before starting model servers. Service process
