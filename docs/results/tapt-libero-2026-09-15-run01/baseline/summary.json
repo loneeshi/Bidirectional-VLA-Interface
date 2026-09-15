@@ -1,0 +1,72 @@
+[
+  {
+    "episode": 0,
+    "task_id": 1,
+    "initial_state_sha256": "5abdf8f466f490901dee9f931b32eb181b2928eaa17bb6379742f988581d564a",
+    "success": true,
+    "steps": 241,
+    "error": null,
+    "video": "baseline-episode000.mp4",
+    "elapsed_seconds": 71.6856487384066,
+    "vlm_calls": 0,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "seed": 7
+  },
+  {
+    "episode": 1,
+    "task_id": 1,
+    "initial_state_sha256": "cd3e7f86ef217ee7b7d26cc505b3f56ea8f49664ef10f6749270dfcd39dd17a6",
+    "success": true,
+    "steps": 264,
+    "error": null,
+    "video": "baseline-episode001.mp4",
+    "elapsed_seconds": 14.463026037439704,
+    "vlm_calls": 0,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "seed": 7
+  },
+  {
+    "episode": 2,
+    "task_id": 1,
+    "initial_state_sha256": "ab6bf2ca98e96f1692d8ec7a5b7ec25eee1ea61c57d45c2816ac3dcc938ea3ee",
+    "success": true,
+    "steps": 242,
+    "error": null,
+    "video": "baseline-episode002.mp4",
+    "elapsed_seconds": 13.680423390120268,
+    "vlm_calls": 0,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "seed": 7
+  },
+  {
+    "episode": 3,
+    "task_id": 1,
+    "initial_state_sha256": "3e0d23df2cf22ae6e897e15a1739d5bf25474b4e33196644890b8485f0e880f5",
+    "success": true,
+    "steps": 253,
+    "error": null,
+    "video": "baseline-episode003.mp4",
+    "elapsed_seconds": 13.802993124350905,
+    "vlm_calls": 0,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "seed": 7
+  },
+  {
+    "episode": 4,
+    "task_id": 1,
+    "initial_state_sha256": "d2cecde6c34039556fadf729cf7eb15d628b42094f6f0c092d9969c9cf659856",
+    "success": true,
+    "steps": 284,
+    "error": null,
+    "video": "baseline-episode004.mp4",
+    "elapsed_seconds": 15.271652097813785,
+    "vlm_calls": 0,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "seed": 7
+  }
+]

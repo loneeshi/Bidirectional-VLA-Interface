@@ -30,6 +30,8 @@ Every video is linked by its exact filename and grouped by test task. Folder nam
 | `organizer-2026-09-15` | [organizer-normal.mp4](organizer-2026-09-15/organizer-normal.mp4) | GPT-5.6 Luna execution organizer with PPO/SAC. Normal: 229 steps, 8 calls. Injected fault: 317 steps, 8 calls, retry after synthetic missed grasp. Both complete the first object only; no pi0.5, free task-order planning, or natural-failure recovery-rate claim. |
 | `organizer-2026-09-15` | [organizer-injected-fault-recovery.mp4](organizer-2026-09-15/organizer-injected-fault-recovery.mp4) | GPT-5.6 Luna execution organizer with PPO/SAC. Normal: 229 steps, 8 calls. Injected fault: 317 steps, 8 calls, retry after synthetic missed grasp. Both complete the first object only; no pi0.5, free task-order planning, or natural-failure recovery-rate claim. |
 
+| `tapt-libero-2026-09-15-run01` | [baseline-episode000.mp4](tapt-libero-2026-09-15-run01/baseline-episode000.mp4) | Official pi05_libero full-task baseline. Episode000 native success in241 steps; no GPT or trained tool-family claim. |
+
 [Integrity manifest](manifest.json) records all video sizes and SHA256 hashes. The reorganization changes paths only, not video bytes.
 
 Rendered using [MS-HAB](https://github.com/arth-shukla/mshab), [ManiSkill](https://github.com/haosulab/ManiSkill), and upstream ReplicaCAD/Fetch assets. Those projects and assets retain their respective licenses. No model weights or source scene assets are redistributed here.

@@ -2,7 +2,7 @@
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
-**Current priority:** [VLAs-as-Tools: TAPT and VLA tool-family interface reproduction](docs/vlas-as-tools-reproduction.md). The existing [execution organizer](docs/coordinator-status.md) is infrastructure evidence with PPO/SAC; it is not yet a TAPT reproduction. [Author-fork discovery and LIBERO-first preparation](docs/vlas-as-tools-code-audit.md) are recorded; training and closed-loop reproduction remain pending.
+**Current priority:** [VLAs-as-Tools: TAPT and VLA tool-family interface reproduction](docs/vlas-as-tools-reproduction.md). The existing [execution organizer](docs/coordinator-status.md) is infrastructure evidence with PPO/SAC; it is not yet a TAPT reproduction. [Author-fork discovery](docs/vlas-as-tools-code-audit.md) and the [running LIBERO component experiment](docs/tapt-libero-run01.md) are recorded. The official pi05_libero baseline completed5/5 fixed episodes; four family adapters and the author progress head are training. GPT comparisons and learned-progress closed-loop acceptance are pending.
 
 The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM issues structured skill requests from image observations and execution feedback; interchangeable low-level policies execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. LightNav integration and Fetch pi0.5 adaptation are now under development; learning requirement verifiers is future work.
 
@@ -33,7 +33,7 @@ Velocity, recovery-data, relative-base and workspace-camera pilots also failed P
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 93 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 109 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|
