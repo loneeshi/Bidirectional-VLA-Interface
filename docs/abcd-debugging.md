@@ -146,15 +146,21 @@ not successful C/D rollouts. Only the SAC tail is eligible for training rows.
 The recovery-data pilot uses 1,020 frames across 26 segments (the original
 785 plus these 235), with the same 30-value qpos/qvel and 13-action contract.
 It warm-starts from the velocity pilot with a cap of 4,000 training steps.
-A planned early evaluation uses finalized checkpoint `2000` (not a claim that
-all 4,000 updates completed). Its evaluation is pending; teacher recovery
-success is not pi05 task success.
+Training was stopped after finalized checkpoint `2000` (2,001 updates under
+zero-based numbering), rather than completing the planned 4,000 updates. C6
+(PPO29 + Pick90) and D3 (LightNav77 + Pick112) both failed without grasping.
+Increasing native denoising from10 to50 also failed: C7 Pick92, D4 Pick71.
+Four same-observation predictions averaged per action failed in C8 Pick41
+and D5 Pick85. Every individual draw counts toward the request cap.
+The [full outcomes and model identities](results/abcd-recovery-failures.json)
+and [24-request teacher-forced diagnostic](results/pi05-recovery-teacher-probe.json)
+are retained. Lower offline prediction MSE did not establish task success.
 The input archive SHA256 is
 `5846f822403bb842234eecac98ce6f29ce651d0d645e11b5ebe709d25374d1cf`.
 The velocity-pilot checkpoint archive SHA256 is
 `d9231a13c20d8a37268636bd099d0ad914cd02753761c2205190080e5eddf7d9`.
 
-### Relative base input candidate (CPU-verified, not GPU-evaluated)
+### Relative base input pilot (training; task evaluation pending)
 
 The native pi05 tokenizer discretizes normalized state into 256 bins. In this
 dataset the base x/y quantile ranges span about 3.18/4.16 meters, giving roughly
@@ -170,7 +176,10 @@ metadata `base_position_reference=skill_start_xy`; old checkpoints keep world
 coordinates. Recovery tails use the **original learner skill-start** origin,
 verified against their source event hash, rather than the SAC takeover frame.
 Tests verify translation invariance, unchanged other state components, and
-rejection of altered recovery sources. No successful GPU result is claimed yet.
+rejection of altered recovery sources. The 1,020-frame relative-input pilot is training for up to 2,000 updates from
+the recovery checkpoint. No successful GPU result is claimed yet. Its final
+checkpoint stores the executed training state contract; the server rejects
+mismatched world/relative flags and requires this manifest for relative models.
 
 The current data intentionally overlaps the seed-1 diagnostic. A successful
 overfit demo would demonstrate closed-loop control, not held-out generalization.

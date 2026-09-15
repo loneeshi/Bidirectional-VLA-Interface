@@ -170,12 +170,27 @@ def main():
         from scripts.train import main as train, init_logging
         init_logging()
         train(cfg)
+        # Store the executed state convention with the actual final checkpoint.
+        final=Path(a.work)/'checkpoints'/cfg.name/cfg.exp_name/str(a.steps-1)
+        if not (final/'params').is_dir(): raise RuntimeError('Final checkpoint is missing')
+        contract=final/'assets'/a.repo_id/'bvi-state-contract.json'
+        contract.parent.mkdir(parents=True,exist_ok=True)
+        contract.write_text(json.dumps({**cfg.policy_metadata,'training_steps':a.steps,
+            'training_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},indent=2))
     elif a.mode=='serve':
         from openpi.policies.policy_config import create_trained_policy
         from openpi.serving.websocket_policy_server import WebsocketPolicyServer
         if not a.checkpoint: p.error('--checkpoint required; never substitute a DROID checkpoint')
+        contract=Path(a.checkpoint)/'assets'/a.repo_id/'bvi-state-contract.json'
+        if contract.exists():
+            saved=json.loads(contract.read_text())
+            for key in ('robot','state_dim','state_components','action_dim','action_convention','base_position_reference','training_repo'):
+                if saved.get(key)!=cfg.policy_metadata[key]: raise ValueError(f'Checkpoint state contract differs: {key}')
+        elif a.relative_base:
+            raise ValueError('Relative-base checkpoint requires its recorded training state contract')
         cfg=dataclasses.replace(cfg,policy_metadata={**cfg.policy_metadata,
             'checkpoint':str(Path(a.checkpoint).resolve()),
+            'legacy_training_manifest_missing':not contract.exists(),
             'denoising_steps':a.denoising_steps,
             'action_horizon':cfg.model.action_horizon,
             'server_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()})

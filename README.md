@@ -23,7 +23,7 @@ The [marker-free A chain](docs/media/A-ppo-sac-clean.mp4) has been re-recorded.
 in 278 steps, with grasp maintained throughout carrying navigation.
 The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
 [C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
-A further pilot adds joint velocity observations; task success is still pending.
+Velocity and recovery-data pilots also failed Pick. A relative-base input pilot is underway; C/D task success remains unproven.
 
 ## Current status
 
@@ -31,7 +31,7 @@ A further pilot adds joint velocity observations; task success is still pending.
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 83 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 86 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|

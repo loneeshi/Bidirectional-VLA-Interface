@@ -13,8 +13,8 @@ JOINT_NAMES=['root_x_axis_joint','root_y_axis_joint','root_z_rotation_joint',
 
 
 class FetchPiSkill:
-    def __init__(self,name,adapter,client,max_predictions=100,chunk_steps=3):
-        if name not in ('pick','place') or not 1<=chunk_steps<=10 or max_predictions<1:
+    def __init__(self,name,adapter,client,max_predictions=100,chunk_steps=3,ensemble_samples=1):
+        if name not in ('pick','place') or not 1<=chunk_steps<=10 or max_predictions<1 or not 1<=ensemble_samples<=8:
             raise ProtocolError('Invalid Fetch pi skill configuration')
         metadata=client.metadata
         if any(metadata.get(k)!=v for k,v in {
@@ -33,6 +33,7 @@ class FetchPiSkill:
         if names!=JOINT_NAMES: raise ProtocolError('Fetch state joint ordering differs from training')
         self.name,self.adapter,self.client=name,adapter,client
         self.max_predictions,self.chunk_steps=max_predictions,chunk_steps
+        self.ensemble_samples=ensemble_samples
         self.total_predictions=0
         self.actions=deque()
         self.index=None
@@ -48,14 +49,14 @@ class FetchPiSkill:
         self.actions.clear()
         self.adapter.logger.emit('fetch_pi_started',call_id=self.call_id,skill=self.name,
             prompt=self.prompt,model_metadata=self.client.metadata,chunk_steps=self.chunk_steps,
-            base_xy_origin=self.base_xy_origin)
+            base_xy_origin=self.base_xy_origin,ensemble_samples=self.ensemble_samples)
 
     def act(self,observation):
         if self.index is None: raise ProtocolError('Missing skill start')
         if not self.actions:
             import numpy as np
             from PIL import Image
-            if self.total_predictions>=self.max_predictions: raise ProtocolError('Fetch pi prediction cap reached')
+            if self.total_predictions+self.ensemble_samples>self.max_predictions: raise ProtocolError('Fetch pi prediction cap reached')
             visual=self.adapter.observe()
             if visual.frame_id!=observation.frame_id: raise ProtocolError('Stale Fetch camera')
             def pixels(camera):
@@ -68,14 +69,23 @@ class FetchPiSkill:
             if self.state_dim==30:
                 state=np.concatenate([state,np.asarray(jsonable(self.adapter.uenv.agent.robot.qvel)[0],dtype=np.float32)])
             if state.shape!=(self.state_dim,) or not np.isfinite(state).all(): raise ProtocolError('Invalid Fetch state')
-            self.total_predictions+=1
             self.adapter.save_observation_images()
-            self.adapter.logger.emit('fetch_pi_inference_started',call_id=self.call_id,
-                attempt=self.total_predictions,frame_id=observation.frame_id,state=state.tolist())
-            rows=self.client.infer({'observation/state':state,'observation/image':pixels('fetch_head'),
-                'observation/wrist_image':pixels('fetch_hand'),'prompt':self.prompt},action_dim=13)
-            self.adapter.logger.emit('fetch_pi_prediction',call_id=self.call_id,
-                frame_id=observation.frame_id,actions=rows)
+            inputs={'observation/state':state,'observation/image':pixels('fetch_head'),
+                    'observation/wrist_image':pixels('fetch_hand'),'prompt':self.prompt}
+            samples=[]
+            for _ in range(self.ensemble_samples):
+                self.total_predictions+=1
+                self.adapter.logger.emit('fetch_pi_inference_started',call_id=self.call_id,
+                    attempt=self.total_predictions,frame_id=observation.frame_id,state=state.tolist())
+                rows=self.client.infer(inputs,action_dim=13)
+                self.adapter.logger.emit('fetch_pi_prediction',call_id=self.call_id,
+                    frame_id=observation.frame_id,actions=rows)
+                samples.append(rows)
+            if self.ensemble_samples>1:
+                if len({len(x) for x in samples})!=1: raise ProtocolError('Ensemble action horizons differ')
+                rows=tuple(tuple(float(v) for v in row) for row in np.mean(np.asarray(samples,np.float64),axis=0))
+                self.adapter.logger.emit('fetch_pi_ensemble_prediction',call_id=self.call_id,
+                    frame_id=observation.frame_id,samples=self.ensemble_samples,actions=rows)
             self.actions.extend(rows[:self.chunk_steps])
         raw=self.actions.popleft()
         bounded=tuple(max(-1.,min(1.,v)) for v in raw)
