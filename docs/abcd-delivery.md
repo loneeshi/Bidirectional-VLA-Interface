@@ -4,6 +4,8 @@ Four actual continuous first-object TidyHouse rollouts are required, using the
 same explicit scene/plan/initial-state fingerprint and an oracle dispatcher to
 isolate the low-level policy change. A later VLM comparison is separate.
 
+[Environment, model-service and A/B/C/D commands](abcd-reproduction.md).
+
 | Variant | Navigation | Manipulation | Current evidence | Remaining gate |
 |---|---|---|---|---|
 | A | Official PPO | Official SAC | [Clean successful chain, 248 steps](media/A-ppo-sac-clean.mp4) | Broader evaluation |

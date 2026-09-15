@@ -30,7 +30,7 @@ state-conditioning and dataset-label corrections are being evaluated.
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 78 tests run, 76 passed and 2 optional-dependency tests skipped; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 80 tests run, 78 passed and 2 optional-dependency tests skipped; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|
