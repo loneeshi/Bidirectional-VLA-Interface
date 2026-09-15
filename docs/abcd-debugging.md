@@ -145,12 +145,32 @@ not successful C/D rollouts. Only the SAC tail is eligible for training rows.
 
 The recovery-data pilot uses 1,020 frames across 26 segments (the original
 785 plus these 235), with the same 30-value qpos/qvel and 13-action contract.
-It warm-starts from the velocity pilot and allows up to 4,000 training steps.
-Its evaluation is pending; teacher recovery success is not pi05 task success.
+It warm-starts from the velocity pilot with a cap of 4,000 training steps.
+A planned early evaluation uses finalized checkpoint `2000` (not a claim that
+all 4,000 updates completed). Its evaluation is pending; teacher recovery
+success is not pi05 task success.
 The input archive SHA256 is
 `5846f822403bb842234eecac98ce6f29ce651d0d645e11b5ebe709d25374d1cf`.
 The velocity-pilot checkpoint archive SHA256 is
 `d9231a13c20d8a37268636bd099d0ad914cd02753761c2205190080e5eddf7d9`.
+
+### Relative base input candidate (CPU-verified, not GPU-evaluated)
+
+The native pi05 tokenizer discretizes normalized state into 256 bins. In this
+dataset the base x/y quantile ranges span about 3.18/4.16 meters, giving roughly
+12.4/16.3 mm per bin. This is a possible precision limitation, not an established
+cause of failure. The optional `--relative-base --include-velocity` data/config
+uses measured base x/y displacement from the skill start, while leaving yaw,
+arm/finger joints and all velocities unchanged. Offline ranges shrink to
+0.863/1.171 meters, approximately 3.4/4.6 mm per bin. It does not consume hidden
+object coordinates and does not change the 13 action channels.
+
+This has a distinct `pi05_fetch_lora_relative` configuration and checkpoint
+metadata `base_position_reference=skill_start_xy`; old checkpoints keep world
+coordinates. Recovery tails use the **original learner skill-start** origin,
+verified against their source event hash, rather than the SAC takeover frame.
+Tests verify translation invariance, unchanged other state components, and
+rejection of altered recovery sources. No successful GPU result is claimed yet.
 
 The current data intentionally overlaps the seed-1 diagnostic. A successful
 overfit demo would demonstrate closed-loop control, not held-out generalization.

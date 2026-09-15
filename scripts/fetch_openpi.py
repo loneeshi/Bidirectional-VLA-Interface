@@ -15,7 +15,29 @@ import sys
 import numpy as np
 
 
-def convert(runs, repo_id, include_velocity=False):
+def segment_base_origin(directory, events, segment):
+    """Use the skill start, including for tails collected after a replayed prefix."""
+    meta=json.loads((directory/'run-metadata.json').read_text())
+    if not meta.get('mixed_teacher_collection'):
+        return np.asarray(segment[0]['qpos'][0][:2],np.float32), 'first_expert_skill_frame'
+    source_events=events
+    if meta.get('source_run'):
+        source=Path(meta['source_run'])/'events.jsonl'
+        if hashlib.sha256(source.read_bytes()).hexdigest()!=meta['source_events_sha256']:
+            raise ValueError('Recovery source hash mismatch')
+        source_events=[json.loads(x) for x in source.read_text().splitlines()]
+    starts=[e for e in source_events if e['event']=='fetch_pi_started' and e['skill']==segment[0]['skill']]
+    if len(starts)!=1: raise ValueError('Recovery skill origin is ambiguous')
+    start=starts[0]
+    if 'base_xy_origin' in start:
+        return np.asarray(start['base_xy_origin'],np.float32),'recorded_learner_skill_start'
+    if start['model_metadata'].get('base_position_reference','world')!='world':
+        raise ValueError('Relative source requires a recorded absolute skill origin')
+    first=next(e for e in source_events if e['event']=='fetch_pi_inference_started' and e['call_id']==start['call_id'])
+    return np.asarray(first['state'][:2],np.float32),'original_learner_world_state'
+
+
+def convert(runs, repo_id, include_velocity=False, relative_base=False):
     from PIL import Image
     from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
     features = {
@@ -28,7 +50,8 @@ def convert(runs, repo_id, include_velocity=False):
         features=features, image_writer_threads=2, image_writer_processes=0)
     manifest = {'repo_id': repo_id, 'split': 'seed1_training_diagnostic', 'segments': [],
                 'action_convention': 'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity',
-                'state_components':['qpos','qvel'] if include_velocity else ['qpos']}
+                'state_components':['qpos','qvel'] if include_velocity else ['qpos'],
+                'base_position_reference':'skill_start_xy' if relative_base else 'world'}
     joint_order = None
     for directory in map(Path, runs):
         events = [json.loads(line) for line in (directory/'events.jsonl').read_text().splitlines()]
@@ -38,10 +61,12 @@ def convert(runs, repo_id, include_velocity=False):
             segment = [e for e in rows if e['subtask_index']==index]
             if segment[-1]['feedback']['adapter_subtask_after'] <= index:
                 continue  # Never train failed Place tails as demonstrations of success.
+            origin,origin_source=segment_base_origin(directory,events,segment) if relative_base else (None,None)
             for row in segment:
                 if joint_order is None: joint_order = row['joint_names']
                 if row['joint_names'] != joint_order: raise ValueError('Joint order changed')
                 state = np.asarray(row['qpos'][0], np.float32)
+                if relative_base: state[:2]-=origin
                 if include_velocity: state=np.concatenate([state,np.asarray(row['qvel'][0],np.float32)])
                 # Match post-wrapper actions, including official stationary-head masking.
                 action = np.asarray(applied[row['next_frame_id']], np.float32)
@@ -58,6 +83,8 @@ def convert(runs, repo_id, include_velocity=False):
             dataset.save_episode()
             manifest['segments'].append({'run':str(directory),'subtask_index':index,
                 'skill':segment[0]['skill'],'frames':len(segment),
+                'base_xy_origin':None if origin is None else origin.tolist(),
+                'base_origin_source':origin_source,
                 'events_sha256':hashlib.sha256((directory/'events.jsonl').read_bytes()).hexdigest()})
     if not manifest['segments']: raise ValueError('No successful manipulation segments')
     manifest['joint_names']=joint_order
@@ -65,7 +92,7 @@ def convert(runs, repo_id, include_velocity=False):
     print(json.dumps(manifest,indent=2))
 
 
-def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=False,init_checkpoint=None):
+def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=False,init_checkpoint=None,relative_base=False):
     from openpi import transforms
     from openpi.models import pi0_config
     from openpi.policies import libero_policy
@@ -87,6 +114,7 @@ def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=
     model=pi0_config.Pi0Config(pi05=True,action_horizon=10,discrete_state_input=state_input,
         paligemma_variant='gemma_2b_lora', action_expert_variant='gemma_300m_lora')
     name='pi05_fetch_lora_velocity' if include_velocity else ('pi05_fetch_lora_state' if state_input else 'pi05_fetch_lora')
+    if relative_base: name='pi05_fetch_lora_relative'
     return c.TrainConfig(name=name,exp_name='seed1-diagnostic',model=model,
         data=FetchData(repo_id=repo_id,base_config=c.DataConfig(prompt_from_task=True),
                        extra_delta_transform=False),
@@ -98,6 +126,7 @@ def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=
                                                   decay_steps=steps,decay_lr=1e-5),
         wandb_enabled=False,policy_metadata={'robot':'fetch','state_dim':30 if include_velocity else 15,'action_dim':13,
             'state_components':['qpos','qvel'] if include_velocity else ['qpos'],
+            'base_position_reference':'skill_start_xy' if relative_base else 'world',
             'state_conditioning':state_input,
             'action_convention':'Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity',
             'training_repo':repo_id,'evaluation_scope':'training-scene-diagnostic'})
@@ -115,6 +144,7 @@ def main():
     p.add_argument('--checkpoint')
     p.add_argument('--init-checkpoint',help='Explicit parameter directory for a warm-start experiment')
     p.add_argument('--include-velocity',action='store_true',help='Use named qpos and qvel (30 robot state values)')
+    p.add_argument('--relative-base',action='store_true',help='Subtract measured skill-start base x/y; keep yaw and qvel unchanged')
     p.add_argument('--no-state-input',action='store_true',help='Historical vision-only pilot reproduction, not recommended for Fetch')
     p.add_argument('--port',type=int,default=8051)
     p.add_argument('--denoising-steps',type=int,default=10,
@@ -122,10 +152,11 @@ def main():
     a=p.parse_args()
     if not 1<=a.denoising_steps<=100: p.error('--denoising-steps must be in 1..100')
     if a.include_velocity and a.no_state_input: p.error('Velocity experiment requires state conditioning')
-    if a.mode=='convert': return convert(a.runs,a.repo_id,a.include_velocity)
+    if a.relative_base and not a.include_velocity: p.error('--relative-base requires --include-velocity')
+    if a.mode=='convert': return convert(a.runs,a.repo_id,a.include_velocity,a.relative_base)
     sys.path.insert(0,a.openpi_root)
     cfg=config(a.repo_id,a.work,a.steps,a.batch,state_input=not a.no_state_input,
-        include_velocity=a.include_velocity,init_checkpoint=a.init_checkpoint)
+        include_velocity=a.include_velocity,init_checkpoint=a.init_checkpoint,relative_base=a.relative_base)
     if a.mode=='norm':
         from scripts.compute_norm_stats import create_torch_dataloader
         from openpi.shared import normalize

@@ -25,6 +25,10 @@ class FetchPiSkill:
         expected=['qpos','qvel'] if self.state_dim==30 else ['qpos']
         if self.state_dim not in (15,30) or metadata.get('state_components',['qpos'])!=expected:
             raise ProtocolError('Unsupported or undeclared Fetch state components')
+        self.base_reference=metadata.get('base_position_reference','world')
+        if self.base_reference not in ('world','skill_start_xy'):
+            raise ProtocolError('Unsupported Fetch base position reference')
+        self.base_xy_origin=None
         names=[j.name for j in adapter.uenv.agent.robot.active_joints]
         if names!=JOINT_NAMES: raise ProtocolError('Fetch state joint ordering differs from training')
         self.name,self.adapter,self.client=name,adapter,client
@@ -40,9 +44,11 @@ class FetchPiSkill:
         self.index,self.call_id=index,request.call_id
         from .mshab_adapter import describe_target
         self.prompt=describe_target(self.adapter.original_plan,index).description
+        self.base_xy_origin=tuple(float(x) for x in jsonable(self.adapter.uenv.agent.robot.qpos)[0][:2])
         self.actions.clear()
         self.adapter.logger.emit('fetch_pi_started',call_id=self.call_id,skill=self.name,
-            prompt=self.prompt,model_metadata=self.client.metadata,chunk_steps=self.chunk_steps)
+            prompt=self.prompt,model_metadata=self.client.metadata,chunk_steps=self.chunk_steps,
+            base_xy_origin=self.base_xy_origin)
 
     def act(self,observation):
         if self.index is None: raise ProtocolError('Missing skill start')
@@ -56,6 +62,9 @@ class FetchPiSkill:
                 image=next(x for x in visual.images if x.camera==camera)
                 return np.asarray(Image.open(io.BytesIO(image.data)).convert('RGB'))
             state=np.asarray(jsonable(self.adapter.uenv.agent.robot.qpos)[0],dtype=np.float32)
+            if self.base_reference=='skill_start_xy':
+                if self.base_xy_origin is None: raise ProtocolError('Missing measured skill-start base origin')
+                state[:2]-=np.asarray(self.base_xy_origin,np.float32)
             if self.state_dim==30:
                 state=np.concatenate([state,np.asarray(jsonable(self.adapter.uenv.agent.robot.qvel)[0],dtype=np.float32)])
             if state.shape!=(self.state_dim,) or not np.isfinite(state).all(): raise ProtocolError('Invalid Fetch state')
