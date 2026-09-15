@@ -36,6 +36,10 @@ V7 used 693 frames: 13 successful Pick segments and three Place segments.
 V8 adds 535 expert recovery frames: 11 Pick segments and three Place segments.
 There are 1,228 frames across 30 segments from 24 selected run directories.
 All use `tidy_house-sequential-val-90-0` / `val/tidy_house/episode_18.json`.
+[The frame-by-frame label audit](results/v8-label-audit.json) verifies that all
+recorded labels match post-wrapper controls and that every selected segment
+ended with native success without a simultaneous failure flag. This is data
+validation, not a policy-performance result.
 
 The recovery collection executes a bounded pi prefix, then records SAC actions.
 It never changes the simulator pose or success predicate. Only expert tails
