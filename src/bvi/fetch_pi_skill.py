@@ -13,7 +13,7 @@ JOINT_NAMES=['root_x_axis_joint','root_y_axis_joint','root_z_rotation_joint',
 
 
 class FetchPiSkill:
-    def __init__(self,name,adapter,client,max_predictions=100,chunk_steps=3,ensemble_samples=1):
+    def __init__(self,name,adapter,client,max_predictions=100,chunk_steps=3,ensemble_samples=1,instructions=None):
         if name not in ('pick','place') or not 1<=chunk_steps<=10 or max_predictions<1 or not 1<=ensemble_samples<=8:
             raise ProtocolError('Invalid Fetch pi skill configuration')
         metadata=client.metadata
@@ -38,6 +38,10 @@ class FetchPiSkill:
         self.name,self.adapter,self.client=name,adapter,client
         self.max_predictions,self.chunk_steps=max_predictions,chunk_steps
         self.ensemble_samples=ensemble_samples
+        if instructions is not None and (not isinstance(instructions,dict) or not instructions or not all(
+                isinstance(k,str) and k.isdigit() and isinstance(v,str) and v.strip() for k,v in instructions.items())):
+            raise ProtocolError('Manipulation instructions must map indices to nonempty strings')
+        self.instructions=None if instructions is None else dict(instructions)
         self.total_predictions=0
         self.actions=deque()
         self.index=None
@@ -48,12 +52,17 @@ class FetchPiSkill:
             raise ProtocolError('Fetch pi skill does not match requested subtask')
         self.index,self.call_id=index,request.call_id
         from .mshab_adapter import describe_target
-        self.prompt=describe_target(self.adapter.original_plan,index).description
+        if self.instructions is not None:
+            if str(index) not in self.instructions:raise ProtocolError('Missing explicit manipulation instruction')
+            self.prompt=self.instructions[str(index)]
+        else:
+            self.prompt=describe_target(self.adapter.original_plan,index).description
         self.base_xy_origin=tuple(float(x) for x in jsonable(self.adapter.uenv.agent.robot.qpos)[0][:2])
         self.actions.clear()
         self.adapter.logger.emit('fetch_pi_started',call_id=self.call_id,skill=self.name,
             prompt=self.prompt,model_metadata=self.client.metadata,chunk_steps=self.chunk_steps,
-            base_xy_origin=self.base_xy_origin,ensemble_samples=self.ensemble_samples)
+            base_xy_origin=self.base_xy_origin,ensemble_samples=self.ensemble_samples,
+            instruction_source='explicit_scene_config' if self.instructions is not None else 'task_plan_id_template')
 
     def act(self,observation):
         if self.index is None: raise ProtocolError('Missing skill start')

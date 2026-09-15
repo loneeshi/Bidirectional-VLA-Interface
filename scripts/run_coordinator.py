@@ -82,6 +82,8 @@ def main() -> None:
     parser.add_argument('--max-manipulation-predictions',type=int,default=100)
     parser.add_argument('--manipulation-chunk-steps',type=int,default=3)
     parser.add_argument('--manipulation-ensemble-samples',type=int,default=1)
+    parser.add_argument('--manipulation-instructions',type=Path,
+                        help='Explicit scene-bound manipulation descriptions, requiring expected-plan-uid')
     parser.add_argument('--workspace-camera',action='store_true',
                         help='Add a declared fixed oblique Fetch workspace camera (224 RGB)')
     parser.add_argument('--training-collection',action='store_true',
@@ -108,6 +110,16 @@ def main() -> None:
             or args.manipulation_policy!='fetch-pi05' or not 0<=args.collect_recovery_after<=50):
         parser.error('Recovery collection requires --dry-run --record-demonstrations --manipulation-policy fetch-pi05 and prefix0..50')
     navigation_instructions = {}
+    manipulation_instructions=None
+    if args.manipulation_instructions:
+        if args.manipulation_policy!='fetch-pi05' or not args.expected_plan_uid:
+            parser.error('Manipulation instruction overrides require Fetch pi05 and expected-plan-uid')
+        if args.record_demonstrations:
+            parser.error('Manipulation instruction overrides are inference-only; the teacher exporter uses task-plan descriptions')
+        manipulation_instructions=json.loads(args.manipulation_instructions.read_text(encoding='utf-8'))
+        if not isinstance(manipulation_instructions,dict) or not manipulation_instructions or not all(
+                isinstance(k,str) and k.isdigit() and isinstance(v,str) and v.strip() for k,v in manipulation_instructions.items()):
+            parser.error('Manipulation instructions must map indices to nonempty strings')
     recovery_instructions={}
     if args.navigation_recovery_instructions:
         recovery_instructions=json.loads(args.navigation_recovery_instructions.read_text(encoding='utf-8'))
@@ -201,6 +213,7 @@ def main() -> None:
     metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
     metadata['teacher_takeover_after']=args.collect_recovery_after
     metadata['manipulation_ensemble_samples']=args.manipulation_ensemble_samples
+    metadata['manipulation_instructions']=manipulation_instructions
     if args.collect_recovery_after is not None:
         metadata['manipulation_policy']='fetch-pi05_then_sac_teacher'
     source_root=Path(__file__).resolve().parents[1]
@@ -221,6 +234,8 @@ def main() -> None:
     coordinator = None
     try:
         adapter = make_mshab_adapter(cfg, logger, args.output, seed=args.seed)
+        if args.expected_plan_uid and adapter.original_plan.subtasks[0].uid != args.expected_plan_uid:
+            raise ProtocolError('Sampled plan does not match expected-plan-uid')
         adapter.record_demonstrations = args.record_demonstrations
         specs = adapter.skill_specs(args.skill_wall_seconds)
         skills = {name: OfficialRLSkill(name, adapter, checkpoint_root, args.policy_type) for name in specs}
@@ -231,7 +246,8 @@ def main() -> None:
             for name in ('pick','place'):
                 skill=FetchPiSkill(name,adapter,manipulation_client,args.max_manipulation_predictions,
                                    chunk_steps=args.manipulation_chunk_steps,
-                                   ensemble_samples=args.manipulation_ensemble_samples)
+                                   ensemble_samples=args.manipulation_ensemble_samples,
+                                   instructions=manipulation_instructions)
                 if args.collect_recovery_after is not None:
                     from bvi.recovery_collection import RecoveryCollectionSkill
                     skills[name]=RecoveryCollectionSkill(skill,skills[name],adapter,args.collect_recovery_after)
@@ -241,8 +257,6 @@ def main() -> None:
         if args.navigation_policy == "lightnav":
             from bvi.lightnav_skill import LightNavSkill
             from bvi.vla_clients import LightNavClient
-            if adapter.original_plan.subtasks[0].uid != args.expected_plan_uid:
-                raise ProtocolError("Sampled plan does not match navigation language instructions")
             navigation_client = LightNavClient.connect(args.lightnav_url)
             navigation_skill = LightNavSkill(adapter, navigation_client, navigation_instructions,
                                              args.max_navigation_predictions,camera=args.navigation_camera,
