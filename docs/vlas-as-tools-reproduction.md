@@ -1,6 +1,6 @@
 # VLAs-as-Tools reproduction: priority and acceptance gates
 
-Status: source and local-code audit, 2026-09-15. **Availability correction:** [relevant code was found in the co-first author's public OpenPI fork](vlas-as-tools-code-audit.md); inspect and reuse it before reimplementing. LIBERO is the first reproduction environment. No TAPT training or new paid experiment has been run for this milestone. This supersedes organizer-only development as the immediate research priority.
+Status: source and local-code audit, 2026-09-15. **Availability correction:** [relevant code was found in the co-first author's public OpenPI fork](vlas-as-tools-code-audit.md); inspect and reuse it before reimplementing. LIBERO is the first reproduction environment. This was the pre-execution audit. The approved [TAPT007 component experiment](tapt-libero-run01.md) is now training on one A6000; its live report supersedes this audit status. This supersedes organizer-only development as the immediate research priority.
 
 ## Verified source
 

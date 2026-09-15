@@ -106,6 +106,12 @@
       "previous_path": "organizer-injected-fault-recovery.mp4",
       "sha256": "be9395c98df789d75750b58ff0d00ebef1cb41b5149b38905e5300b364cfb1e3",
       "bytes": 1074922
+    },
+    {
+      "filename": "baseline-episode000.mp4",
+      "path": "tapt-libero-2026-09-15-run01/baseline-episode000.mp4",
+      "sha256": "f04c7777a6c775207f097fdee2d6b7f4c51caeb4cf09863d4c9fdce8f2db5f0f",
+      "bytes": 132628
     }
   ]
 }
