@@ -145,7 +145,9 @@ def main():
         if not a.checkpoint: p.error('--checkpoint required; never substitute a DROID checkpoint')
         cfg=dataclasses.replace(cfg,policy_metadata={**cfg.policy_metadata,
             'checkpoint':str(Path(a.checkpoint).resolve()),
-            'denoising_steps':a.denoising_steps})
+            'denoising_steps':a.denoising_steps,
+            'action_horizon':cfg.model.action_horizon,
+            'server_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()})
         policy=create_trained_policy(cfg,a.checkpoint,
                                     sample_kwargs={'num_steps':a.denoising_steps})
         WebsocketPolicyServer(policy,host='127.0.0.1',port=a.port,metadata=policy.metadata).serve_forever()
