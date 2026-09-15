@@ -117,7 +117,10 @@ def main():
     p.add_argument('--include-velocity',action='store_true',help='Use named qpos and qvel (30 robot state values)')
     p.add_argument('--no-state-input',action='store_true',help='Historical vision-only pilot reproduction, not recommended for Fetch')
     p.add_argument('--port',type=int,default=8051)
+    p.add_argument('--denoising-steps',type=int,default=10,
+                   help='Native pi05 flow-matching inference steps (1..100); recorded in server metadata')
     a=p.parse_args()
+    if not 1<=a.denoising_steps<=100: p.error('--denoising-steps must be in 1..100')
     if a.include_velocity and a.no_state_input: p.error('Velocity experiment requires state conditioning')
     if a.mode=='convert': return convert(a.runs,a.repo_id,a.include_velocity)
     sys.path.insert(0,a.openpi_root)
@@ -141,8 +144,10 @@ def main():
         from openpi.serving.websocket_policy_server import WebsocketPolicyServer
         if not a.checkpoint: p.error('--checkpoint required; never substitute a DROID checkpoint')
         cfg=dataclasses.replace(cfg,policy_metadata={**cfg.policy_metadata,
-            'checkpoint':str(Path(a.checkpoint).resolve())})
-        policy=create_trained_policy(cfg,a.checkpoint)
+            'checkpoint':str(Path(a.checkpoint).resolve()),
+            'denoising_steps':a.denoising_steps})
+        policy=create_trained_policy(cfg,a.checkpoint,
+                                    sample_kwargs={'num_steps':a.denoising_steps})
         WebsocketPolicyServer(policy,host='127.0.0.1',port=a.port,metadata=policy.metadata).serve_forever()
 
 
