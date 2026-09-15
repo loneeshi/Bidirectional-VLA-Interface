@@ -94,7 +94,8 @@ def make_mshab_adapter(env_cfg: Any, logger: JsonlLogger, output: str | Path,
 
         def capture(self, raw, info):
             self.images = {camera: raw["sensor_data"][camera]["rgb"].detach().clone()
-                           for camera in ("fetch_head", "fetch_hand")}
+                           for camera in ("fetch_head", "fetch_hand", "fetch_nav")
+                           if camera in raw['sensor_data']}
             # Info can hold references to mutable GPU state, e.g. subtask_pointer.
             self.info = jsonable(info)
 
@@ -147,6 +148,7 @@ class MSHABAdapter:
         self.last_info: dict[str, Any] = {}
         self.ended = False
         self.success_once = False
+        self.record_demonstrations = False
 
     def reset(self, seed: int) -> Observation:
         from mshab.utils.array import to_tensor
@@ -222,6 +224,20 @@ class MSHABAdapter:
             raise ProtocolError("Episode ended; this diagnostic runner does not auto-reset")
         action = self.action_bounds.validate(action)
         before = int(scalar(self.uenv.subtask_pointer))
+        demonstration = None
+        if self.record_demonstrations and self.original_plan.subtasks[before].type in ('pick','place'):
+            observation = self.observe()
+            paths = self.save_observation_images()
+            demonstration = dict(frame_id=observation.frame_id,
+                subtask_index=before, skill=self.original_plan.subtasks[before].type,
+                target_description=describe_target(self.original_plan,before).description,
+                qpos=jsonable(self.uenv.agent.robot.qpos),
+                qvel=jsonable(self.uenv.agent.robot.qvel),
+                joint_names=[j.name for j in self.uenv.agent.robot.active_joints],
+                base_pose=jsonable(self.uenv.agent.base_link.pose.raw_pose),
+                tcp_pose=jsonable(self.uenv.agent.tcp_pose.raw_pose),
+                action=action, images=paths,control_hz=20,
+                action_convention='Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity')
         tensor = torch.tensor([action], dtype=torch.float32, device=self.uenv.device)
         policy, reward, terminated, truncated, _ = self.env.step(tensor)
         self.steps += 1
@@ -239,6 +255,12 @@ class MSHABAdapter:
         self.logger.emit("mshab_step", frame_id=self._observation.frame_id,
                          subtask_before=before, subtask_after=after, info=info,
                          controller_action=jsonable(tensor), terminated=term, truncated=trunc)
+        if demonstration is not None:
+            demonstration['requested_action']=demonstration['action']
+            # Official wrappers may zero stationary-head controls in-place.
+            demonstration['action']=jsonable(tensor)[0]
+            self.logger.emit('demonstration_step',**demonstration,
+                             next_frame_id=self._observation.frame_id,feedback=info)
         return Transition(self._observation, float(scalar(reward)), term, trunc, info)
 
     def skill_specs(self, wall_timeout_seconds: float = 180.0) -> dict[str, SkillSpec]:

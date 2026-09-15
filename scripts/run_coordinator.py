@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -64,10 +65,21 @@ def main() -> None:
     parser.add_argument("--checkpoint-root", type=Path, default=os.getenv("MSHAB_CHECKPOINT_DIR"))
     parser.add_argument("--output", type=Path, default=Path("runs/coordinator"))
     parser.add_argument("--no-video", action="store_true")
+    parser.add_argument("--record-demonstrations",action='store_true',
+                        help='Save synchronized Pick/Place training images, named state, applied action and feedback')
     parser.add_argument("--navigation-policy", choices=("official", "lightnav"), default="official")
+    parser.add_argument('--navigation-control',choices=('position_tracker','waypoint_velocity'),default='waypoint_velocity')
+    parser.add_argument('--manipulation-policy',choices=('official','fetch-pi05'),default='official')
+    parser.add_argument('--fetch-pi-url',default='ws://127.0.0.1:8051')
+    parser.add_argument('--max-manipulation-predictions',type=int,default=100)
+    parser.add_argument('--manipulation-chunk-steps',type=int,default=3)
+    parser.add_argument("--navigation-camera",choices=('fetch_head','fetch_nav'),default='fetch_head',
+                        help='fetch_nav adds a declared forward-facing robot sensor; original RL sensors stay unchanged')
     parser.add_argument("--lightnav-url", default="ws://127.0.0.1:8050")
     parser.add_argument("--navigation-instructions", type=Path,
                         help="JSON mapping subtask indices to explicit visual language goals")
+    parser.add_argument('--navigation-recovery-instructions',type=Path,
+                        help='Optional rotation-only language goals when stopped close but misoriented')
     parser.add_argument("--expected-plan-uid", help="Require the exact first subtask UID before LightNav")
     parser.add_argument("--max-navigation-predictions", type=int, default=40)
     parser.add_argument("--lightnav-subtasks", type=int, nargs='+',
@@ -78,6 +90,11 @@ def main() -> None:
                         help="Show benchmark debug goals in human-render video")
     args = parser.parse_args()
     navigation_instructions = {}
+    recovery_instructions={}
+    if args.navigation_recovery_instructions:
+        recovery_instructions=json.loads(args.navigation_recovery_instructions.read_text(encoding='utf-8'))
+        if not isinstance(recovery_instructions,dict) or not all(isinstance(k,str) and k.isdigit() and isinstance(v,str) and v.strip() for k,v in recovery_instructions.items()):
+            parser.error('Recovery instructions must map indices to nonempty strings')
     if args.navigation_policy == "lightnav":
         if args.navigation_instructions is None or not args.expected_plan_uid or args.max_navigation_predictions < 1:
             parser.error("LightNav requires instructions, expected-plan-uid and a positive prediction cap")
@@ -124,7 +141,11 @@ def main() -> None:
     args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=False)
     logger = JsonlLogger(args.output / "events.jsonl", args.output.name)
-    cfg = EnvConfig(env_id="SequentialTask-v0", num_envs=1, max_episode_steps=7000,
+    env_id='SequentialTask-v0'
+    if args.navigation_camera == 'fetch_nav':
+        import bvi.nav_camera_env
+        env_id='BVISequentialNavCamera-v0'
+    cfg = EnvConfig(env_id=env_id, num_envs=1, max_episode_steps=7000,
         task_plan_fp=str(plan_path), obs_mode="rgbd", render_mode="rgb_array",
         record_video=not args.no_video, info_on_video=args.video_debug_overlay, continuous_task=True,
         frame_stack=3, stationary_base=False, stationary_torso=False, stationary_head=True,
@@ -146,13 +167,24 @@ def main() -> None:
                 "image_detail": args.image_detail, "reasoning_effort": args.reasoning_effort,
                 "max_env_steps": args.max_env_steps, "max_wall_seconds": args.max_wall_seconds}
     metadata.update(navigation_policy=args.navigation_policy,
+                    navigation_control=args.navigation_control,
+                    manipulation_policy=args.manipulation_policy,
+                    manipulation_chunk_steps=args.manipulation_chunk_steps,
+                    navigation_camera=args.navigation_camera,
                     lightnav_subtasks=args.lightnav_subtasks,
                     navigation_instructions=navigation_instructions,
+                    navigation_recovery_instructions=recovery_instructions,
                     max_navigation_predictions=args.max_navigation_predictions)
+    source_root=Path(__file__).resolve().parents[1]
+    source_files=[Path(__file__).resolve(),*sorted((source_root/'src/bvi').glob('*.py'))]
+    metadata['runtime_source_sha256']={str(p.relative_to(source_root)):hashlib.sha256(p.read_bytes()).hexdigest()
+                                       for p in source_files}
     (args.output / "run-metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     adapter = None
     navigation_client = None
     navigation_skill = None
+    manipulation_client = None
+    manipulation_skills = []
     started = time.monotonic()
     history = []
     decisions = 0
@@ -161,8 +193,18 @@ def main() -> None:
     coordinator = None
     try:
         adapter = make_mshab_adapter(cfg, logger, args.output, seed=args.seed)
+        adapter.record_demonstrations = args.record_demonstrations
         specs = adapter.skill_specs(args.skill_wall_seconds)
         skills = {name: OfficialRLSkill(name, adapter, checkpoint_root, args.policy_type) for name in specs}
+        if args.manipulation_policy=='fetch-pi05':
+            from bvi.fetch_pi_skill import FetchPiSkill
+            from bvi.vla_clients import OpenPiClient
+            manipulation_client=OpenPiClient.connect(args.fetch_pi_url,timeout=120)
+            for name in ('pick','place'):
+                skill=FetchPiSkill(name,adapter,manipulation_client,args.max_manipulation_predictions,
+                                   chunk_steps=args.manipulation_chunk_steps)
+                skills[name]=skill
+                manipulation_skills.append(skill)
         if args.navigation_policy == "lightnav":
             from bvi.lightnav_skill import LightNavSkill
             from bvi.vla_clients import LightNavClient
@@ -170,7 +212,9 @@ def main() -> None:
                 raise ProtocolError("Sampled plan does not match navigation language instructions")
             navigation_client = LightNavClient.connect(args.lightnav_url)
             navigation_skill = LightNavSkill(adapter, navigation_client, navigation_instructions,
-                                             args.max_navigation_predictions)
+                                             args.max_navigation_predictions,camera=args.navigation_camera,
+                                             control_mode=args.navigation_control,
+                                             recovery_instructions=recovery_instructions,max_stop_replans=2)
             if args.lightnav_subtasks is not None:
                 from bvi.lightnav_skill import IndexedNavigationSkill
                 if any(i < 0 or i >= len(adapter.original_plan.subtasks) or
@@ -254,6 +298,11 @@ def main() -> None:
         logger.emit("experiment_error", error_type=type(exc).__name__)
         raise
     finally:
+        if manipulation_client is not None:
+            try:
+                manipulation_client.close()
+            except Exception as exc:
+                logger.emit('manipulation_client_close_error',error_type=type(exc).__name__)
         if navigation_client is not None:
             try:
                 navigation_client.close()
@@ -263,12 +312,17 @@ def main() -> None:
             if coordinator is not None:
                 api_calls = coordinator.calls_reserved
             summary = {"benchmark_result": False, "reason": reason, "decisions": decisions,
+                       "first_object_chain_success": (len(history)>=4 and
+                           [h['skill'] for h in history[:4]]==['navigate','pick','navigate','place'] and
+                           all(h['feedback'].status is SkillStatus.SUCCEEDED for h in history[:4])),
                        "api_requests": api_calls, "vlm": not args.dry_run,
                        "vlm_feedback_loop_observed": not args.dry_run and len(history) >= 2,
                        "task_success": bool(scalar(adapter.last_info.get("success", False))),
                        "steps": adapter.steps, "wall_seconds": time.monotonic() - started,
                        "skill_results": jsonable(history),
                        "navigation_policy": args.navigation_policy,
+                       "manipulation_policy":args.manipulation_policy,
+                       "manipulation_predictions":sum(s.total_predictions for s in manipulation_skills),
                        "navigation_predictions": navigation_skill.total_predictions if navigation_skill else 0,
                        "api_cost_usd": None if not args.dry_run else 0,
                        "api_cost_status": "pending_reconciliation" if not args.dry_run else "no_api_calls"}

@@ -1,0 +1,209 @@
+{
+  "variant": "B",
+  "summary": {
+    "benchmark_result": false,
+    "reason": "experiment_call_limit",
+    "decisions": 4,
+    "first_object_chain_success": true,
+    "api_requests": 0,
+    "vlm": false,
+    "vlm_feedback_loop_observed": false,
+    "task_success": false,
+    "steps": 278,
+    "wall_seconds": 83.84933854360133,
+    "skill_results": [
+      {
+        "call_id": "oracle-0",
+        "skill": "navigate",
+        "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+        "requirements": [
+          {
+            "id": "benchmark-completion",
+            "predicate": "benchmark_success"
+          }
+        ],
+        "feedback": {
+          "status": "succeeded",
+          "requirements": [
+            {
+              "requirement_id": "benchmark-completion",
+              "state": "satisfied",
+              "evidence": [
+                "events.jsonl:mshab_step:seed-1-step-77"
+              ]
+            }
+          ],
+          "reason": "oracle_subtask_advanced",
+          "source": "oracle_benchmark"
+        },
+        "steps": 77,
+        "elapsed_seconds": 17.331964788027108
+      },
+      {
+        "call_id": "oracle-1",
+        "skill": "pick",
+        "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+        "requirements": [
+          {
+            "id": "benchmark-completion",
+            "predicate": "benchmark_success"
+          }
+        ],
+        "feedback": {
+          "status": "succeeded",
+          "requirements": [
+            {
+              "requirement_id": "benchmark-completion",
+              "state": "satisfied",
+              "evidence": [
+                "events.jsonl:mshab_step:seed-1-step-124"
+              ]
+            }
+          ],
+          "reason": "oracle_subtask_advanced",
+          "source": "oracle_benchmark"
+        },
+        "steps": 47,
+        "elapsed_seconds": 16.664508261717856
+      },
+      {
+        "call_id": "oracle-2",
+        "skill": "navigate",
+        "target_id": "subtask-2-tidy_house-sequential-val-90-2",
+        "requirements": [
+          {
+            "id": "benchmark-completion",
+            "predicate": "benchmark_success"
+          }
+        ],
+        "feedback": {
+          "status": "succeeded",
+          "requirements": [
+            {
+              "requirement_id": "benchmark-completion",
+              "state": "satisfied",
+              "evidence": [
+                "events.jsonl:mshab_step:seed-1-step-239"
+              ]
+            }
+          ],
+          "reason": "oracle_subtask_advanced",
+          "source": "oracle_benchmark"
+        },
+        "steps": 115,
+        "elapsed_seconds": 24.07639778032899
+      },
+      {
+        "call_id": "oracle-3",
+        "skill": "place",
+        "target_id": "subtask-3-tidy_house-sequential-val-90-3",
+        "requirements": [
+          {
+            "id": "benchmark-completion",
+            "predicate": "benchmark_success"
+          }
+        ],
+        "feedback": {
+          "status": "succeeded",
+          "requirements": [
+            {
+              "requirement_id": "benchmark-completion",
+              "state": "satisfied",
+              "evidence": [
+                "events.jsonl:mshab_step:seed-1-step-278"
+              ]
+            }
+          ],
+          "reason": "oracle_subtask_advanced",
+          "source": "oracle_benchmark"
+        },
+        "steps": 39,
+        "elapsed_seconds": 12.664659881033003
+      }
+    ],
+    "navigation_policy": "lightnav",
+    "manipulation_policy": "official",
+    "manipulation_predictions": 0,
+    "navigation_predictions": 39,
+    "api_cost_usd": 0,
+    "api_cost_status": "no_api_calls"
+  },
+  "metadata": {
+    "stage": "G4_adapter_diagnostic",
+    "benchmark_result": false,
+    "vlm": false,
+    "dispatcher": "oracle_protocol_dry_run",
+    "coverage": "one validation scene / one sampled plan",
+    "completion_source": "oracle_benchmark",
+    "targets_source": "oracle_task_plan",
+    "config": {
+      "env_id": "BVISequentialNavCamera-v0",
+      "num_envs": 1,
+      "max_episode_steps": 7000,
+      "make_env": true,
+      "obs_mode": "rgbd",
+      "render_mode": "rgb_array",
+      "shader_dir": "minimal",
+      "sim_backend": "gpu",
+      "continuous_task": true,
+      "cat_state": true,
+      "cat_pixels": false,
+      "frame_stack": 3,
+      "stack": null,
+      "stationary_base": false,
+      "stationary_torso": false,
+      "stationary_head": true,
+      "task_plan_fp": "/workspace/bvi/assets/data/scene_datasets/replica_cad_dataset/rearrange/task_plans/tidy_house/sequential/val/all.json",
+      "spawn_data_fp": null,
+      "record_video": true,
+      "debug_video": false,
+      "debug_video_gen": false,
+      "save_video_freq": null,
+      "info_on_video": false,
+      "extra_stat_keys": [],
+      "env_kwargs": {
+        "require_build_configs_repeated_equally_across_envs": false,
+        "invisible_goals_in_human_render": true,
+        "add_event_tracker_info": true,
+        "human_render_camera_configs": {
+          "width": 512,
+          "height": 512
+        },
+        "task_cfgs": {
+          "navigate": {
+            "ignore_arm_checkers": true
+          }
+        }
+      }
+    },
+    "seed": 1,
+    "policy_type": "rl_per_obj",
+    "provider": null,
+    "model": null,
+    "api_budget": null,
+    "transport": "direct",
+    "image_detail": "low",
+    "reasoning_effort": "none",
+    "max_env_steps": 1200,
+    "max_wall_seconds": 900.0,
+    "navigation_policy": "lightnav",
+    "navigation_control": "waypoint_velocity",
+    "manipulation_policy": "official",
+    "navigation_camera": "fetch_nav",
+    "lightnav_subtasks": null,
+    "navigation_instructions": {
+      "0": "Go to the blue can on the black kitchen counter beside the refrigerator, at the far end beyond the sink. Move close enough to reach the can and face it.",
+      "2": "Go from the kitchen toward the blue sofa at the other end of the living room. Find the gray armchair with a backrest and two armrests next to that blue sofa. It is opposite the kitchen, far from the stairs. Do not go to the round gray beanbag near the stairs. Approach the armchair's open front and face its seat."
+    },
+    "navigation_recovery_instructions": {
+      "2": "Turn in place to face the seat of the gray single-seat armchair beside the sofa. The armchair should be centered directly in front of you. Do not move forward and do not face the sofa."
+    },
+    "max_navigation_predictions": 250
+  },
+  "carry_grasp_audit": {
+    "steps": 115,
+    "all_true": true
+  },
+  "video_sha256": "1b9f694b4b2d55b74a6c3cc1f61fbc554140d46a5b3b9227be3757ba81f7834d",
+  "events_sha256": "02fe351368b9f58a461b9056102bf22542945fc316cd2a36c5682811fbf45b9f"
+}

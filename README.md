@@ -2,20 +2,27 @@
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
-The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM issues structured skill requests from image observations and execution feedback; interchangeable low-level policies execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. Learning VLA adapters and requirement verifiers is future work.
+The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM issues structured skill requests from image observations and execution feedback; interchangeable low-level policies execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. LightNav integration and Fetch pi0.5 adaptation are now under development; learning requirement verifiers is future work.
 
 [Status](#current-status) · [Architecture](#architecture) · [Setup](docs/reproduction.md) · [Evaluation](docs/evaluation.md) · [Roadmap](#roadmap)
 
 [Watch the real VLM demonstration](docs/media/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
 
-**LightNav control diagnostic:** [Watch the actual rollout](docs/media/lightnav-control-003-trial2.mp4) · [Results and limitations](docs/lightnav-control.md).
+**Earlier LightNav control diagnostic:** [Watch the failed rollout](docs/media/lightnav-control-003-trial2.mp4) · [Results and limitations](docs/lightnav-control.md).
 LightNav now drives Fetch through the adapter. After fixing a deferred-image bug,
 a trial executed 270 control steps and 55 predictions, then stopped before the
 benchmark navigation goal was satisfied. SAC manipulation was not reached.
 Physical motion signs and a 40-step grasp hold passed separate calibration.
-This trial uses oracle dispatch, not GPT/Opus. pi0.5 remains inference-only.
+This historical trial uses oracle dispatch, not GPT/Opus, and precedes Fetch pi0.5 adaptation.
 
 [A/B/C/D delivery plan and green-marker diagnosis](docs/abcd-delivery.md).
+
+**Current A/B/C/D work:** [debugging evidence and Fetch adaptation](docs/abcd-debugging.md).
+The [marker-free A chain](docs/media/A-ppo-sac-clean.mp4) has been re-recorded.
+[B: LightNav + SAC](docs/media/B-lightnav-sac.mp4) completed the first-object chain
+in 278 steps, with grasp maintained throughout carrying navigation.
+A real Fetch pi0.5 fine-tuning pilot executed robot actions and failed Pick;
+state-conditioning and dataset-label corrections are being evaluated.
 
 ## Current status
 
@@ -23,7 +30,7 @@ This trial uses oracle dispatch, not GPT/Opus. pi0.5 remains inference-only.
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 71 tests run, 69 passed and 2 optional-dependency tests skipped; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 78 tests run, 76 passed and 2 optional-dependency tests skipped; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|
@@ -33,7 +40,7 @@ The `bvi` Python core includes typed requests and feedback, a serial skill runti
 | G3: Skill composition | Navigate → Pick → Navigate while holding → Place, without teleportation | Passed for the first object in one continuous episode, 233 steps |
 | G4: VLM coordination | Real image input, structured requests, execution feedback, and subsequent decisions | Passed as a constrained interface smoke test: six real GPT requests, with oracle targets and completion |
 
-The [live run and evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) establish a **single-scene engineering demonstration**. There is no trained VLA model or aggregate benchmark score. The original G1 smoke test used 200 zero actions; successful policy execution and the VLM loop were verified separately.
+The [live run and evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) establish a **single-scene engineering demonstration**. There is no aggregate benchmark score; the Fetch-trained pi0.5 pilot has not passed its task gate. The original G1 smoke test used 200 zero actions; successful policy execution and the VLM loop were verified separately.
 
 The first official-policy run completed its 7,000-step horizon on one validation scene/plan and returned **0/1 task successes** (`success_once=0`, `success_at_end=0`). The trace advances from Navigate to Pick at step index 128, then records a cumulative-force failure at index 143. This is a preliminary diagnostic failure, not an estimate of full-benchmark performance. See the [run result and limitations](docs/evaluation.md#first-official-policy-diagnostic).
 
