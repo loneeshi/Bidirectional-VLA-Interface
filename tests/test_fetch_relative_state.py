@@ -57,5 +57,27 @@ class RelativeFetchStateTests(unittest.TestCase):
         np.testing.assert_array_equal(states[0],states[1])
         np.testing.assert_array_equal(states[0], [.25,.5]+list(range(2,15))+list(range(100,115)))
 
+    def test_ensemble_counts_every_draw_and_applies_mean(self):
+        from bvi.fetch_pi_skill import FetchPiSkill,JOINT_NAMES,CONVENTION
+        from bvi.protocol import ActionBounds,ProtocolError
+        buffer=io.BytesIO();Image.new('RGB',(4,4)).save(buffer,format='PNG')
+        obs=NS(frame_id='s',images=[NS(camera=c,data=buffer.getvalue()) for c in ('fetch_head','fetch_hand')])
+        robot=NS(active_joints=[NS(name=x) for x in JOINT_NAMES],qpos=[[0.]*15])
+        adapter=NS(uenv=NS(agent=NS(robot=robot)),logger=NS(emit=lambda *a,**k:None),
+            action_bounds=ActionBounds((-1.,)*13,(1.,)*13),observe=lambda:obs,save_observation_images=lambda:None)
+        draws=[]
+        def infer(data,action_dim):
+            draws.append(data);return (([1.,-1.,.2,.2][len(draws)-1],)+(0.,)*12,)
+        client=NS(metadata={'robot':'fetch','state_dim':15,'action_dim':13,
+            'action_convention':CONVENTION,'state_conditioning':True},infer=infer)
+        skill=FetchPiSkill('pick',adapter,client,max_predictions=4,chunk_steps=1,ensemble_samples=4)
+        skill.index=1;skill.call_id='p';skill.prompt='Pick'
+        self.assertAlmostEqual(skill.act(obs)[0],.1)
+        self.assertEqual(skill.total_predictions,4)
+        self.assertEqual(len(draws),4)
+        self.assertTrue(all(d is draws[0] for d in draws))
+        with self.assertRaisesRegex(ProtocolError,'cap reached'):skill.act(obs)
+        self.assertEqual(len(draws),4)
+
 
 if __name__=='__main__':unittest.main()

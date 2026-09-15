@@ -73,6 +73,7 @@ def main() -> None:
     parser.add_argument('--fetch-pi-url',default='ws://127.0.0.1:8051')
     parser.add_argument('--max-manipulation-predictions',type=int,default=100)
     parser.add_argument('--manipulation-chunk-steps',type=int,default=3)
+    parser.add_argument('--manipulation-ensemble-samples',type=int,default=1)
     parser.add_argument('--collect-recovery-after',type=int,
                         help='Training collection only: execute N pi05 steps, then record official SAC recovery')
     parser.add_argument("--navigation-camera",choices=('fetch_head','fetch_nav'),default='fetch_head',
@@ -182,6 +183,7 @@ def main() -> None:
                     max_navigation_predictions=args.max_navigation_predictions)
     metadata['mixed_teacher_collection']=args.collect_recovery_after is not None
     metadata['teacher_takeover_after']=args.collect_recovery_after
+    metadata['manipulation_ensemble_samples']=args.manipulation_ensemble_samples
     if args.collect_recovery_after is not None:
         metadata['manipulation_policy']='fetch-pi05_then_sac_teacher'
     source_root=Path(__file__).resolve().parents[1]
@@ -211,7 +213,8 @@ def main() -> None:
             manipulation_client=OpenPiClient.connect(args.fetch_pi_url,timeout=120)
             for name in ('pick','place'):
                 skill=FetchPiSkill(name,adapter,manipulation_client,args.max_manipulation_predictions,
-                                   chunk_steps=args.manipulation_chunk_steps)
+                                   chunk_steps=args.manipulation_chunk_steps,
+                                   ensemble_samples=args.manipulation_ensemble_samples)
                 if args.collect_recovery_after is not None:
                     from bvi.recovery_collection import RecoveryCollectionSkill
                     skills[name]=RecoveryCollectionSkill(skill,skills[name],adapter,args.collect_recovery_after)
@@ -337,6 +340,7 @@ def main() -> None:
                        "manipulation_policy":metadata['manipulation_policy'],
                        "mixed_teacher_collection":metadata['mixed_teacher_collection'],
                        "manipulation_predictions":sum(s.total_predictions for s in manipulation_skills),
+                       "manipulation_ensemble_samples":args.manipulation_ensemble_samples,
                        "navigation_predictions": navigation_skill.total_predictions if navigation_skill else 0,
                        "api_cost_usd": None if not args.dry_run else 0,
                        "api_cost_status": "pending_reconciliation" if not args.dry_run else "no_api_calls"}

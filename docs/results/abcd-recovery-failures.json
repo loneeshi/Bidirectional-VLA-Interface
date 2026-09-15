@@ -1,0 +1,605 @@
+{
+  "scope": "Training-scene first-object diagnostics; no VLM, no held-out benchmark score",
+  "checkpoint_archive_sha256": "8184b1c4cab1ce929a261ec1eb3d1e6547a88d2021e7b973874a740ff3dbaddf",
+  "checkpoint": 2000,
+  "checkpoint_updates": 2001,
+  "full_planned_4000_updates_completed": false,
+  "runs": [
+    {
+      "run": "C6",
+      "summary": {
+        "benchmark_result": false,
+        "reason": "benchmark_fail",
+        "decisions": 2,
+        "first_object_chain_success": false,
+        "api_requests": 0,
+        "vlm": false,
+        "vlm_feedback_loop_observed": false,
+        "task_success": false,
+        "steps": 119,
+        "wall_seconds": 90.52151335217059,
+        "skill_results": [
+          {
+            "call_id": "oracle-0",
+            "skill": "navigate",
+            "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "succeeded",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "satisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-29"
+                  ]
+                }
+              ],
+              "reason": "oracle_subtask_advanced",
+              "source": "oracle_benchmark"
+            },
+            "steps": 29,
+            "elapsed_seconds": 4.951623723842204
+          },
+          {
+            "call_id": "oracle-1",
+            "skill": "pick",
+            "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "failed",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "unsatisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-119"
+                  ]
+                }
+              ],
+              "reason": "benchmark_fail",
+              "source": "oracle_benchmark"
+            },
+            "steps": 90,
+            "elapsed_seconds": 73.94355374574661
+          }
+        ],
+        "navigation_policy": "official",
+        "manipulation_policy": "fetch-pi05",
+        "mixed_teacher_collection": false,
+        "manipulation_predictions": 90,
+        "navigation_predictions": 0,
+        "api_cost_usd": 0,
+        "api_cost_status": "no_api_calls"
+      },
+      "model_metadata": {
+        "robot": "fetch",
+        "state_dim": 30,
+        "action_dim": 13,
+        "state_components": [
+          "qpos",
+          "qvel"
+        ],
+        "state_conditioning": true,
+        "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+        "training_repo": "bvi/fetch-seed1-recovery-v5",
+        "evaluation_scope": "training-scene-diagnostic",
+        "checkpoint": "/workspace/fetch-pi-recovery/checkpoints/pi05_fetch_lora_velocity/seed1-diagnostic/2000",
+        "denoising_steps": 10,
+        "action_horizon": 10,
+        "server_source_sha256": "387510ce1b9546d2e375cb082bfa1bdbcdc67f54d9dbf06237188942eba7de41"
+      },
+      "ensemble_samples": 1,
+      "ever_grasped": false,
+      "events_sha256": "fb451783fb4faf488d2e8903d7532dfd11c3aed0b182fc2315fdd57bdd52d83c",
+      "video_sha256": "070d9cda5f7f4c3697e027d6e558d41b67729d199fe3c9a8ccbfef0388092ac7"
+    },
+    {
+      "run": "D3",
+      "summary": {
+        "benchmark_result": false,
+        "reason": "benchmark_fail",
+        "decisions": 2,
+        "first_object_chain_success": false,
+        "api_requests": 0,
+        "vlm": false,
+        "vlm_feedback_loop_observed": false,
+        "task_success": false,
+        "steps": 189,
+        "wall_seconds": 59.67620251979679,
+        "skill_results": [
+          {
+            "call_id": "oracle-0",
+            "skill": "navigate",
+            "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "succeeded",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "satisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-77"
+                  ]
+                }
+              ],
+              "reason": "oracle_subtask_advanced",
+              "source": "oracle_benchmark"
+            },
+            "steps": 77,
+            "elapsed_seconds": 16.272985582239926
+          },
+          {
+            "call_id": "oracle-1",
+            "skill": "pick",
+            "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "failed",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "unsatisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-189"
+                  ]
+                }
+              ],
+              "reason": "benchmark_fail",
+              "source": "oracle_benchmark"
+            },
+            "steps": 112,
+            "elapsed_seconds": 30.57526110112667
+          }
+        ],
+        "navigation_policy": "lightnav",
+        "manipulation_policy": "fetch-pi05",
+        "mixed_teacher_collection": false,
+        "manipulation_predictions": 112,
+        "navigation_predictions": 16,
+        "api_cost_usd": 0,
+        "api_cost_status": "no_api_calls"
+      },
+      "model_metadata": {
+        "robot": "fetch",
+        "state_dim": 30,
+        "action_dim": 13,
+        "state_components": [
+          "qpos",
+          "qvel"
+        ],
+        "state_conditioning": true,
+        "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+        "training_repo": "bvi/fetch-seed1-recovery-v5",
+        "evaluation_scope": "training-scene-diagnostic",
+        "checkpoint": "/workspace/fetch-pi-recovery/checkpoints/pi05_fetch_lora_velocity/seed1-diagnostic/2000",
+        "denoising_steps": 10,
+        "action_horizon": 10,
+        "server_source_sha256": "387510ce1b9546d2e375cb082bfa1bdbcdc67f54d9dbf06237188942eba7de41"
+      },
+      "ensemble_samples": 1,
+      "ever_grasped": false,
+      "events_sha256": "d2fb5cc1ff658bdd3721e76c5499c56475b9d54003027ff1e15595f3a49b8224",
+      "video_sha256": "b33112eb385a8a315f133f20e96a59b572821fb7ec2b9e6ddd5494a961e3d736"
+    },
+    {
+      "run": "C7",
+      "summary": {
+        "benchmark_result": false,
+        "reason": "benchmark_fail",
+        "decisions": 2,
+        "first_object_chain_success": false,
+        "api_requests": 0,
+        "vlm": false,
+        "vlm_feedback_loop_observed": false,
+        "task_success": false,
+        "steps": 121,
+        "wall_seconds": 111.10808259155601,
+        "skill_results": [
+          {
+            "call_id": "oracle-0",
+            "skill": "navigate",
+            "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "succeeded",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "satisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-29"
+                  ]
+                }
+              ],
+              "reason": "oracle_subtask_advanced",
+              "source": "oracle_benchmark"
+            },
+            "steps": 29,
+            "elapsed_seconds": 4.475472750142217
+          },
+          {
+            "call_id": "oracle-1",
+            "skill": "pick",
+            "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "failed",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "unsatisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-121"
+                  ]
+                }
+              ],
+              "reason": "benchmark_fail",
+              "source": "oracle_benchmark"
+            },
+            "steps": 92,
+            "elapsed_seconds": 94.00879688095301
+          }
+        ],
+        "navigation_policy": "official",
+        "manipulation_policy": "fetch-pi05",
+        "mixed_teacher_collection": false,
+        "manipulation_predictions": 92,
+        "navigation_predictions": 0,
+        "api_cost_usd": 0,
+        "api_cost_status": "no_api_calls"
+      },
+      "model_metadata": {
+        "robot": "fetch",
+        "state_dim": 30,
+        "action_dim": 13,
+        "state_components": [
+          "qpos",
+          "qvel"
+        ],
+        "state_conditioning": true,
+        "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+        "training_repo": "bvi/fetch-seed1-recovery-v5",
+        "evaluation_scope": "training-scene-diagnostic",
+        "checkpoint": "/workspace/fetch-pi-recovery/checkpoints/pi05_fetch_lora_velocity/seed1-diagnostic/2000",
+        "denoising_steps": 50,
+        "action_horizon": 10,
+        "server_source_sha256": "387510ce1b9546d2e375cb082bfa1bdbcdc67f54d9dbf06237188942eba7de41"
+      },
+      "ensemble_samples": 1,
+      "ever_grasped": false,
+      "events_sha256": "f35a2eb579a03b098833d599cb3aa571245778e7496c4dfa7e20387072180228",
+      "video_sha256": "424a8ce82adf11ba0094639595206f899614aa53f9bf141963cc08934b390ec1"
+    },
+    {
+      "run": "D4",
+      "summary": {
+        "benchmark_result": false,
+        "reason": "benchmark_fail",
+        "decisions": 2,
+        "first_object_chain_success": false,
+        "api_requests": 0,
+        "vlm": false,
+        "vlm_feedback_loop_observed": false,
+        "task_success": false,
+        "steps": 157,
+        "wall_seconds": 72.9721705513075,
+        "skill_results": [
+          {
+            "call_id": "oracle-0",
+            "skill": "navigate",
+            "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "succeeded",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "satisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-86"
+                  ]
+                }
+              ],
+              "reason": "oracle_subtask_advanced",
+              "source": "oracle_benchmark"
+            },
+            "steps": 86,
+            "elapsed_seconds": 18.249006662517786
+          },
+          {
+            "call_id": "oracle-1",
+            "skill": "pick",
+            "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "failed",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "unsatisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-157"
+                  ]
+                }
+              ],
+              "reason": "benchmark_fail",
+              "source": "oracle_benchmark"
+            },
+            "steps": 71,
+            "elapsed_seconds": 31.50486615858972
+          }
+        ],
+        "navigation_policy": "lightnav",
+        "manipulation_policy": "fetch-pi05",
+        "mixed_teacher_collection": false,
+        "manipulation_predictions": 71,
+        "navigation_predictions": 18,
+        "api_cost_usd": 0,
+        "api_cost_status": "no_api_calls"
+      },
+      "model_metadata": {
+        "robot": "fetch",
+        "state_dim": 30,
+        "action_dim": 13,
+        "state_components": [
+          "qpos",
+          "qvel"
+        ],
+        "state_conditioning": true,
+        "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+        "training_repo": "bvi/fetch-seed1-recovery-v5",
+        "evaluation_scope": "training-scene-diagnostic",
+        "checkpoint": "/workspace/fetch-pi-recovery/checkpoints/pi05_fetch_lora_velocity/seed1-diagnostic/2000",
+        "denoising_steps": 50,
+        "action_horizon": 10,
+        "server_source_sha256": "387510ce1b9546d2e375cb082bfa1bdbcdc67f54d9dbf06237188942eba7de41"
+      },
+      "ensemble_samples": 1,
+      "ever_grasped": false,
+      "events_sha256": "4417ecc809982424bbef860db71e22e6616b3c06d6d4cb45f4279502203008ea",
+      "video_sha256": "d26af5716a52faa9f2f2a75409c3ffc1ca978f024dca85ada24e81e5c4f43dff"
+    },
+    {
+      "run": "C8",
+      "summary": {
+        "benchmark_result": false,
+        "reason": "benchmark_fail",
+        "decisions": 2,
+        "first_object_chain_success": false,
+        "api_requests": 0,
+        "vlm": false,
+        "vlm_feedback_loop_observed": false,
+        "task_success": false,
+        "steps": 70,
+        "wall_seconds": 129.981757462956,
+        "skill_results": [
+          {
+            "call_id": "oracle-0",
+            "skill": "navigate",
+            "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "succeeded",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "satisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-29"
+                  ]
+                }
+              ],
+              "reason": "oracle_subtask_advanced",
+              "source": "oracle_benchmark"
+            },
+            "steps": 29,
+            "elapsed_seconds": 4.508939245715737
+          },
+          {
+            "call_id": "oracle-1",
+            "skill": "pick",
+            "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "failed",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "unsatisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-70"
+                  ]
+                }
+              ],
+              "reason": "benchmark_fail",
+              "source": "oracle_benchmark"
+            },
+            "steps": 41,
+            "elapsed_seconds": 112.97440449800342
+          }
+        ],
+        "navigation_policy": "official",
+        "manipulation_policy": "fetch-pi05",
+        "mixed_teacher_collection": false,
+        "manipulation_predictions": 164,
+        "navigation_predictions": 0,
+        "api_cost_usd": 0,
+        "api_cost_status": "no_api_calls"
+      },
+      "model_metadata": {
+        "robot": "fetch",
+        "state_dim": 30,
+        "action_dim": 13,
+        "state_components": [
+          "qpos",
+          "qvel"
+        ],
+        "base_position_reference": "world",
+        "state_conditioning": true,
+        "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+        "training_repo": "bvi/fetch-seed1-recovery-v5",
+        "evaluation_scope": "training-scene-diagnostic",
+        "checkpoint": "/workspace/fetch-pi-recovery/checkpoints/pi05_fetch_lora_velocity/seed1-diagnostic/2000",
+        "denoising_steps": 50,
+        "action_horizon": 10,
+        "server_source_sha256": "6559511dc70bd85ea6eb987c53eee098e2a0000d288af29cae82187e9bd859f0"
+      },
+      "ensemble_samples": 4,
+      "ever_grasped": false,
+      "events_sha256": "78aa5514a1bbf48d2f2b744df8fca4a1ea6ccb2b047a4fb75b728831fcae22c3",
+      "video_sha256": "73f2adfc84ae24e249a20d80bd9a24bbee4d5db701ecd75e20c9d445d19fabed"
+    },
+    {
+      "run": "D5",
+      "summary": {
+        "benchmark_result": false,
+        "reason": "benchmark_fail",
+        "decisions": 2,
+        "first_object_chain_success": false,
+        "api_requests": 0,
+        "vlm": false,
+        "vlm_feedback_loop_observed": false,
+        "task_success": false,
+        "steps": 175,
+        "wall_seconds": 160.1258478630334,
+        "skill_results": [
+          {
+            "call_id": "oracle-0",
+            "skill": "navigate",
+            "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "succeeded",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "satisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-90"
+                  ]
+                }
+              ],
+              "reason": "oracle_subtask_advanced",
+              "source": "oracle_benchmark"
+            },
+            "steps": 90,
+            "elapsed_seconds": 19.558322465978563
+          },
+          {
+            "call_id": "oracle-1",
+            "skill": "pick",
+            "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+            "requirements": [
+              {
+                "id": "benchmark-completion",
+                "predicate": "benchmark_success"
+              }
+            ],
+            "feedback": {
+              "status": "failed",
+              "requirements": [
+                {
+                  "requirement_id": "benchmark-completion",
+                  "state": "unsatisfied",
+                  "evidence": [
+                    "events.jsonl:mshab_step:seed-1-step-175"
+                  ]
+                }
+              ],
+              "reason": "benchmark_fail",
+              "source": "oracle_benchmark"
+            },
+            "steps": 85,
+            "elapsed_seconds": 128.24133688677102
+          }
+        ],
+        "navigation_policy": "lightnav",
+        "manipulation_policy": "fetch-pi05",
+        "mixed_teacher_collection": false,
+        "manipulation_predictions": 340,
+        "navigation_predictions": 18,
+        "api_cost_usd": 0,
+        "api_cost_status": "no_api_calls"
+      },
+      "model_metadata": {
+        "robot": "fetch",
+        "state_dim": 30,
+        "action_dim": 13,
+        "state_components": [
+          "qpos",
+          "qvel"
+        ],
+        "base_position_reference": "world",
+        "state_conditioning": true,
+        "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+        "training_repo": "bvi/fetch-seed1-recovery-v5",
+        "evaluation_scope": "training-scene-diagnostic",
+        "checkpoint": "/workspace/fetch-pi-recovery/checkpoints/pi05_fetch_lora_velocity/seed1-diagnostic/2000",
+        "denoising_steps": 50,
+        "action_horizon": 10,
+        "server_source_sha256": "6559511dc70bd85ea6eb987c53eee098e2a0000d288af29cae82187e9bd859f0"
+      },
+      "ensemble_samples": 4,
+      "ever_grasped": false,
+      "events_sha256": "0660a9adc69389aec77b97313c8a11e3bf3176336dc9ecfad84c5a88f54308b1",
+      "video_sha256": "5c4dc8417887a4635b8b16b2e40145cbc11d3780bd345d7061a308f1e1153250"
+    }
+  ]
+}
