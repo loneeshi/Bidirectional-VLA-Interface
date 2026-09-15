@@ -1,4 +1,4 @@
-"""Experimental LightNav -> Fetch serial skill. Live control is unvalidated.
+"""Experimental LightNav -> Fetch serial skill. Live control ran; task success is unproven.
 
 Pinned controller semantics: ManiSkill17121e3f. Robot proprioception is used by
 the tracker/hold controller; no simulator goal positions enter LightNav prompts.
@@ -165,8 +165,14 @@ class LightNavSkill:
         pose = self.control.pose()
         if not self.targets or observation.sim_step-self.last_inference >= self.replan_steps:
             if self.total_predictions >= self.max_predictions:
+                self.adapter.logger.emit('navigation_rejected', reason='prediction_cap', call_id=self.call_id)
                 raise ProtocolError("LightNav experiment prediction cap reached")
-            camera = next(image for image in observation.images if image.camera == 'fetch_head')
+            # Transition snapshots defer PNG encoding. Materialize the current
+            # capture through observe(); this never steps/evaluates the simulator.
+            visual_observation = self.adapter.observe()
+            if visual_observation.frame_id != observation.frame_id:
+                raise ProtocolError("Navigation camera does not match control frame")
+            camera = next(image for image in visual_observation.images if image.camera == 'fetch_head')
             self.total_predictions += 1
             self.adapter.logger.emit('navigation_inference_started', call_id=self.call_id,
                 attempt=self.total_predictions, frame_id=observation.frame_id,
@@ -175,6 +181,7 @@ class LightNavSkill:
             self.adapter.logger.emit('navigation_prediction', call_id=self.call_id,
                 frame_id=observation.frame_id, prediction=prediction)
             if prediction.stop:
+                self.adapter.logger.emit('navigation_rejected', reason='model_stop_without_benchmark_completion', call_id=self.call_id)
                 raise ProtocolError("Model stopped without benchmark completion")
             self.targets = tuple(world_waypoint(pose, row) for row in prediction.waypoints)
             self.target_index, self.last_inference = 0, observation.sim_step
@@ -192,3 +199,25 @@ class LightNavSkill:
 
     def feedback(self, request, transition):
         return benchmark_feedback(request, transition, self.index)
+
+
+class IndexedNavigationSkill:
+    """Explicit diagnostic routing by subtask index; never a failure fallback."""
+    def __init__(self, learned, official, indices, logger):
+        self.learned, self.official = learned, official
+        self.indices, self.logger = frozenset(indices), logger
+        self.active = None
+
+    def start(self, request, observation):
+        index = int(observation.metadata['subtask_index'])
+        use_learned = index in self.indices
+        self.active = self.learned if use_learned else self.official
+        self.logger.emit('navigation_route', subtask_index=index,
+                         policy='lightnav' if use_learned else 'official', call_id=request.call_id)
+        self.active.start(request, observation)
+
+    def act(self, observation):
+        return self.active.act(observation)
+
+    def feedback(self, request, transition):
+        return self.active.feedback(request, transition)
