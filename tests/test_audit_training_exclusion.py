@@ -6,6 +6,19 @@ import unittest
 
 
 class TrainingExclusionTests(unittest.TestCase):
+    def test_executed_pi_controls_match_after_only_declared_head_mask(self):
+        path=Path(__file__).resolve().parents[1]/'scripts/audit_chain.py'
+        spec=importlib.util.spec_from_file_location('chain_audit',path)
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        action=[.1]*13;actual=action.copy();actual[8]=actual[9]=0.
+        events=[dict(event='fetch_pi_action',action=action),
+                dict(event='mshab_step',subtask_before=1,controller_action=[actual])]
+        self.assertTrue(module.pi_action_trace_matches(events,stationary_head=True))
+        self.assertFalse(module.pi_action_trace_matches(events,stationary_head=False))
+        actual[0]=.2
+        self.assertFalse(module.pi_action_trace_matches(events,stationary_head=True))
+        self.assertFalse(module.pi_action_trace_matches(events[1:],stationary_head=True))
+
     def test_successful_teacher_chain_is_not_an_evaluation_result(self):
         path=Path(__file__).resolve().parents[1]/'scripts/audit_chain.py'
         spec=importlib.util.spec_from_file_location('chain_audit',path)

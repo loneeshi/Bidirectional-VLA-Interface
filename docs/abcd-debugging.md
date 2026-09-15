@@ -172,8 +172,12 @@ arm/finger joints and all velocities unchanged. Offline ranges shrink to
 object coordinates and does not change the 13 action channels.
 
 This has a distinct `pi05_fetch_lora_relative` configuration and checkpoint
-metadata `base_position_reference=skill_start_xy`; old checkpoints keep world
-coordinates. Recovery tails use the **original learner skill-start** origin,
+metadata `base_position_reference=skill_start_xy`; old checkpoints keep unshifted
+root-joint coordinates. The historical metadata value `world` means the native
+unshifted `robot.qpos[:2]` in this implementation, not `base_link.pose.p` in the
+scene frame. The transform subtracts joint-coordinate offsets at skill start;
+it is not an SE(2) transformation into the current robot frame.
+Recovery tails use the **original learner skill-start** origin,
 verified against their source event hash, rather than the SAC takeover frame.
 Tests verify translation invariance, unchanged other state components, and
 rejection of altered recovery sources. The 1,020-frame relative-input pilot completed 2,000 updates from
@@ -185,6 +189,14 @@ steps. Relative coordinates did not establish task success. The full checkpoint
 archive SHA256 is `7afd283434da5d427851b9fd382c8fdc06c458883a3e11eb677ee561a4e58cb3`. Its final
 checkpoint stores the executed training state contract; the server rejects
 mismatched world/relative flags and requires this manifest for relative models.
+
+The [action-trace re-audit](results/abcd-control-reaudit.json) confirms that C9/D6
+applied the logged bounded pi05 actions, after the declared stationary-head mask.
+They were genuine learned-policy control failures, not merely unused inference
+calls. [Clipping diagnostics](results/pi05-relative-action-clipping.json) record
+138/200 C9 steps and 29/73 D6 steps with at least one raw component outside [-1,1].
+The largest magnitude was about 1.376 in C9 and 1.151 in D6. Bounds enforcement
+does not itself establish a good policy or explain every failure.
 
 The current data intentionally overlaps the seed-1 diagnostic. A successful
 overfit demo would demonstrate closed-loop control, not held-out generalization.
@@ -247,6 +259,21 @@ These runs carry `--training-collection`; their successful individual Pick/Place
 segments may train pi05, but they are not C/D results. This changes both the
 camera and the data samples, so it is not a strictly matched-data causal ablation.
 The live-camera checkpoint has not yet passed online evaluation.
+
+### Teacher/student observation gap
+
+The pinned sequential environment's `_get_obs_extra` supplies TCP pose, object
+pose and goal position relative to the base, plus the grasp flag. The official
+depth wrapper concatenates these extra fields into the RL state. In contrast,
+the current pi05 student receives RGB and measured qpos/qvel only. It does not
+receive the simulator's object/goal poses or grasp flag as policy inputs.
+Therefore A/B versus C/D changes observations as well as the policy algorithm;
+this is not a controlled algorithm-only comparison. A future native-state pi05
+diagnostic must declare those privileged inputs separately and must not be
+presented as RGB-plus-proprioception capability.
+
+Sources: [sequential observation construction](https://github.com/arth-shukla/mshab/blob/e9ff3d23496d38e4431c8d913e147ffa007f7f72/mshab/envs/sequential_task.py#L1466),
+[official depth/state wrapper](https://github.com/arth-shukla/mshab/blob/e9ff3d23496d38e4431c8d913e147ffa007f7f72/mshab/envs/wrappers/observation.py#L28).
 
 `first_object_chain_success` requires four consecutive successful
 Navigate/Pick/Navigate/Place invocations. `task_success` retains the environment's
