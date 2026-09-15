@@ -29,6 +29,10 @@ class FetchPiSkill:
         if self.base_reference not in ('world','skill_start_xy'):
             raise ProtocolError('Unsupported Fetch base position reference')
         self.base_xy_origin=None
+        self.base_camera=metadata.get('base_camera','fetch_head')
+        self.wrist_camera=metadata.get('wrist_camera','fetch_hand')
+        if self.base_camera not in ('fetch_head','fetch_workspace') or self.wrist_camera!='fetch_hand':
+            raise ProtocolError('Unsupported Fetch camera contract')
         names=[j.name for j in adapter.uenv.agent.robot.active_joints]
         if names!=JOINT_NAMES: raise ProtocolError('Fetch state joint ordering differs from training')
         self.name,self.adapter,self.client=name,adapter,client
@@ -60,7 +64,8 @@ class FetchPiSkill:
             visual=self.adapter.observe()
             if visual.frame_id!=observation.frame_id: raise ProtocolError('Stale Fetch camera')
             def pixels(camera):
-                image=next(x for x in visual.images if x.camera==camera)
+                image=next((x for x in visual.images if x.camera==camera),None)
+                if image is None:raise ProtocolError(f'Required Fetch camera is missing: {camera}')
                 return np.asarray(Image.open(io.BytesIO(image.data)).convert('RGB'))
             state=np.asarray(jsonable(self.adapter.uenv.agent.robot.qpos)[0],dtype=np.float32)
             if self.base_reference=='skill_start_xy':
@@ -70,8 +75,8 @@ class FetchPiSkill:
                 state=np.concatenate([state,np.asarray(jsonable(self.adapter.uenv.agent.robot.qvel)[0],dtype=np.float32)])
             if state.shape!=(self.state_dim,) or not np.isfinite(state).all(): raise ProtocolError('Invalid Fetch state')
             self.adapter.save_observation_images()
-            inputs={'observation/state':state,'observation/image':pixels('fetch_head'),
-                    'observation/wrist_image':pixels('fetch_hand'),'prompt':self.prompt}
+            inputs={'observation/state':state,'observation/image':pixels(self.base_camera),
+                    'observation/wrist_image':pixels(self.wrist_camera),'prompt':self.prompt}
             samples=[]
             for _ in range(self.ensemble_samples):
                 self.total_predictions+=1

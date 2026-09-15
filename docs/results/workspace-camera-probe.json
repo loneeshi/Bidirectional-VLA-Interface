@@ -1,0 +1,118 @@
+{
+  "stage": "sensor_visibility_probe",
+  "replay_only": true,
+  "benchmark_result": false,
+  "first_object_chain_success": false,
+  "source_events_sha256": "d284d6ed07aa059cef710f3170a4abb3da9a715c9cc2c40001f3cb9131aff510",
+  "config": {
+    "env_id": "BVISequentialWorkspaceCamera-v0",
+    "num_envs": 1,
+    "max_episode_steps": 7000,
+    "make_env": true,
+    "obs_mode": "rgbd",
+    "render_mode": "rgb_array",
+    "shader_dir": "minimal",
+    "sim_backend": "gpu",
+    "continuous_task": true,
+    "cat_state": true,
+    "cat_pixels": false,
+    "frame_stack": 3,
+    "stack": null,
+    "stationary_base": false,
+    "stationary_torso": false,
+    "stationary_head": true,
+    "task_plan_fp": "/workspace/bvi/assets/data/scene_datasets/replica_cad_dataset/rearrange/task_plans/tidy_house/sequential/val/all.json",
+    "spawn_data_fp": null,
+    "record_video": true,
+    "debug_video": false,
+    "debug_video_gen": false,
+    "save_video_freq": null,
+    "info_on_video": false,
+    "extra_stat_keys": [],
+    "env_kwargs": {
+      "require_build_configs_repeated_equally_across_envs": false,
+      "invisible_goals_in_human_render": true,
+      "add_event_tracker_info": true,
+      "human_render_camera_configs": {
+        "width": 512,
+        "height": 512
+      },
+      "task_cfgs": {
+        "navigate": {
+          "ignore_arm_checkers": true
+        }
+      }
+    }
+  },
+  "api_requests": 0,
+  "live_model_predictions": 0,
+  "steps": 90,
+  "wall_seconds": 77.26140303257853,
+  "original_initial_camera_hashes_match": {
+    "fetch_head": true,
+    "fetch_hand": true,
+    "fetch_nav": true
+  },
+  "observed_cameras": [
+    "fetch_head",
+    "fetch_hand",
+    "fetch_nav",
+    "fetch_workspace"
+  ],
+  "actual_last_info": {
+    "elapsed_steps": [
+      90
+    ],
+    "success": [
+      false
+    ],
+    "fail": [
+      false
+    ],
+    "subtask": [
+      2
+    ],
+    "subtask_type": [
+      2
+    ],
+    "subtasks_steps_left": [
+      495
+    ],
+    "robot_force": [
+      0.0
+    ],
+    "robot_cumulative_force": [
+      0.0
+    ],
+    "is_grasped": [
+      true
+    ],
+    "oriented_correctly": [
+      false
+    ],
+    "navigated_close": [
+      false
+    ],
+    "is_static": [
+      false
+    ],
+    "cumulative_force_within_limit": [
+      true
+    ],
+    "obj_at_goal_progressive_3": [
+      false
+    ],
+    "obj_at_goal_progressive_7": [
+      false
+    ],
+    "obj_at_goal_progressive_11": [
+      false
+    ],
+    "obj_at_goal_progressive_15": [
+      false
+    ],
+    "obj_at_goal_progressive_19": [
+      false
+    ]
+  }
+}

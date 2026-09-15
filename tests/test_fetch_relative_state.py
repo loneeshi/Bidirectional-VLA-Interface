@@ -16,6 +16,29 @@ except ImportError:
 
 @unittest.skipIf(np is None,'Optional array/image dependencies')
 class RelativeFetchStateTests(unittest.TestCase):
+    def test_declared_workspace_camera_reaches_policy_and_missing_camera_rejects(self):
+        from bvi.fetch_pi_skill import FetchPiSkill,JOINT_NAMES,CONVENTION
+        from bvi.protocol import ActionBounds,ProtocolError
+        images=[]
+        for camera,size,color in [('fetch_head',128,'red'),('fetch_workspace',224,'blue'),('fetch_hand',128,'green')]:
+            buffer=io.BytesIO();Image.new('RGB',(size,size),color).save(buffer,format='PNG')
+            images.append(NS(camera=camera,data=buffer.getvalue()))
+        obs=NS(frame_id='s',images=images)
+        robot=NS(active_joints=[NS(name=x) for x in JOINT_NAMES],qpos=[[0.]*15])
+        adapter=NS(uenv=NS(agent=NS(robot=robot)),logger=NS(emit=lambda *a,**k:None),
+            action_bounds=ActionBounds((-1.,)*13,(1.,)*13),observe=lambda:obs,save_observation_images=lambda:None)
+        inputs=[]
+        def infer(data,action_dim):inputs.append(data);return ((0.,)*13,)
+        client=NS(metadata={'robot':'fetch','state_dim':15,'action_dim':13,
+            'action_convention':CONVENTION,'state_conditioning':True,'base_camera':'fetch_workspace'},infer=infer)
+        skill=FetchPiSkill('pick',adapter,client);skill.index=1;skill.call_id='p';skill.prompt='Pick'
+        skill.act(obs)
+        self.assertEqual(inputs[0]['observation/image'].shape,(224,224,3))
+        np.testing.assert_array_equal(inputs[0]['observation/image'][0,0],[0,0,255])
+        obs.images=[x for x in images if x.camera!='fetch_workspace']
+        with self.assertRaisesRegex(ProtocolError,'camera is missing'):skill.act(obs)
+        self.assertEqual(len(inputs),1)
+
     def test_recovery_keeps_original_skill_origin_not_teacher_takeover(self):
         path=Path(__file__).resolve().parents[1]/'scripts/fetch_openpi.py'
         spec=importlib.util.spec_from_file_location('fetch_pipeline',path)

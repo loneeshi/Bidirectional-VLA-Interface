@@ -206,6 +206,34 @@ Source: [pinned Fetch implementation, is_static](https://github.com/haosulab/Man
 
 ## Result fields
 
+### Workspace camera preparation
+
+Native head/wrist RGB views often occlude the counter or place the can at the
+image edge. A fixed robot-mounted oblique RGB camera (`fetch_workspace`, 224×224)
+was tested by replaying 90 recorded A3 control steps from the native reset.
+This is **sensor inspection, not a VLA rollout**: no live model requests, no
+C/D success claim and no new training labels. All three original initial image
+hashes matched A3 and the official RL depth inputs stayed unchanged. The run
+took 77.26 seconds while sharing the GPU with training. The first launch failed
+before control because the asset environment was not sourced; both attempts
+are preserved in the archive.
+
+The added camera is attached to `base_link` at [0.35, 0.35, 1.5] m, with
+pitch 0.65 rad and yaw -0.35 rad; it is not the external video camera.
+[Probe record](results/workspace-camera-probe.json).
+
+![Counter at Pick start](media/workspace-camera-pick-start.png)
+![Can and gripper during recorded Pick](media/workspace-camera-pick-mid.png)
+
+`--workspace-camera` adds this sensor to the diagnostic runner.
+`fetch_openpi.py --base-camera fetch_workspace` selects it consistently for
+dataset conversion and model metadata. The client checks this metadata and
+rejects a missing camera. Existing models default to head/wrist; the active
+relative-base experiment does not use this new camera. No camera-aware policy
+success is claimed. `replay_teacher_views.py` can create separately labelled
+training-only observations from recorded controls; it verifies native task
+transitions and records current state rather than copying old state labels.
+
 `first_object_chain_success` requires four consecutive successful
 Navigate/Pick/Navigate/Place invocations. `task_success` retains the environment's
 full-task result. `benchmark_result` stays false for this diagnostic runner.

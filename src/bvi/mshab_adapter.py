@@ -94,7 +94,7 @@ def make_mshab_adapter(env_cfg: Any, logger: JsonlLogger, output: str | Path,
 
         def capture(self, raw, info):
             self.images = {camera: raw["sensor_data"][camera]["rgb"].detach().clone()
-                           for camera in ("fetch_head", "fetch_hand", "fetch_nav")
+                           for camera in ("fetch_head", "fetch_hand", "fetch_nav", "fetch_workspace")
                            if camera in raw['sensor_data']}
             # Info can hold references to mutable GPU state, e.g. subtask_pointer.
             self.info = jsonable(info)
