@@ -258,7 +258,7 @@ new **live official SAC demonstrations**, with PPO or LightNav navigation.
 These runs carry `--training-collection`; their successful individual Pick/Place
 segments may train pi05, but they are not C/D results. This changes both the
 camera and the data samples, so it is not a strictly matched-data causal ablation.
-The live-camera checkpoint has not yet passed online evaluation.
+The live-camera checkpoint completed 2,000 updates and failed four online tests.
 
 The 14 live collections produced 13 successful Pick segments and three successful
 Place segments (693 frames from 13 sources). One failed LightNav-to-Pick source
@@ -276,6 +276,31 @@ successful **official teacher** Place:
 ![Workspace view during release](media/workspace-camera-place-mid.png)
 
 ### Teacher/student observation gap
+
+V7 results (same checkpoint, 10 denoising steps):
+
+| Run | Navigation | Executed chunk | Total steps | pi predictions | Grasped | Result |
+|---|---|---:|---:|---:|---|---|
+| C10 | PPO | 1 | 76 | 47 | No | Pick force failure |
+| D7 | LightNav | 1 | 161 | 86 | No | Pick force failure |
+| C11 | PPO | 10 | 126 | 10 | No | Pick force failure |
+| D8 | LightNav | 10 | 170 | 10 | No | Pick force failure |
+
+The executed controls match the logged pi actions after declared clipping and
+stationary-head masking. There is no SAC manipulation fallback in these runs.
+[Full audits](results/abcd-workspace-failures.json),
+[C10 failure video](media/C-pi05-workspace-failed.mp4),
+[D7 failure video](media/D-lightnav-pi05-workspace-failed.mp4).
+The V7 inference archive SHA256 is
+`7892c5f1bfadbafc1feeee7ee4b3f5c510e68972a60a20d19a9abda9c1718550`.
+
+A 24-prediction teacher-forced check fits several PPO teacher observations much
+better than a selected LightNav teacher observation. This small, selected check
+is diagnostic only, not an estimate of dataset-wide error or task performance.
+[Probe details](results/pi05-workspace-teacher-probe.json).
+V8 is collecting live V7 prefixes followed by SAC recovery, with unchanged RGB
+and proprioceptive inputs. Only completed successful recovery segments may train
+the model; mixed teacher trajectories remain excluded from C/D evaluation.
 
 The pinned sequential environment's `_get_obs_extra` supplies TCP pose, object
 pose and goal position relative to the base, plus the grasp flag. The official
