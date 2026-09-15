@@ -9,8 +9,8 @@ The 2,000-update Fetch π₀.₅ LoRA checkpoint trained on 1,228 frames did not
 
 The [trace audit](results/v8-final-failures.json) confirms executed manipulation controls match the logged π outputs with the declared head mask. Tool connectivity and inference work; task success does not. A/B remain successful single-object demonstrations, not full benchmark results. The same-scene training data and privileged SAC teacher observations limit comparisons.
 
-- [C12 failure video](media/C-v8-recovery-failed.mp4)
-- [D9 failure video](media/D-v8-recovery-failed.mp4)
+- [C12 failure video — C-v8-recovery-failed.mp4](media/pi05-v8-recovery/C-v8-recovery-failed.mp4)
+- [D9 failure video — D-v8-recovery-failed.mp4](media/pi05-v8-recovery/D-v8-recovery-failed.mp4)
 
 The descriptive-language C13/D10 ablation and offline language probe were prepared but not executed. More training is not yet supported by demonstrated closed-loop improvement. Before another paid run, investigate action/state conventions, handoff velocity and teacher/student observation mismatch with recorded trajectories, then select a bounded diagnostic.
 

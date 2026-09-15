@@ -8,9 +8,9 @@ The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla
 
 [Status](#current-status) · [Architecture](#architecture) · [Setup](docs/reproduction.md) · [Evaluation](docs/evaluation.md) · [Roadmap](#roadmap)
 
-[Watch the real VLM demonstration](docs/media/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
+[Watch the real VLM demonstration — vlm-seed1.mp4](docs/media/vlm-baseline-2026-09-14/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
 
-**Earlier LightNav control diagnostic:** [Watch the failed rollout](docs/media/lightnav-control-003-trial2.mp4) · [Results and limitations](docs/lightnav-control.md).
+**Earlier LightNav control diagnostic:** [Watch the failed rollout — lightnav-control-003-trial2.mp4](docs/media/lightnav-control-003/lightnav-control-003-trial2.mp4) · [Results and limitations](docs/lightnav-control.md).
 LightNav now drives Fetch through the adapter. After fixing a deferred-image bug,
 a trial executed 270 control steps and 55 predictions, then stopped before the
 benchmark navigation goal was satisfied. SAC manipulation was not reached.
@@ -20,8 +20,8 @@ This historical trial uses oracle dispatch, not GPT/Opus, and precedes Fetch pi0
 [A/B/C/D delivery plan and green-marker diagnosis](docs/abcd-delivery.md).
 
 **Current A/B/C/D work:** [debugging evidence and Fetch adaptation](docs/abcd-debugging.md).
-The [marker-free A chain](docs/media/A-ppo-sac-clean.mp4) has been re-recorded.
-[B: LightNav + SAC](docs/media/B-lightnav-sac.mp4) completed the first-object chain
+The [marker-free A chain — A-ppo-sac-clean.mp4](docs/media/abcd-baseline-reference/A-ppo-sac-clean.mp4) has been re-recorded.
+[B: LightNav + SAC — B-lightnav-sac.mp4](docs/media/abcd-baseline-reference/B-lightnav-sac.mp4) completed the first-object chain
 in 278 steps, with grasp maintained throughout carrying navigation.
 The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
 [C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
@@ -115,3 +115,5 @@ Every result must identify the scene and task-plan coverage, seeds, checkpoint r
 This project builds on [MS-HAB](https://github.com/arth-shukla/mshab) and [ManiSkill](https://github.com/haosulab/ManiSkill). [openpi](https://github.com/Physical-Intelligence/openpi) is a candidate future policy integration. The organization of this README follows common research-repository practices illustrated by these projects and [Habitat-Lab](https://github.com/facebookresearch/habitat-lab).
 
 Original code in this repository is released under the [MIT License](LICENSE). Upstream code, datasets, robot assets, and model weights retain their own licenses; this repository's license does not grant rights to redistribute them. No upstream assets or checkpoints are bundled. There is no project publication or BibTeX entry yet; cite the upstream work when using its benchmark or policies.
+
+All recording filenames, task folders, outcomes and integrity hashes are listed in the [demo video index](docs/media/README.md).

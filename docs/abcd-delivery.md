@@ -8,12 +8,12 @@ isolate the low-level policy change. A later VLM comparison is separate.
 
 | Variant | Navigation | Manipulation | Current evidence | Remaining gate |
 |---|---|---|---|---|
-| A | Official PPO | Official SAC | [Clean successful chain, 248 steps](media/A-ppo-sac-clean.mp4) | Broader evaluation |
-| B | LightNav-0 + Fetch velocity adapter | Official SAC | [Successful chain, 278 steps](media/B-lightnav-sac.mp4); grasp maintained on all 115 carrying steps | Broader evaluation |
-| C | Official PPO | Fetch-adapted pi0.5 | [Actual workspace-camera control, Pick failed](media/C-pi05-workspace-failed.mp4); V8 recovery adaptation is training | Individual Pick/Place and composed success |
-| D | LightNav-0 + Fetch velocity adapter | Same Fetch-adapted pi0.5 | [LightNav succeeded, pi05 Pick failed](media/D-lightnav-pi05-workspace-failed.mp4) | Adapt manipulation policy, then verify full chain |
+| A | Official PPO | Official SAC | [Clean successful chain, 248 steps — A-ppo-sac-clean.mp4](media/abcd-baseline-reference/A-ppo-sac-clean.mp4) | Broader evaluation |
+| B | LightNav-0 + Fetch velocity adapter | Official SAC | [Successful chain, 278 steps — B-lightnav-sac.mp4](media/abcd-baseline-reference/B-lightnav-sac.mp4); grasp maintained on all 115 carrying steps | Broader evaluation |
+| C | Official PPO | Fetch-adapted pi0.5 | [Actual workspace-camera control, Pick failed — C-pi05-workspace-failed.mp4](media/pi05-workspace-adaptation/C-pi05-workspace-failed.mp4); V8 recovery adaptation is training | Individual Pick/Place and composed success |
+| D | LightNav-0 + Fetch velocity adapter | Same Fetch-adapted pi0.5 | [LightNav succeeded, pi05 Pick failed — D-lightnav-pi05-workspace-failed.mp4](media/pi05-workspace-adaptation/D-lightnav-pi05-workspace-failed.mp4) | Adapt manipulation policy, then verify full chain |
 
-The deliverables are A.mp4, B.mp4, C.mp4 and D.mp4 with matching manifests,
+The A/B/C/D recordings are indexed by their actual filenames in the [demo video index](media/README.md), with matching manifests,
 per-skill events, object/grasp evidence and final success/failure. Four successful
 chains cannot be guaranteed before adaptation experiments. A failed rollout must
 be labelled failed; a prediction probe, fallback policy or concatenation of
