@@ -21,8 +21,9 @@ This historical trial uses oracle dispatch, not GPT/Opus, and precedes Fetch pi0
 The [marker-free A chain](docs/media/A-ppo-sac-clean.mp4) has been re-recorded.
 [B: LightNav + SAC](docs/media/B-lightnav-sac.mp4) completed the first-object chain
 in 278 steps, with grasp maintained throughout carrying navigation.
-A real Fetch pi0.5 fine-tuning pilot executed robot actions and failed Pick;
-state-conditioning and dataset-label corrections are being evaluated.
+The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
+[C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
+A further pilot adds joint velocity observations; task success is still pending.
 
 ## Current status
 
@@ -30,7 +31,7 @@ state-conditioning and dataset-label corrections are being evaluated.
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 80 tests run, 78 passed and 2 optional-dependency tests skipped; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 82 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|

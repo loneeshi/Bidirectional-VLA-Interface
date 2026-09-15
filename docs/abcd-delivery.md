@@ -10,8 +10,8 @@ isolate the low-level policy change. A later VLM comparison is separate.
 |---|---|---|---|---|
 | A | Official PPO | Official SAC | [Clean successful chain, 248 steps](media/A-ppo-sac-clean.mp4) | Broader evaluation |
 | B | LightNav-0 + Fetch velocity adapter | Official SAC | [Successful chain, 278 steps](media/B-lightnav-sac.mp4); grasp maintained on all 115 carrying steps | Broader evaluation |
-| C | Official PPO | Fetch-adapted pi0.5 | Actual Fetch-trained pilot controlled robot and failed Pick; corrected state-conditioned training underway | Individual Pick/Place and composed success |
-| D | LightNav-0 + Fetch tracker | Same Fetch-adapted pi0.5 | No combined control evidence | Pass B/C component gates, then test combined handoffs |
+| C | Official PPO | Fetch-adapted pi0.5 | [Actual state-conditioned control, Pick failed](media/C-pi05-state-failed.mp4); velocity-input pilot underway | Individual Pick/Place and composed success |
+| D | LightNav-0 + Fetch tracker | Same Fetch-adapted pi0.5 | [LightNav succeeded, pi05 Pick failed](media/D-lightnav-pi05-state-failed.mp4) | Adapt manipulation policy, then verify full chain |
 
 The deliverables are A.mp4, B.mp4, C.mp4 and D.mp4 with matching manifests,
 per-skill events, object/grasp evidence and final success/failure. Four successful

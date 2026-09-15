@@ -18,9 +18,13 @@ class FetchPiSkill:
             raise ProtocolError('Invalid Fetch pi skill configuration')
         metadata=client.metadata
         if any(metadata.get(k)!=v for k,v in {
-            'robot':'fetch','state_dim':15,'action_dim':13,'action_convention':CONVENTION,
+            'robot':'fetch','action_dim':13,'action_convention':CONVENTION,
             'state_conditioning':True}.items()):
             raise ProtocolError('A Fetch-trained model with matching controller metadata is required')
+        self.state_dim=metadata.get('state_dim')
+        expected=['qpos','qvel'] if self.state_dim==30 else ['qpos']
+        if self.state_dim not in (15,30) or metadata.get('state_components',['qpos'])!=expected:
+            raise ProtocolError('Unsupported or undeclared Fetch state components')
         names=[j.name for j in adapter.uenv.agent.robot.active_joints]
         if names!=JOINT_NAMES: raise ProtocolError('Fetch state joint ordering differs from training')
         self.name,self.adapter,self.client=name,adapter,client
@@ -52,7 +56,9 @@ class FetchPiSkill:
                 image=next(x for x in visual.images if x.camera==camera)
                 return np.asarray(Image.open(io.BytesIO(image.data)).convert('RGB'))
             state=np.asarray(jsonable(self.adapter.uenv.agent.robot.qpos)[0],dtype=np.float32)
-            if state.shape!=(15,) or not np.isfinite(state).all(): raise ProtocolError('Invalid Fetch state')
+            if self.state_dim==30:
+                state=np.concatenate([state,np.asarray(jsonable(self.adapter.uenv.agent.robot.qvel)[0],dtype=np.float32)])
+            if state.shape!=(self.state_dim,) or not np.isfinite(state).all(): raise ProtocolError('Invalid Fetch state')
             self.total_predictions+=1
             self.adapter.save_observation_images()
             self.adapter.logger.emit('fetch_pi_inference_started',call_id=self.call_id,

@@ -76,8 +76,28 @@ The corrected configuration enables discrete state input and matches the actual
 post-wrapper action events. A live tokenizer check confirmed that changing the
 15 joint values changes the input tokens. The runtime rejects checkpoints that
 do not declare the Fetch action contract **and** active state conditioning.
-The corrected 2,000-step run uses 785 frames across 20 successful manipulation
-segments, including B11's actual handoff states. C/D evaluation is pending.
+The corrected 2,000-step run used 785 frames across 20 successful manipulation
+segments, including B11's actual handoff states. It completed, but both control
+variants still failed Pick:
+
+| Run | Navigation | pi05 execution | Actual result |
+|---|---|---|---|
+| C2 | PPO, 29 steps | 1 step per prediction | Pick failed after 78 steps; cumulative force exceeded the limit; never grasped |
+| C3 | PPO, 29 steps | 10 steps per prediction | Pick failed after 86 steps |
+| D1 | LightNav, 77 steps | 10 steps per prediction | Pick failed after 80 steps |
+
+[C2 failure video](media/C-pi05-state-failed.mp4) and
+[D1 failure video](media/D-lightnav-pi05-state-failed.mp4) show real model control,
+not successful tasks. Neither rollout switched to SAC manipulation. Training
+loss at step 1990 was 0.0310; that number did not predict task success.
+
+The next bounded pilot keeps the same 785 training frames, adds the measured
+15-joint velocity to the 15-joint position, and warm-starts from this Fetch
+checkpoint. This tests whether missing dynamics information contributes to the
+drift. Improvement is **unverified**. It adds robot proprioception, not hidden
+target-object coordinates. The runtime requires explicit `state_components`
+metadata for this 30-value contract. A tokenizer check held qpos fixed and
+confirmed that varying qvel changes 30 token positions.
 
 ```bash
 # In the openpi environment, after collecting successful teacher runs:
@@ -86,6 +106,12 @@ python scripts/fetch_openpi.py norm --repo-id bvi/fetch-seed1-state-v3 --work WO
 python scripts/fetch_openpi.py train --repo-id bvi/fetch-seed1-state-v3 --work WORK_DIR --steps 2000 --batch 4
 python scripts/fetch_openpi.py serve --repo-id bvi/fetch-seed1-state-v3 --work WORK_DIR --checkpoint CHECKPOINT_DIR
 ```
+
+For the velocity pilot use a new dataset/work directory, pass
+`--include-velocity` consistently to convert/norm/train/serve, and pass
+`--init-checkpoint OLD_FETCH_CHECKPOINT/params` during training. The previous
+checkpoint remains a distinct failed model; new weights must be evaluated before
+any completion claim. The new configuration is named `pi05_fetch_lora_velocity`.
 
 The current data intentionally overlaps the seed-1 diagnostic. A successful
 overfit demo would demonstrate closed-loop control, not held-out generalization.
