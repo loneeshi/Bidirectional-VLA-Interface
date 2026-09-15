@@ -1,0 +1,40 @@
+{
+  "run": "A3",
+  "automated_evidence_pass": true,
+  "checks": {
+    "one_reset_no_auto_reset": true,
+    "continuous_step_sequence": true,
+    "step_count_matches_summary": true,
+    "all_actions_finite_normalized_fetch13": true,
+    "four_successful_skills": true,
+    "grasp_maintained_through_carry": true,
+    "place_goal_and_release": true,
+    "no_reported_benchmark_failure": true,
+    "summary_does_not_contradict_diagnostic": true
+  },
+  "visual_inspection_required": true,
+  "summary_first_object_field": null,
+  "carry_steps": 145,
+  "event_counts": {
+    "mshab_reset": 1,
+    "observation_images": 253,
+    "oracle_protocol_decision": 4,
+    "skill_started": 4,
+    "policy_loaded": 3,
+    "policy_action": 248,
+    "mshab_step": 248,
+    "demonstration_step": 248,
+    "skill_step": 248,
+    "skill_finished": 4,
+    "experiment_finished": 1
+  },
+  "initial_images_sha256": {
+    "seed-1-step-0-fetch_hand.png": "be4de84e9f8d6ab2e49a5f063d31eea20e2246957988314c4538f9b754fcf31f",
+    "seed-1-step-0-fetch_head.png": "f0d990318aa2145dd855ca5d2549a1efabed3533c4d6aa0ea76a83f0bf3339f9",
+    "seed-1-step-0-fetch_nav.png": "cac34ca7dd82487092c12c043768588699dbcdf4bc7080d90e41637aeddc5cc7"
+  },
+  "seed": 1,
+  "scene": "v3_sc3_staging_00.scene_instance.json",
+  "initial_config": "val/tidy_house/episode_18.json",
+  "events_sha256": "d284d6ed07aa059cef710f3170a4abb3da9a715c9cc2c40001f3cb9131aff510"
+}
