@@ -23,7 +23,7 @@ The [marker-free A chain](docs/media/A-ppo-sac-clean.mp4) has been re-recorded.
 in 278 steps, with grasp maintained throughout carrying navigation.
 The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
 [C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
-Velocity and recovery-data pilots also failed Pick. The relative-base pilot also failed. A workspace-camera pilot is training on 693 verified teacher frames; C/D task success remains unproven.
+Velocity, recovery-data, relative-base and workspace-camera pilots also failed Pick. Live recovery collection for the workspace-camera model is underway; C/D task success remains unproven. [Audited workspace failures and videos](docs/abcd-debugging.md).
 
 ## Current status
 
@@ -31,7 +31,7 @@ Velocity and recovery-data pilots also failed Pick. The relative-base pilot also
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 89 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 91 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|
