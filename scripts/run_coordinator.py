@@ -70,6 +70,8 @@ def main() -> None:
                         help="JSON mapping subtask indices to explicit visual language goals")
     parser.add_argument("--expected-plan-uid", help="Require the exact first subtask UID before LightNav")
     parser.add_argument("--max-navigation-predictions", type=int, default=40)
+    parser.add_argument("--lightnav-subtasks", type=int, nargs='+',
+                        help="Explicit diagnostic routing: use LightNav only at these indices; official elsewhere")
     parser.add_argument("--video-debug-overlay", action="store_true",
                         help="Burn verbose simulator statistics into diagnostic video")
     args = parser.parse_args()
@@ -141,6 +143,7 @@ def main() -> None:
                 "image_detail": args.image_detail, "reasoning_effort": args.reasoning_effort,
                 "max_env_steps": args.max_env_steps, "max_wall_seconds": args.max_wall_seconds}
     metadata.update(navigation_policy=args.navigation_policy,
+                    lightnav_subtasks=args.lightnav_subtasks,
                     navigation_instructions=navigation_instructions,
                     max_navigation_predictions=args.max_navigation_predictions)
     (args.output / "run-metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
@@ -165,7 +168,16 @@ def main() -> None:
             navigation_client = LightNavClient.connect(args.lightnav_url)
             navigation_skill = LightNavSkill(adapter, navigation_client, navigation_instructions,
                                              args.max_navigation_predictions)
-            skills["navigate"] = navigation_skill
+            if args.lightnav_subtasks is not None:
+                from bvi.lightnav_skill import IndexedNavigationSkill
+                if any(i < 0 or i >= len(adapter.original_plan.subtasks) or
+                       adapter.original_plan.subtasks[i].type != 'navigate'
+                       for i in args.lightnav_subtasks):
+                    raise ProtocolError('LightNav indices must select existing navigation subtasks')
+                skills['navigate'] = IndexedNavigationSkill(navigation_skill, skills['navigate'],
+                                                           args.lightnav_subtasks, logger)
+            else:
+                skills["navigate"] = navigation_skill
         runtime = SerialRuntime(adapter, skills, specs, logger)
         if not args.dry_run:
             if args.transport == "bridge":

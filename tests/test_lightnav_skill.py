@@ -2,9 +2,10 @@ import math
 import unittest
 from types import SimpleNamespace as NS
 
-from bvi.lightnav_skill import (FetchNavigationControl, normalize, track_waypoint,
+from bvi.lightnav_skill import (FetchNavigationControl, LightNavSkill, IndexedNavigationSkill, normalize, track_waypoint,
                                world_waypoint)
-from bvi.protocol import ActionBounds, ProtocolError
+from bvi.protocol import ActionBounds, ProtocolError, Observation, ImageFrame
+from bvi.vla_clients import NavigationPrediction
 
 
 class TrackerTests(unittest.TestCase):
@@ -71,3 +72,37 @@ class TrackerTests(unittest.TestCase):
         adapter.uenv.agent.controller.controllers['base'].config.joint_names.reverse()
         with self.assertRaises(ProtocolError):
             FetchNavigationControl(adapter)
+
+    def test_replan_materializes_current_capture_and_rejects_stale_camera(self):
+        adapter = self.adapter()
+        seen = []
+        client = NS(reset=lambda:None, infer=lambda image, instruction:
+                    seen.append(image.data) or NavigationPrediction(((1.,0.,0.),),False,True))
+        skill = LightNavSkill(adapter,client,{'0':'Approach the counter.'})
+        initial = Observation('f0',0,metadata={'subtask_index':0})
+        skill.start(NS(skill='navigate',call_id='nav1'),initial)
+        for step in (0,5):
+            # The transition itself has no encoded images, just as in MS-HAB.
+            transition_obs = Observation(f'f{step}',step)
+            adapter.observe = lambda step=step: Observation(f'f{step}',step,
+                images=(ImageFrame('fetch_head',bytes([step])),))
+            skill.act(transition_obs)
+        self.assertEqual(seen,[b'\x00',b'\x05'])
+        adapter.observe = lambda: Observation('f5',5)
+        with self.assertRaisesRegex(ProtocolError,'does not match'):
+            skill.act(Observation('f10',10))
+        self.assertEqual(len(seen),2)
+
+    def test_index_routing_is_explicit_and_never_falls_back_after_failure(self):
+        calls=[]
+        def child(name):
+            return NS(start=lambda *args:calls.append(name),act=lambda obs:name,
+                      feedback=lambda *args:'failed')
+        router=IndexedNavigationSkill(child('lightnav'),child('official'),[2],NS(emit=lambda *a,**k:None))
+        router.start(NS(call_id='a'),Observation('f0',0,metadata={'subtask_index':0}))
+        self.assertEqual(router.act(None),'official')
+        router.start(NS(call_id='b'),Observation('f1',1,metadata={'subtask_index':2}))
+        self.assertEqual(router.act(None),'lightnav')
+        self.assertEqual(router.feedback(None,None),'failed')
+        self.assertEqual(router.act(None),'lightnav')
+        self.assertEqual(calls,['official','lightnav'])

@@ -8,12 +8,12 @@ The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla
 
 [Watch the real VLM demonstration](docs/media/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
 
-**Next experiment:** [LightNav-0 / pi0.5 integration and task selection](docs/vla-integration.md).
-Both candidate models returned real predictions on an A6000 through the saved-frame
-probe ([results](docs/results/vla-probe-002.json)); candidate Fetch control remains
-unvalidated. LightNav returned 10x3 waypoints; pi05_droid returned 15x8 actions.
-An [experimental Fetch navigation adapter](docs/lightnav-control.md) is now wired
-into the runner and CPU-tested; its physical control and video trial are pending.
+**LightNav control diagnostic:** [Watch the actual rollout](docs/media/lightnav-control-003-trial2.mp4) · [Results and limitations](docs/lightnav-control.md).
+LightNav now drives Fetch through the adapter. After fixing a deferred-image bug,
+a trial executed 270 control steps and 55 predictions, then stopped before the
+benchmark navigation goal was satisfied. SAC manipulation was not reached.
+Physical motion signs and a 40-step grasp hold passed separate calibration.
+This trial uses oracle dispatch, not GPT/Opus. pi0.5 remains inference-only.
 
 ## Current status
 
@@ -21,7 +21,7 @@ into the runner and CPU-tested; its physical control and video trial are pending
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **56 CPU tests passed without paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 71 tests run, 69 passed and 2 optional-dependency tests skipped; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|
