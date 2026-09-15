@@ -104,3 +104,15 @@ grasp maintained through carrying, and a visibly correct final placement.
 Inspect `first_object_chain_success` separately from full `task_success`; the
 diagnostic's `benchmark_result` remains false. See the full
 [failure and success record](abcd-debugging.md).
+
+```bash
+python scripts/audit_chain.py runs/B-new --output runs/B-new/audit.json
+```
+
+This checks continuous step indices, one reset, actual normalized actions,
+skill outcomes, uninterrupted carrying grasp, final release/goal checks, and
+method-specific inference evidence. It still requires visual inspection and
+does not establish source-code integrity by itself. A3 predates the explicit
+`first_object_chain_success` summary field; the audit computes its result from
+the saved events and records the absent field. A3/B11 have identical initial
+camera hashes; this checks visual initialization, not every hidden physics value.
