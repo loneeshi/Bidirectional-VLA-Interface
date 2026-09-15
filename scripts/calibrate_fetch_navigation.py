@@ -24,6 +24,7 @@ def main():
         info_on_video=False, continuous_task=True, frame_stack=3,
         stationary_base=False, stationary_torso=False, stationary_head=True,
         env_kwargs={'require_build_configs_repeated_equally_across_envs':False,
+          'invisible_goals_in_human_render':True,
           'add_event_tracker_info':True,
           'human_render_camera_configs':{'width':512,'height':512},
           'task_cfgs':{'navigate':{'ignore_arm_checkers':True}}})

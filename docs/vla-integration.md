@@ -1,9 +1,9 @@
 # VLA replacement experiments
 
-Status (2026-09-14): both candidate models returned real predictions on an RTX
-A6000 through our clients. Candidate-controlled Fetch rollouts have NOT run.
-The original GPT + PPO/SAC diagnostic remains the only live closed-loop result.
-See [actual probe results](results/vla-probe-002.json).
+Current execution matrix: [A/B/C/D delivery](abcd-delivery.md).
+LightNav has now driven Fetch for 270 steps, but did not meet navigation success;
+pi0.5 remains an inference-only probe. See [control results](lightnav-control.md).
+The remainder of this section records the earlier inference experiment.
 
 Both retained pods initially rejected restart (host capacity). With explicit
 authorization, a temporary A6000 was used, evidence downloaded and hash-verified,

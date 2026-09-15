@@ -24,6 +24,8 @@ def main():
     p.add_argument('--policy-type',choices=['rl_all_obj','rl_per_obj'],default='rl_all_obj')
     p.add_argument('--checkpoint-root',type=Path,default=os.getenv('MSHAB_CHECKPOINT_DIR'))
     p.add_argument('--output',type=Path,default=Path('runs/g3'))
+    p.add_argument('--video-debug-overlay',action='store_true')
+    p.add_argument('--show-goal-markers',action='store_true')
     args=p.parse_args()
     if args.max_steps<1 or args.episodes<1: p.error('positive steps/episodes required')
     if args.checkpoint_root is None: p.error('set --checkpoint-root or MSHAB_CHECKPOINT_DIR')
@@ -72,8 +74,9 @@ def main():
         max_trajectories=args.episodes,
         eval_env=EnvConfig(env_id='SequentialTask-v0',num_envs=1,
             max_episode_steps=args.max_steps,task_plan_fp=str(plan),
-            obs_mode='depth',render_mode='rgb_array',record_video=True,info_on_video=True,
+            obs_mode='depth',render_mode='rgb_array',record_video=True,info_on_video=args.video_debug_overlay,
             env_kwargs={'require_build_configs_repeated_equally_across_envs':False,
+                        'invisible_goals_in_human_render':not args.show_goal_markers,
                         'add_event_tracker_info':True,
                         'human_render_camera_configs':{'width':512,'height':512},
                         'task_cfgs':{'navigate':{'ignore_arm_checkers':True}}}),

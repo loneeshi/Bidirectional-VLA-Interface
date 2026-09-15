@@ -74,6 +74,8 @@ def main() -> None:
                         help="Explicit diagnostic routing: use LightNav only at these indices; official elsewhere")
     parser.add_argument("--video-debug-overlay", action="store_true",
                         help="Burn verbose simulator statistics into diagnostic video")
+    parser.add_argument("--show-goal-markers", action="store_true",
+                        help="Show benchmark debug goals in human-render video")
     args = parser.parse_args()
     navigation_instructions = {}
     if args.navigation_policy == "lightnav":
@@ -127,6 +129,7 @@ def main() -> None:
         record_video=not args.no_video, info_on_video=args.video_debug_overlay, continuous_task=True,
         frame_stack=3, stationary_base=False, stationary_torso=False, stationary_head=True,
         env_kwargs={"require_build_configs_repeated_equally_across_envs": False,
+                    "invisible_goals_in_human_render": not args.show_goal_markers,
                     "add_event_tracker_info": True,
                     "human_render_camera_configs": {"width": 512, "height": 512},
                     "task_cfgs": {"navigate": {"ignore_arm_checkers": True}}})

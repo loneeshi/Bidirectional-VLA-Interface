@@ -15,6 +15,8 @@ benchmark navigation goal was satisfied. SAC manipulation was not reached.
 Physical motion signs and a 40-step grasp hold passed separate calibration.
 This trial uses oracle dispatch, not GPT/Opus. pi0.5 remains inference-only.
 
+[A/B/C/D delivery plan and green-marker diagnosis](docs/abcd-delivery.md).
+
 ## Current status
 
 **Development snapshot — September 14, 2026.** The first VLM–skill–simulation loop is running on an RTX A6000 with OpenAI `gpt-5.6-luna`. Six real model requests produced six successful skill invocations. The first **Navigate → Pick → Navigate while holding → Place** chain completed in 233 control steps; execution stopped at the six-request limit after 336 steps. **The full five-object TidyHouse task remains incomplete.**
