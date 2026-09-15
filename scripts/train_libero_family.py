@@ -17,6 +17,7 @@ from openpi.shared import nnx_utils
 from openpi.training import config, checkpoints, weight_loaders
 from openpi import transforms
 from openpi.policies.libero_policy import LiberoInputs
+from family_language import instruction_variants
 
 FAMILIES = ("reach", "grasp", "move", "release")
 LORA = nnx_utils.PathRegex(".*lora.*")
@@ -73,7 +74,7 @@ def transform(checkpoint):
 
 
 class Samples:
-    def __init__(self, data, checkpoint):
+    def __init__(self, data, checkpoint, language_augmentation=False):
         self.windows = json.loads((pathlib.Path(data) / "invocations.json").read_text())
         self.tables = {
             path: pd.read_parquet(path)
@@ -81,6 +82,8 @@ class Samples:
         }
         self.transform = transform(checkpoint)
         self.rng = np.random.default_rng(7)
+        self.language_rng = np.random.default_rng(708)
+        self.language_augmentation = language_augmentation
 
     def get(self, split, family, validation=False, window_index=0, position=None):
         choices = [
@@ -101,6 +104,10 @@ class Samples:
             i = int(self.rng.integers(w["start"], w["end"]))
         d = self.tables[w["path"]]
         row = d.iloc[i]
+        prompt = w["instruction"]
+        if self.language_augmentation and split == "train":
+            variants = instruction_variants(w["family"], w["target"], prompt)
+            prompt = variants[int(self.language_rng.integers(len(variants)))]
         indices = np.minimum(np.arange(i, i + 10), w["end"] - 1)
 
         def image(k):
@@ -112,7 +119,7 @@ class Samples:
                 "observation/wrist_image": image("wrist_image"),
                 "observation/state": np.asarray(row.state),
                 "actions": np.stack(d.iloc[indices].actions),
-                "prompt": w["instruction"],
+                "prompt": prompt,
             }
         )
         action = x.pop("actions")
@@ -166,10 +173,14 @@ def main():
     p.add_argument("--steps", type=int, default=2000)
     p.add_argument("--seconds", type=int, default=7200)
     p.add_argument("--resume")
+    p.add_argument("--warmstart-adapters")
+    p.add_argument("--language-augmentation", action="store_true")
     a = p.parse_args()
     out = pathlib.Path(a.output)
     out.mkdir(parents=True, exist_ok=True)
     assert 1 <= a.steps <= 2000 and 1 <= a.seconds <= 7200
+    if a.resume and a.warmstart_adapters:
+        raise ValueError("Choose optimizer resume or weights-only warmstart")
     graph, state = initialize(a.checkpoint)
     frozen = state.filter(nnx.Not(TRAIN))
     head = state.filter(HEAD)
@@ -181,6 +192,32 @@ def main():
     opts = {g: tx.init(banks[g]) for g in FAMILIES}
     head_opt = tx.init(head)
     start_step = 0
+    if a.warmstart_adapters:
+        source = pathlib.Path(a.warmstart_adapters)
+        saved = pickle.loads(source.read_bytes())
+        banks = jax.device_put(saved["banks"])
+        head = jax.device_put(saved["head"])
+        if set(banks) != set(FAMILIES):
+            raise ValueError("Warmstart must contain all four families")
+        opts = {g: tx.init(banks[g]) for g in FAMILIES}
+        head_opt = tx.init(head)
+    (out / "training-config.json").write_text(
+        json.dumps(
+            {
+                "arguments": vars(a),
+                "optimizer_reset": bool(a.warmstart_adapters),
+                "parent_sha256": hashlib.sha256(
+                    pathlib.Path(a.warmstart_adapters).read_bytes()
+                ).hexdigest()
+                if a.warmstart_adapters
+                else None,
+                "parent_step": saved["step"] if a.warmstart_adapters else None,
+                "new_recovery_trajectories": 0,
+                "validation_language": "unchanged original",
+            },
+            indent=2,
+        )
+    )
     if a.resume:
         rp = pathlib.Path(a.resume)
         saved = pickle.loads((rp if rp.is_file() else rp / "adapters.pkl").read_bytes())
@@ -189,7 +226,16 @@ def main():
         opts = jax.device_put(saved["opts"])
         head_opt = jax.device_put(saved["head_opt"])
         start_step = saved["step"]
-    samples = Samples(a.data, a.checkpoint)
+    samples = Samples(a.data, a.checkpoint, a.language_augmentation)
+    if a.language_augmentation:
+        reviewed = {
+            w["instruction"]: instruction_variants(
+                w["family"], w["target"], w["instruction"]
+            )
+            for w in samples.windows
+            if w["split"] == "train"
+        }
+        (out / "language-variants.json").write_text(json.dumps(reviewed, indent=2))
 
     def loss(params, frozen, key, batch):
         model = nnx.merge(graph, nnx.State.merge(frozen, params))
@@ -207,7 +253,7 @@ def main():
     best = float("inf")
     last_metrics = {}
     step = 0
-    if start_step:
+    if start_step or a.warmstart_adapters:
         vals = []
         for f in FAMILIES:
             n = sum(
