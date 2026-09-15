@@ -1,0 +1,13 @@
+{
+  "frames": 1228,
+  "segments": 30,
+  "all_segment_ends_native_success_without_failure": true,
+  "all_recorded_labels_match_post_wrapper_controls": true,
+  "head_masked_indices": [
+    8,
+    9
+  ],
+  "all_actions_finite_in_bounds": true,
+  "all_native_states_finite": true,
+  "scope": "training_data_audit_only_not_policy_performance"
+}
