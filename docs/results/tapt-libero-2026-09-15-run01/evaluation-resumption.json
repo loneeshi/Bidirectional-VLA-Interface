@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-15T18:16:21.839358+00:00",
+  "retained_standard_episodes": [
+    0,
+    1,
+    2
+  ],
+  "next_standard_episode": 3,
+  "restored_policy_rng_splits": 158,
+  "failure": "160 Unicode characters consumed162 UTF8 bytes; request rejected, episode retained as failure",
+  "unchanged": "Prompts, byte limit, model selection, task, states, budgets, and progress thresholds",
+  "deviation": "Model service restarted; RNG advanced by exactly logged predictions; environment reset sequence advanced without policy replay. Controller continues after instruction-length failure, but not unknown infrastructure errors."
+}

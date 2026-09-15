@@ -25,9 +25,10 @@ for family in ["reach", "grasp", "move", "release"]:
     r = [x for x in rows if x["family"] == family]
     v = np.array([x["loss"] for x in r])
     smooth = [np.median(v[max(0, i - 19) : i + 1]) for i in range(len(v))]
-    ax[0].plot([x["step"] for x in r], smooth, label=family, lw=1.5)
+    line = ax[0].plot([x["step"] for x in r], smooth, label=family, lw=1.5)[0]
+    ax[0].scatter([x["step"] for x in r], v, color=line.get_color(), s=2, alpha=0.12)
 ax[0].set(
-    title="Train joint loss (20-update rolling median)",
+    title="Train loss: raw points + 20-update median",
     xlabel="Total optimizer updates",
     ylabel="Action loss + 0.1 progress MSE",
     yscale="log",

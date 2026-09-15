@@ -2,11 +2,11 @@
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
-**Current priority:** [VLAs-as-Tools: TAPT and VLA tool-family interface reproduction](docs/vlas-as-tools-reproduction.md). The existing [execution organizer](docs/coordinator-status.md) is infrastructure evidence with PPO/SAC; it is not yet a TAPT reproduction. [Author-fork discovery](docs/vlas-as-tools-code-audit.md) and the [running LIBERO component experiment](docs/tapt-libero-run01.md) are recorded. The official pi05_libero baseline completed5/5 fixed episodes; four family adapters and the author progress head are training. GPT comparisons and learned-progress closed-loop acceptance are pending.
+**Current result:** [LIBERO tool-family / TAPT component experiment](docs/tapt-libero-run01.md) completed 2,000 real updates and all 15 fixed episodes. Original pi05_libero: **5/5**; GPT + original policy: **3/5**; GPT + four family adapters + learned progress: **0/5**. Learned progress triggered 28 actual switches/replans, but trained-system task-success acceptance failed. Six episodes were truncated by a character/UTF-8 validation mismatch; the report separates that implementation defect from task recovery failure. This is not a reproduction of the paper's score. [All 15 videos](docs/media/tapt-libero-2026-09-15-run01/README.md) · [Outcomes and per-call costs](docs/results/tapt-libero-2026-09-15-run01/evaluation.json) · [Author-fork source audit](docs/vlas-as-tools-code-audit.md).
 
 The first milestone uses [ManiSkill-HAB (MS-HAB)](https://github.com/arth-shukla/mshab) and its Fetch mobile manipulator. A high-level VLM issues structured skill requests from image observations and execution feedback; interchangeable low-level policies execute navigation and manipulation. The initial baseline reuses MS-HAB RL policies. LightNav integration and Fetch pi0.5 adaptation are now under development; learning requirement verifiers is future work.
 
-[Status](#current-status) · [Architecture](#architecture) · [Setup](docs/reproduction.md) · [Evaluation](docs/evaluation.md) · [Roadmap](#roadmap)
+[Status](docs/tapt-libero-run01.md) · [Architecture](#architecture) · [Setup](docs/reproduction.md) · [Evaluation](docs/evaluation.md) · [Roadmap](#roadmap)
 
 [Watch the real VLM demonstration — vlm-seed1.mp4](docs/media/vlm-baseline-2026-09-14/vlm-seed1.mp4) · [Read the diagnostic evidence](docs/evaluation.md#live-vlm-protocol-diagnostic) · [Run manifest](docs/results/seed1-diagnostic.json)
 
@@ -27,13 +27,13 @@ The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
 [C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
 Velocity, recovery-data, relative-base and workspace-camera pilots also failed Pick. A further workspace-camera model is training on 1,228 frames including successful recovery tails; C/D task success remains unproven. [Audited workspace failures and videos](docs/abcd-debugging.md) · [Adaptation contract and commands](docs/workspace-adaptation.md).
 
-## Current status
+## Earlier MS-HAB baseline status
 
 **Development snapshot — September 14, 2026.** The first VLM–skill–simulation loop is running on an RTX A6000 with OpenAI `gpt-5.6-luna`. Six real model requests produced six successful skill invocations. The first **Navigate → Pick → Navigate while holding → Place** chain completed in 233 control steps; execution stopped at the six-request limit after 336 steps. **The full five-object TidyHouse task remains incomplete.**
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 109 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 111 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|

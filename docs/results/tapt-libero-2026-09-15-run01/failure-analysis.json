@@ -1,0 +1,38 @@
+{
+  "episode": "vlm-tapt/episode002",
+  "termination": "request_limit",
+  "actions": 425,
+  "requests": 20,
+  "basket_initial_position": [
+    -0.0050332818846957365,
+    0.2527832562212033,
+    0.4321920266500307
+  ],
+  "basket_final_position": [
+    0.06923908609780874,
+    0.283120333262593,
+    0.43219201333749074
+  ],
+  "basket_max_horizontal_displacement_m": 0.09388264658224642,
+  "basket_max_displacement_step": 247,
+  "basket_first_over_1cm_step": 211,
+  "after_butter_release": {
+    "start_step": 350,
+    "remaining_actions": 75,
+    "native_success_seen": false,
+    "cream_cheese_contact_steps": 0
+  },
+  "all_tapt_switch_reasons": {
+    "step_limit": 21,
+    "learned_threshold": 24,
+    "learned_drop": 4
+  },
+  "confirmed": [
+    "Native task success never became true.",
+    "Basket moved during the butter reach/grasp portion.",
+    "After learned release completion, the planner spent75more actions on cream-cheese reach/grasp and exhausted20requests.",
+    "No target dual-finger contact was recorded in that final75-action recovery portion."
+  ],
+  "inference": "Scene disturbance and unsuccessful visual recovery contributed to this failure; learned invocation completion did not guarantee global task success.",
+  "not_established": "No full basket contact-force/orientation/site-bound logs or per-object native goal truth were recorded; exact collision cause and which final containment predicate failed cannot be proved from these traces alone."
+}

@@ -1,0 +1,16 @@
+configuration,episode,success,steps,vlm_calls,api_estimated_usd,api_unknown_attempts,termination_reason,switch_reasons,diagnostic_wrong_object_contact_steps,video,error
+baseline,0,True,241,0,0.0,0,,{},,baseline-episode000.mp4,
+baseline,1,True,264,0,0.0,0,,{},,baseline-episode001.mp4,
+baseline,2,True,242,0,0.0,0,,{},,baseline-episode002.mp4,
+baseline,3,True,253,0,0.0,0,,{},,baseline-episode003.mp4,
+baseline,4,True,284,0,0.0,0,,{},,baseline-episode004.mp4,
+vlm-standard,0,True,286,12,0.0024158000000000005,0,native_success,"{""native_success"": 1, ""simulator_rule"": 7, ""step_limit"": 4}",6,vlm-standard-episode000.mp4,
+vlm-standard,1,True,280,14,0.0028908000000000002,0,native_success,"{""native_success"": 1, ""simulator_rule"": 8, ""step_limit"": 5}",0,vlm-standard-episode001.mp4,
+vlm-standard,2,False,174,9,0.0017486,0,error,"{""simulator_rule"": 5, ""step_limit"": 3}",0,vlm-standard-episode002-failed.mp4,ValueError('Instruction too long')
+vlm-standard,3,False,40,2,0.00029159999999999993,0,error,"{""step_limit"": 1}",0,vlm-standard-episode003-failed.mp4,ValueError('Instruction too long')
+vlm-standard,4,True,255,10,0.0019626,0,native_success,"{""native_success"": 1, ""simulator_rule"": 9}",0,vlm-standard-episode004.mp4,
+vlm-tapt,0,False,190,10,0.0020246,0,error,"{""learned_threshold"": 5, ""step_limit"": 4}",0,vlm-tapt-episode000-failed.mp4,ValueError('Instruction too long')
+vlm-tapt,1,False,255,9,0.001737,0,error,"{""learned_threshold"": 5, ""step_limit"": 3}",0,vlm-tapt-episode001-failed.mp4,ValueError('Instruction too long')
+vlm-tapt,2,False,425,20,0.0041618,0,request_limit,"{""learned_drop"": 4, ""learned_threshold"": 8, ""step_limit"": 8}",0,vlm-tapt-episode002-failed.mp4,
+vlm-tapt,3,False,240,9,0.0017328000000000003,0,error,"{""learned_threshold"": 4, ""step_limit"": 4}",0,vlm-tapt-episode003-failed.mp4,ValueError('Instruction too long')
+vlm-tapt,4,False,120,5,0.0008524,0,error,"{""learned_threshold"": 2, ""step_limit"": 2}",0,vlm-tapt-episode004-failed.mp4,ValueError('Instruction too long')

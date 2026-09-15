@@ -1,5 +1,10 @@
 import unittest
-from bvi.tool_family import FamilyInvocation, FamilySession, ProgressChunk
+from bvi.tool_family import (
+    FamilyInvocation,
+    FamilySession,
+    ProgressChunk,
+    validate_instruction_length,
+)
 
 
 class Backend:
@@ -17,6 +22,21 @@ class Backend:
 
 
 class FamilyTests(unittest.TestCase):
+    def test_unicode_schema_limit_preserves_exact_instruction(self):
+        text = "a" * 159 + "\uc5f4"
+        self.assertEqual(len(text), 160)
+        self.assertEqual(len(text.encode("utf-8")), 162)
+        validate_instruction_length(text)
+        self.session.start(FamilyInvocation("unicode", "reach", text, 10))
+        self.session.act({})
+        self.assertEqual(self.backend.received["instruction"], text)
+        with self.assertRaisesRegex(ValueError, "Instruction too long"):
+            validate_instruction_length(text, "legacy-bytes")
+
+    def test_schema_limit_rejects_161_characters(self):
+        with self.assertRaisesRegex(ValueError, "Instruction too long"):
+            validate_instruction_length("a" * 161)
+
     def setUp(self):
         self.backend = Backend()
         self.events = []

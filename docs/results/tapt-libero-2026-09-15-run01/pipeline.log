@@ -1,0 +1,14 @@
+START validation-selection 2026-09-15T17:58:28.510547+00:00
+DONE validation-selection
+START eval-standard 2026-09-15T18:03:53.227027+00:00
+Traceback (most recent call last):
+  File "/workspace/tapt/after_training.py", line 34, in <module>
+    serve_eval([python,str(root/'serve_baseline.py')],'standard')
+  File "/workspace/tapt/after_training.py", line 19, in serve_eval
+    run([sim,str(root/'eval_libero_family.py'),'--mode',mode,'--output',str(e/('vlm-'+mode))],'eval-'+mode,1800)
+  File "/workspace/tapt/after_training.py", line 7, in run
+    with (e/(name+'.log')).open('w') as f:subprocess.run(args,stdout=f,stderr=subprocess.STDOUT,env=env,check=True,timeout=timeout)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/tapt/sim-env/bin/python', '/workspace/tapt/eval_libero_family.py', '--mode', 'standard', '--output', '/workspace/tapt/evidence/vlm-standard']' returned non-zero exit status 1.

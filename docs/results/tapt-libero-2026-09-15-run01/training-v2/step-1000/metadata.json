@@ -1,0 +1,28 @@
+{
+  "step": 1000,
+  "sha256": "af061edb29e81dc930eff33960bfecdb5b16f9399e7d2dfb1275706242e3dac6",
+  "metrics": {
+    "validation_joint_loss": 0.002037184510118095,
+    "family_validation": {
+      "reach": 0.002063969348091632,
+      "grasp": 0.0021390779758803545,
+      "move": 0.0014711520198034123,
+      "release": 0.002474538696696982
+    },
+    "validation_trajectories": 5,
+    "validation_windows": 40
+  },
+  "families": [
+    "reach",
+    "grasp",
+    "move",
+    "release"
+  ],
+  "backbone_frozen": true,
+  "initialization": "official pi05_libero",
+  "progress_weight": 0.1,
+  "droid_post_training": false,
+  "label_source": "reviewed temporal proxy",
+  "micro_batch": 1,
+  "effective_batch": 8
+}
