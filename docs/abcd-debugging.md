@@ -260,6 +260,21 @@ segments may train pi05, but they are not C/D results. This changes both the
 camera and the data samples, so it is not a strictly matched-data causal ablation.
 The live-camera checkpoint has not yet passed online evaluation.
 
+The 14 live collections produced 13 successful Pick segments and three successful
+Place segments (693 frames from 13 sources). One failed LightNav-to-Pick source
+was excluded. The verified source archive SHA256 is
+`7d135fc4b3ce41dbcef69e797cfd32da9f388230ca21c5cd383c919cee187591`.
+All 14 resets used `tidy_house-sequential-val-90-0` and
+`val/tidy_house/episode_18.json`; these are training diagnostics, not held-out
+scores. A 2,000-update warm-start pilot uses the new 224×224 workspace image,
+the native 128×128 wrist image and the same 30-value relative-root proprioception.
+
+The workspace view also shows the gripper, can and armchair during an actual
+successful **official teacher** Place:
+
+![Workspace view at Place start](media/workspace-camera-place-start.png)
+![Workspace view during release](media/workspace-camera-place-mid.png)
+
 ### Teacher/student observation gap
 
 The pinned sequential environment's `_get_obs_extra` supplies TCP pose, object
