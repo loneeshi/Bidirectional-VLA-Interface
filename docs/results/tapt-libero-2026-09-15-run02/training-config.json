@@ -1,0 +1,17 @@
+{
+  "arguments": {
+    "data": "/workspace/tapt/data",
+    "checkpoint": "/workspace/tapt/openpi-cache/openpi-assets/checkpoints/pi05_libero",
+    "output": "/workspace/tapt/evidence/training",
+    "steps": 400,
+    "seconds": 1800,
+    "resume": null,
+    "warmstart_adapters": "/workspace/tapt/parent-adapters.pkl",
+    "language_augmentation": true
+  },
+  "optimizer_reset": true,
+  "parent_sha256": "8d3f1dff37b07191e7e4ee82e4ff91c7ef93a6fe13a3f3e28c823d1494d9bc61",
+  "parent_step": 1800,
+  "new_recovery_trajectories": 0,
+  "validation_language": "unchanged original"
+}

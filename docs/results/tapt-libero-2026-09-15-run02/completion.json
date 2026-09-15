@@ -1,0 +1,23 @@
+{
+  "training_updates": 400,
+  "selected_step": 200,
+  "parent_loss": 0.0021415199866169133,
+  "selected_loss": 0.002105952104102471,
+  "backup_verified": true,
+  "temporary_pod_deleted_at": "2026-09-15T19:49:10.832Z",
+  "finance": {
+    "id": "TAPT008-FINAL",
+    "at": "2026-09-15T19:49:10.832Z",
+    "provider_reported_runpod_usd": 11.151658400893211,
+    "runpod_pending_estimate_usd": 0.35894014593471524,
+    "remaining_runpod_total_cap_estimate_usd": 8.489401453172073,
+    "openai_estimated_consumption_usd": 0.02920955,
+    "remaining_api_total_cap_estimate_usd": 9.97079045,
+    "batch_gpu_disk_estimate_usd": 0.3392193851851852,
+    "batch_api_calls": 0,
+    "running_pods": [],
+    "continuing_storage_gb": 40,
+    "account_balance_verified": false
+  },
+  "online_evaluation": false
+}

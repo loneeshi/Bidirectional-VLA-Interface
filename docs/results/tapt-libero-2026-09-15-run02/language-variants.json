@@ -1,0 +1,42 @@
+{
+  "reach the cream cheese box": [
+    "reach the cream cheese box",
+    "Approach the cream cheese box with the gripper open.",
+    "Position the open gripper near the cream cheese box."
+  ],
+  "grasp the cream cheese box": [
+    "grasp the cream cheese box",
+    "Close the gripper around the cream cheese box.",
+    "Grasp the cream cheese box with the gripper."
+  ],
+  "move the cream cheese box into the basket": [
+    "move the cream cheese box into the basket",
+    "Move the cream cheese box over the basket.",
+    "Transport the cream cheese box to the basket while keeping the gripper closed."
+  ],
+  "release the cream cheese box in the basket": [
+    "release the cream cheese box in the basket",
+    "Open the gripper to release the cream cheese box into the basket.",
+    "Release the cream cheese box in the basket."
+  ],
+  "reach the butter": [
+    "reach the butter",
+    "Approach the butter with the gripper open.",
+    "Position the open gripper near the butter."
+  ],
+  "grasp the butter": [
+    "grasp the butter",
+    "Close the gripper around the butter.",
+    "Grasp the butter with the gripper."
+  ],
+  "move the butter into the basket": [
+    "move the butter into the basket",
+    "Move the butter over the basket.",
+    "Transport the butter to the basket while keeping the gripper closed."
+  ],
+  "release the butter in the basket": [
+    "release the butter in the basket",
+    "Open the gripper to release the butter into the basket.",
+    "Release the butter in the basket."
+  ]
+}
