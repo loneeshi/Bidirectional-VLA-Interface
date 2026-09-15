@@ -1,7 +1,7 @@
 {
   "experiment": "TAPT007",
   "batch": "tapt-libero-2026-09-15-run01",
-  "status": "running",
+  "status": "completed_with_task_success_failure",
   "author_commit": "f4eb160ba52b22c1e85fe432de59c24bbbac6187",
   "official_openpi_commit": "215abfb217dbac7d5f1273282331b9b1866c0479",
   "libero_commit": "f78abd68ee283de9f9be3c8f7e2a9ad60246e95c",
@@ -88,7 +88,8 @@
     "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
     "cache_write_usd_per_million": 0.25,
     "instruction_max_utf8_bytes": 160,
-    "provider_sampling_seed": null
+    "provider_sampling_seed": null,
+    "instruction_limit_mode": "legacy-bytes"
   },
   "compute": {
     "gpu": "RTX A6000",
@@ -104,7 +105,9 @@
     "GPT replaces author evaluator planner",
     "Combined-method control, not isolated TAPT causal ablation",
     "Initial validation bug corrected by resuming200 and selecting only full5-trajectory validation results",
-    "Author chunk-prefix server returns an array but checked evaluator casts to scalar; this interface explicitly uses current-step index0 and logs the whole sequence"
+    "Author chunk-prefix server returns an array but checked evaluator casts to scalar; this interface explicitly uses current-step index0 and logs the whole sequence",
+    "Character-vs-byte guard mismatch rejected6episodes; recorded failures retained. Corrected character-mode is offline-tested only.",
+    "Standard evaluation resumed afterepisode2 with158policy RNG splits and prior resets restored; no episode replay."
   ],
   "policy_sampling_seed": 0,
   "training_seed": 7,
@@ -116,5 +119,12 @@
     "release_open_delta_m": 0.001,
     "note": "Local rule unit correction, not a change to learned-progress thresholds. Opening is not proof of placement."
   },
-  "dataset_revision": "a4336d589d589045d1c56423ffdf3b88a0e19b1f"
+  "dataset_revision": "a4336d589d589045d1c56423ffdf3b88a0e19b1f",
+  "selected_checkpoint_step": 1800,
+  "selected_checkpoint_sha256": "8d3f1dff37b07191e7e4ee82e4ff91c7ef93a6fe13a3f3e28c823d1494d9bc61",
+  "outcomes": {
+    "baseline": "5/5",
+    "vlm-standard": "3/5",
+    "vlm-tapt": "0/5"
+  }
 }

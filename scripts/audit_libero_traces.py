@@ -4,7 +4,7 @@ import argparse, collections, json, pathlib
 
 
 def audit(path):
-    rows = [json.loads(x) for x in pathlib.Path(path).read_text().splitlines()]
+    rows = [json.loads(x) for x in pathlib.Path(path).read_text(encoding='utf-8').splitlines()]
     current = None
     queue = collections.deque()
     finished = set()
@@ -14,6 +14,7 @@ def audit(path):
     calls = 0
     actions = 0
     learned = 0
+    rejected = 0
     for row in rows:
         event = row["event"]
         if event == "vlm_response":
@@ -55,13 +56,17 @@ def audit(path):
             if row["reason"].startswith("learned_"):
                 learned += 1
         elif event == "error":
-            raise AssertionError(row["error"])
+            # A rejected request is an episode failure, not an executed invalid action.
+            assert row["error"] == "ValueError('Instruction too long')"
+            assert current is None and not queue
+            rejected += 1
     assert not queue and current is None and calls <= 20 and actions <= 520
     return {
         "file": str(path),
         "calls": calls,
         "actions": actions,
         "learned_events": learned,
+        "rejected_requests": rejected,
         "adapter_hashes": hashes,
         "passed": True,
     }

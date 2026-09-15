@@ -13,6 +13,19 @@ VERSION = "vla-tool-family/1"
 FAMILIES = ("reach", "grasp", "move", "release")
 
 
+def validate_instruction_length(text, mode="schema-characters"):
+    """Match JSON Schema maxLength without rewriting the model's instruction.
+
+    legacy-bytes is retained only to reproduce run01's stricter, flawed guard.
+    The separate API request-envelope byte budget still applies in either mode.
+    """
+    if mode not in ("schema-characters", "legacy-bytes"):
+        raise ValueError("Unknown instruction limit mode")
+    size = len(text.encode("utf-8")) if mode == "legacy-bytes" else len(text)
+    if size > 160:
+        raise ValueError("Instruction too long")
+
+
 @dataclass(frozen=True)
 class FamilyInvocation:
     call_id: str

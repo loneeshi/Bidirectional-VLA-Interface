@@ -1,0 +1,71 @@
+[
+  {
+    "file": "vlm-tapt/episode000.jsonl",
+    "calls": 9,
+    "actions": 190,
+    "learned_events": 5,
+    "rejected_requests": 1,
+    "adapter_hashes": {
+      "reach": "e008cf7379c84fa0580c6e2d738167bac6b846eb1701fb32b5623010420bc562",
+      "grasp": "cdd60aae20aee62fd65edaee151dcc7672872c5b0eea86f934947406e51125e8",
+      "move": "2abe6a40d069300173cfbd8349291f9b52a81158f434b223d0b32bc3266765a2",
+      "release": "d9a0ebdb0f824d10ad9a24b92ac8339c9e092b8fc285eb80f9362d52d1fe0994"
+    },
+    "passed": true
+  },
+  {
+    "file": "vlm-tapt/episode001.jsonl",
+    "calls": 8,
+    "actions": 255,
+    "learned_events": 5,
+    "rejected_requests": 1,
+    "adapter_hashes": {
+      "reach": "e008cf7379c84fa0580c6e2d738167bac6b846eb1701fb32b5623010420bc562",
+      "grasp": "cdd60aae20aee62fd65edaee151dcc7672872c5b0eea86f934947406e51125e8",
+      "move": "2abe6a40d069300173cfbd8349291f9b52a81158f434b223d0b32bc3266765a2",
+      "release": "d9a0ebdb0f824d10ad9a24b92ac8339c9e092b8fc285eb80f9362d52d1fe0994"
+    },
+    "passed": true
+  },
+  {
+    "file": "vlm-tapt/episode002.jsonl",
+    "calls": 20,
+    "actions": 425,
+    "learned_events": 12,
+    "rejected_requests": 0,
+    "adapter_hashes": {
+      "reach": "e008cf7379c84fa0580c6e2d738167bac6b846eb1701fb32b5623010420bc562",
+      "grasp": "cdd60aae20aee62fd65edaee151dcc7672872c5b0eea86f934947406e51125e8",
+      "move": "2abe6a40d069300173cfbd8349291f9b52a81158f434b223d0b32bc3266765a2",
+      "release": "d9a0ebdb0f824d10ad9a24b92ac8339c9e092b8fc285eb80f9362d52d1fe0994"
+    },
+    "passed": true
+  },
+  {
+    "file": "vlm-tapt/episode003.jsonl",
+    "calls": 8,
+    "actions": 240,
+    "learned_events": 4,
+    "rejected_requests": 1,
+    "adapter_hashes": {
+      "reach": "e008cf7379c84fa0580c6e2d738167bac6b846eb1701fb32b5623010420bc562",
+      "grasp": "cdd60aae20aee62fd65edaee151dcc7672872c5b0eea86f934947406e51125e8",
+      "move": "2abe6a40d069300173cfbd8349291f9b52a81158f434b223d0b32bc3266765a2",
+      "release": "d9a0ebdb0f824d10ad9a24b92ac8339c9e092b8fc285eb80f9362d52d1fe0994"
+    },
+    "passed": true
+  },
+  {
+    "file": "vlm-tapt/episode004.jsonl",
+    "calls": 4,
+    "actions": 120,
+    "learned_events": 2,
+    "rejected_requests": 1,
+    "adapter_hashes": {
+      "reach": "e008cf7379c84fa0580c6e2d738167bac6b846eb1701fb32b5623010420bc562",
+      "grasp": "cdd60aae20aee62fd65edaee151dcc7672872c5b0eea86f934947406e51125e8",
+      "move": "2abe6a40d069300173cfbd8349291f9b52a81158f434b223d0b32bc3266765a2"
+    },
+    "passed": true
+  }
+]

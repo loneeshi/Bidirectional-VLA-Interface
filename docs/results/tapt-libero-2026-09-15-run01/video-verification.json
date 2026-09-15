@@ -1,0 +1,167 @@
+[
+  {
+    "file": "baseline-episode000.mp4",
+    "frames": 241,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "f04c7777a6c775207f097fdee2d6b7f4c51caeb4cf09863d4c9fdce8f2db5f0f",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "baseline-episode001.mp4",
+    "frames": 264,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "9c6d6cba7e64049052693560d897555482c5a5084129cb7f0166f1373fa12502",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "baseline-episode002.mp4",
+    "frames": 242,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "6e157506b0432a9901cbf55ce234660e276af0c9f504d9308184fe0c5be31eb6",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "baseline-episode003.mp4",
+    "frames": 253,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "3771bedaf1420cdc560d6a091dccfbdeb6b49a167447c20fb76fe0d845b6b498",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "baseline-episode004.mp4",
+    "frames": 284,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "44d7208254a7133a51f6cfa89093bf876b69283de89832faa4124bf7a65cb488",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-standard-episode000.mp4",
+    "frames": 286,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "2f95542e9f67e42e518358eba5223fe4e8db22d1c231054acdb8b9e2590b13f7",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-standard-episode001.mp4",
+    "frames": 280,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "86012b0db89fd7f0dcfb9a7c9162b7f02a0ab7c5fd7adedeaa8be5183867123b",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-standard-episode002-failed.mp4",
+    "frames": 174,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "aa4904d4202c075f4af5c5f06147c1e5dd98fa0d127a885e0d9187c051c94dab",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-standard-episode003-failed.mp4",
+    "frames": 40,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "aa63da58592b320cfc6dc08829b5265567276bb06bd5eb87b21ab295113b3225",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-standard-episode004.mp4",
+    "frames": 255,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "bb6dec6f8fcdfaa273bc2d589a3b71db3c853b2935e05269338760d6f3a32520",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-tapt-episode000-failed.mp4",
+    "frames": 190,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "860843acc04d1f6af70fe22e44ae593bf3cd74d457a6e4e4ba7d1302935242cb",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-tapt-episode001-failed.mp4",
+    "frames": 255,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "84eba3e6bc1f78938f44db9ff774d40eac1436641e947bc1cc50daf0523ef949",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-tapt-episode002-failed.mp4",
+    "frames": 425,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "6e53cf6649e2ecbbb20b5034b8bef711942dc6add76c76259ea12734be63d1d3",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-tapt-episode003-failed.mp4",
+    "frames": 240,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "a3687ca05612d00a3e2cbd49d513ef070d6200f21b1016d8e670939ceaf3b7bc",
+    "first_and_last_frame_decoded": true
+  },
+  {
+    "file": "vlm-tapt-episode004-failed.mp4",
+    "frames": 120,
+    "fps": 10.0,
+    "size": [
+      224,
+      224
+    ],
+    "sha256": "3355989dba7ce6f2545cc59f0973c5a10320b087a260e2d436f7fc1f0182f7ce",
+    "first_and_last_frame_decoded": true
+  }
+]

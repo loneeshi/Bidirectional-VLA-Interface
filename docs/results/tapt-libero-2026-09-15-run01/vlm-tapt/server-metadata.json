@@ -1,0 +1,18 @@
+{
+  "families": [
+    "reach",
+    "grasp",
+    "move",
+    "release"
+  ],
+  "adapter_hashes": {
+    "reach": "e008cf7379c84fa0580c6e2d738167bac6b846eb1701fb32b5623010420bc562",
+    "grasp": "cdd60aae20aee62fd65edaee151dcc7672872c5b0eea86f934947406e51125e8",
+    "move": "2abe6a40d069300173cfbd8349291f9b52a81158f434b223d0b32bc3266765a2",
+    "release": "d9a0ebdb0f824d10ad9a24b92ac8339c9e092b8fc285eb80f9362d52d1fe0994"
+  },
+  "adapter_hash_scope": "serialized single-family state; shared head separately hashed",
+  "checkpoint_sha256": "8d3f1dff37b07191e7e4ee82e4ff91c7ef93a6fe13a3f3e28c823d1494d9bc61",
+  "progress_head_sha256": "4eae382174ff66f054e82232bb0091d449c1aab6b9159550e6dcb5dbc0be0c8b",
+  "progress_source": "learned"
+}

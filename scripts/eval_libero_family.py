@@ -10,7 +10,7 @@ from openpi_client import websocket_client_policy
 from bvi.bridge import FileBridgeTransport
 from bvi.coordinator import VLMRequest
 from bvi.protocol import ImageFrame
-from bvi.tool_family import FamilyInvocation
+from bvi.tool_family import FamilyInvocation, validate_instruction_length
 from bvi.progress_monitor import ProgressMonitor, THRESHOLDS
 from eval_libero_baseline import element
 
@@ -35,9 +35,15 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--output", required=True)
     p.add_argument("--mode", choices=["standard", "tapt"], required=True)
+    p.add_argument("--resume", action="store_true")
+    p.add_argument(
+        "--instruction-limit-mode",
+        choices=["legacy-bytes", "schema-characters"],
+        default="legacy-bytes",
+    )
     a = p.parse_args()
     out = pathlib.Path(a.output)
-    out.mkdir(parents=True, exist_ok=False)
+    out.mkdir(parents=True, exist_ok=a.resume)
     suite = benchmark.get_benchmark_dict()["libero_10"]()
     task = suite.get_task(1)
     env = OffScreenRenderEnv(
@@ -63,9 +69,17 @@ def main():
     bridge = FileBridgeTransport(
         "/workspace/tapt/bridge", "openai", "gpt-5.6-luna", "TAPT007"
     )
-    summaries = []
+    summaries = (
+        json.loads((out / "summary.json").read_text(encoding="utf-8"))
+        if a.resume
+        else []
+    )
+    assert [r["episode"] for r in summaries] == list(range(len(summaries)))
+    # Restore the reset sequence without replaying policy actions or API calls.
+    for _ in range(len(summaries)):
+        env.reset()
     try:
-        for ep in range(5):
+        for ep in range(len(summaries), 5):
             env.reset()
             state = suite.get_task_init_states(1)[ep]
             obs = env.set_init_state(state)
@@ -137,8 +151,9 @@ def main():
                             decision["instruction"],
                             decision["max_steps"],
                         )
-                        if len(invocation.instruction.encode("utf-8")) > 160:
-                            raise ValueError("Instruction too long")
+                        validate_instruction_length(
+                            invocation.instruction, a.instruction_limit_mode
+                        )
                         if (
                             decision["target"] not in ("cream_cheese_1", "butter_1")
                             or not 10 <= invocation.max_steps <= 100
@@ -334,7 +349,7 @@ def main():
             summaries.append(row)
             (out / "summary.json").write_text(json.dumps(summaries, indent=2))
             print(row, flush=True)
-            if error:
+            if error and error != "ValueError('Instruction too long')":
                 raise RuntimeError(error)
     finally:
         env.close()

@@ -1,0 +1,93 @@
+[
+  {
+    "termination_reason": "error",
+    "episode": 0,
+    "success": false,
+    "steps": 190,
+    "vlm_calls": 10,
+    "error": "ValueError('Instruction too long')",
+    "video": "vlm-tapt-episode000-failed.mp4",
+    "switch_reasons": {
+      "step_limit": 4,
+      "learned_threshold": 5
+    },
+    "initial_state_sha256": "5abdf8f466f490901dee9f931b32eb181b2928eaa17bb6379742f988581d564a",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 111.4042586600408
+  },
+  {
+    "termination_reason": "error",
+    "episode": 1,
+    "success": false,
+    "steps": 255,
+    "vlm_calls": 9,
+    "error": "ValueError('Instruction too long')",
+    "video": "vlm-tapt-episode001-failed.mp4",
+    "switch_reasons": {
+      "step_limit": 3,
+      "learned_threshold": 5
+    },
+    "initial_state_sha256": "cd3e7f86ef217ee7b7d26cc505b3f56ea8f49664ef10f6749270dfcd39dd17a6",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 114.06273136567324
+  },
+  {
+    "termination_reason": "request_limit",
+    "episode": 2,
+    "success": false,
+    "steps": 425,
+    "vlm_calls": 20,
+    "error": null,
+    "video": "vlm-tapt-episode002-failed.mp4",
+    "switch_reasons": {
+      "step_limit": 8,
+      "learned_drop": 4,
+      "learned_threshold": 8
+    },
+    "initial_state_sha256": "ab6bf2ca98e96f1692d8ec7a5b7ec25eee1ea61c57d45c2816ac3dcc938ea3ee",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 225.473201405257
+  },
+  {
+    "termination_reason": "error",
+    "episode": 3,
+    "success": false,
+    "steps": 240,
+    "vlm_calls": 9,
+    "error": "ValueError('Instruction too long')",
+    "video": "vlm-tapt-episode003-failed.mp4",
+    "switch_reasons": {
+      "step_limit": 4,
+      "learned_threshold": 4
+    },
+    "initial_state_sha256": "3e0d23df2cf22ae6e897e15a1739d5bf25474b4e33196644890b8485f0e880f5",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 103.5995070822537
+  },
+  {
+    "termination_reason": "error",
+    "episode": 4,
+    "success": false,
+    "steps": 120,
+    "vlm_calls": 5,
+    "error": "ValueError('Instruction too long')",
+    "video": "vlm-tapt-episode004-failed.mp4",
+    "switch_reasons": {
+      "step_limit": 2,
+      "learned_threshold": 2
+    },
+    "initial_state_sha256": "d2cecde6c34039556fadf729cf7eb15d628b42094f6f0c092d9969c9cf659856",
+    "seed": 7,
+    "max_steps": 520,
+    "wait_steps": 20,
+    "elapsed_seconds": 59.385025495663285
+  }
+]

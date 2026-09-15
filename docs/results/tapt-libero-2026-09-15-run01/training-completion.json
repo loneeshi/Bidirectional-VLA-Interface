@@ -1,0 +1,13 @@
+{
+  "total_optimizer_updates": 2000,
+  "per_family_updates": {
+    "reach": 500,
+    "grasp": 500,
+    "move": 500,
+    "release": 500
+  },
+  "effective_batch": 8,
+  "all_losses_finite": true,
+  "summed_trainer_reported_seconds": 5327.318299039267,
+  "note": "Includes trainer computation/validation timer; does not represent total GPU billing duration."
+}

@@ -16,13 +16,13 @@ def main():
     rows = []
     calls = []
     for mode in ["baseline", "vlm-standard", "vlm-tapt"]:
-        summary = json.loads((evidence / mode / "summary.json").read_text())
+        summary = json.loads((evidence / mode / "summary.json").read_text(encoding='utf-8'))
         assert len(summary) == 5 and [r["episode"] for r in summary] == list(range(5))
         for r in summary:
             trace = [
                 json.loads(x)
                 for x in (evidence / mode / f"episode{r['episode']:03d}.jsonl")
-                .read_text()
+                .read_text(encoding='utf-8')
                 .splitlines()
             ]
             ids = [e["attempt_id"] for e in trace if e["event"] == "vlm_request"]
@@ -30,7 +30,7 @@ def main():
             unknown = 0
             for aid in ids:
                 f = bridge / (aid + ".response.json")
-                data = json.loads(f.read_text()) if f.exists() else {}
+                data = json.loads(f.read_text(encoding='utf-8')) if f.exists() else {}
                 response = data.get("response", {})
                 usage = response.get("usage")
                 amount = None
@@ -111,13 +111,16 @@ def main():
         "vlm_calls",
         "api_estimated_usd",
         "api_unknown_attempts",
+        "termination_reason",
+        "switch_reasons",
+        "diagnostic_wrong_object_contact_steps",
         "video",
         "error",
     ]
     with (out / "episodes.csv").open("w", newline="") as f:
         writer = csv.DictWriter(f, fields, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(dict(r, switch_reasons=json.dumps(r.get("switch_reasons", {}), sort_keys=True)) for r in rows)
     print(json.dumps(result["outcomes"], indent=2))
 
 

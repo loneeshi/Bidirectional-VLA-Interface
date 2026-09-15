@@ -1,0 +1,1717 @@
+[
+  {
+    "event": "invocation_finished",
+    "step": 50,
+    "call_id": "0785d94456a14edcabc3c0d76f06bbb2",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box with the gripper open; it is the red rectangular box on the tabletop near the upper-left area of the camera view.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.8430478572845459,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.09910931425692633,
+        -0.18146601062546336,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696719216703,
+        0.2646539007899064,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 55,
+    "call_id": "b946c61b1f6a4f6c8ba1945f7c92a36c",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box with the gripper open; it is the blue-and-white rectangular box near the bottom center of the camera view.",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.9715973138809204,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.09910931425692633,
+        -0.18146601062546336,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696719216703,
+        0.2646539007899064,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 70,
+    "call_id": "4cd9bc63172b449b94de7024bbfeecbe",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the gripper around the cream cheese box, the blue-and-white rectangular box centered near the bottom of the camera view, and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9857082366943359,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 10,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.11236754900711177,
+        -0.2002802195470528,
+        0.5124011513877988
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696719216703,
+        0.2646539007899064,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 120,
+    "call_id": "d42a0497e97d482698c2ee0de30ebd87",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "cream_cheese_1",
+    "instruction": "Transport the held cream cheese box above the wire basket on the left side of the tabletop, keeping the gripper closed and the box clear of the table.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.8064147233963013,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 50,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.022009695109518675,
+        0.23086343482744187,
+        0.6571973704347971
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696719216703,
+        0.2646539007899064,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 125,
+    "call_id": "5ead4185699840f2ae79dd94a993b234",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "cream_cheese_1",
+    "instruction": "Continue transporting the held blue-and-white cream cheese box above the wire basket on the left side of the tabletop, keeping the gripper closed and the box un",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.982573390007019,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 5,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.008308721049550166,
+        0.24399382607033665,
+        0.6300380926489854
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696719216703,
+        0.2646539007899064,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 140,
+    "call_id": "353712df36cc41e9ab363eccb123e574",
+    "discarded_actions": 0,
+    "family": "release",
+    "target": "cream_cheese_1",
+    "instruction": "Open the gripper to deposit the held blue-and-white cream cheese box into the wire basket centered in the camera view, ensuring it drops fully inside.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.966764509677887,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 5,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0010101301029492565,
+        0.24648139438140235,
+        0.4626956706171561
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696736746423,
+        0.26465390088730234,
+        0.43219201944226027
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 150,
+    "call_id": "bcc29b48f59e4704911a00f68c9b92e6",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the butter with the gripper open; it is the orange-wrapped rectangular item at the far left edge of the tabletop, just left of the blue-and-white cream",
+    "reason": "step_limit",
+    "executed_steps": 10,
+    "progress": 0.19264954328536987,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0010101301034195567,
+        0.24648139438141867,
+        0.46269567064272416
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696736746423,
+        0.26465390088730234,
+        0.4321920194422597
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 180,
+    "call_id": "705028d07fa74df4ba17929686370efe",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the orange-wrapped butter at the far left edge of the tabletop with the gripper open, using the current camera view to center on the butter and avoid14",
+    "reason": "step_limit",
+    "executed_steps": 30,
+    "progress": 0.737013578414917,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0010101301034109854,
+        0.24648139438137703,
+        0.46269567064272416
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696736746423,
+        0.26465390088730234,
+        0.4321920194422597
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 190,
+    "call_id": "8dcd8677e2eb4b2c883d2adb4915cb06",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the orange-wrapped butter at the far left edge of the tabletop with the gripper open, centering the gripper over the butter while avoiding the nearby p",
+    "reason": "learned_threshold",
+    "executed_steps": 10,
+    "progress": 0.9358348846435547,
+    "source": "learned",
+    "episode": "episode000",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0010101301034081281,
+        0.24648139438136316,
+        0.46269567064272416
+      ],
+      "butter_1": [
+        0.0489602377124352,
+        0.05760379687259051,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.007047696736746423,
+        0.26465390088730234,
+        0.4321920194422597
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 50,
+    "call_id": "5a87b94234cb4cb5be28cdfc105e2db4",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box, the red rectangular box near the center-left of the tabletop, with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.8302238583564758,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0786474275814232,
+        -0.21762915617409836,
+        0.44566168885495694
+      ],
+      "butter_1": [
+        0.03504816625408551,
+        0.06299035293625024,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0025413630583825233,
+        0.2663045359881991,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 55,
+    "call_id": "3dbc35a5e99a43848da301f9c329fa37",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box, the red rectangular box near the center-left of the tabletop, with the gripper open.",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.9759421348571777,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07840815441878757,
+        -0.21751340906943312,
+        0.44567559444828553
+      ],
+      "butter_1": [
+        0.03504816625408551,
+        0.06299035293625024,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0025413630583825233,
+        0.2663045359881991,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 75,
+    "call_id": "8dee189af1724f6b9a1d819c9b1c1938",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the open gripper around the cream cheese box, the red rectangular box near the center-left of the tabletop, and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 20,
+    "progress": 0.9840229749679565,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 10,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.10347601524399014,
+        -0.20192469888832054,
+        0.5380235739367099
+      ],
+      "butter_1": [
+        0.03504816625408551,
+        0.06299035293625024,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0025413630583825233,
+        0.2663045359881991,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 125,
+    "call_id": "b7d183d82d8242f0b398bd897b6b7f90",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "cream_cheese_1",
+    "instruction": "Transport the securely held cream cheese box above the open basket on the left side of the tabletop, keeping the gripper closed and the box clear of obstacles.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.8353492617607117,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 50,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.014963045140986809,
+        0.24314546238725096,
+        0.6273085210133411
+      ],
+      "butter_1": [
+        0.03504816625408551,
+        0.06299035293625024,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0025413630583825233,
+        0.2663045359881991,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 150,
+    "call_id": "9ac3e982e82144379f9cbb523d2b0155",
+    "discarded_actions": 0,
+    "family": "release",
+    "target": "cream_cheese_1",
+    "instruction": "Open the gripper to deposit the held cream cheese box into the basket on the left side of the tabletop, ensuring it is released inside the basket.",
+    "reason": "learned_threshold",
+    "executed_steps": 25,
+    "progress": 0.9692177772521973,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 15,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.007327338683602314,
+        0.2604304752473262,
+        0.4626956714282001
+      ],
+      "butter_1": [
+        0.03504816625408551,
+        0.06299035293625024,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.002541362998271385,
+        0.2663045360227068,
+        0.4321920194807969
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 200,
+    "call_id": "e072ec8f62d247d6bd990c31c26ff3d4",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the butter, the yellow-wrapped item on the right side of the tabletop, with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.9671815037727356,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.007327338683297488,
+        0.2604304752472015,
+        0.46269567146222473
+      ],
+      "butter_1": [
+        0.03504816625408551,
+        0.06299035293625024,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.002541362998271385,
+        0.2663045360227068,
+        0.4321920194807962
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 215,
+    "call_id": "b706772355074a15bcf750dd079c3f28",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "butter_1",
+    "instruction": "Close the open gripper around the butter, the yellow-wrapped item visible on the tabletop below the gripper, and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9772101044654846,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 9,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.007327338683298865,
+        0.26043047524718066,
+        0.46269567146222473
+      ],
+      "butter_1": [
+        0.0437702692821266,
+        0.057606774595293606,
+        0.5125411607900112
+      ],
+      "basket_1": [
+        0.002541362998271385,
+        0.2663045360227068,
+        0.4321920194807962
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 255,
+    "call_id": "159583e05e2744cbbbc0002e63459437",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "butter_1",
+    "instruction": "Transport the securely held yellow-wrapped butter above the open basket on the left side of the tabletop, keeping the gripper closed and the butter clear of all",
+    "reason": "learned_threshold",
+    "executed_steps": 40,
+    "progress": 0.9820467829704285,
+    "source": "learned",
+    "episode": "episode001",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 40,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.00489866378870362,
+        0.25855625449268504,
+        0.4626514556566954
+      ],
+      "butter_1": [
+        -0.02622150317107383,
+        0.2721201815361451,
+        0.5877625113679514
+      ],
+      "basket_1": [
+        0.0003397071667806342,
+        0.264545381540007,
+        0.4321875458454977
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 20,
+    "call_id": "3d05ba58a0d940b0960367947f591004",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box in the center-left of the tabletop with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 20,
+    "progress": 0.41565075516700745,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.11155352647615699,
+        -0.19898889475978224,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0050332818846957365,
+        0.2527832562212033,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 35,
+    "call_id": "4890c4f84bf64ea9bd57ebfcb2c1c1e9",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the open gripper around the cream cheese box at the center-left of the tabletop and secure it firmly.",
+    "reason": "learned_drop",
+    "executed_steps": 15,
+    "progress": 0.42995232343673706,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.11155352647615699,
+        -0.19898889475978224,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0050332818846957365,
+        0.2527832562212033,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 45,
+    "call_id": "f9a180c04280447fb111972108c9a125",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box visible near the lower center of the tabletop with the gripper open.",
+    "reason": "learned_threshold",
+    "executed_steps": 10,
+    "progress": 0.9878847002983093,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.11155352647615699,
+        -0.19898889475978224,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0050332818846957365,
+        0.2527832562212033,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 60,
+    "call_id": "7d75012437f7429fb154e2844e25340d",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the open gripper around the cream cheese box visible near the lower center of the tabletop and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9585008025169373,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 6,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.122584078910595,
+        -0.21460156675462486,
+        0.4699178980694864
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0050332818846957365,
+        0.2527832562212033,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 120,
+    "call_id": "7629b063c5a74b01ba438d6716d54e58",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "cream_cheese_1",
+    "instruction": "Transport the securely held cream cheese box above the wire basket on the left side of the tabletop, keeping the gripper closed and the box clear of the table.",
+    "reason": "step_limit",
+    "executed_steps": 60,
+    "progress": 0.9361042380332947,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 60,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.004188813293968485,
+        0.23489622886867334,
+        0.6240542410200728
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0050332818846957365,
+        0.2527832562212033,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 135,
+    "call_id": "0a899234dd7a486a9e7d29058776e7ce",
+    "discarded_actions": 0,
+    "family": "release",
+    "target": "cream_cheese_1",
+    "instruction": "Open the closed gripper to release the held cream cheese box directly into the wire basket on the left side of the tabletop, ensuring it lands inside the basket",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9634220004081726,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 7,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        -0.007135227759093203,
+        0.2488458975480876,
+        0.46269566442895055
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.005033281909168782,
+        0.2527832562783798,
+        0.43219201948683106
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 175,
+    "call_id": "27deebc4241b48fca53c5cff5b6d06c8",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the butter container visible on the tabletop to the right of the cream cheese box with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 40,
+    "progress": 0.8325482606887817,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        -0.0071352279745246555,
+        0.24884589761708253,
+        0.4626956715548698
+      ],
+      "butter_1": [
+        0.02599305674820226,
+        0.07450489107508533,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.005033281909168273,
+        0.25278325627837833,
+        0.4321920194868648
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 190,
+    "call_id": "d2a9d7c882c24cdfa4b5e3622ae01e80",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the butter container visible near the center-right of the tabletop with the gripper open, aligning the gripper around it without touching the cream-che",
+    "reason": "learned_drop",
+    "executed_steps": 15,
+    "progress": 0.5606580972671509,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        -0.007135227974526929,
+        0.24884589761707213,
+        0.4626956715548698
+      ],
+      "butter_1": [
+        0.024555695892629587,
+        0.06817140490422441,
+        0.4454698430395586
+      ],
+      "basket_1": [
+        -0.005033281909168273,
+        0.25278325627837833,
+        0.4321920194868648
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 220,
+    "call_id": "bea9e4b6892e4d02b6f02ea09a331632",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "From the current position, approach the butter container visible near the center-right of the tabletop with the gripper open, aligning around the butter without",
+    "reason": "step_limit",
+    "executed_steps": 30,
+    "progress": 0.7435840368270874,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.02102069395541313,
+        0.26503717714737224,
+        0.47566283204851745
+      ],
+      "butter_1": [
+        0.024555695892632096,
+        0.06817140490422431,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.01782388989530391,
+        0.2694240799361244,
+        0.4454359278714161
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 260,
+    "call_id": "0e040e5cd39b4b1881a251d09b143358",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "butter_1",
+    "instruction": "Close the open gripper around the butter container directly below it near the center-right of the tabletop, securing the butter without contacting nearby items.",
+    "reason": "step_limit",
+    "executed_steps": 40,
+    "progress": 0.5055403709411621,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.08205198674556344,
+        0.25582847645494017,
+        0.5030746151481787
+      ],
+      "butter_1": [
+        0.024555695892632096,
+        0.06817140490422431,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.07389012738780311,
+        0.2734823963192032,
+        0.47857025341505605
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 275,
+    "call_id": "3782e02cb9374f4baa07187607224df3",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "butter_1",
+    "instruction": "Close the gripper firmly around the butter container directly beneath it near the center-right of the tabletop, ensuring the butter is securely held.",
+    "reason": "learned_drop",
+    "executed_steps": 15,
+    "progress": 0.24455837905406952,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340747762666293,
+        0.2755872437249314,
+        0.46269567155460084
+      ],
+      "butter_1": [
+        0.024555695892632096,
+        0.06817140490422431,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.06923908587575547,
+        0.2831203331920929,
+        0.4321920194883441
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 280,
+    "call_id": "69d4782dce5b4baab4ad4f17f84c1e23",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "From the current position, approach the butter container visible near the center-right of the tabletop with the gripper open, aligning the gripper directly over",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.9799500703811646,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340747762645813,
+        0.2755872437247996,
+        0.4626956715623174
+      ],
+      "butter_1": [
+        0.024555695892632096,
+        0.06817140490422431,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.06923908587578262,
+        0.28312033319214125,
+        0.43219201949179925
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 285,
+    "call_id": "6c77d8e1c44b4703a18f16e8cef55a62",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the butter container labeled BUTTER visible directly beneath the gripper near the center of the tabletop with the gripper open, aligning precisely over",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.9294265508651733,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0734074776264564,
+        0.27558724372479265,
+        0.4626956715623174
+      ],
+      "butter_1": [
+        0.024555695892632096,
+        0.06817140490422431,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.06923908587578262,
+        0.28312033319214125,
+        0.43219201949179925
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 300,
+    "call_id": "eb9d82da2ead42dd9919abab99d6c7f9",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "butter_1",
+    "instruction": "Close the open gripper firmly around the butter container labeled BUTTER directly beneath the gripper near the center of the tabletop, securing it without||||",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9538323283195496,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 10,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0734074776264512,
+        0.27558724372477184,
+        0.4626956715623174
+      ],
+      "butter_1": [
+        0.05780975016124756,
+        0.060361571682391535,
+        0.5363027085469264
+      ],
+      "basket_1": [
+        0.06923908587578262,
+        0.28312033319214125,
+        0.43219201949179925
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 335,
+    "call_id": "71d10aefbd71477d975fdeaba4e1344a",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "butter_1",
+    "instruction": "Transport the securely held butter container from the gripper above the tabletop to a position directly over the open basket at the left edge of the table, then",
+    "reason": "learned_threshold",
+    "executed_steps": 35,
+    "progress": 0.9587266445159912,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 35,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340747762643905,
+        0.27558724372472326,
+        0.4626956715623174
+      ],
+      "butter_1": [
+        0.03241748359202354,
+        0.26823931355395547,
+        0.6071479477039905
+      ],
+      "basket_1": [
+        0.06923908587578262,
+        0.28312033319214125,
+        0.43219201949179925
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 350,
+    "call_id": "d4a5e4d47276482095817f7e88150b8f",
+    "discarded_actions": 0,
+    "family": "release",
+    "target": "butter_1",
+    "instruction": "Open the gripper to release the securely held butter container directly over the open basket at the left edge of the tabletop, ensuring it drops fully inside.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9611891508102417,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 4,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340749909284232,
+        0.2755872716112463,
+        0.46269547991010407
+      ],
+      "butter_1": [
+        0.028936384887248465,
+        0.27197134095500514,
+        0.5113295271424462
+      ],
+      "basket_1": [
+        0.06923908609706485,
+        0.28312033326394287,
+        0.4321920133370576
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 360,
+    "call_id": "de1bdaaa936d46efbcd5dd2998a7faf5",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "From the current position, approach the cream cheese box labeled CREAM CHEESE visible on the tabletop near the center-left, with the gripper open and aligned in",
+    "reason": "step_limit",
+    "executed_steps": 10,
+    "progress": 0.1476515680551529,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340756699673667,
+        0.27558730312691165,
+        0.46269553516561807
+      ],
+      "butter_1": [
+        0.02887758191423022,
+        0.2720672498295961,
+        0.511326597293017
+      ],
+      "basket_1": [
+        0.06923908609703798,
+        0.2831203332638288,
+        0.432192013337135
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 375,
+    "call_id": "dea9e0462a1a4b81a5853f2170110058",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box labeled CREAM CHEESE visible on the tabletop near the center-left, with the gripper open and aligned directly above its center.",
+    "reason": "learned_drop",
+    "executed_steps": 15,
+    "progress": 0.1095130443572998,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340761681128695,
+        0.2755873278347017,
+        0.4626955477746098
+      ],
+      "butter_1": [
+        0.028750697473699748,
+        0.2722659480574723,
+        0.5113168431482431
+      ],
+      "basket_1": [
+        0.06923908609700832,
+        0.28312033326360303,
+        0.4321920133372167
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 395,
+    "call_id": "09dfabb003204f4c8f25181d765a79ab",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "With the gripper open, approach the cream cheese box labeled CREAM CHEESE on the tabletop near the center, aligning directly above its center for grasping.",
+    "reason": "step_limit",
+    "executed_steps": 20,
+    "progress": 0.15886251628398895,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.073407677526406,
+        0.2755873576769036,
+        0.4626955475819581
+      ],
+      "butter_1": [
+        0.02846651653837714,
+        0.27267875499556,
+        0.5112833718213996
+      ],
+      "basket_1": [
+        0.06923908609704002,
+        0.28312033326318886,
+        0.4321920133373575
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 425,
+    "call_id": "c49c45c11d71437083f9b55b664562ee",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the open gripper around the cream cheese box labeled CREAM CHEESE on the tabletop near the center, securing it firmly at its sides before lifting.",
+    "reason": "step_limit",
+    "executed_steps": 30,
+    "progress": 0.28285181522369385,
+    "source": "learned",
+    "episode": "episode002",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.07340777338873786,
+        0.2755873987789225,
+        0.46269554709348243
+      ],
+      "butter_1": [
+        0.027534344026442663,
+        0.2737967256806286,
+        0.5110887236977641
+      ],
+      "basket_1": [
+        0.06923908609780874,
+        0.283120333262593,
+        0.43219201333749074
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 50,
+    "call_id": "3a506a0b87904c79966615b90efc0c27",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box, the red rectangular box on the tabletop near the lower-left area of the scene, with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.8505774140357971,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.11557298265450944,
+        -0.20293715089769435,
+        0.44559804842849005
+      ],
+      "butter_1": [
+        0.0715773796680597,
+        0.04788022845008967,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0054916155607681386,
+        0.26155741789568243,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 55,
+    "call_id": "3dfc944ab645433d9cec425ca6380ad5",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box, visible at the bottom center of the camera view, with the gripper open.",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.9895064234733582,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.1155590583905165,
+        -0.20293707765472707,
+        0.4456958430344712
+      ],
+      "butter_1": [
+        0.0715773796680597,
+        0.04788022845008967,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0054916155607681386,
+        0.26155741789568243,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 70,
+    "call_id": "5e292198178c4b53b9ce4d4be31ad0d7",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the gripper around the cream cheese box visible at the bottom center of the camera view and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.9844001531600952,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 9,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.1344983256818932,
+        -0.2048673237461133,
+        0.5152723692420866
+      ],
+      "butter_1": [
+        0.0715773796680597,
+        0.04788022845008967,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0054916155607681386,
+        0.26155741789568243,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 120,
+    "call_id": "d26a6062075c444d8b754fe5f3854fe4",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "cream_cheese_1",
+    "instruction": "Transport the grasped cream cheese box, currently held at the bottom center of the camera view, above the basket visible on the left side of the tabletop.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.7857206463813782,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 50,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.05031590620272641,
+        0.22568212886630734,
+        0.6522723799886709
+      ],
+      "butter_1": [
+        0.0715773796680597,
+        0.04788022845008967,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.0054916155607681386,
+        0.26155741789568243,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 140,
+    "call_id": "2a94f6ea25bf4c3da778f59b2030842e",
+    "discarded_actions": 0,
+    "family": "release",
+    "target": "cream_cheese_1",
+    "instruction": "Open the gripper to deposit the held cream cheese box into the basket visible at the center-bottom of the camera view; ensure the box is inside the basket and,1",
+    "reason": "step_limit",
+    "executed_steps": 20,
+    "progress": 0.4597947299480438,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 14,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.006212612178089162,
+        0.22925063994530476,
+        0.46263058132477236
+      ],
+      "butter_1": [
+        0.0715773796680597,
+        0.04788022845008967,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.005491615628544569,
+        0.2615574180740854,
+        0.43219201731662843
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 190,
+    "call_id": "90ee0fa8ad2045f7a35b352895a95642",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "butter_1",
+    "instruction": "Approach the butter, the yellow packaged item on the tabletop near the right side of the scene, with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.9605865478515625,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.006208238380980631,
+        0.22927872739804395,
+        0.4626956692215495
+      ],
+      "butter_1": [
+        0.0715773796680597,
+        0.04788022845008967,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        -0.005491615645552485,
+        0.2615574180241147,
+        0.43219201939805874
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 200,
+    "call_id": "1974480ed81d41a3b5d9350197858843",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "butter_1",
+    "instruction": "Close the gripper around the butter, the yellow packaged item centered in the camera view, and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 10,
+    "progress": 0.9838932752609253,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 7,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.006208238380983977,
+        0.22927872739802313,
+        0.4626956692215495
+      ],
+      "butter_1": [
+        0.08439044312684107,
+        0.03379268318665967,
+        0.49125140149317187
+      ],
+      "basket_1": [
+        -0.005491615645552485,
+        0.2615574180241147,
+        0.43219201939805874
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 240,
+    "call_id": "9dc9eef27c5644c2a1e671e8f82529bc",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "butter_1",
+    "instruction": "Transport the grasped butter, the yellow packaged item visible at the bottom center of the camera view, above the basket visible along the left edge of the view",
+    "reason": "learned_threshold",
+    "executed_steps": 40,
+    "progress": 0.9845240712165833,
+    "source": "learned",
+    "episode": "episode003",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 40,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.006208238380997368,
+        0.22927872739793986,
+        0.4626956692215495
+      ],
+      "butter_1": [
+        -0.003826864444432327,
+        0.25391873054491637,
+        0.6035241570653688
+      ],
+      "basket_1": [
+        -0.005491615645552485,
+        0.2615574180241147,
+        0.43219201939805874
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 50,
+    "call_id": "939dab714918481ab3a8f454f0899760",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box, the red rectangular box on the left side of the table, with the gripper open.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.7641980648040771,
+    "source": "learned",
+    "episode": "episode004",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.08601842279756128,
+        -0.1839042338497829,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.05150525326982455,
+        0.03442297878858672,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0019734951504378263,
+        0.26934835831537185,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 55,
+    "call_id": "3fe263515ecb45768a0fb813c8de1a72",
+    "discarded_actions": 0,
+    "family": "reach",
+    "target": "cream_cheese_1",
+    "instruction": "Approach the cream cheese box, the red rectangular box on the left side of the table, with the gripper open.",
+    "reason": "learned_threshold",
+    "executed_steps": 5,
+    "progress": 0.9852049946784973,
+    "source": "learned",
+    "episode": "episode004",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 0,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.08601842279756128,
+        -0.1839042338497829,
+        0.44569592152000004
+      ],
+      "butter_1": [
+        0.05150525326982455,
+        0.03442297878858672,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0019734951504378263,
+        0.26934835831537185,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 70,
+    "call_id": "a57fbb68164444479c0e88e49c000a7a",
+    "discarded_actions": 0,
+    "family": "grasp",
+    "target": "cream_cheese_1",
+    "instruction": "Close the open gripper around the cream cheese box, the blue-and-white rectangular box directly beneath the gripper, and secure it firmly.",
+    "reason": "learned_threshold",
+    "executed_steps": 15,
+    "progress": 0.986903965473175,
+    "source": "learned",
+    "episode": "episode004",
+    "last_simulator_rule_diagnostic": true,
+    "requested_object_contact_steps": 8,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.10459434726249071,
+        -0.19906834579470892,
+        0.49409366760717915
+      ],
+      "butter_1": [
+        0.05150525326982455,
+        0.03442297878858672,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0019734951504378263,
+        0.26934835831537185,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  },
+  {
+    "event": "invocation_finished",
+    "step": 120,
+    "call_id": "441650f13cbf43a985dd03c98214cba4",
+    "discarded_actions": 0,
+    "family": "move",
+    "target": "cream_cheese_1",
+    "instruction": "Transport the securely held cream cheese box above the metal basket on the left side of the table, keeping the gripper closed and the box clear of the table.",
+    "reason": "step_limit",
+    "executed_steps": 50,
+    "progress": 0.8102691769599915,
+    "source": "learned",
+    "episode": "episode004",
+    "last_simulator_rule_diagnostic": false,
+    "requested_object_contact_steps": 50,
+    "other_object_contact_steps": 0,
+    "last_object_positions": {
+      "cream_cheese_1": [
+        0.0204248740059921,
+        0.22575517348719137,
+        0.6522291211551572
+      ],
+      "butter_1": [
+        0.05150525326982455,
+        0.03442297878858672,
+        0.44546992152000003
+      ],
+      "basket_1": [
+        0.0019734951504378263,
+        0.26934835831537185,
+        0.4321920266500307
+      ]
+    },
+    "diagnostic_caveat": "Contact and rule checks are imperfect diagnostics; these values were not fed to the learned-condition planner."
+  }
+]
