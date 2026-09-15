@@ -6,10 +6,10 @@ the tracker/hold controller; no simulator goal positions enter LightNav prompts.
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
-from .mshab_adapter import benchmark_feedback, jsonable
-from .protocol import ProtocolError
+from .mshab_adapter import benchmark_feedback, jsonable, scalar
+from .protocol import ProtocolError, SkillStatus
 
 
 def wrap(angle):
@@ -59,6 +59,18 @@ def normalize(values, low, high):
         raise ProtocolError("Invalid physical controller limits")
     return tuple(max(-1., min(1., 2*(v-lo)/(hi-lo)-1))
                  for v, lo, hi in zip(values, low, high))
+
+
+def waypoint_velocity(rows,dt,linear_limit=.6,angular_limit=1.2):
+    """Official LightNav unicycle mapping: forward/dt and yaw/dt, lateral dropped.
+
+    Match the execution window to the prediction interval rather than treating
+    displacement in metres as a velocity in metres/second.
+    """
+    if dt<=0 or not rows: raise ProtocolError('Invalid waypoint execution window')
+    row=next((r for r in rows if abs(r[0])>1e-6 or abs(r[2])>1e-6),rows[0])
+    if len(row)!=3 or not all(math.isfinite(v) for v in row): raise ProtocolError('Invalid waypoint')
+    return max(-linear_limit,min(linear_limit,row[0]/dt)),max(-angular_limit,min(angular_limit,row[2]/dt))
 
 
 def vector(value):
@@ -134,13 +146,25 @@ class FetchNavigationControl:
 
 
 class LightNavSkill:
-    def __init__(self, adapter, client, instructions, max_predictions=40, replan_steps=5):
+    def __init__(self, adapter, client, instructions, max_predictions=40, replan_steps=5,
+                 camera='fetch_head', settle_steps=20,control_mode='position_tracker',
+                 recovery_instructions=None,max_stop_replans=0):
         if max_predictions < 1 or replan_steps < 1:
             raise ProtocolError("Positive prediction and cadence limits required")
         self.adapter, self.client, self.instructions = adapter, client, instructions
         self.control = FetchNavigationControl(adapter)
         self.max_predictions, self.replan_steps = max_predictions, replan_steps
         self.total_predictions = 0
+        self.camera, self.settle_steps = camera, settle_steps
+        if control_mode not in ('position_tracker','waypoint_velocity'): raise ProtocolError('Unknown navigation control')
+        self.control_mode=control_mode
+        self.velocity=(0.,0.)
+        self.recovery_instructions=recovery_instructions or {}
+        self.max_stop_replans=max_stop_replans
+        self.stop_replans=0
+        self.rotation_only=False
+        self.stopping = False
+        self.stopped_steps = 0
         self.targets = ()
         self.index = None
 
@@ -157,11 +181,16 @@ class LightNavSkill:
         self.last_inference = -self.replan_steps
         self.last_step = None
         self.call_id = request.call_id
+        self.stopping, self.stopped_steps = False, 0
+        self.stop_replans,self.rotation_only=0,False
 
     def act(self, observation):
         if self.index is None or self.last_step == observation.sim_step:
             raise ProtocolError("Missing start or duplicate action request")
         self.last_step = observation.sim_step
+        if self.stopping:
+            self.stopped_steps += 1
+            return self.control.action(0.,0.)
         pose = self.control.pose()
         if not self.targets or observation.sim_step-self.last_inference >= self.replan_steps:
             if self.total_predictions >= self.max_predictions:
@@ -172,7 +201,7 @@ class LightNavSkill:
             visual_observation = self.adapter.observe()
             if visual_observation.frame_id != observation.frame_id:
                 raise ProtocolError("Navigation camera does not match control frame")
-            camera = next(image for image in visual_observation.images if image.camera == 'fetch_head')
+            camera = next(image for image in visual_observation.images if image.camera == self.camera)
             self.total_predictions += 1
             self.adapter.logger.emit('navigation_inference_started', call_id=self.call_id,
                 attempt=self.total_predictions, frame_id=observation.frame_id,
@@ -181,10 +210,20 @@ class LightNavSkill:
             self.adapter.logger.emit('navigation_prediction', call_id=self.call_id,
                 frame_id=observation.frame_id, prediction=prediction)
             if prediction.stop:
-                self.adapter.logger.emit('navigation_rejected', reason='model_stop_without_benchmark_completion', call_id=self.call_id)
-                raise ProtocolError("Model stopped without benchmark completion")
+                self.adapter.logger.emit('navigation_model_stop', call_id=self.call_id,
+                                         settle_steps=self.settle_steps)
+                self.stopping, self.stopped_steps = True, 1
+                return self.control.action(0.,0.)
             self.targets = tuple(world_waypoint(pose, row) for row in prediction.waypoints)
+            self.velocity=waypoint_velocity(prediction.waypoints,self.replan_steps/20)
             self.target_index, self.last_inference = 0, observation.sim_step
+        if self.control_mode=='waypoint_velocity':
+            linear,angular=self.velocity
+            if self.rotation_only: linear=0.
+            action=self.control.action(linear,angular)
+            self.adapter.logger.emit('navigation_control',call_id=self.call_id,pose=pose,
+                control_mode=self.control_mode,linear_m_s=linear,angular_rad_s=angular,action=action)
+            return action
         if not self.targets:
             raise ProtocolError("No predicted trajectory")
         linear, angular, reached = track_waypoint(pose, self.targets[self.target_index])
@@ -198,7 +237,26 @@ class LightNavSkill:
         return action
 
     def feedback(self, request, transition):
-        return benchmark_feedback(request, transition, self.index)
+        feedback = benchmark_feedback(request, transition, self.index)
+        if (feedback.status is SkillStatus.EXECUTING and self.stopping
+                and self.stopped_steps >= self.settle_steps):
+            recovery=self.recovery_instructions.get(str(self.index))
+            if (recovery and self.stop_replans<self.max_stop_replans and
+                bool(scalar(transition.info.get('navigated_close',False))) and
+                not bool(scalar(transition.info.get('oriented_correctly',False)))):
+                self.stop_replans+=1
+                self.instruction=recovery
+                self.client.reset()
+                self.stopping,self.stopped_steps=False,0
+                self.targets=()
+                self.rotation_only=True
+                self.adapter.logger.emit('navigation_orientation_replan',call_id=self.call_id,
+                    attempt=self.stop_replans,instruction=recovery,source='benchmark_boolean_feedback',
+                    control_constraint='rotation_only',goal_coordinates_used=False)
+                return feedback
+            return replace(feedback,status=SkillStatus.FAILED,
+                reason='model_stopped_but_benchmark_goal_unsatisfied_after_settling')
+        return feedback
 
 
 class IndexedNavigationSkill:

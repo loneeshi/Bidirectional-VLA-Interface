@@ -6,9 +6,9 @@ isolate the low-level policy change. A later VLM comparison is separate.
 
 | Variant | Navigation | Manipulation | Current evidence | Remaining gate |
 |---|---|---|---|---|
-| A | Official PPO | Official SAC | Earlier successful first-object chain | Re-record with clear, marker-free video |
-| B | LightNav-0 + Fetch tracker | Official SAC | 270 navigation steps; no arrival | Ground the correct destination, check camera/base geometry, achieve arrival and both handoffs |
-| C | Official PPO | Fetch-adapted pi0.5 | DROID inference with synthetic state only | Fetch data/action transforms, normalization, suitable checkpoint and individual Pick/Place validation |
+| A | Official PPO | Official SAC | [Clean successful chain, 248 steps](media/A-ppo-sac-clean.mp4) | Broader evaluation |
+| B | LightNav-0 + Fetch velocity adapter | Official SAC | [Successful chain, 278 steps](media/B-lightnav-sac.mp4); grasp maintained on all 115 carrying steps | Broader evaluation |
+| C | Official PPO | Fetch-adapted pi0.5 | Actual Fetch-trained pilot controlled robot and failed Pick; corrected state-conditioned training underway | Individual Pick/Place and composed success |
 | D | LightNav-0 + Fetch tracker | Same Fetch-adapted pi0.5 | No combined control evidence | Pass B/C component gates, then test combined handoffs |
 
 The deliverables are A.mp4, B.mp4, C.mp4 and D.mp4 with matching manifests,
@@ -28,8 +28,9 @@ pose when rendering. Trial B never reached Pick, and its step records show
 The runners now default to `invisible_goals_in_human_render=True` as well as no
 parameter overlay. `--show-goal-markers` enables a labelled debug view. This uses
 the upstream render option; it does not replace object meshes, remove collision
-geometry, or edit pixels in recorded footage. A new GPU render is still required
-to verify appearance and actual object visibility, including a gripper view.
+geometry, or edit pixels in recorded footage. A3 and B11 were inspected with
+these settings: the green marker and overlay are absent and the blue can's
+texture is visible during grasping and transport.
 
 Source: [pinned MS-HAB environment](https://github.com/arth-shukla/mshab/blob/e9ff3d23496d38e4431c8d913e147ffa007f7f72/mshab/envs/sequential_task.py).
 
@@ -40,8 +41,9 @@ channels. The seven arm joints belong to different robots; numeric padding is
 not kinematic transfer. The concrete route is successful MS-HAB manipulation
 demonstrations with named Fetch state, synchronized head/wrist RGB, language,
 and the actual action convention, then a pi0.5 Fetch data transform, train-only
-normalization statistics, and a bounded fine-tuning pilot. Hold out episodes
-before training. Record failed expert rollouts separately from training data.
+normalization statistics, and a bounded fine-tuning pilot. The current training-
+scene demo deliberately overlaps seed 1; held-out evaluation must use a separately
+declared split. Record failed expert rollouts separately from training data.
 
 Define explicitly whether the learned manipulation policy owns arm/gripper only
 or all 13 channels, and preserve required torso/base behavior consistently between
@@ -50,8 +52,8 @@ segment would invalidate C/D attribution.
 
 ## Paid execution gate
 
-The preceding experiment's authorization is closed. New GPU time, storage,
-request limits and any training require a new bounded scope in the private ledger.
+GPU time, storage, request limits and training require a bounded allocation
+within the user's authorization, recorded in the private ledger.
 Start with resource-level automatic stopping plus early artifact synchronization;
 test the stopping path before substantive work. A model-process timeout does not
 stop Pod billing. Recheck UTC and authorization before every new run after a pause.

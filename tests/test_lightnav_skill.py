@@ -4,7 +4,7 @@ from types import SimpleNamespace as NS
 
 from bvi.lightnav_skill import (FetchNavigationControl, LightNavSkill, IndexedNavigationSkill, normalize, track_waypoint,
                                world_waypoint)
-from bvi.protocol import ActionBounds, ProtocolError, Observation, ImageFrame
+from bvi.protocol import ActionBounds, ProtocolError, Observation, ImageFrame, Requirement, SkillStatus
 from bvi.vla_clients import NavigationPrediction
 
 
@@ -106,3 +106,36 @@ class TrackerTests(unittest.TestCase):
         self.assertEqual(router.feedback(None,None),'failed')
         self.assertEqual(router.act(None),'lightnav')
         self.assertEqual(calls,['official','lightnav'])
+
+    def test_model_stop_brakes_and_requires_environment_success(self):
+        adapter=self.adapter();calls=[]
+        client=NS(reset=lambda:None,infer=lambda *a:
+                  calls.append('infer') or NavigationPrediction((),True,False))
+        skill=LightNavSkill(adapter,client,{'0':'counter'},settle_steps=2)
+        request=NS(skill='navigate',call_id='a',requirements=(Requirement('done','benchmark_success'),))
+        obs=Observation('f0',0,images=(ImageFrame('fetch_head',b'x'),),metadata={'subtask_index':0})
+        adapter.observe=lambda:obs;skill.start(request,obs)
+        self.assertEqual(skill.act(obs)[-2:],(0.,0.))
+        def transition(after):return NS(info={'adapter_subtask_before':0,'adapter_subtask_after':after},
+            observation=Observation('f1',1),truncated=False)
+        self.assertEqual(skill.feedback(request,transition(0)).status,SkillStatus.EXECUTING)
+        self.assertEqual(skill.feedback(request,transition(1)).status,SkillStatus.SUCCEEDED)
+        skill.act(Observation('f1',1))
+        self.assertEqual(skill.feedback(request,transition(0)).status,SkillStatus.FAILED)
+        self.assertEqual(calls,['infer'])
+
+    def test_orientation_replan_is_bounded_and_does_not_claim_success(self):
+        adapter=self.adapter();resets=[]
+        client=NS(reset=lambda:resets.append(1),infer=lambda *a:NavigationPrediction((),True,True))
+        skill=LightNavSkill(adapter,client,{'0':'chair'},settle_steps=1,
+            recovery_instructions={'0':'Turn to face the chair.'},max_stop_replans=1)
+        request=NS(skill='navigate',call_id='a',requirements=(Requirement('done','benchmark_success'),))
+        obs=Observation('f0',0,images=(ImageFrame('fetch_head',b'x'),),metadata={'subtask_index':0})
+        adapter.observe=lambda:obs;skill.start(request,obs);skill.act(obs)
+        transition=NS(info={'adapter_subtask_before':0,'adapter_subtask_after':0,
+            'navigated_close':[True],'oriented_correctly':[False]},observation=obs,truncated=False)
+        self.assertEqual(skill.feedback(request,transition).status,SkillStatus.EXECUTING)
+        self.assertTrue(skill.rotation_only)
+        self.assertEqual(len(resets),2)
+        skill.stopping=True;skill.stopped_steps=1
+        self.assertEqual(skill.feedback(request,transition).status,SkillStatus.FAILED)
