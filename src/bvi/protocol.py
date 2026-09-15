@@ -24,6 +24,7 @@ class SkillStatus(str, Enum):
     SUCCEEDED = "succeeded"
     FAILED = "failed"
     TIMED_OUT = "timed_out"
+    INTERRUPTED = "interrupted"
     REJECTED = "rejected"
 
 

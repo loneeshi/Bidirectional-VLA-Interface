@@ -12,6 +12,15 @@ class ContactEnv(FakeEnv):
         return replace(t,info={'is_grasped':[self.grasps[min(self.steps-1,len(self.grasps)-1)]]})
 
 class OrganizerTests(unittest.TestCase):
+    def test_synthetic_fault_is_not_reinjected_after_retry(self):
+        from bvi.organizer import InjectedClosureFault
+        from unittest.mock import Mock
+        skill=FakeSkill(action=[.2]*13);fault=InjectedClosureFault(skill,Mock())
+        env=FakeEnv();r=SkillRequest('x','pick','cup','f0',())
+        fault.start(r,env.observe())
+        for _ in range(6):self.assertEqual(fault.act(env.observe())[7],-1)
+        fault.start(r,env.observe())
+        self.assertEqual(fault.act(env.observe()),[.2]*13)
     def run_monitor(self,grasps,success=100):
         env=ContactEnv(grasps);skill=FakeSkill(successful_at=success,action=[0.]*7+[-1.]+[0.]*5)
         temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup)
@@ -25,7 +34,7 @@ class OrganizerTests(unittest.TestCase):
     def test_missed_grasp_yields_before_full_skill_horizon(self):
         env,r,v,_=self.run_monitor([False]*10)
         self.assertEqual(env.steps,3);self.assertEqual(r.feedback.reason,'missed_grasp')
-        self.assertEqual(r.feedback.status,SkillStatus.TIMED_OUT)
+        self.assertEqual(r.feedback.status,SkillStatus.INTERRUPTED)
         self.assertIn('missed_grasp',v.observe().task)
         self.assertEqual(len(v.observe().allowed_calls),2)
         self.assertEqual(env.observe().allowed_calls,(AllowedCall('pick','cup'),))

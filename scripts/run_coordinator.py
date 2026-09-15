@@ -53,6 +53,7 @@ def main() -> None:
     parser.add_argument('--organizer', action='store_true', help='VLM execution organization with bounded skill slices, grasp-event yields and explicit abort')
     parser.add_argument('--organizer-slice-steps', type=int, default=40)
     parser.add_argument('--stop-after-subtasks', type=int, help='Explicit partial-task diagnostic boundary; never full benchmark success')
+    parser.add_argument('--inject-closure-fault',action='store_true',help='TEST ONLY: inject six initial Pick closure actions, labeled synthetic fault')
     parser.add_argument("--provider", choices=("openai", "anthropic"), default="openai")
     parser.add_argument("--transport", choices=("direct", "bridge"), default="direct")
     parser.add_argument("--bridge-timeout-seconds", type=float, default=120)
@@ -111,6 +112,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.organizer and (args.dry_run or not 1<=args.organizer_slice_steps<=500):
         parser.error('Organizer requires live VLM and slice steps1..500')
+    if args.inject_closure_fault and (not args.organizer or args.manipulation_policy!='official'):
+        parser.error('Synthetic closure fault requires organizer and official manipulation')
     if args.stop_after_subtasks is not None and args.stop_after_subtasks<1:
         parser.error('Partial-task boundary must be positive')
     if args.collect_recovery_after is not None and (not args.dry_run or not args.record_demonstrations
@@ -219,6 +222,7 @@ def main() -> None:
     metadata['training_collection']=args.training_collection
     metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
     metadata['stop_after_subtasks']=args.stop_after_subtasks
+    metadata['synthetic_closure_fault']=args.inject_closure_fault
     metadata['teacher_takeover_after']=args.collect_recovery_after
     metadata['manipulation_ensemble_samples']=args.manipulation_ensemble_samples
     metadata['manipulation_instructions']=manipulation_instructions
@@ -287,6 +291,9 @@ def main() -> None:
             from bvi.organizer import OrganizerView, GraspMonitor
             organizer = OrganizerView(adapter, specs, args.organizer_slice_steps)
             if 'pick' in skills:
+                if args.inject_closure_fault:
+                    from bvi.organizer import InjectedClosureFault
+                    skills['pick']=InjectedClosureFault(skills['pick'],logger)
                 skills['pick'] = GraspMonitor(skills['pick'])
             metadata['organizer'] = {'enabled': True, 'scope': 'benchmark_constrained_execution',
                 'slice_steps': args.organizer_slice_steps, 'grasp_source': 'oracle_benchmark',
@@ -368,6 +375,9 @@ def main() -> None:
             if result.feedback.status in (SkillStatus.FAILED, SkillStatus.REJECTED):
                 reason = result.feedback.reason or "skill_failed"
                 break
+            if args.stop_after_subtasks is not None and result.observation.metadata.get('subtask_index',0)>=args.stop_after_subtasks:
+                reason='declared_partial_task_boundary'
+                break
             # An invocation timeout can be followed by a new bounded decision;
             # a benchmark fail is irreversible here and ends the episode.
         else:
@@ -393,10 +403,10 @@ def main() -> None:
         if adapter is not None:
             if coordinator is not None:
                 api_calls = coordinator.calls_reserved
+            completed_skills=[h['skill'] for h in history
+                              if h['feedback'].status is SkillStatus.SUCCEEDED]
             summary = {"benchmark_result": False, "reason": reason, "decisions": decisions,
-                       "first_object_chain_success": (len(history)>=4 and
-                           [h['skill'] for h in history[:4]]==['navigate','pick','navigate','place'] and
-                           all(h['feedback'].status is SkillStatus.SUCCEEDED for h in history[:4])),
+                       "first_object_chain_success": completed_skills[:4]==['navigate','pick','navigate','place'],
                        "api_requests": api_calls, "vlm": not args.dry_run,
                        "vlm_feedback_loop_observed": not args.dry_run and len(history) >= 2,
                        "task_success": bool(scalar(adapter.last_info.get("success", False))),
