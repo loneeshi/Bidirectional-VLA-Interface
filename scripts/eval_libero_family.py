@@ -12,6 +12,7 @@ from bvi.coordinator import VLMRequest
 from bvi.protocol import ImageFrame
 from bvi.tool_family import FamilyInvocation, validate_instruction_length
 from bvi.progress_monitor import ProgressMonitor, THRESHOLDS
+from bvi.task_memory import object_memory, transition_rejection
 from eval_libero_baseline import element
 
 sys.path.insert(0, "/workspace/tapt/author/examples/libero/openvla_eval_port")
@@ -39,11 +40,29 @@ def main():
     p.add_argument(
         "--instruction-limit-mode",
         choices=["legacy-bytes", "schema-characters"],
-        default="legacy-bytes",
+        default="schema-characters",
     )
+    p.add_argument(
+        "--coordinator-mode", choices=["legacy", "memory-recovery"], default="legacy"
+    )
+    p.add_argument("--authorization-id", default="TAPT007")
+    p.add_argument("--bridge-directory", default="/workspace/tapt/bridge")
     a = p.parse_args()
     out = pathlib.Path(a.output)
     out.mkdir(parents=True, exist_ok=a.resume)
+    config_path = out / "coordinator-config.json"
+    current_config = {
+        "instruction_limit_mode": a.instruction_limit_mode,
+        "coordinator_mode": a.coordinator_mode,
+        "authorization_id": a.authorization_id,
+    }
+    if (
+        a.resume
+        and config_path.exists()
+        and json.loads(config_path.read_text()) != current_config
+    ):
+        raise ValueError("Cannot change coordinator configuration during resume")
+    config_path.write_text(json.dumps(current_config, indent=2))
     suite = benchmark.get_benchmark_dict()["libero_10"]()
     task = suite.get_task(1)
     env = OffScreenRenderEnv(
@@ -67,7 +86,7 @@ def main():
                 "Server does not match the checkpoint locked before evaluation"
             )
     bridge = FileBridgeTransport(
-        "/workspace/tapt/bridge", "openai", "gpt-5.6-luna", "TAPT007"
+        a.bridge_directory, "openai", "gpt-5.6-luna", a.authorization_id
     )
     summaries = (
         json.loads((out / "summary.json").read_text(encoding="utf-8"))
@@ -93,6 +112,7 @@ def main():
             calls = 0
             cooldown = 0
             history = []
+            rejected_feedback = None
             events = collections.Counter()
             start = time.monotonic()
             with (out / f"episode{ep:03d}.jsonl").open("w") as log:
@@ -119,13 +139,26 @@ def main():
                         aid = uuid.uuid4().hex
                         calls += 1
                         request = VLMRequest(
-                            SYSTEM,
+                            SYSTEM
+                            + (
+                                " Use short complete English sentences, preferably below 120 characters. Object memory records attempts, not confirmed goals. A low-progress reach timeout requires re-localization before grasp."
+                                if a.coordinator_mode == "memory-recovery"
+                                else ""
+                            ),
                             json.dumps(
                                 {
                                     "task": task.language,
                                     "step": step,
                                     "remaining_steps": 520 - step,
                                     "feedback_history": history[-5:],
+                                    **(
+                                        {
+                                            "object_memory": object_memory(history),
+                                            "last_request_rejection": rejected_feedback,
+                                        }
+                                        if a.coordinator_mode == "memory-recovery"
+                                        else {}
+                                    ),
                                     "feedback_source": "learned_progress"
                                     if a.mode == "tapt"
                                     else "simulator_rule",
@@ -144,6 +177,13 @@ def main():
                             ],
                         )
                         response = bridge.generate(request)
+                        emit(
+                            "vlm_raw_response",
+                            attempt_id=aid,
+                            request_id=response.request_id,
+                            usage=response.usage,
+                            raw_text=response.text,
+                        )
                         decision = json.loads(response.text)
                         invocation = FamilyInvocation(
                             aid,
@@ -169,6 +209,21 @@ def main():
                         )
                         family = invocation.tool_family
                         target = decision["target"]
+                        rejected_feedback = (
+                            transition_rejection(history, family, target)
+                            if a.coordinator_mode == "memory-recovery"
+                            else None
+                        )
+                        if rejected_feedback:
+                            emit(
+                                "transition_rejected",
+                                call_id=aid,
+                                family=family,
+                                target=target,
+                                reason=rejected_feedback,
+                                executed_steps=0,
+                            )
+                            continue
                         tracker.index = calls
                         tracker.active_object = target
                         subtask = {"primitive": family, "args": [target]}
@@ -308,6 +363,7 @@ def main():
                         }
                         if a.mode == "standard":
                             feedback["rule_completed"] = rule
+                        feedback["end_step"] = step
                         history.append(feedback)
                         emit(
                             "invocation_finished",
