@@ -7,6 +7,22 @@ import math
 from pathlib import Path
 
 
+def pi_action_trace_matches(events, stationary_head=False):
+    """Match each manipulation step to the pi action actually returned to control."""
+    pending=None;matched=0
+    for event in events:
+        if event['event']=='fetch_pi_action':
+            if pending is not None:return False
+            pending=list(event['action'])
+        elif event['event']=='mshab_step' and event['subtask_before']%4 in (1,3):
+            if pending is None or len(pending)!=13:return False
+            if stationary_head:pending[8]=pending[9]=0.
+            actual=event['controller_action'][0]
+            if len(actual)!=13 or not all(abs(a-b)<=1e-6 for a,b in zip(actual,pending)):return False
+            pending=None;matched+=1
+    return matched>0 and pending is None
+
+
 def audit(directory):
     directory=Path(directory)
     events=[json.loads(line) for line in (directory/'events.jsonl').read_text().splitlines()]
@@ -42,11 +58,15 @@ def audit(directory):
     if metadata.get('manipulation_policy')=='fetch-pi05':
         checks['real_pi_predictions']=counts['fetch_pi_prediction']>0
         checks['no_official_manipulation_actions']=not any(e['event']=='policy_action' and e['skill'] in ('pick','place') for e in events)
+        checks['pi_actions_match_executed_controls']=pi_action_trace_matches(events,
+            stationary_head=metadata.get('config',{}).get('stationary_head',False))
         starts=[e for e in events if e['event']=='fetch_pi_started']
         checks['state_conditioned_fetch_metadata']=len(starts)==2 and all(e['model_metadata'].get('state_conditioning') is True and e['model_metadata'].get('robot')=='fetch' for e in starts)
     reset=resets[0] if resets else {}
     fingerprints={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (directory/'frames').glob('seed-*-step-0-*.png')}
     return dict(run=directory.name,automated_evidence_pass=all(checks.values()),checks=checks,
+        navigation_policy=metadata.get('navigation_policy'),manipulation_policy=metadata.get('manipulation_policy'),
+        dispatcher=metadata.get('dispatcher'),vlm=metadata.get('vlm'),
         visual_inspection_required=True,summary_first_object_field=summary.get('first_object_chain_success'),carry_steps=len(carry),event_counts=dict(counts),
         initial_images_sha256=fingerprints,seed=reset.get('seed'),
         scene=reset.get('task_plan',{}).get('build_config_name'),
