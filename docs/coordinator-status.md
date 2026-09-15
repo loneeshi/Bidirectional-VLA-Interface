@@ -8,4 +8,6 @@ Crucially, `MSHABAdapter._snapshot` currently exposes one target and one admissi
 
 Current claim: constrained VLM integration smoke test plus separately evaluated low-level skills. Not established: planning benefit, VLM-driven failure recovery, or successful VLM+LightNav+π task completion.
 
+The current runner asks the coordinator between skill invocations, not every simulation step. A missed grasp at step23 does not immediately trigger another VLM call: the active Pick skill continues until success, native failure, or timeout. A recovery-capable organizer needs an explicit interruption/failure event and a callable recovery skill, not merely an API budget. The current `benchmark_feedback` reports the native skill outcome; it does not implement an early missed-grasp detector.
+
 Next organizer evaluation should explicitly expose feasible alternatives such as inspect, retry grasp, and reposition with measured preconditions; deliver compact execution/failure feedback; compare VLM decisions with a fixed dispatcher under the same skills and episode budgets. Additional recovery skills and benchmark-compatible execution semantics must be implemented and tested first. Do not simply relax the allowed-call validator or change the native task pointer to manufacture a choice or success.
