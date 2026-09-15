@@ -24,6 +24,7 @@ def audit(directory):
     skills=summary.get('skill_results',[])
     checks={
         'not_mixed_teacher_collection':not metadata.get('mixed_teacher_collection',False),
+        'not_training_collection':not metadata.get('training_collection',False),
         'one_reset_no_auto_reset':len(resets)==1 and resets[0].get('auto_reset') is False,
         'continuous_step_sequence':bool(steps) and [e['info']['elapsed_steps'][0] for e in steps]==list(range(1,len(steps)+1)),
         'step_count_matches_summary':len(steps)==summary.get('steps'),
