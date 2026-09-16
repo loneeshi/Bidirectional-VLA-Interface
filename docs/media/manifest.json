@@ -519,6 +519,102 @@
       "native_success": true,
       "action_steps": 51,
       "diagnostic_reference": true
+    },
+    {
+      "filename": "gpt-observe-seed0-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/gpt-observe-seed0-failed.mp4",
+      "sha256": "13889ae49de6cf47edd5e943ebbc41b5aefe325d198cfaff4c47ef4946d2ba3e",
+      "bytes": 1805811,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "gpt-observe-seed1-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/gpt-observe-seed1-failed.mp4",
+      "sha256": "ac8ef4f407dd6c05871954ec36d6a7c27c27b577d23ae0aa8b4c6a5a20513d91",
+      "bytes": 1811118,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "gpt-stop-seed0-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/gpt-stop-seed0-failed.mp4",
+      "sha256": "2035982dc198590d7f5d8094b8ad469b1351818eaa35661f049b252d0acc6ca6",
+      "bytes": 1608180,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "gpt-stop-seed1-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/gpt-stop-seed1-failed.mp4",
+      "sha256": "2de203681b1bbe92d86ef8a348231e14e839787ec80f6766fa8a97822315e85a",
+      "bytes": 1611421,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "sac-reference.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/sac-reference.mp4",
+      "sha256": "cc56a4d9374e776eba33a3f55df56da89046be25293fb91d336baa17345c586e",
+      "bytes": 1645248,
+      "description": "Official object-specific SAC positive control: native Pick succeeds in 49 Pick steps; excluded from VLA results.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-observe-seed0-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-observe-seed0-failed.mp4",
+      "sha256": "d99ea1675f94feb094d5d556ca97bf96fcda240fee8163c53c4183b8b443dc3f",
+      "bytes": 1728234,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-observe-seed1-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-observe-seed1-failed.mp4",
+      "sha256": "62b0aa8244704f727148ed52a43c9856ade732a1454e6b10db05e35943dab2a3",
+      "bytes": 1844236,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-stop-seed0-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-stop-seed0-failed.mp4",
+      "sha256": "59bb436769e287c0e6f3042f3d4465edb308bba719ff320bd0f0c1ec9c7aa63e",
+      "bytes": 1607319,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-stop-seed1-failed.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-stop-seed1-failed.mp4",
+      "sha256": "2a3f1ae326e7ec92ee9e13dc986c29d9b1045b891a9cd09cf853b428f4499f7c",
+      "bytes": 1611333,
+      "description": "Paired-noise Fetch pi05 Pick diagnostic; no target grasp; not a benchmark success.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-teacher-arm-torso-seed0-failed-teacher-assisted.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-teacher-arm-torso-seed0-failed-teacher-assisted.mp4",
+      "sha256": "0814f571ad7c194df3ec3dff09da22070b1b9eec4411c32d6b9e22102852d8e0",
+      "bytes": 1907737,
+      "description": "Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-teacher-base-seed0-failed-teacher-assisted.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-teacher-base-seed0-failed-teacher-assisted.mp4",
+      "sha256": "31a8a6dbaa4f4647371717c6511ec49ac1383fd4ff5f481b6d3c3227ff5975cc",
+      "bytes": 1627950,
+      "description": "Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results.",
+      "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "template-teacher-gripper-seed0-failed-teacher-assisted.mp4",
+      "path": "mshab-pick-paired-2026-09-16-run01/template-teacher-gripper-seed0-failed-teacher-assisted.mp4",
+      "sha256": "4d0bcb3e5cb7221895e0509d3c64ce154afbf88db7dc5a865a47fb5f6383c1c4",
+      "bytes": 1813939,
+      "description": "Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results.",
+      "experiment_id": "MSHAB013c"
     }
   ]
 }
