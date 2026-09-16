@@ -1,0 +1,59 @@
+{
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028
+  ],
+  "task": "set_table/pick/013_apple",
+  "max_actions": 200,
+  "per_episode_wall_seconds": 600,
+  "status": "completed",
+  "episodes": [
+    {
+      "seed": 2024,
+      "source": "/home/pshuai/bvi-research/runs/acdit-native-2026-09-16/episode01/result.json",
+      "success": false,
+      "steps": 199,
+      "previously_recorded": true
+    },
+    {
+      "seed": 2025,
+      "source": "/home/pshuai/bvi-research/runs/acdit-fixed-seeds-2026-09-16/seed2025/result.json",
+      "returncode": 0,
+      "status": "episode_completed",
+      "success": false,
+      "steps": 24,
+      "seconds": 62.80314665660262
+    },
+    {
+      "seed": 2026,
+      "source": "/home/pshuai/bvi-research/runs/acdit-fixed-seeds-2026-09-16/seed2026/result.json",
+      "returncode": 0,
+      "status": "episode_completed",
+      "success": false,
+      "steps": 53,
+      "seconds": 91.35834186896682
+    },
+    {
+      "seed": 2027,
+      "source": "/home/pshuai/bvi-research/runs/acdit-fixed-seeds-2026-09-16/seed2027/result.json",
+      "returncode": 0,
+      "status": "episode_completed",
+      "success": false,
+      "steps": 58,
+      "seconds": 95.42269882559776
+    },
+    {
+      "seed": 2028,
+      "source": "/home/pshuai/bvi-research/runs/acdit-fixed-seeds-2026-09-16/seed2028/result.json",
+      "returncode": 0,
+      "status": "episode_completed",
+      "success": false,
+      "steps": 43,
+      "seconds": 83.12435763701797
+    }
+  ],
+  "successes": 0
+}

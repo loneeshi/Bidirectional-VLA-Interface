@@ -14,6 +14,10 @@ Every video is linked by its exact filename and grouped by test task. Folder nam
 
 | Test task / batch | Video filename | What it establishes |
 |---|---|---|
+| `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2025-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2025-failed.mp4) | Seed 2025: native cumulative-force failure before grasp; no GPT or TAPT. |
+| `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2026-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2026-failed.mp4) | Seed 2026: native cumulative-force failure before grasp; no GPT or TAPT. |
+| `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2027-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2027-failed.mp4) | Seed 2027: native cumulative-force failure before grasp; no GPT or TAPT. |
+| `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2028-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2028-failed.mp4) | Seed 2028: native cumulative-force failure before grasp; no GPT or TAPT. |
 | `acdit-native-pick-2026-09-16-run01` | [acdit-native-pick-episode000-failed.mp4](acdit-native-pick-2026-09-16-run01/acdit-native-pick-episode000-failed.mp4) | AC-DiT community checkpoint, native apple Pick, seed 2024: grasped, but failed to settle at the required rest pose; native termination at step 199. No GPT, LightNav or TAPT training. |
 | `vlm-baseline-2026-09-14` | [vlm-seed1.mp4](vlm-baseline-2026-09-14/vlm-seed1.mp4) | Constrained VLM baseline; first object placed at step 233; full task incomplete. |
 | `lightnav-control-003` | [lightnav-control-003-trial2.mp4](lightnav-control-003/lightnav-control-003-trial2.mp4) | Historical failed navigation rollout. |

@@ -624,6 +624,30 @@
       "recorded_at_utc": "2026-09-16T19:37:08.743718+00:00",
       "result": "failed-native-pick-held-object-ee-rest-not-met",
       "run_result": "../../results/acdit-native-2026-09-16/result.json"
+    },
+    {
+      "filename": "acdit-native-pick-seed2025-failed.mp4",
+      "path": "acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2025-failed.mp4",
+      "sha256": "187cd9fe9a2f0b6af3f37fd2d2789a5c6dddd4822ce074c91a49180c14fc83d8",
+      "bytes": 137561
+    },
+    {
+      "filename": "acdit-native-pick-seed2026-failed.mp4",
+      "path": "acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2026-failed.mp4",
+      "sha256": "56795fae37a4b939af03b05ea3da9264cdc687cf95ed6f15844406a03399bcf7",
+      "bytes": 238350
+    },
+    {
+      "filename": "acdit-native-pick-seed2027-failed.mp4",
+      "path": "acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2027-failed.mp4",
+      "sha256": "4161b8be4a76209dbc1f08b824f9831749b850df9e2adc5cfa18ec491500cc1f",
+      "bytes": 225570
+    },
+    {
+      "filename": "acdit-native-pick-seed2028-failed.mp4",
+      "path": "acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2028-failed.mp4",
+      "sha256": "14b271cd60a42c61a733c93f792fcddc7eef8ba99626be8f41bcd4ed608dcf74",
+      "bytes": 234662
     }
   ]
 }
