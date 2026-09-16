@@ -456,6 +456,18 @@
       "episode": 4,
       "native_success": true,
       "action_steps": 285
+    },
+    {
+      "filename": "gpt-lightnav0-pi05-episode000-failed.mp4",
+      "path": "mshab-vla-tools-2026-09-16-run01/gpt-lightnav0-pi05-episode000-failed.mp4",
+      "sha256": "9d36671ac0e75e7c842351886e3525fc7e445b1826219b1aaf8400f96d932700",
+      "bytes": 1707939,
+      "configuration": "gpt-lightnav0-pi05",
+      "episode": 0,
+      "native_success": false,
+      "action_steps": 406,
+      "vlm_requests": 16,
+      "outcome": "navigation advanced; repeated missed grasp; experiment call limit"
     }
   ]
 }
