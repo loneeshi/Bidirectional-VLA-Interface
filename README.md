@@ -2,7 +2,7 @@
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
-**September 16 mainline:** manipulation is moving to **AC-DiT**, alongside GPT coordination and LightNav-0 navigation, using the laboratory server. [Interface audit, verified community checkpoint hashes, and staged Fetch TAPT plan](docs/acdit-mshab-mainline.md). The new implementation currently validates contracts; native simulation, tool-family training, DROID intermediate training and GRPO have not passed their gates. Historical pi05 results below remain separate.
+**September 16 mainline:** manipulation is moving to **AC-DiT**, alongside GPT coordination and LightNav-0 navigation, using the laboratory server. [Interface audit and staged Fetch TAPT plan](docs/acdit-mshab-mainline.md). Strict community-checkpoint loading, headless rendering and real Fetch interfaces passed. The first native apple Pick grasped the object but **failed to return and settle**, ending at step 199 (**0/1**). [Native validation and failure evidence](docs/acdit-native-validation.md) · [acdit-native-pick-episode000-failed.mp4](docs/media/acdit-native-pick-2026-09-16-run01/acdit-native-pick-episode000-failed.mp4). GPT/LightNav integration with AC-DiT, Fetch tool-family training, DROID and GRPO remain pending. No training job is currently running. Historical pi05 results below remain separate.
 
 **Current result:** [LIBERO tool-family / TAPT component experiment](docs/tapt-libero-run01.md) completed 2,000 real updates and all 15 fixed episodes. Original pi05_libero: **5/5**; GPT + original policy: **3/5**; GPT + four family adapters + learned progress: **0/5**. Learned progress triggered 28 actual switches/replans, but trained-system task-success acceptance failed. Six episodes were truncated by a character/UTF-8 validation mismatch; the report separates that implementation defect from task recovery failure. This is not a reproduction of the paper's score. [All 15 videos](docs/media/tapt-libero-2026-09-15-run01/README.md) · [Outcomes and per-call costs](docs/results/tapt-libero-2026-09-15-run01/evaluation.json) · [Author-fork source audit](docs/vlas-as-tools-code-audit.md).
 
@@ -27,7 +27,7 @@ The [marker-free A chain — A-ppo-sac-clean.mp4](docs/media/abcd-baseline-refer
 in 278 steps, with grasp maintained throughout carrying navigation.
 The state-conditioned Fetch pi0.5 pilot completed 2,000 training steps but
 [C and D both failed Pick](docs/abcd-debugging.md#fetch-pi05-adaptation).
-Velocity, recovery-data, relative-base and workspace-camera pilots also failed Pick. A further workspace-camera model is training on 1,228 frames including successful recovery tails; C/D task success remains unproven. [Audited workspace failures and videos](docs/abcd-debugging.md) · [Adaptation contract and commands](docs/workspace-adaptation.md).
+Velocity, recovery-data, relative-base and workspace-camera pilots also failed Pick. The historical workspace-camera pilot used 1,228 frames including successful recovery tails; this does not establish C/D task success. [Audited workspace failures and videos](docs/abcd-debugging.md) · [Adaptation contract and commands](docs/workspace-adaptation.md).
 
 ## Earlier MS-HAB baseline status
 
@@ -35,7 +35,7 @@ Velocity, recovery-data, relative-base and workspace-camera pilots also failed P
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 111 tests passed in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current CPU suite: 146 tests passed, 1 skipped in the local client environment; no paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|

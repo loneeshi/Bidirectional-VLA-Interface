@@ -1,0 +1,43 @@
+{
+  "steps": 199,
+  "success": false,
+  "first_grasp_step": 16,
+  "grasp_false_after_first": [
+    21
+  ],
+  "continuous_grasp_from_step": 22,
+  "last_grasp_step": 199,
+  "final_failed_predicate": "ee_rest",
+  "ee_rest_target_base_xyz": [
+    0.5,
+    0.0,
+    1.25
+  ],
+  "ee_rest_threshold_m": 0.05,
+  "final_ee_rest_distance_m": 0.10837945409299218,
+  "minimum_held_ee_rest_distance_m": 0.033236944301566096,
+  "final_shoulder_lift_qpos": -1.2209992408752441,
+  "shoulder_lift_lower_limit": -1.221,
+  "final_wrist_flex_qpos": 2.1600019931793213,
+  "wrist_flex_upper_limit": 2.16,
+  "last20_shoulder_lift_action_range": [
+    -0.9819580316543579,
+    -0.8602083921432495
+  ],
+  "clipped_executed_channels": 75,
+  "clipped_predicted_channels": 75,
+  "prediction_count": 100,
+  "median_chunk_latency_seconds": 1.8880672100931406,
+  "interpretation": "Native timeout with object held; return-to-rest remains outside threshold and joints reach limits. This localizes the failed phase, but does not separate checkpoint capability, precision and unmeasured training/evaluation differences.",
+  "held_inside_rest_threshold_steps": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+  ],
+  "blocking_predicate_during_those_steps": "is_static"
+}

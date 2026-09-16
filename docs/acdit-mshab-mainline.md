@@ -17,7 +17,7 @@
 
 受限元数据解析分别得到1,621和2,264项tensor。主策略输出层形状128×2048，语言入口2048×1152，状态及mask入口2048×256，真值上下文入口2048×18；mobility对应hidden size为1024。这与源码配置的主要维度相符，**不等于全部state_dict严格匹配**。两份文件各有324项LIFT3D LoRA tensor，没有在其之外发现LoRA，也未发现以tool_family/progress命名的tensor；不能把LIFT3D视觉LoRA误称为TAPT工具族残差。
 
-运行前仍需严格加载两个检查点、锁定SigLIP/LIFT3D等依赖，禁止缺权重时随机初始化后生成“接入成功”结果。机器可读证据见 [checkpoint-audit.json](results/acdit-interface-2026-09-16/checkpoint-audit.json)。
+元数据检查当时尚未严格加载。后续实验室验证已通过双检查点严格加载、SigLIP版本锁定、无头渲染及真实Fetch接口检查；详见[原生验证记录](acdit-native-validation.md)。禁止缺权重时随机初始化后生成“接入成功”结果。原始元数据证据见 [checkpoint-audit.json](results/acdit-interface-2026-09-16/checkpoint-audit.json)。
 
 ## 接口忠实性检查
 

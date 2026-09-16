@@ -615,6 +615,15 @@
       "bytes": 1813939,
       "description": "Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results.",
       "experiment_id": "MSHAB013c"
+    },
+    {
+      "filename": "acdit-native-pick-episode000-failed.mp4",
+      "path": "acdit-native-pick-2026-09-16-run01/acdit-native-pick-episode000-failed.mp4",
+      "sha256": "008426a9931fa444eff4b8a8cd98bcefb37cf912d4843a57d642248f33e9cb4a",
+      "bytes": 577930,
+      "recorded_at_utc": "2026-09-16T19:37:08.743718+00:00",
+      "result": "failed-native-pick-held-object-ee-rest-not-met",
+      "run_result": "../../results/acdit-native-2026-09-16/result.json"
     }
   ]
 }

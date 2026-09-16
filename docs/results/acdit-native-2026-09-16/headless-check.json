@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "physical_gpu_index": 1,
+  "training_started": false,
+  "renderer_name": "Quadro RTX 8000",
+  "renderer_pci": "0000:af:00.0",
+  "expected_pci": "00000000:AF:00.0",
+  "renderer_cuda_id": 0,
+  "rgb_shape": [
+    240,
+    320,
+    3
+  ],
+  "depth_shape": [
+    240,
+    320
+  ],
+  "rgb_std": 30.37113171765322,
+  "finite_depth": true,
+  "visible_depth_pixels": 12100
+}

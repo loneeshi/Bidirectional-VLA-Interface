@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "training_started": false,
+  "api_calls": 0,
+  "precision": "float32",
+  "physical_gpu_index": 1,
+  "strict_load": true,
+  "policy_parameters": 1825218818,
+  "policy_state_tensors": 2264,
+  "max_allocated_bytes": 12727791104,
+  "encoder_revision": "9fdffc58afc957d1a03a25b10dba0329ab15c2a3",
+  "parameter_dtypes": [
+    "torch.float32"
+  ],
+  "elapsed_seconds": 28.92721001431346
+}

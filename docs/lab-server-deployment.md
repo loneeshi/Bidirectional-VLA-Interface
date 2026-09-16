@@ -72,9 +72,11 @@ outputs were bitwise identical, and FP32 outputs were finite. This is a componen
 check; it does not certify the full model or task success. The source lock now
 contains 14 files, including the weighting component.
 
-Still required: encoder availability and full-model strict loading, headless
-rendering, native subtask execution, then handoff data and TAPT.
-No training or model API calls have been started by this deployment. No new
+**Next batch:** encoder pinning, full-model strict loading, asset-free headless
+RGB/depth rendering, and real Fetch reset/interface checks passed. See the
+[native validation report](acdit-native-validation.md) for the episode outcome and
+remaining task-level gate. Handoff data and TAPT remain subsequent work.
+No training or model API calls have been started by these checks. No new
 Runpod compute was rented. Historical stopped storage remains separately billed.
 
 Private local evidence is under `.runtime/lab-server/`; server logs and package
