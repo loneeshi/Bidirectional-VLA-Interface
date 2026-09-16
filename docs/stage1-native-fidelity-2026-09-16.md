@@ -34,3 +34,14 @@ Diagnostic-only history scope and first-waypoint mapping are in `navigation_fide
 ## Resource status
 
 All jobs in this batch exited; lab GPU1 returned to 15 MiB. Model API calls 0, training updates 0, new rented compute 0. Lab service price unknown. Two historical Runpod pods remain EXITED; their total 40 GB persistent storage remains chargeable (~USD 0.266667/day at previously verified rates).
+
+## SAC reference input audit (subsequent batch)
+
+Official apple SAC checkpoint pinned to MS-HAB weights revision `91e96be85128df43728a7511355c3fa999bd2c94`, SHA256 `1d77da6845a190768792d08a63c2f3e6b19f1022865c350b9ea34f0c9b3aa5cb`. The AC-DiT environment fork adds 9 base position/velocity dimensions; official SAC expects 42 state dimensions, so the standalone reference explicitly selects the four official extra fields in source order. Official `evaluate.py` casts depth tensors to float before inference; the reference now does the same without additional normalization. Three integration failures (state schema, dtype, noncontiguous tensor layout) stopped before any action and are preserved separately.
+
+Seed 2025 reset qpos and both camera RGB/depth arrays exactly match the archived AC-DiT reset. This is still observation-level matching only: the old AC-DiT run has no complete initial simulator/controller snapshot. The new reference saves simulator state, public controller state and RNG data for subsequent audit; contact solver internals and all task-private counters are not claimed to be captured. Do not describe it as exact full-state causal pairing.
+
+
+The corrected reference completed **native Pick successfully at step 61** (seed 2025), cumulative force 3073.72 < 5000; grasp, rest and static predicates all true. AC-DiT previously failed this seed at step 24. This supports feasibility of the observed starting configuration; it does not isolate AC-DiT precision/interface/capability causes. SAC uses its own official policy contract and is not counted as a VLA success.
+
+Video: [sac-reference-seed2025.mp4](media/sac-native-reference-2026-09-16-run01/sac-reference-seed2025.mp4). [Result](results/sac-native-reference-2026-09-16/seed2025-reference-v1/result.json). Raw archive SHA256 `baff08a7d156a0829bfd45209e450f3bc3ddfb54dfe87728b8841380071918eb`; failed integration attempts retained. GPU1 returned to 15 MiB, API/training 0. Next: remaining AC-DiT input/history/precision audit and navigation online paired checks before TAPT.
