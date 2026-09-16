@@ -55,7 +55,7 @@ def main():
                      'Only first-object Pick starts are compared; recovery starts are mid-rollout.',
                      'No causal policy intervention or online normalization test was performed.'])
     a.output.parent.mkdir(parents=True,exist_ok=True)
-    a.output.write_text(json.dumps(result,indent=2)+'\n')
+    a.output.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Saved',a.output,'with',len(rows),'Pick segment starts')
 
 
