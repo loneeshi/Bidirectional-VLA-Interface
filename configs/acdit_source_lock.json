@@ -14,6 +14,7 @@
     "models/multimodal_encoder/siglip_lang_encoder.py": "d2accfc486f1bc50f23731d7cf0a185d7a3b8727755276dad43a3bd4ea5c3e11",
     "third_party/ManiSkill/mani_skill/agents/robots/fetch/fetch.py": "cfa07e1dac21bd75f9f63f31742f4d06dd374ab46eb439b5ab367700100a4b39",
     "third_party/ManiSkill/mani_skill/envs/utils/observations/observations.py": "45f3138e005e9ed0eb28607ec07251c0c60951ffa69ef00e11fa828aa3427e23",
-    "third_party/mshab/mshab/envs/sequential_task.py": "a4230a26514f83c371e2a2c24a9440b7044fcdde675c16df2849a6717ec1c54c"
+    "third_party/mshab/mshab/envs/sequential_task.py": "a4230a26514f83c371e2a2c24a9440b7044fcdde675c16df2849a6717ec1c54c",
+    "models/weighting.py": "af98ac7dfef639ca9b875d12f2657d6e720ffe38c56d10b7a3418a0d18b010ad"
   }
 }
