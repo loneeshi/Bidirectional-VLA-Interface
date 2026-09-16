@@ -29,6 +29,7 @@ Every video is linked by its exact filename and grouped by test task. Folder nam
 | `pi05-v8-recovery` | [D-v8-recovery-failed.mp4](pi05-v8-recovery/D-v8-recovery-failed.mp4) | C12/D9 V8 evaluations; no successful grasp; native failure. |
 | `organizer-2026-09-15` | [organizer-normal.mp4](organizer-2026-09-15/organizer-normal.mp4) | GPT-5.6 Luna execution organizer with PPO/SAC. Normal: 229 steps, 8 calls. Injected fault: 317 steps, 8 calls, retry after synthetic missed grasp. Both complete the first object only; no pi0.5, free task-order planning, or natural-failure recovery-rate claim. |
 | `organizer-2026-09-15` | [organizer-injected-fault-recovery.mp4](organizer-2026-09-15/organizer-injected-fault-recovery.mp4) | GPT-5.6 Luna execution organizer with PPO/SAC. Normal: 229 steps, 8 calls. Injected fault: 317 steps, 8 calls, retry after synthetic missed grasp. Both complete the first object only; no pi0.5, free task-order planning, or natural-failure recovery-rate claim. |
+| `mshab-vla-tools-2026-09-16-run01` | [gpt-lightnav0-pi05-episode000-failed.mp4](mshab-vla-tools-2026-09-16-run01/gpt-lightnav0-pi05-episode000-failed.mp4) | First MS-HAB GPT + LightNav-0 + Fetch π₀.₅ closed loop: navigation subtask advanced after 330 steps, then repeated missed grasps; 406 steps and 16 VLM calls, task failed. |
 
 
 ## LIBERO tool-family / TAPT run01

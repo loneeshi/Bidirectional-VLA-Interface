@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 source /workspace/bvi/activate.sh
+export PYTHONPATH="/workspace/probe/openpi/packages/openpi-client/src${PYTHONPATH:+:$PYTHONPATH}"
 cd /workspace/bvi/code
 python scripts/run_coordinator.py \
   --organizer --tool-family-interface --organizer-slice-steps 40 \
@@ -10,7 +11,7 @@ python scripts/run_coordinator.py \
   --expected-plan-uid tidy_house-sequential-val-90-0 --stop-after-subtasks 4 \
   --max-navigation-predictions 80 --max-manipulation-predictions 200 \
   --max-calls 16 --max-env-steps 650 --max-wall-seconds 900 --skill-wall-seconds 90 \
-  --checkpoint-root /workspace/bvi/mshab_checkpoints --output /workspace/bvi/runs/mshab011 \
+  --checkpoint-root /workspace/bvi/mshab_checkpoints --output "${MSHAB_OUTPUT:-/workspace/bvi/runs/mshab011}" \
   --transport bridge --bridge-timeout-seconds 120 --provider openai --model gpt-5.6-luna \
   --authorization-id MSHAB011 --max-api-cost-usd .32 --request-cost-ceiling-usd .02 \
-  --max-output-tokens 700 --max-input-bytes 200000 --image-detail low --reasoning-effort none
+  --max-output-tokens 700 --max-input-bytes 2000000 --image-detail low --reasoning-effort none
