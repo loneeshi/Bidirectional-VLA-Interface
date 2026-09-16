@@ -468,6 +468,57 @@
       "action_steps": 406,
       "vlm_requests": 16,
       "outcome": "navigation advanced; repeated missed grasp; experiment call limit"
+    },
+    {
+      "filename": "template-stop-episode000-failed.mp4",
+      "path": "mshab-pick-matrix-2026-09-16-run01/template-stop-episode000-failed.mp4",
+      "sha256": "cb7db9fb88d95fd837d8f1a1ce54fda88c80a5ae7dd01556e764e7e8a5122316",
+      "bytes": 1618956,
+      "configuration": "template-stop",
+      "episode": 0,
+      "native_success": false,
+      "action_steps": 34
+    },
+    {
+      "filename": "gpt-stop-episode000-failed.mp4",
+      "path": "mshab-pick-matrix-2026-09-16-run01/gpt-stop-episode000-failed.mp4",
+      "sha256": "172f69e297f0b287d3eccb76d0b99156fc2484dee82a7ec7b9c722d5cc5cf110",
+      "bytes": 1617208,
+      "configuration": "gpt-stop",
+      "episode": 0,
+      "native_success": false,
+      "action_steps": 33
+    },
+    {
+      "filename": "template-observe-episode000-failed.mp4",
+      "path": "mshab-pick-matrix-2026-09-16-run01/template-observe-episode000-failed.mp4",
+      "sha256": "7704cb12e84714b0e96ad12d93f9dfc034d2e2571e21cdd2067df46de9f538bb",
+      "bytes": 1768245,
+      "configuration": "template-observe",
+      "episode": 0,
+      "native_success": false,
+      "action_steps": 95
+    },
+    {
+      "filename": "gpt-observe-episode000-failed.mp4",
+      "path": "mshab-pick-matrix-2026-09-16-run01/gpt-observe-episode000-failed.mp4",
+      "sha256": "1841ad85e34ff1ee86807da1c8a6e3c1d92d8216c5d659efd4ba97a6183228b7",
+      "bytes": 1831470,
+      "configuration": "gpt-observe",
+      "episode": 0,
+      "native_success": false,
+      "action_steps": 120
+    },
+    {
+      "filename": "sac-reference-episode000.mp4",
+      "path": "mshab-pick-matrix-2026-09-16-run01/sac-reference-episode000.mp4",
+      "sha256": "487c830225397a0498bf6fa0e4dbaab746222dedce0036ab05453102feda1b10",
+      "bytes": 1648840,
+      "configuration": "sac-reference",
+      "episode": 0,
+      "native_success": true,
+      "action_steps": 51,
+      "diagnostic_reference": true
     }
   ]
 }
