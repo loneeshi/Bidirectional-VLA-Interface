@@ -123,6 +123,12 @@ class OpenPiClient:
         self.connection.send(self.packer.pack(observation))
         return finite_rows(self._receive().get("actions"), action_dim)
 
+    def infer_diagnostic(self, observation: dict, action_dim: int, request: dict):
+        from .diagnostic_noise import KEY
+        self.connection.send(self.packer.pack({**observation, KEY: request}))
+        result = self._receive()
+        return finite_rows(result.get('actions'), action_dim), result.get(KEY)
+
     def close(self) -> None:
         self.connection.close()
 

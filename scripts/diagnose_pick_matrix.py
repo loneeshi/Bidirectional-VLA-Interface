@@ -18,10 +18,22 @@ def check_start(reference, current, atol=1e-5):
     errors = {}
     for key in ('qpos', 'qvel', 'tcp_pose', 'object_pose'):
         a, b = np.asarray(reference[key]), np.asarray(current[key])
-        if a.shape != b.shape or not np.isfinite(b).all():
+        if a.shape != b.shape or not np.isfinite(a).all() or not np.isfinite(b).all():
             raise ValueError(f'Invalid start state: {key}')
         errors[key] = float(np.max(np.abs(a-b)))
     return errors, all(value <= atol for value in errors.values())
+
+
+def component_action(action, teacher, component, pick_step):
+    """Explicit diagnostic intervention; never counted as pure VLA success."""
+    windows = {'base': (30, (11, 12)), 'arm-torso': (30, (*range(7), 10)),
+               'gripper': (40, (7,))}
+    end, channels = windows[component]
+    selected = channels if 1 <= pick_step <= end else ()
+    mixed = list(action)
+    for i in selected:
+        mixed[i] = teacher[i]
+    return tuple(mixed), list(selected)
 
 
 def main():
@@ -32,15 +44,20 @@ def main():
     p.add_argument('--url', default='ws://127.0.0.1:8051')
     p.add_argument('--max-steps', type=int, default=120)
     p.add_argument('--wall-seconds', type=int, default=900)
+    p.add_argument('--noise-seeds', type=int, nargs='+', default=[0, 1])
+    p.add_argument('--component-probes', action='store_true', help='Add three labelled live SAC channel interventions for the first seed')
     args = p.parse_args()
-    if not 1 <= args.max_steps <= 120 or not 1 <= args.wall_seconds <= 1200:
+    if not 1 <= args.max_steps <= 120 or not 1 <= args.wall_seconds <= 2400:
         p.error('Diagnostic limits exceeded')
+    if not 1 <= len(args.noise_seeds) <= 3 or len(set(args.noise_seeds)) != len(args.noise_seeds) or any(not 0 <= s < 2**32 for s in args.noise_seeds):
+        p.error('Provide one to three distinct uint32 noise seeds')
     from bvi import JsonlLogger
     from bvi.protocol import SkillRequest, Requirement, SkillStatus
     from bvi.mshab_adapter import make_mshab_adapter, OfficialRLSkill, describe_target, jsonable
     from bvi.fetch_pi_skill import FetchPiSkill
     from bvi.organizer import GraspMonitor
     from bvi.vla_clients import OpenPiClient
+    from bvi.diagnostic_noise import PairedNoiseClient, check_paired_prediction
     from mshab.envs.make import EnvConfig
     import bvi.nav_camera_env  # register custom camera environments
 
@@ -58,11 +75,18 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     start = time.monotonic()
     reference = None
+    state_reference = None
+    paired_reference = {}
     results = []
-    cases = [('template-stop', 'template', True), ('gpt-stop', 'gpt', True),
-             ('template-observe', 'template', False), ('gpt-observe', 'gpt', False),
-             ('sac-reference', 'sac', False)]
-    for name, prompt_mode, interrupt in cases:
+    cases = [(f'{mode}-{label}-seed{seed}', mode, interrupt, seed, None)
+             for seed in args.noise_seeds
+             for mode, label, interrupt in [('template', 'stop', True), ('gpt', 'stop', True),
+                                             ('template', 'observe', False), ('gpt', 'observe', False)]]
+    cases += [('sac-reference', 'sac', False, None, None)]
+    if args.component_probes:
+        cases += [(f'template-teacher-{component}-seed{args.noise_seeds[0]}', 'template', False,
+                   args.noise_seeds[0], component) for component in ('base', 'arm-torso', 'gripper')]
+    for name, prompt_mode, interrupt, noise_seed, component in cases:
         if time.monotonic()-start >= args.wall_seconds:
             break
         folder = args.output/name
@@ -71,9 +95,11 @@ def main():
         cfg = EnvConfig(**meta['config'])
         cfg.record_video = True
         cfg.info_on_video = False
-        adapter = client = None
+        adapter = client = proxy = teacher = None
         result = {'case': name, 'api_requests': 0, 'benchmark_result': False,
                   'prefix_replayed': True, 'teacher_reference': prompt_mode == 'sac',
+                  'teacher_assisted': component is not None, 'intervention': component,
+                  'noise_seed': noise_seed, 'paired_prefix_steps_verified': 0,
                   'completed': False, 'steps': 0, 'ever_grasped': False}
         try:
             adapter = make_mshab_adapter(cfg, logger, folder, seed=meta['seed'])
@@ -99,6 +125,18 @@ def main():
             if not equal:
                 raise ValueError('Reconstructed starts differ; no paired causal comparison')
             observation = adapter.observe()
+            controller = adapter.uenv.agent.controller
+            state = {'simulator': jsonable(adapter.uenv.get_state_dict()),
+                     'controller': jsonable(controller.get_state()) if callable(getattr(controller, 'get_state', None)) else None}
+            state_digest = hashlib.sha256(json.dumps(state, sort_keys=True).encode()).hexdigest()
+            if state_reference is None:
+                state_reference = state_digest
+                (args.output/'reference-simulator-state.json').write_text(json.dumps(state, indent=2))
+            logger.emit('extended_start_gate', state_sha256=state_digest,
+                        controller_state_available=state['controller'] is not None,
+                        equivalent=state_digest == state_reference)
+            if state_digest != state_reference:
+                raise ValueError('Serialized simulator/controller start state differs')
             target = describe_target(adapter.original_plan, 1)
             prompt = original['prompt'] if prompt_mode == 'gpt' else target.description
             request = SkillRequest(name, 'pick', target.id, observation.frame_id,
@@ -109,10 +147,15 @@ def main():
                 skill = OfficialRLSkill('pick', adapter, args.checkpoint_root, 'rl_per_obj')
             else:
                 client = OpenPiClient.connect(args.url, timeout=120)
-                skill = FetchPiSkill('pick', adapter, client, max_predictions=args.max_steps, chunk_steps=1)
+                proxy = PairedNoiseClient(client, noise_seed, logger)
+                skill = FetchPiSkill('pick', adapter, proxy, max_predictions=args.max_steps, chunk_steps=1)
+            if component:
+                teacher = OfficialRLSkill('pick', adapter, args.checkpoint_root, 'rl_per_obj')
+                teacher.start(request, observation)
             monitor = GraspMonitor(skill)
             monitor.start(request, observation)
-            logger.emit('diagnostic_config', prompt=prompt, interrupt=interrupt,
+            logger.emit('diagnostic_config', prompt=prompt, interrupt=interrupt, noise_seed=noise_seed,
+                        intervention=component, teacher_assisted=component is not None,
                         source_sha256=hashlib.sha256((args.source/'events.jsonl').read_bytes()).hexdigest())
             reason = 'step_limit'
             for _ in range(args.max_steps):
@@ -121,6 +164,22 @@ def main():
                     break
                 before = diagnostic(adapter.uenv, obj, jsonable)
                 action = tuple(monitor.act(adapter.observe()))
+                pick_step = result['steps'] + 1
+                if proxy is not None and component is None:
+                    key = (noise_seed, prompt_mode)
+                    if not interrupt and pick_step <= len(paired_reference.get(key, [])):
+                        error = check_paired_prediction(paired_reference[key][pick_step-1], proxy.records[-1])
+                        result['paired_prefix_steps_verified'] += 1
+                        logger.emit('paired_prefix_gate', pick_step=pick_step, action_max_error=error)
+                    elif not interrupt and key not in paired_reference:
+                        raise ValueError('Missing matched interrupt reference')
+                if component:
+                    # Query at the actual learner state, not a recorded teacher state.
+                    teacher_action = teacher.act(adapter.observe())
+                    mixed, channels = component_action(action, teacher_action, component, pick_step)
+                    logger.emit('teacher_channel_intervention', pick_step=pick_step, channels=channels,
+                                learner_action=action, teacher_action=teacher_action, executed_action=mixed)
+                    action = mixed
                 transition = adapter.step(action)
                 native = skill.feedback(request, transition)
                 monitored = monitor.feedback(request, transition)
@@ -137,6 +196,8 @@ def main():
                     reason = monitored.reason
                     break
             result.update(completed=True, reason=reason)
+            if proxy is not None and component is None and interrupt:
+                paired_reference[(noise_seed, prompt_mode)] = list(proxy.records)
         except Exception as exc:
             result['error'] = repr(exc)
         finally:

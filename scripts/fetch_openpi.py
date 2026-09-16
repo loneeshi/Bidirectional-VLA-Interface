@@ -143,6 +143,7 @@ def config(repo_id, work, steps=1000, batch=4,state_input=True,include_velocity=
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('mode',choices=['convert','norm','train','serve'])
+    p.add_argument('--diagnostic-noise',action='store_true',help='Enable acknowledged request-scoped noise for paired diagnostics only')
     p.add_argument('--runs',nargs='+')
     p.add_argument('--repo-id',default='bvi/fetch-seed1-diagnostic')
     p.add_argument('--work',default='/workspace/fetch-pi')
@@ -207,6 +208,10 @@ def main():
             'server_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()})
         policy=create_trained_policy(cfg,a.checkpoint,
                                     sample_kwargs={'num_steps':a.denoising_steps})
+        if a.diagnostic_noise:
+            sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
+            from bvi.diagnostic_noise import DiagnosticNoisePolicy
+            policy=DiagnosticNoisePolicy(policy,cfg.model.action_horizon,cfg.model.action_dim)
         WebsocketPolicyServer(policy,host='127.0.0.1',port=a.port,metadata=policy.metadata).serve_forever()
 
 
