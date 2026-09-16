@@ -1,0 +1,69 @@
+{
+  "compute_provider": "user_provided_laboratory_server",
+  "gpu_model": "Quadro RTX 8000",
+  "gpu_count": 2,
+  "memory_mib_per_gpu": 49152,
+  "cuda_smoke": {
+    "physical_gpu_index": 1,
+    "torch": "2.7.0+cu128",
+    "cuda_build": "12.8",
+    "device_name": "Quadro RTX 8000",
+    "capability": [
+      7,
+      5
+    ],
+    "native_bfloat16_supported": false,
+    "checks": {
+      "torch.float32": {
+        "finite": true,
+        "max_abs_error_vs_cpu_float32": 4.57763671875e-05
+      },
+      "torch.float16": {
+        "finite": true,
+        "max_abs_error_vs_cpu_float32": 0.02783966064453125
+      }
+    },
+    "training_started": false,
+    "max_allocated_bytes": 9502720
+  },
+  "imports": {
+    "sapien": {
+      "import_ok": true
+    },
+    "mani_skill.envs": {
+      "import_ok": true
+    },
+    "mshab.envs": {
+      "import_ok": true
+    },
+    "pytorch3d.ops": {
+      "import_ok": true
+    },
+    "models.acdit_runner": {
+      "import_ok": true
+    },
+    "model_wrappers.mshab_model": {
+      "import_ok": true
+    }
+  },
+  "extensions": {
+    "completed_at": "2026-09-16T19:18:45.971488+00:00",
+    "pytorch3d_revision": "33824be3cbc87a7dd1db0f6a9a9de9ac81b2d0ba",
+    "gpu_used": false,
+    "arch": "7.5",
+    "max_cpu_build_workers": 2,
+    "training_started": false
+  },
+  "precision_component": {
+    "scope": "perception_weighting_component_only",
+    "bf16_default_bitwise_equal_to_original": true,
+    "fp32_outputs_finite": true,
+    "gpu_used": false,
+    "full_model_verified": false
+  },
+  "community_checkpoints_verified": true,
+  "full_model_strict_load_verified": false,
+  "rendering_verified": false,
+  "training_started": false,
+  "model_api_calls": 0
+}

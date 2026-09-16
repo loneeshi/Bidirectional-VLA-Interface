@@ -1,12 +1,12 @@
 # AC-DiT 操作主线：接口审计与迁移门
 
-2026-09-16 UTC。新主线为 GPT coordinator + LightNav-0 导航 + AC-DiT 操作。保留历史 π₀.₅ 配置、检查点与失败结果。**用户已提供实验室服务器这一计算路径，不再新租或恢复付费 Runpod GPU。** SSH信息已配置在本地忽略文件，域名可解析，但22端口超时，尚未认证；服务器GPU、磁盘和调度规则仍未核实，需先接通获授权的校园网络/VPN或管理员指定访问路径。
+2026-09-16 UTC。新主线为 GPT coordinator + LightNav-0 导航 + AC-DiT 操作。保留历史 π₀.₅ 配置、检查点与失败结果。**后续使用实验室服务器，不再新租或恢复付费 Runpod GPU。** 用户连接VPN后SSH已认证成功；实测为两张48GiB Quadro RTX 8000而非A6000，独立Python环境和CUDA小规模检查已完成，GPU使用规则仍待补充。[部署记录](lab-server-deployment.md)。
 
 当前完成：公开代码审计、两个社区检查点下载及哈希验证、张量元数据检查、接口检查代码、本地测试。**尚未完成实际模型严格加载或仿真成功，也未开始 Fetch TAPT、DROID 中间训练或 GRPO。**
 
 ## 来源与检查点
 
-作者代码固定：[PKU-HMI-Lab/AC-DiT@90ad00a926f34da04816ed9c3312aaf3bc845b7f](https://github.com/PKU-HMI-Lab/AC-DiT/tree/90ad00a926f34da04816ed9c3312aaf3bc845b7f)。13个关键文件哈希见 [source lock](../configs/acdit_source_lock.json)。Windows 全量 checkout 因 vendored 文档中含冒号的文件名失败；目前本地是源码审计快照，完整安装应在实验室 Linux 服务器进行。
+作者代码固定：[PKU-HMI-Lab/AC-DiT@90ad00a926f34da04816ed9c3312aaf3bc845b7f](https://github.com/PKU-HMI-Lab/AC-DiT/tree/90ad00a926f34da04816ed9c3312aaf3bc845b7f)。14个关键文件哈希见 [source lock](../configs/acdit_source_lock.json)，新增了精度审计所需的`models/weighting.py`。Windows 全量 checkout 因 vendored 文档中含冒号的文件名失败；本地保存审计快照，实验室 Linux 服务器现已完成完整源码部署。
 
 权重来自 [JJho1314/AC-DiT-MSHab-Reproduction](https://huggingface.co/JJho1314/AC-DiT-MSHab-Reproduction/tree/f57e782c6a152c5ada83a33d5c29273c857003fd)，revision `f57e782c6a152c5ada83a33d5c29273c857003fd`。这是**第三方社区复现，不是作者官方权重**。社区报告的成绩不作为本项目成绩。
 
