@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-09-16T22:32:34.228542+00:00",
+  "status": "training",
+  "updates": 235,
+  "validation_step": 200,
+  "mean_joint_validation_loss": 0.008344842180976588,
+  "family_mean_joint_validation_loss": {
+    "reach": 0.008010442316946056,
+    "grasp": 0.00952196335937414,
+    "move": 0.005528335022972897,
+    "release": 0.01708270686989029
+  },
+  "checkpoint200_sha256": "bfe3740682f288a1bca0c1cd00eeb26908b49907827522d7fe12db6277a45247",
+  "local_backup_verified": true,
+  "note": "Training ongoing; loss is not online task success."
+}
