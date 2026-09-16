@@ -32,13 +32,16 @@ def segment_episode(task, grasped, tcp_object_distance, object_goal_distance,
             end=next((i for i in successes if i>hold and grasped[hold:i+1].all()),None)
             if end is not None:add('move',hold,end,'native_pick_success_while_grasped','Move the held apple to the robot rest pose.')
     else:
-        if not grasped[0]:return []
-        release=next((i for i in range(1,n+1) if not grasped[i] and grasped[i-1]),None)
+        # Reset has no physics contact yet. Start only at an evidenced held
+        # interval; do not label the unverified reset frame as holding.
+        held_start=next((i for i in range(n-stable+2) if grasped[i:i+stable].all()),None)
+        if held_start is None:return []
+        release=next((i for i in range(held_start+stable,n+1) if not grasped[i] and grasped[i-1]),None)
         if release is None:return []
         # Move ends while still holding close to the placement goal, before release.
-        near=next((i for i in range(1,release) if goals[i]<=place_metres and grasped[:i+1].all()),None)
+        near=next((i for i in range(held_start+1,release) if goals[i]<=place_metres and grasped[held_start:i+1].all()),None)
         if near is None:return []
-        add('move',0,near,'held_object_near_place_goal','Move the held apple to its placement goal.')
+        add('move',held_start,near,'held_object_near_place_goal','Move the held apple to its placement goal.')
         end=next((i for i in successes if i>=release and not grasped[i]),None)
         if end is not None:add('release',near,end,'native_place_success_after_release','Release the apple at its placement goal and retract.')
     return result

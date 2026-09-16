@@ -13,3 +13,8 @@ def test_release_requires_native_success():
 
 def test_no_grasp_or_proximity_not_fabricated():
     assert segment_episode('pick',[0]*5,[.5]*5,[1]*5,[4])==[]
+
+def test_reset_without_contact_excludes_unverified_prefix():
+    rows=segment_episode('place',[0,1,1,1,0,0],[.02]*6,[.5,.4,.1,.08,.07,.07],[5])
+    assert [r['family'] for r in rows]==['move','release']
+    assert rows[0]['start']==1

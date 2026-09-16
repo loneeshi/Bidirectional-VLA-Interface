@@ -12,3 +12,12 @@ Next: segment real demonstrations with observable completion predicates; verify 
 
 
 Observable pilot segmentation is implemented in `fetch_segments.py` (reach8cm, place15cm, stable grasp3 observations; explicit port annotation choices). Completion uses predicate evidence, never simply end-of-recording. Three boundary tests passed. The20-update full-model gate is implemented and queued after collection: all four families in both splits, idle GPU, native loss/preprocessing, bank-gradient isolation, frozen-native full hash, held-out examples and recoverable checkpoint. It uses one fixed example per family/split for integration only, not full SFT. Runtime results remain pending. Gate timeout900s, outer wait4600s; do not launch concurrent copies.
+
+
+## Actual gate result and current bounded SFT
+
+[Twenty-update result](results/fetch-tapt-gate-2026-09-16/result.json): passed, all frozen native tensors unchanged, each of4family banks updated168tensors and learned progress parameters changed. Peak allocated12,920,481,792bytes. Local checkpoint SHA256 `b541531b57cc388f7560e55ee3d4080ecbc89da901cc89e4a53f318760118390`. This is a real training integration gate, not online skill success.
+
+All50teacher episodes collected. Place reset initially has no physical contact, so segmentation now begins at an evidenced held interval rather than rejecting the entire episode. Segments train19/19/19/2 and validation3/3/4/1 for reach/grasp/move/release; low release coverage remains a limitation. [Collection and labels](results/fetch-tapt-gate-2026-09-16/collection.json).
+
+Bounded native-start SFT pilot is launched with `gate_fetch_tapt_training.py --full`: per-call start/middle/end features across all labeled trajectories, uniform family batches, microbatch1/accumulation8, at most2000updates or6900training seconds. Outer9000s includes preprocessing/cleanup. Save every50updates; validate and checkpoint every200; select by held-out joint loss. This is an AC-DiT TAPT port with no DROID/GRPO or verified navigation-handoff coverage. Full SFT outcome and online evaluation remain pending.
