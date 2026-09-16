@@ -1,0 +1,388 @@
+{
+  "status": "collected_not_segmented_not_training_ready",
+  "source": "official frozen SAC teacher in AC-DiT fork",
+  "train_seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019
+  ],
+  "validation_seeds": [
+    3020,
+    3021,
+    3022,
+    3023,
+    3024
+  ],
+  "handoff_coverage": "native starts only; actual navigation handoff supplementation pending",
+  "episodes": [
+    {
+      "task": "pick",
+      "seed": 3000,
+      "split": "train",
+      "success": true,
+      "steps": 29
+    },
+    {
+      "task": "pick",
+      "seed": 3001,
+      "split": "train",
+      "success": true,
+      "steps": 23
+    },
+    {
+      "task": "pick",
+      "seed": 3002,
+      "split": "train",
+      "success": true,
+      "steps": 42
+    },
+    {
+      "task": "pick",
+      "seed": 3003,
+      "split": "train",
+      "success": false,
+      "steps": 199
+    },
+    {
+      "task": "pick",
+      "seed": 3004,
+      "split": "train",
+      "success": true,
+      "steps": 44
+    },
+    {
+      "task": "pick",
+      "seed": 3005,
+      "split": "train",
+      "success": true,
+      "steps": 38
+    },
+    {
+      "task": "pick",
+      "seed": 3006,
+      "split": "train",
+      "success": true,
+      "steps": 26
+    },
+    {
+      "task": "pick",
+      "seed": 3007,
+      "split": "train",
+      "success": true,
+      "steps": 37
+    },
+    {
+      "task": "pick",
+      "seed": 3008,
+      "split": "train",
+      "success": true,
+      "steps": 47
+    },
+    {
+      "task": "pick",
+      "seed": 3009,
+      "split": "train",
+      "success": true,
+      "steps": 31
+    },
+    {
+      "task": "pick",
+      "seed": 3010,
+      "split": "train",
+      "success": true,
+      "steps": 35
+    },
+    {
+      "task": "pick",
+      "seed": 3011,
+      "split": "train",
+      "success": true,
+      "steps": 29
+    },
+    {
+      "task": "pick",
+      "seed": 3012,
+      "split": "train",
+      "success": true,
+      "steps": 31
+    },
+    {
+      "task": "pick",
+      "seed": 3013,
+      "split": "train",
+      "success": true,
+      "steps": 33
+    },
+    {
+      "task": "pick",
+      "seed": 3014,
+      "split": "train",
+      "success": true,
+      "steps": 63
+    },
+    {
+      "task": "pick",
+      "seed": 3015,
+      "split": "train",
+      "success": true,
+      "steps": 43
+    },
+    {
+      "task": "pick",
+      "seed": 3016,
+      "split": "train",
+      "success": true,
+      "steps": 58
+    },
+    {
+      "task": "pick",
+      "seed": 3017,
+      "split": "train",
+      "success": true,
+      "steps": 32
+    },
+    {
+      "task": "pick",
+      "seed": 3018,
+      "split": "train",
+      "success": false,
+      "steps": 46
+    },
+    {
+      "task": "pick",
+      "seed": 3019,
+      "split": "train",
+      "success": true,
+      "steps": 28
+    },
+    {
+      "task": "pick",
+      "seed": 3020,
+      "split": "validation",
+      "success": true,
+      "steps": 37
+    },
+    {
+      "task": "pick",
+      "seed": 3021,
+      "split": "validation",
+      "success": false,
+      "steps": 199
+    },
+    {
+      "task": "pick",
+      "seed": 3022,
+      "split": "validation",
+      "success": true,
+      "steps": 51
+    },
+    {
+      "task": "pick",
+      "seed": 3023,
+      "split": "validation",
+      "success": true,
+      "steps": 56
+    },
+    {
+      "task": "pick",
+      "seed": 3024,
+      "split": "validation",
+      "success": false,
+      "steps": 199
+    },
+    {
+      "task": "place",
+      "seed": 3000,
+      "split": "train",
+      "success": false,
+      "steps": 199
+    },
+    {
+      "task": "place",
+      "seed": 3001,
+      "split": "train",
+      "success": true,
+      "steps": 41
+    },
+    {
+      "task": "place",
+      "seed": 3002,
+      "split": "train",
+      "success": true,
+      "steps": 18
+    },
+    {
+      "task": "place",
+      "seed": 3003,
+      "split": "train",
+      "success": true,
+      "steps": 15
+    },
+    {
+      "task": "place",
+      "seed": 3004,
+      "split": "train",
+      "success": true,
+      "steps": 15
+    },
+    {
+      "task": "place",
+      "seed": 3005,
+      "split": "train",
+      "success": false,
+      "steps": 94
+    },
+    {
+      "task": "place",
+      "seed": 3006,
+      "split": "train",
+      "success": true,
+      "steps": 35
+    },
+    {
+      "task": "place",
+      "seed": 3007,
+      "split": "train",
+      "success": false,
+      "steps": 92
+    },
+    {
+      "task": "place",
+      "seed": 3008,
+      "split": "train",
+      "success": false,
+      "steps": 25
+    },
+    {
+      "task": "place",
+      "seed": 3009,
+      "split": "train",
+      "success": false,
+      "steps": 48
+    },
+    {
+      "task": "place",
+      "seed": 3010,
+      "split": "train",
+      "success": true,
+      "steps": 22
+    },
+    {
+      "task": "place",
+      "seed": 3011,
+      "split": "train",
+      "success": true,
+      "steps": 36
+    },
+    {
+      "task": "place",
+      "seed": 3012,
+      "split": "train",
+      "success": true,
+      "steps": 26
+    },
+    {
+      "task": "place",
+      "seed": 3013,
+      "split": "train",
+      "success": true,
+      "steps": 15
+    },
+    {
+      "task": "place",
+      "seed": 3014,
+      "split": "train",
+      "success": true,
+      "steps": 39
+    },
+    {
+      "task": "place",
+      "seed": 3015,
+      "split": "train",
+      "success": false,
+      "steps": 96
+    },
+    {
+      "task": "place",
+      "seed": 3016,
+      "split": "train",
+      "success": true,
+      "steps": 34
+    },
+    {
+      "task": "place",
+      "seed": 3017,
+      "split": "train",
+      "success": true,
+      "steps": 27
+    },
+    {
+      "task": "place",
+      "seed": 3018,
+      "split": "train",
+      "success": true,
+      "steps": 44
+    },
+    {
+      "task": "place",
+      "seed": 3019,
+      "split": "train",
+      "success": true,
+      "steps": 34
+    },
+    {
+      "task": "place",
+      "seed": 3020,
+      "split": "validation",
+      "success": true,
+      "steps": 29
+    },
+    {
+      "task": "place",
+      "seed": 3021,
+      "split": "validation",
+      "success": true,
+      "steps": 31
+    },
+    {
+      "task": "place",
+      "seed": 3022,
+      "split": "validation",
+      "success": false,
+      "steps": 199
+    },
+    {
+      "task": "place",
+      "seed": 3023,
+      "split": "validation",
+      "success": true,
+      "steps": 25
+    },
+    {
+      "task": "place",
+      "seed": 3024,
+      "split": "validation",
+      "success": true,
+      "steps": 27
+    }
+  ],
+  "api_calls": 0,
+  "training_updates": 0
+}
