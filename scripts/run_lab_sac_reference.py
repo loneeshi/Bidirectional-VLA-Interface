@@ -3,14 +3,20 @@
 Historical comparison is observation-matched only; full old state was not saved.
 New simulator/controller snapshots support subsequent controlled comparisons.
 """
-import os, sys, json, random, hashlib, subprocess
+import os, sys, json, random, hashlib, subprocess, argparse
 from pathlib import Path
 from collections import deque
 from run_lab_acdit_native import jsonable
 
 root = Path.home() / 'bvi-research'
-seed = int(sys.argv[1])
-out = root / f'runs/sac-native-reference-2026-09-16/seed{seed}-reference-v1'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('seed',type=int)
+parser.add_argument('--collect',action='store_true')
+parser.add_argument('--task',choices=['pick','place'],default='pick')
+args=parser.parse_args();seed=args.seed;task=args.task
+split='train' if args.collect else 'val'
+out = root / (f'runs/fetch-tapt-teacher-2026-09-16/{task}/seed{seed}' if args.collect else
+              f'runs/sac-native-reference-2026-09-16/seed{seed}-reference-v1')
 out.mkdir(parents=True, exist_ok=False)
 used = int(subprocess.check_output(['nvidia-smi', '-i', '1', '--query-gpu=memory.used',
                                   '--format=csv,noheader,nounits'], text=True).strip())
@@ -33,18 +39,19 @@ torch.set_num_threads(2)
 torch.manual_seed(seed); np.random.seed(seed); random.seed(seed)
 source = root/'src/AC-DiT'; os.chdir(source)
 rearrange = root/'assets/data/scene_datasets/replica_cad_dataset/rearrange'
-plans = plan_data_from_file(rearrange/'task_plans/set_table/pick/val/013_apple.json')
-env = gym.make('PickSubtaskTrain-v0', num_envs=1, robot_uids='fetch', obs_mode='rgbdp',
+plans = plan_data_from_file(rearrange/f'task_plans/set_table/{task}/{split}/013_apple.json')
+env = gym.make(f'{task.capitalize()}SubtaskTrain-v0', num_envs=1, robot_uids='fetch', obs_mode='rgbdp',
     control_mode='pd_joint_delta_pos', render_mode='rgb_array', reward_mode='dense',
     sensor_configs={'shader_pack':'default'}, human_render_camera_configs={'shader_pack':'default'},
     viewer_camera_configs={'shader_pack':'default'}, sim_backend='cpu', max_episode_steps=200,
     task_plans=plans.plans, scene_builder_cls=plans.dataset,
-    spawn_data_fp=rearrange/'spawn_data/set_table/pick/val/spawn_data.pt',
+    spawn_data_fp=rearrange/f'spawn_data/set_table/{task}/{split}/spawn_data.pt',
     require_build_configs_repeated_equally_across_envs=False)
 writer = None
+dataset = None
 report = {'seed':seed, 'status':'started', 'success':False, 'steps':0, 'api_calls':0,
           'training_updates':0, 'historical_pairing':'observation-only, not full state',
-          'task':'set_table/pick/013_apple', 'split':'val', 'max_steps':200,
+          'task':f'set_table/{task}/013_apple', 'split':split, 'max_steps':200,
           'policy':'official per-object SAC, deterministic, stationary_head=true'}
 try:
     obs, info = env.reset(seed=seed); u=env.unwrapped
@@ -55,13 +62,28 @@ try:
     (out/'initial-state.json').write_text(json.dumps(jsonable(state),indent=2))
     old = root/f'runs/acdit-fixed-seeds-2026-09-16/seed{seed}/reset-observation.npz'
     if seed==2024:old=root/'runs/acdit-native-2026-09-16/episode01/reset-observation.npz'
-    historical=np.load(old)
-    comparison={'qpos':bool(np.array_equal(historical['qpos'],u.agent.robot.qpos.cpu().numpy()))}
-    for cam in ['fetch_head','fetch_hand']:
-        for k in ['depth','rgb']:
-            comparison[f'{cam}_{k}']=bool(np.array_equal(historical[f'{cam}_{k}'],obs['sensor_data'][cam][k].cpu().numpy()))
-    report['historical_reset_exact_matches']=comparison
-    if not all(comparison.values()):raise RuntimeError('Historical reset observation mismatch; do not claim paired reference')
+    if not args.collect:
+        historical=np.load(old)
+        comparison={'qpos':bool(np.array_equal(historical['qpos'],u.agent.robot.qpos.cpu().numpy()))}
+        for cam in ['fetch_head','fetch_hand']:
+            for k in ['depth','rgb']:
+                comparison[f'{cam}_{k}']=bool(np.array_equal(historical[f'{cam}_{k}'],obs['sensor_data'][cam][k].cpu().numpy()))
+        report['historical_reset_exact_matches']=comparison
+        if not all(comparison.values()):raise RuntimeError('Historical reset observation mismatch; do not claim paired reference')
+    else:
+        import h5py
+        dataset=h5py.File(out/'trajectory.h5','w')
+        dataset.attrs['provenance']='fixed official SAC teacher in AC-DiT fork; not original published demonstration'
+        report['historical_pairing']='not applicable: new train-split teacher collection'
+        report['navigation_handoff_coverage']='not established by native train resets'
+    def record_observation(index, observation):
+        if dataset is None:return
+        def write(group,data):
+            for key,value in data.items():
+                if isinstance(value,dict):write(group.create_group(key),value)
+                elif hasattr(value,'cpu'):group.create_dataset(key,data=value.cpu().numpy(),compression='gzip')
+        write(dataset.create_group(f'observations/{index:04d}'),observation)
+    record_observation(0,obs)
     frames={cam:deque(maxlen=3) for cam in ['fetch_head','fetch_hand']}
     def encode(observation, first=False):
         pixels={}
@@ -79,7 +101,7 @@ try:
         assert state.shape==(1,42), state.shape
         return pixels,state
     pixels,state=encode(obs,True)
-    ck=root/'checkpoints/mshab/rl/set_table/pick/013_apple';cfg=yaml.safe_load((ck/'config.yml').read_text())['algo']
+    ck=root/f'checkpoints/mshab/rl/set_table/{task}/013_apple';cfg=yaml.safe_load((ck/'config.yml').read_text())['algo']
     keys=['actor_hidden_dims','critic_hidden_dims','critic_layer_norm','critic_dropout',
           'encoder_pixels_feature_dim','encoder_state_feature_dim','cnn_features','cnn_filters','cnn_strides','cnn_padding']
     policy=Agent(spaces.Dict({k:spaces.Box(0,32767,tuple(v.shape[1:]),np.int16) for k,v in pixels.items()}),
@@ -100,6 +122,9 @@ try:
             action=action.clamp(-1,1)
             obs,reward,terminated,truncated,info=env.step(action)
             report.update(steps=step+1,success=bool(info['success'].item()),final_info=jsonable(info))
+            record_observation(step+1,obs)
+            if dataset is not None:
+                dataset.create_dataset(f'actions/{step:04d}',data=action.numpy())
             log.write(json.dumps(jsonable({'step':step+1,'action':action,'info':info,'qpos':u.agent.robot.qpos}))+'\n')
             writer.append_data(frame())
             if bool(terminated.item()) or bool(truncated.item()):break
@@ -108,6 +133,10 @@ try:
 except Exception as exc:
     report.update(status='error',error=repr(exc));raise
 finally:
+    if dataset is not None:
+        dataset.attrs['native_success']=report['success']
+        dataset.attrs['status']=report['status']
+        dataset.close()
     if writer:
         writer.close()
         suffix='' if report['success'] else '-failed' if report['status']=='completed' else '-incomplete'
