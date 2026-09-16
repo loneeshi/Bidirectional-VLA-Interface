@@ -1,6 +1,8 @@
 # VLAs-as-Tools reproduction: priority and acceptance gates
 
-Status: source and local-code audit, 2026-09-15. **Availability correction:** [relevant code was found in the co-first author's public OpenPI fork](vlas-as-tools-code-audit.md); inspect and reuse it before reimplementing. LIBERO is the first reproduction environment. This was the pre-execution audit. The [TAPT007 component experiment](tapt-libero-run01.md) has completed training and all 15 evaluations: component/interface evidence passed, trained-system task success failed. Its report supersedes this audit status. MS-HAB migration remains gated on corrected LIBERO evaluation.
+Status updated 2026-09-15: [TAPT009](tapt-libero-run03.md) completed corrected online evaluation: standard 5/5, old TAPT 5/5, old TAPT with memory 4/5 (one infrastructure failure), new TAPT with memory 5/5. The minimal single-task method loop now has native-success evidence. This does not establish recovery gains or reproduce paper scores. Next: [implementation alignment and controlled recovery design](tapt-method-alignment-and-recovery.md). No further training is justified by these ceiling-level results alone.
+
+**Availability correction:** [relevant code was found in the co-first author's public OpenPI fork](vlas-as-tools-code-audit.md). The sections below preserve the **pre-execution** audit and implementation proposal, not the current LIBERO implementation inventory. Their missing-interface findings still must be checked separately for the older MS-HAB path.
 
 ## Verified source
 
