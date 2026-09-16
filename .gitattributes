@@ -1,5 +1,6 @@
 # Preserve evidence bytes across Windows and Linux checkouts.
 docs/results/tapt-libero-2026-09-15-run01/** -text whitespace=cr-at-eol
 scripts/*.sh text eol=lf
+docs/analysis/** text eol=lf
 
 docs/results/tapt-libero-2026-09-15-run03/** -text whitespace=cr-at-eol

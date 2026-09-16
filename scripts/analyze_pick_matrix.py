@@ -97,9 +97,9 @@ def main():
         results.append(result)
         traces.extend(trace)
     args.output.mkdir(parents=True, exist_ok=True)
-    (args.output/'contact-summary.json').write_text(json.dumps(results, indent=2)+'\n')
+    (args.output/'contact-summary.json').write_text(json.dumps(results, indent=2)+'\n', encoding='utf-8', newline='\n')
     with (args.output/'contact-trace.csv').open('w', newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=list(traces[0]))
+        w = csv.DictWriter(f, fieldnames=list(traces[0]), lineterminator='\n')
         w.writeheader()
         w.writerows(traces)
     for r in results:
