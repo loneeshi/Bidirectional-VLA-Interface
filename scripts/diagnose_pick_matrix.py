@@ -36,6 +36,43 @@ def component_action(action, teacher, component, pick_step):
     return tuple(mixed), list(selected)
 
 
+def compare_state_tree(reference, current, atol=1e-6):
+    """Keep every field; tolerate only bounded floating-point drift, not IDs/counters."""
+    differences = []
+    def walk(a, b, path):
+        if type(a) is not type(b):
+            differences.append(dict(path=path, kind='type', accepted=False)); return
+        if isinstance(a, dict):
+            if a.keys() != b.keys():
+                differences.append(dict(path=path, kind='keys', accepted=False)); return
+            for key in a: walk(a[key], b[key], f'{path}/{key}')
+        elif isinstance(a, list):
+            if len(a) != len(b):
+                differences.append(dict(path=path, kind='length', accepted=False)); return
+            for i, (x, y) in enumerate(zip(a, b)): walk(x, y, f'{path}/{i}')
+        elif isinstance(a, float):
+            delta = abs(a-b)
+            if not np.isfinite(a) or not np.isfinite(b) or delta != 0:
+                differences.append(dict(path=path, kind='float', reference=a, current=b,
+                    abs_error=delta if np.isfinite(delta) else None,
+                    accepted=bool(np.isfinite(a) and np.isfinite(b) and delta <= atol)))
+        elif a != b:
+            differences.append(dict(path=path, kind='value', reference=a, current=b, accepted=False))
+    walk(reference, current, '')
+    return differences, all(d['accepted'] for d in differences)
+
+
+def controller_snapshot(controller, jsonable):
+    # Pinned ManiSkill PDJointPos.get_state() returns {} when use_target=False.
+    # Also audit the actual command targets and interpolation bookkeeping.
+    data = {'public': jsonable(controller.get_state())}
+    for name in ('_target_qpos', '_start_qpos', '_step', '_step_size'):
+        if hasattr(controller, name): data[name] = jsonable(getattr(controller, name))
+    if hasattr(controller, 'controllers'):
+        data['components'] = {k: controller_snapshot(v, jsonable) for k,v in controller.controllers.items()}
+    return data
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source', type=Path, required=True)
@@ -46,6 +83,7 @@ def main():
     p.add_argument('--wall-seconds', type=int, default=900)
     p.add_argument('--noise-seeds', type=int, nargs='+', default=[0, 1])
     p.add_argument('--component-probes', action='store_true', help='Add three labelled live SAC channel interventions for the first seed')
+    p.add_argument('--only-case', help='Run one case in a fresh simulation process; share audited references on disk')
     args = p.parse_args()
     if not 1 <= args.max_steps <= 120 or not 1 <= args.wall_seconds <= 2400:
         p.error('Diagnostic limits exceeded')
@@ -72,12 +110,15 @@ def main():
     original = next(e for e in events if e['event'] == 'fetch_pi_started')
     if len(prefix) != 330:
         raise ValueError('Expected audited MSHAB011 330-step prefix')
-    args.output.mkdir(parents=True, exist_ok=False)
+    args.output.mkdir(parents=True, exist_ok=bool(args.only_case))
     start = time.monotonic()
-    reference = None
-    state_reference = None
+    reference_path = args.output/'reference-start.json'
+    state_path = args.output/'reference-simulator-state.json'
+    reference = json.loads(reference_path.read_text()) if reference_path.exists() else None
+    state_reference = json.loads(state_path.read_text()) if state_path.exists() else None
     paired_reference = {}
-    results = []
+    results = json.loads((args.output/'summary.json').read_text()) if args.only_case and (args.output/'summary.json').exists() else []
+    previous_count = len(results)
     cases = [(f'{mode}-{label}-seed{seed}', mode, interrupt, seed, None)
              for seed in args.noise_seeds
              for mode, label, interrupt in [('template', 'stop', True), ('gpt', 'stop', True),
@@ -86,11 +127,18 @@ def main():
     if args.component_probes:
         cases += [(f'template-teacher-{component}-seed{args.noise_seeds[0]}', 'template', False,
                    args.noise_seeds[0], component) for component in ('base', 'arm-torso', 'gripper')]
+    if args.only_case:
+        cases = [c for c in cases if c[0] == args.only_case]
+        if len(cases) != 1: p.error('Unknown case name')
     for name, prompt_mode, interrupt, noise_seed, component in cases:
         if time.monotonic()-start >= args.wall_seconds:
             break
         folder = args.output/name
         folder.mkdir()
+        if args.only_case and prompt_mode != 'sac' and not interrupt and component is None:
+            paired_path = args.output/f'{prompt_mode}-stop-seed{noise_seed}'/'events.jsonl'
+            paired_reference[(noise_seed,prompt_mode)] = [json.loads(line) for line in paired_path.read_text().splitlines()
+                                                         if json.loads(line)['event']=='paired_inference']
         logger = JsonlLogger(folder/'events.jsonl', name)
         cfg = EnvConfig(**meta['config'])
         cfg.record_video = True
@@ -127,15 +175,17 @@ def main():
             observation = adapter.observe()
             controller = adapter.uenv.agent.controller
             state = {'simulator': jsonable(adapter.uenv.get_state_dict()),
-                     'controller': jsonable(controller.get_state()) if callable(getattr(controller, 'get_state', None)) else None}
+                     'controller': controller_snapshot(controller, jsonable)}
+            (folder/'start-simulator-state.json').write_text(json.dumps(state, indent=2))
             state_digest = hashlib.sha256(json.dumps(state, sort_keys=True).encode()).hexdigest()
             if state_reference is None:
-                state_reference = state_digest
+                state_reference = state
                 (args.output/'reference-simulator-state.json').write_text(json.dumps(state, indent=2))
+            differences, state_equal = compare_state_tree(state_reference, state)
             logger.emit('extended_start_gate', state_sha256=state_digest,
                         controller_state_available=state['controller'] is not None,
-                        equivalent=state_digest == state_reference)
-            if state_digest != state_reference:
+                        numeric_atol=1e-6, differences=differences, equivalent=state_equal)
+            if not state_equal:
                 raise ValueError('Serialized simulator/controller start state differs')
             target = describe_target(adapter.original_plan, 1)
             prompt = original['prompt'] if prompt_mode == 'gpt' else target.description
@@ -211,6 +261,8 @@ def main():
         if not result['completed']:
             break  # stop on environment/interface gate failure
     print(json.dumps(results))
+    if len(results)-previous_count != len(cases) or any(not r['completed'] for r in results):
+        raise SystemExit(2)  # A failed diagnostic gate must not report pipeline success.
 
 
 if __name__ == '__main__':
