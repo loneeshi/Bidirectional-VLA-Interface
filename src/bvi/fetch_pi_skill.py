@@ -50,19 +50,23 @@ class FetchPiSkill:
         index=int(observation.metadata['subtask_index'])
         if request.skill!=self.name or self.adapter.original_plan.subtasks[index].type!=self.name:
             raise ProtocolError('Fetch pi skill does not match requested subtask')
+        new_subtask = self.index != index
         self.index,self.call_id=index,request.call_id
         from .mshab_adapter import describe_target
-        if self.instructions is not None:
+        if getattr(request, 'instruction', None) is not None:
+            self.prompt=request.instruction
+        elif self.instructions is not None:
             if str(index) not in self.instructions:raise ProtocolError('Missing explicit manipulation instruction')
             self.prompt=self.instructions[str(index)]
         else:
             self.prompt=describe_target(self.adapter.original_plan,index).description
-        self.base_xy_origin=tuple(float(x) for x in jsonable(self.adapter.uenv.agent.robot.qpos)[0][:2])
+        if new_subtask or self.base_xy_origin is None:
+            self.base_xy_origin=tuple(float(x) for x in jsonable(self.adapter.uenv.agent.robot.qpos)[0][:2])
         self.actions.clear()
         self.adapter.logger.emit('fetch_pi_started',call_id=self.call_id,skill=self.name,
             prompt=self.prompt,model_metadata=self.client.metadata,chunk_steps=self.chunk_steps,
             base_xy_origin=self.base_xy_origin,ensemble_samples=self.ensemble_samples,
-            instruction_source='explicit_scene_config' if self.instructions is not None else 'task_plan_id_template')
+            instruction_source='vlm_invocation' if getattr(request,'instruction',None) is not None else ('explicit_scene_config' if self.instructions is not None else 'task_plan_id_template'))
 
     def act(self,observation):
         if self.index is None: raise ProtocolError('Missing skill start')

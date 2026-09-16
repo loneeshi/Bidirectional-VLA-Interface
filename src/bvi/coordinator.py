@@ -70,7 +70,7 @@ class APIBudget:
             raise ProtocolError("A single request reservation exceeds the experiment cap")
 
 
-def request_schema(observation: Observation, specs: Mapping[str, SkillSpec]) -> dict[str, Any]:
+def request_schema(observation: Observation, specs: Mapping[str, SkillSpec], tool_interface=False) -> dict[str, Any]:
     skills = sorted({call.skill for call in observation.allowed_calls if call.skill in specs})
     targets = sorted({call.target_id for call in observation.allowed_calls if call.skill in specs})
     predicates = sorted({p for skill in skills for p in specs[skill].supported_requirements})
@@ -86,6 +86,10 @@ def request_schema(observation: Observation, specs: Mapping[str, SkillSpec]) -> 
         "max_steps": {"type": "integer"},
         "timeout_seconds": {"type": "number"},
     }
+    if tool_interface:
+        properties.update(tool_family={"type": "string", "enum": skills},
+                          instruction={"type": "string", "minLength": 1, "maxLength": 160},
+                          interface_version={"type": "string", "enum": ["mshab-tool-family/1"]})
     return {"type": "object", "properties": properties,
             "required": list(properties), "additionalProperties": False}
 
@@ -100,7 +104,7 @@ def _unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
 
 
 def parse_request(text: str, observation: Observation,
-                  specs: Mapping[str, SkillSpec]) -> SkillRequest:
+                  specs: Mapping[str, SkillSpec], tool_interface=False) -> SkillRequest:
     def invalid_constant(value: str) -> None:
         raise ProtocolError(f"Invalid JSON constant: {value}")
 
@@ -110,8 +114,12 @@ def parse_request(text: str, observation: Observation,
         raise ProtocolError("Coordinator response is not a strict JSON object") from exc
     fields = {"call_id", "skill", "target_id", "observation_id", "requirements",
               "max_steps", "timeout_seconds"}
+    if tool_interface:
+        fields.update(("tool_family", "instruction", "interface_version"))
     if not isinstance(data, dict) or set(data) != fields:
         raise ProtocolError("Coordinator response has missing or unsupported fields")
+    if tool_interface and any(not isinstance(data[key], str) for key in ("tool_family", "instruction", "interface_version")):
+        raise ProtocolError("Tool interface fields must be strings")
     if any(not isinstance(data[key], str) for key in
            ("call_id", "skill", "target_id", "observation_id")):
         raise ProtocolError("Call, skill, target and observation IDs must be strings")
@@ -130,7 +138,8 @@ def parse_request(text: str, observation: Observation,
 
 class VLMCoordinator:
     def __init__(self, transport: VLMTransport, specs: Mapping[str, SkillSpec],
-                 logger: JsonlLogger, budget: APIBudget):
+                 logger: JsonlLogger, budget: APIBudget, tool_interface=False):
+        self.tool_interface = tool_interface
         self.transport, self.specs, self.logger, self.budget = transport, specs, logger, budget
         self.calls_reserved = 0
         self.cost_reserved_usd = 0.0
@@ -160,7 +169,7 @@ class VLMCoordinator:
                 > self.budget.max_cost_usd + 1e-12):
             raise ProtocolError("API experiment budget exhausted")
 
-        schema = request_schema(observation, self.specs)
+        schema = request_schema(observation, self.specs, self.tool_interface)
         context = {"task": observation.task, "frame_id": observation.frame_id,
                    "image_order": [image.camera for image in observation.images],
                    "targets": observation.targets, "allowed_calls": observation.allowed_calls,
@@ -178,6 +187,11 @@ class VLMCoordinator:
             "This baseline's admissible calls may be restricted by the benchmark task plan; "
             "target source labels disclose any oracle metadata."
         )
+        if self.tool_interface:
+            system += (" Select tool_family equal to skill and supply a short scene-grounded English instruction. "
+                       "The exact instruction is sent to the selected navigation or manipulation model. "
+                       "Use interface_version mshab-tool-family/1. These are separate backends; "
+                       "feedback source labels distinguish benchmark rules from learned progress.")
         vlm_request = VLMRequest(system, prompt, observation.images, schema,
                                  self.budget.max_output_tokens)
         # Bound request growth across feedback history and encoded images. This
@@ -222,7 +236,7 @@ class VLMCoordinator:
             if response.finish_reason in {"incomplete", "failed", "cancelled", "max_tokens",
                                           "refusal", "pause_turn"}:
                 raise ProtocolError(f"Coordinator response did not finish: {response.finish_reason}")
-            request = parse_request(response.text, observation, self.specs)
+            request = parse_request(response.text, observation, self.specs, self.tool_interface)
         except ProtocolError as exc:
             self.logger.emit("coordinator_rejected", attempt_id=attempt_id, reason=str(exc))
             raise

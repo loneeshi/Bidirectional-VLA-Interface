@@ -172,7 +172,8 @@ class LightNavSkill:
         self.index = int(observation.metadata['subtask_index'])
         if request.skill != 'navigate':
             raise ProtocolError("LightNav only implements navigation")
-        self.instruction = self.instructions.get(str(self.index), '')
+        self.instruction = getattr(request, 'instruction', None) or self.instructions.get(str(self.index), '')
+        self.invocation_instruction = getattr(request, 'instruction', None) is not None
         if not isinstance(self.instruction, str) or not self.instruction.strip():
             raise ProtocolError("An explicit visual navigation instruction is required")
         self.client.reset()  # Also clear history between distinct navigation goals.
@@ -240,7 +241,7 @@ class LightNavSkill:
         feedback = benchmark_feedback(request, transition, self.index)
         if (feedback.status is SkillStatus.EXECUTING and self.stopping
                 and self.stopped_steps >= self.settle_steps):
-            recovery=self.recovery_instructions.get(str(self.index))
+            recovery=None if self.invocation_instruction else self.recovery_instructions.get(str(self.index))
             if (recovery and self.stop_replans<self.max_stop_replans and
                 bool(scalar(transition.info.get('navigated_close',False))) and
                 not bool(scalar(transition.info.get('oriented_correctly',False)))):

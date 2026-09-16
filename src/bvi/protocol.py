@@ -96,6 +96,11 @@ class SkillRequest:
     max_steps: int = 500
     timeout_seconds: float = 120.0
 
+    # Optional only for legacy runs; v1 coordinator requires all three fields.
+    tool_family: str | None = None
+    instruction: str | None = None
+    interface_version: str | None = None
+
 
 @dataclass(frozen=True)
 class SkillSpec:
@@ -115,6 +120,8 @@ class SkillFeedback:
     requirements: tuple[RequirementResult, ...] = ()
     reason: str | None = None
     source: str = "unspecified"
+    progress: float | None = None
+    progress_source: str = "unavailable"
 
 
 @dataclass(frozen=True)
@@ -181,6 +188,13 @@ class Skill(Protocol):
 
 def validate_request(request: SkillRequest, observation: Observation,
                      specs: Mapping[str, SkillSpec]) -> None:
+    fields = (request.tool_family, request.instruction, request.interface_version)
+    if any(value is not None for value in fields):
+        if (request.interface_version != "mshab-tool-family/1"
+                or request.tool_family != request.skill
+                or not isinstance(request.instruction, str)
+                or not request.instruction.strip() or len(request.instruction) > 160):
+            raise ProtocolError("Invalid MS-HAB family/instruction contract")
     if not request.call_id or not request.observation_id:
         raise ProtocolError("Call ID and observation ID are required")
     if request.observation_id != observation.frame_id:
