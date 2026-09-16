@@ -26,7 +26,8 @@ class InjectedClosureFault:
     def feedback(self,request,transition):return self.skill.feedback(request,transition)
 
 class OrganizerView:
-    def __init__(self, env, specs, max_slice_steps=40):
+    def __init__(self, env, specs, max_slice_steps=40, tool_interface=False):
+        self.tool_interface=tool_interface
         if not 1<=max_slice_steps<=500:raise ValueError('Invalid organizer slice')
         self.env=env
         self.specs={k:replace(v,max_steps=min(v.max_steps,max_slice_steps)) for k,v in specs.items()}
@@ -42,7 +43,8 @@ class OrganizerView:
             'the currently feasible skill or abort_task. abort_task stops the episode without claiming success. '
             'Do not claim that a retry includes a repositioning controller. Avoid repeated futile attempts.')
         event='' if self.last_event is None else f' Latest execution event: {self.last_event}.'
-        selected=tuple(x for x in o.images if x.camera in ('fetch_workspace','fetch_hand'))
+        cameras = ('fetch_nav','fetch_workspace') if self.tool_interface and any(c.skill=='navigate' for c in o.allowed_calls) else ('fetch_workspace','fetch_hand')
+        selected=tuple(x for x in o.images if x.camera in cameras)
         images=selected if len(selected)==2 else o.images[:2]
         return replace(o,images=images,task=o.task+instruction+event,
             targets=o.targets+(Target('episode','Stop this episode unsuccessfully','organizer'),),

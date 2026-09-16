@@ -51,6 +51,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true", help="Real GPU rollout, oracle dispatch, no API")
     parser.add_argument('--organizer', action='store_true', help='VLM execution organization with bounded skill slices, grasp-event yields and explicit abort')
+    parser.add_argument('--tool-family-interface', action='store_true', help='Versioned GPT family/instruction delivery to both VLA backends')
     parser.add_argument('--organizer-slice-steps', type=int, default=40)
     parser.add_argument('--stop-after-subtasks', type=int, help='Explicit partial-task diagnostic boundary; never full benchmark success')
     parser.add_argument('--inject-closure-fault',action='store_true',help='TEST ONLY: inject six initial Pick closure actions, labeled synthetic fault')
@@ -110,6 +111,10 @@ def main() -> None:
     parser.add_argument("--show-goal-markers", action="store_true",
                         help="Show benchmark debug goals in human-render video")
     args = parser.parse_args()
+    if args.tool_family_interface and (args.dry_run or not args.organizer
+            or args.navigation_policy != 'lightnav' or args.manipulation_policy != 'fetch-pi05'
+            or args.collect_recovery_after is not None or args.lightnav_subtasks is not None):
+        parser.error('Tool interface requires live organizer, LightNav, Fetch pi05, and no teacher takeover')
     if args.organizer and (args.dry_run or not 1<=args.organizer_slice_steps<=500):
         parser.error('Organizer requires live VLM and slice steps1..500')
     if args.inject_closure_fault and (not args.organizer or args.manipulation_policy!='official'):
@@ -136,9 +141,10 @@ def main() -> None:
         if not isinstance(recovery_instructions,dict) or not all(isinstance(k,str) and k.isdigit() and isinstance(v,str) and v.strip() for k,v in recovery_instructions.items()):
             parser.error('Recovery instructions must map indices to nonempty strings')
     if args.navigation_policy == "lightnav":
-        if args.navigation_instructions is None or not args.expected_plan_uid or args.max_navigation_predictions < 1:
+        if (args.navigation_instructions is None and not args.tool_family_interface) or not args.expected_plan_uid or args.max_navigation_predictions < 1:
             parser.error("LightNav requires instructions, expected-plan-uid and a positive prediction cap")
-        navigation_instructions = json.loads(args.navigation_instructions.read_text(encoding="utf-8"))
+        navigation_instructions = (json.loads(args.navigation_instructions.read_text(encoding="utf-8"))
+                                   if args.navigation_instructions else {})
         if not isinstance(navigation_instructions, dict) or not all(
             isinstance(k, str) and k.isdigit() and isinstance(v, str) and v.strip()
             for k, v in navigation_instructions.items()
@@ -219,6 +225,15 @@ def main() -> None:
                     navigation_recovery_instructions=recovery_instructions,
                     max_navigation_predictions=args.max_navigation_predictions)
     metadata['mixed_teacher_collection']=args.collect_recovery_after is not None
+    metadata['tool_family_interface'] = {
+        'enabled': args.tool_family_interface,
+        'version': 'mshab-tool-family/1' if args.tool_family_interface else None,
+        'families': ['navigate', 'pick', 'place'],
+        'residual_family_adapters': False,
+        'learned_progress_available': False,
+        'feedback': 'benchmark_completion_and_disclosed_grasp_rules',
+        'scope': 'coarse_skills_heterogeneous_backends',
+    }
     metadata['training_collection']=args.training_collection
     metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
     metadata['stop_after_subtasks']=args.stop_after_subtasks
@@ -289,7 +304,7 @@ def main() -> None:
             if args.dry_run:
                 raise ProtocolError('Organizer requires actual VLM mode')
             from bvi.organizer import OrganizerView, GraspMonitor
-            organizer = OrganizerView(adapter, specs, args.organizer_slice_steps)
+            organizer = OrganizerView(adapter, specs, args.organizer_slice_steps, args.tool_family_interface)
             if 'pick' in skills:
                 if args.inject_closure_fault:
                     from bvi.organizer import InjectedClosureFault
@@ -310,7 +325,8 @@ def main() -> None:
                 transport = (OpenAITransport(args.model, image_detail=args.image_detail,
                                             reasoning_effort=args.reasoning_effort)
                              if args.provider == "openai" else AnthropicTransport(args.model))
-            coordinator = VLMCoordinator(transport, organizer.specs if organizer else specs, logger, budget)
+            coordinator = VLMCoordinator(transport, organizer.specs if organizer else specs, logger, budget,
+                                         tool_interface=args.tool_family_interface)
         for index in range(args.max_calls):
             if adapter.ended:
                 reason = "environment_success" if bool(scalar(adapter.last_info.get("success", False))) else "environment_ended"
