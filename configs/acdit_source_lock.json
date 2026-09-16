@@ -1,0 +1,19 @@
+{
+  "code_url": "https://github.com/PKU-HMI-Lab/AC-DiT",
+  "commit": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+  "files": {
+    "model_wrappers/mshab_model.py": "35bf2a8df520b4962f9c90da9e967ba6a9ab6609e5bf37a493d960773bda31de",
+    "scripts/eval_mshab.py": "f4370dfce3e043f1d4c3b59884cd60523de226bb3f210fe814c0aef2e9c3417c",
+    "data/hdf5_mshab_dataset.py": "68f4cba06a3bf0abf58d2342c0ef7df88fa72b25f2c273bca219e5512a70e936",
+    "data/mshab/encode_instructions.py": "274aeb242b36a885731a1441fd9b74e58b3c2dc70ca591914e4a5b3034176543",
+    "train/dataset.py": "0b8a79f596fd02263e0f2b2519a976988b7bbcf1e08c8f66419f830ce347442f",
+    "configs/config.yaml": "0e1e962f33a2fbca7faa56e9372e180aa95e7b52c3129270704e66e5683a85f1",
+    "configs/state_vec.py": "6f8816b75ac6d80e405b0696c5aec6409715bab484c3f22bf7a599323dabd551",
+    "models/acdit_runner.py": "a90ce91ae96b28c6a47e9f29fa652a992513bb69976ec8e242ceab4b74c4f4f4",
+    "models/rdt/model.py": "e4e58015e6882830127ff5c789ad93864adb0685827cc223f840d217d5370740",
+    "models/multimodal_encoder/siglip_lang_encoder.py": "d2accfc486f1bc50f23731d7cf0a185d7a3b8727755276dad43a3bd4ea5c3e11",
+    "third_party/ManiSkill/mani_skill/agents/robots/fetch/fetch.py": "cfa07e1dac21bd75f9f63f31742f4d06dd374ab46eb439b5ab367700100a4b39",
+    "third_party/ManiSkill/mani_skill/envs/utils/observations/observations.py": "45f3138e005e9ed0eb28607ec07251c0c60951ffa69ef00e11fa828aa3427e23",
+    "third_party/mshab/mshab/envs/sequential_task.py": "a4230a26514f83c371e2a2c24a9440b7044fcdde675c16df2849a6717ec1c54c"
+  }
+}
