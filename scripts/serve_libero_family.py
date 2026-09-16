@@ -64,6 +64,19 @@ class FamilyPolicy:
         }
 
     def infer(self, obs):
+        if obs.get("experiment_control") == "restore_prefix_rng":
+            count = obs["prediction_count"]
+            if not isinstance(count, int) or not 0 <= count <= 520:
+                raise ValueError("Invalid prefix prediction count")
+            self.rng = jax.random.key(0)
+            for _ in range(count):
+                self.rng, _ = jax.random.split(self.rng)
+            self.active = self.call = self.instruction = None
+            return {
+                "rng": np.asarray(jax.random.key_data(self.rng)),
+                "prediction_count": count,
+                "checkpoint_sha256": self.checkpoint_sha256,
+            }
         family = obs.get("tool_family")
         call = obs.get("call_id")
         text = obs.get("prompt")

@@ -1,0 +1,28 @@
+{
+  "schema": "bvi.recovery-experiment-design/1",
+  "status": "runner_implemented_local_tests_passed_gpu_validation_pending",
+  "spending_authorization": "TAPT010_see_private_finance_ledger",
+  "task": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+  "suite": "libero_10",
+  "initial_state_indices": [0, 1, 2, 3, 4],
+  "environment_seed": 7,
+  "checkpoint_sha256": "ee48e60dd979985cfd17ee126b1c703bd7c29f82907821cb2e801e66d90b67f2",
+  "coordinator_model": "gpt-5.6-luna",
+  "conditions": ["learned_feedback", "bounded_call_no_feedback"],
+  "progress_dependent_transition_guard": false,
+  "diagnostics_visible_to_coordinator": false,
+  "interventions": [
+    {"name": "sham", "world_translation_m": [0.0, 0.0, 0.0]},
+    {"name": "pregrasp_target_shift", "world_translation_m": [0.03, 0.0, 0.0]}
+  ],
+  "intervention_target": "cream_cheese_box",
+  "trigger": "first_valid_pregrasp_boundary_in_shared_prefix",
+  "prefix_source": "TAPT009_tapt-new-memory-recovery_all_five_traces_first_cream_cheese_grasp_boundary",
+  "state_reconstruction": "fresh_seeded_environment_exact_action_prefix_replay_then_state_hash_gate",
+  "invalid_intervention": "record_exclusion_stop_pair_no_replacement",
+  "branch_episode_count_planned": 20,
+  "action_budget_including_prefix": 520,
+  "request_budget_including_prefix": 20,
+  "paired_snapshot_required": ["simulator", "observations", "policy_rng", "action_queue", "invocation", "monitor", "planner_history", "budget_counters"],
+  "claim": "combined_progress_feedback_and_event_triggering_diagnostic_not_official_benchmark_score"
+}

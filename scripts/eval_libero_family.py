@@ -13,6 +13,7 @@ from bvi.protocol import ImageFrame
 from bvi.tool_family import FamilyInvocation, validate_instruction_length
 from bvi.progress_monitor import ProgressMonitor, THRESHOLDS
 from bvi.task_memory import object_memory, transition_rejection
+from bvi.recovery_experiment import visible_history, public_feedback, progress_event
 from eval_libero_baseline import element
 
 sys.path.insert(0, "/workspace/tapt/author/examples/libero/openvla_eval_port")
@@ -47,7 +48,19 @@ def main():
     )
     p.add_argument("--authorization-id", default="TAPT007")
     p.add_argument("--bridge-directory", default="/workspace/tapt/bridge")
+    p.add_argument("--recovery-prefix")
+    p.add_argument("--episode-index", type=int)
+    p.add_argument("--feedback-disabled", action="store_true")
+    p.add_argument("--displacement-x", type=float, default=0.0)
+    p.add_argument("--recovery-audit-only", action="store_true")
+    p.add_argument("--expected-state-hash")
     a = p.parse_args()
+    if a.recovery_prefix and (
+        a.mode != "tapt" or a.episode_index not in range(5) or a.resume
+    ):
+        raise ValueError("Recovery requires one fresh TAPT episode 0..4")
+    if a.feedback_disabled and not a.recovery_prefix:
+        raise ValueError("Feedback ablation requires recovery protocol")
     out = pathlib.Path(a.output)
     out.mkdir(parents=True, exist_ok=a.resume)
     config_path = out / "coordinator-config.json"
@@ -55,6 +68,10 @@ def main():
         "instruction_limit_mode": a.instruction_limit_mode,
         "coordinator_mode": a.coordinator_mode,
         "authorization_id": a.authorization_id,
+        "recovery_prefix": a.recovery_prefix,
+        "feedback_disabled": a.feedback_disabled,
+        "displacement_x": a.displacement_x,
+        "progress_transition_guard": not bool(a.recovery_prefix),
     }
     if (
         a.resume
@@ -95,10 +112,10 @@ def main():
     )
     assert [r["episode"] for r in summaries] == list(range(len(summaries)))
     # Restore the reset sequence without replaying policy actions or API calls.
-    for _ in range(len(summaries)):
+    for _ in range(a.episode_index if a.recovery_prefix else len(summaries)):
         env.reset()
     try:
-        for ep in range(len(summaries), 5):
+        for ep in [a.episode_index] if a.recovery_prefix else range(len(summaries), 5):
             env.reset()
             state = suite.get_task_init_states(1)[ep]
             obs = env.set_init_state(state)
@@ -115,6 +132,39 @@ def main():
             rejected_feedback = None
             events = collections.Counter()
             start = time.monotonic()
+            if a.recovery_prefix:
+                from recovery_runtime import reconstruct
+
+                obs, prefix, frames, state_hash = reconstruct(
+                    env, obs, a.recovery_prefix, [a.displacement_x, 0.0, 0.0], out
+                )
+                reset = client.infer(
+                    {
+                        "experiment_control": "restore_prefix_rng",
+                        "prediction_count": prefix["predictions"],
+                    }
+                )
+                (out / "policy-state.json").write_text(
+                    json.dumps(
+                        {
+                            "rng": np.asarray(reset["rng"]).tolist(),
+                            "checkpoint_sha256": reset["checkpoint_sha256"],
+                        }
+                    )
+                )
+                if a.expected_state_hash and state_hash != a.expected_state_hash:
+                    raise ValueError(
+                        "Paired state hash mismatch; no API call permitted"
+                    )
+                if a.recovery_audit_only:
+                    print("RECOVERY AUDIT", ep, state_hash, flush=True)
+                    return
+                if not a.expected_state_hash:
+                    raise ValueError(
+                        "Online recovery requires audited paired state hash"
+                    )
+                step, calls = len(prefix["actions"]), prefix["calls"]
+                history = visible_history(prefix["history"], not a.feedback_disabled)
             with (out / f"episode{ep:03d}.jsonl").open("w") as log:
 
                 def emit(event, **kw):
@@ -141,7 +191,12 @@ def main():
                         request = VLMRequest(
                             SYSTEM
                             + (
-                                " Use short complete English sentences, preferably below 120 characters. Object memory records attempts, not confirmed goals. A low-progress reach timeout requires re-localization before grasp."
+                                " Use short complete English sentences, preferably below 120 characters. Object memory records attempts, not confirmed goals."
+                                + (
+                                    ""
+                                    if a.recovery_prefix
+                                    else " A low-progress reach timeout requires re-localization before grasp."
+                                )
                                 if a.coordinator_mode == "memory-recovery"
                                 else ""
                             ),
@@ -159,7 +214,9 @@ def main():
                                         if a.coordinator_mode == "memory-recovery"
                                         else {}
                                     ),
-                                    "feedback_source": "learned_progress"
+                                    "feedback_source": "bounded_call"
+                                    if a.feedback_disabled
+                                    else "learned_progress"
                                     if a.mode == "tapt"
                                     else "simulator_rule",
                                 }
@@ -212,6 +269,7 @@ def main():
                         rejected_feedback = (
                             transition_rejection(history, family, target)
                             if a.coordinator_mode == "memory-recovery"
+                            and not a.recovery_prefix
                             else None
                         )
                         if rejected_feedback:
@@ -272,10 +330,15 @@ def main():
                                     ):
                                         raise ValueError("Routing mismatch")
                                     progress = np.asarray(pred["progress"]).reshape(-1)
-                                    if not np.isfinite(progress).all():
+                                    if (
+                                        not a.feedback_disabled
+                                        and not np.isfinite(progress).all()
+                                    ):
                                         raise ValueError("Nonfinite learned progress")
                                     last_progress = float(progress[0])
-                                    trigger = monitor.update(last_progress)
+                                    trigger = progress_event(
+                                        monitor, last_progress, not a.feedback_disabled
+                                    )
                                     emit(
                                         "learned_progress",
                                         call_id=aid,
@@ -364,6 +427,10 @@ def main():
                         if a.mode == "standard":
                             feedback["rule_completed"] = rule
                         feedback["end_step"] = step
+                        if a.recovery_prefix:
+                            feedback = public_feedback(
+                                feedback, not a.feedback_disabled
+                            )
                         history.append(feedback)
                         emit(
                             "invocation_finished",
