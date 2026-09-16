@@ -14,6 +14,7 @@ Every video is linked by its exact filename and grouped by test task. Folder nam
 
 | Test task / batch | Video filename | What it establishes |
 |---|---|---|
+| `sac-native-reference-2026-09-16-run01` | [sac-reference-seed2025.mp4](sac-native-reference-2026-09-16-run01/sac-reference-seed2025.mp4) | Official SAC reference: seed 2025 native Pick success at step 61. Observation-matched reset; not VLA or full-state paired evidence. |
 | `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2025-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2025-failed.mp4) | Seed 2025: native cumulative-force failure before grasp; no GPT or TAPT. |
 | `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2026-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2026-failed.mp4) | Seed 2026: native cumulative-force failure before grasp; no GPT or TAPT. |
 | `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2027-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2027-failed.mp4) | Seed 2027: native cumulative-force failure before grasp; no GPT or TAPT. |

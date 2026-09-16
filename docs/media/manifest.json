@@ -648,6 +648,12 @@
       "path": "acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2028-failed.mp4",
       "sha256": "14b271cd60a42c61a733c93f792fcddc7eef8ba99626be8f41bcd4ed608dcf74",
       "bytes": 234662
+    },
+    {
+      "filename": "sac-reference-seed2025.mp4",
+      "path": "sac-native-reference-2026-09-16-run01/sac-reference-seed2025.mp4",
+      "sha256": "d6349ea481099a05118d7eab1d0c9f031c850e8f706d20beb1c286edcf2c4a53",
+      "bytes": 295244
     }
   ]
 }
