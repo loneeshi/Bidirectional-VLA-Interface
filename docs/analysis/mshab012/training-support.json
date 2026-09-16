@@ -1,0 +1,365 @@
+{
+  "selection_sha256": "16e95daaf0c7c33605b77e7cd76b95614676c37bfb574db3051d3b266b808869",
+  "norm_sha256": "51a5353c58297562842b5ff3fba4da8cac822d754fff71af7b5116d7919b5833",
+  "total_selected_frames": 1228,
+  "selected_sources": 24,
+  "selected_recovery_segments": 14,
+  "full_pick_starts": 13,
+  "initial_base_xy": [
+    -0.07264751195907593,
+    -0.9802101850509644
+  ],
+  "initial_yaw": -1.7902731895446777,
+  "initial_yaw_velocity": -1.1998132467269897,
+  "initial_state_outside_training_quantiles": [
+    {
+      "index": 6,
+      "value": 0.5622078776359558,
+      "q01": 0.5618972405672074,
+      "q99": 0.5621084038019181
+    }
+  ],
+  "pick_segment_starts": [
+    {
+      "source": "workspace-live-teachers/workspace-lightnav-11",
+      "recovery": false,
+      "events_sha256": "dcb99572f739fe5e7252ea9c89ee4e3ec00b4eafc97f1186a90d47ad5dafd1f9",
+      "frames": 47,
+      "base_xy": [
+        -0.20078825950622559,
+        -0.930133581161499
+      ],
+      "yaw": -1.6966369152069092,
+      "yaw_velocity": -1.2004375457763672,
+      "base_xy_distance_m": 0.13757804126765563,
+      "wrapped_yaw_difference_rad": -0.09363627433776855
+    },
+    {
+      "source": "workspace-live-teachers/workspace-lightnav-13",
+      "recovery": false,
+      "events_sha256": "9cbca9a6ffecca1232f65367b5ea1c1cf22dee71d73180d5cb529257366df863",
+      "frames": 46,
+      "base_xy": [
+        -0.20078825950622559,
+        -0.930133581161499
+      ],
+      "yaw": -1.6966369152069092,
+      "yaw_velocity": -1.2004375457763672,
+      "base_xy_distance_m": 0.13757804126765563,
+      "wrapped_yaw_difference_rad": -0.09363627433776855
+    },
+    {
+      "source": "workspace-live-teachers/workspace-lightnav-14",
+      "recovery": false,
+      "events_sha256": "66c245b06e94c651c9512d51ff21f91796a70d52cdb2ce496cbf9d8b4003edfc",
+      "frames": 47,
+      "base_xy": [
+        -0.13544125854969025,
+        -0.8668643832206726
+      ],
+      "yaw": -2.29217267036438,
+      "yaw_velocity": -0.15334227681159973,
+      "base_xy_distance_m": 0.12957748802719574,
+      "wrapped_yaw_difference_rad": 0.5018994808197021
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-01",
+      "recovery": false,
+      "events_sha256": "fa717fd1db4ec2037067ed14f71a2c0f4c117e988e90faa5356aa44a5eae1a8e",
+      "frames": 52,
+      "base_xy": [
+        -0.00685706315562129,
+        -0.9797192811965942
+      ],
+      "yaw": -2.197831630706787,
+      "yaw_velocity": -0.1958232820034027,
+      "base_xy_distance_m": 0.06579228024893362,
+      "wrapped_yaw_difference_rad": 0.4075584411621094
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-02",
+      "recovery": false,
+      "events_sha256": "13a18dfc9623f4e4b4a557959eca196b6dabb57efda0d86902f6c39b7b30269b",
+      "frames": 55,
+      "base_xy": [
+        -0.007142763119190931,
+        -0.9795061349868774
+      ],
+      "yaw": -2.1961050033569336,
+      "yaw_velocity": -0.10836795717477798,
+      "base_xy_distance_m": 0.06550853232266127,
+      "wrapped_yaw_difference_rad": 0.40583181381225586
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-03",
+      "recovery": false,
+      "events_sha256": "a36d5058508747e8fe4384cbf527793556c1e0a6d38f867bce99f75695596803",
+      "frames": 44,
+      "base_xy": [
+        -0.007142763119190931,
+        -0.9795061349868774
+      ],
+      "yaw": -2.1961050033569336,
+      "yaw_velocity": -0.10836795717477798,
+      "base_xy_distance_m": 0.06550853232266127,
+      "wrapped_yaw_difference_rad": 0.40583181381225586
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-04",
+      "recovery": false,
+      "events_sha256": "f63ccfed821bddf659913120ac7ee702f4d5db21c8e9fb1e83b72f54e2fc77d9",
+      "frames": 53,
+      "base_xy": [
+        -0.00685706315562129,
+        -0.9797192811965942
+      ],
+      "yaw": -2.197831630706787,
+      "yaw_velocity": -0.1958232820034027,
+      "base_xy_distance_m": 0.06579228024893362,
+      "wrapped_yaw_difference_rad": 0.4075584411621094
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-05",
+      "recovery": false,
+      "events_sha256": "b9b372ff7d707cb63f79b9a91057937559576f979526a425c89190d6f1f50ccc",
+      "frames": 48,
+      "base_xy": [
+        -0.00685706315562129,
+        -0.9797192811965942
+      ],
+      "yaw": -2.197831630706787,
+      "yaw_velocity": -0.1958232820034027,
+      "base_xy_distance_m": 0.06579228024893362,
+      "wrapped_yaw_difference_rad": 0.4075584411621094
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-06",
+      "recovery": false,
+      "events_sha256": "9c58d71742056d8a8ad39948576b607c397da478050a831bafadc758a9c7f837",
+      "frames": 43,
+      "base_xy": [
+        -0.007142763119190931,
+        -0.9795061349868774
+      ],
+      "yaw": -2.1961050033569336,
+      "yaw_velocity": -0.10836795717477798,
+      "base_xy_distance_m": 0.06550853232266127,
+      "wrapped_yaw_difference_rad": 0.40583181381225586
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-07",
+      "recovery": false,
+      "events_sha256": "3c0a1ac5f32924439e89684149ef34b20d67cb7f650c34f373136c94043dd8db",
+      "frames": 51,
+      "base_xy": [
+        -0.006857074331492186,
+        -0.979719340801239
+      ],
+      "yaw": -2.197831869125366,
+      "yaw_velocity": -0.1958189457654953,
+      "base_xy_distance_m": 0.06579226862866544,
+      "wrapped_yaw_difference_rad": 0.4075586795806885
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-08",
+      "recovery": false,
+      "events_sha256": "2984fa9c957b78ad5d0f48b020e7697278e29d5f2c249748df31bebc600632fe",
+      "frames": 51,
+      "base_xy": [
+        -0.00685706315562129,
+        -0.9797192811965942
+      ],
+      "yaw": -2.197831630706787,
+      "yaw_velocity": -0.1958232820034027,
+      "base_xy_distance_m": 0.06579228024893362,
+      "wrapped_yaw_difference_rad": 0.4075584411621094
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-09",
+      "recovery": false,
+      "events_sha256": "d9854727b817af7560d5b97c8d426a238c64da54b704c14b0623da1a6de190eb",
+      "frames": 44,
+      "base_xy": [
+        -0.007142763119190931,
+        -0.9795061349868774
+      ],
+      "yaw": -2.1961050033569336,
+      "yaw_velocity": -0.10836795717477798,
+      "base_xy_distance_m": 0.06550853232266127,
+      "wrapped_yaw_difference_rad": 0.40583181381225586
+    },
+    {
+      "source": "workspace-live-teachers/workspace-ppo-10",
+      "recovery": false,
+      "events_sha256": "729abedec35b43d399f80a3af03b14735611449bee5fa90d78d280cc4723bd3b",
+      "frames": 43,
+      "base_xy": [
+        -0.007142763119190931,
+        -0.9795061349868774
+      ],
+      "yaw": -2.1961050033569336,
+      "yaw_velocity": -0.10836795717477798,
+      "base_xy_distance_m": 0.06550853232266127,
+      "wrapped_yaw_difference_rad": 0.40583181381225586
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-lightnav-07-prefix5",
+      "recovery": true,
+      "events_sha256": "8f23efee00a87e9ad2f21a88f6e2c63d83b1f8de44cfbd8e9d7d20c196d4e592",
+      "frames": 38,
+      "base_xy": [
+        -0.1546318531036377,
+        -1.1845085620880127
+      ],
+      "yaw": -2.0477166175842285,
+      "yaw_velocity": -0.18416035175323486,
+      "base_xy_distance_m": 0.22013463846673437,
+      "wrapped_yaw_difference_rad": 0.2574434280395508
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-lightnav-08-prefix10",
+      "recovery": true,
+      "events_sha256": "669a00d61e777d5f3f5ee32d139862efdb9393eec8afc113170dc8bddee70817",
+      "frames": 38,
+      "base_xy": [
+        -0.2511858642101288,
+        -1.3583900928497314
+      ],
+      "yaw": -2.0580976009368896,
+      "yaw_velocity": 0.1275184005498886,
+      "base_xy_distance_m": 0.41820567414515675,
+      "wrapped_yaw_difference_rad": 0.2678244113922119
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-lightnav-10-prefix30",
+      "recovery": true,
+      "events_sha256": "1a20d587b052a732d0db6bac97b35b59c1199ce1496b269a4dbc76f1d00e3674",
+      "frames": 62,
+      "base_xy": [
+        -0.536569356918335,
+        -2.038702964782715
+      ],
+      "yaw": -2.1083991527557373,
+      "yaw_velocity": -0.06327575445175171,
+      "base_xy_distance_m": 1.1556947879845487,
+      "wrapped_yaw_difference_rad": 0.31812596321105957
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-lightnav-11-prefix20",
+      "recovery": true,
+      "events_sha256": "dd77f7a1a7975523a34ec9714786af16d9b9c647bc78e82587d5ac7a5af2876e",
+      "frames": 21,
+      "base_xy": [
+        -0.5665801167488098,
+        -1.7813146114349365
+      ],
+      "yaw": -2.0620064735412598,
+      "yaw_velocity": 0.14899218082427979,
+      "base_xy_distance_m": 0.9411363982156702,
+      "wrapped_yaw_difference_rad": 0.27173328399658203
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-lightnav-12-prefix30",
+      "recovery": true,
+      "events_sha256": "ab2215d865bc06bfb69f5ca06ccf8cae1eb1735a0943b1bcc536175307b1d1f5",
+      "frames": 46,
+      "base_xy": [
+        -0.542583167552948,
+        -1.9343715906143188
+      ],
+      "yaw": -2.017326831817627,
+      "yaw_velocity": -0.024033835157752037,
+      "base_xy_distance_m": 1.0636087195322717,
+      "wrapped_yaw_difference_rad": 0.22705364227294922
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-ppo-01-prefix5",
+      "recovery": true,
+      "events_sha256": "1d9ea8f6e7f6f88aee3850edfa3a38b46f15edbcb3648d86de8208c359b77fee",
+      "frames": 42,
+      "base_xy": [
+        -0.14607320725917816,
+        -1.1753782033920288
+      ],
+      "yaw": -2.193516254425049,
+      "yaw_velocity": -0.2669892907142639,
+      "base_xy_distance_m": 0.2085231117010331,
+      "wrapped_yaw_difference_rad": 0.4032430648803711
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-ppo-02-prefix10",
+      "recovery": true,
+      "events_sha256": "8fe655b1b459fba48538d2f2a5196fcfdba97b7f72aa66324ad881f156b9258e",
+      "frames": 42,
+      "base_xy": [
+        -0.29040274024009705,
+        -1.3736956119537354
+      ],
+      "yaw": -2.237122058868408,
+      "yaw_velocity": -0.19372431933879852,
+      "base_xy_distance_m": 0.4497200469498503,
+      "wrapped_yaw_difference_rad": 0.44684886932373047
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-ppo-03-prefix20",
+      "recovery": true,
+      "events_sha256": "f84cb728c7eb22698a0bf877b3e28c7a3d895d82158e9d5c46fa9f825f958042",
+      "frames": 45,
+      "base_xy": [
+        -0.5653231143951416,
+        -1.7547607421875
+      ],
+      "yaw": -2.1706087589263916,
+      "yaw_velocity": 0.44072359800338745,
+      "base_xy_distance_m": 0.9179639507062671,
+      "wrapped_yaw_difference_rad": 0.38033556938171387
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-ppo-05-prefix20",
+      "recovery": true,
+      "events_sha256": "0649c421df4afcb9656dc4c4af74e7e5561c3053d50ef000da9cc65e67e47289",
+      "frames": 45,
+      "base_xy": [
+        -0.5653102993965149,
+        -1.7644493579864502
+      ],
+      "yaw": -2.1662356853485107,
+      "yaw_velocity": 0.29815617203712463,
+      "base_xy_distance_m": 0.9261466959894431,
+      "wrapped_yaw_difference_rad": 0.375962495803833
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-supplement-lightnav-02-prefix5",
+      "recovery": true,
+      "events_sha256": "dc146b5b012a70efc1fd72746367e14b624d557c0e57e881db3eec024ee18110",
+      "frames": 43,
+      "base_xy": [
+        -0.13976489007472992,
+        -1.0954508781433105
+      ],
+      "yaw": -1.9570014476776123,
+      "yaw_velocity": -0.25150734186172485,
+      "base_xy_distance_m": 0.13336101300426598,
+      "wrapped_yaw_difference_rad": 0.1667282581329346
+    },
+    {
+      "source": "workspace-recovery-teachers/recovery-supplement-ppo-01-prefix5",
+      "recovery": true,
+      "events_sha256": "8e766042bf5abee756a03c48e94244ff222839c3d7f8be973650245358ed8e24",
+      "frames": 53,
+      "base_xy": [
+        -0.14636476337909698,
+        -1.1753056049346924
+      ],
+      "yaw": -2.191256523132324,
+      "yaw_velocity": -0.2653147280216217,
+      "base_xy_distance_m": 0.20855803992301697,
+      "wrapped_yaw_difference_rad": 0.4009833335876465
+    }
+  ],
+  "limitations": [
+    "Marginal quantile inclusion does not establish joint visual/state distribution support.",
+    "Only first-object Pick starts are compared; recovery starts are mid-rollout.",
+    "No causal policy intervention or online normalization test was performed."
+  ]
+}
