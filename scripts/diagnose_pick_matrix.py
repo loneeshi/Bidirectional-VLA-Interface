@@ -6,6 +6,7 @@ not an assumption. Privileged contact diagnostics never enter policy inputs.
 import argparse
 import hashlib
 import json
+import os
 import time
 from pathlib import Path
 
@@ -85,6 +86,8 @@ def main():
     p.add_argument('--component-probes', action='store_true', help='Add three labelled live SAC channel interventions for the first seed')
     p.add_argument('--only-case', help='Run one case in a fresh simulation process; share audited references on disk')
     args = p.parse_args()
+    if os.environ.get('PYTHONHASHSEED') != '0':
+        p.error('Start this process with PYTHONHASHSEED=0; Python set iteration affects MS-HAB scene construction')
     if not 1 <= args.max_steps <= 120 or not 1 <= args.wall_seconds <= 2400:
         p.error('Diagnostic limits exceeded')
     if not 1 <= len(args.noise_seeds) <= 3 or len(set(args.noise_seeds)) != len(args.noise_seeds) or any(not 0 <= s < 2**32 for s in args.noise_seeds):
@@ -205,6 +208,7 @@ def main():
             monitor = GraspMonitor(skill)
             monitor.start(request, observation)
             logger.emit('diagnostic_config', prompt=prompt, interrupt=interrupt, noise_seed=noise_seed,
+                        python_hash_seed=os.environ['PYTHONHASHSEED'],
                         intervention=component, teacher_assisted=component is not None,
                         source_sha256=hashlib.sha256((args.source/'events.jsonl').read_bytes()).hexdigest())
             reason = 'step_limit'
