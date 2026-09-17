@@ -91,7 +91,7 @@
   "authorization": "existing_total_budget_only; provider reconciliation required beforelaunch",
   "gpu_concurrency": 1,
   "authoritative_plan": "docs/weekly-baseline-v2-updated-user-plan.md",
-  "authoritative_plan_sha256": "e0aff2e1158fa00072d7144c7b7702c1d0eeff22adbad2be63e97f4a82722a58",
+  "authoritative_plan_sha256": "e7aeeefe787bc73408c938bed624a7860a885e68eba8bb407d5612474113efdb",
   "S1": {
     "scope": "S1_faithful_target_domain_pick_sft",
     "throughput_demo_count": 20,
@@ -188,5 +188,7 @@
   },
   "C_line": "existingconditions_andnavigationpanels_below_are_controls_not_substitutes_for_S3",
   "api_limit_scope": "2USD technicalceiling appliesClineonly; S3requiresseparateboundedallocationwithinexistingtotal",
-  "estimated_max_api_usd_C": 2.0
+  "estimated_max_api_usd_C": 2.0,
+  "execution_schedule": "dependency_gates_immediately_no_calendar_wait",
+  "reporting_timezone": "America/New_York"
 }
