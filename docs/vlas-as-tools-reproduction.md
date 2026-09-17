@@ -1,5 +1,10 @@
 # VLAs-as-Tools reproduction: priority and acceptance gates
 
+**Active priority, 2026-09-17 UTC:** [MS-HAB remains this week's main delivery](mshab-reproduction-priority.md).
+Limit LIBERO to a2–4hour author-component/reference audit; full DROID/LIBERO
+reproduction is not a prerequisite for the MS-HAB method port. The historical
+results below remain component evidence, not paper-level reproduction.
+
 Status updated 2026-09-15: [TAPT009](tapt-libero-run03.md) completed corrected online evaluation: standard 5/5, old TAPT 5/5, old TAPT with memory 4/5 (one infrastructure failure), new TAPT with memory 5/5. The minimal single-task method loop now has native-success evidence. This does not establish recovery gains or reproduce paper scores. Next: [implementation alignment and controlled recovery design](tapt-method-alignment-and-recovery.md). No further training is justified by these ceiling-level results alone.
 
 **Availability correction:** [relevant code was found in the co-first author's public OpenPI fork](vlas-as-tools-code-audit.md). The sections below preserve the **pre-execution** audit and implementation proposal, not the current LIBERO implementation inventory. Their missing-interface findings still must be checked separately for the older MS-HAB path.
