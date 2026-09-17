@@ -679,6 +679,60 @@
       "recorded_at_utc": "2026-09-17T01:06:45.941634+00:00",
       "description": "Corrected timing; failed at27, no grasp; not paper reproduction",
       "experiment_id": "FETCH-PROGRESS-TIMING-PAIR"
+    },
+    {
+      "filename": "train-seed3000-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-current-handoffs-2026-09-17-run01/train-seed3000-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "4865a88e02bbfc5941810158508bb7d60af36631e9c8e3959e623a021f216b9d",
+      "bytes": 104771,
+      "recorded_at_utc": "2026-09-17T01:28:05.425302+00:00",
+      "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
+      "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
+    },
+    {
+      "filename": "train-seed3001-fetch-tapt-pick-episode000.mp4",
+      "path": "fetch-current-handoffs-2026-09-17-run01/train-seed3001-fetch-tapt-pick-episode000.mp4",
+      "sha256": "4fb51d92d965d204bf474d05385c3bed6dd7eea448ea78f692e1d53fa04e2ce4",
+      "bytes": 101734,
+      "recorded_at_utc": "2026-09-17T01:29:31.405511+00:00",
+      "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
+      "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
+    },
+    {
+      "filename": "train-seed3002-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-current-handoffs-2026-09-17-run01/train-seed3002-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "e765a50115ed169bed37dc0bd0b9e436ab81d67673babdaa04a6cf23cf171ac5",
+      "bytes": 159552,
+      "recorded_at_utc": "2026-09-17T01:30:58.178885+00:00",
+      "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
+      "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
+    },
+    {
+      "filename": "train-seed3003-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-current-handoffs-2026-09-17-run01/train-seed3003-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "875e5aca004b53396ae8d3f4e0cf597b11d0685833a2a0d3506a70b0542791ca",
+      "bytes": 306933,
+      "recorded_at_utc": "2026-09-17T01:32:30.800485+00:00",
+      "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
+      "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
+    },
+    {
+      "filename": "validation-seed3020-fetch-tapt-pick-episode000.mp4",
+      "path": "fetch-current-handoffs-2026-09-17-run01/validation-seed3020-fetch-tapt-pick-episode000.mp4",
+      "sha256": "95205d151698ceb80690eebf43702fa59ac9abd0513deae752723384207ac2ba",
+      "bytes": 177311,
+      "recorded_at_utc": "2026-09-17T01:34:47.538422+00:00",
+      "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
+      "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
+    },
+    {
+      "filename": "validation-seed3021-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-current-handoffs-2026-09-17-run01/validation-seed3021-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "ece357df0ddbffa8b39aa0c8349ac0a69570616db1a25013d0df7ed7522476a7",
+      "bytes": 245628,
+      "recorded_at_utc": "2026-09-17T01:36:28.818215+00:00",
+      "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
+      "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
     }
   ]
 }

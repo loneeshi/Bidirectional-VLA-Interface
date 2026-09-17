@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3000",
+    "split": "train",
+    "seed": 3000,
+    "scene_split": "train",
+    "task": "pick"
+  },
+  {
+    "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3001",
+    "split": "train",
+    "seed": 3001,
+    "scene_split": "train",
+    "task": "pick"
+  },
+  {
+    "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3002",
+    "split": "train",
+    "seed": 3002,
+    "scene_split": "train",
+    "task": "pick"
+  },
+  {
+    "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3003",
+    "split": "train",
+    "seed": 3003,
+    "scene_split": "train",
+    "task": "pick"
+  },
+  {
+    "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/validation-seed3020",
+    "split": "validation",
+    "seed": 3020,
+    "scene_split": "train",
+    "task": "pick"
+  },
+  {
+    "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/validation-seed3021",
+    "split": "validation",
+    "seed": 3021,
+    "scene_split": "train",
+    "task": "pick"
+  }
+]

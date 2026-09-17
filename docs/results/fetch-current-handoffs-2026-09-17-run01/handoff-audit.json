@@ -1,0 +1,81 @@
+{
+  "handoffs": [
+    {
+      "partition": "train",
+      "seed": 3001,
+      "family": "grasp",
+      "step": 11,
+      "tcp_object_distance_m": 0.03525611205841908,
+      "is_grasped": false
+    },
+    {
+      "partition": "train",
+      "seed": 3001,
+      "family": "move",
+      "step": 16,
+      "tcp_object_distance_m": 0.023943185812803178,
+      "is_grasped": true
+    },
+    {
+      "partition": "train",
+      "seed": 3002,
+      "family": "grasp",
+      "step": 17,
+      "tcp_object_distance_m": 0.12907819305381946,
+      "is_grasped": false
+    },
+    {
+      "partition": "train",
+      "seed": 3003,
+      "family": "grasp",
+      "step": 63,
+      "tcp_object_distance_m": 0.2661508851943256,
+      "is_grasped": false
+    },
+    {
+      "partition": "train",
+      "seed": 3003,
+      "family": "move",
+      "step": 66,
+      "tcp_object_distance_m": 0.27606007336389127,
+      "is_grasped": false
+    },
+    {
+      "partition": "validation",
+      "seed": 3020,
+      "family": "grasp",
+      "step": 17,
+      "tcp_object_distance_m": 0.012785776287986564,
+      "is_grasped": false
+    },
+    {
+      "partition": "validation",
+      "seed": 3020,
+      "family": "move",
+      "step": 20,
+      "tcp_object_distance_m": 0.01816207888997415,
+      "is_grasped": true
+    },
+    {
+      "partition": "validation",
+      "seed": 3021,
+      "family": "grasp",
+      "step": 31,
+      "tcp_object_distance_m": 0.4221891285329323,
+      "is_grasped": false
+    },
+    {
+      "partition": "validation",
+      "seed": 3021,
+      "family": "move",
+      "step": 34,
+      "tcp_object_distance_m": 0.3431187886134611,
+      "is_grasped": false
+    }
+  ],
+  "task_successes": 0,
+  "episodes": 6,
+  "training_wrong_grasp_anchors": 2,
+  "training_unheld_move_anchors": 1,
+  "scope": "frozen-policy data collection, not benchmark evaluation; physical states audited, only invocation-start temporal labels used"
+}
