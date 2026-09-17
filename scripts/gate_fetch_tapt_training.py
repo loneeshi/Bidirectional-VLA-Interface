@@ -25,6 +25,7 @@ os.environ.update(CUDA_VISIBLE_DEVICES='GPU-b7ebba23-7824-7601-df32-be55628936c3
 out=root/('runs/fetch-tapt-sft-2026-09-16-run01' if args.full else 'runs/fetch-tapt-gate-2026-09-16')
 out.mkdir(exist_ok=False)
 report={'status':'loading','updates':0,'api_calls':0,'scope':'20-update real-data integration gate, not full SFT',
+        'progress_label_contract':'post_action_position_v1',
         'source_scope':'SAC native starts; actual navigation handoff not yet covered',
         'rank':8,'alpha':8,'progress_weight':.1,'micro_batch':1,'effective_batch':1,
         'full_training_effective_batch':8,'checkpoint_selection':'none: gate only'}

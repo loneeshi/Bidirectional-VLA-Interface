@@ -14,6 +14,8 @@ Every video is linked by its exact filename and grouped by test task. Folder nam
 
 | Test task / batch | Video filename | What it establishes |
 |---|---|---|
+| `fetch-tapt-timing-2026-09-17-run01` | [legacy-pre-action-fetch-tapt-pick-episode000-failed.mp4](fetch-tapt-timing-2026-09-17-run01/legacy-pre-action-fetch-tapt-pick-episode000-failed.mp4) | Old pre-action timing; failed at26, no grasp. |
+| `fetch-tapt-timing-2026-09-17-run01` | [post-action-fetch-tapt-pick-episode000-failed.mp4](fetch-tapt-timing-2026-09-17-run01/post-action-fetch-tapt-pick-episode000-failed.mp4) | Corrected timing; failed at27, no grasp; not paper reproduction. |
 | `fetch-tapt-online-pick-2026-09-17-run01` | [fetch-tapt-pick-episode000-failed.mp4](fetch-tapt-online-pick-2026-09-17-run01/fetch-tapt-pick-episode000-failed.mp4) | Trained TAPT tool harness failed: premature reach/grasp progress thresholds; stopped on learned drop at26. No GPT/navigation, never grasped. |
 | `sac-native-reference-2026-09-16-run01` | [sac-reference-seed2025.mp4](sac-native-reference-2026-09-16-run01/sac-reference-seed2025.mp4) | Official SAC reference: seed 2025 native Pick success at step 61. Observation-matched reset; not VLA or full-state paired evidence. |
 | `acdit-native-pick-2026-09-16-run02` | [acdit-native-pick-seed2025-failed.mp4](acdit-native-pick-2026-09-16-run02/acdit-native-pick-seed2025-failed.mp4) | Seed 2025: native cumulative-force failure before grasp; no GPT or TAPT. |

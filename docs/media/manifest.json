@@ -661,6 +661,24 @@
       "sha256": "25c9287bc1ac3032d9d492e628632243524fcaf60c42702f90f6d19c3e88d436",
       "bytes": 147130,
       "recorded_utc": "2026-09-17T00:27:56.091257+00:00"
+    },
+    {
+      "filename": "legacy-pre-action-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-tapt-timing-2026-09-17-run01/legacy-pre-action-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "25c9287bc1ac3032d9d492e628632243524fcaf60c42702f90f6d19c3e88d436",
+      "bytes": 147130,
+      "recorded_at_utc": "2026-09-17T01:05:31.939166+00:00",
+      "description": "Old pre-action timing; failed at26, no grasp",
+      "experiment_id": "FETCH-PROGRESS-TIMING-PAIR"
+    },
+    {
+      "filename": "post-action-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-tapt-timing-2026-09-17-run01/post-action-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "ccdf1f7246a20289c57db76203f1c17682250c1ab246959da9b1bb4cab734027",
+      "bytes": 152926,
+      "recorded_at_utc": "2026-09-17T01:06:45.941634+00:00",
+      "description": "Corrected timing; failed at27, no grasp; not paper reproduction",
+      "experiment_id": "FETCH-PROGRESS-TIMING-PAIR"
     }
   ]
 }

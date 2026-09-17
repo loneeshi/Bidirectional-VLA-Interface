@@ -1,0 +1,123 @@
+{
+  "status": "complete",
+  "api_calls": 0,
+  "training_updates": 0,
+  "decisions": [
+    {
+      "arm": "legacy-pre-action",
+      "decision_id": "000000",
+      "metadata": {
+        "prediction_step": 0,
+        "family": "reach",
+        "call_id": "tapt-pick-000",
+        "instruction": "Reach the apple with the gripper open.",
+        "instruction_sha256": "20821e526c6658df63793224e85eac66cc1e3b5ae4cb35db1a78040a900afac4",
+        "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+        "seed": 2025,
+        "progress_label_contract": "post_action_position_v1",
+        "progress_consumption": "legacy_pre_action"
+      },
+      "exact_actions": true,
+      "exact_progress": true,
+      "action_max_abs_error": 0.0,
+      "progress_max_abs_error": 0.0
+    },
+    {
+      "arm": "legacy-pre-action",
+      "decision_id": "000008",
+      "metadata": {
+        "prediction_step": 16,
+        "family": "reach",
+        "call_id": "tapt-pick-000",
+        "instruction": "Reach the apple with the gripper open.",
+        "instruction_sha256": "20821e526c6658df63793224e85eac66cc1e3b5ae4cb35db1a78040a900afac4",
+        "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+        "seed": 2025,
+        "progress_label_contract": "post_action_position_v1",
+        "progress_consumption": "legacy_pre_action"
+      },
+      "exact_actions": true,
+      "exact_progress": true,
+      "action_max_abs_error": 0.0,
+      "progress_max_abs_error": 0.0
+    },
+    {
+      "arm": "legacy-pre-action",
+      "decision_id": "000009",
+      "metadata": {
+        "prediction_step": 16,
+        "family": "grasp",
+        "call_id": "tapt-pick-001",
+        "instruction": "Grasp the apple securely.",
+        "instruction_sha256": "21083cf0442b2cd951831134d9d37351f1e01ae00174d04b7c8101d71828743b",
+        "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+        "seed": 2025,
+        "progress_label_contract": "post_action_position_v1",
+        "progress_consumption": "legacy_pre_action"
+      },
+      "exact_actions": true,
+      "exact_progress": true,
+      "action_max_abs_error": 0.0,
+      "progress_max_abs_error": 0.0
+    },
+    {
+      "arm": "post-action",
+      "decision_id": "000000",
+      "metadata": {
+        "prediction_step": 0,
+        "family": "reach",
+        "call_id": "tapt-pick-000",
+        "instruction": "Reach the apple with the gripper open.",
+        "instruction_sha256": "20821e526c6658df63793224e85eac66cc1e3b5ae4cb35db1a78040a900afac4",
+        "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+        "seed": 2025,
+        "progress_label_contract": "post_action_position_v1",
+        "progress_consumption": "post_action_v1"
+      },
+      "exact_actions": true,
+      "exact_progress": true,
+      "action_max_abs_error": 0.0,
+      "progress_max_abs_error": 0.0
+    },
+    {
+      "arm": "post-action",
+      "decision_id": "000008",
+      "metadata": {
+        "prediction_step": 16,
+        "family": "reach",
+        "call_id": "tapt-pick-000",
+        "instruction": "Reach the apple with the gripper open.",
+        "instruction_sha256": "20821e526c6658df63793224e85eac66cc1e3b5ae4cb35db1a78040a900afac4",
+        "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+        "seed": 2025,
+        "progress_label_contract": "post_action_position_v1",
+        "progress_consumption": "post_action_v1"
+      },
+      "exact_actions": true,
+      "exact_progress": true,
+      "action_max_abs_error": 0.0,
+      "progress_max_abs_error": 0.0
+    },
+    {
+      "arm": "post-action",
+      "decision_id": "000009",
+      "metadata": {
+        "prediction_step": 17,
+        "family": "grasp",
+        "call_id": "tapt-pick-001",
+        "instruction": "Grasp the apple securely.",
+        "instruction_sha256": "21083cf0442b2cd951831134d9d37351f1e01ae00174d04b7c8101d71828743b",
+        "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+        "seed": 2025,
+        "progress_label_contract": "post_action_position_v1",
+        "progress_consumption": "post_action_v1"
+      },
+      "exact_actions": true,
+      "exact_progress": true,
+      "action_max_abs_error": 0.0,
+      "progress_max_abs_error": 0.0
+    }
+  ],
+  "all_bitwise_equal": true,
+  "elapsed_seconds": 32.90904242917895
+}

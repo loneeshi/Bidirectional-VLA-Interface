@@ -98,3 +98,8 @@ python scripts/summarize_fetch_progress_audit.py docs/results/fetch-tapt-progres
 ```
 
 GPU 审计耗时259秒，低于900秒上限；进程已退出，GPU1回到15 MiB。原始三份文件下载前后 SHA256 一致。API0次、新租算力USD0，实验室计费未知；历史两台Runpod仍EXITED，40GB存储约USD0.266667/天继续计费。
+
+
+## 后续验证
+
+[时点兼容修复与精确配对复测](fetch-progress-timing-fix.md)已经完成：旧轨迹精确复现，修正后仍在23.44cm切换reach，两组均未抓住物体。时点缺陷不是主要误判的充分解释。6个关键决策从记录输入／随机数重放得到逐位一致的动作和进度。

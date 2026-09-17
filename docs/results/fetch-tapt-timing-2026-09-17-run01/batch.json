@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "seed": 2025,
+  "started_at": "2026-09-17T01:05:31.880133+00:00",
+  "api_calls": 0,
+  "training_updates": 0,
+  "max_seconds_per_episode": 300,
+  "runs": [
+    {
+      "label": "legacy-pre-action",
+      "returncode": 0,
+      "command": [
+        "timeout",
+        "-k",
+        "15s",
+        "300s",
+        "/home/pshuai/bvi-research/envs/acdit/bin/python",
+        "/home/pshuai/bvi-research/run_lab_fetch_tapt_timing.py",
+        "--gpu-index",
+        "1",
+        "--seed",
+        "2025",
+        "--output",
+        "/home/pshuai/bvi-research/runs/fetch-tapt-timing-2026-09-17-run01/legacy-pre-action",
+        "--progress-timing",
+        "legacy_pre_action",
+        "--record-decisions"
+      ]
+    },
+    {
+      "label": "post-action",
+      "returncode": 0,
+      "command": [
+        "timeout",
+        "-k",
+        "15s",
+        "300s",
+        "/home/pshuai/bvi-research/envs/acdit/bin/python",
+        "/home/pshuai/bvi-research/run_lab_fetch_tapt_timing.py",
+        "--gpu-index",
+        "1",
+        "--seed",
+        "2025",
+        "--output",
+        "/home/pshuai/bvi-research/runs/fetch-tapt-timing-2026-09-17-run01/post-action",
+        "--progress-timing",
+        "post_action_v1",
+        "--record-decisions"
+      ]
+    }
+  ],
+  "finished_at": "2026-09-17T01:07:57.874016+00:00",
+  "elapsed_seconds": 145.99377715215087
+}
