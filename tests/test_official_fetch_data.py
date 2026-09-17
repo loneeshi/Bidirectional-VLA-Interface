@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from bvi.official_fetch_data import parent_ids,inspect_episode,policy_frame
+from bvi.official_fetch_data import parent_ids,inspect_episode,policy_frame,native_policy_observation
 
 
 def fixture():
@@ -46,3 +46,18 @@ def test_reject_old_state_contract_and_do_not_silently_mask_actions():
     with pytest.raises(ValueError):inspect_episode(g,'pick')
     g=fixture();g['actions'][0,8]=.1
     with pytest.raises(ValueError):inspect_episode(g,'pick')
+
+
+def test_shared_contract_preserves_camera_order_instruction_and_owns_arrays():
+    head=np.full((128,128,3),17,np.uint8);hand=np.full_like(head,91)
+    qpos=np.arange(12,dtype=np.float32);qvel=-qpos
+    z='Grasp the apple securely.'
+    result=native_policy_observation(qpos,qvel,head,hand,z)
+    np.testing.assert_array_equal(result['state'],np.r_[qpos,qvel])
+    assert result['task']==z
+    head[:]=0;hand[:]=0;qpos[:]=0
+    assert result['image'].min()==17 and result['wrist_image'].min()==91
+    assert result['state'][11]==11
+    with pytest.raises(ValueError):native_policy_observation(np.zeros(15),qvel,head,hand,z)
+    with pytest.raises(ValueError):native_policy_observation(qpos,qvel,head.astype(float),hand,z)
+    with pytest.raises(ValueError):native_policy_observation(qpos,qvel,head,hand,' ')

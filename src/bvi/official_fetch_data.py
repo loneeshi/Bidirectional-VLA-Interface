@@ -3,6 +3,28 @@ import numpy as np
 from .fetch_segments import segment_episode
 
 
+def native_policy_observation(qpos, qvel, head_rgb, hand_rgb, instruction):
+    """Single native observation contract, shared by export and online adapters.
+
+    Accept CPU arrays without batch dimensions. Callers must explicitly select
+    an environment and transfer tensors to CPU; never infer/slice old state30.
+    """
+    qpos = np.asarray(qpos, dtype=np.float32)
+    qvel = np.asarray(qvel, dtype=np.float32)
+    if qpos.shape != (12,) or qvel.shape != (12,):
+        raise ValueError('Expected unbatched native qpos12/qvel12')
+    state = np.concatenate([qpos, qvel])
+    if not np.isfinite(state).all():
+        raise ValueError('Nonfinite native state')
+    images = [np.asarray(head_rgb), np.asarray(hand_rgb)]
+    if any(im.shape != (128, 128, 3) or im.dtype != np.uint8 for im in images):
+        raise ValueError('Expected unbatched native uint8 RGB128 cameras')
+    if not isinstance(instruction, str) or not instruction.strip():
+        raise ValueError('Instruction must be nonempty text')
+    return dict(image=images[0].copy(), wrist_image=images[1].copy(),
+                state=state, task=instruction)
+
+
 def parent_ids(scale='pilot'):
     train = list(range(20))
     validation = list(range(20,25))
@@ -55,6 +77,9 @@ def inspect_episode(group, task):
 
 def policy_frame(group, episode, t, instruction):
     if not 0 <= t < episode['exported_steps']:raise IndexError('No endpoint zero-action frame')
-    return {'image':np.asarray(group['obs/sensor_data/fetch_head/rgb'][t]),
-        'wrist_image':np.asarray(group['obs/sensor_data/fetch_hand/rgb'][t]),
-        'state':episode['state'][t].copy(),'actions':episode['actions'][t].copy(),'task':instruction}
+    frame = native_policy_observation(
+        episode['state'][t, :12], episode['state'][t, 12:],
+        group['obs/sensor_data/fetch_head/rgb'][t],
+        group['obs/sensor_data/fetch_hand/rgb'][t], instruction)
+    frame['actions'] = episode['actions'][t].copy()
+    return frame
