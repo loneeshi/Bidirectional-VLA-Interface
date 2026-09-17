@@ -111,3 +111,11 @@ class ProgressTimingTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+def test_current_contract_cannot_reinterpret_legacy_weights():
+    from bvi.progress_timing import require_progress_contract, LEGACY_FETCH_CHECKPOINT_SHA256
+    import pytest
+    assert require_progress_contract({'progress_label_contract':'current_observation_v2'}, 'new', 'current_observation_v2') == 'current_observation_v2'
+    with pytest.raises(ValueError):
+        require_progress_contract({}, LEGACY_FETCH_CHECKPOINT_SHA256, 'current_observation_v2')
+    with pytest.raises(ValueError):
+        require_progress_contract({'progress_label_contract':'current_observation_v2'}, 'new', 'post_action_v1')

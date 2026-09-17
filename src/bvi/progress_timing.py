@@ -25,6 +25,17 @@ def require_post_action_contract(checkpoint_report, checkpoint_sha256):
     return contract
 
 
+def require_progress_contract(checkpoint_report, checkpoint_sha256, consumption):
+    """Reject mismatched checkpoint semantics before any action is executed."""
+    if consumption in ('post_action_v1', 'legacy_pre_action'):
+        return require_post_action_contract(checkpoint_report, checkpoint_sha256)
+    if consumption != 'current_observation_v2':
+        raise ValueError('Unknown progress consumption mode')
+    if checkpoint_report.get('progress_label_contract') != 'current_observation_v2':
+        raise ValueError('Current-observation consumption requires a matching trained checkpoint')
+    return 'current_observation_v2'
+
+
 def _step(value, name):
     if isinstance(value, bool) or not isinstance(value, Integral) or value < 0:
         raise ValueError(f"{name} must be a nonnegative integer")
