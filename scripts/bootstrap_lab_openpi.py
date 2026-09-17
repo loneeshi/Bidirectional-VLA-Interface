@@ -40,8 +40,10 @@ def main():
         actual = subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip()
         if actual != REVISION:
             raise RuntimeError('Existing author checkout differs; no automatic reset')
-        run([uv, 'sync', '--frozen', '--no-dev', '--python', '3.11.13'], cwd=source, timeout=1800)
-        run([python, '-c', 'import jax,flax,openpi; print(jax.__version__,flax.__version__,jax.devices())'])
+        # Author runtime imports pytest through its PyTorch model module, even for JAX.
+        # Keep the author's locked dev group rather than an unpinned ad-hoc package.
+        run([uv, 'sync', '--frozen', '--python', '3.11.13'], cwd=source, timeout=1800)
+        run([python, '-c', 'import jax,flax,openpi; from openpi.models import model; print(jax.__version__,flax.__version__,jax.devices())'])
         freeze = subprocess.check_output([str(uv), 'pip', 'freeze', '--python', str(python)], text=True, env=env)
         (root/'openpi-package-freeze.txt').write_text(freeze)
         report.update(status='cpu_import_gate_passed', environment=str(python.parent.parent))

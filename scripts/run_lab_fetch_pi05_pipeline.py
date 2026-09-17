@@ -5,9 +5,11 @@ Every GPU subprocess has an external timeout and must exit before the next phase
 No GPT/API, cloud provisioning, original-source edits, or online success claims.
 """
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -29,6 +31,14 @@ def load(path):
 
 
 def main():
+    global OUT, GATE
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--attempt', default='run01')
+    args = parser.parse_args()
+    if not re.fullmatch(r'run[0-9]{2}', args.attempt):
+        parser.error('attempt must be runNN; never overwrite historical attempts')
+    OUT = ROOT / f'runs/fetch-pi05-author-pipeline-2026-09-17-{args.attempt}'
+    GATE = ROOT / f'runs/fetch-pi05-author-gate-2026-09-17-{args.attempt}'
     OUT.mkdir(parents=True, exist_ok=False)
     os.chdir(ROOT)
     start = time.monotonic()
