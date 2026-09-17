@@ -70,3 +70,43 @@ CPU environment bootstrap took57.25 seconds. API requests0; new rentalUSD0;
 laboratory charges unknown. Previous stopped Runpod storage continues accruing.
 See [experiment config](results/fetch-pi05-author-gate-2026-09-17-run01/config.json)
 and the project's separate finance ledger for bounded execution and receipts.
+
+## Execution update
+
+Attempt run01 stopped during full-model import because the author's runtime imports
+`pytest`, while the original bootstrap excluded its locked dev dependency group.
+The bootstrap now uses the complete frozen author lock and imports the actual
+model module as its CPU check. This passed; the author source remains unchanged.
+Failure evidence is retained in [run01 model result](results/fetch-pi05-author-gate-2026-09-17-run01/model-gate-failed.json).
+
+Attempt run02 is running. It strictly loaded 71 pretrained tensors from V8, with
+only the new author progress head initialized. Numerical inference checks are
+pending; model loading does not imply trained TAPT or task success. Related
+CPU tests: 72 passed. The pipeline automatically proceeds only when each gate
+passes, and stops after the first bounded 20-update training gate.
+
+## Numerical attribution and continuation
+
+The BF16 gate passed exact paired-action equality and both inference/training
+progress independence from action noise. Its strict training/inference progress
+comparison failed: maximum absolute difference0.0042010546. We retained that
+[result](results/fetch-pi05-author-gate-2026-09-17-run02/result.json).
+
+A separate float32 computation retained identical input, checkpoint and new-head
+hashes; the same difference fell to0.0000010133, with exact action/noise checks
+still passing. See the [precision result](results/fetch-pi05-precision-2026-09-17-run01/result.json)
+and [bounded review](results/fetch-pi05-precision-2026-09-17-run01/review.json).
+The author uses a joint prefix+suffix attention shape for training and a
+prefix-only shape for cached inference; the experiment supports reduced-precision
+numerical attribution. It does not prove every learned head will have the same
+error magnitude or that online threshold decisions are unaffected.
+
+We keep author BF16 training and the original completion thresholds. The reviewed
+evidence permits only the first20-update gradient/memory check; after training,
+measure the trained head's inference gap again before online acceptance. This
+is an explicit engineering gate decision, not a claim that the original strict
+BF16 comparison passed.
+
+Pipeline run03 has resumed fixed collection from the completed14-episode boundary;
+15/50 had finished at the last startup check. Training remains conditional on all
+data gates. No new video or model API request was generated.

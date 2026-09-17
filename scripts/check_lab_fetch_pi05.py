@@ -24,6 +24,8 @@ def main():
     p.add_argument('--repo-id', default='bvi/fetch-seed1-workspace-recovery-v8')
     p.add_argument('--prompt')
     p.add_argument('--denoising-steps', type=int, default=10)
+    p.add_argument('--compute-dtype', choices=['bfloat16', 'float32'], default='bfloat16',
+                   help='float32 is a separate numerical diagnostic, never an automatic training change')
     p.add_argument('--expected-author-commit', default='f4eb160ba52b22c1e85fe432de59c24bbbac6187')
     a = p.parse_args()
     if not 1 <= a.denoising_steps <= 10:
@@ -31,6 +33,7 @@ def main():
     a.output.mkdir(parents=True, exist_ok=False)
     started = time.monotonic()
     report = dict(status='preflight', training_updates=0, api_calls=0,
+                  compute_dtype=a.compute_dtype, precision_diagnostic=a.compute_dtype != 'bfloat16',
                   new_head_untrained=True, native_task_success_evaluated=False,
                   comparison_scope='same author graph: sample_actions vs infer_actions_and_progress; not upstream runtime parity',
                   progress_source='author pooled image+prompt+discrete-state prefix; chunk step embedding; newly initialized head')
@@ -93,7 +96,7 @@ def main():
         cfg = fetch_config(a.repo_id, str(a.output / 'unused-training-path'),
                            state_input=True, include_velocity=True,
                            relative_base=True, base_camera='fetch_workspace')
-        mc = dataclasses.replace(cfg.model, enable_progress_head=True)
+        mc = dataclasses.replace(cfg.model, enable_progress_head=True, dtype=a.compute_dtype)
         assert mc.action_dim == 32 and mc.action_horizon == 10 and mc.discrete_state_input
         shape = nnx.state(nnx.eval_shape(mc.create, jax.random.key(7))).to_pure_dict()
         ref = traverse_util.flatten_dict(shape)

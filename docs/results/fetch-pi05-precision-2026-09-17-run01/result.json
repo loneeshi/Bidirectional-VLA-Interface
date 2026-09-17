@@ -1,0 +1,78 @@
+{
+  "status": "passed_interface_gate_untrained_head_not_task_success",
+  "training_updates": 0,
+  "api_calls": 0,
+  "compute_dtype": "float32",
+  "precision_diagnostic": true,
+  "new_head_untrained": true,
+  "native_task_success_evaluated": false,
+  "comparison_scope": "same author graph: sample_actions vs infer_actions_and_progress; not upstream runtime parity",
+  "progress_source": "author pooled image+prompt+discrete-state prefix; chunk step embedding; newly initialized head",
+  "wall_seconds": 54.55691712349653,
+  "author_commit": "f4eb160ba52b22c1e85fe432de59c24bbbac6187",
+  "author_root": "/home/pshuai/bvi-research/src/openpi-author",
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "input_sha256": "e6149c6917b42ec1f2206cad22c59b21e9d2362ae73fe2ddf15b6272e2b5f98d",
+  "pretrained_tensor_count": 71,
+  "pretrained_parameters_sha256": "64c5502dad8629261c73abaf5a35782a1e9de7a73b5d92d3f1826ed60abedc16",
+  "pretrained_lora_sha256": "3e110a209a53ac9479dbf5e605dc6842e40e8d6c153885d14d3cea2da0cbab2f",
+  "initialized_head_keys": [
+    "('progress_chunk_prefix_out_proj', 'input_adapter', 'bias')",
+    "('progress_chunk_prefix_out_proj', 'input_adapter', 'kernel')",
+    "('progress_chunk_prefix_out_proj', 'shared_head', 'fc1', 'bias')",
+    "('progress_chunk_prefix_out_proj', 'shared_head', 'fc1', 'kernel')",
+    "('progress_chunk_prefix_out_proj', 'shared_head', 'fc2', 'bias')",
+    "('progress_chunk_prefix_out_proj', 'shared_head', 'fc2', 'kernel')",
+    "('progress_chunk_prefix_out_proj', 'shared_head', 'fc3', 'bias')",
+    "('progress_chunk_prefix_out_proj', 'shared_head', 'fc3', 'kernel')"
+  ],
+  "state_contract": {
+    "robot": "fetch",
+    "state_dim": 30,
+    "action_dim": 13,
+    "state_components": [
+      "qpos",
+      "qvel"
+    ],
+    "base_position_reference": "skill_start_xy",
+    "base_camera": "fetch_workspace",
+    "wrist_camera": "fetch_hand",
+    "state_conditioning": true,
+    "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+    "training_repo": "bvi/fetch-seed1-workspace-recovery-v8",
+    "evaluation_scope": "training-scene-diagnostic",
+    "training_steps": 2000,
+    "training_source_sha256": "ab99fcc1728c487ea2dcde2656291071abeaf5606a16f3aae553d06169e077a3"
+  },
+  "state_contract_sha256": "db9348178841a98795442f348c3beb972bd4a14eba5130eaca4d0307ade9c2f6",
+  "untrained_head_sha256": "500ba340b34d123ffc270b7d78f26f34955a733b5565b6a2fa53c378a4afd49c",
+  "normalizer_sha256": "77becdf322763ab87bc6a61a599e784d84d464cec714d677ac14b2d8e8a26aab",
+  "action_shape": [
+    1,
+    10,
+    32
+  ],
+  "external_action_shape": [
+    10,
+    13
+  ],
+  "progress_shape": [
+    1,
+    10
+  ],
+  "all_finite": true,
+  "paired_action_max_abs_diff": 0.0,
+  "paired_actions_exact": true,
+  "progress_noise_max_abs_diff": 0.0,
+  "progress_noise_independent": true,
+  "train_inference_progress_max_abs_diff": 1.0132789611816406e-06,
+  "train_action_noise_progress_max_abs_diff": 0.0,
+  "train_inference_progress_agree": true,
+  "train_progress_action_noise_independent": true,
+  "normalized_action_max_abs": 1.0726100206375122,
+  "external_action_max_abs": 1.0507628104859101,
+  "controller_clip_fraction": 0.09230769230769231,
+  "controller_clip_max_delta": 0.05076281048591014,
+  "progress_min": 0.49402105808258057,
+  "progress_max": 0.7564404010772705
+}

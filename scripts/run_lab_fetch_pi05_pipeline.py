@@ -34,6 +34,8 @@ def main():
     global OUT, GATE
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--attempt', default='run01')
+    parser.add_argument('--reviewed-model-evidence', type=Path,
+                        help='Pinned reports from a separately reviewed BF16/FP32 diagnostic; retains original failure')
     args = parser.parse_args()
     if not re.fullmatch(r'run[0-9]{2}', args.attempt):
         parser.error('attempt must be runNN; never overwrite historical attempts')
@@ -105,13 +107,44 @@ def main():
             time.sleep(10)
         # The collector writes its terminal report just before process exit.
         time.sleep(2)
-        run('model-gate', [ROOT / 'envs/openpi/bin/python', ROOT / 'check_lab_fetch_pi05.py',
-            '--input-npz', ROOT / 'pi05-gate-input.npz', '--checkpoint', CHECKPOINT,
-            '--output', GATE, '--gpu-uuid', GPU], 600, gpu=True)
-        gate = load(GATE / 'result.json')
-        result['model_gate'] = gate
-        if not gate or gate['status'] != 'passed_interface_gate_untrained_head_not_task_success':
-            raise RuntimeError('Strict model gate did not pass')
+        if args.reviewed_model_evidence:
+            review = load(args.reviewed_model_evidence)
+            if review.get('decision') != 'proceed_to_bf16_sft20_only_with_recorded_numerical_gap':
+                raise ValueError('Unknown bounded numerical review decision')
+            evidence = {}
+            for mode in ('bfloat16', 'float32'):
+                item = review[mode]
+                raw = Path(item['path']).read_bytes()
+                if hashlib.sha256(raw).hexdigest() != item['sha256']:
+                    raise ValueError('Reviewed model evidence changed')
+                evidence[mode] = json.loads(raw)
+            bf, fp = evidence['bfloat16'], evidence['float32']
+            for key in ('author_commit', 'input_sha256', 'pretrained_parameters_sha256',
+                        'untrained_head_sha256', 'normalizer_sha256', 'state_contract_sha256'):
+                if not bf.get(key) or bf[key] != fp.get(key):
+                    raise ValueError(f'Precision experiment changed more than computation: {key}')
+            for value in evidence.values():
+                for key in ('all_finite', 'paired_actions_exact', 'progress_noise_independent',
+                            'train_progress_action_noise_independent'):
+                    if value.get(key) is not True:
+                        raise ValueError(f'Unresolved semantic/action model gate: {key}')
+            if (fp.get('compute_dtype') != 'float32'
+                or fp['status'] != 'passed_interface_gate_untrained_head_not_task_success'
+                or fp.get('train_inference_progress_agree') is not True
+                or bf.get('train_inference_progress_max_abs_diff') != review['reviewed_bf16_max_gap']):
+                raise ValueError('Precision review does not match the measured diagnosis')
+            result['model_gate'] = dict(status='reviewed_numerical_difference_for_sft20', review=review,
+                training_compute_dtype='bfloat16', original_strict_bf16_result_preserved=True,
+                training_inference_bitwise_agreement=False, native_success_evaluated=False)
+            save('reviewed_model_gate')
+        else:
+            run('model-gate', [ROOT / 'envs/openpi/bin/python', ROOT / 'check_lab_fetch_pi05.py',
+                '--input-npz', ROOT / 'pi05-gate-input.npz', '--checkpoint', CHECKPOINT,
+                '--output', GATE, '--gpu-uuid', GPU], 600, gpu=True)
+            gate = load(GATE / 'result.json')
+            result['model_gate'] = gate
+            if not gate or gate['status'] != 'passed_interface_gate_untrained_head_not_task_success':
+                raise RuntimeError('Strict model gate did not pass')
         if collection['status'] != 'completed':
             run('teacher-resume', [ROOT / 'envs/acdit/bin/python', ROOT / 'collect_lab_fetch_pi05_batch.py',
                 '--output', TEACHER, '--resume', '--wall-seconds', '3600'], 3650, gpu=True)
