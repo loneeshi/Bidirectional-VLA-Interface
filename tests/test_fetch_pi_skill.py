@@ -68,5 +68,27 @@ class FetchContractTests(unittest.TestCase):
         self.assertAlmostEqual(w,1.2)
         self.assertEqual(waypoint_velocity(((0.,0.,0.),(.1,.1,0.)),.5),(.2,0.))
 
+    def test_native24_uses_environment_observation_not_full_robot_state(self):
+        import io
+        import numpy as np
+        from PIL import Image
+        adapter,client=self.fixture()
+        client.metadata.update(state_dim=24,state_components=['native_qpos12','native_qvel12'])
+        with self.assertRaises(ProtocolError):FetchPiSkill('pick',adapter,client)
+        client.metadata['state_source']='env_native_agent'
+        # Robot has no qpos/qvel here: reading the legacy path must fail.
+        adapter.uenv._get_obs_agent=lambda:{'qpos':[list(range(12))],'qvel':[list(range(50,62))]}
+        buf=io.BytesIO();Image.new('RGB',(128,128)).save(buf,format='PNG')
+        obs=NS(frame_id='native-0',images=[NS(camera=c,data=buf.getvalue()) for c in ('fetch_head','fetch_hand')])
+        adapter.observe=lambda:obs;adapter.save_observation_images=lambda:None
+        sent=[]
+        client.infer=lambda data,action_dim:(sent.append(data) or ((0.,)*13,))
+        skill=FetchPiSkill('pick',adapter,client);skill.index=1;skill.call_id='native';skill.prompt='Grasp the apple.'
+        skill.act(obs)
+        np.testing.assert_array_equal(sent[0]['observation/state'],list(range(12))+list(range(50,62)))
+        self.assertEqual(sent[0]['prompt'],'Grasp the apple.')
+        client.metadata['base_position_reference']='skill_start_xy'
+        with self.assertRaises(ProtocolError):FetchPiSkill('pick',adapter,client)
+
 
 if __name__=='__main__': unittest.main()
