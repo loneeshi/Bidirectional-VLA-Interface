@@ -31,3 +31,7 @@ CUDA_VISIBLE_DEVICES='' PYTHONPATH=src/Bidirectional-VLA-Interface/src \
 源数据 revision、H5/JSON SHA256、完整父轨迹划分和分段证据见本目录 manifest；导出数据仍在实验室 `runs/s1-official-pilot-2026-09-17-run01/`，本地已保存报告，未声称完整数据已备份。扩大训练集时固定保留 pilot 验证轨迹，避免泄漏。
 
 本轮 GPU 工作 0、API 0、新租机 USD0；实验室费用未知。GPU1 末次查询 15 MiB / 0%。历史 Runpod 40GB 停止存储费用继续，当前未刷新供应商账单。
+
+## CPU 接口补充
+
+新增训练导出与未来在线适配器共用的 native_policy_observation：严格检查原生 qpos12/qvel12、双相机 uint8 RGB128 和非空原始指令，拒绝旧15关节输入及隐式批处理。导出路径已接入，43项相关测试通过；在线执行器尚未接入，不能据此声称训推一致性门全部通过。此次仅本地CPU，无GPU/API操作。
