@@ -13,3 +13,4 @@ docs/results/fetch-pi05-workspace-teacher-2026-09-17-run01/** -text whitespace=c
 docs/results/fallback-baseline-audit-2026-09-17/** -text whitespace=cr-at-eol
 
 docs/weekly-baseline-v2-updated-user-plan.md text eol=lf
+docs/results/s1-official-pilot-2026-09-17-run01/** -text whitespace=cr-at-eol
