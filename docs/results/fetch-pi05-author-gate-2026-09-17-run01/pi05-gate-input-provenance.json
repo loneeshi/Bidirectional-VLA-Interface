@@ -1,0 +1,146 @@
+{
+  "purpose": "Real historical V8 inference input for deployment/interface gate only; not native task success evidence",
+  "npz_path": "D:\\AI\\embodied intelligence\\.runtime\\pi05-gate-input.npz",
+  "npz_sha256": "239d449eb9e7d25b9410420af92f9e336c926f0502e02f0dfc3bfa002d801976",
+  "source_events_path": "D:\\AI\\embodied intelligence\\runs\\mshab012\\final-extracted\\runs\\mshab012\\template-stop\\events.jsonl",
+  "source_events_sha256": "7c951063cecff43969ab69f47d2297bbb7c82e44adf7b0b849415ee7e849743c",
+  "inference_event_line_1based": 336,
+  "inference_event": {
+    "schema_version": "0.1",
+    "run_id": "template-stop",
+    "time_utc": "2026-09-16T05:23:09.944749+00:00",
+    "event": "fetch_pi_inference_started",
+    "call_id": "template-stop",
+    "attempt": 1,
+    "frame_id": "seed-1-step-330",
+    "state": [
+      0.0,
+      0.0,
+      -1.7902731895446777,
+      0.38428831100463867,
+      -0.0005533504881896079,
+      -0.375987708568573,
+      0.5622078776359558,
+      -1.023805022239685,
+      0.6910993456840515,
+      0.9531358480453491,
+      -0.10100845992565155,
+      2.075683355331421,
+      -1.6363701433874667e-05,
+      0.015064000152051449,
+      0.015031167306005955,
+      0.0025991026777774096,
+      -0.0016952021978795528,
+      -1.1998132467269897,
+      0.0006928464281372726,
+      1.8769618691294454e-05,
+      -0.006482614204287529,
+      -1.2092801625840366e-05,
+      -0.011382784694433212,
+      0.0009346340084448457,
+      0.006106639746576548,
+      0.0006705004489049315,
+      0.0035912583116441965,
+      1.4438545804296155e-05,
+      3.661580558400601e-05,
+      -8.428357250522822e-05
+    ]
+  },
+  "skill_start_event": {
+    "schema_version": "0.1",
+    "run_id": "template-stop",
+    "time_utc": "2026-09-16T05:23:09.933353+00:00",
+    "event": "fetch_pi_started",
+    "call_id": "template-stop",
+    "skill": "pick",
+    "prompt": "Pick and stably hold object 002_master_chef_can-0.",
+    "model_metadata": {
+      "robot": "fetch",
+      "state_dim": 30,
+      "action_dim": 13,
+      "state_components": [
+        "qpos",
+        "qvel"
+      ],
+      "base_position_reference": "skill_start_xy",
+      "base_camera": "fetch_workspace",
+      "wrist_camera": "fetch_hand",
+      "state_conditioning": true,
+      "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+      "training_repo": "bvi/fetch-seed1-workspace-recovery-v8",
+      "evaluation_scope": "training-scene-diagnostic",
+      "checkpoint": "/workspace/fetch-v8",
+      "legacy_training_manifest_missing": false,
+      "denoising_steps": 10,
+      "action_horizon": 10,
+      "server_source_sha256": "ab99fcc1728c487ea2dcde2656291071abeaf5606a16f3aae553d06169e077a3"
+    },
+    "chunk_steps": 1,
+    "base_xy_origin": [
+      -0.07264751195907593,
+      -0.9802101850509644
+    ],
+    "ensemble_samples": 1,
+    "instruction_source": "vlm_invocation"
+  },
+  "observation_images_event": {
+    "schema_version": "0.1",
+    "run_id": "template-stop",
+    "time_utc": "2026-09-16T05:23:09.942669+00:00",
+    "event": "observation_images",
+    "frame_id": "seed-1-step-330",
+    "paths": [
+      "/workspace/bvi/runs/mshab012/template-stop/frames/seed-1-step-330-fetch_head.png",
+      "/workspace/bvi/runs/mshab012/template-stop/frames/seed-1-step-330-fetch_hand.png",
+      "/workspace/bvi/runs/mshab012/template-stop/frames/seed-1-step-330-fetch_nav.png",
+      "/workspace/bvi/runs/mshab012/template-stop/frames/seed-1-step-330-fetch_workspace.png"
+    ],
+    "cameras": [
+      "fetch_head",
+      "fetch_hand",
+      "fetch_nav",
+      "fetch_workspace"
+    ]
+  },
+  "images": [
+    {
+      "camera": "fetch_workspace",
+      "path": "D:\\AI\\embodied intelligence\\runs\\mshab012\\final-extracted\\runs\\mshab012\\template-stop\\frames\\seed-1-step-330-fetch_workspace.png",
+      "sha256": "9bb96539f769aca4dcb8ec31c274037f4831ad9ff3818915b844fb9ca8d51676",
+      "shape": [
+        224,
+        224,
+        3
+      ]
+    },
+    {
+      "camera": "fetch_hand",
+      "path": "D:\\AI\\embodied intelligence\\runs\\mshab012\\final-extracted\\runs\\mshab012\\template-stop\\frames\\seed-1-step-330-fetch_hand.png",
+      "sha256": "a20334a0aa957ee4c72ab5efdf5fb6e8659dc3fa40bba8084750822e620c732d",
+      "shape": [
+        128,
+        128,
+        3
+      ]
+    }
+  ],
+  "state_note": "Already skill-start-relative XY in logged inference event; copied to float32 without subtracting origin again. Raw qpos+qvel state before OpenPI quantile normalization/tokenization.",
+  "prompt": "Pick and stably hold object 002_master_chef_can-0.",
+  "source_runtime_logic": "D:\\AI\\embodied intelligence\\repo\\Bidirectional-VLA-Interface\\src\\bvi\\fetch_pi_skill.py",
+  "npz_keys": [
+    "observation/image",
+    "observation/wrist_image",
+    "observation/state",
+    "prompt"
+  ],
+  "gate_key_rename_only": {
+    "source_npz_sha256": "239d449eb9e7d25b9410420af92f9e336c926f0502e02f0dfc3bfa002d801976",
+    "gate_npz_sha256": "e6149c6917b42ec1f2206cad22c59b21e9d2362ae73fe2ddf15b6272e2b5f98d",
+    "mapping": {
+      "observation/image": "workspace_rgb",
+      "observation/wrist_image": "wrist_rgb",
+      "observation/state": "state"
+    },
+    "values_changed": false
+  }
+}
