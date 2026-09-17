@@ -27,3 +27,7 @@ FetchPiSkill新增显式native24分支：检查state_source=env_native_agent，�
 ## S1 初始化获取已启动
 
 选定官方pi05_base作为新的Fetch目标域SFT初始化，不复用失败V8。公开来源gs://openpi-assets/checkpoints/pi05_base/params，列表20对象共12,441,721,931字节。实验室CPU下载PID1450841，外层1800秒，来源大小上限20GB；按GCS generation固定每个对象并计算本地SHA256。状态文件checkpoints/s1-pi05-base-2026-09-17/acquisition.json，尚未确认全量下载、参数加载或开始训练。
+
+## 显式父轨迹划分 loader
+
+新增native_dataset绑定显式train/validation root，两组分别889/230帧真实首样本经过完整预处理。S1显式progress_loss_weight=0、use_val_set=False，避免作者按episode hash再次切分；验证集独立loader，仍使用训练集统计量。该loader仅返回动作学习输入，不提供伪造学习进度。正式有界训练循环尚未实现/启动，不能直接用作者默认main替代这个显式loader。证据loader-smoke.json。

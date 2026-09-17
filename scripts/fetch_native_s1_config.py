@@ -59,4 +59,34 @@ def config(repo_id, work, init_checkpoint, norm_directory, *, steps=100, batch=1
     return dataclasses.replace(base,name='pi05_fetch_native24_s1',exp_name='official-pilot',
                                model=model,data=NativeData(repo_id=repo_id,base_config=base.data.base_config,
                                                         extra_delta_transform=False),
+                               use_val_set=False,progress_loss_weight=0.0,
                                policy_metadata=metadata)
+
+
+def native_dataset(data_config, model_config, dataset_root):
+    """Explicit-root dataset for either pre-registered parent split.
+
+    Does not apply the author's episode-hash train/val repartition or synthesize
+    progress labels. This S1 adapter returns action learning inputs only.
+    """
+    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
+    from openpi.training import data_loader
+    from openpi import transforms
+    root=Path(dataset_root)
+    manifest=json.loads((root.parent/'manifest.json').read_text())
+    split=root.name
+    if split not in ('train','validation'):
+        raise ValueError('Explicit train/validation root required')
+    expected=manifest['parent_split'][split]
+    rows=[e for e in manifest['episodes'] if e['split']==split]
+    if [e['parent_id'] for e in rows]!=expected:
+        raise ValueError('Parent membership differs')
+    if set(manifest['parent_split']['train']) & set(manifest['parent_split']['validation']):
+        raise ValueError('Leaked parent split')
+    dataset=LeRobotDataset(data_config.repo_id,root=root,
+        delta_timestamps={'actions':[t/20 for t in range(model_config.action_horizon)]})
+    if dataset.meta.fps!=20 or len(dataset)!=sum(e['exported_steps'] for e in rows):
+        raise ValueError('Dataset frame rate/count differs')
+    dataset=data_loader.TransformedDataset(dataset,
+        [transforms.PromptFromLeRobotTask(dataset.meta.tasks)])
+    return data_loader.transform_dataset(dataset,data_config)
