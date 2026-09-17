@@ -39,3 +39,14 @@
 - 先前时点修复与失败证据：[fetch-progress-timing-fix.md](fetch-progress-timing-fix.md)
 
 实验室GPU1；不调用模型API、不新增租机。实验室计费未知，不填为0。历史Runpod停止存储另记账。
+
+
+## 数据采集结果
+
+6/6预定轨迹完整执行，动作数依次为23、21、26、70、35、36；均未达到原生Pick成功。未根据成功或失败替换种子。
+
+训练数据实际包含2次远距离grasp起点（12.91cm、26.62cm），以及1次未持有的move起点。留出数据中也有错误grasp（42.22cm）与未持有move。物理值只作覆盖审计，不作为运行时进度规则，也不直接定义学习标签。
+
+[逐交接数值](results/fetch-current-handoffs-2026-09-17-run01/handoff-audit.json) · [6份录像的准确文件名索引](media/fetch-current-handoffs-2026-09-17-run01/README.md)
+
+示例错误交接录像：[train-seed3003-fetch-tapt-pick-episode000-failed.mp4](media/fetch-current-handoffs-2026-09-17-run01/train-seed3003-fetch-tapt-pick-episode000-failed.mp4)。这是冻结模型的数据采集失败，不是校准后的评估录像。

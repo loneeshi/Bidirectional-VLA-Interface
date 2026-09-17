@@ -90,3 +90,8 @@ The LIBERO batch uses LIBERO, robosuite and MuJoCo; their assets and licenses ar
 | `mshab-pick-paired-2026-09-16-run01` | [template-teacher-arm-torso-seed0-failed-teacher-assisted.mp4](mshab-pick-paired-2026-09-16-run01/template-teacher-arm-torso-seed0-failed-teacher-assisted.mp4) | Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results. |
 | `mshab-pick-paired-2026-09-16-run01` | [template-teacher-base-seed0-failed-teacher-assisted.mp4](mshab-pick-paired-2026-09-16-run01/template-teacher-base-seed0-failed-teacher-assisted.mp4) | Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results. |
 | `mshab-pick-paired-2026-09-16-run01` | [template-teacher-gripper-seed0-failed-teacher-assisted.mp4](mshab-pick-paired-2026-09-16-run01/template-teacher-gripper-seed0-failed-teacher-assisted.mp4) | Labelled teacher-assisted channel intervention; Pick still fails; excluded from pure VLA results. |
+
+
+## Fetch current-progress handoff collection
+
+Six retained recordings and exact filenames: [batch index](fetch-current-handoffs-2026-09-17-run01/README.md). Training/validation data collection; all Pick failures are preserved. No navigation or GPT.

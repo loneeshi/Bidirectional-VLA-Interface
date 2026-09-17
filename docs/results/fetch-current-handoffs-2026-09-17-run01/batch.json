@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-17T01:28:05.366027+00:00",
+  "api_calls": 0,
+  "training_updates": 0,
+  "max_seconds_per_episode": 150,
+  "scope": "native-start policy-generated handoffs, NOT LightNav handoffs",
+  "runs": [
+    {
+      "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3000",
+      "split": "train",
+      "seed": 3000,
+      "scene_split": "train",
+      "task": "pick",
+      "returncode": 0
+    },
+    {
+      "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3001",
+      "split": "train",
+      "seed": 3001,
+      "scene_split": "train",
+      "task": "pick",
+      "returncode": 0
+    },
+    {
+      "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3002",
+      "split": "train",
+      "seed": 3002,
+      "scene_split": "train",
+      "task": "pick",
+      "returncode": 0
+    },
+    {
+      "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/train-seed3003",
+      "split": "train",
+      "seed": 3003,
+      "scene_split": "train",
+      "task": "pick",
+      "returncode": 0
+    },
+    {
+      "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/validation-seed3020",
+      "split": "validation",
+      "seed": 3020,
+      "scene_split": "train",
+      "task": "pick",
+      "returncode": 0
+    },
+    {
+      "path": "/home/pshuai/bvi-research/runs/fetch-current-handoffs-2026-09-17-run01/validation-seed3021",
+      "split": "validation",
+      "seed": 3021,
+      "scene_split": "train",
+      "task": "pick",
+      "returncode": 0
+    }
+  ],
+  "finished_at": "2026-09-17T01:38:10.032140+00:00",
+  "elapsed_seconds": 604.6660674661398
+}
