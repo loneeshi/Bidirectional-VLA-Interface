@@ -1,6 +1,6 @@
 # Learning Bidirectional Semantic Interfaces for Reliable VLA Tool Use
 
-**Current question:** Can progress-event feedback improve long-horizon object completion over fixed dispatch in MS-HAB, with the same low-level tools? [Weekly v2 plan](docs/weekly-baseline-v2.md): LightNav/SAC interface baseline, with a separately bounded ordinary Pick SFT branch; no Fetch TAPT training this week.
+**Current mainline:** [Updated weekly v2](docs/weekly-baseline-v2.md): S1 faithful Fetch π₀.₅ SFT → native ≥3/10 gate → S2 tool-family TAPT → S3 GPT＋LightNav-0＋TAPT π₀.₅. SAC/PPO runs are separate C controls. S2 preparation may proceed on CPU; no S2 parameter updates before S1 passes.
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
