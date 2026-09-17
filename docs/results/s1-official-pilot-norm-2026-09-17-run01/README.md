@@ -17,3 +17,9 @@ FetchPiSkill新增显式native24分支：检查state_source=env_native_agent，�
 新增fetch_native_s1_config.py，强制显式初始化路径和训练集统计来源；接入native24元数据，禁用progress head、移除LIBERO专用进度repack字段，保留13维动作且不额外delta变换。服务器CPU检查通过repack→图像输入转换→分位数归一化→反归一化，零动作往返最大误差1.11e-16。首次测试遗漏严格反归一化要求的state，补齐测试输入后通过，未修改库行为。
 
 这只是CPU数据变换检查：初始化使用未加载的显式占位符，未执行模型/tokenizer全路径，未加载权重或训练。下一步必须固定真实初始化权重并完成数据加载/模型变换验证，不能直接启动该占位配置。证据config-smoke.json。
+
+## 真实数据完整预处理检查
+
+在实验室CPU使用显式root加载真实LeRobot训练集（889帧），首样本按20Hz构建10动作chunk，经过repack、双相机转换、训练集归一化、模型resize/tokenizer/padding全部通过：state32、actions10×32、prompt200 token、图像224×224。原始数据仍是原生128RGB/state24，224/32仅为模型内部标准变换。证据real-sample-smoke.json。
+
+尚未加载初始化权重、计算模型损失或更新参数。官方训练loader默认根据repo_id找缓存，不接受本次自定义root；正式入口需显式绑定该已验证数据目录，不能依赖默认下载路径。服务器目前已检查的checkpoints目录没有独立pi05_base/libero原始初始化，只见旧V8等；未把V8暗作新初始化。下一步定位/取得并固定原始权重，再实现有界S1启动。
