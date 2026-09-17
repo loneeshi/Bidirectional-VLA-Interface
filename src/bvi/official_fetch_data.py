@@ -1,6 +1,7 @@
 """Official Fetch H5 contract: native proprioception24, no privileged inputs."""
 import numpy as np
 from .fetch_segments import segment_episode
+from .fetch_current_labels import verified_teacher_targets
 
 
 def native_policy_observation(qpos, qvel, head_rgb, hand_rgb, instruction):
@@ -83,3 +84,53 @@ def policy_frame(group, episode, t, instruction):
         group['obs/sensor_data/fetch_hand/rgb'][t], instruction)
     frame['actions'] = episode['actions'][t].copy()
     return frame
+
+
+def current_progress_rows(manifest, horizon=2):
+    """Index evidenced intervals without inventing actions at completion frames.
+
+    This builds supervision metadata, not a training cache. Image/state readers
+    must resolve observations in the pinned source H5, including final endpoints.
+    Unannotated frames are omitted, never assigned completion by file length.
+    """
+    if manifest.get('progress_contract') != 'current_observation_v2':
+        raise ValueError('Unsupported progress contract')
+    source = manifest.get('source_sha256')
+    if not isinstance(source, str) or len(source) != 64:
+        raise ValueError('Pinned source hash required')
+    declared = manifest['parent_split']
+    assignments = {}
+    for split, ids in declared.items():
+        if split not in ('train', 'validation'):
+            raise ValueError('Unexpected training-data split')
+        for ident in ids:
+            if ident in assignments:
+                raise ValueError('Parent split overlap/duplicate')
+            assignments[ident] = split
+    rows = []
+    seen = set()
+    for episode in manifest['episodes']:
+        ident, split = episode['parent_id'], episode['split']
+        if ident in seen or assignments.get(ident) != split:
+            raise ValueError('Duplicate or incorrectly assigned parent')
+        seen.add(ident)
+        if episode['trajectory'] != f'traj_{ident}':
+            raise ValueError('Source trajectory identity mismatch')
+        for call, window in enumerate(episode['windows']):
+            if window['family'] not in ('reach', 'grasp', 'move', 'release'):
+                raise ValueError('Unknown tool family')
+            if not 0 <= window['start'] < window['end'] <= episode['exported_steps']:
+                raise ValueError('Interval outside source observations')
+            for t in range(window['start'], window['end'] + 1):
+                targets = verified_teacher_targets(window, t, horizon)
+                rows.append(dict(
+                    source_sha256=source, trajectory=episode['trajectory'],
+                    parent_id=ident, split=split, call_index=call,
+                    tool_family=window['family'], instruction=window['instruction'],
+                    observation_index=t, completion_evidence=window['completion_evidence'],
+                    action_source_indices=[t+j if valid else None
+                                           for j, valid in enumerate(targets['action_valid'])],
+                    **targets))
+    if seen != set(assignments):
+        raise ValueError('Incomplete parent manifest')
+    return rows
