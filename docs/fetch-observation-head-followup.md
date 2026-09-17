@@ -1,9 +1,9 @@
 # Future option: observation-conditioned Fetch progress head
 
-Status: source audit and design option only. **Not implemented or evaluated.**
-The running current-observation calibration and its action-token head are
-unchanged. No model configuration, training, or GPU operation was performed for
-this audit. Consider this option only after the current fixed online outcomes.
+Status: source audit and CPU data preparation complete. **The new head is not
+implemented, trained, or evaluated.** The preceding current-observation
+calibration has finished; its action-token head failed both fixed online checks.
+No model configuration, training, or GPU operation was performed for this follow-up.
 
 ## Source evidence
 
@@ -113,3 +113,46 @@ recorded inputs, unchanged progress under changes to action noise/timesteps,
 mask behavior, frozen-parameter/buffer invariance, and action-output identity
 under restored RNG. Preserve trajectory-level splits and evaluate on the same
 predeclared online cases. This document authorizes no new experiment.
+
+## CPU preparation completed — 2026-09-17 UTC
+
+[prepare_fetch_observation_progress.py](../scripts/prepare_fetch_observation_progress.py)
+now creates the [paired manifest](results/fetch-observation-progress-preflight-2026-09-17-run01/pairing.json)
+without importing Torch, loading a model, or contacting the lab. The JSON metadata
+and cache hashes are bound to the previously verified calibration archive; this
+preflight does **not** claim to have loaded or numerically validated cached tensors.
+
+- 336 training observations: 327 teacher observations and 9 invocation-start anchors.
+- 39 development-validation observations: 33 teacher observations and 6 anchors.
+- These 39 observations already selected step20. Reuse is a paired development
+  comparison, not untouched test evidence. Seeds2025/2030 cannot enter preparation.
+- Sample identity includes parent scene/task/seed, tool family, interval or call,
+  and observation index. Teacher endpoints and the next family's starts remain
+  distinct. Cached rows bind to their original index and SHA256.
+- The comparison pins the **selected step20 checkpoint**, including all four
+  family LoRA banks and the original progress head. Freezing only native weights
+  would not isolate the new head, because the prior calibration updated LoRA too.
+- Reference inference keeps validation row order and diffusion seed
+  `8181 + 2 * validation_index`. Native generated inference supplies the reference
+  head; teacher-noised `compute_loss` features are not a substitute.
+
+The strict observation-batch boundary accepts only `lang_tokens`, `lang_attn_mask`,
+`img_tokens`, `pc_tokens`, `state_tokens`, `action_mask`, `ctrl_freqs`, and
+`in_context_conditions`. Privileged simulator context stays explicitly declared.
+Historical caches omit camera/PC availability masks. The proposed paired port
+retains native background/duplicated-history substitutions as valid inputs;
+reconstructing different masks would be a separate versioned comparison. The
+channel `action_mask` cannot be reused as an image/PC availability mask.
+
+52 relevant CPU regression checks passed, including the existing label tests.
+They exercise parent leakage, cache/checkpoint mismatches, failed-anchor targets,
+fabricated endpoint actions, validation order, and contaminated observation
+inputs. Two baseline target values have expected float32 rounding, checked with
+absolute tolerance1e-7; source JSON and cache identity checks remain exact hashes.
+
+Remaining gate: implement the shared clean-feature extraction path, inspect
+actual cached tensors, and verify frozen-parameter and restored-RNG action
+identity. Neither the head itself nor this numerical gate has run. Native-source
+dimensions above remain source-derived. The local `AC-DiT-source` snapshot lacks
+Git metadata; its previously recorded remote commit was not independently
+re-verified during this CPU-only preparation.
