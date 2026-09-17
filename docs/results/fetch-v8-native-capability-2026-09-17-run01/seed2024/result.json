@@ -1,0 +1,30 @@
+{
+  "status": "infrastructure_failure",
+  "seed": 2024,
+  "scene_split": "val",
+  "task": "set_table/pick/013_apple",
+  "max_actions": 200,
+  "control_frequency": 20,
+  "api_calls": 0,
+  "training_updates": 0,
+  "success": false,
+  "ever_grasped": false,
+  "stable_grasp_3_observations": false,
+  "longest_grasp_streak": 0,
+  "steps": 0,
+  "policy": "frozen FetchV8; no new prefix head or tool-family banks",
+  "native_predicate": "grasped + ee_rest<=0.05m + robot_rest + is_static + cumulative_force<5000",
+  "precision": "bfloat16",
+  "predicted_action_horizon": 10,
+  "executed_per_prediction": 1,
+  "head_mask_indices": [
+    8,
+    9
+  ],
+  "historical_pairing": "qpos/head/hand RGB+depth only; original full state unavailable",
+  "started_utc": "2026-09-17T04:57:09.063651+00:00",
+  "runner_sha256": "8c76318145ea26a583c652766cb07cf493d283e62f58cd460067fcbef062075e",
+  "wall_seconds": 3.034327369183302,
+  "error": "ModuleNotFoundError(\"No module named 'bvi'\")",
+  "artifact_sha256": {}
+}

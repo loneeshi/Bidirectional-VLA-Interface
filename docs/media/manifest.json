@@ -751,6 +751,60 @@
       "recorded_at_utc": "2026-09-17T02:07:33.270545+00:00",
       "description": "Selected current-frame calibration checkpoint; fixed native-start Pick diagnostic, no GPT/navigation; failure",
       "experiment_id": "fetch-current-progress-eval-2026-09-17-run01"
+    },
+    {
+      "filename": "fetch-v8-native-pick-seed2024-episode000-failed.mp4",
+      "path": "fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2024-episode000-failed.mp4",
+      "sha256": "2f6f169b6995be9ffbe158d2652ee24365b0d3d2c4b7533b1c117db0b8a380e7",
+      "bytes": 191263,
+      "result": "native_failure",
+      "seed": 2024,
+      "recording_date_utc": "2026-09-17"
+    },
+    {
+      "filename": "fetch-v8-native-pick-seed2025-episode000-failed.mp4",
+      "path": "fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2025-episode000-failed.mp4",
+      "sha256": "24d6a6c5af6e27d0dc120b8533bb6ed168b61b8f0db0d3e70159c65e45339246",
+      "bytes": 264094,
+      "result": "native_failure",
+      "seed": 2025,
+      "recording_date_utc": "2026-09-17"
+    },
+    {
+      "filename": "fetch-v8-native-pick-seed2026-episode000-failed.mp4",
+      "path": "fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2026-episode000-failed.mp4",
+      "sha256": "e11fc66583e8585850097ad6decad402333905b8264b206cc1ebfc180af1774f",
+      "bytes": 356546,
+      "result": "native_failure",
+      "seed": 2026,
+      "recording_date_utc": "2026-09-17"
+    },
+    {
+      "filename": "fetch-v8-native-pick-seed2027-episode000-failed.mp4",
+      "path": "fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2027-episode000-failed.mp4",
+      "sha256": "2b95a7bcba535a895c25e98a9d7fb921be8370c3b97e10a6e6c49d74c397ab95",
+      "bytes": 233309,
+      "result": "native_failure",
+      "seed": 2027,
+      "recording_date_utc": "2026-09-17"
+    },
+    {
+      "filename": "fetch-v8-native-pick-seed2028-episode000-failed.mp4",
+      "path": "fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2028-episode000-failed.mp4",
+      "sha256": "165a72b4275cd5d0406089219854a438120512a3480b9140126cfdbb13d94578",
+      "bytes": 453763,
+      "result": "native_failure",
+      "seed": 2028,
+      "recording_date_utc": "2026-09-17"
+    },
+    {
+      "filename": "fetch-v8-native-pick-seed2030-episode000-failed.mp4",
+      "path": "fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2030-episode000-failed.mp4",
+      "sha256": "f2880232bd0b75d201545cea2cb66b80ab42316fff32aa87b8bc704565b6ac61",
+      "bytes": 406704,
+      "result": "native_failure",
+      "seed": 2030,
+      "recording_date_utc": "2026-09-17"
     }
   ]
 }

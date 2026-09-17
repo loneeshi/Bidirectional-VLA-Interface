@@ -39,6 +39,9 @@ def main():
     args = parser.parse_args()
     if not re.fullmatch(r'run[0-9]{2}', args.attempt):
         parser.error('attempt must be runNN; never overwrite historical attempts')
+    hold_path = ROOT / 'fetch-pi05-training-hold.json'
+    if hold_path.exists() and load(hold_path).get('training_allowed') is not True:
+        raise RuntimeError('User training hold: native capability and wrong-handoff gates must be reviewed first')
     OUT = ROOT / f'runs/fetch-pi05-author-pipeline-2026-09-17-{args.attempt}'
     GATE = ROOT / f'runs/fetch-pi05-author-gate-2026-09-17-{args.attempt}'
     OUT.mkdir(parents=True, exist_ok=False)

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/pshuai/bvi-research/eval_lab_fetch_v8_native.py", line 211, in <module>
+    main()
+  File "/home/pshuai/bvi-research/eval_lab_fetch_v8_native.py", line 67, in main
+    from build_fetch_pi05_family_data import V8_CAMERA, V8_JOINT_NAMES
+  File "/home/pshuai/bvi-research/build_fetch_pi05_family_data.py", line 17, in <module>
+    from bvi.fetch_current_labels import CONTRACT, validate_manifest_splits, verified_teacher_targets
+ModuleNotFoundError: No module named 'bvi'

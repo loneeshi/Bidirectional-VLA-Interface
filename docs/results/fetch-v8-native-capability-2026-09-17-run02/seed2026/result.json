@@ -1,0 +1,171 @@
+{
+  "status": "episode_completed",
+  "seed": 2026,
+  "scene_split": "val",
+  "task": "set_table/pick/013_apple",
+  "max_actions": 200,
+  "control_frequency": 20,
+  "api_calls": 0,
+  "training_updates": 0,
+  "success": false,
+  "ever_grasped": false,
+  "stable_grasp_3_observations": false,
+  "longest_grasp_streak": 0,
+  "steps": 36,
+  "policy": "frozen FetchV8; no new prefix head or tool-family banks",
+  "native_predicate": "grasped + ee_rest<=0.05m + robot_rest + is_static + cumulative_force<5000",
+  "precision": "bfloat16",
+  "predicted_action_horizon": 10,
+  "executed_per_prediction": 1,
+  "head_mask_indices": [
+    8,
+    9
+  ],
+  "historical_pairing": "qpos/head/hand RGB+depth only; original full state unavailable",
+  "started_utc": "2026-09-17T05:04:17.244120+00:00",
+  "runner_sha256": "a90eec239af31a4f8eac838547050b999bfd08b11c4544fa2e1aca8b34371943",
+  "wall_seconds": 43.77721814438701,
+  "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+  "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c",
+  "renderer_pci": "0000:af:00.0",
+  "ee_rest_threshold_m": 0.05,
+  "source_sha256": {
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/pick.py": "6bc10aac584b1907ed21c098421bb43120276ee6d1b15df38cc909e0c3321bd4",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/subtask.py": "989d73eed4ef215ba9e999eb5950e219fc66023e9c708acaa1330bfdd5e35637",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/sequential_task.py": "a4230a26514f83c371e2a2c24a9440b7044fcdde675c16df2849a6717ec1c54c",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/envs/scenes/base_env.py": "8e2a8a2335a115643f8ed4583d77a1622c58450d7eab5605301bff4fc2a2e9e8",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/envs/sapien_env.py": "e8baa7f60194696c008d21f98c9993580cb9440e29cf939476819b4f83911cf1"
+  },
+  "task_cfg": "PickSubtaskConfig(task_id=0, horizon=200, robot_cumulative_force_limit=5000, ee_rest_thresh=0.05, robot_resting_qpos_tolerance=0.2, robot_resting_qpos_tolerance_grasping=0.6)",
+  "historical_reset_exact_matches": {
+    "qpos": true,
+    "fetch_head_rgb": true,
+    "fetch_head_depth": true,
+    "fetch_hand_rgb": true,
+    "fetch_hand_depth": true
+  },
+  "historical_reset_sha256": "13e249a05bbfdc8ae494ccd6c3b0f15f1d7069566271b5400e62bc49a9d382f4",
+  "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-617-0', composite_subtask_uids=['set_table-pick-val-617-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_376.json')",
+  "instruction": "Pick and stably hold object 013_apple-0.",
+  "instruction_source": "existing_V8_task_plan_template",
+  "original_subtask_start_base_xy": [
+    0.0003881740558426827,
+    0.0005195863777771592
+  ],
+  "joint_names": [
+    "root_x_axis_joint",
+    "root_y_axis_joint",
+    "root_z_rotation_joint",
+    "torso_lift_joint",
+    "head_pan_joint",
+    "shoulder_pan_joint",
+    "head_tilt_joint",
+    "shoulder_lift_joint",
+    "upperarm_roll_joint",
+    "elbow_flex_joint",
+    "forearm_roll_joint",
+    "wrist_flex_joint",
+    "wrist_roll_joint",
+    "r_gripper_finger_joint",
+    "l_gripper_finger_joint"
+  ],
+  "model_metadata": {
+    "status": "loading",
+    "training_updates": 0,
+    "progress_head": false,
+    "tapt": false,
+    "inference_calls": 0,
+    "max_inference_calls": 1200,
+    "client_disconnects": 0,
+    "denoising_steps": 10,
+    "action_horizon": 10,
+    "internal_action_dim": 32,
+    "external_action_dim": 13,
+    "action_postprocessing": "V8 quantile unnormalization only; client owns clipping/headmask",
+    "precision": "bfloat16",
+    "gpu_idle_limit_mib": 2048,
+    "gpu_guard_scope": "allows pre-existing SAPIEN allocation up to2GiB; no second model permitted",
+    "wall_seconds": 6.07222318649292e-07,
+    "gpu_memory_before_server_mib": 15,
+    "author_commit": "f4eb160ba52b22c1e85fe432de59c24bbbac6187",
+    "checkpoint": "/home/pshuai/bvi-research/checkpoints/fetch-v8",
+    "pretrained_parameters_sha256": "64c5502dad8629261c73abaf5a35782a1e9de7a73b5d92d3f1826ed60abedc16",
+    "pretrained_tensor_count": 71,
+    "normalizer_sha256": "77becdf322763ab87bc6a61a599e784d84d464cec714d677ac14b2d8e8a26aab",
+    "state_contract_sha256": "db9348178841a98795442f348c3beb972bd4a14eba5130eaca4d0307ade9c2f6",
+    "server_source_sha256": "033fbe8daaac29cd5d56e4d9671e55a52bf807a47c1de7f71178af8d38c4dd46",
+    "state_contract": {
+      "robot": "fetch",
+      "state_dim": 30,
+      "action_dim": 13,
+      "state_components": [
+        "qpos",
+        "qvel"
+      ],
+      "base_position_reference": "skill_start_xy",
+      "base_camera": "fetch_workspace",
+      "wrist_camera": "fetch_hand",
+      "state_conditioning": true,
+      "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+      "training_repo": "bvi/fetch-seed1-workspace-recovery-v8",
+      "evaluation_scope": "training-scene-diagnostic",
+      "training_steps": 2000,
+      "training_source_sha256": "ab99fcc1728c487ea2dcde2656291071abeaf5606a16f3aae553d06169e077a3"
+    },
+    "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+    "rng_contract": "reset PRNGKey(episode_seed); key,subkey=split(key) per prediction",
+    "ready_scope": "weights and transforms loaded; first inference may compile"
+  },
+  "final_info": {
+    "elapsed_steps": [
+      36
+    ],
+    "success": [
+      false
+    ],
+    "fail": [
+      true
+    ],
+    "subtask": [
+      0
+    ],
+    "subtask_type": [
+      0
+    ],
+    "subtasks_steps_left": [
+      163
+    ],
+    "robot_force": [
+      1779.1094970703125
+    ],
+    "robot_cumulative_force": [
+      5857.29638671875
+    ],
+    "is_grasped": [
+      false
+    ],
+    "ee_rest": [
+      false
+    ],
+    "robot_rest": [
+      false
+    ],
+    "is_static": [
+      false
+    ],
+    "cumulative_force_within_limit": [
+      false
+    ]
+  },
+  "stop_reason": "native_termination",
+  "video": "fetch-v8-native-pick-seed2026-episode000-failed.mp4",
+  "artifact_sha256": {
+    "final-cameras.png": "5cef1ac3d0a9f24d3be1b208b8a85910e2b2b5de6ce835b5be6b6966c40a3d73",
+    "events.jsonl": "f4695c28d3fb067a86b8debb57b2728800c6218d142cc29ae2194f401febe24c",
+    "initial-state.pt": "97b9e1ed0ed4a07e3ca40d2622aacec84a2fb344c5efb3cb040afc6513997c81",
+    "reset-cameras.png": "2aedbb9e3136b7703aed6b3acf18acaaf1f33ef14bd81f839e793c9c47188752",
+    "reset-observation.npz": "342008674eaf191343c4fd3e3a5398675a18262673f3bb1188d40de9bc42a390",
+    "initial-state.json": "8d9c35b3bbc4f673b9a0fd0881d737e9b3e2c918184a24ad69ee28e9f15ed1cb",
+    "fetch-v8-native-pick-seed2026-episode000-failed.mp4": "e11fc66583e8585850097ad6decad402333905b8264b206cc1ebfc180af1774f"
+  }
+}

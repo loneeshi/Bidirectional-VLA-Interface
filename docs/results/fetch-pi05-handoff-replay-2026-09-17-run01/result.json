@@ -1,0 +1,385 @@
+{
+  "status": "verified_handoff_inputs",
+  "accepted_cases": [
+    {
+      "case_id": "validation-seed3020-grasp-step17",
+      "hashes": {
+        "observation": "f9f1c4841917931d68d4855e69c8e5adcc708ff02001922db6c38ec605ca4972",
+        "simulator": "c28ee8a9d42c3c19e749832d96a36b21a5171b8368189830ee2ab1eda274feef",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "bf5b55a6fcbf2298e062d4479e58f7f235065aef7f0da7dbf8dd56868b266f37",
+        "origin": "939df1f151fc9d9fe4eafb4a3996d8cc0759a2b3f51484593185a26c8917f2fc"
+      },
+      "role": "validation",
+      "classification": "near_grasp_candidate_not_completion",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 3020,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "2ae3bce5cffd4743291ff0c20140b81c4c6e327d2141edf797a627d2e0b89917",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "validation-seed3020-move-step20",
+      "hashes": {
+        "observation": "736289292042fdd77d1075a4b75bc03f912e514b8f554ccbf1cd3dee23b40b2d",
+        "simulator": "8a7fda8b6370b622d67c5dc767ab43bc2dd6046da10ea2cfab5a916e588e6682",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "a8af4ad99f90299d2579fd574bf54359a35e87f321e5598fb801f0734c306f91",
+        "origin": "939df1f151fc9d9fe4eafb4a3996d8cc0759a2b3f51484593185a26c8917f2fc"
+      },
+      "role": "validation",
+      "classification": "held_move",
+      "family": "move",
+      "original_parent": {
+        "seed": 3020,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "71c2a88c4d5770c45081df4a924ad1f161eb3417b55b673153bfb1a1c5892809",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "validation-seed3021-grasp-step31",
+      "hashes": {
+        "observation": "e01007791ad0623f4f48690333cdbebfd322f15bce42b9f13ce436d6d75a1ea0",
+        "simulator": "14f8ffe89e77cd30e2134644c16548d133a6c787896c97ffff267acb9ac0d851",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "11147e9a137b7080bf8a154cd1faec5bc9cb00405bbae3b1e77961d770df6601",
+        "origin": "e2f5b068be4331915056e6552cd5649e545faf72e74762388efa64d773acaf0b"
+      },
+      "role": "validation",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 3021,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "d818eb76a279cc000c989eaab025b4ba70c692c48a665dbb6256a4cd9cc3c988",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-grasp-step31.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "validation-seed3021-move-step34",
+      "hashes": {
+        "observation": "3d2b38af53ddb51e615d8c2e979cf0f775a703bb82605dfba6bf61f7162eabbe",
+        "simulator": "f4af7be02c055267a716739f977a70ab82ef6112e046eb0f26cfff7d0eb65001",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "ab199f6c8c61196028906cecf534be06067101b45e02174783aabc17dbdb06bd",
+        "origin": "e2f5b068be4331915056e6552cd5649e545faf72e74762388efa64d773acaf0b"
+      },
+      "role": "validation",
+      "classification": "unheld_move",
+      "family": "move",
+      "original_parent": {
+        "seed": 3021,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "4fb9bdd78cf457a45acab941c21868829f8bc3a3578a8398a9a1960d9a67c86c",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-move-step34.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2025-grasp-step26",
+      "hashes": {
+        "observation": "92f1bcffb374690cb0f61c2c8a871352990b034df7822adc6c1d1b859b480f00",
+        "simulator": "567053cc25dbc76cc7fa7935c8fcb4938835b2b2407818a95926a7e202ab780b",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "91813c5db13f968d0ea4544668ede770bfd13fea9c14f48865e734eb81c60417",
+        "origin": "620f9b45b5eaccb3218be7f0c99d55c2540a5d9621c35992af192d6a3198a4a5"
+      },
+      "role": "locked_diagnostic",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 2025,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "13c4678dc846e9b7ddb0ea6c18904ed3f37ef5a5933cc4678272c62bffa17319",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-progress-eval-2026-09-17-run01--seed2025/locked_diagnostic-seed2025-grasp-step26.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2030-grasp-step18",
+      "hashes": {
+        "observation": "439e3fe68247395ebea444d09e016baf2ec9e04efc20f2330cd252e5980f4616",
+        "simulator": "60deea3d72f038353af72cd0728899b96c75fc891e5c406c7268b2ec7d5cabe8",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "96ab1c3b4c1f884039a27ef0762978f7585264086bd942c2bd98f5996d3db171",
+        "origin": "c658a8bc4ba230afb25cc55e26083e8835b9265bae122bf17a859daee22ef583"
+      },
+      "role": "locked_diagnostic",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 2030,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "d3d9d51fd295d1e9179744500f185d18e084c01d79a70be21e9d55e55760ed44",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-progress-eval-2026-09-17-run01--seed2030/locked_diagnostic-seed2030-grasp-step18.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2025-grasp-step16",
+      "hashes": {
+        "observation": "1f64f757e4a83c3adcfbf2cc9f69677cfa36fbf2fb90425e566ef7f00151c14a",
+        "simulator": "1141665edd846157b7a40cc9252e5910cb08cc933216fc5639cf79a37117fc7e",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "166d267c7172f5487e158b12f127b383ada20ab66a132b41697be65e4d71c77a",
+        "origin": "620f9b45b5eaccb3218be7f0c99d55c2540a5d9621c35992af192d6a3198a4a5"
+      },
+      "role": "locked_diagnostic",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 2025,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "3a1fd5e462c0466e280468a93085dc5d688240ca75eb7036e7d912d8c1b28556",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/locked_diagnostic-seed2025-grasp-step16.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2025-move-step18",
+      "hashes": {
+        "observation": "fb6713a90bf662fab3d7bc811748fa794fb309f03db81f8ddadbdeea8fcc82eb",
+        "simulator": "5bdcb3d1308522ab0d123027227052ab413b8243105b2c2cf797a7db99dd10e6",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "24df089c22a423a0bbf8fa3e375c2a52a7e3547ca9a335ca36a1094cccc31c85",
+        "origin": "620f9b45b5eaccb3218be7f0c99d55c2540a5d9621c35992af192d6a3198a4a5"
+      },
+      "role": "locked_diagnostic",
+      "classification": "unheld_move",
+      "family": "move",
+      "original_parent": {
+        "seed": 2025,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "47c925f04a1361a5fb50359bc01a9865df7a4da6466e02a1ff68e5186267d71c",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/locked_diagnostic-seed2025-move-step18.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    }
+  ],
+  "training_ready": false,
+  "api_calls": 0,
+  "training_updates": 0,
+  "plan_sha256": "9eb54fa19b46ccaff8860ff6727e5140713803bd98b85360ab815f5fcf2603c2",
+  "script_sha256": "a6193f0a4ce5f97b263f2aca12f52e9739f19deac4d6d6865957631786ae1143",
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "handoff_input_ready": true,
+  "trained_progress_validated": false,
+  "cases": [
+    {
+      "case_id": "validation-seed3020-grasp-step17",
+      "hashes": {
+        "observation": "f9f1c4841917931d68d4855e69c8e5adcc708ff02001922db6c38ec605ca4972",
+        "simulator": "c28ee8a9d42c3c19e749832d96a36b21a5171b8368189830ee2ab1eda274feef",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "bf5b55a6fcbf2298e062d4479e58f7f235065aef7f0da7dbf8dd56868b266f37",
+        "origin": "939df1f151fc9d9fe4eafb4a3996d8cc0759a2b3f51484593185a26c8917f2fc"
+      },
+      "role": "validation",
+      "classification": "near_grasp_candidate_not_completion",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 3020,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "2ae3bce5cffd4743291ff0c20140b81c4c6e327d2141edf797a627d2e0b89917",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "validation-seed3020-move-step20",
+      "hashes": {
+        "observation": "736289292042fdd77d1075a4b75bc03f912e514b8f554ccbf1cd3dee23b40b2d",
+        "simulator": "8a7fda8b6370b622d67c5dc767ab43bc2dd6046da10ea2cfab5a916e588e6682",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "a8af4ad99f90299d2579fd574bf54359a35e87f321e5598fb801f0734c306f91",
+        "origin": "939df1f151fc9d9fe4eafb4a3996d8cc0759a2b3f51484593185a26c8917f2fc"
+      },
+      "role": "validation",
+      "classification": "held_move",
+      "family": "move",
+      "original_parent": {
+        "seed": 3020,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "71c2a88c4d5770c45081df4a924ad1f161eb3417b55b673153bfb1a1c5892809",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "validation-seed3021-grasp-step31",
+      "hashes": {
+        "observation": "e01007791ad0623f4f48690333cdbebfd322f15bce42b9f13ce436d6d75a1ea0",
+        "simulator": "14f8ffe89e77cd30e2134644c16548d133a6c787896c97ffff267acb9ac0d851",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "11147e9a137b7080bf8a154cd1faec5bc9cb00405bbae3b1e77961d770df6601",
+        "origin": "e2f5b068be4331915056e6552cd5649e545faf72e74762388efa64d773acaf0b"
+      },
+      "role": "validation",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 3021,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "d818eb76a279cc000c989eaab025b4ba70c692c48a665dbb6256a4cd9cc3c988",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-grasp-step31.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "validation-seed3021-move-step34",
+      "hashes": {
+        "observation": "3d2b38af53ddb51e615d8c2e979cf0f775a703bb82605dfba6bf61f7162eabbe",
+        "simulator": "f4af7be02c055267a716739f977a70ab82ef6112e046eb0f26cfff7d0eb65001",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "ab199f6c8c61196028906cecf534be06067101b45e02174783aabc17dbdb06bd",
+        "origin": "e2f5b068be4331915056e6552cd5649e545faf72e74762388efa64d773acaf0b"
+      },
+      "role": "validation",
+      "classification": "unheld_move",
+      "family": "move",
+      "original_parent": {
+        "seed": 3021,
+        "scene_split": "train"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "4fb9bdd78cf457a45acab941c21868829f8bc3a3578a8398a9a1960d9a67c86c",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-move-step34.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    }
+  ],
+  "diagnostic_cases": [
+    {
+      "case_id": "locked_diagnostic-seed2025-grasp-step26",
+      "hashes": {
+        "observation": "92f1bcffb374690cb0f61c2c8a871352990b034df7822adc6c1d1b859b480f00",
+        "simulator": "567053cc25dbc76cc7fa7935c8fcb4938835b2b2407818a95926a7e202ab780b",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "91813c5db13f968d0ea4544668ede770bfd13fea9c14f48865e734eb81c60417",
+        "origin": "620f9b45b5eaccb3218be7f0c99d55c2540a5d9621c35992af192d6a3198a4a5"
+      },
+      "role": "locked_diagnostic",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 2025,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "13c4678dc846e9b7ddb0ea6c18904ed3f37ef5a5933cc4678272c62bffa17319",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-progress-eval-2026-09-17-run01--seed2025/locked_diagnostic-seed2025-grasp-step26.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2030-grasp-step18",
+      "hashes": {
+        "observation": "439e3fe68247395ebea444d09e016baf2ec9e04efc20f2330cd252e5980f4616",
+        "simulator": "60deea3d72f038353af72cd0728899b96c75fc891e5c406c7268b2ec7d5cabe8",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "96ab1c3b4c1f884039a27ef0762978f7585264086bd942c2bd98f5996d3db171",
+        "origin": "c658a8bc4ba230afb25cc55e26083e8835b9265bae122bf17a859daee22ef583"
+      },
+      "role": "locked_diagnostic",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 2030,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "d3d9d51fd295d1e9179744500f185d18e084c01d79a70be21e9d55e55760ed44",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-current-progress-eval-2026-09-17-run01--seed2030/locked_diagnostic-seed2030-grasp-step18.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2025-grasp-step16",
+      "hashes": {
+        "observation": "1f64f757e4a83c3adcfbf2cc9f69677cfa36fbf2fb90425e566ef7f00151c14a",
+        "simulator": "1141665edd846157b7a40cc9252e5910cb08cc933216fc5639cf79a37117fc7e",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "166d267c7172f5487e158b12f127b383ada20ab66a132b41697be65e4d71c77a",
+        "origin": "620f9b45b5eaccb3218be7f0c99d55c2540a5d9621c35992af192d6a3198a4a5"
+      },
+      "role": "locked_diagnostic",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "original_parent": {
+        "seed": 2025,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "3a1fd5e462c0466e280468a93085dc5d688240ca75eb7036e7d912d8c1b28556",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/locked_diagnostic-seed2025-grasp-step16.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    },
+    {
+      "case_id": "locked_diagnostic-seed2025-move-step18",
+      "hashes": {
+        "observation": "fb6713a90bf662fab3d7bc811748fa794fb309f03db81f8ddadbdeea8fcc82eb",
+        "simulator": "5bdcb3d1308522ab0d123027227052ab413b8243105b2c2cf797a7db99dd10e6",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state30": "24df089c22a423a0bbf8fa3e375c2a52a7e3547ca9a335ca36a1094cccc31c85",
+        "origin": "620f9b45b5eaccb3218be7f0c99d55c2540a5d9621c35992af192d6a3198a4a5"
+      },
+      "role": "locked_diagnostic",
+      "classification": "unheld_move",
+      "family": "move",
+      "original_parent": {
+        "seed": 2025,
+        "scene_split": "val"
+      },
+      "workspace_replay_verified": true,
+      "npz_sha256": "47c925f04a1361a5fb50359bc01a9865df7a4da6466e02a1ff68e5186267d71c",
+      "input_path": "/home/pshuai/bvi-research/runs/fetch-pi05-handoff-replay-2026-09-17-run01/fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/locked_diagnostic-seed2025-move-step18.npz",
+      "physical_completion": null,
+      "current_local_first_progress": 0.0,
+      "temporal_zero_is_physical_reward": false
+    }
+  ]
+}
