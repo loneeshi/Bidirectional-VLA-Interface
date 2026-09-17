@@ -96,6 +96,7 @@ is an explicit AC-DiT port, not an assertion of identical OpenPI architecture.
     def __init__(self, runner, projection_paths, rank=8, alpha=8):
         super().__init__()
         self.runner = runner.requires_grad_(False)
+        self._native_predict_action = runner.predict_action
         self.projection_paths = tuple(projection_paths)
         self.layers = install_family_residuals(runner.model,projection_paths,rank,alpha)
         weight=next(runner.model.parameters())
@@ -127,6 +128,6 @@ is an explicit AC-DiT port, not an assertion of identical OpenPI architecture.
     @torch.no_grad()
     def predict(self, family, batch):
         with self._capture(family):
-            actions=self.runner.predict_action(**batch)
+            actions=self._native_predict_action(**batch)
             if self._hidden is None:raise RuntimeError('No real inference features captured')
             return actions,self.progress(self._hidden)
