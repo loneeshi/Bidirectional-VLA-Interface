@@ -38,3 +38,22 @@ def test_progress_is_learned_and_masks_invalid_labels():
     loss.backward()
     assert any(p.grad is not None and p.grad.abs().sum()>0 for p in head.parameters())
     with pytest.raises(ValueError):masked_progress_loss(pred,target,torch.zeros(2,2))
+
+
+def test_inference_dispatch_does_not_recurse_and_returns_real_features():
+    from bvi.acdit_tapt import ACDiTFamilyTool
+    class DiT(nn.Module):
+        def __init__(self):
+            super().__init__(); self.hidden_size=4
+            self.projection=nn.Linear(4,4);self.final_layer=nn.Linear(4,3)
+        def forward(self,x):return self.final_layer(self.projection(x))
+    class Runner(nn.Module):
+        def __init__(self):
+            super().__init__();self.model=DiT();self.pred_horizon=2
+        def predict_action(self,x):return self.model(x)
+    runner=Runner();tool=ACDiTFamilyTool(runner,['projection'],rank=2)
+    runner.predict_action=lambda **batch: tool.predict('reach',batch)[0]
+    actions,progress=tool.predict('reach',{'x':torch.ones(1,2,4)})
+    assert actions.shape==(1,2,3) and progress.shape==(1,2)
+    assert torch.isfinite(progress).all() and tool._hidden is None
+    assert all(layer.family is None for layer in tool.layers)

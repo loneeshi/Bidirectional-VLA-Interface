@@ -654,6 +654,13 @@
       "path": "sac-native-reference-2026-09-16-run01/sac-reference-seed2025.mp4",
       "sha256": "d6349ea481099a05118d7eab1d0c9f031c850e8f706d20beb1c286edcf2c4a53",
       "bytes": 295244
+    },
+    {
+      "filename": "fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-tapt-online-pick-2026-09-17-run01/fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "25c9287bc1ac3032d9d492e628632243524fcaf60c42702f90f6d19c3e88d436",
+      "bytes": 147130,
+      "recorded_utc": "2026-09-17T00:27:56.091257+00:00"
     }
   ]
 }
