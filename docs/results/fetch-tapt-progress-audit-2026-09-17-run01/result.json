@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-17T00:40:44.481589+00:00",
+  "checkpoint_sha256": "6c59df4acebca2cfb1a9ef8d37dc8d95834f22f112d93ec953a5e009c3b61c5a",
+  "runner_sha256": "a90ce91ae96b28c6a47e9f29fa652a992513bb69976ec8e242ceab4b74c4f4f4",
+  "script_sha256": "588f0d66f263e723229f2ead5b816ecb439dc222e91774ad7a99087d8cfea15f",
+  "seed": 8181,
+  "api_calls": 0,
+  "optimizer_updates": 0,
+  "scope": "paired held-out offline progress audit; no task-success evaluation",
+  "limitations": [
+    "one inference seed per observation",
+    "elapsed-time labels are not physical completion predicates",
+    "held-out SAC states, not the failed online rollout states"
+  ],
+  "cached_examples": 33,
+  "checkpoint_updates": 1199,
+  "examples": 33,
+  "model_training": false,
+  "prediction_type": "sample",
+  "completed_examples": 33,
+  "elapsed_seconds": 259.0274511501193,
+  "trainable_unchanged": true,
+  "finished_at": "2026-09-17T00:45:03.508985+00:00",
+  "max_allocated_bytes": 12727791104
+}
