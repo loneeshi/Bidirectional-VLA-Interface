@@ -5,6 +5,7 @@ Insertion sites must be supplied and recorded by the training configuration.
 Native backbone and mobility expert remain frozen. No automatic family inference.
 """
 from contextlib import contextmanager
+import math
 import torch
 from torch import nn
 
@@ -124,6 +125,29 @@ is an explicit AC-DiT port, not an assertion of identical OpenPI architecture.
             pl=masked_progress_loss(prediction,progress_target,progress_valid)
             return {'loss':action+progress_weight*pl,'action_loss':action,
                     'progress_loss':pl,'progress':prediction}
+
+    def progress_only_loss(self, family, batch, progress_target, valid, progress_weight=.1):
+        """Train only progress on actual native generated action-token features.
+
+        The native inference path supplies the last captured denoising features
+        under no_grad; detached features then enter the trainable progress head.
+        No action target or native action loss is used. These are generated
+        action-token hidden features, not the author's observation-prefix source.
+        The action_loss metric is zero because this objective has no action loss.
+        """
+        if not math.isfinite(progress_weight) or progress_weight <= 0:
+            raise ValueError('Progress learning must have finite positive weight')
+        with self._capture(family):
+            with torch.no_grad():
+                self._native_predict_action(**batch)
+                if self._hidden is None:
+                    raise RuntimeError('No real inference features captured')
+                hidden = self._hidden.detach()
+            prediction = self.progress(hidden)
+            pl = masked_progress_loss(prediction, progress_target, valid)
+            return {'loss': progress_weight * pl,
+                    'action_loss': prediction.new_zeros(()),
+                    'progress_loss': pl, 'progress': prediction}
 
     @torch.no_grad()
     def predict(self, family, batch):

@@ -39,15 +39,20 @@ def main():
     parser.add_argument('--seed', type=int, default=2024)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--reset-only', action='store_true')
-    parser.add_argument('--progress-timing', choices=['post_action_v1', 'legacy_pre_action'],
+    parser.add_argument('--scene-split', choices=['train', 'val'], default='val')
+    parser.add_argument('--max-steps', type=int, default=200)
+    parser.add_argument('--checkpoint', type=Path)
+    parser.add_argument('--progress-timing', choices=['post_action_v1', 'legacy_pre_action', 'current_observation_v2'],
                         default='post_action_v1', help='Legacy checkpoint label contract; pre-action is diagnostic control only')
     parser.add_argument('--record-decisions', action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args()
+    if not 1 <= args.max_steps <= 200:
+        parser.error('--max-steps must be between 1 and 200')
     root = Path.home() / 'bvi-research'
     args.output.mkdir(parents=True, exist_ok=False)
     report = {'status': 'started', 'started_utc': datetime.now(timezone.utc).isoformat(),
-              'seed': args.seed, 'task': 'set_table/pick/013_apple', 'split': 'val',
-              'max_steps': 200, 'api_calls': 0, 'training_updates': 0,
+              'seed': args.seed, 'task': 'set_table/pick/013_apple', 'split': args.scene_split,
+              'max_steps': args.max_steps, 'api_calls': 0, 'training_updates': 0,
               'precision': 'float32', 'success': False, 'steps': 0,
               'privileged_context': True, 'reset_only': args.reset_only,
               'progress_label_contract': 'post_action_position_v1',
@@ -99,17 +104,17 @@ def main():
         from bvi.acdit_contract import fetch_proprio, privileged_context, validate_pointcloud, NativeCallBoundary
         from bvi.acdit_tapt import ACDiTFamilyTool
         from bvi.progress_monitor import ProgressMonitor
-        from bvi.progress_timing import PostActionProgressGate, require_post_action_contract
+        from bvi.progress_timing import PostActionProgressGate, require_progress_contract
         from bvi.decision_trace import TorchDecisionRecorder
         rearrange = root / 'assets/data/scene_datasets/replica_cad_dataset/rearrange'
-        plan_path = rearrange / 'task_plans/set_table/pick/val/013_apple.json'
+        plan_path = rearrange / f'task_plans/set_table/pick/{args.scene_split}/013_apple.json'
         plans = plan_data_from_file(plan_path)
         env = gym.make('PickSubtaskTrain-v0', num_envs=1, robot_uids='fetch', obs_mode='rgbdp',
                        control_mode='pd_joint_delta_pos', render_mode='rgb_array', reward_mode='dense',
                        sensor_configs={'shader_pack': 'default'}, human_render_camera_configs={'shader_pack': 'default'},
                        viewer_camera_configs={'shader_pack': 'default'}, sim_backend='cpu',
-                       max_episode_steps=200, task_plans=plans.plans, scene_builder_cls=plans.dataset,
-                       spawn_data_fp=rearrange / 'spawn_data/set_table/pick/val/spawn_data.pt',
+                       max_episode_steps=args.max_steps, task_plans=plans.plans, scene_builder_cls=plans.dataset,
+                       spawn_data_fp=rearrange / f'spawn_data/set_table/pick/{args.scene_split}/spawn_data.pt',
                        require_build_configs_repeated_equally_across_envs=False)
         obs, info = env.reset(seed=args.seed)
         raw_env = env.unwrapped
@@ -192,10 +197,10 @@ def main():
             device='cuda:0', dtype=torch.float32, method_name='AC-DiT', combine_flag=False,
             pretrained_vision_encoder_name_or_path=encoder['snapshot'],
             mobility_head_ckpt_path=str(root / 'checkpoints/acdit/stage1_mobility_head/checkpoint-30000.pt'))
-        checkpoint_path = root / 'runs/fetch-tapt-sft-2026-09-16-run01/best.pt'
+        checkpoint_path = args.checkpoint or root / 'runs/fetch-tapt-sft-2026-09-16-run01/best.pt'
         checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
         checkpoint_sha256 = hashlib.sha256(checkpoint_path.read_bytes()).hexdigest()
-        report['progress_label_contract'] = require_post_action_contract(checkpoint['report'], checkpoint_sha256)
+        report['progress_label_contract'] = require_progress_contract(checkpoint['report'], checkpoint_sha256, args.progress_timing)
         model = ACDiTFamilyTool(policy.policy, checkpoint['report']['projection_paths'])
         parameters = dict(model.named_parameters())
         expected = {name for name, parameter in parameters.items() if parameter.requires_grad}
@@ -244,7 +249,7 @@ def main():
             progress_gate = PostActionProgressGate(monitor)
             event('family_switch', call_id=call_id, family=families[index][0], instruction=instruction)
             return True
-        while report['steps'] < 200:
+        while report['steps'] < args.max_steps:
             images = [Image.fromarray(a) if a is not None else None for window in history for a in window]
             prediction_step = report['steps']
             decision_id = None
@@ -263,9 +268,10 @@ def main():
             progress_values = progress_result['values']
             event('progress_prediction', step=prediction_step, family=families[index][0],
                   call_id=call_id, decision_id=decision_id, values=progress_values,
-                  target_step=prediction_step+1, consumed_index=0,
-                  source='forecast_from_pre_action_observation_not_measured_completion')
-            if args.progress_timing == 'legacy_pre_action':
+                  target_step=prediction_step+(args.progress_timing != 'current_observation_v2'), consumed_index=0,
+                  source=('learned_current_observation_progress' if args.progress_timing == 'current_observation_v2'
+                          else 'forecast_from_pre_action_observation_not_measured_completion'))
+            if args.progress_timing in ('legacy_pre_action', 'current_observation_v2'):
                 reason = monitor.update(float(progress_values[0]))
                 event('learned_progress', step=report['steps'], family=families[index][0],
                       call_id=call_id, values=progress_values, trigger=reason,
@@ -280,7 +286,7 @@ def main():
             event('prediction', step=report['steps'], seconds=time.monotonic()-started,
                   raw_actions=chunk.raw, clipped_indices=chunk.clipped_indices)
             stop = False
-            while binding.pending and report['steps'] < 200:
+            while binding.pending and report['steps'] < args.max_steps:
                 action = binding.pop()
                 obs, reward, terminated, truncated, info = env.step(action)
                 report['steps'] += 1
@@ -294,11 +300,11 @@ def main():
                       extra=obs['extra'], qpos=robot.qpos, qvel=robot.qvel)
                 save()
                 # Native safety/termination and the action budget take precedence.
-                if bool(terminated.item()) or bool(truncated.item()) or report['steps'] >= 200:
+                if bool(terminated.item()) or bool(truncated.item()) or report['steps'] >= args.max_steps:
                     progress_gate.cancel()
                     binding.interrupt()
                     report['stop_reason'] = ('native_terminated' if bool(terminated.item()) else
-                                            'native_truncated' if bool(truncated.item()) else '200_step_budget')
+                                            'native_truncated' if bool(truncated.item()) else f'{args.max_steps}_step_budget')
                     stop = True
                     break
                 if args.progress_timing == 'post_action_v1' and progress_gate.pending:
