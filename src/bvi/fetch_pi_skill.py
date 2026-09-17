@@ -22,8 +22,8 @@ class FetchPiSkill:
             'state_conditioning':True}.items()):
             raise ProtocolError('A Fetch-trained model with matching controller metadata is required')
         self.state_dim=metadata.get('state_dim')
-        expected=['qpos','qvel'] if self.state_dim==30 else ['qpos']
-        if self.state_dim not in (15,30) or metadata.get('state_components',['qpos'])!=expected:
+        expected=['native_qpos12','native_qvel12'] if self.state_dim==24 else (['qpos','qvel'] if self.state_dim==30 else ['qpos'])
+        if self.state_dim not in (15,24,30) or metadata.get('state_components',['qpos'])!=expected:
             raise ProtocolError('Unsupported or undeclared Fetch state components')
         self.base_reference=metadata.get('base_position_reference','world')
         if self.base_reference not in ('world','skill_start_xy'):
@@ -33,6 +33,9 @@ class FetchPiSkill:
         self.wrist_camera=metadata.get('wrist_camera','fetch_hand')
         if self.base_camera not in ('fetch_head','fetch_workspace') or self.wrist_camera!='fetch_hand':
             raise ProtocolError('Unsupported Fetch camera contract')
+        if self.state_dim==24 and (metadata.get('state_source')!='env_native_agent'
+                or self.base_reference!='world' or self.base_camera!='fetch_head'):
+            raise ProtocolError('Native24 requires declared env_native_agent/head camera and no relative-base transform')
         names=[j.name for j in adapter.uenv.agent.robot.active_joints]
         if names!=JOINT_NAMES: raise ProtocolError('Fetch state joint ordering differs from training')
         self.name,self.adapter,self.client=name,adapter,client
@@ -60,7 +63,7 @@ class FetchPiSkill:
             self.prompt=self.instructions[str(index)]
         else:
             self.prompt=describe_target(self.adapter.original_plan,index).description
-        if new_subtask or self.base_xy_origin is None:
+        if self.state_dim!=24 and (new_subtask or self.base_xy_origin is None):
             self.base_xy_origin=tuple(float(x) for x in jsonable(self.adapter.uenv.agent.robot.qpos)[0][:2])
         self.actions.clear()
         self.adapter.logger.emit('fetch_pi_started',call_id=self.call_id,skill=self.name,
@@ -80,16 +83,25 @@ class FetchPiSkill:
                 image=next((x for x in visual.images if x.camera==camera),None)
                 if image is None:raise ProtocolError(f'Required Fetch camera is missing: {camera}')
                 return np.asarray(Image.open(io.BytesIO(image.data)).convert('RGB'))
-            state=np.asarray(jsonable(self.adapter.uenv.agent.robot.qpos)[0],dtype=np.float32)
-            if self.base_reference=='skill_start_xy':
-                if self.base_xy_origin is None: raise ProtocolError('Missing measured skill-start base origin')
-                state[:2]-=np.asarray(self.base_xy_origin,np.float32)
-            if self.state_dim==30:
-                state=np.concatenate([state,np.asarray(jsonable(self.adapter.uenv.agent.robot.qvel)[0],dtype=np.float32)])
+            head,hand=pixels(self.base_camera),pixels(self.wrist_camera)
+            if self.state_dim==24:
+                from .official_fetch_data import native_policy_observation
+                agent_obs=self.adapter.uenv._get_obs_agent()
+                native=native_policy_observation(
+                    np.asarray(jsonable(agent_obs['qpos']))[0],
+                    np.asarray(jsonable(agent_obs['qvel']))[0],head,hand,self.prompt)
+                state=native['state']
+            else:
+                state=np.asarray(jsonable(self.adapter.uenv.agent.robot.qpos)[0],dtype=np.float32)
+                if self.base_reference=='skill_start_xy':
+                    if self.base_xy_origin is None: raise ProtocolError('Missing measured skill-start base origin')
+                    state[:2]-=np.asarray(self.base_xy_origin,np.float32)
+                if self.state_dim==30:
+                    state=np.concatenate([state,np.asarray(jsonable(self.adapter.uenv.agent.robot.qvel)[0],dtype=np.float32)])
             if state.shape!=(self.state_dim,) or not np.isfinite(state).all(): raise ProtocolError('Invalid Fetch state')
             self.adapter.save_observation_images()
-            inputs={'observation/state':state,'observation/image':pixels(self.base_camera),
-                    'observation/wrist_image':pixels(self.wrist_camera),'prompt':self.prompt}
+            inputs={'observation/state':state,'observation/image':head,
+                    'observation/wrist_image':hand,'prompt':self.prompt}
             samples=[]
             for _ in range(self.ensemble_samples):
                 self.total_predictions+=1
