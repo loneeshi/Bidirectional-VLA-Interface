@@ -9,3 +9,5 @@ docs/results/fetch-v8-native-capability-2026-09-17-run02/** -text whitespace=cr-
 docs/results/fetch-pi05-handoff-replay-2026-09-17-run01/** -text whitespace=cr-at-eol
 docs/results/fetch-pi05-handoff-validation-2026-09-17/** -text whitespace=cr-at-eol
 docs/results/fetch-pi05-workspace-teacher-2026-09-17-run01/** -text whitespace=cr-at-eol
+
+docs/results/fallback-baseline-audit-2026-09-17/** -text whitespace=cr-at-eol
