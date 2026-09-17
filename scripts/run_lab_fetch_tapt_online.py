@@ -223,6 +223,9 @@ def main():
             return actions
         policy.policy.predict_action = trained_prediction
         report.update(strict_load=True, trained_updates=checkpoint['updates'],
+                      warmstart_updates=checkpoint['report'].get('warmstart_updates'),
+                      trained_updates_scope=('additional_calibration_updates' if
+                          'warmstart_updates' in checkpoint['report'] else 'checkpoint_updates'),
                       trained_checkpoint_sha256=checkpoint_sha256,
                       progress_events=[])
         event('trained_model_loaded', checkpoint_sha256=report['trained_checkpoint_sha256'])
