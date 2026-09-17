@@ -1,0 +1,68 @@
+[
+  {
+    "seed": 2025,
+    "clipped_prediction_channels": {
+      "0": 8,
+      "1": 1,
+      "2": 17,
+      "3": 7,
+      "4": 8,
+      "5": 1,
+      "7": 21,
+      "10": 9,
+      "11": 1,
+      "12": 3
+    },
+    "controller_action_mapping": {
+      "arm": [
+        0,
+        7
+      ],
+      "gripper": [
+        7,
+        8
+      ],
+      "body": [
+        8,
+        11
+      ],
+      "base": [
+        11,
+        13
+      ]
+    },
+    "note": "Counts refer to logged generated chunks; not every pending action is executed. Clamping existed before this experiment; no claim of a new interface bug."
+  },
+  {
+    "seed": 2030,
+    "clipped_prediction_channels": {
+      "1": 1,
+      "3": 8,
+      "4": 2,
+      "5": 8,
+      "7": 12,
+      "10": 5,
+      "11": 4,
+      "12": 1
+    },
+    "controller_action_mapping": {
+      "arm": [
+        0,
+        7
+      ],
+      "gripper": [
+        7,
+        8
+      ],
+      "body": [
+        8,
+        11
+      ],
+      "base": [
+        11,
+        13
+      ]
+    },
+    "note": "Counts refer to logged generated chunks; not every pending action is executed. Clamping existed before this experiment; no claim of a new interface bug."
+  }
+]

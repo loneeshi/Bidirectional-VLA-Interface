@@ -1,0 +1,15 @@
+{
+  "verified_at_utc": "2026-09-17T03:07:09Z",
+  "gpu_index": 1,
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "memory_mib": 15,
+  "utilization_percent": 0,
+  "exited_pids": [
+    1386731,
+    1388090,
+    1392623
+  ],
+  "api_calls_this_phase": 0,
+  "new_rented_compute_usd": 0,
+  "lab_charge_usd": null
+}
