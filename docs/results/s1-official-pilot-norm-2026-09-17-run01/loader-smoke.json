@@ -1,0 +1,26 @@
+{
+  "train": {
+    "frames": 889,
+    "state_shape": [
+      32
+    ],
+    "action_shape": [
+      10,
+      32
+    ]
+  },
+  "validation": {
+    "frames": 230,
+    "state_shape": [
+      32
+    ],
+    "action_shape": [
+      10,
+      32
+    ]
+  },
+  "status": "explicit_split_loader_passed",
+  "progress_loss_weight": 0.0,
+  "hash_repartition_enabled": false,
+  "training_updates": 0
+}
