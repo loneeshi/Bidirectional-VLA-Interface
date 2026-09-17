@@ -39,6 +39,9 @@ def main():
     parser.add_argument('--seed', type=int, default=2024)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--reset-only', action='store_true')
+    parser.add_argument('--progress-timing', choices=['post_action_v1', 'legacy_pre_action'],
+                        default='post_action_v1', help='Legacy checkpoint label contract; pre-action is diagnostic control only')
+    parser.add_argument('--record-decisions', action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args()
     root = Path.home() / 'bvi-research'
     args.output.mkdir(parents=True, exist_ok=False)
@@ -46,7 +49,10 @@ def main():
               'seed': args.seed, 'task': 'set_table/pick/013_apple', 'split': 'val',
               'max_steps': 200, 'api_calls': 0, 'training_updates': 0,
               'precision': 'float32', 'success': False, 'steps': 0,
-              'privileged_context': True, 'reset_only': args.reset_only}
+              'privileged_context': True, 'reset_only': args.reset_only,
+              'progress_label_contract': 'post_action_position_v1',
+              'progress_consumption': args.progress_timing,
+              'record_decisions': args.record_decisions}
     def save():
         (args.output / 'result.json').write_text(json.dumps(jsonable(report), indent=2)+'\n')
     def event(name, **data):
@@ -93,6 +99,8 @@ def main():
         from bvi.acdit_contract import fetch_proprio, privileged_context, validate_pointcloud, NativeCallBoundary
         from bvi.acdit_tapt import ACDiTFamilyTool
         from bvi.progress_monitor import ProgressMonitor
+        from bvi.progress_timing import PostActionProgressGate, require_post_action_contract
+        from bvi.decision_trace import TorchDecisionRecorder
         rearrange = root / 'assets/data/scene_datasets/replica_cad_dataset/rearrange'
         plan_path = rearrange / 'task_plans/set_table/pick/val/013_apple.json'
         plans = plan_data_from_file(plan_path)
@@ -151,8 +159,7 @@ def main():
         event('reset_passed', interface=report['interface'])
         if args.reset_only:
             return
-        # Reproduce the training tokenizer's padded batch; explicitly bind the
-        # first matching apple instruction and retain its actual token IDs.
+        # Match this TAPT checkpoint's single, unpadded explicit instruction.
         from transformers import AutoTokenizer, SiglipTextModel
         encoder = json.loads((root / 'encoder-lock.json').read_text())
         tokenizer = AutoTokenizer.from_pretrained(encoder['snapshot'], model_max_length=1024)
@@ -174,6 +181,7 @@ def main():
         instruction = families[index][1]
         binding.begin(call_id, instruction, control_owner='acdit_whole_body')
         monitor = ProgressMonitor(families[index][0], index)
+        progress_gate = PostActionProgressGate(monitor)
         report.update(coordinator='fixed diagnostic sequence, no GPT',
                       feedback_source='trained_progress_head', native_start_only=True,
                       protocol_scope='Pick reach/grasp/move; release not exercised here',
@@ -186,6 +194,8 @@ def main():
             mobility_head_ckpt_path=str(root / 'checkpoints/acdit/stage1_mobility_head/checkpoint-30000.pt'))
         checkpoint_path = root / 'runs/fetch-tapt-sft-2026-09-16-run01/best.pt'
         checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
+        checkpoint_sha256 = hashlib.sha256(checkpoint_path.read_bytes()).hexdigest()
+        report['progress_label_contract'] = require_post_action_contract(checkpoint['report'], checkpoint_sha256)
         model = ACDiTFamilyTool(policy.policy, checkpoint['report']['projection_paths'])
         parameters = dict(model.named_parameters())
         expected = {name for name, parameter in parameters.items() if parameter.requires_grad}
@@ -197,13 +207,18 @@ def main():
                 parameters[name].copy_(value)
         model.eval()
         progress_result = {}
+        recorder = TorchDecisionRecorder(args.output / 'decisions') if args.record_decisions else None
         def trained_prediction(**batch):
+            if recorder is not None:
+                recorder.record_batch(batch)
             actions, progress = model.predict(families[index][0], batch)
+            if recorder is not None:
+                recorder.finish(actions, progress)
             progress_result['values'] = progress[0].detach().cpu().tolist()
             return actions
         policy.policy.predict_action = trained_prediction
         report.update(strict_load=True, trained_updates=checkpoint['updates'],
-                      trained_checkpoint_sha256=hashlib.sha256(checkpoint_path.read_bytes()).hexdigest(),
+                      trained_checkpoint_sha256=checkpoint_sha256,
                       progress_events=[])
         event('trained_model_loaded', checkpoint_sha256=report['trained_checkpoint_sha256'])
         report['status'] = 'episode_running'
@@ -211,30 +226,56 @@ def main():
         writer.append_data(frame)
         event('model_ready', instruction=instruction, embedding_shape=list(binding.embedding.shape))
         ever_grasped, clipping = False, 0
+        def handle_progress_event(reason):
+            nonlocal index, call_id, instruction, monitor, progress_gate
+            discarded = len(binding.pending)
+            progress_gate.cancel()
+            binding.interrupt()
+            event('queue_cleared', call_id=call_id, discarded_actions=discarded, reason=reason)
+            report['progress_events'].append({'step':report['steps'],'family':families[index][0],'reason':reason})
+            if reason != 'learned_threshold' or index == len(families)-1:
+                report['stop_reason'] = reason + '_requires_coordinator'
+                return False
+            index += 1
+            instruction = families[index][1]
+            call_id = f'tapt-pick-{index:03d}'
+            binding.begin(call_id, instruction, control_owner='acdit_whole_body')
+            monitor = ProgressMonitor(families[index][0], index)
+            progress_gate = PostActionProgressGate(monitor)
+            event('family_switch', call_id=call_id, family=families[index][0], instruction=instruction)
+            return True
         while report['steps'] < 200:
             images = [Image.fromarray(a) if a is not None else None for window in history for a in window]
+            prediction_step = report['steps']
+            decision_id = None
+            if recorder is not None:
+                decision_id = recorder.begin(
+                    {'prediction_step':prediction_step, 'family':families[index][0], 'call_id':call_id,
+                     'instruction':instruction, 'instruction_sha256':binding.instruction_sha256,
+                     'checkpoint_sha256':report['trained_checkpoint_sha256'], 'seed':args.seed,
+                     'progress_label_contract':report['progress_label_contract'],
+                     'progress_consumption':args.progress_timing},
+                    {'observation':obs, 'image_history':list(history), 'pointcloud_history':list(clouds),
+                     'simulator':raw_env.get_state_dict(), 'controller':raw_env.agent.controller.get_state()})
             started = time.monotonic()
             actions = policy.step(proprio(), images, binding.embedding, list(clouds), obs['extra'])[0].cpu().numpy()
             chunk = binding.enqueue(call_id, actions, low, high)
             progress_values = progress_result['values']
-            reason = monitor.update(float(progress_values[0]))
-            event('learned_progress', step=report['steps'], family=families[index][0],
-                  call_id=call_id, values=progress_values, trigger=reason,
-                  instruction_sha256=binding.instruction_sha256)
-            if reason:
-                binding.interrupt()
-                event('queue_cleared', call_id=call_id, discarded_actions=len(chunk.executed), reason=reason)
-                report['progress_events'].append({'step':report['steps'],'family':families[index][0],'reason':reason})
-                if reason != 'learned_threshold' or index == len(families)-1:
-                    report['stop_reason'] = reason + '_requires_coordinator'
-                    break
-                index += 1
-                instruction = families[index][1]
-                call_id = f'tapt-pick-{index:03d}'
-                binding.begin(call_id, instruction, control_owner='acdit_whole_body')
-                monitor = ProgressMonitor(families[index][0], index)
-                event('family_switch', call_id=call_id, family=families[index][0], instruction=instruction)
-                continue
+            event('progress_prediction', step=prediction_step, family=families[index][0],
+                  call_id=call_id, decision_id=decision_id, values=progress_values,
+                  target_step=prediction_step+1, consumed_index=0,
+                  source='forecast_from_pre_action_observation_not_measured_completion')
+            if args.progress_timing == 'legacy_pre_action':
+                reason = monitor.update(float(progress_values[0]))
+                event('learned_progress', step=report['steps'], family=families[index][0],
+                      call_id=call_id, values=progress_values, trigger=reason,
+                      prediction_step=prediction_step, executed_since_prediction=0, consumed_index=0,
+                      decision_id=decision_id, instruction_sha256=binding.instruction_sha256)
+                if reason:
+                    if not handle_progress_event(reason): break
+                    continue
+            else:
+                progress_gate.stage(call_id, prediction_step, progress_values)
             clipping += len(chunk.clipped_indices)
             event('prediction', step=report['steps'], seconds=time.monotonic()-started,
                   raw_actions=chunk.raw, clipped_indices=chunk.clipped_indices)
@@ -252,11 +293,25 @@ def main():
                       terminated=terminated, truncated=truncated, info=info,
                       extra=obs['extra'], qpos=robot.qpos, qvel=robot.qvel)
                 save()
-                if bool(terminated.item()) or bool(truncated.item()):
+                # Native safety/termination and the action budget take precedence.
+                if bool(terminated.item()) or bool(truncated.item()) or report['steps'] >= 200:
+                    progress_gate.cancel()
                     binding.interrupt()
-                    report['stop_reason'] = 'native_terminated' if bool(terminated.item()) else 'native_truncated'
+                    report['stop_reason'] = ('native_terminated' if bool(terminated.item()) else
+                                            'native_truncated' if bool(truncated.item()) else '200_step_budget')
                     stop = True
                     break
+                if args.progress_timing == 'post_action_v1' and progress_gate.pending:
+                    reason = progress_gate.observe(call_id, report['steps'])
+                    event('learned_progress', step=report['steps'], family=families[index][0],
+                          call_id=call_id, values=progress_values, trigger=reason,
+                          prediction_step=prediction_step, executed_since_prediction=report['steps']-prediction_step,
+                          consumed_index=0, decision_id=decision_id,
+                          instruction_sha256=binding.instruction_sha256,
+                          source='forecast_consumed_after_corresponding_action_not_measured_completion')
+                    if reason:
+                        stop = not handle_progress_event(reason)
+                        break
             if stop:
                 break
         report.setdefault('stop_reason', '200_step_budget')
