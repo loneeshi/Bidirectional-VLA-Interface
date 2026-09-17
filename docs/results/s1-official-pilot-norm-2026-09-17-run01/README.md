@@ -23,3 +23,7 @@ FetchPiSkill新增显式native24分支：检查state_source=env_native_agent，�
 在实验室CPU使用显式root加载真实LeRobot训练集（889帧），首样本按20Hz构建10动作chunk，经过repack、双相机转换、训练集归一化、模型resize/tokenizer/padding全部通过：state32、actions10×32、prompt200 token、图像224×224。原始数据仍是原生128RGB/state24，224/32仅为模型内部标准变换。证据real-sample-smoke.json。
 
 尚未加载初始化权重、计算模型损失或更新参数。官方训练loader默认根据repo_id找缓存，不接受本次自定义root；正式入口需显式绑定该已验证数据目录，不能依赖默认下载路径。服务器目前已检查的checkpoints目录没有独立pi05_base/libero原始初始化，只见旧V8等；未把V8暗作新初始化。下一步定位/取得并固定原始权重，再实现有界S1启动。
+
+## S1 初始化获取已启动
+
+选定官方pi05_base作为新的Fetch目标域SFT初始化，不复用失败V8。公开来源gs://openpi-assets/checkpoints/pi05_base/params，列表20对象共12,441,721,931字节。实验室CPU下载PID1450841，外层1800秒，来源大小上限20GB；按GCS generation固定每个对象并计算本地SHA256。状态文件checkpoints/s1-pi05-base-2026-09-17/acquisition.json，尚未确认全量下载、参数加载或开始训练。
