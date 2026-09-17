@@ -63,6 +63,7 @@ def main():
         from mani_skill.utils.structs.pose import Pose
         from bvi.fetch_pi_skill import JOINT_NAMES
         from bvi.official_fetch_data import native_policy_observation
+        from bvi.native_pick_audit import native_failure_causes
         torch.set_num_threads(2)
         random.seed(a.seed); np.random.seed(a.seed); torch.manual_seed(a.seed)
         torch.cuda.manual_seed_all(a.seed)
@@ -173,7 +174,7 @@ def main():
                     ever_grasped=report['ever_grasped'] or held,
                     longest_grasp_streak=max(report['longest_grasp_streak'], grasp_streak),
                     stable_grasp_3_observations=report['stable_grasp_3_observations'] or grasp_streak >= 3,
-                    final_info=jsonable(info))
+                    final_info=jsonable(info), native_failure_causes=native_failure_causes(jsonable(info)))
                 log.write(json.dumps(jsonable(dict(step=step + 1, raw_actions=actions, action=applied,
                     clipped_indices=np.flatnonzero(raw != np.clip(raw, -1, 1)),
                     inference_seconds=inference_seconds, model_rng=response.get('rng'),

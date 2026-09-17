@@ -1,0 +1,154 @@
+{
+  "created_utc": "2026-09-17T22:29:08.578804+00:00",
+  "files": [
+    {
+      "path": "provenance-and-resource-check.json",
+      "bytes": 701,
+      "sha256": "9feccba0b73cd413a6c0170b7e48b12ba99a359aebcd40582c4745d36b76f6f4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1558,
+      "sha256": "d9376e21788abc72f580a19a1bf3e3e7d47439fc5022db031a1fa76316e760fb"
+    },
+    {
+      "path": "rollout-metrics.json",
+      "bytes": 8775,
+      "sha256": "43222fa1443eeab0c571491a347d35c7e337c10281686f73d727e1ae909d2d8d"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent0-frame0.npz",
+      "bytes": 50900,
+      "sha256": "be239b14615a811c65a98ee204191e615fbbd8570ed672cb62ca9997f651dea7"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent0-frame100.npz",
+      "bytes": 36444,
+      "sha256": "542614d5754d6af46360ee48efbaa8bc92989b88dfebb5f4bd2df09adede1bbf"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent1-frame0.npz",
+      "bytes": 48269,
+      "sha256": "31994ccfc9055383b52a51e478f99df425f9eebad09278be688cea841db48266"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent1-frame100.npz",
+      "bytes": 42547,
+      "sha256": "c744c871dc1cca5e15177c155b46215f147b31abb1d775d6587aeb00c7017cbd"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent20-frame0.npz",
+      "bytes": 51043,
+      "sha256": "533f4cdbf79881ceac12f61c73e4ec18b286042da04c95115e6fe6cb24d2ed8f"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent20-frame100.npz",
+      "bytes": 34985,
+      "sha256": "c8a2dd83ca3e7799ff54fbda4513dd0ecff1409e7b43a15686a325b6120d7ec0"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent21-frame0.npz",
+      "bytes": 34829,
+      "sha256": "5a6afcf4cb0cab38cb93e5d4a8feaa21d121705bb7de8d81a51bfd9dba793350"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/parent21-frame100.npz",
+      "bytes": 33271,
+      "sha256": "514d7c7a6b2a68482eb3a73608aaa375fe5e02999bcd1c69dbda3346c6d95a0b"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/server/metadata.json",
+      "bytes": 2233,
+      "sha256": "64ca9329d80000c89ed464d356e223c27b048422185c29184aaa9f07b92607ad"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/server/ready.json",
+      "bytes": 261,
+      "sha256": "c699b708724471c203dcaca443eb0bb9e6b8c7e635d8d6c439bddf2cb107a678"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/server/result.json",
+      "bytes": 712,
+      "sha256": "91a8ce7ea623772edabe0b38535e04976df949c06f3676e5de6e4290690704d4"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/server/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run01/summary.json",
+      "bytes": 4586,
+      "sha256": "771ac106268966502bb63df43f34043cc86cf1c1b7951cb6a299bad9ce075b6e"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent0-frame0.npz",
+      "bytes": 50896,
+      "sha256": "4c77e14512048699c31dbb1a9e215a634c4f38f651c44877d0c03ac55074f79f"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent0-frame17.npz",
+      "bytes": 33819,
+      "sha256": "4e8c2af222417f777e7e347652327e9db3161177a2c3c5b0d431421b718e3db4"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent1-frame0.npz",
+      "bytes": 48272,
+      "sha256": "714b93fdfcf143ff6513d82776f2b2632cfa902b148585cbb192a5116965c6a3"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent1-frame25.npz",
+      "bytes": 36482,
+      "sha256": "121ee696be4403f497ee4652d498a82ba01eb8f4cb8761780afdc37f0793e78c"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent20-frame0.npz",
+      "bytes": 51041,
+      "sha256": "d705be82d30759bebe53a6f7070f3ec807aa039696d0279761a1560c73edabf0"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent20-frame20.npz",
+      "bytes": 33564,
+      "sha256": "4103db2f01934262ef660252bfddcde3bbbee1028e0f2a6c60360f56da4df039"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent21-frame0.npz",
+      "bytes": 34827,
+      "sha256": "bedaffd3b4ce8fa28d2ba94f92f9878c2a145eb457ebcfab8adae30d4ec3778a"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/parent21-frame17.npz",
+      "bytes": 29894,
+      "sha256": "848f15fd4480228c2f7eab545ffe50bc4526106a06648aa442c680678ede635f"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/server/metadata.json",
+      "bytes": 2232,
+      "sha256": "454a1d0b1850fd3401a9a0885e2e146aa3d573b1a5f76d7e31ea23ca0b7ca1e6"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/server/ready.json",
+      "bytes": 261,
+      "sha256": "ce818725ceb0b16f9a61eab58158c6f005c7a0bf6f4802c22a9ce01bc07102b0"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/server/result.json",
+      "bytes": 710,
+      "sha256": "88e73553fc8556545c7e8885c6722b448daafc72d6bd126fa636124d7444c55a"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/server/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "s1-teacher-action-audit-2026-09-17-run02/summary.json",
+      "bytes": 4796,
+      "sha256": "cfa395c16985284d7c51c1fa655af3dfaaae7c61e745f7364420cacabd6bcfc5"
+    }
+  ],
+  "source_archive_sha256": "26d409a4f97bd80154b7a9bf6c55bd416723ca0c70b764a95dec7016fdf10b54",
+  "excluded_claims": [
+    "Run01 frame100 is not a training-observation reconstruction sample"
+  ]
+}

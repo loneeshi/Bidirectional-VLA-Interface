@@ -1,0 +1,366 @@
+{
+  "rows": [
+    {
+      "seed": 2024,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.7205213319785191,
+      "closest_action": 3,
+      "first_post_action_distance_m": 0.7509262726728798,
+      "final_distance_m": 1.7915061427659578,
+      "clipped_steps": 151,
+      "clipped_scalars": 309,
+      "clipped_scalars_per_channel": [
+        2,
+        36,
+        12,
+        44,
+        21,
+        77,
+        4,
+        52,
+        0,
+        0,
+        48,
+        13,
+        0
+      ],
+      "raw_head_abs_max": 1.1930180221497722e-07,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.05000000074505806
+      ],
+      "base_path_post_action_m": 3.5142438788396193,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2025,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.601163176570909,
+      "closest_action": 12,
+      "first_post_action_distance_m": 0.9811187015469782,
+      "final_distance_m": 0.9550972841803655,
+      "clipped_steps": 135,
+      "clipped_scalars": 217,
+      "clipped_scalars_per_channel": [
+        2,
+        40,
+        10,
+        32,
+        14,
+        53,
+        3,
+        21,
+        0,
+        0,
+        31,
+        9,
+        2
+      ],
+      "raw_head_abs_max": 1.1888658946190844e-07,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.049536798149347305
+      ],
+      "base_path_post_action_m": 3.0235703735245094,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2026,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.5177700068956779,
+      "closest_action": 15,
+      "first_post_action_distance_m": 1.1523142367897412,
+      "final_distance_m": 1.5516640210514097,
+      "clipped_steps": 124,
+      "clipped_scalars": 223,
+      "clipped_scalars_per_channel": [
+        5,
+        34,
+        6,
+        37,
+        18,
+        48,
+        6,
+        21,
+        0,
+        0,
+        32,
+        15,
+        1
+      ],
+      "raw_head_abs_max": 1.2620860445622384e-07,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.04947648197412491
+      ],
+      "base_path_post_action_m": 2.544717736682127,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2027,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.6201378793357174,
+      "closest_action": 129,
+      "first_post_action_distance_m": 1.170632785278393,
+      "final_distance_m": 1.2176419350754495,
+      "clipped_steps": 131,
+      "clipped_scalars": 224,
+      "clipped_scalars_per_channel": [
+        10,
+        15,
+        13,
+        23,
+        16,
+        57,
+        7,
+        35,
+        0,
+        0,
+        34,
+        13,
+        1
+      ],
+      "raw_head_abs_max": 9.059980499159792e-08,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.04960650019347668
+      ],
+      "base_path_post_action_m": 2.280588605375618,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2028,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.19099846460054373,
+      "closest_action": 134,
+      "first_post_action_distance_m": 1.552331542266468,
+      "final_distance_m": 0.2754999517249552,
+      "clipped_steps": 141,
+      "clipped_scalars": 241,
+      "clipped_scalars_per_channel": [
+        6,
+        44,
+        9,
+        49,
+        14,
+        45,
+        4,
+        32,
+        0,
+        0,
+        28,
+        9,
+        1
+      ],
+      "raw_head_abs_max": 1.2478351152367395e-07,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.04956253618001938
+      ],
+      "base_path_post_action_m": 2.8951007146594954,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2030,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.16872927533762194,
+      "closest_action": 15,
+      "first_post_action_distance_m": 0.7066944533040873,
+      "final_distance_m": 1.385728314946654,
+      "clipped_steps": 149,
+      "clipped_scalars": 283,
+      "clipped_scalars_per_channel": [
+        10,
+        73,
+        10,
+        36,
+        20,
+        59,
+        5,
+        33,
+        0,
+        0,
+        30,
+        7,
+        0
+      ],
+      "raw_head_abs_max": 9.147846924406622e-08,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.04967949539422989
+      ],
+      "base_path_post_action_m": 2.8158986662049643,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2031,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 25,
+      "minimum_tcp_object_distance_m": 0.6855712696588498,
+      "closest_action": 25,
+      "first_post_action_distance_m": 1.0764539064903864,
+      "final_distance_m": 0.6855712696588498,
+      "clipped_steps": 22,
+      "clipped_scalars": 54,
+      "clipped_scalars_per_channel": [
+        1,
+        0,
+        3,
+        14,
+        1,
+        14,
+        0,
+        6,
+        0,
+        0,
+        9,
+        6,
+        0
+      ],
+      "raw_head_abs_max": 1.242019180835996e-07,
+      "mean_finger_qpos_range_m": [
+        0.02737336978316307,
+        0.049468932673335075
+      ],
+      "base_path_post_action_m": 0.6646405615811579,
+      "final_native_failure_causes": [
+        "native_cumulative_force_limit"
+      ]
+    },
+    {
+      "seed": 2032,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.5608489166341691,
+      "closest_action": 20,
+      "first_post_action_distance_m": 1.355952326416718,
+      "final_distance_m": 0.9314798327873277,
+      "clipped_steps": 146,
+      "clipped_scalars": 265,
+      "clipped_scalars_per_channel": [
+        11,
+        72,
+        4,
+        39,
+        14,
+        57,
+        3,
+        29,
+        0,
+        0,
+        30,
+        5,
+        1
+      ],
+      "raw_head_abs_max": 9.06444199699763e-08,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.04962560534477234
+      ],
+      "base_path_post_action_m": 3.2910854734546,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2033,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.37269392866731194,
+      "closest_action": 151,
+      "first_post_action_distance_m": 0.8978535561124558,
+      "final_distance_m": 0.6356449084607173,
+      "clipped_steps": 143,
+      "clipped_scalars": 261,
+      "clipped_scalars_per_channel": [
+        10,
+        45,
+        12,
+        37,
+        19,
+        64,
+        5,
+        23,
+        0,
+        0,
+        37,
+        9,
+        0
+      ],
+      "raw_head_abs_max": 1.0805734973473591e-07,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.05000000074505806
+      ],
+      "base_path_post_action_m": 2.422084414004828,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    },
+    {
+      "seed": 2034,
+      "native_success": false,
+      "ever_grasped": false,
+      "actions": 199,
+      "minimum_tcp_object_distance_m": 0.639722002278712,
+      "closest_action": 184,
+      "first_post_action_distance_m": 1.0969702753839652,
+      "final_distance_m": 0.7216883330887314,
+      "clipped_steps": 138,
+      "clipped_scalars": 229,
+      "clipped_scalars_per_channel": [
+        1,
+        54,
+        11,
+        33,
+        15,
+        52,
+        3,
+        28,
+        0,
+        0,
+        24,
+        8,
+        0
+      ],
+      "raw_head_abs_max": 9.13324385010128e-08,
+      "mean_finger_qpos_range_m": [
+        0.0,
+        0.0493633896112442
+      ],
+      "base_path_post_action_m": 2.2369419785155116,
+      "final_native_failure_causes": [
+        "native_horizon_exhausted"
+      ]
+    }
+  ],
+  "policy_modified": false,
+  "geometry_is_diagnostic_only": true
+}

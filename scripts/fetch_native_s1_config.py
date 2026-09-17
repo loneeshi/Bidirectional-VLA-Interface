@@ -11,22 +11,34 @@ from pathlib import Path
 import numpy as np
 
 
+def normalizer_provenance(norm_directory):
+    """Validate existing S1 provenance without loading a model or its runtime."""
+    norm_directory = Path(norm_directory)
+    provenance = json.loads((norm_directory/'provenance.json').read_text())
+    digest = hashlib.sha256((norm_directory/'norm_stats.json').read_bytes()).hexdigest()
+    source = provenance.get('source_manifest_sha256')
+    if (provenance.get('status') != 'train_only_stats_ready_not_runtime_validated'
+            or provenance.get('validation_frames_used') != 0
+            or provenance.get('dimensions') != {'state':24, 'actions':13}
+            or provenance.get('norm_stats_sha256') != digest
+            or provenance.get('delta_transform') is not False
+            or not isinstance(source, str) or len(source) != 64
+            or any(c not in '0123456789abcdef' for c in source)):
+        raise ValueError('Missing or incompatible train-only normalizer provenance')
+    return provenance
+
+
 def config(repo_id, work, init_checkpoint, norm_directory, *, steps=100, batch=1):
     from fetch_openpi import config as legacy_config
     from openpi import transforms
     from openpi.shared import normalize
+    from openpi.training.config import DataConfig
 
     if not init_checkpoint or not repo_id or steps < 1 or batch < 1:
         raise ValueError('Explicit initialization, training repo and positive bounds required')
     norm_directory = Path(norm_directory)
-    provenance = json.loads((norm_directory/'provenance.json').read_text())
-    norm_path = norm_directory/'norm_stats.json'
-    digest = hashlib.sha256(norm_path.read_bytes()).hexdigest()
-    if (provenance.get('status') != 'train_only_stats_ready_not_runtime_validated'
-            or provenance.get('validation_frames_used') != 0
-            or provenance.get('dimensions') != {'state':24, 'actions':13}
-            or provenance.get('norm_stats_sha256') != digest):
-        raise ValueError('Missing or incompatible train-only normalizer provenance')
+    provenance = normalizer_provenance(norm_directory)
+    digest = provenance['norm_stats_sha256']
     stats = normalize.load(norm_directory)
     for key, dimension in [('state',24),('actions',13)]:
         for field in ('mean','std','q01','q99'):
@@ -38,14 +50,20 @@ def config(repo_id, work, init_checkpoint, norm_directory, *, steps=100, batch=1
     # Reuse action13 outputs/model conventions, but never legacy state30 metadata
     # or the author's LIBERO progress-specific required repack fields.
     @dataclasses.dataclass(frozen=True)
+    class NativeDatasetConfig(DataConfig):
+        normalizer_source_manifest_sha256: str = ''
+
+    @dataclasses.dataclass(frozen=True)
     class NativeData(type(base.data)):
         def create(self, assets_dirs, model_config):
             result = super().create(assets_dirs, model_config)
             repack = transforms.Group(inputs=[transforms.RepackTransform({
                 'observation/image':'image', 'observation/wrist_image':'wrist_image',
                 'observation/state':'state', 'actions':'actions', 'prompt':'prompt'})])
-            return dataclasses.replace(result, norm_stats=stats, use_quantile_norm=True,
-                                       repack_transforms=repack)
+            fields = {field.name: getattr(result, field.name) for field in dataclasses.fields(result)}
+            fields.update(norm_stats=stats, use_quantile_norm=True, repack_transforms=repack,
+                          normalizer_source_manifest_sha256=provenance['source_manifest_sha256'])
+            return NativeDatasetConfig(**fields)
     metadata = dict(base.policy_metadata)
     metadata.update(state_dim=24,state_components=['native_qpos12','native_qvel12'],
                     state_source='env_native_agent',base_position_reference='world',
@@ -69,11 +87,11 @@ def native_dataset(data_config, model_config, dataset_root):
     Does not apply the author's episode-hash train/val repartition or synthesize
     progress labels. This S1 adapter returns action learning inputs only.
     """
-    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
-    from openpi.training import data_loader
-    from openpi import transforms
     root=Path(dataset_root)
-    manifest=json.loads((root.parent/'manifest.json').read_text())
+    manifest_bytes=(root.parent/'manifest.json').read_bytes()
+    if getattr(data_config, 'normalizer_source_manifest_sha256', None) != hashlib.sha256(manifest_bytes).hexdigest():
+        raise ValueError('Selected dataset differs from training normalizer source manifest')
+    manifest=json.loads(manifest_bytes)
     split=root.name
     if split not in ('train','validation'):
         raise ValueError('Explicit train/validation root required')
@@ -83,6 +101,9 @@ def native_dataset(data_config, model_config, dataset_root):
         raise ValueError('Parent membership differs')
     if set(manifest['parent_split']['train']) & set(manifest['parent_split']['validation']):
         raise ValueError('Leaked parent split')
+    from lerobot.common.datasets.lerobot_dataset import LeRobotDataset
+    from openpi.training import data_loader
+    from openpi import transforms
     dataset=LeRobotDataset(data_config.repo_id,root=root,
         delta_timestamps={'actions':[t/20 for t in range(model_config.action_horizon)]})
     if dataset.meta.fps!=20 or len(dataset)!=sum(e['exported_steps'] for e in rows):

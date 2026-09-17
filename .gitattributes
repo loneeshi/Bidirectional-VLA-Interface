@@ -21,3 +21,4 @@ docs/results/s1-gpu-pilot-2026-09-17-run01/** -text whitespace=cr-at-eol
 docs/results/s2-native24-cache-2026-09-17-run01/** -text whitespace=cr-at-eol
 docs/results/s1-medium-epoch-2026-09-17-run01/** -text whitespace=cr-at-eol
 docs/results/s1-native-panel-2026-09-17-run01/** -text whitespace=cr-at-eol
+docs/results/s1-failure-attribution-2026-09-17-run01/** -text whitespace=cr-at-eol
