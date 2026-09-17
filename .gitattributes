@@ -15,3 +15,4 @@ docs/results/fallback-baseline-audit-2026-09-17/** -text whitespace=cr-at-eol
 docs/weekly-baseline-v2-updated-user-plan.md text eol=lf
 docs/results/s1-official-pilot-2026-09-17-run01/** -text whitespace=cr-at-eol
 docs/results/s2-official-progress-index-2026-09-17-run01/** -text whitespace=cr-at-eol
+docs/results/s1-official-pilot-norm-2026-09-17-run01/** -text whitespace=cr-at-eol
