@@ -1,3 +1,5 @@
+> 2026-09-17用户最新覆盖：取消所有等待周五/按星期执行的限制。按依赖门就绪立即推进，今天已启动S1 GPU pilot。项目时间America/New_York；审计UTC。不改变预算/能力门。
+
 # 本周执行方案 v2：S1 → S2 → S3 与独立 C 对照
 
 **最新权威来源**：[更新版用户方案](weekly-baseline-v2-updated-user-plan.md)，对应计划目录`plan/plan-v2-2026-09-17.md`。它取代[上一版原文](weekly-baseline-v2-user-plan.md)及本文件旧的“A主线/B止于Pick”安排。原G0–G4、接口契约和候选核查仍有效。
