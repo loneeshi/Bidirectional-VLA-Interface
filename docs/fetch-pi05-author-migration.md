@@ -1,5 +1,15 @@
 # Author π₀.₅ components on Fetch — 2026-09-17
 
+> Superseded launch order: the user inserted a frozen-V8 native capability gate,
+> verified wrong-handoff inputs and a ≤1/5 weekly π₀.₅ training stop rule.
+> Run03 automatic training controller was stopped before any updates. Existing
+> collection has completed50 trajectories. The native gate returned0/5, so this
+> week’s π₀.₅ TAPT updates are stopped. Eight handoff inputs passed replay
+> verification, not learned-head acceptance. See the [actual results](fetch-v8-native-capability.md) and current
+> [priority protocol](mshab-reproduction-priority.md). Historical execution below
+> is retained, not an instruction to resume the old pipeline.
+
+
 Current mainline: stage 2, Fetch TAPT migration. The author OpenPI environment is
 installed; checkpoint transfer, model interface verification and a new compatible
 teacher dataset are prerequisites to training. This run does not retrain LIBERO.

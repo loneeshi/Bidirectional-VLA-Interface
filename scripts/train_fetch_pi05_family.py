@@ -128,10 +128,19 @@ def main():
     p.add_argument('--steps', type=int, default=20)
     p.add_argument('--seconds', type=int, default=1800)
     p.add_argument('--resume', type=Path)
+    p.add_argument('--native-capability-report', type=Path)
+    p.add_argument('--handoff-validation-manifest', type=Path)
+    p.add_argument('--training-hold-file', type=Path,
+                   help='Additional hold file; cannot override/bypass the default project hold')
     p.add_argument('--dry-run', action='store_true')
     a = p.parse_args()
     if not 1 <= a.steps <= 2000 or not 1 <= a.seconds <= 7200:
         p.error('Limits: 1..2000 total optimizer steps, 1..7200 wall seconds')
+    entry_evidence = None
+    if not a.dry_run:
+        from fetch_tapt_entry_gate import validate_entry
+        entry_evidence = validate_entry(a.native_capability_report, a.handoff_validation_manifest,
+                                        a.training_hold_file)
     records, tables, identity = load_dataset(a.data)
     if a.dry_run:
         print(json.dumps(dict(status='cpu_dataset_validated_no_training', **identity,
@@ -231,7 +240,7 @@ def main():
         pure = tree.to_pure_dict() if hasattr(tree, 'to_pure_dict') else tree
         for key, value in sorted(traverse_util.flatten_dict(jax.device_get(pure)).items()):
             value = np.asarray(value)
-            h.update(str(key).encode()); h.update(str(value.shape).encode())
+            h.update('/'.join(map(str, key)).encode()); h.update(str(value.shape).encode())
             h.update(str(value.dtype).encode()); h.update(value.tobytes())
         return h.hexdigest()
 
@@ -239,6 +248,9 @@ def main():
                     normalizer_sha256=sha(assets / 'norm_stats.json'),
                     state_contract_sha256=sha(assets / 'bvi-state-contract.json'),
                     trainer_sha256=sha(__file__), progress_weight=float(cfg.progress_loss_weight))
+    if identity['pretrained_sha256'] != entry_evidence['native']['pretrained_parameters_sha256']:
+        raise ValueError('Training source checkpoint differs from frozen native capability gate')
+    identity['entry_gate_evidence'] = entry_evidence
     if float(cfg.progress_loss_weight) != 0.1:
         raise ValueError('Pinned author TrainConfig progress weight changed from audited 0.1')
     report('strict_checkpoint_validated_initializing', identity=identity)

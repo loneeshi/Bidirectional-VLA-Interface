@@ -1,0 +1,21 @@
+{
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/result.json": "e8f166dafbcd30be115b4d75ec9f4701ed4b43ae58c1a114e804967be6fd1da2",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17.npz": "2ae3bce5cffd4743291ff0c20140b81c4c6e327d2141edf797a627d2e0b89917",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20.npz": "71c2a88c4d5770c45081df4a924ad1f161eb3417b55b673153bfb1a1c5892809",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3020.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/result.json": "cf0ee3865570767bdf04ed9c0e517b45d2e02a1443c5d1829b75e702f8cc57e4",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-grasp-step31.npz": "d818eb76a279cc000c989eaab025b4ba70c692c48a665dbb6256a4cd9cc3c988",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-move-step34.npz": "4fb9bdd78cf457a45acab941c21868829f8bc3a3578a8398a9a1960d9a67c86c",
+  "fetch-current-handoffs-2026-09-17-run01--validation-seed3021.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fetch-current-progress-eval-2026-09-17-run01--seed2025/locked_diagnostic-seed2025-grasp-step26.npz": "13c4678dc846e9b7ddb0ea6c18904ed3f37ef5a5933cc4678272c62bffa17319",
+  "fetch-current-progress-eval-2026-09-17-run01--seed2025/result.json": "a54fa067468e9008512ddd87461b118eee9af0cb80480b68d5181f162d5e621e",
+  "fetch-current-progress-eval-2026-09-17-run01--seed2025.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fetch-current-progress-eval-2026-09-17-run01--seed2030/locked_diagnostic-seed2030-grasp-step18.npz": "d3d9d51fd295d1e9179744500f185d18e084c01d79a70be21e9d55e55760ed44",
+  "fetch-current-progress-eval-2026-09-17-run01--seed2030/result.json": "6a0f29e18b9d1b100a6c321133d938ec3f3c2386a4d58c562a2ad1b2bcfcd561",
+  "fetch-current-progress-eval-2026-09-17-run01--seed2030.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/locked_diagnostic-seed2025-grasp-step16.npz": "3a1fd5e462c0466e280468a93085dc5d688240ca75eb7036e7d912d8c1b28556",
+  "fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/locked_diagnostic-seed2025-move-step18.npz": "47c925f04a1361a5fb50359bc01a9865df7a4da6466e02a1ff68e5186267d71c",
+  "fetch-tapt-timing-2026-09-17-run01--legacy-pre-action/result.json": "f4e62c8fbf5e0934611a3de4902272a3177fb3ae81615dfbdd6c669c3141f88e",
+  "fetch-tapt-timing-2026-09-17-run01--legacy-pre-action.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "result.json": "40e1ceb4f601625d2bb98fe5509b8b4198efdf0378c04d59e8c910e814de2806"
+}

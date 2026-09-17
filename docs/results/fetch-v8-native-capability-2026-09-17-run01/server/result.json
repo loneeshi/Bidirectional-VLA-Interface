@@ -1,0 +1,19 @@
+{
+  "status": "ready",
+  "training_updates": 0,
+  "progress_head": false,
+  "tapt": false,
+  "inference_calls": 0,
+  "max_inference_calls": 1200,
+  "client_disconnects": 0,
+  "denoising_steps": 10,
+  "action_horizon": 10,
+  "internal_action_dim": 32,
+  "external_action_dim": 13,
+  "action_postprocessing": "V8 quantile unnormalization only; client owns clipping/headmask",
+  "precision": "bfloat16",
+  "gpu_idle_limit_mib": 2048,
+  "gpu_guard_scope": "allows pre-existing SAPIEN allocation up to2GiB; no second model permitted",
+  "wall_seconds": 34.88030011579394,
+  "gpu_memory_before_server_mib": 15
+}

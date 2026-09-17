@@ -100,3 +100,14 @@ Six retained recordings and exact filenames: [batch index](fetch-current-handoff
 ## Fetch current-frame calibration evaluation
 
 [seed2025-fetch-tapt-pick-episode000-failed.mp4](fetch-current-progress-eval-2026-09-17-run01/seed2025-fetch-tapt-pick-episode000-failed.mp4) · [seed2030-fetch-tapt-pick-episode000-failed.mp4](fetch-current-progress-eval-2026-09-17-run01/seed2030-fetch-tapt-pick-episode000-failed.mp4). Fixed selected-checkpoint diagnostics:0/2 Pick completion, neither grasped. No GPT/LightNav.
+
+## Frozen V8 native gate — 2026-09-17 run02
+
+| Seed | Steps | Result | Exact filename |
+|---|---:|---|---|
+| 2024 | 20 | No grasp; force failure | [fetch-v8-native-pick-seed2024-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2024-episode000-failed.mp4) |
+| 2025 | 24 | No grasp; force failure | [fetch-v8-native-pick-seed2025-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2025-episode000-failed.mp4) |
+| 2026 | 36 | No grasp; force failure | [fetch-v8-native-pick-seed2026-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2026-episode000-failed.mp4) |
+| 2027 | 25 | No grasp; force failure | [fetch-v8-native-pick-seed2027-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2027-episode000-failed.mp4) |
+| 2028 | 37 | No grasp; force failure | [fetch-v8-native-pick-seed2028-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2028-episode000-failed.mp4) |
+| 2030 | 40 | No grasp; force failure | [fetch-v8-native-pick-seed2030-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2030-episode000-failed.mp4) |
