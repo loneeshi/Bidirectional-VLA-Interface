@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "split": "train",
+      "episodes": 20,
+      "frames": 889,
+      "exact_state_action_match": true
+    },
+    {
+      "split": "validation",
+      "episodes": 5,
+      "frames": 230,
+      "exact_state_action_match": true
+    }
+  ],
+  "source_sha256": "03b29e86035d968df346c851067a052a75bd5a0f29da7792daa05858173f896e",
+  "state_dim": 24,
+  "training_updates": 0
+}
