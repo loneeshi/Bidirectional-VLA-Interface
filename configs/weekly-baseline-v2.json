@@ -1,7 +1,7 @@
 {
-  "schema": "mshab-baseline-v2/preregistration-draft-1",
+  "schema": "mshab-baseline-v2/preregistration-draft-2",
   "status": "blocked_until_plan_uids_and_assets_bound",
-  "experiment_question": "A4: compare fixed dispatch, GPT with rule feedback, GPT with independent learned progress on fixed TidyHouse episodes",
+  "experiment_question": "S1 native Fetch ability -> S2 family-residual TAPT -> S3 GPT/LightNav/pi05 online chain; C is a separate control line",
   "task": "tidy_house",
   "evaluation_split": "val",
   "evaluation_episodes": [
@@ -88,11 +88,12 @@
   "condition3_gate": "heldout_mse_and_failed_trajectory_false_completion_predeclared_before_training; separate LightNav distribution check",
   "official_task_success_retained": true,
   "infrastructure_failures_keep_planned_denominator": true,
-  "estimated_max_api_usd_mainline": 2.0,
   "authorization": "existing_total_budget_only; provider reconciliation required beforelaunch",
   "gpu_concurrency": 1,
-  "branch_b": {
-    "scope": "single_pick_ordinary_sft_only_no_tapt",
+  "authoritative_plan": "docs/weekly-baseline-v2-updated-user-plan.md",
+  "authoritative_plan_sha256": "e0aff2e1158fa00072d7144c7b7702c1d0eeff22adbad2be63e97f4a82722a58",
+  "S1": {
+    "scope": "S1_faithful_target_domain_pick_sft",
     "throughput_demo_count": 20,
     "throughput_steps": 100,
     "training_wall_hours_max": 18,
@@ -110,9 +111,82 @@
       2033,
       2034
     ],
-    "swap_in_minimum_successes": 3,
-    "retrain_after_failure": false,
     "source_initialization": "must_be_declared_before100stepgate",
-    "state_schema": "must_be_verified_against_official_h5_and_runtime_beforeconversion"
-  }
+    "state_schema": "must_be_verified_against_official_h5_and_runtime_beforeconversion",
+    "observations": {
+      "rgb": [
+        "fetch_head",
+        "fetch_hand"
+      ],
+      "native_rgb_size": [
+        128,
+        128
+      ],
+      "state": [
+        "qpos",
+        "qvel"
+      ],
+      "privileged_object_state": false
+    },
+    "s2_entry_minimum_successes": 3,
+    "diagnostic_arm": {
+      "trigger": "faithful_S1_below3of10",
+      "max_additional_training_runs": 1,
+      "state": "official_privileged_state_verified_against_H5_and_BC_DP",
+      "does_not_qualify_as_faithful_S1_success": true,
+      "wall_limit": "must_be_bounded_beforelaunch_within_existing_authorization"
+    },
+    "pilot_split": {
+      "train_trajectories": 20,
+      "validation_trajectories": 5
+    },
+    "scaled_split": {
+      "fast_train": 300,
+      "fast_validation": 50,
+      "medium_train": 150,
+      "medium_validation": "freeze_beforelaunch"
+    },
+    "initialization_checkpoint_required": true
+  },
+  "S2": {
+    "authorized_conditionally": true,
+    "gate": "new_faithful_S1_fixed10_native_successes>=3; verifiedinputcontract_and_parent_split",
+    "families": [
+      "reach",
+      "grasp",
+      "move",
+      "release"
+    ],
+    "backbone_frozen": true,
+    "routing": "deterministic_family_label",
+    "progress_head": "shared_author_prefix",
+    "progress_contract": "current_observation_v2",
+    "online_readout": "pre_action_index0",
+    "progress_loss_weight": 0.1,
+    "gradient_gate_updates": 20,
+    "max_training_updates": null,
+    "wall_seconds_max": null,
+    "selection": "fixed_heldout_joint_loss_not_test_SR",
+    "exit_metrics": [
+      "progress_mse",
+      "invocation_start_false_completion",
+      "teacher_endpoint_prediction",
+      "trained_head_train_inference_gap"
+    ],
+    "cpu_data_preparation_before_S1_pass": true,
+    "parameter_updates_before_S1_pass": false
+  },
+  "S3": {
+    "models": [
+      "GPT",
+      "LightNav-0",
+      "TAPT pi0.5"
+    ],
+    "scope": "fixed_start_single_object_then_multiobject_if_time",
+    "unreliable_progress": "shadow_only_no_control_takeover",
+    "full_method_claim_requires_actual_learned_feedback_acceptance": true
+  },
+  "C_line": "existingconditions_andnavigationpanels_below_are_controls_not_substitutes_for_S3",
+  "api_limit_scope": "2USD technicalceiling appliesClineonly; S3requiresseparateboundedallocationwithinexistingtotal",
+  "estimated_max_api_usd_C": 2.0
 }

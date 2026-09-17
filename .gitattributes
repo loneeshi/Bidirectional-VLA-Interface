@@ -11,3 +11,5 @@ docs/results/fetch-pi05-handoff-validation-2026-09-17/** -text whitespace=cr-at-
 docs/results/fetch-pi05-workspace-teacher-2026-09-17-run01/** -text whitespace=cr-at-eol
 
 docs/results/fallback-baseline-audit-2026-09-17/** -text whitespace=cr-at-eol
+
+docs/weekly-baseline-v2-updated-user-plan.md text eol=lf
