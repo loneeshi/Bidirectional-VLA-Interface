@@ -67,6 +67,7 @@ def main():
                 for i in rng.permutation(len(train_data)):
                     if time.monotonic()-started>a.seconds:
                         raise TimeoutError('S1 pilot wall limit')
+                    before=time.monotonic()
                     row=train_data[int(i)]
                     batch=jax.tree.map(lambda x:np.asarray(x)[None],row)
                     obs=models.Observation.from_dict(batch)
@@ -74,7 +75,6 @@ def main():
                     # Progress head/loss are disabled; these zeros are not labels.
                     value=(obs,batch['actions'],np.zeros((1,10),np.float32),np.zeros(1,np.int32))
                     value=jax.device_put(value,self.sharding)
-                    before=time.monotonic()
                     yield value
                     durations.append(time.monotonic()-before)
 
@@ -90,7 +90,7 @@ def main():
         report.update(status='pilot_complete',training_updates=a.steps,
                       elapsed_seconds=time.monotonic()-started,
                       steady_samples_per_second=(len(durations[10:])/sum(durations[10:])) if durations[10:] else None,
-                      throughput_note='microbatch1; yield intervals excluding first10; includes step logging; not end-to-end wall throughput')
+                      throughput_note='microbatch1; sample preparation through completed step, excluding first10; includes preprocessing/device transfer/logging; excludes initial model load/compilation warmup')
     except Exception as exc:
         report.update(status='failed',error=repr(exc),elapsed_seconds=time.monotonic()-started,
                       training_updates=None,updates_note='Consult step logs; failure may follow partial updates')
