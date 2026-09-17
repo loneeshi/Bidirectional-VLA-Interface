@@ -733,6 +733,24 @@
       "recorded_at_utc": "2026-09-17T01:36:28.818215+00:00",
       "description": "Frozen-policy data collection; native-start tool handoff, not evaluation or navigation",
       "experiment_id": "fetch-current-handoffs-2026-09-17-run01"
+    },
+    {
+      "filename": "seed2025-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-current-progress-eval-2026-09-17-run01/seed2025-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "f8782f3752ebe7e1f45af2bf5a652524afebebf6c0c97ae87ece44af5810a2f0",
+      "bytes": 164347,
+      "recorded_at_utc": "2026-09-17T02:06:17.172843+00:00",
+      "description": "Selected current-frame calibration checkpoint; fixed native-start Pick diagnostic, no GPT/navigation; failure",
+      "experiment_id": "fetch-current-progress-eval-2026-09-17-run01"
+    },
+    {
+      "filename": "seed2030-fetch-tapt-pick-episode000-failed.mp4",
+      "path": "fetch-current-progress-eval-2026-09-17-run01/seed2030-fetch-tapt-pick-episode000-failed.mp4",
+      "sha256": "dc09c0dc7d789e523082e2b5415862f5fe03153ff71a2694735457eedefe500d",
+      "bytes": 143168,
+      "recorded_at_utc": "2026-09-17T02:07:33.270545+00:00",
+      "description": "Selected current-frame calibration checkpoint; fixed native-start Pick diagnostic, no GPT/navigation; failure",
+      "experiment_id": "fetch-current-progress-eval-2026-09-17-run01"
     }
   ]
 }

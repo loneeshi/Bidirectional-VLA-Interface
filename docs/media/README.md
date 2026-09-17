@@ -95,3 +95,8 @@ The LIBERO batch uses LIBERO, robosuite and MuJoCo; their assets and licenses ar
 ## Fetch current-progress handoff collection
 
 Six retained recordings and exact filenames: [batch index](fetch-current-handoffs-2026-09-17-run01/README.md). Training/validation data collection: 2 native Pick successes, 4 failures, all retained. No navigation or GPT.
+
+
+## Fetch current-frame calibration evaluation
+
+[seed2025-fetch-tapt-pick-episode000-failed.mp4](fetch-current-progress-eval-2026-09-17-run01/seed2025-fetch-tapt-pick-episode000-failed.mp4) · [seed2030-fetch-tapt-pick-episode000-failed.mp4](fetch-current-progress-eval-2026-09-17-run01/seed2030-fetch-tapt-pick-episode000-failed.mp4). Fixed selected-checkpoint diagnostics:0/2 Pick completion, neither grasped. No GPT/LightNav.
