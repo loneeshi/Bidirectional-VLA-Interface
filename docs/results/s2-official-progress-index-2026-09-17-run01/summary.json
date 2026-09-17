@@ -1,0 +1,33 @@
+{
+  "status": "supervision_index_only",
+  "contract": "current_observation_v2",
+  "horizon": 2,
+  "sources": [
+    {
+      "path": "docs\\results\\s1-official-pilot-2026-09-17-run01\\pick-manifest.json",
+      "manifest_sha256": "9bc37cb5322300b4e469ea5e8c43d95413723d834c20dae04138a896bc0fa76d",
+      "source_sha256": "03b29e86035d968df346c851067a052a75bd5a0f29da7792daa05858173f896e"
+    },
+    {
+      "path": "docs\\results\\s1-official-pilot-2026-09-17-run01\\place-manifest.json",
+      "manifest_sha256": "d836603f759945326ad13a06a5f7917d25adcf71bc9787ffc27087bb221e3ce1",
+      "source_sha256": "caa405578756ad17e612952936e53e43961a11fd187710ade5d2f38eee291aba"
+    }
+  ],
+  "rows": 1816,
+  "row_counts": {
+    "train/reach": 392,
+    "train/grasp": 93,
+    "train/move": 656,
+    "validation/reach": 103,
+    "validation/grasp": 22,
+    "validation/move": 186,
+    "train/release": 216,
+    "validation/release": 148
+  },
+  "endpoint_rows": 101,
+  "index_sha256": "b9ed67d2b1fc1c85e989eed6cb3e0a762a5e8210af68acb35a7f698cf129b496",
+  "training_updates": 0,
+  "image_state_cache_validated": false,
+  "wrong_handoff_validation_complete": false
+}

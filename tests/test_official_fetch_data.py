@@ -1,6 +1,7 @@
 import numpy as np
 import pytest
 from bvi.official_fetch_data import parent_ids,inspect_episode,policy_frame,native_policy_observation
+from bvi.official_fetch_data import current_progress_rows
 
 
 def fixture():
@@ -61,3 +62,33 @@ def test_shared_contract_preserves_camera_order_instruction_and_owns_arrays():
     with pytest.raises(ValueError):native_policy_observation(np.zeros(15),qvel,head,hand,z)
     with pytest.raises(ValueError):native_policy_observation(qpos,qvel,head.astype(float),hand,z)
     with pytest.raises(ValueError):native_policy_observation(qpos,qvel,head,hand,' ')
+
+
+def progress_manifest():
+    ep=inspect_episode(fixture(),'pick')
+    ep.update(parent_id=0,split='train',trajectory='traj_0')
+    return dict(progress_contract='current_observation_v2',source_sha256='a'*64,
+                parent_split={'train':[0],'validation':[]},episodes=[ep])
+
+
+def test_progress_endpoints_have_supervision_but_no_fabricated_actions():
+    m=progress_manifest();rows=current_progress_rows(m,horizon=3)
+    for call,w in enumerate(m['episodes'][0]['windows']):
+        r=[r for r in rows if r['call_index']==call]
+        assert r[0]['progress_target'][0]==0
+        assert r[-1]['progress_target']==[1,0,0]
+        assert r[-1]['progress_valid']==[True,False,False]
+        assert r[-1]['action_source_indices']==[None,None,None]
+        assert r[-2]['action_source_indices']==[w['end']-1,None,None]
+
+
+def test_progress_rejects_leaked_or_missing_parents():
+    m=progress_manifest();m['parent_split']['validation']=[0]
+    with pytest.raises(ValueError):current_progress_rows(m)
+    m=progress_manifest();m['parent_split']['train'].append(1)
+    with pytest.raises(ValueError):current_progress_rows(m)
+
+
+def test_unannotated_tail_does_not_get_completion_label():
+    m=progress_manifest();m['episodes'][0]['windows']=[]
+    assert current_progress_rows(m)==[]
