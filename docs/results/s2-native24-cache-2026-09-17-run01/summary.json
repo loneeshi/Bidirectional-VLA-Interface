@@ -1,0 +1,22 @@
+{
+  "status": "built_all_families",
+  "invocations": 101,
+  "parent_count": 50,
+  "counts": {
+    "train/reach": 20,
+    "train/grasp": 20,
+    "train/move": 29,
+    "validation/reach": 5,
+    "validation/grasp": 5,
+    "validation/move": 9,
+    "train/release": 9,
+    "validation/release": 4
+  },
+  "cache_bytes": 71042184,
+  "manifest_sha256": "fad8f72d5ee3b288302292b60926669fc79cc7a0391954fa8814ca579528248d",
+  "builder_sha256": "f87625115c6632eabc88945096e386497b977399d01e13470784f09f0eb2fe59",
+  "api_calls": 0,
+  "gpu_updates": 0,
+  "wrong_handoff_validation_complete": false,
+  "training_started": false
+}
