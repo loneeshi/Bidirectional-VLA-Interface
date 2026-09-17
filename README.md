@@ -1,6 +1,6 @@
 # Learning Bidirectional Semantic Interfaces for Reliable VLA Tool Use
 
-**Active priority:** [MS-HAB this week](docs/mshab-reproduction-priority.md). The frozen Fetch V8 native gate completed **0/5** on the fixed primary seeds; **π₀.₅ TAPT training is stopped for this week**, including the 20-update check. [Eight handoff inputs](docs/results/fetch-pi05-handoff-replay-2026-09-17-run01/README.md) passed strict replay validation; this is data readiness, not learned-feedback success. Continue the previously working GPT/SAC and LightNav/SAC engineering controls with a separately evaluated progress component; these are not full VLA/TAPT reproduction. [Results and stop decision](docs/fetch-v8-native-capability.md).
+**Current question:** Can progress-event feedback improve long-horizon object completion over fixed dispatch in MS-HAB, with the same low-level tools? [Weekly v2 plan](docs/weekly-baseline-v2.md): LightNav/SAC interface baseline, with a separately bounded ordinary Pick SFT branch; no Fetch TAPT training this week.
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 

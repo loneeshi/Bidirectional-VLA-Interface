@@ -1,5 +1,7 @@
 # 本周优先级：MS-HAB 上的 VLAs-as-Tools
 
+> Superseded by the user’s [weekly v2 execution plan](weekly-baseline-v2.md). Historical native0/5 stop remains for TAPT; new branch B permits one separately bounded ordinary Pick SFT attempt. Do not resume the old pipeline.
+
 用户于2026-09-17 UTC澄清：本周主要交付仍是在MS-HAB／ManiSkill中实现VLAs-as-Tools。LIBERO提供参考实现检查，不作为完整论文复现的前置条件。
 
 ## 时间边界与当前事实
