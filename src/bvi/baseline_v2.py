@@ -9,6 +9,40 @@ import math
 from .protocol import ProtocolError
 
 
+def validate_bound_panel(config: dict, condition: str, navigation: str) -> list[dict]:
+    """Pre-execution C panel guard; never fills missing UIDs from a guessed seed.
+
+    Binding evidence must come from real environment resets before this guard.
+    Passing this check is not budget approval or proof a backend is available.
+    """
+    if config.get('status') != 'bound_ready_for_preflight':
+        raise ProtocolError('Evaluation plan is not explicitly bound')
+    if condition not in {'fixed','vlm_rule','vlm_learned'} or condition not in config.get('conditions',[]):
+        raise ProtocolError('Unknown/unregistered C condition')
+    if navigation not in {'ppo','lightnav'} or navigation not in config.get('navigation_panels',[]):
+        raise ProtocolError('Unknown/unregistered navigation panel')
+    if config.get('evaluation_split') != 'val' or config.get('task') != 'tidy_house':
+        raise ProtocolError('Wrong C task/split')
+    rows = config.get('evaluation_episodes')
+    if not isinstance(rows,list) or len(rows)!=10:
+        raise ProtocolError('Fixed ten-episode panel required')
+    if any(type(row.get('seed')) is not int for row in rows) or [row['seed'] for row in rows]!=list(range(10)):
+        raise ProtocolError('Seeds must be the ordered fixed panel 0..9')
+    for row in rows:
+        if not isinstance(row.get('plan_uid'),str) or not row['plan_uid'].strip():
+            raise ProtocolError('Missing real plan UID')
+    for field,expected in [('max_env_steps',7000),('max_vlm_calls',40),('api_usd_per_episode',0.05)]:
+        actual=config.get(field)
+        if type(actual) is not type(expected) or actual!=expected:
+            raise ProtocolError(f'Changed panel limit: {field}')
+    if condition=='vlm_learned':
+        # Separate PPO/LightNav distributions require separately recorded gates.
+        gate=config.get('learned_progress_gates',{}).get(navigation,{})
+        if gate.get('status')!='passed' or gate.get('feedback_source')!='learned_g_z_conditioned':
+            raise ProtocolError('Learned progress not admitted for this navigation distribution')
+    return [dict(row) for row in rows]
+
+
 @dataclass(frozen=True)
 class RecoveryContext:
     current_skill: str
