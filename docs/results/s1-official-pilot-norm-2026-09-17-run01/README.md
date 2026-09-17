@@ -31,3 +31,9 @@ FetchPiSkill新增显式native24分支：检查state_source=env_native_agent，�
 ## 显式父轨迹划分 loader
 
 新增native_dataset绑定显式train/validation root，两组分别889/230帧真实首样本经过完整预处理。S1显式progress_loss_weight=0、use_val_set=False，避免作者按episode hash再次切分；验证集独立loader，仍使用训练集统计量。该loader仅返回动作学习输入，不提供伪造学习进度。正式有界训练循环尚未实现/启动，不能直接用作者默认main替代这个显式loader。证据loader-smoke.json。
+
+## 有界 S1 pilot 执行器
+
+run_native_s1_pilot.py已实现并通过CPU数据预检：默认不训练，显式--train仅GPU1，最多100更新/内部3600秒，外部必须另加timeout。microbatch1/accumulation1，用于吞吐门，不宣称有效batch8。执行器调用作者train.main/train_step，进程内替换数据loader以绑定既有划分；S1关闭progress head/loss，作者四元组接口的progress占位零值不是学习标签。独立val数据只预检，pilot不按验证选点，后续长训仍需独立验证与选点。
+
+当前只通过CPU路径，GPU初始化/反向/检查点保存尚未实测，未实际更新参数。下一步GPU前核查资源并登记100更新范围，外层限时，失败保留部分更新日志。runner-preflight.json记录实际配置。
