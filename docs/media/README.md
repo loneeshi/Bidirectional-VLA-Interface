@@ -94,4 +94,4 @@ The LIBERO batch uses LIBERO, robosuite and MuJoCo; their assets and licenses ar
 
 ## Fetch current-progress handoff collection
 
-Six retained recordings and exact filenames: [batch index](fetch-current-handoffs-2026-09-17-run01/README.md). Training/validation data collection; all Pick failures are preserved. No navigation or GPT.
+Six retained recordings and exact filenames: [batch index](fetch-current-handoffs-2026-09-17-run01/README.md). Training/validation data collection: 2 native Pick successes, 4 failures, all retained. No navigation or GPT.
