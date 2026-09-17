@@ -20,7 +20,7 @@ A fixed reach→grasp→move diagnostic sequence, seed2025, used actual trained 
 
 Video: [fetch-tapt-pick-episode000-failed.mp4](media/fetch-tapt-online-pick-2026-09-17-run01/fetch-tapt-pick-episode000-failed.mp4). [Result and event evidence](results/fetch-tapt-online-pick-2026-09-17-run01/result.json). Raw folder retained its launch-plan date2026-09-16; publication uses verified recording UTCdate2026-09-17.
 
-Next gate: compare trained progress from actual denoising inference with verified held-out call boundaries, separately log action/progress losses, and audit the AC-DiT port's feature path against the intended method before modifying training or thresholds. Then re-test tool feedback; GPT orchestration success remains untested.
+The paired audit is now complete: [progress attribution and evidence](fetch-tapt-progress-attribution.md). On the original 33 held-out observations, training-path and actual inference progress remain close; changing the mobility visual-conditioning path has a small effect. Confirmed defects/limitations are post-action labels consumed before action execution, plus unsupported grasp/move handoff states. This does not fully explain the first reach error. Next gate: align progress timing with the intended method, then record complete online decision inputs and re-test feedback without changing thresholds. GPT orchestration success remains untested.
 
 ## Resources
 
