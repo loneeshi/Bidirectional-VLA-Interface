@@ -37,3 +37,7 @@ FetchPiSkill新增显式native24分支：检查state_source=env_native_agent，�
 run_native_s1_pilot.py已实现并通过CPU数据预检：默认不训练，显式--train仅GPU1，最多100更新/内部3600秒，外部必须另加timeout。microbatch1/accumulation1，用于吞吐门，不宣称有效batch8。执行器调用作者train.main/train_step，进程内替换数据loader以绑定既有划分；S1关闭progress head/loss，作者四元组接口的progress占位零值不是学习标签。独立val数据只预检，pilot不按验证选点，后续长训仍需独立验证与选点。
 
 当前只通过CPU路径，GPU初始化/反向/检查点保存尚未实测，未实际更新参数。下一步GPU前核查资源并登记100更新范围，外层限时，失败保留部分更新日志。runner-preflight.json记录实际配置。
+
+### 吞吐计时修正（启动前）
+
+CPU审查发现pilot原计时起点在样本预处理后，可能高估用于扩展数据规模的吞吐。已前移至样本读取前，包含读取、图像/tokenizer处理、设备传输、训练和日志；前10次热身不计稳定吞吐，另保留总墙钟。此前未运行GPU，故没有需要撤回的吞吐成绩。服务器脚本需在启动前同步此修正。
