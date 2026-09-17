@@ -1,6 +1,6 @@
 # Frozen-policy invocation-state collection
 
-Six predeclared native-start trajectories for training/validation anchors. These are data-collection failures, not a benchmark success-rate evaluation. None completed Pick.
+Six predeclared native-start trajectories for training/validation anchors. These are data-collection outcomes, not a benchmark success-rate evaluation. Native Pick: 2 successes (train3001, validation3020), 4 failures.
 
 | Exact filename | Seed | Actions | Native success | Stop |
 |---|---|---|---|---|
