@@ -1,0 +1,16 @@
+{
+  "status": "CPU_data_transform_smoke_passed",
+  "state_shape": [
+    24
+  ],
+  "action_shape": [
+    10,
+    13
+  ],
+  "roundtrip_max_error": 1.1102230246251565e-16,
+  "progress_head_enabled": false,
+  "initialization_loaded": false,
+  "tokenizer_model_transform_executed": false,
+  "training_updates": 0,
+  "prior_smoke_error": "Test omitted state required by strict Unnormalize; corrected test to match policy output including state"
+}
