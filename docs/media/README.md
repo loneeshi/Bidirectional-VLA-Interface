@@ -111,3 +111,8 @@ Six retained recordings and exact filenames: [batch index](fetch-current-handoff
 | 2027 | 25 | No grasp; force failure | [fetch-v8-native-pick-seed2027-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2027-episode000-failed.mp4) |
 | 2028 | 37 | No grasp; force failure | [fetch-v8-native-pick-seed2028-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2028-episode000-failed.mp4) |
 | 2030 | 40 | No grasp; force failure | [fetch-v8-native-pick-seed2030-episode000-failed.mp4](fetch-v8-native-pick-2026-09-17-run02/fetch-v8-native-pick-seed2030-episode000-failed.mp4) |
+
+
+## S1 native24 固定10起点（2026-09-17 run01）
+
+0/10成功，均为真实失败录像；完整索引：[s1-native-panel-2026-09-17-run01](../results/s1-native-panel-2026-09-17-run01/README.md)。

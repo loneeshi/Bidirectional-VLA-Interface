@@ -805,6 +805,86 @@
       "result": "native_failure",
       "seed": 2030,
       "recording_date_utc": "2026-09-17"
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2024-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2024-episode000-failed.mp4",
+      "sha256": "65c858856b1d3103ead85f0d5662901664105a112c1cdcf025d14e06647628ad",
+      "bytes": 1047832,
+      "status": "failed",
+      "seed": 2024
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2025-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2025-episode000-failed.mp4",
+      "sha256": "44b9286a4c3f700741ca5e1c81a1ee8416edc29bf6fa02960a316138d6cfacb1",
+      "bytes": 902114,
+      "status": "failed",
+      "seed": 2025
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2026-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2026-episode000-failed.mp4",
+      "sha256": "9c9e9557b90fddbf4680f346a070dffe4d3dc356252c5acd655bf6dccbc303f3",
+      "bytes": 972706,
+      "status": "failed",
+      "seed": 2026
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2027-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2027-episode000-failed.mp4",
+      "sha256": "5a3a5f16994363f833398fd1cc3ecc54ac62e6ce2dc5e33a73f55cff31a5f51e",
+      "bytes": 837685,
+      "status": "failed",
+      "seed": 2027
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2028-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2028-episode000-failed.mp4",
+      "sha256": "8dc767c5baeca601547a6fdc621499670ec8b20eacd5ce8bec32471c9562144e",
+      "bytes": 957581,
+      "status": "failed",
+      "seed": 2028
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2030-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2030-episode000-failed.mp4",
+      "sha256": "f5ddfeb6490b722467f475386c9da9a299d8c418b391f2cd2f42030b7cf8bbb0",
+      "bytes": 852039,
+      "status": "failed",
+      "seed": 2030
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2031-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2031-episode000-failed.mp4",
+      "sha256": "8ab980bcb02138c1dc31e9b72ad5a0a11cf1c3ded8f87fa9a3584e8a8d9de3d4",
+      "bytes": 107404,
+      "status": "failed",
+      "seed": 2031
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2032-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2032-episode000-failed.mp4",
+      "sha256": "6b6348ed392399ced3e1bcb421f45d1939e7aa8b562071ce1ff49342b639a459",
+      "bytes": 1025718,
+      "status": "failed",
+      "seed": 2032
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2033-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2033-episode000-failed.mp4",
+      "sha256": "f5bfeb5a0d55f638e5098dbae2cfed6de643818255465b8818896f477e2012d0",
+      "bytes": 913616,
+      "status": "failed",
+      "seed": 2033
+    },
+    {
+      "filename": "fetch-s1-native24-pick-seed2034-episode000-failed.mp4",
+      "path": "s1-native-panel-2026-09-17-run01/fetch-s1-native24-pick-seed2034-episode000-failed.mp4",
+      "sha256": "f1673d05b96eb39a1a756b0bef7681bcbdf8f89bf3de435da6bc1fb50e049aaf",
+      "bytes": 1093675,
+      "status": "failed",
+      "seed": 2034
     }
   ]
 }
