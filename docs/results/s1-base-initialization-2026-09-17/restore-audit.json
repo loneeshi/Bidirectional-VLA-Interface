@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "training_updates": 0,
+  "gpu_runs": 0,
+  "seconds": 36.43721226230264,
+  "restored_tensors": 51,
+  "all_finite": true,
+  "checkpoint_bytes_verified": true,
+  "model_forward_executed": false
+}
