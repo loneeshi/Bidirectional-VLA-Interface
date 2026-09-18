@@ -21,6 +21,9 @@ def main():
     p.add_argument('--socket', required=True)
     p.add_argument('--auth-file', type=Path, required=True)
     p.add_argument('--historical-reset', type=Path)
+    p.add_argument('--shader', choices=['default','minimal'], default='default')
+    p.add_argument('--sim-backend', choices=['cpu','gpu'], default='cpu')
+    p.add_argument('--reference-state', type=Path)
     a = p.parse_args()
     if a.seed not in (2024, 2025, 2026, 2027, 2028, 2030, 2031, 2032, 2033, 2034):
         p.error('Only the predeclared native and auxiliary validation seeds are allowed')
@@ -37,7 +40,8 @@ def main():
         native_predicate='grasped + ee_rest<=0.05m + robot_rest + is_static + cumulative_force<5000',
         precision='bfloat16', predicted_action_horizon=10, executed_per_prediction=1,
         head_mask_indices=[8, 9], historical_pairing='same protocol/seeds; exact reset pairing not assumed',
-        started_utc=datetime.now(timezone.utc).isoformat(), runner_sha256=sha(__file__))
+        started_utc=datetime.now(timezone.utc).isoformat(), runner_sha256=sha(__file__),
+        shader=a.shader, sim_backend=a.sim_backend)
     env = writer = conn = None
     recording = out / f'fetch-s1-native24-pick-seed{a.seed}-episode000-incomplete.mp4'
 
@@ -63,7 +67,7 @@ def main():
         from mani_skill.utils.structs.pose import Pose
         from bvi.fetch_pi_skill import JOINT_NAMES
         from bvi.official_fetch_data import native_policy_observation
-        from bvi.native_pick_audit import native_failure_causes
+        from bvi.native_pick_audit import native_failure_causes, state_max_errors
         torch.set_num_threads(2)
         random.seed(a.seed); np.random.seed(a.seed); torch.manual_seed(a.seed)
         torch.cuda.manual_seed_all(a.seed)
@@ -76,13 +80,37 @@ def main():
         plans = plan_data_from_file(plan_path)
         env = gym.make('PickSubtaskTrain-v0', num_envs=1, robot_uids='fetch', obs_mode='rgbdp',
             control_mode='pd_joint_delta_pos', render_mode='rgb_array', reward_mode='dense',
-            sensor_configs={'shader_pack': 'default'}, human_render_camera_configs={'shader_pack': 'default'},
-            viewer_camera_configs={'shader_pack': 'default'}, sim_backend='cpu', max_episode_steps=200,
+            sensor_configs={'shader_pack': a.shader}, human_render_camera_configs={'shader_pack': a.shader},
+            viewer_camera_configs={'shader_pack': a.shader}, sim_backend=a.sim_backend, max_episode_steps=200,
             task_plans=plans.plans, scene_builder_cls=plans.dataset,
             spawn_data_fp=rearrange / 'spawn_data/set_table/pick/val/spawn_data.pt',
             require_build_configs_repeated_equally_across_envs=False)
-        obs, info = env.reset(seed=a.seed)
+        reference = None
+        if a.reference_state is not None:
+            reference = torch.load(a.reference_state, map_location='cpu', weights_only=False)
+            recorded = reference['simulator']
+            options = dict(reconfigure=True, build_config_idxs=jsonable(recorded['build_config_idxs']),
+                           task_plan_idxs=jsonable(recorded['task_plan_idxs']))
+            obs, info = env.reset(seed=a.seed, options=options)
+        else:
+            obs, info = env.reset(seed=a.seed)
         u = env.unwrapped
+        if reference is not None:
+            def to_device(value):
+                if isinstance(value, torch.Tensor): return value.to(u.device)
+                if isinstance(value, dict): return {k:to_device(v) for k,v in value.items()}
+                return value
+            u.set_state_dict(to_device(reference['simulator']))
+            u.agent.controller.set_state(to_device(reference['controller']))
+            info = to_device(reference['reset_info'])
+            # Passing original info avoids an extra evaluate()/horizon decrement.
+            obs = u.get_obs(info=info)
+            restored = dict(simulator=u.get_state_dict(),controller=u.agent.controller.get_state())
+            errors = state_max_errors(jsonable({k:reference[k] for k in restored}),jsonable(restored))
+            report.update(reference_state_sha256=sha(a.reference_state),reset_state_max_errors=errors,
+                          historical_pairing='all saved simulator/controller leaves restored; physics backend may differ')
+            if max(errors.values(),default=0.) > 1e-5:
+                raise RuntimeError('Recorded simulator/controller state restoration exceeds1e-5')
         joints = [j.name for j in u.agent.robot.active_joints]
         if joints != JOINT_NAMES or u.control_freq != 20:
             raise ValueError('Native joint/control contract changed')

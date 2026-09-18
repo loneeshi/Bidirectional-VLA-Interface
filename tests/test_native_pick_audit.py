@@ -38,3 +38,13 @@ def test_roster_rejects_duplicate_even_when_ten_rows():
     validate_seed_roster([{'seed':s} for s in SEEDS])
     with pytest.raises(ValueError):
         validate_seed_roster([{'seed':SEEDS[0]} for _ in SEEDS])
+
+
+def test_full_state_comparison_checks_non_robot_actors():
+    from bvi.native_pick_audit import state_max_errors
+    a={'simulator':{'actor':[1.,2.], 'robot':[0.,0.]},'controller':{}}
+    b={'simulator':{'actor':[1.,3.], 'robot':[0.,0.]},'controller':{}}
+    assert state_max_errors(a,b)['/simulator/actor']==1.
+    with pytest.raises(ValueError): state_max_errors(a,{'simulator':{'robot':[0.,0.]},'controller':{}})
+    with pytest.raises(ValueError): state_max_errors([1,2],[1])
+    with pytest.raises(ValueError): state_max_errors([float('nan')],[0])

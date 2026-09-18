@@ -3,6 +3,23 @@ import numpy as np
 from bvi.s1_capability_gate import SEEDS
 
 
+def state_max_errors(reference, actual, prefix=''):
+    """Compare every serialized simulator/controller leaf, not only qpos."""
+    if isinstance(reference, dict):
+        if not isinstance(actual, dict) or set(reference) != set(actual):
+            raise ValueError(f'State keys differ at {prefix}')
+        result = {}
+        for key in reference:
+            result.update(state_max_errors(reference[key], actual[key], f'{prefix}/{key}'))
+        return result
+    left, right = np.asarray(reference), np.asarray(actual)
+    if left.shape != right.shape:
+        raise ValueError(f'State shape differs at {prefix}')
+    if not np.isfinite(left).all() or not np.isfinite(right).all():
+        raise ValueError(f'Nonfinite state at {prefix}')
+    return {prefix: float(np.max(np.abs(left.astype(float)-right.astype(float)))) if left.size else 0.}
+
+
 def validate_episode(result, events):
     """Do not turn an incomplete infrastructure run into a policy failure."""
     if result.get('status') != 'episode_completed':
