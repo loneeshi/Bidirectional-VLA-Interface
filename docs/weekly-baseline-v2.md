@@ -105,3 +105,18 @@ DROID中间数据/权重向胡学姐索取，GRPO本周只保留设计；AC-DiT�
 下一步按依赖立即推进：先有界同起点专家动作回放核验环境/控制器，再按既有计划准备一次独立特权state诊断臂，冻结数据、更新数、字段及专用归一化并登记剩余S1时间预算；不能据其通过放行忠实臂/S2。特权臂若无改善也不能自动认定唯一原因是接口bug。S2仍须忠实臂≥3/10和native24错误交接门。
 
 报告：repo `docs/s1-native-failure-analysis.md`；证据 `docs/results/s1-failure-attribution-2026-09-17-run01/`。两轮原始归档653488字节、SHA256 26d409a4f97bd80154b7a9bf6c55bd416723ca0c70b764a95dec7016fdf10b54已下载复核。18:26 EDT GPU1=15MiB/0%、两外层进程退出；API0、新租机USD0，lab计费未知，历史Runpod存储费用未重核。本次无新视频。
+
+
+## 2026-09-17 EDT：用户修订 S1 诊断顺序（优先级覆盖）
+
+最新执行顺序以仓库 `docs/s1-diagnostic-checklist-v2.md` 为准：冻结best6000做GPU/minimal十起点域对齐 → 时间padding mask及micro1/accum8验收 → 全validation per-phase诊断与一次同数据忠实臂重训 → 仍0/10才做特权state臂。暂缓特权训练，S2/S3不放行；原0/10不删。无按星期等待。
+
+采集侧官方配套013_apple.json已核实shader_dir=minimal、sim_backend=gpu、num_envs252；当前代码确认shader_dir映射传感器配置。两个反向样本均在reach→grasp交界且目标块无padding。训练grasp552/6835=8.08%；含padding的当前帧1350/6835=19.75%。每帧作为当前观测仅见一次，但边界动作在重叠horizon10中可监督十次，尚不能认定唯一原因是闭爪样本不足或shader。
+
+已启动 `runs/s1-native-render-aligned-2026-09-18-run01`，外层PID1481028，内部3600/外层3660秒。恢复旧面板保存的全部仿真器/控制器叶子并检查1e-5误差；首起点误差1.79e-7已过，结果待完整十集。只改变渲染＋物理后端，不能把联合差异全归到shader。原专家回放在metadata plan/init校验失败时退出，0动作/31.82秒，原记录保留，不计作策略失败。
+
+后续accum8同6835样本应为854组8加一组3，共855优化器更新；不丢尾部、不同步增为2epoch。mask及新训练循环尚未完成，不能记作已修复或已重训。仅labGPU1串行，API0、新租机0；lab费未知，旧云存储账单未刷新。S1原累计18小时上限不扩大，任何下一GPU阶段启动前登记窗口。
+
+## 2026-09-17 EDT 最新修订：S1-IA优先
+
+核实S1转换器使用整段统一任务指令，尚非IA SFT。下一训练优先独立S1-IA：窗口instruction真正输入模型、单共享LoRA、动作块不跨调用、有效时间mask、micro1/accum8；无族残差/进度loss。旧任务级0/10与3/10门保留为原协议记录，但不再阻止此IA实验。新S2必须另行实现并预注册调用级证据准入，当前不放行。调用级能力可在固定留出起点用单次z测试，无须学习进度先行；oracle串接仅诊断，不能冒充GPT自主成绩。具体方案见仓库docs/s1-ia-sft-revision.md。当前GPU/minimal旧模型对照继续，尚未启动IA训练，不扩18小时预算。

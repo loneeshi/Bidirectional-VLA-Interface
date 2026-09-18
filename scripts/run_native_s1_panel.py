@@ -22,6 +22,9 @@ def main():
     for name in ('training-run', 'normalizer', 'output', 'model-python', 'sim-python'):
         parser.add_argument('--'+name, type=Path, required=True)
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--shader', choices=['default','minimal'], default='default')
+    parser.add_argument('--sim-backend', choices=['cpu','gpu'], default='cpu')
+    parser.add_argument('--reference-panel', type=Path)
     args = parser.parse_args()
     status = json.loads((args.training_run/'status.json').read_text())
     best_path = args.training_run/'best.json'
@@ -36,7 +39,13 @@ def main():
     manifest = dict(stage='S1', question='Native Pick ability on ten fixed validation seeds',
                     checkpoint=str(checkpoint), seeds=SEEDS, per_episode_action_cap=200,
                     total_wall_seconds=3600, api_calls=0, rental_usd=0,
-                    lab_charge_usd=None, execute=args.execute, training_status=status['status'])
+                    lab_charge_usd=None, execute=args.execute, training_status=status['status'],
+                    shader=args.shader, sim_backend=args.sim_backend,
+                    reference_panel=str(args.reference_panel) if args.reference_panel else None)
+    if args.reference_panel:
+        for seed in SEEDS:
+            if not (args.reference_panel/f'seed{seed}'/'initial-state.pt').is_file():
+                raise ValueError('Reference panel lacks a complete initial-state snapshot')
     if not args.execute:
         print(json.dumps(manifest)); return
     if status['status'] != 'completed_one_epoch':
@@ -75,7 +84,9 @@ def main():
             for seed in SEEDS:
                 command = [str(args.sim_python), str(scripts/'eval_native_s1.py'), '--seed', str(seed),
                            '--output', str(args.output/f'seed{seed}'), '--socket', str(socket),
-                           '--auth-file', str(auth)]
+                           '--auth-file', str(auth), '--shader', args.shader, '--sim-backend', args.sim_backend]
+                if args.reference_panel:
+                    command += ['--reference-state',str(args.reference_panel/f'seed{seed}'/'initial-state.pt')]
                 with (args.output/f'seed{seed}.log').open('w') as log:
                     result = subprocess.run(command, env=dict(env, PYTHONHASHSEED=str(seed)),
                         stdout=log, stderr=subprocess.STDOUT, timeout=min(600, remaining()))
