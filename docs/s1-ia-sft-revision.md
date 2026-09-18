@@ -44,3 +44,7 @@
 旧检查点GPU/minimal联合对照完整10起点仍0/10（1920动作），不能用渲染域差单独解释失败。原始归档87,190,757字节已下载并校验，SHA256为8ec58a9b2894d1ec9b37976cd176207c6f5f67584d121e91a533e331beaf74f8；GPU1复核15MiB/0%。
 
 用户要求代码修好后直接训练。masked time loss与accum8真实JAX/NNX CPU数值检查通过：masked项梯度、有效项梯度、batch8及尾batch3更新等价、只更新一次优化器、按样本LR时钟。独立S1-IA进程已启动，外层PID1490193；原pi05_base初始化、单共享LoRA、progress关闭；训练6835帧/最多855更新（末批3），内部18000秒/外部18060秒。前20更新为同一次训练内检查门，每200更新及结束保存并以固定50验证父轨迹的调用首帧masked loss选检查点。GPU1串行；API0、新租机0，lab费未知。S2未启动，完整IA在线成绩尚无。
+
+## 2026-09-18 02:05 EDT：S1-IA训练完成
+
+SSH恢复后确认completed_one_epoch：855/855更新、6835/6835样本、尾批3，记录训练耗时12952.59秒（约3小时36分钟）。留出masked action loss选中best/855，值0.1335303885；不能直接与历史unmasked loss比较。外层进程退出、GPU1=15MiB/0%。完成status/best/validation记录已下载至docs/results/s1-ia-training-2026-09-18-run01；权重仍在lab，尚未宣称完整权重本地备份。API0、新租机0、lab费用未知，旧云存储未重核。S1-IA在线能力评估尚未执行，S2未放行。
