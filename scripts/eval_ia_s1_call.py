@@ -154,6 +154,8 @@ def main():
         report['original_plan'] = jsonable(original_plan)
         # This is the checkpoint's existing task-plan language template, not a prompt sweep.
         prompt=INSTRUCTIONS[a.family]
+        if bool(info['fail'].item()) or bool(info['success'].item()):
+            raise ValueError('Restored call start is already terminal; not an evaluable policy trial')
         report.update(policy='S1-IA single shared LoRA; diagnostic independent call',family=a.family,max_actions=LIMITS[a.family],success_scope='invocation_only_not_native_pick')
         if a.family=='grasp' and (distance(jsonable(obs['extra']))>.08 or bool(obs['extra']['is_grasped'].item())):raise ValueError('Grasp restored start predicate failed')
         if a.family=='move' and not bool(obs['extra']['is_grasped'].item()):raise ValueError('Move restored held predicate failed')
