@@ -1,0 +1,62 @@
+{
+  "seed": 2028,
+  "status": "completed",
+  "success": true,
+  "steps": 55,
+  "api_calls": 0,
+  "training_updates": 0,
+  "historical_pairing": "saved native validation state restored; SAC creates diagnostic call starts",
+  "task": "set_table/pick/013_apple",
+  "split": "val",
+  "max_steps": 200,
+  "policy": "official per-object SAC, deterministic, stationary_head=true",
+  "initial_restore_max_error": 2.384185791015625e-07,
+  "checkpoint_sha256": "1d77da6845a190768792d08a63c2f3e6b19f1022865c350b9ea34f0c9b3aa5cb",
+  "state_shape": [
+    1,
+    42
+  ],
+  "final_info": {
+    "elapsed_steps": [
+      55
+    ],
+    "success": [
+      true
+    ],
+    "fail": [
+      false
+    ],
+    "subtask": [
+      1
+    ],
+    "subtask_type": [
+      100
+    ],
+    "subtasks_steps_left": [
+      144
+    ],
+    "robot_force": [
+      0.0
+    ],
+    "robot_cumulative_force": [
+      719.2645263671875
+    ],
+    "is_grasped": [
+      true
+    ],
+    "ee_rest": [
+      true
+    ],
+    "robot_rest": [
+      true
+    ],
+    "is_static": [
+      true
+    ],
+    "cumulative_force_within_limit": [
+      true
+    ]
+  },
+  "video": "sac-reference-seed2028.mp4",
+  "video_sha256": "6c14d6370a62ff58827a02d48080a1dfd0226808c763ed1b88a0a4cc3f11d13f"
+}

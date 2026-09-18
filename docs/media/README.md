@@ -116,3 +116,13 @@ Six retained recordings and exact filenames: [batch index](fetch-current-handoff
 ## S1 native24 固定10起点（2026-09-17 run01）
 
 0/10成功，均为真实失败录像；完整索引：[s1-native-panel-2026-09-17-run01](../results/s1-native-panel-2026-09-17-run01/README.md)。
+
+
+## S1-IA independent calls, 2026-09-18 run01
+
+First evaluable call per family, plus move success. Grasp seed2024 has no evaluable start and no rollout. All recordings retained in raw archive.
+
+- [fetch-s1-ia-reach-seed2024-episode000-failed.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-reach-seed2024-episode000-failed.mp4)
+- [fetch-s1-ia-grasp-seed2025-episode000.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-grasp-seed2025-episode000.mp4)
+- [fetch-s1-ia-move-seed2025-episode000-failed.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2025-episode000-failed.mp4)
+- [fetch-s1-ia-move-seed2026-episode000.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2026-episode000.mp4)
