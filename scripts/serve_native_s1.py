@@ -19,6 +19,8 @@ def main():
     p.add_argument('--repo-id', default='bvi/s1-official-pick-medium-train')
     p.add_argument('--normalizer', type=Path, required=True)
     p.add_argument('--max-inference-calls', type=int, default=2000)
+    p.add_argument('--training-stage', choices=['S1_ordinary_target_domain_SFT_not_TAPT',
+                    'S1_IA_single_bank_no_progress'], default='S1_ordinary_target_domain_SFT_not_TAPT')
     a = p.parse_args()
     if not 1 <= a.max_inference_calls <= 2000:
         p.error('--max-inference-calls must be in[1,2000]')
@@ -75,6 +77,7 @@ def main():
         if commit != 'f4eb160ba52b22c1e85fe432de59c24bbbac6187' or dirty.strip():
             raise ValueError('Expected clean pinned authorf4 checkout')
         cfg = fetch_config(a.repo_id, str(output / 'unused'), str(a.checkpoint), a.normalizer)
+        cfg = dataclasses.replace(cfg, policy_metadata=dict(cfg.policy_metadata, training_stage=a.training_stage))
         mc = dataclasses.replace(cfg.model, enable_progress_head=False)
         assert mc.action_dim == 32 and mc.action_horizon == 10 and mc.discrete_state_input and mc.dtype == 'bfloat16'
         assets = a.checkpoint / 'assets' / a.repo_id
