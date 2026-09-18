@@ -1,0 +1,255 @@
+{
+  "status": "episode_completed",
+  "seed": 2027,
+  "scene_split": "val",
+  "task": "set_table/pick/013_apple",
+  "max_actions": 120,
+  "control_frequency": 20,
+  "api_calls": 0,
+  "training_updates": 0,
+  "success": false,
+  "ever_grasped": false,
+  "stable_grasp_3_observations": false,
+  "longest_grasp_streak": 0,
+  "steps": 25,
+  "policy": "S1-IA single shared LoRA; diagnostic independent call",
+  "native_predicate": "grasped + ee_rest<=0.05m + robot_rest + is_static + cumulative_force<5000",
+  "precision": "bfloat16",
+  "predicted_action_horizon": 10,
+  "executed_per_prediction": 1,
+  "head_mask_indices": [
+    8,
+    9
+  ],
+  "historical_pairing": "all saved simulator/controller leaves restored; physics backend may differ",
+  "started_utc": "2026-09-18T06:18:24.879390+00:00",
+  "runner_sha256": "163668916516d537f943c63e18ffa2e9ec6b24a6300e29eb9b0db026e0bf65bd",
+  "shader": "minimal",
+  "sim_backend": "gpu",
+  "wall_seconds": 36.12108255177736,
+  "reference_state_sha256": "9108582ed603a3187fc7b53811509ef9b71f55f26d898be1b467941cb8cd6f2a",
+  "reset_state_max_errors": {
+    "/simulator/actors/env-0_009_gelatin_box-0": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_009_gelatin_box-1": 1.7881393432617188e-07,
+    "/simulator/actors/env-0_009_gelatin_box-2": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_009_gelatin_box-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_009_gelatin_box-4": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_009_gelatin_box-5": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_009_gelatin_box-6": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_010_potted_meat_can-0": 0.0,
+    "/simulator/actors/env-0_010_potted_meat_can-1": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_010_potted_meat_can-2": 5.960464477539063e-08,
+    "/simulator/actors/env-0_010_potted_meat_can-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_010_potted_meat_can-4": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_010_potted_meat_can-5": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_010_potted_meat_can-6": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-0": 5.960464477539063e-08,
+    "/simulator/actors/env-0_007_tuna_fish_can-1": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-2": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-4": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-5": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-6": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_007_tuna_fish_can-7": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_005_tomato_soup_can-0": 1.7881393432617188e-07,
+    "/simulator/actors/env-0_005_tomato_soup_can-1": 1.7881393432617188e-07,
+    "/simulator/actors/env-0_005_tomato_soup_can-2": 5.960464477539063e-08,
+    "/simulator/actors/env-0_005_tomato_soup_can-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_005_tomato_soup_can-4": 5.960464477539063e-08,
+    "/simulator/actors/env-0_005_tomato_soup_can-5": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_005_tomato_soup_can-6": 1.7881393432617188e-07,
+    "/simulator/actors/env-0_005_tomato_soup_can-7": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_004_sugar_box-0": 2.9802322387695312e-08,
+    "/simulator/actors/env-0_004_sugar_box-1": 0.0,
+    "/simulator/actors/env-0_004_sugar_box-2": 0.0,
+    "/simulator/actors/env-0_004_sugar_box-3": 0.0,
+    "/simulator/actors/env-0_004_sugar_box-4": 0.0,
+    "/simulator/actors/env-0_004_sugar_box-5": 0.0,
+    "/simulator/actors/env-0_024_bowl-0": 1.862645149230957e-09,
+    "/simulator/actors/env-0_024_bowl-1": 1.4901161193847656e-08,
+    "/simulator/actors/env-0_024_bowl-2": 2.3283064365386963e-10,
+    "/simulator/actors/env-0_024_bowl-3": 2.3283064365386963e-10,
+    "/simulator/actors/env-0_024_bowl-4": 2.3283064365386963e-10,
+    "/simulator/actors/env-0_024_bowl-5": 2.3283064365386963e-10,
+    "/simulator/actors/env-0_024_bowl-6": 2.3283064365386963e-10,
+    "/simulator/actors/env-0_024_bowl-7": 2.3283064365386963e-10,
+    "/simulator/actors/env-0_008_pudding_box-0": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_008_pudding_box-1": 5.960464477539063e-08,
+    "/simulator/actors/env-0_008_pudding_box-2": 1.7881393432617188e-07,
+    "/simulator/actors/env-0_008_pudding_box-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_008_pudding_box-4": 5.960464477539063e-08,
+    "/simulator/actors/env-0_008_pudding_box-5": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_008_pudding_box-6": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_013_apple-0": 5.960464477539063e-08,
+    "/simulator/actors/env-0_003_cracker_box-0": 5.960464477539063e-08,
+    "/simulator/actors/env-0_003_cracker_box-1": 1.862645149230957e-09,
+    "/simulator/actors/env-0_003_cracker_box-2": 5.960464477539063e-08,
+    "/simulator/actors/env-0_003_cracker_box-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_003_cracker_box-4": 0.0,
+    "/simulator/actors/env-0_003_cracker_box-5": 0.0,
+    "/simulator/actors/env-0_002_master_chef_can-0": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_002_master_chef_can-1": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_002_master_chef_can-2": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_002_master_chef_can-3": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_002_master_chef_can-4": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_002_master_chef_can-5": 1.1920928955078125e-07,
+    "/simulator/actors/env-0_002_master_chef_can-6": 1.1920928955078125e-07,
+    "/simulator/actors/ee_rest_goal": 0.0,
+    "/simulator/articulations/fetch": 0.0,
+    "/simulator/articulations/scs-[0]_fridge-0": 0.0,
+    "/simulator/articulations/scs-[0]_kitchen_counter-0": 0.0,
+    "/simulator/articulations/scs-[0]_kitchenCupboard_01-0": 0.0,
+    "/simulator/articulations/scs-[0]_cabinet-0": 0.0,
+    "/simulator/articulations/scs-[0]_chestOfDrawers_01-0": 0.0,
+    "/simulator/task_plan_idxs": 0.0,
+    "/simulator/build_config_idxs": 0.0,
+    "/simulator/init_config_idxs": 0.0,
+    "/simulator/subtask_pointer": 0.0,
+    "/simulator/subtask_steps_left": 0.0,
+    "/simulator/robot_cumulative_force": 0.0
+  },
+  "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+  "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c",
+  "renderer_pci": "0000:af:00.0",
+  "ee_rest_threshold_m": 0.05,
+  "source_sha256": {
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/pick.py": "6bc10aac584b1907ed21c098421bb43120276ee6d1b15df38cc909e0c3321bd4",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/subtask.py": "989d73eed4ef215ba9e999eb5950e219fc66023e9c708acaa1330bfdd5e35637",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/sequential_task.py": "a4230a26514f83c371e2a2c24a9440b7044fcdde675c16df2849a6717ec1c54c",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/envs/scenes/base_env.py": "8e2a8a2335a115643f8ed4583d77a1622c58450d7eab5605301bff4fc2a2e9e8",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/envs/sapien_env.py": "e8baa7f60194696c008d21f98c9993580cb9440e29cf939476819b4f83911cf1"
+  },
+  "task_cfg": "PickSubtaskConfig(task_id=0, horizon=200, robot_cumulative_force_limit=5000, ee_rest_thresh=0.05, robot_resting_qpos_tolerance=0.2, robot_resting_qpos_tolerance_grasping=0.6)",
+  "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-777-0', composite_subtask_uids=['set_table-pick-val-777-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_448.json')",
+  "family": "reach",
+  "success_scope": "invocation_only_not_native_pick",
+  "instruction": "Reach the apple with the gripper open.",
+  "instruction_source": "frozen_IA_window_template",
+  "original_subtask_start_base_xy": [
+    0.00020329051767475903,
+    0.0006168647669255733
+  ],
+  "joint_names": [
+    "root_x_axis_joint",
+    "root_y_axis_joint",
+    "root_z_rotation_joint",
+    "torso_lift_joint",
+    "head_pan_joint",
+    "shoulder_pan_joint",
+    "head_tilt_joint",
+    "shoulder_lift_joint",
+    "upperarm_roll_joint",
+    "elbow_flex_joint",
+    "forearm_roll_joint",
+    "wrist_flex_joint",
+    "wrist_roll_joint",
+    "r_gripper_finger_joint",
+    "l_gripper_finger_joint"
+  ],
+  "model_metadata": {
+    "status": "loading",
+    "training_updates": 0,
+    "progress_head": false,
+    "tapt": false,
+    "inference_calls": 0,
+    "max_inference_calls": 2000,
+    "client_disconnects": 0,
+    "denoising_steps": 10,
+    "action_horizon": 10,
+    "internal_action_dim": 32,
+    "external_action_dim": 13,
+    "action_postprocessing": "S1-native24 quantile unnormalization only; client owns clipping/headmask",
+    "precision": "bfloat16",
+    "gpu_idle_limit_mib": 2048,
+    "gpu_guard_scope": "allows pre-existing SAPIEN allocation up to2GiB; no second model permitted",
+    "wall_seconds": 5.476176738739014e-07,
+    "gpu_memory_before_server_mib": 15,
+    "author_commit": "f4eb160ba52b22c1e85fe432de59c24bbbac6187",
+    "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "pretrained_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+    "pretrained_tensor_count": 71,
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "state_contract_sha256": "c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40",
+    "server_source_sha256": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89",
+    "state_contract": {
+      "robot": "fetch",
+      "state_dim": 24,
+      "action_dim": 13,
+      "state_components": [
+        "native_qpos12",
+        "native_qvel12"
+      ],
+      "base_position_reference": "world",
+      "base_camera": "fetch_head",
+      "wrist_camera": "fetch_hand",
+      "state_conditioning": true,
+      "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+      "training_repo": "bvi/s1-official-pick-medium-train",
+      "evaluation_scope": "S1_official_train_fixed_heldout_native_gate",
+      "state_source": "env_native_agent",
+      "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+      "initialization": "checkpoints/s1-pi05-base-2026-09-17/params",
+      "training_stage": "S1_IA_single_bank_no_progress",
+      "invocation_aligned": true
+    },
+    "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+    "rng_contract": "reset PRNGKey(episode_seed); key,subkey=split(key) per prediction",
+    "ready_scope": "weights and transforms loaded; first inference may compile"
+  },
+  "native_pick_success": false,
+  "final_info": {
+    "elapsed_steps": [
+      25
+    ],
+    "success": [
+      false
+    ],
+    "fail": [
+      true
+    ],
+    "subtask": [
+      0
+    ],
+    "subtask_type": [
+      0
+    ],
+    "subtasks_steps_left": [
+      174
+    ],
+    "robot_force": [
+      297.02325439453125
+    ],
+    "robot_cumulative_force": [
+      5130.5419921875
+    ],
+    "is_grasped": [
+      false
+    ],
+    "ee_rest": [
+      false
+    ],
+    "robot_rest": [
+      false
+    ],
+    "is_static": [
+      false
+    ],
+    "cumulative_force_within_limit": [
+      false
+    ]
+  },
+  "native_failure_causes": [
+    "native_cumulative_force_limit"
+  ],
+  "stop_reason": "native_termination",
+  "video": "fetch-s1-ia-reach-seed2027-episode000-failed.mp4",
+  "artifact_sha256": {
+    "final-cameras.png": "7c7893afbfdeb566f008eafb313f81d18389a51cdc6d1c053983dd19be30db4b",
+    "events.jsonl": "a59857e77b2c44d8ec263bd7d2202ed430cb7d135190e1c9fad0b8f58f7fe4ec",
+    "initial-state.pt": "06460554136cd44b158d4f7db05c24902a2ecd8fb35c11410bcb0fddeaf92f4b",
+    "fetch-s1-ia-reach-seed2027-episode000-failed.mp4": "8ebb47f87619c415d9ab8783d7baa52fff2db7dbdc2531697eaa11e273d76dbe",
+    "reset-cameras.png": "2499951514036cc8a4e97599377cfe7a2361bf1bc60047a4ed14a817ac956796",
+    "reset-observation.npz": "a7715677dca7899cb4bcd2b864ac550c304516b9135b9fa0a60b712ce47cba82",
+    "initial-state.json": "0dd802a16478f19484a08b08a3b86a2945b3a71394f40a11d443b0f48785cac9"
+  }
+}

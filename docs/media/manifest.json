@@ -885,6 +885,34 @@
       "bytes": 1093675,
       "status": "failed",
       "seed": 2034
+    },
+    {
+      "filename": "fetch-s1-ia-reach-seed2024-episode000-failed.mp4",
+      "path": "s1-ia-calls-2026-09-18-run01/fetch-s1-ia-reach-seed2024-episode000-failed.mp4",
+      "sha256": "665f9731ece50d696f89a576f6f951f83179e88b547677edfe9e0de0fdbd66d1",
+      "bytes": 121558,
+      "scope": "independent invocation from SAC-generated start; not autonomous chain"
+    },
+    {
+      "filename": "fetch-s1-ia-grasp-seed2025-episode000.mp4",
+      "path": "s1-ia-calls-2026-09-18-run01/fetch-s1-ia-grasp-seed2025-episode000.mp4",
+      "sha256": "8eae140790008cbd19f34d64a49e85534effcf41d388a5d44c8aec91901ea648",
+      "bytes": 18073,
+      "scope": "independent invocation from SAC-generated start; not autonomous chain"
+    },
+    {
+      "filename": "fetch-s1-ia-move-seed2025-episode000-failed.mp4",
+      "path": "s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2025-episode000-failed.mp4",
+      "sha256": "dd5b2f07bf1a71534ebcba34504cc195222064acf88a43d9e9348dcd173264f9",
+      "bytes": 37142,
+      "scope": "independent invocation from SAC-generated start; not autonomous chain"
+    },
+    {
+      "filename": "fetch-s1-ia-move-seed2026-episode000.mp4",
+      "path": "s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2026-episode000.mp4",
+      "sha256": "2597b6a4cd218d5e5d8fa933e325e78c96aef6b3f8cc8d942e4e4711c09978fa",
+      "bytes": 105438,
+      "scope": "independent invocation from SAC-generated start; not autonomous chain"
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "stage": "S1",
+  "question": "S1-IA independent reach/grasp/move calls from SAC-generated validation starts; not autonomous chain",
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028
+  ],
+  "per_call_caps": {
+    "reach": 120,
+    "grasp": 60,
+    "move": 120
+  },
+  "teacher_action_cap_per_seed": 200,
+  "planned_calls": 15,
+  "total_wall_seconds": 3600,
+  "api_calls": 0,
+  "rental_usd": 0,
+  "lab_charge_usd": null,
+  "execute": true,
+  "training_status": "completed_one_epoch",
+  "shader": "minimal",
+  "sim_backend": "gpu",
+  "reference_panel": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01"
+}
