@@ -1,0 +1,6 @@
+{
+  "step": 855,
+  "validation_action_loss": 0.13353038845583798,
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+  "selection": "heldout_action_loss_only"
+}

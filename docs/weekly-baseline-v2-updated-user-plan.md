@@ -188,3 +188,7 @@ C 线交付：约 85%。S1 通过：约 30–40%。S1→S2 完成训练：条件
 ### S1-IA真实训练已开始（2026-09-17 EDT）
 
 代码修复后按用户授权直接启动，目录runs/s1-ia-epoch-2026-09-18-run01，外层PID1490193。已确认首次真实优化器更新，processed_samples=8/effective_batch=8，masked loss=0.724790、grad_norm=2.070373，均有限；尚未通过20更新门。单epoch6835样本/855更新，内部18000秒/外层18060秒；仅labGPU1，无API、新租机0、lab费用未知。旧模型GPU/minimal十起点完成0/10并本地归档校验；不能把域差视作充分解释。后续继续监督，不放行S2。masked loss、梯度累计8与尾部3样本更新已通过真实CPU JAX/NNX数值验证。详见docs/s1-ia-sft-revision.md。
+
+## 2026-09-18 02:05 EDT：S1-IA训练完成
+
+SSH恢复后确认completed_one_epoch：855/855更新、6835/6835样本、尾批3，记录训练耗时12952.59秒（约3小时36分钟）。留出masked action loss选中best/855，值0.1335303885；不能直接与历史unmasked loss比较。外层进程退出、GPU1=15MiB/0%。完成status/best/validation记录已下载至docs/results/s1-ia-training-2026-09-18-run01；权重仍在lab，尚未宣称完整权重本地备份。API0、新租机0、lab费用未知，旧云存储未重核。S1-IA在线能力评估尚未执行，S2未放行。
