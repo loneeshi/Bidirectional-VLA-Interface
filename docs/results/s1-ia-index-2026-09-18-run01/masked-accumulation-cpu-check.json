@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "runtime": "lab envs/openpi CPU JAX/NNX",
+  "script": "scripts/check_ia_s1_steps.py",
+  "checks": [
+    "masked_gradient",
+    "valid_gradient",
+    "batch8_equivalence",
+    "tail3_equivalence",
+    "one_optimizer_update",
+    "sample_lr_clock",
+    "per_sample_mask_mean"
+  ],
+  "training_updates": 0
+}

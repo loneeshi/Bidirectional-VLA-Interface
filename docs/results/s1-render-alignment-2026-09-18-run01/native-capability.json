@@ -1,0 +1,95 @@
+{
+  "schema": "bvi.s1-native-capability/1",
+  "stage": "S1",
+  "arm": "faithful_native24",
+  "task": "set_table/pick/013_apple",
+  "scene_split": "val",
+  "action_budget": 200,
+  "native_success_threshold_metres": 0.05,
+  "checkpoint_sha256": "374dabe609e3bd117a1e42c373436aef9b4d9e5672a80a6aa0498b792853416d",
+  "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+  "state_dim": 24,
+  "privileged_policy_inputs": false,
+  "state_source": "env_native_agent",
+  "base_camera": "fetch_head",
+  "wrist_camera": "fetch_hand",
+  "success_source": "native_environment_predicate",
+  "checkpoint_selection": "heldout_loss",
+  "episodes": [
+    {
+      "seed": 2024,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 129,
+      "evidence_sha256": "b08c22bcef80e0331367d495d776373dbc52974f95230515466e0621ae380e9b"
+    },
+    {
+      "seed": 2025,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "e40d1bc1a0b4b093a4551a68ba04460b8d5a1638eeb4ff151ad736f775bdd543"
+    },
+    {
+      "seed": 2026,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "e7c52926691be52a4c23af52de211f0ba258f8e51131611fa182ff699e434c63"
+    },
+    {
+      "seed": 2027,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "f24dff77971d6edd5819e5d75366de50b5fd0c4d877edad6682a17ab579a8476"
+    },
+    {
+      "seed": 2028,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "588b3f3b7a73bb4cc1e005fdb9c27720e4979d2b8f0a85bb1f8286f74155affb"
+    },
+    {
+      "seed": 2030,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "71696aea408d347b485bb4c2c382c7176f8ef1e5fd5a5d8b7daaaa8364d12245"
+    },
+    {
+      "seed": 2031,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "3d25cddaddcf23c5d2dd0402c76acb3ed95b098e37c3ea6de0089f2ef71d731f"
+    },
+    {
+      "seed": 2032,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "928efb4dd32d324653a4711b04cf955b77a5dd45cdce3efb52e1ff2c3104d562"
+    },
+    {
+      "seed": 2033,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "43a8aefb99e0cf7cdb4b41e3a1e4694b41e616f63e3c6bd00f4ba236ea8fc4c7"
+    },
+    {
+      "seed": 2034,
+      "status": "completed",
+      "success": false,
+      "executed_actions": 199,
+      "evidence_sha256": "ebd972249eee71bde2b61261eaf49f8762ee61f926893d52bf61a02d0f64e99f"
+    }
+  ],
+  "best_record_sha256": "2ca58b0e4b4e5b60af25b5fb6653a134cbb4b9bedf38052b77e29cae5a374c15",
+  "admission": {
+    "eligible": false,
+    "reason": "S1 native capability below 3/10: 0/10"
+  }
+}

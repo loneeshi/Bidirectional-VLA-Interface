@@ -184,3 +184,7 @@ C 线交付：约 85%。S1 通过：约 30–40%。S1→S2 完成训练：条件
 ### S1-IA数据门推进（2026-09-17 EDT）
 
 调用索引完成：train6835/validation2033，保留原父轨迹划分，端点0、漏帧0。真实H5边界6样本及OpenPI CPU预处理通过，窗口指令token有别，mask未被repack丢弃；26项相关CPU测试通过。训练端masked loss/accum8仍待接入验证，IA参数更新0。GPU/minimal旧模型对照仍在运行，暂不启动第二个GPU实验。证据docs/results/s1-ia-index-2026-09-18-run01；API0、新租机0，lab费用未知。
+
+### S1-IA真实训练已开始（2026-09-17 EDT）
+
+代码修复后按用户授权直接启动，目录runs/s1-ia-epoch-2026-09-18-run01，外层PID1490193。已确认首次真实优化器更新，processed_samples=8/effective_batch=8，masked loss=0.724790、grad_norm=2.070373，均有限；尚未通过20更新门。单epoch6835样本/855更新，内部18000秒/外层18060秒；仅labGPU1，无API、新租机0、lab费用未知。旧模型GPU/minimal十起点完成0/10并本地归档校验；不能把域差视作充分解释。后续继续监督，不放行S2。masked loss、梯度累计8与尾部3样本更新已通过真实CPU JAX/NNX数值验证。详见docs/s1-ia-sft-revision.md。
