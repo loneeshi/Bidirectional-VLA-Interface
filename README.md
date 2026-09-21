@@ -1,6 +1,15 @@
 # Learning Bidirectional Semantic Interfaces for Reliable VLA Tool Use
 
-**Current mainline:** [Updated weekly v2](docs/weekly-baseline-v2.md): S1 faithful Fetch π₀.₅ SFT → native ≥3/10 gate → S2 tool-family TAPT → S3 GPT＋LightNav-0＋TAPT π₀.₅. SAC/PPO runs are separate C controls. S2 preparation may proceed on CPU; no S2 parameter updates before S1 passes.
+**Current mainline (2026-09-20 UTC):** no training or fine-tuning. The only
+active evaluation is a resumable 20/1000-rollout TidyHouse validation batch with
+GPT-5.6 Luna organizing LightNav-0 navigation and official object-specific SAC
+Pick/Place. LightNav-0 is the navigation VLA; SAC is the approved interim
+manipulation tool and does not consume language. See the
+[run contract and status](docs/results/sac-interface-baseline-2026-09-20/README.md).
+
+**Current mainline:** [Delivery status and evidence](docs/delivery-2026-09-20.md) · [Experiment log](docs/log/README.md). The completed oracle-assisted development regression measured original S1-IA best/855 at **0/5** and the frozen dev8-selected candidate best/250 at **0/5**. All 10 episodes ended at the native cumulative-force limit without grasping. **G1 failed**: no success rerun, LightNav/GPT integration, or Place evaluation was launched under this gate. This supersedes the old ≥3/10 gate and S2-first priorities; S2 expansion remains paused.
+
+The single formal candidate completed 500 updates and passed independent CPU restore/frozen-parameter verification; fixed dev first-action/chunk RMSE improved 10.1%/4.7%. These offline improvements did not establish native Pick success. Both completed panels' full raw evidence and the selected checkpoint have verified complete backups; the two earlier infrastructure-only baseline launches remain separate from the 10 evaluated episodes. [Evaluation and limits](docs/pi05-candidate-evaluation-2026-09-20.md) · [Reproduction](docs/two-day-reproduction-2026-09-20.md).
 
 **Bidirectional-VLA-Interface** is an early research implementation of an explicit invocation and feedback interface between a vision-language coordinator and robot skills.
 
@@ -23,7 +32,7 @@ This historical trial uses oracle dispatch, not GPT/Opus, and precedes Fetch pi0
 
 [A/B/C/D delivery plan and green-marker diagnosis](docs/abcd-delivery.md).
 
-**Current A/B/C/D work:** [debugging evidence and Fetch adaptation](docs/abcd-debugging.md).
+**Historical A/B/C/D work:** [debugging evidence and Fetch adaptation](docs/abcd-debugging.md).
 The [marker-free A chain — A-ppo-sac-clean.mp4](docs/media/abcd-baseline-reference/A-ppo-sac-clean.mp4) has been re-recorded.
 [B: LightNav + SAC — B-lightnav-sac.mp4](docs/media/abcd-baseline-reference/B-lightnav-sac.mp4) completed the first-object chain
 in 278 steps, with grasp maintained throughout carrying navigation.
@@ -37,7 +46,7 @@ Velocity, recovery-data, relative-base and workspace-camera pilots also failed P
 
 This is a constrained interface demonstration: every decision had **one allowed skill/target pair**, supplied by oracle task metadata, and completion used the simulator's checks. It establishes real image input, structured invocation, continuous control, and feedback delivery. It does not establish autonomous planning or an advantage over a fixed dispatcher.
 
-The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Current local suite: 197 tests passed, 4 skipped; 15 targeted Torch checks passed on the lab CPU environment. No paid API calls.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
+The `bvi` Python core includes typed requests and feedback, a serial skill runtime, event logging, injectable OpenAI/Anthropic transports, and an SSH bridge that keeps API credentials on the local computer. **Historical test snapshot: 197 tests passed, 4 skipped; 15 targeted Torch checks passed on the lab CPU environment. No paid API calls in that check.** The asset/checkpoint downloader pins upstream revisions, verifies file hashes, and resumes interrupted downloads.
 
 | Gate | Acceptance criterion | Evidence available |
 |---|---|---|

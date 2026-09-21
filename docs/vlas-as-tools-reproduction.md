@@ -1,6 +1,6 @@
 # VLAs-as-Tools reproduction: priority and acceptance gates
 
-**Active priority, 2026-09-17 UTC:** [MS-HAB remains this week's main delivery](mshab-reproduction-priority.md).
+**Historical priority, 2026-09-17 UTC:** MS-HAB was that week's main delivery.
 Limit LIBERO to a2–4hour author-component/reference audit; full DROID/LIBERO
 reproduction is not a prerequisite for the MS-HAB method port. The historical
 results below remain component evidence, not paper-level reproduction.

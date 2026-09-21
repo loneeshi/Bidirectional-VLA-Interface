@@ -1,0 +1,1744 @@
+{
+  "schema": "bvi.final-artifact-manifest/1",
+  "at_utc": "2026-09-19T04:28:37.568139+00:00",
+  "root": "D:\\AI\\embodied intelligence",
+  "status": "final_failure_delivery_G1_not_passed",
+  "file_count": 339,
+  "total_indexed_bytes": 36362748,
+  "files": [
+    {
+      "path": "BVI-research-plan-2026-09-14/daily-progress/2026-09-19.md",
+      "bytes": 8693,
+      "sha256": "20637e902f1d0bebcd8b902c025c31efa651c8f586937cf7692aee0c84555fa2"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/finance/ledger.json",
+      "bytes": 3852006,
+      "sha256": "7d8ca5bba22ff57bfb216732b5b1078d41b086e00e0ae48e1944f807034f04ff"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/finance/README.md",
+      "bytes": 73851,
+      "sha256": "ead9147e305bf0087e64bd16d451bbd08accc6294d9000b52f1d66f85931689c"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/finance/receipts/two-day-cloud-check-20260919.json",
+      "bytes": 4700,
+      "sha256": "1ce71902db7497463c93ede9fa68818e76e87d88812c16a6b4c85c843dd9c7db"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/finance/receipts/two-day-cloud-close-20260919.json",
+      "bytes": 4878,
+      "sha256": "b685c9d84599524cbc13b9806909f3349cf2c273632b5c105e7d1caa9eea3dfb"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/finance/receipts/two-day-final-resource-check-20260919.json",
+      "bytes": 610,
+      "sha256": "c45e662537f043f68d1ee9ce982769cd250ac28edab4f22de4ddb60021fe9cde"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/plan/current-status-handoff-2026-09-20.md",
+      "bytes": 4739,
+      "sha256": "af085a794ef6b4e788badd24f89c99bc0d8f2aa2fc5eeea09828686b21cdd55b"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/plan/two-day-decisions-2026-09-20.md",
+      "bytes": 4565,
+      "sha256": "095d402ee6d6cee15acdc4a2a91129b19b713b8e49b6a7a884acbaa3ddd09011"
+    },
+    {
+      "path": "BVI-research-plan-2026-09-14/plan/two-day-delivery-plan-2026-09-19-to-20.md",
+      "bytes": 18770,
+      "sha256": "a9394cd16b500b4e531b3c51d8b6843d459811b4eb593b6e71526845c5b15edd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/.runtime/two-day-delivery-20260919/build_artifact_manifest.py",
+      "bytes": 5014,
+      "sha256": "80630089bcdd31e5a3a539645239f63f401b030d61b692cf508451f7f652c8a9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/.runtime/two-day-delivery-20260919/freeze_final.py",
+      "bytes": 14287,
+      "sha256": "80dc3f3903556c8077aa936fc4875bee3e28c6b2a63afbe0e320255a12e46568"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/delivery-2026-09-20.md",
+      "bytes": 7144,
+      "sha256": "0ee247e3365052c35fc71d6949c3095662d0317d7adb68c710562842bd4f367f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/manifest.json",
+      "bytes": 51638,
+      "sha256": "cbbf2ffa3dd519f53445c38c4edd8d71f955424ebbef1555ed37ce5d67a785cd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/README.md",
+      "bytes": 20637,
+      "sha256": "817005c4a8e13280c5d692e756896698f430a2eaf4d27dbc080fdd23e3020a7f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "bytes": 118521,
+      "sha256": "c6d6709a36c4a83f988f10bf95662a56c3e3f9158261cb19afb3a55acd0f1200"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "bytes": 202290,
+      "sha256": "e269bb6c49de98fe3eb9dd7515ab1647cc1e9a565d709bd632eb45c1b4316ced"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "bytes": 169057,
+      "sha256": "c51f82bed7a668c79e306b4fafce38d53650481dee8f5c1eb73217d9494fa6de"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "bytes": 133951,
+      "sha256": "f8eaf78723598d4675d4520c2cdd1e6348c64d40749793b5895959d0505ab5df"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "bytes": 220344,
+      "sha256": "18d10addf849e02d625389641c24c3b1757c4204765c6596955fc1466749f811"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "bytes": 129514,
+      "sha256": "e2afbd4180da240748f14137bbcb46be4d3b70dd4855ed7ba4e720876c08a71d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "bytes": 205278,
+      "sha256": "c9a04bf4db8a8ce22e7579221d019702dc53462f5099e2b998c5a81d36b075c3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "bytes": 189808,
+      "sha256": "2dde69bf378ddf097581c9d98ff2b64d0512c99eb0ab073d542f4d5e55236086"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "bytes": 105735,
+      "sha256": "6ecea6ee7e70ca5e4bc76e5b847f405ca8446799632a04ce57c771c4790c75d2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/media/s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "bytes": 258268,
+      "sha256": "a5b13f299a707fba903b3cf334e80ade6498c521a733962e5d8e207ead24352d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/pi05-candidate-evaluation-2026-09-20.md",
+      "bytes": 8431,
+      "sha256": "89607fbc671b1f136c68f4bc6c82344e9b1d2f6bb3119e8530fcc7e843cda9f1"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/README.md",
+      "bytes": 10924,
+      "sha256": "b719d6f070695f75d75d2e3fb07c780ecf542781aa1e972af0e6f13279bd91ea"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/asset-backup.json",
+      "bytes": 34363,
+      "sha256": "82732adf802ece3c320668bd54388c85c3c8edb09027a039ff0b385ff40e48de"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/best-at-first100.json",
+      "bytes": 1415,
+      "sha256": "0a8715e56976a84d3695be6419306d6d34425646e5f29dbd1efcb0d8c8a783f2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/best-at-observed398.json",
+      "bytes": 1416,
+      "sha256": "0f7098d4e1fff2dd00f230f3ca81ebb76948115c2fd0bf6f176c1e118a887735"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/best.json",
+      "bytes": 1416,
+      "sha256": "0f7098d4e1fff2dd00f230f3ca81ebb76948115c2fd0bf6f176c1e118a887735"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/candidate-decision.json",
+      "bytes": 8426,
+      "sha256": "d665a6726c93ef001d2468b494179c790c125fbf40897edc50af2315f56f11d8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/cpu-verifier-launcher.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/cpu-verifier-supervisor.json",
+      "bytes": 1246,
+      "sha256": "3ea86048068b35cfd2c155b5795ba689d7b609c077a000525d82059b501e5eef"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/cpu-verifier.log",
+      "bytes": 148,
+      "sha256": "d5e32f2347683ecc4f768c14168e39dd15da1c04423c1e2f209db698a4b4882b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-roster.json",
+      "bytes": 4807,
+      "sha256": "4b7bcb5d6bbb95c50d63fe02f002f5a4395ed2adacb4e6ba2aebc187a74ac51f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step000.json",
+      "bytes": 10524,
+      "sha256": "df4c537fb46649307dae4053967d6ca655ee6d83411bb39b471bb306e51a9854"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step000.npz",
+      "bytes": 19676,
+      "sha256": "d079ad14c76bad2ff3033150e6e839ffd30ee1e1e9a94947859c6a9b5acb6dd8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step100.json",
+      "bytes": 10499,
+      "sha256": "d6f0a25759cd031268937fa173d9e4893932b4b7ca6058cdb09e6e6da0556f18"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step100.npz",
+      "bytes": 20030,
+      "sha256": "49de31095a5d05c2f9cd560a78abd5514538f941cd6388e193b4460d4ebc81bd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step250.json",
+      "bytes": 10537,
+      "sha256": "9705fd71f33a87de43d9c390bd99f0ba68c8c76aefcbe7c5c7106ec09b8ebe06"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step250.npz",
+      "bytes": 19551,
+      "sha256": "208d96b349d4db99535f7e04557891b2a7237039af7e5cc96f88c078b3e4051e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step500.json",
+      "bytes": 10533,
+      "sha256": "9030fc9b4e05bf9659b0c1ddfcde664cd355260f04ba8cdddd2f0686e29974a8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/dev-step500.npz",
+      "bytes": 19525,
+      "sha256": "3ec7e1a64414cff89a720447d01c4094ecb933670ce018a1f1de71cd8005dacf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/identity.json",
+      "bytes": 3171,
+      "sha256": "788db5464d0bd487e28f8d282791d6611f6389f21918214acd76ea3a17d368d3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/sampling-summary.json",
+      "bytes": 4627,
+      "sha256": "71de37b62460cdfaf2c7f8943e46f38ceac6d48a4e70e0e2d80627467caf6903"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/sampling.npz",
+      "bytes": 293191,
+      "sha256": "14f5ecf9427443a6352a6d8fe22858fd1f072df00005bd479f751fbc99993b35"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/selection.jsonl",
+      "bytes": 574,
+      "sha256": "051224ffa76b8a2430004fc7f4622c1c1c54eabee40b040c5297ca7b647f8ea9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/status.json",
+      "bytes": 2183,
+      "sha256": "1ac82bf7cd9d182cd2f436cb2e25425a132509322ee7968581e349d15f19032e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/supervisor.json",
+      "bytes": 157,
+      "sha256": "d31127016b3ac607ee6be1474ec90bab2c2c752413e6d21f0b4f6ee3184d1376"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/train-roster.json",
+      "bytes": 4110162,
+      "sha256": "084072d84e86abb3836a5f18729a4e6e801f280e58fffb5e53c91658107e8182"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/train.jsonl",
+      "bytes": 45213,
+      "sha256": "f39d32fb2ce3f0d644afb8dd7083b90e73fd9ac2c387edd3e08bb96fa586ab94"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-cpu-preflight.json",
+      "bytes": 5952,
+      "sha256": "7c264c28a7937ca892e6a6fde374f98255f4481896b26aa034ff8d666245d5bc"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-evidence-backup.json",
+      "bytes": 4237,
+      "sha256": "c0fb968ed7d93f012399565ca377ae6116602275186f4d70b50f2d4f941da93a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-full-backup.json",
+      "bytes": 18241,
+      "sha256": "9a3696c2eb7e6163e16d59cc58ff331d7bc8e189413672e86e5b9ff1dfb6ebf7"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-launch-preregistration.json",
+      "bytes": 1490,
+      "sha256": "55f8e8ea475d6a743a86a59968bef76fde6930e77d8a9b405fd7df6bc6fa2577"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-launch.json",
+      "bytes": 1976,
+      "sha256": "89d23df4dce52eae40462cda0626d0acc91b4b8eeb852aec05179f87868f4879"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-preregistration.json",
+      "bytes": 1425,
+      "sha256": "3983c4371a5be308a44e84a22d25099f0580a9de9b21be5a43c1cb109faebbf8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/best.json",
+      "bytes": 1416,
+      "sha256": "0f7098d4e1fff2dd00f230f3ca81ebb76948115c2fd0bf6f176c1e118a887735"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-roster.json",
+      "bytes": 4807,
+      "sha256": "4b7bcb5d6bbb95c50d63fe02f002f5a4395ed2adacb4e6ba2aebc187a74ac51f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step000.json",
+      "bytes": 10524,
+      "sha256": "df4c537fb46649307dae4053967d6ca655ee6d83411bb39b471bb306e51a9854"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step000.npz",
+      "bytes": 19676,
+      "sha256": "d079ad14c76bad2ff3033150e6e839ffd30ee1e1e9a94947859c6a9b5acb6dd8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step100.json",
+      "bytes": 10499,
+      "sha256": "d6f0a25759cd031268937fa173d9e4893932b4b7ca6058cdb09e6e6da0556f18"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step100.npz",
+      "bytes": 20030,
+      "sha256": "49de31095a5d05c2f9cd560a78abd5514538f941cd6388e193b4460d4ebc81bd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step250.json",
+      "bytes": 10537,
+      "sha256": "9705fd71f33a87de43d9c390bd99f0ba68c8c76aefcbe7c5c7106ec09b8ebe06"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step250.npz",
+      "bytes": 19551,
+      "sha256": "208d96b349d4db99535f7e04557891b2a7237039af7e5cc96f88c078b3e4051e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step500.json",
+      "bytes": 10533,
+      "sha256": "9030fc9b4e05bf9659b0c1ddfcde664cd355260f04ba8cdddd2f0686e29974a8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/dev-step500.npz",
+      "bytes": 19525,
+      "sha256": "3ec7e1a64414cff89a720447d01c4094ecb933670ce018a1f1de71cd8005dacf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/identity.json",
+      "bytes": 3171,
+      "sha256": "788db5464d0bd487e28f8d282791d6611f6389f21918214acd76ea3a17d368d3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/remote-artifact-manifest.json",
+      "bytes": 4417,
+      "sha256": "b6d31b919b05609f3b49a549973aed886bd5448248e77abc704cc64466b8673e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/selection.jsonl",
+      "bytes": 574,
+      "sha256": "051224ffa76b8a2430004fc7f4622c1c1c54eabee40b040c5297ca7b647f8ea9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/source-audit-panel.json",
+      "bytes": 9546,
+      "sha256": "98d8dffbb9e870c2240109026e10bcee82a739f0d9f340d84facfeff67ce8058"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/source-manifest.json",
+      "bytes": 298009,
+      "sha256": "27e4769b8fbd0d610da773f900d50f7056eb29529f8006a3eb530aaf73a29b2e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/status.json",
+      "bytes": 2183,
+      "sha256": "1ac82bf7cd9d182cd2f436cb2e25425a132509322ee7968581e349d15f19032e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/supervisor.json",
+      "bytes": 157,
+      "sha256": "d31127016b3ac607ee6be1474ec90bab2c2c752413e6d21f0b4f6ee3184d1376"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/train-roster.json",
+      "bytes": 4110162,
+      "sha256": "084072d84e86abb3836a5f18729a4e6e801f280e58fffb5e53c91658107e8182"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-audit-2026-09-19-run01/transfer.jsonl",
+      "bytes": 6072078,
+      "sha256": "4b49da1d030e0576ec39c745e2402e13325b05b9df725e752570f99cf0c25682"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-selection-review.json",
+      "bytes": 8199,
+      "sha256": "1b0a8a6e387464c345f505e1359ad0f6d0fcf6f55ee78c0dcd6602de4231ac60"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-verifier-cpu-preflight.json",
+      "bytes": 6295,
+      "sha256": "93294ed3f27d59994696c3004a3a3e59dfe95bf8f719ece86d5b979ea4d4b7e2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/after-metrics.json",
+      "bytes": 10550,
+      "sha256": "389da64876d9c2f2196ace2b191b0f848ef1737d9005f203b910f214b4dc4ddf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/after.npz",
+      "bytes": 160877,
+      "sha256": "4410ca2fbb65407cee6a1b5e9a682722b46aabf5b277302d231b95afebd719a5"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/before-metrics.json",
+      "bytes": 10508,
+      "sha256": "b458249a269a3efbcbcedba82c0718d5ae19ad4ee2d422001c6ef206a1b0c709"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/before.npz",
+      "bytes": 159046,
+      "sha256": "67f3b2be39df9f071f0b191a64551a05b84ff536ca566cd478375b1bc07dde5f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/comparison.json",
+      "bytes": 23160,
+      "sha256": "05bf5b8cd0f192c97183a3bc2b45699bb7583e7e0dd1a6ba6d4cea8c424c4bfc"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/decision.json",
+      "bytes": 4193,
+      "sha256": "982a974d4b04f4fc6a5d08507cc8f9b29e50e570c0bc3930e28ee0084a04329a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/frozen-panel.json",
+      "bytes": 8435,
+      "sha256": "9fbef63cef003b2c55a6ba055fda3b58ec2d2b0a5b22dd34d7f987c6144abc77"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/identity.json",
+      "bytes": 2027,
+      "sha256": "750603e9125d1dec12033d7a63999721777edd6d67769ca068dc255d661f8d2f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/selected-rows.json",
+      "bytes": 50892,
+      "sha256": "38e4b0edc2a2574f41cc985222bccfba1d42fc77a13cb6d550476106461c99b0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/status.json",
+      "bytes": 807,
+      "sha256": "2027d38d5cb1648cc173aa21e455381a82ed724a54c8787b3a2d4e578fcf0fdf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/supervisor.json",
+      "bytes": 187,
+      "sha256": "4e552ad0bf1912ff4ac2ba153716f5030b09031509c7752f3f38a3973c560f94"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/train.jsonl",
+      "bytes": 9590,
+      "sha256": "0021f6435a432fefe02fd7231f1c9170f322146d7c2f107ef151bbf57ea8cf32"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic/trainable-parameters.json",
+      "bytes": 3074,
+      "sha256": "e93665ac9706c23cb1f02711b1d3b2fbfa83c3956b54f93bfb96efdedb0cce42"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic-decision-review.json",
+      "bytes": 4140,
+      "sha256": "495b58fc998a0205d02d1c78156a144b4f55f64f75bd962d045bd92a48d54afd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic-decision.json",
+      "bytes": 4193,
+      "sha256": "982a974d4b04f4fc6a5d08507cc8f9b29e50e570c0bc3930e28ee0084a04329a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic-full-backup.json",
+      "bytes": 26523,
+      "sha256": "b88196f0f38f96e481a92f1a97c4fc3a6e8fe9e8a63740f79b0f6dac055a07f8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic-launch-preregistration.json",
+      "bytes": 1583,
+      "sha256": "79a863501efccae011044be01ce901bddf6a80f1eccb96348b7ee9e41bca401b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic-metrics.csv",
+      "bytes": 1425,
+      "sha256": "71f5c175c7690bff892788f313d446ee95a41dd9e1a782c61d5c66a0eb1fbf00"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/execution-contract.json",
+      "bytes": 2262,
+      "sha256": "86ffc7b3fda2fc702d021e69146b2176de8db408dade71ecf3ff80da0fd79859"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/execution-source-freeze.json",
+      "bytes": 35666,
+      "sha256": "aab2cf3a59a87318d9c600c0855cea21e24ac318e96d1b169de51c07f12bec06"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/final-resource-check.json",
+      "bytes": 283,
+      "sha256": "c54f09b3881547a333430905c58b1eca1ccac685f61357242be2a9b641650394"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/g1-decision.json",
+      "bytes": 2158,
+      "sha256": "6a3769d177fb8b7e310a31f5ca8136d713b9c6e0040ab4d4327bb931c4690299"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/handoff-panel.csv",
+      "bytes": 255,
+      "sha256": "a99b9d1e632b711aa4ecd0578ceee0d7ca579230931f0826d882f27c45e5210a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/receipt.json",
+      "bytes": 1525,
+      "sha256": "5a99fdf75d29e8c0104146a3eb4f14c4b08dec41e3016f28c5af20220c1410d3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/s1-ia-calls-2026-09-18-run01/launch.json",
+      "bytes": 729,
+      "sha256": "8514e149637775889f8842165673896df28db7b67a6a94434784b3d804b1028c"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/s1-ia-calls-2026-09-18-run01/server-metadata.json",
+      "bytes": 2228,
+      "sha256": "8e8cc00b01286cca29b986957d01a6697b52d5426e649f901f7ee658ef3b5619"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/s1-native-panel-2026-09-17-run01/launch.json",
+      "bytes": 485,
+      "sha256": "22309fcc34c21b419bbf6b8846372892896759caf5c54fdb3232468d4ec695eb"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/s1-native-panel-2026-09-17-run01/server-metadata.json",
+      "bytes": 2236,
+      "sha256": "5525282cec240955b81d7e122d9c5ae5ffbdccad0641e36bfac2602977f289cc"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/s1-native-render-aligned-2026-09-18-run01/launch.json",
+      "bytes": 620,
+      "sha256": "121ddb9112823da13353145ba8f4c571f1f790718359310365b9a89ced409127"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/historical-identity-audit/s1-native-render-aligned-2026-09-18-run01/server-metadata.json",
+      "bytes": 2236,
+      "sha256": "0842d1159e30147d069bc21ef1a70296abaa363aba8aaa94a382395cb72ec28b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/hypotheses-and-decisions.json",
+      "bytes": 1698,
+      "sha256": "ab1593630ef694446c5b0e7fb19260855700f966deb321ff3425fbc523e9034f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/input-audit-decision.json",
+      "bytes": 1497,
+      "sha256": "0cbebefe47506b523a0afecfd63549093866cd1aa789b40718d47a78a98950d4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/local-tests-preparation-complete.json",
+      "bytes": 2010,
+      "sha256": "45b190f796a2a67faa71777d580839de7c6fa7a18ebe3d7239df32603e6e6eb0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/local-tests.json",
+      "bytes": 1704,
+      "sha256": "3e664f169b1876c31e54f62ad30e132268b42a9f1521e8bc6f1908a96e98700a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/manifest.json",
+      "bytes": 3796,
+      "sha256": "4d7767f01c5601e1694fe276dedc340d023607f9010ce75fc680a5450dae59c4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen-v2.json",
+      "bytes": 7574,
+      "sha256": "452df7bb5eeac3e160571f9659d3ccdba3c403ef7c63df2b3c81ca057d22b7c1"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen-v3.json",
+      "bytes": 7634,
+      "sha256": "69f33c6565d6863cff557d9a8ed8683b8477680409b9fc56a2322e902c58a122"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen-v4.json",
+      "bytes": 7917,
+      "sha256": "0fedf722d338b47e5485981dffffed9142436b0f5ec696937cfd5186722d68fe"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen.json",
+      "bytes": 7061,
+      "sha256": "46c403e07f6b66b19f8afdee21e2ad612fca968a26ae73733ae474a8c0c9b3ff"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r1-infrastructure-backup.json",
+      "bytes": 3474,
+      "sha256": "74701cc398d30846bad6b8dca33abf6711c24debbc64786c39ce4804dbd7da5d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r1-summary.json",
+      "bytes": 5318,
+      "sha256": "95a366649a64dc3c16a71d59e366e3de41886746cb6270d765f2ed96fa3357e0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r2-infrastructure-backup.json",
+      "bytes": 3477,
+      "sha256": "596e280dc6cbe6c98de7378b2f187219628f303b8c83a12f4a9a7998bbce2555"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r2-preregistration.json",
+      "bytes": 1214,
+      "sha256": "0867bef17a5666bdab1d10a06fe68ddb8c8e86ade1f4ad43d6693043290b17c1"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json",
+      "bytes": 97377,
+      "sha256": "187ceb21c7825a44e228422bfd0d5450e7e473c4e7594d5d75ee67f1097e402a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-preregistration.json",
+      "bytes": 1143,
+      "sha256": "ae518eede0e4010adba8abd1f45c80fb69c0122b7f1ceeba30a95ad9d209eb93"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-summary.json",
+      "bytes": 26439,
+      "sha256": "84d3564d0d773e15c9f0c9fbc967a6d7ce08347bd7873ca299ab718d0c2c8ede"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-candidate-frozen-v1.json",
+      "bytes": 7948,
+      "sha256": "d1658754a73c9194f523d50e19ef9dc40c229589df3ada271a327b6c96fbdb36"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-candidate-frozen-v2.json",
+      "bytes": 7836,
+      "sha256": "d0a68106dedf716383e820e4641771d5cd67d0976fc069d7f8bf2a8a3a361ead"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-candidate-frozen-v3.json",
+      "bytes": 8119,
+      "sha256": "cde0dc5930ab66b9e78f174e0abe7031c950a9c665c80856d9a2fc509563fe47"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json",
+      "bytes": 103075,
+      "sha256": "cadab123116f65561c2c9d88c367970cb765dabc58092c01308be96986a26bad"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-summary.json",
+      "bytes": 26247,
+      "sha256": "34e90ef243249df0921631dc9efd3d0ff231c426127f139c8c2f4a02a5e836c0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-cpu-preparation.json",
+      "bytes": 4765,
+      "sha256": "ae94f4bd96deffc7985372f8a1c71903905efb130471860b3da8957437a42b9f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-lab-preflight.json",
+      "bytes": 24954,
+      "sha256": "4183f0d3455357b699c0b775d8cb91fe8d0e512271b16efe2a221450ab8263d4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/candidate-r1-import-receipt.json",
+      "bytes": 431,
+      "sha256": "a46285aa06ae2b45e25b494e3289eeb82796480dca9abd9570d2828d7377a487"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/oracle-interpreter-repair-20260919.json",
+      "bytes": 1797,
+      "sha256": "498a52857fe837f1c15a224716606e45720a84c12e6fccf8e96d251361c1b504"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/oracle-normalizer-repair-20260919.json",
+      "bytes": 595,
+      "sha256": "ebf5220ead289171631c0bf24066046681f7d07cea663659f519a310ee5ad028"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/oracle-paired-preflight-20260919.json",
+      "bytes": 8432,
+      "sha256": "f7969ba75fbf0e7cd0a88e53372a6ff7f51487ed1803750de45ddab8b13237d0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/oracle-paired-preflight-v2-20260919.json",
+      "bytes": 8384,
+      "sha256": "ad744bed1d615b70e5a14dc0c26eb57a55e01428a5ea64ef68ed07e63cccc378"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/oracle-paired-preflight-v3-20260919.json",
+      "bytes": 8276,
+      "sha256": "b6ac8bb424fbae49e0b49e1474af3b7573e6cf0f67784eb73c7978de2f025d4e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/oracle-server-config-preflight-20260919.json",
+      "bytes": 1026,
+      "sha256": "a3f5dab700d1c893f5a1c1d3dc0695d485a9647aeca06a42b57319da7d197960"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/r1-import-receipt.json",
+      "bytes": 1616,
+      "sha256": "36368479b4bd8dd2ee64c452d0b8100566e30f53abe685767a0801498dcbf55e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/r2-import-receipt.json",
+      "bytes": 1908,
+      "sha256": "58638197521e9c30739a725f99baf1d7bb58ea236cb7b3e4d903383cedee9ca8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/r3-import-receipt.json",
+      "bytes": 2070,
+      "sha256": "475b43b321b1ec8f6d255dff01fef447a542b0e10452096b1a545c5a060635ed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/s1-oracle-base-20260919-r1-launch.json",
+      "bytes": 1302,
+      "sha256": "5d925d3a3066bf1048594295f93586e1a4246091a8ab47d099e8c7f9b8489fea"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/s1-oracle-base-20260919-r2-launch.json",
+      "bytes": 1463,
+      "sha256": "3a28aa4cbbe145f82ec3174003b4b76f4d958a1403c4a22565ae29aa60225629"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/s1-oracle-base-20260919-r3-launch.json",
+      "bytes": 1420,
+      "sha256": "a242faf1f0c3d316981a106a92d63d6a395da8f16d75835efeb7714daaf80780"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch/s1-oracle-cand-20260919-r1-launch.json",
+      "bytes": 5169,
+      "sha256": "7ee17472bee2169d84adbea188b20218db5000a94354016cc02c5b1a8b4ddba9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-launch-preregistration.json",
+      "bytes": 1412,
+      "sha256": "79728cf1cbef784a9aaa3bc5cfcd5704cb87537609967c979d22cc9de4de2279"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-paired-comparison.json",
+      "bytes": 54484,
+      "sha256": "33f15dede14a26d77b3f598904c29df21147e5165bb5abbcf9f5eea0ac8a4598"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-preflight-v2.json",
+      "bytes": 9043,
+      "sha256": "4dfda9d38ec9608b9f6ed06531bafbd6a2f946cd85a4f75af0b865b3c84fc115"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/regression-panel.csv",
+      "bytes": 5609,
+      "sha256": "295e4380590b3f293bd45b248febb2d154c5e87572d83c2de3c7e6f3a02a1e13"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/runtime-versions.json",
+      "bytes": 5754,
+      "sha256": "ee080ad149dc4e6e15d1a1e31edaed0bc5a02adf04f244cbc5dd7bd05ad37dd5"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/source-freeze.json",
+      "bytes": 259062,
+      "sha256": "d498e51fdb9e47eb884310e457e604264d520a47b06e058c6b3050e46c74cef4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/source-runtime-lock.json",
+      "bytes": 2523,
+      "sha256": "57ae9f6ba6272e126591061dbf44764878f5605b16c054bb60b57e78409dafd5"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/audit-panel.json",
+      "bytes": 9546,
+      "sha256": "98d8dffbb9e870c2240109026e10bcee82a739f0d9f340d84facfeff67ce8058"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/dev-contact-sheet.png",
+      "bytes": 1101413,
+      "sha256": "c0abb45ddef36784711570dd3960e3b52c16393025eee7833730a6a21e36a387"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/diagnostic-panel.json",
+      "bytes": 8435,
+      "sha256": "9fbef63cef003b2c55a6ba055fda3b58ec2d2b0a5b22dd34d7f987c6144abc77"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/comparison.png",
+      "bytes": 190860,
+      "sha256": "3dd672edb2ee3df8ca293afbda8032cbeb9ba132f726da9a80133dae3475bddd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "c9d24b1e5e969fd57cafca44c5334f6b75d8f97998fab069deb2e8085f2ba865"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/model-base_0_rgb.png",
+      "bytes": 36635,
+      "sha256": "74def1c9ba230c0ab6b68ff31f432c0cb763484b1b1b768c3a131a8bd122c951"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "4c5222b9fa2f8cc744e7d348d2b083d19d0d6e690eac580ea593fd4bf9fd1dbd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/model-left_wrist_0_rgb.png",
+      "bytes": 53824,
+      "sha256": "80f09f2ecb3507a7069fe02102b820204b8d488fb2892eb4e4d563f7e8f0c8ac"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/raw-image.png",
+      "bytes": 16501,
+      "sha256": "98703b71465a85ca8225f0183fb8b87867d411aa53e94067501dae85e8e59477"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/raw-wrist_image.png",
+      "bytes": 24517,
+      "sha256": "338e7af969accc95a83cb40ed5b980a0e9ef50c7cd79f4b567f68f99884657ad"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-00/record.json",
+      "bytes": 7433,
+      "sha256": "c6ed2faa8bfe26c338fe5d24a836fa3f9913f162374fed2745a306a40a0f9fba"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/comparison.png",
+      "bytes": 167983,
+      "sha256": "7bbf5e781d53243cfcf85b68c159ca0eb3e14072afbe0b89ea682f103585e5fc"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "7b5123477038c206fd1fe2e94bb794a04b58d3039ae4cb221abf2e9d5d295d05"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/model-base_0_rgb.png",
+      "bytes": 40589,
+      "sha256": "c0f663769c089ebcb165731979732d957409ffee22adc572dbabaa37e682f961"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "829d95d76ad4c9de7fae71b82b3cf8727a0a493c4c5177439a62eba7eca1a74d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/model-left_wrist_0_rgb.png",
+      "bytes": 39722,
+      "sha256": "984282cac4a158e8eed297d3e4a81696808b927f915f3f1dca12712b1511db20"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/raw-image.png",
+      "bytes": 18244,
+      "sha256": "93ce42f20b6758a4192efe66eec10bfb6f06db7646cda8edf5464cac46b8d8f7"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/raw-wrist_image.png",
+      "bytes": 17883,
+      "sha256": "44b0e881adf109e415e338a07a05297508945e47e5e3956456b610b2376a3529"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-01/record.json",
+      "bytes": 7518,
+      "sha256": "bbe0dade2f8b6811e01dcd26222714204d4a446e8c36eb23f48a50f8bb6225b1"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/comparison.png",
+      "bytes": 112938,
+      "sha256": "726cbb83d3b2f7fa5ba3d979fe944c77365679d9caa7d049f1d1500c7b49b026"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "a8cc04c42581972e05e972f5eb85e870c5ce4bbd9027c7f957f6b2e8eb2087f5"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/model-base_0_rgb.png",
+      "bytes": 33304,
+      "sha256": "50dc50a7f5bc8db46b2c895aa06f80e2919f4ecb3f3be6452fb09384a2b99cf2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "7ec71a6b121c1d3420ff37e7d60708b33a91d4efafc94ed80fc6a2ee74d6519a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/model-left_wrist_0_rgb.png",
+      "bytes": 20697,
+      "sha256": "9dd190fa7c6f6e23940b292129955c72a695f5893c0faf63bff520c0f765bca0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/raw-image.png",
+      "bytes": 14569,
+      "sha256": "f8a7e648fd8e085f8f33825435b3adce37e71678f461660b9755e213e55639d1"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/raw-wrist_image.png",
+      "bytes": 10684,
+      "sha256": "1ea18daa092b00f9ab80fb909df4772a8426665bd1a7bcf3ef435fcf3baf70e8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-02/record.json",
+      "bytes": 7458,
+      "sha256": "b4ef98014e174b0f33712899203c7b19a51326ae82ab2cbe0e7b4a8a4a215012"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/comparison.png",
+      "bytes": 128369,
+      "sha256": "e79a5995d9392eda72722a64acd11587ac1c93007fbfece2ebb4e33382ec422a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "238ba26e4c95a6b41aa57f4817a26c78bd6afa025e354deac6c2aa92014c1157"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/model-base_0_rgb.png",
+      "bytes": 37089,
+      "sha256": "d986905001eb52eb2062bac39e1b18deaba16cd7a491296e7d9b427175940833"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "5fa658d8a170871aaa3495974010798c987304759575c99036e7cf0af5de4bd8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/model-left_wrist_0_rgb.png",
+      "bytes": 24517,
+      "sha256": "13235a915aad9f0b40010650eb201ff2391c5ebb112164fb66acbeae991e2892"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/raw-image.png",
+      "bytes": 16207,
+      "sha256": "f6c6c01909fcb1d431e18ab811373ef4ca9d7b91d9d11c7ad414454518169941"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/raw-wrist_image.png",
+      "bytes": 11685,
+      "sha256": "ecc73d57a308b0a326e9dca84595b9edcd8a1263b61e94707d4e051758247f4d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-03/record.json",
+      "bytes": 7491,
+      "sha256": "8250a64e44c58907d48399a3062d8148bec8735720eaa51874f82deac725b4b3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/comparison.png",
+      "bytes": 160540,
+      "sha256": "74b920fec7c29dd2770e74e185003770146e139d1dcc8bf59f5bcdc952d0d855"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3aef87a2fa7044a87ac52e432407e097f6361c6ddc60e1ccf5178fcd614e0f8e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/model-base_0_rgb.png",
+      "bytes": 37640,
+      "sha256": "9268ab9ec8725dbfacab193a5dc96525c514557b2cffbb1dbca13bc7607e42bd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "c4f2e8880bcc8183d31f02fd65ecc4fb717c0bd9b9d010bb81a40bd23a4c3fbf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/model-left_wrist_0_rgb.png",
+      "bytes": 39142,
+      "sha256": "27db24b8506c82face12fbbdd78fbb2b0864085d7f5b41b5ca95b492d7e2b597"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/raw-image.png",
+      "bytes": 16746,
+      "sha256": "d4f83e0bd37b99ab71fe1d8a79d622f04f14b6c2f3f250d87c9391290126ad47"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/raw-wrist_image.png",
+      "bytes": 18460,
+      "sha256": "523f8852edc513f358ee7c7f53b5f08c3fa15fb25ce47a047959ea9c8884d56a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-04/record.json",
+      "bytes": 7450,
+      "sha256": "464c7ff3fb48d2024556781bb8e8c67b5e0061ba651e9ac56e0017253acf04ca"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/comparison.png",
+      "bytes": 170356,
+      "sha256": "e38cdeec9f0f22b5ac04a0c06db5a4f50da44e98b42a17dbf35399d6ac9489c7"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "119526037692f4b5eb930b7a52d6dcdac480699f163e977e7e0915cc053ef45f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/model-base_0_rgb.png",
+      "bytes": 42180,
+      "sha256": "f0b5db3d9e2009472020c1271481e3414fb88e2604fee6be67d7d4340d1e1b8b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "531156b2545569cbc449fafc256fc75176451d73446c6206ed9fa0a9ecf5138a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/model-left_wrist_0_rgb.png",
+      "bytes": 39546,
+      "sha256": "875a9355602e9677a18f7ee5251065d427984827bb792a524f87fa44b906f3a4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/raw-image.png",
+      "bytes": 19318,
+      "sha256": "8b2859554719404ea8f254f756987ececd578b53ceb6f406acbc3249abc3de7a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/raw-wrist_image.png",
+      "bytes": 18218,
+      "sha256": "1f1ea858920bae6acca3d8cf6240e2585957ba178b70038ea4289c681d2737ee"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-05/record.json",
+      "bytes": 7502,
+      "sha256": "27d9cdaaef549cbd4fecfdc5cee08ea5fb003083601f2f78f56dbe52a6dcd68b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/comparison.png",
+      "bytes": 140156,
+      "sha256": "27869a8fe221bd3b88dfed0ec17b43387858203006ae2bf50f32196a194b1a6f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "00be87f969a12e0f273b2aa49324e0df853c1325914e322efef4e02043907823"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/model-base_0_rgb.png",
+      "bytes": 39005,
+      "sha256": "7c4578f0343135bd6829ddce573a5bf90bb97514545d253149a3cee5f3f684bb"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "1c42b4d45b346a2c36873e54fe562fabaeb788990d76f86f4a45a228e0972dc3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/model-left_wrist_0_rgb.png",
+      "bytes": 29663,
+      "sha256": "031420b12341ff630bc7ee5eccbd36ec9f678b32042534f614fc6248a9f32fd3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/raw-image.png",
+      "bytes": 17558,
+      "sha256": "0bc15503edbbf2ae0dad7e019b7730bef8a50e7f82d253d90d1f2e1c9de1f81f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/raw-wrist_image.png",
+      "bytes": 14494,
+      "sha256": "39bde8c961da92d38f51459e10806501e68c93bb9286ad751891d431de63ddf6"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-06/record.json",
+      "bytes": 7464,
+      "sha256": "205e54bf10ede05e196e14788aa1c1cc53da5d6b662afbedcbe205cf93b448be"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/comparison.png",
+      "bytes": 157306,
+      "sha256": "e531232e9b721368b516f3ce80b1ad0f903b4435ee729f0a54781730faddf56a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3254619a774ed706abb595db3bc34e12e116f353a028fb5094f247a6da4a45f3"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/model-base_0_rgb.png",
+      "bytes": 35668,
+      "sha256": "288022efa424016f000b100b0b36047a6bf34c37f95fa9ef011c10513ac8bd28"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "9867f3731954f6bafc1f525430e2de5365442cf28094fff368decaf3c662d252"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/model-left_wrist_0_rgb.png",
+      "bytes": 39816,
+      "sha256": "b94d9212274c9137bef5da586b7fb75be2dc8241edec563081cb5ab9b67691c0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/raw-image.png",
+      "bytes": 16132,
+      "sha256": "6f4d98bee3509993957b4fe08d696dfc8e6141fcd847865c989c33268826a11e"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/raw-wrist_image.png",
+      "bytes": 18098,
+      "sha256": "fd53b6a7c1a24221ccae06539dbc1884c251e68cd8e5a5477a112a5771ed522b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-07/record.json",
+      "bytes": 7526,
+      "sha256": "1a9c74495dc388b258a726d31aec572184d32342ab61eed5c68dfbc88d65bd63"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/comparison.png",
+      "bytes": 183605,
+      "sha256": "47163ad353ad5a7e7d6b7a2cbaebed2eaabd39d5ccda5c9a70358db41649363b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "5238fa7bed67fa1bc94b56414b0f972088e29e6008f672f0e8620d8d478da443"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/model-base_0_rgb.png",
+      "bytes": 40176,
+      "sha256": "8421ae7c500f26fd4352dbd68167099b09b7e6d736a2f302ba51a4e8576ff514"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "fd56fd3a84859ebc247b389a45021b23d50dc8f3d8b86d441e07afc781f4fa1d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/model-left_wrist_0_rgb.png",
+      "bytes": 47309,
+      "sha256": "64f909d6308d991b382f056b0d69b2f3c1b96838c109393aea8df1ba3e669127"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/raw-image.png",
+      "bytes": 18164,
+      "sha256": "08b5b1db2f5b6223a1edb518e31c74040118b04579807fbeabe3706701718298"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/raw-wrist_image.png",
+      "bytes": 21933,
+      "sha256": "0c2ebba05a48fa5c6ca108a703a27e24bf974e50afbcdd86d67701d220d9b485"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-08/record.json",
+      "bytes": 7455,
+      "sha256": "8de5fd0b27f0a39540d528e22aa36e70140c07d24b27fc31c35c2e1e088111dd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/comparison.png",
+      "bytes": 169556,
+      "sha256": "cb2cc7ba3352fa19cf251c921a037eb8339b20edd710a37aa62566774e16f138"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "823179f7512c74c7820b79c1b95649a6391a33a1463435738c6e8aa3ba8a0dbb"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/model-base_0_rgb.png",
+      "bytes": 44004,
+      "sha256": "c0591465809cd788e85dd2a367396179e1d7105f1b38390a05eb202c604270dc"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "219c9e4e05750f8546808917bd06ea6503ad51c4943308beac2b743aa0676e46"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/model-left_wrist_0_rgb.png",
+      "bytes": 37340,
+      "sha256": "cc517530a0e4f571edcd3ebba92e9b8ce3e73bfe97a9c832dcc2485be93df0d8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/raw-image.png",
+      "bytes": 20066,
+      "sha256": "39706944e4315d48981597c25e1e3717e4c65b849effe847a99755b14229bd40"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/raw-wrist_image.png",
+      "bytes": 16724,
+      "sha256": "80b3901a648dabce1325f04372e07e9b38e1e46ee9010b83c1a3102d43660f8a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-09/record.json",
+      "bytes": 7538,
+      "sha256": "987ed3e5de88d7461a048fbcc9943993a49bf1100e30e18543c195129c272653"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/comparison.png",
+      "bytes": 113191,
+      "sha256": "2cc9e6e64bd8ea77ab954020de2f59ceb320fd41c3da20896bfc0cbb7a288724"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "fc4a604a3ba6210e94ce0c60a512d9bb3626ab392eabf3476c68bf02ae754388"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/model-base_0_rgb.png",
+      "bytes": 29210,
+      "sha256": "3432dce524226878cb11a93938c91e5669d83edc51a314a73350e3d4c56138fb"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "7bbc7a1a7a1229cab4bbd0a2492c5370974e15a84825a6a00da4ab1ba325d450"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/model-left_wrist_0_rgb.png",
+      "bytes": 25929,
+      "sha256": "a0b11d94e99ebf3c050d087b1f909cefb2a81f78fa1205070f93e32150cc75dd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/raw-image.png",
+      "bytes": 12998,
+      "sha256": "4304078cb574baf295fbdcbd73bfae8900f6ff9fa22c3475e29de1ae6bdebf91"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/raw-wrist_image.png",
+      "bytes": 12916,
+      "sha256": "a116225cb2526ad45e1928b387063367eb72f0d105d17aa7c104b574b1675321"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-10/record.json",
+      "bytes": 7460,
+      "sha256": "208918ab034dfd5b75b1dcdf762fcb6f4a6ed0ebd081317f84379ec97bf2e465"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/comparison.png",
+      "bytes": 127974,
+      "sha256": "c543acb3eef3f242ac27b6c8ea4830744e739dc04f5f74147a20deb96f30b0a2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "8d7eff2232bd584bfc05f1112bda85e9e7c0db10affcfbc00d2be27b71d6c9a5"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/model-base_0_rgb.png",
+      "bytes": 36720,
+      "sha256": "749caaad57de967295224cf98d52eb8866c3ec750962628e7e54af2b94ae58f9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "22e2f60924dd6fbcfe2ed48a02359e660acc341db8ccad778a41d47cae2a74b6"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/model-left_wrist_0_rgb.png",
+      "bytes": 24452,
+      "sha256": "adac484822e50cce33c14dcb811545610cabab59f17dc20c8eaa503499f9ed3b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/raw-image.png",
+      "bytes": 16117,
+      "sha256": "f2ac7d97f6172445454a2edc61b36f577c21c28207a8dae6ab5d65613cc5dc84"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/raw-wrist_image.png",
+      "bytes": 11685,
+      "sha256": "9e06a9943c14fcbdfac45f052b8b0c4e41fdfb5ca238d7bb9080fb99b1b5876b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-11/record.json",
+      "bytes": 7525,
+      "sha256": "72138f42c62b2d0661ea9992359448b5decc4144eb727affbf76099eadfb415b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/comparison.png",
+      "bytes": 139615,
+      "sha256": "7897b48383dae7971eac02c0e45ad19a59469405499ef425849433be5e280a4b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "21ad723f93ce156107368f82a66e57570c06b621ea87a5bda21aacf92ed95fd1"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/model-base_0_rgb.png",
+      "bytes": 25214,
+      "sha256": "f61453610c9ab65a46509e617d10b54f190a04ee52a5a0ca2b624dda8e3dafea"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "ddcf3d49d419feeb009e03cbebe69141c72bb24dd97b1e92a14385115c277577"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/model-left_wrist_0_rgb.png",
+      "bytes": 40578,
+      "sha256": "7e873543670ccd0ae35a5b8b540c239cbbf34d55f1eed6b5b5e5e2dcad995f67"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/raw-image.png",
+      "bytes": 10741,
+      "sha256": "92fe46918b8a4b0bb4307326663f222a20f7555b76a53b80187baac124b80fd4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/raw-wrist_image.png",
+      "bytes": 18522,
+      "sha256": "9b5b00920420a29e773187acbe38e8f6fbcf03cd7cbacf1e3b61d16d4509fa20"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-12/record.json",
+      "bytes": 7456,
+      "sha256": "367d1b37eb4e5091e92cce5cba3a7a51542293e35152ff8b69a325de1b243ae9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/comparison.png",
+      "bytes": 121251,
+      "sha256": "00ab1f521ba9065477f876bed44d9f18017ec0b2e53ee2b7f9a62b11e3ea0036"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "5f827268f69552916ae874379d5550946369b58814da07b45f8c43c2d18edac2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/model-base_0_rgb.png",
+      "bytes": 29184,
+      "sha256": "1f5321911969df44456fc81768c392c935c91d064536e48cb6583a0556484585"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "0bedfc86f68288853d036743c072bbdee9072bb5a2d4fcbfcd74d6933118f7a0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/model-left_wrist_0_rgb.png",
+      "bytes": 29042,
+      "sha256": "b83cd0a9cf232fc8ce137481a2a6def52bf0b7cbb17e7fd3e580bcfbe9f6320c"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/raw-image.png",
+      "bytes": 12946,
+      "sha256": "5d068179134552f5c1e7d5b25585fe1516a30c56adfc2b2566684bef5dfe51d8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/raw-wrist_image.png",
+      "bytes": 13374,
+      "sha256": "07c93782a692f37a23e0addfae7a3128ffc2925d6003ab6e4464a95bd54fa250"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-13/record.json",
+      "bytes": 7529,
+      "sha256": "6cf8a0d26febae04ec51fbe3a0d5703b014283bc2c417366186b32dae270e3de"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/comparison.png",
+      "bytes": 108546,
+      "sha256": "1cc451b33a31e65370ee810fe5b58829b31d9f468c39ad2e204dbbb0f941a709"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "6cbdc5ca0f093e071a935fe3575610abfb3e7b930cd33d4a6bc03498b418782c"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/model-base_0_rgb.png",
+      "bytes": 30080,
+      "sha256": "d7851d8aa1a1111884fccea20cbd7600a3f083db8e612e9acc37604cd5303fb6"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "32cb3717a29ae923ce660c7d7394f69ec99d958771d4e4de249e91891338da29"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/model-left_wrist_0_rgb.png",
+      "bytes": 23327,
+      "sha256": "fe5cda686043dbc0f7d6b829a769040214ee870590e33d20044f652e5b74ba7f"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/raw-image.png",
+      "bytes": 13128,
+      "sha256": "2da922fb23565ebb20694bece0fe9dae80f6cfc7047eb87929186fe81456d221"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/raw-wrist_image.png",
+      "bytes": 11986,
+      "sha256": "0564c1ce0e8f7d5ed359bd54dd7c534b8a57c16bb0490094b1bdb0ddcd2c9d8c"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-14/record.json",
+      "bytes": 7492,
+      "sha256": "5c1b61dc48dcc3b108a3858a8bbcafeec2a9fd839e548f2a05ad1d529ea493ea"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/comparison.png",
+      "bytes": 116469,
+      "sha256": "760147cac26f8e5112175572a814e55bdca836cad2e96a6aef9accea9cba18f2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/model-base_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "fb1554d746d0e94be53fa704f6a80956e5488df47379abf607830a7f7cca4747"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/model-base_0_rgb.png",
+      "bytes": 37137,
+      "sha256": "a3b82470adef9d2a542dec404061884aa55545554c8653a06953f86860c9b823"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/model-left_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "e9a7073cdeda22c6e16205b92198e595f1d28b78e4b089f491b5e3f9303ef01b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/model-left_wrist_0_rgb.png",
+      "bytes": 19974,
+      "sha256": "96b0a1c3b0dddd57c9d6ab206c0dbd8e1f7793bf8b625c7b52560f13ec9f0fcd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/model-right_wrist_0_rgb.npy",
+      "bytes": 150656,
+      "sha256": "3d170ae10d9b0156e7106a24155e4bfbbf7fef518f8a6c7c7835bb124ffd2aed"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/model-right_wrist_0_rgb.png",
+      "bytes": 226,
+      "sha256": "37d26bd048c8f0d37fc1f9594d6a24ca56c62e67e4e8fd1b2ea31e15ad6648cf"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/raw-image.png",
+      "bytes": 16725,
+      "sha256": "95081f428fc39ebad9d06e60c55ca8ec69b6b9c241e781fc52ca12334abd1f40"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/raw-wrist_image.png",
+      "bytes": 10326,
+      "sha256": "fb604d5d59addc4f08698f5d56d2afa14f95c745d75b078159079b534c53291a"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/frame-15/record.json",
+      "bytes": 7525,
+      "sha256": "aaf6557e16d1dc0f28d8be9e181913f54d90de680bb31dca4c9047cd5248dcc4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/summary.json",
+      "bytes": 967,
+      "sha256": "ba236793957cab9702798fe223095503c46627a4f6d34b47ec57186197575b14"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/two-day-s1-input-audit-2026-09-19-run01/train-contact-sheet.png",
+      "bytes": 1256108,
+      "sha256": "21c9fdcdc22f3126355680081792d887f43a85f8d515cae6df42bf9f893b5ef6"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/two-day-delivery-plan-2026-09-19-to-20.md",
+      "bytes": 18770,
+      "sha256": "a9394cd16b500b4e531b3c51d8b6843d459811b4eb593b6e71526845c5b15edd"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/two-day-reproduction-2026-09-20.md",
+      "bytes": 12158,
+      "sha256": "2bdf94541f3188ff59ab7af3dde93cc3f7fc1146a3ee35f2307b9901710c28d8"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/docs/vla-contract-audit-2026-09-19.md",
+      "bytes": 16788,
+      "sha256": "f8d17e302969dc6a16515ec4acb0feab6459c619527c37e3188cfdd747ccecd9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/README.md",
+      "bytes": 15073,
+      "sha256": "fbd890206f76988d3d6c53784db2339c3062e5c7bbe40a303fbe53d7415473a4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/eval_native_s1_oracle.py",
+      "bytes": 16539,
+      "sha256": "ae4277675d78d339ccefc70284355016ed596592a0b9cc859aa75ac3c82038e0"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/probe_lab_server.py",
+      "bytes": 4699,
+      "sha256": "7bc23fbafef9a818e1cda62e3ec881beb36fd1ccd199b43a1dfa38517eba5e24"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/run_s1_oracle_panel.py",
+      "bytes": 22616,
+      "sha256": "ad474b44abf772817f6a4398b099ab7cd0d13bd703169e518d046ac349926a47"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/serve_native_s1.py",
+      "bytes": 13696,
+      "sha256": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/summarize_s1_oracle_panel.py",
+      "bytes": 12188,
+      "sha256": "603e4aee792ed90bd4861b069a6ff1b8457d0e19830ef0deb19fbd58f67862e9"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py",
+      "bytes": 27333,
+      "sha256": "bbe60d0ab7bf985b385cd90f68213a8c8e9aa6b32b50e1ee5005066d83af2e6d"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py",
+      "bytes": 23883,
+      "sha256": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/verify_s1_bounded_candidate.py",
+      "bytes": 26321,
+      "sha256": "ed8f3c65cd7c28c8dd70a8328606aa5cc74dba6cca3856d959e2e44e24c161f4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/scripts/verify_s1_bounded_diagnostic.py",
+      "bytes": 18527,
+      "sha256": "ab127fa821937c6aa1d808f4dd93ce32da48d055ece3eba1591b79f1d1b4cff6"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/src/bvi/s1_oracle_protocol.py",
+      "bytes": 2374,
+      "sha256": "d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py",
+      "bytes": 11872,
+      "sha256": "92905ca362b0055455e1ccc2ede048f853e3ed39bbe0efce9e09a0f60ea3b0cc"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/tests/test_s1_bounded_diagnostic.py",
+      "bytes": 9536,
+      "sha256": "d3ad5fb958732de524a46d166881d61b9578fc156c776d777dd2c33255433aaa"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/tests/test_s1_oracle_panel.py",
+      "bytes": 17416,
+      "sha256": "fad27db8f10cf57286860c0ea3dab8c351042688f4fa340dd3715cac72675c4b"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/tests/test_s1_oracle_protocol.py",
+      "bytes": 1861,
+      "sha256": "73478525bda77ba23f52d118b6ebac652f0b590eeb6c484102b2cf020087bcb4"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/tests/test_summarize_s1_oracle_panel.py",
+      "bytes": 5951,
+      "sha256": "3fb7aae9cc812bfe52730ccbdb72014e70c50060e09c6b36b82db6b427c786d2"
+    },
+    {
+      "path": "repo/Bidirectional-VLA-Interface/tests/test_verify_s1_bounded_candidate.py",
+      "bytes": 17807,
+      "sha256": "8133430200c319c75610ca2adfa652e980800d93cc2f1ac7d492791c43733ebd"
+    }
+  ],
+  "full_backup_receipts": [
+    {
+      "receipt": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/asset-backup.json",
+      "sha256": "82732adf802ece3c320668bd54388c85c3c8edb09027a039ff0b385ff40e48de",
+      "verification": "Source before/after and local byte hashes verified during transfer; no remote deletion. See receipt for exact paths, bytes and file/tree hashes."
+    },
+    {
+      "receipt": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/diagnostic-full-backup.json",
+      "sha256": "b88196f0f38f96e481a92f1a97c4fc3a6e8fe9e8a63740f79b0f6dac055a07f8",
+      "verification": "Source before/after and local byte hashes verified during transfer; no remote deletion. See receipt for exact paths, bytes and file/tree hashes."
+    },
+    {
+      "receipt": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/candidate-full-backup.json",
+      "sha256": "9a3696c2eb7e6163e16d59cc58ff331d7bc8e189413672e86e5b9ff1dfb6ebf7",
+      "verification": "Source before/after and local byte hashes verified during transfer; no remote deletion. See receipt for exact paths, bytes and file/tree hashes."
+    },
+    {
+      "receipt": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json",
+      "sha256": "187ceb21c7825a44e228422bfd0d5450e7e473c4e7594d5d75ee67f1097e402a",
+      "verification": "Source before/after and local byte hashes verified during transfer; no remote deletion. See receipt for exact paths, bytes and file/tree hashes."
+    },
+    {
+      "receipt": "repo/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json",
+      "sha256": "cadab123116f65561c2c9d88c367970cb765dabc58092c01308be96986a26bad",
+      "verification": "Source before/after and local byte hashes verified during transfer; no remote deletion. See receipt for exact paths, bytes and file/tree hashes."
+    }
+  ],
+  "large_assets_scope": "Full weights/raw runs remain at exact local second-copy paths in backup receipts; this index binds those receipts, it does not pretend the large directories are embedded in the source ZIP. Local checkpoint framework loading not performed; source best855 and candidate underwent independent CPU restore.",
+  "source_snapshot_chain": "final-source-freeze.json binds this manifest SHA plus final ZIP SHA and member inventory; this manifest excludes itself and final-source-freeze.json to avoid circular hashes. Initial and interim snapshots are preserved and indexed by their receipts.",
+  "validation": {
+    "regression_rows": 10,
+    "native_successes": 0,
+    "g1_passed": false,
+    "paired_summary_and_backup_receipt_hashes": true,
+    "raw_result_and_events_hashes": true,
+    "published_failed_video_hashes": 10,
+    "candidate_admission_hash": true,
+    "regression_csv_hash": true
+  },
+  "limitations": [
+    "Fixed development seeds; not an untouched test set.",
+    "Historical intermediate status files remain preserved; use final manifest and G1 decision for current status.",
+    "Hash verification is integrity evidence, not native capability."
+  ]
+}

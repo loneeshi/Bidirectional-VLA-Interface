@@ -3,7 +3,7 @@
 **Priority update, 2026-09-17 UTC:** new-head implementation/training is deferred.
 The user keeps MS-HAB as this week's target; use a bounded author-architecture
 reference audit and prioritize the π₀.₅/OpenPI port. Existing AC-DiT artifacts
-remain a separate migration comparison. See [the active priority](mshab-reproduction-priority.md).
+remain a separate migration comparison.
 
 Status: source audit and CPU data preparation complete. **The new head is not
 implemented, trained, or evaluated.** The preceding current-observation
