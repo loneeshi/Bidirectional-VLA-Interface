@@ -1,0 +1,18 @@
+title = "Bidirectional-VLA-Interface secret-scan exceptions"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Machine-generated Python source provenance maps store path-to-SHA-256 pairs, not credentials"
+condition = "AND"
+regexTarget = "line"
+paths = [
+  '''^docs/results/(?:s1-ia-diagnostics-2026-09-18-run02|s1-level3-null-drift-2026-09-18-run02|s2-native24-handoff(?:-sequence)?-2026-09-18-run01|standardized-teleport16-2026-09-21)/''',
+]
+regexes = [
+  '''^\s*"[^"\r\n]+\.py"\s*:\s*"[0-9a-f]{64}",?\s*$''',
+]
