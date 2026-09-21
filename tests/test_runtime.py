@@ -8,6 +8,7 @@ from pathlib import Path
 from bvi import (ActionBounds, AllowedCall, JsonlLogger, Observation, ProtocolError,
                  Requirement, RequirementResult, RequirementState, SerialRuntime,
                  SkillFeedback, SkillRequest, SkillSpec, SkillStatus, Target, Transition)
+from bvi.protocol import validate_feedback
 
 
 class FakeEnv:
@@ -190,4 +191,3 @@ class RuntimeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
