@@ -356,7 +356,9 @@ class OfficialRLSkill:
 
     def start(self, request: SkillRequest, observation: Observation) -> None:
         from mshab.evaluate import POLICY_TYPE_TASK_SUBTASK_TO_TARG_IDS
-        index = int(observation.metadata["subtask_index"])
+        index = (self.adapter.resolve_request_index(request)
+                 if hasattr(self.adapter, 'resolve_request_index')
+                 else int(observation.metadata["subtask_index"]))
         if self.adapter.uenv.task_plan[index].type != self.name or request.skill != self.name:
             raise ProtocolError("Skill does not match the current benchmark subtask")
         self._start_index = index

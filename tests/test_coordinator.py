@@ -58,6 +58,55 @@ class CoordinatorTests(unittest.TestCase):
     def records(self):
         return [json.loads(line) for line in self.logger.path.read_text().splitlines()]
 
+    def test_only_returned_invalid_response_has_model_error_type(self):
+        from bvi.coordinator import ModelResponseError
+        self.transport.text = '{}{}'
+        with self.assertRaises(ModelResponseError):
+            self.coordinator.decide(self.obs)
+        self.assertEqual(self.coordinator.calls_reserved, 1)
+        self.transport.error = ProtocolError('transport failure')
+        with self.assertRaises(ProtocolError) as caught:
+            self.coordinator.decide(self.obs)
+        self.assertNotIsInstance(caught.exception, ModelResponseError)
+
+    def test_identical_repeated_call_is_executed_once_and_audited(self):
+        raw = self.transport.text
+        self.transport.text = raw + raw
+        request = self.coordinator.decide(self.obs)
+        self.assertEqual(request.call_id, 'c1')
+        self.assertEqual(len(self.transport.requests), 1)
+        self.assertEqual(self.coordinator.calls_reserved, 1)
+        records = self.records()
+        self.assertEqual(records[1]['response_text'], raw + raw)
+        normalized = next(r for r in records if r['event'] == 'coordinator_output_normalized')
+        self.assertEqual(normalized['copies'], 2)
+
+    def test_semantically_identical_repetition_allows_only_whitespace_difference(self):
+        raw = self.transport.text
+        second = json.dumps(json.loads(raw), separators=(',', ':'))
+        self.transport.text = raw + '\n' + second
+        request = self.coordinator.decide(self.obs)
+        self.assertEqual(request.call_id, 'c1')
+        normalized = next(r for r in self.records()
+                          if r['event'] == 'coordinator_output_normalized')
+        self.assertEqual(normalized['copies'], 2)
+        self.assertEqual(normalized['rule'], 'semantically_identical_json_repetition/2')
+
+    def test_conflicting_or_partial_repeated_call_is_rejected(self):
+        from bvi.coordinator import normalize_repeated_response
+        raw = json.dumps(self.payload)
+        for suffix in (json.dumps({**self.payload, 'skill': 'place'}), raw[:-1], ' explanation'):
+            text = raw + suffix
+            self.assertEqual(normalize_repeated_response(text), (text, 1))
+            with self.assertRaises(ProtocolError):
+                parse_request(text, self.obs, self.specs)
+
+    def test_normalization_does_not_bypass_contract_validation(self):
+        from bvi.coordinator import ModelResponseError
+        self.transport.text = json.dumps({**self.payload, 'target_id': 'unknown'}) * 2
+        with self.assertRaises(ModelResponseError):
+            self.coordinator.decide(self.obs)
+
     def test_actual_image_bytes_pass_without_policy_privileges(self):
         request = self.coordinator.decide(self.obs)
         self.assertEqual(request.target_id, "cup")

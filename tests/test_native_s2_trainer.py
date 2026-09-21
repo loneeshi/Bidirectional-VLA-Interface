@@ -106,3 +106,22 @@ def test_training_rejects_missing_s1_before_gpu_or_dataset(tmp_path):
     assert result.returncode != 0
     assert 'New S1 panel, heldout best record and native24 handoff evidence required' in result.stderr
     assert 'nvidia-smi' not in result.stderr
+
+
+def test_diagnostic_completion_label_cannot_claim_s2_capability():
+    evidence = dict(scope=trainer.DIAGNOSTIC_SCOPE, capability_admission=False)
+    assert trainer.completion_status(evidence, True) == trainer.DIAGNOSTIC_SCOPE
+    assert trainer.completion_status(evidence, False) == 'wall_limit_before_requested_steps'
+    assert trainer.completion_status({}, True) == 'bounded_sft_complete_not_online_success'
+
+
+def test_diagnostic_and_full_admission_evidence_cannot_be_mixed(tmp_path):
+    result = subprocess.run([
+        sys.executable, str(SCRIPT), '--data', str(tmp_path),
+        '--s1-panel', str(tmp_path / 'panel'),
+        '--diagnostic-adjudication-manifest', str(tmp_path / 'adjudication.json'),
+        '--diagnostic-adjudication-sha256', 'a' * 64,
+    ], text=True, capture_output=True)
+    assert result.returncode != 0
+    assert 'mutually exclusive' in result.stderr
+    assert 'nvidia-smi' not in result.stderr

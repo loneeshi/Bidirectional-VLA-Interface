@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import hashlib
+import inspect
 import json
 import math
 import os
@@ -52,12 +53,22 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="Real GPU rollout, oracle dispatch, no API")
     parser.add_argument('--organizer', action='store_true', help='VLM execution organization with bounded skill slices, grasp-event yields and explicit abort')
     parser.add_argument('--tool-family-interface', action='store_true', help='Versioned GPT family/instruction delivery to both VLA backends')
+    parser.add_argument('--benchmark-episode', action='store_true',
+                        help='Strict TidyHouse val episode for the resumable LightNav/SAC baseline')
+    parser.add_argument('--goal-tools', action='store_true', help='Full goal catalog and request-grounded PPO/SAC')
+    parser.add_argument('--progress-feedback', action='store_true',
+                        help='Use policy-observation progress; never expose native subtask success to GPT')
+    parser.add_argument('--paired-ppo-episode', action='store_true',
+                        help='Paired official PPO/SAC fixed-order versus GPT execution study')
+    parser.add_argument('--expected-initial-state-sha256')
     parser.add_argument('--organizer-slice-steps', type=int, default=40)
     parser.add_argument('--stop-after-subtasks', type=int, help='Explicit partial-task diagnostic boundary; never full benchmark success')
     parser.add_argument('--inject-closure-fault',action='store_true',help='TEST ONLY: inject six initial Pick closure actions, labeled synthetic fault')
     parser.add_argument("--provider", choices=("openai", "anthropic"), default="openai")
     parser.add_argument("--transport", choices=("direct", "bridge"), default="direct")
     parser.add_argument("--bridge-timeout-seconds", type=float, default=120)
+    parser.add_argument('--bridge-dir', type=Path,
+                        help='Persistent shared bridge spool; defaults to OUTPUT/bridge')
     parser.add_argument("--model", help="Explicit account-accessible vision model ID")
     parser.add_argument("--credentials-file", type=Path, default=Path(".env.local"))
     parser.add_argument("--authorization-id", help="Reference to approved experiment spending scope")
@@ -80,7 +91,7 @@ def main() -> None:
     parser.add_argument("--no-video", action="store_true")
     parser.add_argument("--record-demonstrations",action='store_true',
                         help='Save synchronized Pick/Place training images, named state, applied action and feedback')
-    parser.add_argument("--navigation-policy", choices=("official", "lightnav"), default="official")
+    parser.add_argument("--navigation-policy", choices=("official", "lightnav", "teleport"), default="official")
     parser.add_argument('--navigation-control',choices=('position_tracker','waypoint_velocity'),default='waypoint_velocity')
     parser.add_argument('--manipulation-policy',choices=('official','fetch-pi05'),default='official')
     parser.add_argument('--fetch-pi-url',default='ws://127.0.0.1:8051')
@@ -111,10 +122,39 @@ def main() -> None:
     parser.add_argument("--show-goal-markers", action="store_true",
                         help="Show benchmark debug goals in human-render video")
     args = parser.parse_args()
+    if args.goal_tools and (not (args.paired_ppo_episode or args.benchmark_episode)
+                            or not args.organizer or args.dry_run):
+        parser.error('Goal tools require a live paired or benchmark organizer mode')
+    if args.progress_feedback and not args.goal_tools:
+        parser.error('Progress feedback requires goal-grounded tools')
+    if args.paired_ppo_episode and (args.benchmark_episode or args.tool_family_interface
+            or args.navigation_policy not in {'official','teleport'} or args.manipulation_policy != 'official'
+            or args.policy_type != 'rl_per_obj' or not args.expected_plan_uid
+            or args.max_env_steps != 7000 or args.max_wall_seconds != 900
+            or args.skill_wall_seconds != 180 or args.organizer_slice_steps != 40
+            or args.training_collection or args.record_demonstrations or args.inject_closure_fault
+            or args.collect_recovery_after is not None or args.stop_after_subtasks is not None
+            or (args.navigation_policy == 'teleport' and not args.dry_run)
+            or (not args.dry_run and (not args.organizer or args.model != 'gpt-5.6-luna'
+                or args.transport != 'bridge' or args.max_calls != 40 or args.max_output_tokens > 2048))):
+        parser.error('Paired PPO study requires frozen official PPO/SAC and bounded fixed/GPT execution')
     if args.tool_family_interface and (args.dry_run or not args.organizer
-            or args.navigation_policy != 'lightnav' or args.manipulation_policy != 'fetch-pi05'
+            or args.navigation_policy != 'lightnav' or args.manipulation_policy not in {'official','fetch-pi05'}
             or args.collect_recovery_after is not None or args.lightnav_subtasks is not None):
-        parser.error('Tool interface requires live organizer, LightNav, Fetch pi05, and no teacher takeover')
+        parser.error('Tool interface requires live organizer, LightNav, an approved manipulation backend, and no teacher takeover')
+    if args.benchmark_episode and (not args.goal_tools or not args.tool_family_interface
+            or args.provider != 'openai'
+            or args.model != 'gpt-5.6-luna' or args.transport != 'bridge'
+            or args.navigation_policy != 'lightnav' or args.manipulation_policy != 'official'
+            or args.policy_type != 'rl_per_obj' or args.navigation_camera != 'fetch_nav'
+            or not args.workspace_camera or args.organizer_slice_steps != 40
+            or args.max_calls != 40 or args.max_env_steps != 7000
+            or args.max_wall_seconds != 900 or args.skill_wall_seconds != 180
+            or args.max_output_tokens > 2048 or args.stop_after_subtasks is not None
+            or args.training_collection or args.record_demonstrations
+            or args.inject_closure_fault or args.collect_recovery_after is not None
+            or args.lightnav_subtasks is not None):
+        parser.error('Benchmark episode requires goal-grounded GPT-5.6 Luna + LightNav + per-object SAC')
     if args.organizer and (args.dry_run or not 1<=args.organizer_slice_steps<=500):
         parser.error('Organizer requires live VLM and slice steps1..500')
     if args.inject_closure_fault and (not args.organizer or args.manipulation_policy!='official'):
@@ -175,14 +215,37 @@ def main() -> None:
 
     from mani_skill import ASSET_DIR
     from mshab.envs.make import EnvConfig
+    if args.paired_ppo_episode or args.benchmark_episode:
+        import random
+        import numpy as np
+        import torch
+        random.seed(args.seed)
+        np.random.seed(args.seed)
+        torch.manual_seed(args.seed)
+        torch.backends.cudnn.deterministic = True
 
     plan_path = ASSET_DIR / "scene_datasets/replica_cad_dataset/rearrange/task_plans/tidy_house/sequential/val/all.json"
     if not plan_path.is_file():
         parser.error(f"Missing task plans: {plan_path}")
     checkpoint_root = args.checkpoint_root.resolve()
-    for name in ("navigate", "pick", "place"):
-        if not (checkpoint_root / "rl/tidy_house" / name / "all/policy.pt").is_file():
-            parser.error(f"Missing {name}/all checkpoint under {checkpoint_root}")
+    checkpoint_base = checkpoint_root / 'rl/tidy_house'
+    required_targets = {'navigate': ['all']}
+    if args.policy_type == 'rl_all_obj':
+        required_targets.update(pick=['all'], place=['all'])
+    else:
+        from mshab.evaluate import POLICY_TYPE_TASK_SUBTASK_TO_TARG_IDS
+        mapping = POLICY_TYPE_TASK_SUBTASK_TO_TARG_IDS['rl']['tidy_house']
+        required_targets.update(
+            pick=[target for target in mapping['pick'] if target != 'all'],
+            place=[target for target in mapping['place'] if target != 'all'])
+    for name, targets in required_targets.items():
+        if not targets:
+            parser.error(f'No registered {name} targets for {args.policy_type}')
+        for target in targets:
+            directory = checkpoint_base / name / target
+            for filename in ('policy.pt', 'config.yml'):
+                if not (directory / filename).is_file():
+                    parser.error(f'Missing {name}/{target}/{filename} under {checkpoint_root}')
 
     args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=False)
@@ -194,21 +257,27 @@ def main() -> None:
     if args.workspace_camera:
         import bvi.nav_camera_env
         env_id='BVISequentialWorkspaceCamera-v0'
+    env_kwargs = {"require_build_configs_repeated_equally_across_envs": False,
+                  "add_event_tracker_info": True,
+                  "human_render_camera_configs": {"width": 512, "height": 512},
+                  "task_cfgs": {"navigate": {"ignore_arm_checkers": True}}}
+    from mani_skill.envs.sapien_env import BaseEnv
+    if "invisible_goals_in_human_render" in inspect.signature(BaseEnv.__init__).parameters:
+        env_kwargs["invisible_goals_in_human_render"] = not args.show_goal_markers
     cfg = EnvConfig(env_id=env_id, num_envs=1, max_episode_steps=7000,
         task_plan_fp=str(plan_path), obs_mode="rgbd", render_mode="rgb_array",
         record_video=not args.no_video, info_on_video=args.video_debug_overlay, continuous_task=True,
         frame_stack=3, stationary_base=False, stationary_torso=False, stationary_head=True,
-        env_kwargs={"require_build_configs_repeated_equally_across_envs": False,
-                    "invisible_goals_in_human_render": not args.show_goal_markers,
-                    "add_event_tracker_info": True,
-                    "human_render_camera_configs": {"width": 512, "height": 512},
-                    "task_cfgs": {"navigate": {"ignore_arm_checkers": True}}})
+        env_kwargs=env_kwargs)
     # Snapshot before official make_env expands task_plans inside env_kwargs.
-    metadata = {"stage": "G4_adapter_diagnostic", "benchmark_result": False,
+    metadata = {"stage": "sac_interface_baseline_episode" if args.benchmark_episode else "G4_adapter_diagnostic",
+                "benchmark_result": False, "benchmark_episode": args.benchmark_episode,
                 "vlm": not args.dry_run,
                 "dispatcher": "oracle_protocol_dry_run" if args.dry_run else "constrained_vlm",
                 "coverage": "one validation scene / one sampled plan",
-                "completion_source": "oracle_benchmark", "targets_source": "oracle_task_plan",
+                "completion_source": ("policy_observation_progress" if args.progress_feedback
+                                      else "oracle_benchmark"),
+                "targets_source": "oracle_task_plan",
                 "config": jsonable(cfg), "seed": args.seed, "policy_type": args.policy_type,
                 "provider": None if args.dry_run else args.provider,
                 "model": None if args.dry_run else args.model, "api_budget": jsonable(budget),
@@ -231,8 +300,14 @@ def main() -> None:
         'families': ['navigate', 'pick', 'place'],
         'residual_family_adapters': False,
         'learned_progress_available': False,
-        'feedback': 'benchmark_completion_and_disclosed_grasp_rules',
+        'feedback': ('policy_observation_progress' if args.progress_feedback
+                     else 'benchmark_completion_and_disclosed_grasp_rules'),
         'scope': 'coarse_skills_heterogeneous_backends',
+        'instruction_consumption': {
+            'navigate': 'LightNav consumes the scene-grounded instruction',
+            'pick': 'official SAC is selected by the native target and does not consume language',
+            'place': 'official SAC is selected by the native target and does not consume language',
+        } if args.tool_family_interface else None,
     }
     metadata['training_collection']=args.training_collection
     metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
@@ -247,6 +322,10 @@ def main() -> None:
     source_files=[Path(__file__).resolve(),*sorted((source_root/'src/bvi').glob('*.py'))]
     metadata['runtime_source_sha256']={str(p.relative_to(source_root)):hashlib.sha256(p.read_bytes()).hexdigest()
                                        for p in source_files}
+    import mshab.envs.sequential_task as mshab_runtime
+    runtime_path = Path(mshab_runtime.__file__).resolve()
+    metadata['mshab_runtime'] = {'path': str(runtime_path),
+                               'sha256': hashlib.sha256(runtime_path.read_bytes()).hexdigest()}
     (args.output / "run-metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     adapter = None
     navigation_client = None
@@ -264,9 +343,40 @@ def main() -> None:
         adapter = make_mshab_adapter(cfg, logger, args.output, seed=args.seed)
         if args.expected_plan_uid and adapter.original_plan.subtasks[0].uid != args.expected_plan_uid:
             raise ProtocolError('Sampled plan does not match expected-plan-uid')
+        if args.paired_ppo_episode or args.benchmark_episode:
+            initial_state = jsonable(adapter.uenv.get_state_dict())
+            initial_hash = hashlib.sha256(json.dumps(initial_state, sort_keys=True,
+                allow_nan=False, separators=(',', ':')).encode()).hexdigest()
+            initial = {'seed': args.seed, 'plan_uid': adapter.original_plan.subtasks[0].uid,
+                'state_sha256': initial_hash, 'state': initial_state,
+                'task_plan': jsonable(adapter.original_plan),
+                'policy_state_shape': list(adapter.observe().policy['state'].shape),
+                'native_horizons': {name: int(adapter.uenv.task_cfgs[name].horizon)
+                                    for name in ('navigate', 'pick', 'place')}}
+            (args.output / 'initial-state.json').write_text(json.dumps(initial), encoding='utf-8')
+            if args.expected_initial_state_sha256 and initial_hash != args.expected_initial_state_sha256:
+                raise ProtocolError('Paired initial simulator state hash mismatch')
+            if initial['policy_state_shape'] != [1, 42] or initial['native_horizons'] != dict(navigate=500,pick=200,place=200):
+                raise ProtocolError('Paired official runtime state/horizon mismatch')
         adapter.record_demonstrations = args.record_demonstrations
         specs = adapter.skill_specs(args.skill_wall_seconds)
         skills = {name: OfficialRLSkill(name, adapter, checkpoint_root, args.policy_type) for name in specs}
+        if args.goal_tools:
+            from bvi.goal_tools import GoalToolAdapter, GoalRLSkill, ProgressGoalRLSkill
+            adapter = GoalToolAdapter(adapter)
+            skill_class = ProgressGoalRLSkill if args.progress_feedback else GoalRLSkill
+            skills = {name: skill_class(name, adapter, checkpoint_root, args.policy_type) for name in specs}
+            metadata['planning_scope'] = 'whole_goals_request_grounded_tools_native_order_constraint'
+            metadata['feedback_contract'] = ({
+                'type': 'continuous_progress',
+                'source': 'heuristic_policy_observation_relative_geometry_v1',
+                'learned': False,
+                'native_subtask_success_exposed': False,
+                'native_evaluator_role': 'background_scoring_and_terminal_failure_only',
+            } if args.progress_feedback else {
+                'type': 'native_oracle_subtask_completion',
+                'native_subtask_success_exposed': True,
+            })
         if args.manipulation_policy=='fetch-pi05':
             from bvi.fetch_pi_skill import FetchPiSkill
             from bvi.vla_clients import OpenPiClient
@@ -300,25 +410,39 @@ def main() -> None:
                                                            args.lightnav_subtasks, logger)
             else:
                 skills["navigate"] = navigation_skill
+        elif args.navigation_policy == "teleport":
+            from bvi.teleport_skill import StandardizedTeleportSkill
+            skills["navigate"] = StandardizedTeleportSkill(
+                adapter, checkpoint_root, args.policy_type)
+            metadata['teleport'] = {
+                'implementation': 'paper_4729821_port_current_runtime',
+                'upstream_commit': '4729821db3fc94a2470cfd625e6f8ab439f01478',
+                'scope': 'one_env_tidy_house',
+            }
+            (args.output / 'run-metadata.json').write_text(
+                json.dumps(metadata, indent=2), encoding='utf-8')
         if args.organizer:
             if args.dry_run:
                 raise ProtocolError('Organizer requires actual VLM mode')
             from bvi.organizer import OrganizerView, GraspMonitor
             organizer = OrganizerView(adapter, specs, args.organizer_slice_steps, args.tool_family_interface)
-            if 'pick' in skills:
+            if 'pick' in skills and not args.goal_tools:
                 if args.inject_closure_fault:
                     from bvi.organizer import InjectedClosureFault
                     skills['pick']=InjectedClosureFault(skills['pick'],logger)
                 skills['pick'] = GraspMonitor(skills['pick'])
-            metadata['organizer'] = {'enabled': True, 'scope': 'benchmark_constrained_execution',
-                'slice_steps': args.organizer_slice_steps, 'grasp_source': 'oracle_benchmark',
+            metadata['organizer'] = {'enabled': True, 'scope': 'goal_decomposition' if args.goal_tools else 'benchmark_constrained_execution',
+                'slice_steps': args.organizer_slice_steps,
+                'grasp_source': ('policy_observation_progress' if args.progress_feedback
+                                 else 'oracle_benchmark'),
                 'reposition_skill': False, 'abort_is_success': False}
             (args.output / 'run-metadata.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
         runtime = SerialRuntime(adapter, skills, specs, logger)
         if not args.dry_run:
             if args.transport == "bridge":
                 from bvi.bridge import FileBridgeTransport
-                transport = FileBridgeTransport(args.output / "bridge", args.provider, args.model,
+                bridge_dir = args.bridge_dir.resolve() if args.bridge_dir else args.output / 'bridge'
+                transport = FileBridgeTransport(bridge_dir, args.provider, args.model,
                     args.authorization_id, args.bridge_timeout_seconds,
                     args.image_detail, args.reasoning_effort)
             else:
@@ -355,7 +479,8 @@ def main() -> None:
                     break
                 request = SkillRequest(f"oracle-{index}", admissible.skill, admissible.target_id,
                     observation.frame_id, (Requirement("benchmark-completion", "benchmark_success"),),
-                    min(spec.max_steps, args.max_env_steps - adapter.steps), timeout)
+                    min(spec.max_steps, args.max_env_steps - adapter.steps,
+                        40 if args.paired_ppo_episode else spec.max_steps), timeout)
                 logger.emit("oracle_protocol_decision", request=request, vlm=False)
             else:
                 request = coordinator.decide(observation, history)
@@ -388,6 +513,8 @@ def main() -> None:
             print(json.dumps({"call_id": request.call_id, "skill": request.skill,
                 "status": result.feedback.status.value, "steps": result.steps,
                 "reason": result.feedback.reason}), flush=True)
+            if args.goal_tools and result.feedback.status is SkillStatus.REJECTED:
+                continue
             if result.feedback.status in (SkillStatus.FAILED, SkillStatus.REJECTED):
                 reason = result.feedback.reason or "skill_failed"
                 break
@@ -421,11 +548,23 @@ def main() -> None:
                 api_calls = coordinator.calls_reserved
             completed_skills=[h['skill'] for h in history
                               if h['feedback'].status is SkillStatus.SUCCEEDED]
-            summary = {"benchmark_result": False, "reason": reason, "decisions": decisions,
-                       "first_object_chain_success": completed_skills[:4]==['navigate','pick','navigate','place'],
+            completed_objects = sum(1 for item in history
+                                    if item['skill'] == 'place'
+                                    and item['feedback'].status is SkillStatus.SUCCEEDED)
+            planned_objects = sum(1 for item in adapter.original_plan.subtasks if item.type == 'place')
+            if args.paired_ppo_episode or args.benchmark_episode:
+                native_index = int(scalar(adapter.uenv.subtask_pointer))
+                completed_objects = sum(s.type == 'place' for s in adapter.original_plan.subtasks[:native_index])
+            summary = {"benchmark_result": False, "benchmark_episode": args.benchmark_episode or args.paired_ppo_episode,
+                       "evaluation_eligible": args.benchmark_episode or args.paired_ppo_episode,
+                       "paired_ppo_episode": args.paired_ppo_episode,
+                       "reason": reason, "decisions": decisions,
+                       "first_object_chain_success": completed_objects > 0,
                        "api_requests": api_calls, "vlm": not args.dry_run,
                        "vlm_feedback_loop_observed": not args.dry_run and len(history) >= 2,
                        "task_success": bool(scalar(adapter.last_info.get("success", False))),
+                       "completed_objects": min(completed_objects, planned_objects),
+                       "planned_objects": planned_objects,
                        "steps": adapter.steps, "wall_seconds": time.monotonic() - started,
                        "skill_results": jsonable(history),
                        "navigation_policy": args.navigation_policy,

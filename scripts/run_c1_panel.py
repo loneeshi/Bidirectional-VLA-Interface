@@ -12,7 +12,7 @@ import subprocess
 import sys
 import time
 
-from bvi.baseline_v2 import validate_bound_panel
+from bvi.baseline_v2 import summarize_panel, validate_bound_panel
 
 
 def commands(config, python, checkpoint_root, output):
@@ -21,6 +21,7 @@ def commands(config, python, checkpoint_root, output):
     return [dict(seed=row['seed'],plan_uid=row['plan_uid'],argv=[
         str(python),str(script),'--dry-run','--seed',str(row['seed']),
         '--expected-plan-uid',row['plan_uid'],'--checkpoint-root',str(checkpoint_root),
+        '--policy-type','rl_per_obj','--record-demonstrations',
         '--navigation-policy','official','--manipulation-policy','official',
         '--max-env-steps','7000','--max-calls','40','--max-wall-seconds','1200',
         '--output',str(Path(output)/f"seed-{row['seed']:03d}")]) for row in rows]
@@ -39,7 +40,9 @@ def main():
         print(json.dumps(dict(status='commands_only_no_execution',jobs=jobs),indent=2));return
     if os.name!='posix':raise ValueError('Execution requires lab Linux process-group timeout handling')
     a.output.mkdir(parents=True,exist_ok=False)
-    report=dict(condition='C1_fixed_ppo_sac',planned_n=10,api_calls=0,episodes=[],
+    report=dict(condition='C1_fixed_ppo_sac',question='Mainline A condition 1: fixed oracle scheduler with official PPO navigation and per-object SAC manipulation',
+                planned_n=10,api_calls=0,training_updates=0,record_demonstrations=True,
+                demonstration_use='evaluation evidence only; excluded from progress-head training',episodes=[],
                 status='running',not_run_seeds=list(range(10)))
     def save():
         (a.output/'panel-status.json').write_text(json.dumps(report,indent=2)+'\n')
@@ -67,11 +70,19 @@ def main():
                     save()
                     raise
             summary=a.output/f"seed-{job['seed']:03d}"/'summary.json'
-            if summary.is_file():row['raw_summary']=json.loads(summary.read_text())
+            if summary.is_file():
+                raw=json.loads(summary.read_text());row['raw_summary']=raw
+                completed_places=sum(1 for item in raw.get('skill_results',[])
+                    if item.get('skill')=='place' and str(item.get('feedback',{}).get('status','')).lower().endswith('succeeded'))
+                row.update(completed_objects=min(completed_places,5),native_task_success=bool(raw.get('task_success')),
+                           steps=int(raw.get('steps',0)),vlm_calls=0,invalid_requests=0,
+                           recovery_attempts=0,recovery_successes=0,api_cost_usd=0)
             else:row['status']='infrastructure_failure'
             report['episodes'].append(row);report['not_run_seeds'].remove(job['seed']);save()
             if row['status']=='infrastructure_failure':break
         report['status']='finished' if not report['not_run_seeds'] else 'stopped_partial'
+        finalized=[{k:v for k,v in row.items() if k!='raw_summary'} for row in report['episodes']]
+        (a.output/'summary.json').write_text(json.dumps(summarize_panel(list(range(10)),finalized),indent=2)+'\n')
     except Exception as exc:
         report.update(status='failed',error=repr(exc));raise
     finally:save()

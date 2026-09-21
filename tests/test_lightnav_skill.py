@@ -124,6 +124,26 @@ class TrackerTests(unittest.TestCase):
         self.assertEqual(skill.feedback(request,transition(0)).status,SkillStatus.FAILED)
         self.assertEqual(calls,['infer'])
 
+    def test_goal_grounded_start_and_feedback_use_requested_target(self):
+        adapter = self.adapter()
+        adapter.resolve_request_index = lambda request: 6
+        adapter.predicate = lambda index: ([index == 6], {'requested_index': index})
+        client = NS(reset=lambda: None, infer=lambda *a: None)
+        skill = LightNavSkill(adapter, client, {})
+        request = NS(skill='navigate', call_id='grounded-nav', target_id='destination-a',
+                     instruction='Approach the destination for object A.',
+                     requirements=(Requirement('done', 'benchmark_success'),))
+        # GoalToolAdapter intentionally hides the native sequential pointer.
+        skill.start(request, Observation('f0', 0, metadata={'interface': 'goal-tools'}))
+        self.assertEqual(skill.index, 6)
+        transition = NS(info={'adapter_subtask_before': 0, 'adapter_subtask_after': 0},
+                        observation=Observation('f1', 1), truncated=False)
+        feedback = skill.feedback(request, transition)
+        self.assertEqual(feedback.status, SkillStatus.SUCCEEDED)
+        self.assertEqual(feedback.source, 'native_requested_target_predicate')
+        self.assertIn('grounded_predicate:grounded-nav:f1',
+                      feedback.requirements[0].evidence[0])
+
     def test_orientation_replan_is_bounded_and_does_not_claim_success(self):
         adapter=self.adapter();resets=[]
         client=NS(reset=lambda:resets.append(1),infer=lambda *a:NavigationPrediction((),True,True))

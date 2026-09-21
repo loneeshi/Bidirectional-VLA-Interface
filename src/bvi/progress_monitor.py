@@ -1,4 +1,10 @@
-"""Author thresholds, evaluated once per policy prediction, never per sim frame."""
+"""Local thresholds, evaluated once per prediction, never per simulator frame.
+
+Related implementation reference (not verified provenance for these constants):
+https://github.com/cxliu0314/openpi/tree/f4eb160ba52b22c1e85fe432de59c24bbbac6187
+The paper does not specify these numeric defaults. Treat them as local settings
+until an exact upstream file/line mapping is verified; not recovered author defaults.
+"""
 
 from dataclasses import dataclass, field
 import math

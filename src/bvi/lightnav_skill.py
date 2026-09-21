@@ -9,7 +9,8 @@ import math
 from dataclasses import dataclass, replace
 
 from .mshab_adapter import benchmark_feedback, jsonable, scalar
-from .protocol import ProtocolError, SkillStatus
+from .protocol import (ProtocolError, RequirementResult, RequirementState,
+                       SkillFeedback, SkillStatus)
 
 
 def wrap(angle):
@@ -169,7 +170,10 @@ class LightNavSkill:
         self.index = None
 
     def start(self, request, observation):
-        self.index = int(observation.metadata['subtask_index'])
+        adapter = getattr(self, 'adapter', None)
+        self.index = (adapter.resolve_request_index(request)
+                      if hasattr(adapter, 'resolve_request_index')
+                      else int(observation.metadata['subtask_index']))
         if request.skill != 'navigate':
             raise ProtocolError("LightNav only implements navigation")
         self.instruction = getattr(request, 'instruction', None) or self.instructions.get(str(self.index), '')
@@ -238,7 +242,36 @@ class LightNavSkill:
         return action
 
     def feedback(self, request, transition):
-        feedback = benchmark_feedback(request, transition, self.index)
+        if hasattr(self.adapter, 'predicate'):
+            satisfied, checkers = self.adapter.predicate(self.index)
+            if bool(scalar(transition.info.get('fail', False))):
+                status, state, reason = (SkillStatus.FAILED,
+                                         RequirementState.UNSATISFIED,
+                                         'benchmark_fail')
+            elif bool(scalar(satisfied)):
+                status, state, reason = (SkillStatus.SUCCEEDED,
+                                         RequirementState.SATISFIED,
+                                         'requested_native_predicate')
+            elif transition.truncated:
+                status, state, reason = (SkillStatus.TIMED_OUT,
+                                         RequirementState.UNKNOWN,
+                                         'environment_horizon')
+            else:
+                status, state, reason = (SkillStatus.EXECUTING,
+                                         RequirementState.UNSATISFIED, None)
+            frame_id = transition.observation.frame_id
+            self.adapter.logger.emit(
+                'grounded_predicate', call_id=request.call_id,
+                frame_id=frame_id, target_id=request.target_id,
+                selected_index=self.index, checkers=jsonable(checkers))
+            evidence = (f'events.jsonl:grounded_predicate:{request.call_id}:{frame_id}',)
+            feedback = SkillFeedback(
+                status,
+                tuple(RequirementResult(item.id, state, evidence)
+                      for item in request.requirements),
+                reason, 'native_requested_target_predicate')
+        else:
+            feedback = benchmark_feedback(request, transition, self.index)
         if (feedback.status is SkillStatus.EXECUTING and self.stopping
                 and self.stopped_steps >= self.settle_steps):
             recovery=None if self.invocation_instruction else self.recovery_instructions.get(str(self.index))

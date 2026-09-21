@@ -8,6 +8,7 @@ from pathlib import Path
 from bvi import (ActionBounds, AllowedCall, JsonlLogger, Observation, ProtocolError,
                  Requirement, RequirementResult, RequirementState, SerialRuntime,
                  SkillFeedback, SkillRequest, SkillSpec, SkillStatus, Target, Transition)
+from bvi.protocol import validate_feedback
 
 
 class FakeEnv:
@@ -96,6 +97,31 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(result.feedback.reason, "step_limit")
         self.assertEqual(self.env.steps, 3)
         self.assertEqual(result.feedback.requirements[0].state, RequirementState.UNKNOWN)
+
+    def test_step_timeout_preserves_last_progress_and_provenance(self):
+        self.skill.successful_at = 99
+        original = self.skill.feedback
+        def with_progress(request, transition):
+            feedback = original(request, transition)
+            return replace(feedback, progress=self.skill.steps / 3,
+                           progress_source='fake_progress')
+        self.skill.feedback = with_progress
+        result = self.runtime.execute(replace(self.request, max_steps=3))
+        self.assertEqual(result.feedback.status, SkillStatus.TIMED_OUT)
+        self.assertEqual(result.feedback.progress, 1.)
+        self.assertEqual(result.feedback.progress_source, 'fake_progress')
+
+    def test_progress_requires_bounded_value_and_explicit_provenance(self):
+        requirement = RequirementResult('r1', RequirementState.UNKNOWN)
+        for feedback in (
+            SkillFeedback(SkillStatus.EXECUTING, (requirement,), progress=.5),
+            SkillFeedback(SkillStatus.EXECUTING, (requirement,),
+                          progress=None, progress_source='fake'),
+            SkillFeedback(SkillStatus.EXECUTING, (requirement,),
+                          progress=1.01, progress_source='fake'),
+        ):
+            with self.subTest(feedback=feedback), self.assertRaises(ProtocolError):
+                validate_feedback(self.request, feedback)
 
     def test_slow_policy_does_not_execute_late_action(self):
         now = [0.0]
@@ -190,4 +216,3 @@ class RuntimeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

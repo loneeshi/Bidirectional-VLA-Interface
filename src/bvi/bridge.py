@@ -107,8 +107,15 @@ class FileBridgeTransport:
 
 class BridgeProcessor:
     """Local paid-request executor with durable claims and explicit bounds."""
-    def __init__(self, transport: Any, budget: APIBudget, directory: str | Path):
+    def __init__(self, transport: Any, budget: APIBudget, directory: str | Path,
+                 max_provider_retries: int = 0, retry_delay_seconds: float = 0.5):
         self.transport, self.budget, self.directory = transport, budget, Path(directory)
+        if type(max_provider_retries) is not int or not 0 <= max_provider_retries <= 10:
+            raise ValueError('Provider retries must be an integer from 0 through 10')
+        if retry_delay_seconds < 0:
+            raise ValueError('Retry delay cannot be negative')
+        self.max_provider_retries = max_provider_retries
+        self.retry_delay_seconds = retry_delay_seconds
         self.directory.mkdir(parents=True, exist_ok=True)
         self.logger = JsonlLogger(self.directory / "bridge-events.jsonl", self.directory.name)
 
@@ -156,16 +163,62 @@ class BridgeProcessor:
         atomic_json(self.directory / f"{attempt_id}.request.json", envelope)
         self.logger.emit("bridge_attempt_started", **record, provider=self.transport.provider,
                          model=self.transport.model, accounting_role="mirror_of_remote_attempt")
-        try:
-            response = self.transport.generate(request)
-            result = {"bridge_id": attempt_id, "ok": True, "response": asdict(response)}
-            atomic_json(cached, result)
-            self.logger.emit("bridge_api_usage", bridge_id=attempt_id,
-                request_id=response.request_id, usage=response.usage, amount=None,
-                status="pending_reconciliation", accounting_role="mirror_of_remote_attempt")
-        except Exception as exc:
-            result = {"bridge_id": attempt_id, "ok": False, "error_type": type(exc).__name__,
-                      "status": "charge_unknown_pending_reconciliation"}
+        result = None
+        for provider_attempt in range(self.max_provider_retries + 1):
+            if provider_attempt:
+                claims = [json.loads(path.read_text(encoding="utf-8"))
+                          for path in self.directory.glob("*.claim.json")]
+                relevant = [item for item in claims if item["authorization_id"] == self.budget.authorization_id]
+                reserved = sum(item["reserved_cost_usd"] for item in relevant)
+                if (len(relevant) >= self.budget.max_calls or reserved + self.budget.request_cost_ceiling_usd
+                        > self.budget.max_cost_usd + 1e-12):
+                    result = {"bridge_id": attempt_id, "ok": False,
+                              "error_type": "APIBudgetExhausted",
+                              "status": "retry_blocked_by_global_budget",
+                              "provider_attempts": provider_attempt}
+                    break
+                retry_record = {**record, "provider_attempt": provider_attempt + 1,
+                                "retry_of": attempt_id}
+                retry_claim = self.directory / f"{attempt_id}.retry-{provider_attempt:02d}.claim.json"
+                with retry_claim.open("x", encoding="utf-8") as stream:
+                    json.dump(retry_record, stream);stream.flush();os.fsync(stream.fileno())
+                reset = getattr(self.transport, 'reset_connection', None)
+                if reset is not None:
+                    reset()
+                time.sleep(min(5.0, self.retry_delay_seconds * (2 ** (provider_attempt - 1))))
+            self.logger.emit('bridge_provider_attempt_started', bridge_id=attempt_id,
+                             provider_attempt=provider_attempt + 1,
+                             reserved_cost_usd=self.budget.request_cost_ceiling_usd,
+                             accounting_role='physical_provider_attempt')
+            try:
+                response = self.transport.generate(request)
+                result = {"bridge_id": attempt_id, "ok": True, "response": asdict(response),
+                          "provider_attempts": provider_attempt + 1}
+                atomic_json(cached, result)
+                self.logger.emit("bridge_api_usage", bridge_id=attempt_id,
+                    request_id=response.request_id, usage=response.usage, amount=None,
+                    provider_attempt=provider_attempt + 1,
+                    status="pending_reconciliation", accounting_role="mirror_of_remote_attempt")
+                break
+            except Exception as exc:
+                chain=[];current=exc
+                while current is not None and len(chain)<5:
+                    chain.append(type(current).__name__)
+                    current=current.__cause__ or current.__context__
+                retryable=type(exc).__name__ in {'APIConnectionError','APITimeoutError'}
+                self.logger.emit('bridge_provider_attempt_failed',bridge_id=attempt_id,
+                    provider_attempt=provider_attempt+1,error_type=type(exc).__name__,
+                    exception_chain=chain,retryable=retryable,amount=None,
+                    status='charge_unknown_pending_reconciliation',
+                    accounting_role='physical_provider_attempt')
+                if retryable and provider_attempt < self.max_provider_retries:
+                    continue
+                result = {"bridge_id": attempt_id, "ok": False, "error_type": type(exc).__name__,
+                          "exception_chain": chain,
+                          "status": "charge_unknown_pending_reconciliation",
+                          "provider_attempts": provider_attempt + 1}
+                break
+        if not result['ok']:
             atomic_json(cached, result)
             self.logger.emit("bridge_api_failed", **result, amount=None,
                              accounting_role="mirror_of_remote_attempt")

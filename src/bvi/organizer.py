@@ -43,7 +43,14 @@ class OrganizerView:
             'the currently feasible skill or abort_task. abort_task stops the episode without claiming success. '
             'Do not claim that a retry includes a repositioning controller. Avoid repeated futile attempts.')
         event='' if self.last_event is None else f' Latest execution event: {self.last_event}.'
+        grounded = o.metadata.get('interface') == 'goal-grounded-ppo-sac/1'
+        if grounded:
+            instruction=(' Choose the tool and grounded target yourself; the catalog is not a next-step hint. '
+                         'A step_limit yields control for another decision, not success. '
+                         'abort_task stops the episode unsuccessfully. No automatic grasp-recovery monitor is enabled.')
         cameras = ('fetch_nav','fetch_workspace') if self.tool_interface and any(c.skill=='navigate' for c in o.allowed_calls) else ('fetch_workspace','fetch_hand')
+        if grounded:
+            cameras = ('fetch_nav','fetch_workspace')
         selected=tuple(x for x in o.images if x.camera in cameras)
         images=selected if len(selected)==2 else o.images[:2]
         return replace(o,images=images,task=o.task+instruction+event,

@@ -241,3 +241,12 @@ def validate_feedback(request: SkillRequest, feedback: SkillFeedback) -> None:
         item.state is not RequirementState.SATISFIED for item in feedback.requirements
     ):
         raise ProtocolError("Success requires verified satisfaction of every requirement")
+    if feedback.progress is None:
+        if feedback.progress_source != "unavailable":
+            raise ProtocolError("Unavailable progress requires progress_source=unavailable")
+    elif (type(feedback.progress) not in (float, int)
+            or not math.isfinite(feedback.progress)
+            or not 0 <= feedback.progress <= 1
+            or not feedback.progress_source
+            or feedback.progress_source == "unavailable"):
+        raise ProtocolError("Progress requires a finite [0,1] value and explicit source")

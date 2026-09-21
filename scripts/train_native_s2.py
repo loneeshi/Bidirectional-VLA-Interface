@@ -1,5 +1,8 @@
 """New native24 S2 trainer. Historical native24 S1 trainer and holds remain untouched.
-Requires verified new S1 ten-episode evidence and native24 handoff validation.
+
+Full admission requires verified new S1 ten-episode evidence and native24
+handoff validation.  A separate immutable adjudication can authorize only the
+explicitly labelled, at-most-20-update diagnostic integration path.
 """
 import argparse
 import dataclasses
@@ -14,6 +17,7 @@ import time
 FAMILIES = ('reach', 'grasp', 'move', 'release')
 AUTHOR_COMMIT = 'f4eb160ba52b22c1e85fe432de59c24bbbac6187'
 REPORT_PATH = None
+DIAGNOSTIC_SCOPE = 'diagnostic_20_update_only_not_s2_capability_admission'
 
 
 def report(status, **details):
@@ -23,6 +27,14 @@ def report(status, **details):
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def completion_status(entry_evidence, completed):
+    if not completed:
+        return 'wall_limit_before_requested_steps'
+    if entry_evidence.get('scope') == DIAGNOSTIC_SCOPE:
+        return DIAGNOSTIC_SCOPE
+    return 'bounded_sft_complete_not_online_success'
 
 
 def load_dataset(directory):
@@ -129,32 +141,63 @@ def main():
     p.add_argument('--s1-best-record', type=Path)
     p.add_argument('--normalizer', type=Path)
     p.add_argument('--handoff-validation-manifest', type=Path)
+    p.add_argument('--diagnostic-adjudication-manifest', type=Path)
+    p.add_argument('--diagnostic-adjudication-sha256')
     p.add_argument('--dry-run', action='store_true')
     a = p.parse_args()
     if not 1 <= a.steps <= 20 or not 1 <= a.seconds <= 1800:
         p.error('Limits: initial gate only: 1..20 optimizer steps, 1..1800 wall seconds')
     entry_evidence = None
-    if not a.dry_run:
+    diagnostic_requested = any((a.diagnostic_adjudication_manifest,
+                                a.diagnostic_adjudication_sha256))
+    full_requested = any((a.s1_panel, a.handoff_validation_manifest))
+    if diagnostic_requested and full_requested:
+        p.error('Diagnostic-only and full S2 admission evidence are mutually exclusive')
+    if diagnostic_requested:
+        if not all((a.diagnostic_adjudication_manifest,
+                    a.diagnostic_adjudication_sha256, a.checkpoint,
+                    a.normalizer, a.s1_best_record)):
+            p.error('Diagnostic entry requires its manifest+SHA, checkpoint, normalizer and S1 best record')
+        from bvi.s2_diagnostic_gate import validate_diagnostic_entry
+        entry_evidence = validate_diagnostic_entry(
+            a.diagnostic_adjudication_manifest,
+            a.diagnostic_adjudication_sha256,
+            a.checkpoint,
+            a.normalizer,
+            a.s1_best_record,
+            a.steps,
+        )
+    elif not a.dry_run or full_requested:
         from native_s2_entry import validate_entry
-        entry_evidence = validate_entry(a.s1_panel, a.s1_best_record, a.handoff_validation_manifest)
+        entry_evidence = validate_entry(
+            a.s1_panel,
+            a.s1_best_record,
+            a.handoff_validation_manifest,
+            a.data / 'manifest.json',
+        )
     records, tables, identity = load_dataset(a.data)
     if entry_evidence is not None:
         train_parents = {json.dumps(r['parent_episode'], sort_keys=True) for r in records if r['split'] == 'train'}
-        validation_parents = {json.dumps(r['parent_episode'], sort_keys=True) for r in records if r['split'] == 'validation'}
-        for parent in entry_evidence['handoff_parents']:
+        for parent in entry_evidence.get('handoff_parents', []):
             key = json.dumps(parent, sort_keys=True)
-            if key in train_parents or key not in validation_parents:
-                raise ValueError('Wrong-handoff evidence must belong to heldout parents, not training parents')
+            if key in train_parents:
+                raise ValueError('Wrong-handoff evidence must not belong to training parents')
     if a.dry_run:
         print(json.dumps(dict(status='cpu_dataset_validated_no_training', **identity,
               windows=len(records), families=FAMILIES, horizon=10,
-              microbatch=1, accumulation=8), indent=2))
+              microbatch=1, accumulation=8,
+              entry_scope=None if entry_evidence is None else entry_evidence.get('scope'),
+              capability_admission=None if entry_evidence is None else
+                  entry_evidence.get('capability_admission', True)), indent=2))
         return
     if not all((a.checkpoint, a.output, a.gpu_uuid)):
         p.error('Training requires --checkpoint, --output and --gpu-uuid')
     a.output.mkdir(parents=True, exist_ok=False)
     REPORT_PATH = a.output / 'result.json'
-    report('preflight_no_updates')
+    report('preflight_no_updates', entry_scope=entry_evidence.get('scope'),
+           capability_admission=entry_evidence.get('capability_admission', True),
+           bounded_sft_expansion_authorized=entry_evidence.get('bounded_sft_expansion', False),
+           online_evaluation_authorized=entry_evidence.get('online_evaluation', False))
     data_manifest = json.loads((a.data / 'manifest.json').read_text(encoding='utf-8'))
     if data_manifest.get('status') != 'built_all_families' or not all(data_manifest.get(k) is True for k in (
             'training_ready', 'source_collection_complete', 'fixed_collection_complete')):
@@ -288,6 +331,10 @@ def main():
     (a.output / 'config.json').write_text(json.dumps(dict(identity=identity,
         arguments={k: str(v) if isinstance(v, Path) else v for k, v in vars(a).items()},
         frozen_sha256=frozen_hash, initial_bank_sha256={f: digest(banks[f]) for f in FAMILIES},
+        entry_scope=entry_evidence.get('scope'),
+        capability_admission=entry_evidence.get('capability_admission', True),
+        bounded_sft_expansion_authorized=entry_evidence.get('bounded_sft_expansion', False),
+        online_evaluation_authorized=entry_evidence.get('online_evaluation', False),
         microbatch=1, accumulation=8, droid=False, grpo=False), indent=2))
     del loaded, flat, reference, variables
 
@@ -417,11 +464,17 @@ def main():
         if digest(frozen) != frozen_hash:
             raise ValueError('Frozen backbone changed')
         save()
-    status = 'bounded_sft_complete_not_online_success' if step == a.steps else 'wall_limit_before_requested_steps'
+    status = completion_status(entry_evidence, step == a.steps)
     report(status, steps=step, requested_total_updates=a.steps,
            measured_training_validation_seconds=time.monotonic()-started,
-           external_timeout_required=True, native_success_evaluated=False)
-    print(json.dumps(dict(status=status, steps=step)))
+           external_timeout_required=True, native_success_evaluated=False,
+           entry_scope=entry_evidence.get('scope'),
+           capability_admission=entry_evidence.get('capability_admission', True),
+           bounded_sft_expansion_authorized=entry_evidence.get('bounded_sft_expansion', False),
+           online_evaluation_authorized=entry_evidence.get('online_evaluation', False))
+    print(json.dumps(dict(status=status, steps=step,
+                          entry_scope=entry_evidence.get('scope'),
+                          capability_admission=entry_evidence.get('capability_admission', True))))
 
 
 if __name__ == '__main__':
