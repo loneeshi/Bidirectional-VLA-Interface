@@ -7,6 +7,7 @@ Reusing the output directory preserves claims and the spending scope on restart.
 from __future__ import annotations
 
 import argparse
+import errno
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -15,10 +16,51 @@ import shlex
 import subprocess
 import time
 
-from bvi import APIBudget, ProtocolError
-from bvi.bridge import BridgeProcessor, atomic_json, validate_bridge_id
-from bvi.providers import AnthropicTransport, OpenAITransport
-from run_coordinator import load_local_credentials
+from . import APIBudget, ProtocolError
+from .bridge import BridgeProcessor, atomic_json, validate_bridge_id
+from .providers import AnthropicTransport, OpenAITransport
+
+
+SERVER_CREDENTIAL_KEYS = {'LAB_SSH_HOST', 'LAB_SSH_PORT', 'LAB_SSH_USER',
+                          'LAB_SSH_PASSWORD', 'LAB_SSH_KEY_PATH'}
+
+
+def load_local_credentials(path: Path) -> None:
+    """Load only provider API keys; never execute or log environment text."""
+    if not path.is_file():
+        return
+    allowed = {"OPENAI_API_KEY", "ANTHROPIC_API_KEY"}
+    for line in path.read_text(encoding="utf-8-sig").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        key, separator, value = line.partition("=")
+        key, value = key.strip(), value.strip()
+        if not separator or key not in allowed:
+            continue
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+            value = value[1:-1]
+        if value:
+            os.environ.setdefault(key, value)
+
+
+def load_server_credentials(path: Path) -> dict[str, str]:
+    """Load only the declared lab SSH fields without executing or logging them."""
+    values = {}
+    for line in path.read_text(encoding='utf-8-sig').splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        key, separator, value = line.partition('=')
+        key, value = key.strip(), value.strip()
+        if separator and key in SERVER_CREDENTIAL_KEYS:
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+                value = value[1:-1]
+            values[key] = value
+    required = {'LAB_SSH_HOST', 'LAB_SSH_PORT', 'LAB_SSH_USER'}
+    if not required <= values.keys() or not (values.get('LAB_SSH_PASSWORD') or values.get('LAB_SSH_KEY_PATH')):
+        raise ValueError('Lab SSH credentials are incomplete')
+    return values
 
 
 class SSHSpool:
@@ -80,10 +122,118 @@ class SSHSpool:
                         f"{self.directory}/{attempt_id}/response.json")
 
 
-def main() -> None:
+class ParamikoSpool:
+    """Password/key SSH spool for a lab host with a pinned known-host entry."""
+    def __init__(self, credentials: Path, known_hosts: Path, directory: str):
+        import paramiko
+        path = PurePosixPath(directory)
+        if (not path.is_absolute() or '..' in path.parts or str(path) == '/'
+                or not re.fullmatch(r'/[A-Za-z0-9_./-]+', directory)):
+            raise ValueError('Remote bridge directory must be an absolute safe path')
+        if not known_hosts.is_file():
+            raise ValueError('Pinned lab known-hosts file is missing')
+        self.paramiko = paramiko
+        self.credentials = load_server_credentials(credentials)
+        self.known_hosts, self.directory = known_hosts.resolve(), str(path)
+        self.client = self.sftp = None
+
+    def _close(self) -> None:
+        if self.sftp is not None:
+            self.sftp.close()
+        if self.client is not None:
+            self.client.close()
+        self.client = self.sftp = None
+
+    def close(self) -> None:
+        self._close()
+
+    def _connect(self) -> None:
+        if self.client is not None:
+            return
+        client = self.paramiko.SSHClient()
+        client.load_host_keys(str(self.known_hosts))
+        cfg = self.credentials
+        options = dict(hostname=cfg['LAB_SSH_HOST'], port=int(cfg['LAB_SSH_PORT']),
+            username=cfg['LAB_SSH_USER'], password=cfg.get('LAB_SSH_PASSWORD') or None,
+            look_for_keys=False, allow_agent=False, timeout=15,
+            auth_timeout=15, banner_timeout=15)
+        if cfg.get('LAB_SSH_KEY_PATH'):
+            options['key_filename'] = cfg['LAB_SSH_KEY_PATH']
+        client.connect(**options)
+        self.client, self.sftp = client, client.open_sftp()
+
+    def _run(self, operation):
+        for attempt in range(2):
+            try:
+                self._connect()
+                return operation(self.sftp)
+            except (EOFError, OSError, self.paramiko.SSHException):
+                self._close()
+                if attempt:
+                    raise
+
+    @staticmethod
+    def _exists(sftp, path: str) -> bool:
+        try:
+            sftp.stat(path)
+            return True
+        except OSError as exc:
+            if getattr(exc, 'errno', None) == errno.ENOENT:
+                return False
+            raise
+
+    def pending(self) -> list[str]:
+        def operation(sftp):
+            try:
+                names = sftp.listdir(self.directory)
+            except OSError as exc:
+                if getattr(exc, 'errno', None) == errno.ENOENT:
+                    return []
+                raise
+            return [validate_bridge_id(name) for name in sorted(names)
+                    if re.fullmatch(r'[0-9a-f]{32}', name)
+                    and self._exists(sftp, f'{self.directory}/{name}/request.json')
+                    and not self._exists(sftp, f'{self.directory}/{name}/response.json')
+                    and not self._exists(sftp, f'{self.directory}/{name}/expired.json')]
+        return self._run(operation)
+
+    def read(self, attempt_id: str) -> dict:
+        validate_bridge_id(attempt_id)
+        def operation(sftp):
+            base = f'{self.directory}/{attempt_id}'
+            if self._exists(sftp, f'{base}/expired.json'):
+                raise ProtocolError('Remote bridge request already expired')
+            path = f'{base}/request.json'
+            if sftp.stat(path).st_size > 2_000_000:
+                raise ProtocolError('Remote bridge request is oversized')
+            with sftp.open(path, 'r') as stream:
+                raw = stream.read()
+                envelope = json.loads(raw.decode('utf-8') if isinstance(raw, bytes) else raw)
+            if envelope.get('bridge_id') != attempt_id:
+                raise ProtocolError('Spool filename and envelope ID disagree')
+            return envelope
+        return self._run(operation)
+
+    def reply(self, attempt_id: str, local_file: Path) -> None:
+        validate_bridge_id(attempt_id)
+        def operation(sftp):
+            base = f'{self.directory}/{attempt_id}'
+            temporary, target = f'{base}/response.upload.json', f'{base}/response.json'
+            sftp.put(str(local_file), temporary)
+            try:
+                sftp.posix_rename(temporary, target)
+            except (AttributeError, OSError):
+                sftp.rename(temporary, target)
+        self._run(operation)
+
+
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--ssh-config", type=Path, required=True)
-    parser.add_argument("--ssh-alias", required=True)
+    connection = parser.add_mutually_exclusive_group(required=True)
+    connection.add_argument('--ssh-config', type=Path)
+    connection.add_argument('--server-credentials-file', type=Path)
+    parser.add_argument('--ssh-alias')
+    parser.add_argument('--known-hosts', type=Path)
     parser.add_argument("--remote-bridge-dir", required=True)
     parser.add_argument("--provider", choices=("openai", "anthropic"), required=True)
     parser.add_argument("--model", required=True)
@@ -98,14 +248,18 @@ def main() -> None:
     parser.add_argument("--reasoning-effort", default="none")
     parser.add_argument("--idle-timeout-seconds", type=float, default=60)
     parser.add_argument("--max-wall-seconds", type=float, default=600)
+    parser.add_argument('--max-provider-retries',type=int,default=0)
     parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     budget = APIBudget(args.authorization_id, args.max_calls, args.max_output_tokens,
                        args.max_api_cost_usd, args.request_cost_ceiling_usd, args.max_input_bytes)
     if args.idle_timeout_seconds <= 0 or args.max_wall_seconds <= 0:
         parser.error("Timeouts must be positive")
-    if not args.ssh_config.is_file():
-        parser.error("SSH config file is missing")
+    if args.ssh_config and (not args.ssh_config.is_file() or not args.ssh_alias):
+        parser.error('SSH config mode requires an existing config and --ssh-alias')
+    if args.server_credentials_file and (not args.server_credentials_file.is_file()
+            or args.known_hosts is None or not args.known_hosts.is_file()):
+        parser.error('Lab mode requires a credentials file and pinned --known-hosts')
     load_local_credentials(args.credentials_file)
     key_name = "OPENAI_API_KEY" if args.provider == "openai" else "ANTHROPIC_API_KEY"
     if not os.getenv(key_name):
@@ -113,8 +267,11 @@ def main() -> None:
     transport = (OpenAITransport(args.model, image_detail=args.image_detail,
                                 reasoning_effort=args.reasoning_effort)
                  if args.provider == "openai" else AnthropicTransport(args.model))
-    processor = BridgeProcessor(transport, budget, args.output.resolve())
-    spool = SSHSpool(args.ssh_config, args.ssh_alias, args.remote_bridge_dir)
+    processor = BridgeProcessor(transport, budget, args.output.resolve(),
+                                max_provider_retries=args.max_provider_retries)
+    spool = (SSHSpool(args.ssh_config, args.ssh_alias, args.remote_bridge_dir)
+             if args.ssh_config else ParamikoSpool(args.server_credentials_file,
+                                                   args.known_hosts, args.remote_bridge_dir))
     started = last_work = time.monotonic()
     served = set()
     print("BRIDGE_READY: credentials remain local; no API call until a validated remote request arrives", flush=True)
@@ -146,15 +303,19 @@ def main() -> None:
                 print(json.dumps({"bridge_id": attempt_id, "ok": response["ok"]}), flush=True)
                 if not response["ok"]:
                     print("BRIDGE_STOPPED: provider error or unknown charge; no retry", flush=True)
-                    return
+                    return 0
                 if len(served) >= args.max_calls:
                     print("BRIDGE_STOPPED: configured request count reached", flush=True)
-                    return
+                    return 0
     except Exception as exc:
         processor.logger.emit("bridge_server_stopped", error_type=type(exc).__name__)
         print(f"BRIDGE_STOPPED: {type(exc).__name__}; inspect cached responses before retrying", flush=True)
         raise SystemExit(1) from None
+    finally:
+        if hasattr(spool, 'close'):
+            spool.close()
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

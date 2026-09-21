@@ -20,6 +20,14 @@ from .protocol import (ImageFrame, Observation, ProtocolError, Requirement,
                        SkillFeedback, SkillRequest, SkillSpec, validate_request)
 
 
+class ModelResponseError(ProtocolError):
+    """A returned organizer response violated the request contract."""
+
+
+class APIBudgetExhausted(ProtocolError):
+    """A request was stopped by the local API budget before dispatch."""
+
+
 @dataclass(frozen=True)
 class VLMRequest:
     system: str
@@ -103,6 +111,39 @@ def _unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
     return result
 
 
+def normalize_repeated_response(text: str) -> tuple[str, int]:
+    """Collapse only semantically identical complete JSON objects; never choose a plan.
+
+    Raw text remains in api_usage. This accommodates duplicated service output
+    with harmless whitespace differences, without accepting conflicting calls,
+    partial output, duplicate fields, nonfinite constants, or non-JSON prose.
+    """
+    raw = text.strip()
+    def invalid_constant(value: str) -> None:
+        raise ProtocolError(f"Invalid JSON constant: {value}")
+
+    decoder = json.JSONDecoder(object_pairs_hook=_unique_object,
+                               parse_constant=invalid_constant)
+    try:
+        value, end = decoder.raw_decode(raw)
+    except (ValueError, TypeError, ProtocolError):
+        return text, 1
+    first = raw[:end]
+    if not isinstance(value, dict) or end == len(raw):
+        return text, 1
+    remaining, copies = raw[end:].strip(), 1
+    while remaining:
+        try:
+            candidate, candidate_end = decoder.raw_decode(remaining)
+        except (ValueError, TypeError, ProtocolError):
+            return text, 1
+        if not isinstance(candidate, dict) or candidate != value:
+            return text, 1
+        copies += 1
+        remaining = remaining[candidate_end:].strip()
+    return first, copies
+
+
 def parse_request(text: str, observation: Observation,
                   specs: Mapping[str, SkillSpec], tool_interface=False) -> SkillRequest:
     def invalid_constant(value: str) -> None:
@@ -167,7 +208,7 @@ class VLMCoordinator:
         if (self.calls_reserved >= self.budget.max_calls
                 or self.cost_reserved_usd + self.budget.request_cost_ceiling_usd
                 > self.budget.max_cost_usd + 1e-12):
-            raise ProtocolError("API experiment budget exhausted")
+            raise APIBudgetExhausted("API experiment budget exhausted")
 
         schema = request_schema(observation, self.specs, self.tool_interface)
         context = {"task": observation.task, "frame_id": observation.frame_id,
@@ -183,15 +224,17 @@ class VLMCoordinator:
             "invent targets, skills, supported requirements, or evidence. Include all mandatory "
             "requirements. Unknown requirements or ambiguous targets cannot be executed. Respect "
             "skill step/time limits. Feedback is authoritative for previous execution, and unknown "
-            "is not success. You do not change benchmark task pointers or directly control joints. "
+            "is not success. A timed-out slice does not prove benchmark completion. "
+            "You do not change benchmark task pointers or directly control joints. "
             "This baseline's admissible calls may be restricted by the benchmark task plan; "
             "target source labels disclose any oracle metadata."
         )
         if self.tool_interface:
             system += (" Select tool_family equal to skill and supply a short scene-grounded English instruction. "
-                       "The exact instruction is sent to the selected navigation or manipulation model. "
-                       "Use interface_version mshab-tool-family/1. These are separate backends; "
-                       "feedback source labels distinguish benchmark rules from learned progress.")
+                       "The active evaluator uses official PPO navigation and object-specific SAC manipulation; "
+                       "these policies do not consume language, so the instruction remains logged interface context. "
+                       "Use interface_version mshab-tool-family/1. These are heterogeneous backends; "
+                       "feedback source labels distinguish benchmark rules from diagnostic estimates.")
         vlm_request = VLMRequest(system, prompt, observation.images, schema,
                                  self.budget.max_output_tokens)
         # Bound request growth across feedback history and encoded images. This
@@ -236,9 +279,15 @@ class VLMCoordinator:
             if response.finish_reason in {"incomplete", "failed", "cancelled", "max_tokens",
                                           "refusal", "pause_turn"}:
                 raise ProtocolError(f"Coordinator response did not finish: {response.finish_reason}")
-            request = parse_request(response.text, observation, self.specs, self.tool_interface)
+            normalized, copies = normalize_repeated_response(response.text)
+            request = parse_request(normalized, observation, self.specs, self.tool_interface)
+            if copies > 1:
+                self.logger.emit('coordinator_output_normalized', attempt_id=attempt_id,
+                                 rule='semantically_identical_json_repetition/2', copies=copies,
+                                 raw_sha256=hashlib.sha256(response.text.encode()).hexdigest(),
+                                 normalized_sha256=hashlib.sha256(normalized.encode()).hexdigest())
         except ProtocolError as exc:
             self.logger.emit("coordinator_rejected", attempt_id=attempt_id, reason=str(exc))
-            raise
+            raise ModelResponseError(str(exc)) from exc
         self.logger.emit("coordinator_decision", attempt_id=attempt_id, request=request)
         return request

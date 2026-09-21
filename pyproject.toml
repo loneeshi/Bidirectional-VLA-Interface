@@ -9,10 +9,22 @@ description = "A constrained VLM-to-skill interface baseline for mobile manipula
 requires-python = ">=3.10"
 dependencies = []
 
+[project.scripts]
+bvi-eval = "bvi.cli:main"
+
 [project.optional-dependencies]
 openai = ["openai>=1.66"]
 anthropic = ["anthropic>=0.49"]
-vla = ["websockets>=14", "numpy>=1.24", "Pillow>=10"]
+eval = ["numpy>=1.24", "Pillow>=10"]
+bridge = ["paramiko>=3.5"]
+dev = ["pytest>=8.3", "ruff>=0.11"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

@@ -31,6 +31,12 @@ class OpenAITransport:
         self.image_detail, self.reasoning_effort = image_detail, reasoning_effort
         self.request_options = {"image_detail": image_detail, "reasoning_effort": reasoning_effort}
 
+    def reset_connection(self) -> None:
+        """Discard a possibly stale pooled connection before an accounted retry."""
+        if self._client is not None:
+            self._client.close()
+        self._client = None
+
     def generate(self, request: VLMRequest) -> VLMResponse:
         if self._client is None:
             from openai import OpenAI

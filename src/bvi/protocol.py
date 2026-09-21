@@ -120,8 +120,6 @@ class SkillFeedback:
     requirements: tuple[RequirementResult, ...] = ()
     reason: str | None = None
     source: str = "unspecified"
-    progress: float | None = None
-    progress_source: str = "unavailable"
 
 
 @dataclass(frozen=True)
