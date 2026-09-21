@@ -1,8 +1,0 @@
-{
-  "source": "/home/pshuai/bvi-research/runs/s1-oracle-cand-20260919-r1-launch.json",
-  "local": "docs\\results\\two-day-delivery-2026-09-20\\oracle-launch\\s1-oracle-cand-20260919-r1-launch.json",
-  "bytes": 5169,
-  "source_sha256": "7ee17472bee2169d84adbea188b20218db5000a94354016cc02c5b1a8b4ddba9",
-  "local_sha256": "7ee17472bee2169d84adbea188b20218db5000a94354016cc02c5b1a8b4ddba9",
-  "source_stat_unchanged": true
-}

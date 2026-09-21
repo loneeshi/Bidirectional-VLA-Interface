@@ -1,9 +1,19 @@
 # 实验日志
 
-`docs/results/` 和 `runs/` 里的 `panel-status.json` / `events.jsonl` 是给程序读的：完整、可校验，但看不出发生了什么。这个目录放对应的人读版本——每个面板一篇，讲清楚跑了什么、结果是多少、哪些数字不能直接引用。
+实验日志必须让没有打开原始 JSON 的读者直接回答四个问题：为什么做、具体怎么配、
+结果是什么、结论能说到哪里。不要写自我描述，也不要把
+运行过程、PID、绝对路径或事件流复制进来。
 
-规则：日志只归纳已归档的证据，不产生新数字；每条结论都要能指回 `results/` 或 `runs/` 里的具体文件；证据还没落盘的数字明确标为待核对。
+## 当前日志
 
-| 日志 | 覆盖 |
-|---|---|
-| [2026-09-21 TidyHouse 16-plan 三设置对照](2026-09-21-tidyhouse-16plan-panel.md) | Fixed PPO+SAC、GPT+PPO+SAC、标准化 Teleport+SAC 在同一批 16 个 TidyHouse validation plan 上的配对结果 |
+- [TidyHouse 三设置：Fixed / GPT / Teleport](2026-09-21-tidyhouse-three-settings.md)
+- [负结果备忘](negative-results.md)
+- [新实验模板](TEMPLATE.md)
+
+## 规则
+
+1. 一个 setting 对应一个编号实验；共享面板可在文件开头增加总表。
+2. 配置表使用本领域参数：任务划分、plan roster、导航/操作策略、调度协议、horizon、调用预算。
+3. 均值必须说明离散程度与样本数；本仓库统一报告总体标准差（population SD）。
+4. 机器记录只保留最小公开摘要，并从摘要生成派生数字。
+5. 负结果必须保留结论和可能原因，但不保留成百上千个中间文件。

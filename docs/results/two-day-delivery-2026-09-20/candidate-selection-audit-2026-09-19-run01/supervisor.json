@@ -1,7 +1,0 @@
-{
-  "schema": "bvi.s1-bounded-candidate/1",
-  "status": "exited",
-  "worker_exit_code": 0,
-  "elapsed_seconds": 6508.438502106816,
-  "budget_seconds": 9000
-}

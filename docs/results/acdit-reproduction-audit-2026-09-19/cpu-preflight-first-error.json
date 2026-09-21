@@ -1,9 +1,0 @@
-{
-  "status": "error",
-  "cuda_visible_devices": "",
-  "gpu_operations": 0,
-  "api_calls": 0,
-  "models": [],
-  "error": "RuntimeError('No CUDA GPUs are available')",
-  "wall_seconds": 2.629229076206684
-}

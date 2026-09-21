@@ -1,6 +1,0 @@
-{
-  "updates": 145,
-  "weights": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-0.pt",
-  "training_state": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-0-state.pt",
-  "generation": 4
-}

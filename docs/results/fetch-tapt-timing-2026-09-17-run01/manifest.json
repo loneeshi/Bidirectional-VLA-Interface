@@ -1,9 +1,0 @@
-{
-  "batch.json": "a4e8580ef03ee9fcbab68cdd60be38005332d7861caefa3e5a64a922ebea8bb3",
-  "comparison.json": "872120c081ff38f3f316a4496c5266960a5c2bdea7de13f7fb8dcf7b57ca8f1d",
-  "legacy-pre-action/events.jsonl": "2ecd642ee8b9e7265ea73cc8af75b46231cf04a141a7c872f908986222b8d435",
-  "legacy-pre-action/result.json": "f9f711bcd8b49991766adbf0f676d31473f25f26e4ff11b806e1d66818be2310",
-  "post-action/events.jsonl": "1049c814f631c4f7a4bf5a2414de6809dd359223554406a615dffbedbfb2534a",
-  "post-action/result.json": "aaafb83271d334d86bed30ace7f1d2bb0cec7a405e94d0c02615ff171cf3677d",
-  "replay.json": "640605081f45edcc60731df0220636a3be513170f23b2526efb35a147224b76a"
-}

@@ -1,3 +1,0 @@
-{"step": 100, "score": 0.9513896487595626, "eligible": true, "guards": {"yaw_rmse": true, "torso_rmse": true}, "first_rmse_ratio": 0.965781908300236, "chunk_rmse_ratio": 0.9369973892188892}
-{"step": 250, "score": 0.9258189853129655, "eligible": true, "guards": {"yaw_rmse": true, "torso_rmse": true}, "first_rmse_ratio": 0.8990997245276288, "chunk_rmse_ratio": 0.9525382460983022}
-{"step": 500, "score": 0.9182959712396856, "eligible": false, "guards": {"yaw_rmse": false, "torso_rmse": true}, "first_rmse_ratio": 0.8581435684110709, "chunk_rmse_ratio": 0.9784483740683004}

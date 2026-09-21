@@ -1,6 +1,0 @@
-{
-  "step": 6000,
-  "validation_action_loss": 0.12410000838339329,
-  "checkpoint": "/home/pshuai/bvi-research/runs/s1-medium-epoch-2026-09-17-run01/best/6000",
-  "selection": "heldout_action_loss_only"
-}

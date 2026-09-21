@@ -1,25 +1,25 @@
 # Bidirectional VLA Interface
 
-An evaluation-only MS-HAB implementation for comparing fixed skill dispatch,
-VLA-as-Tools dispatch, and standardized teleport navigation with the same
-official per-object SAC manipulation policies.
+Evaluation-only MS-HAB code for comparing three frozen TidyHouse settings:
 
-## Current 16-plan diagnostic
+| Setting | Episodes | Full-task SR | Completed objects | Mean / episode |
+|---|---:|---:|---:|---:|
+| Fixed PPO + SAC | 16/16 | 0/16 | 14/80 (17.5%) | 0.875 |
+| GPT + PPO + SAC | 16/16 | 0/16 | 13/80 (16.25%) | 0.813 |
+| Teleport + SAC | 16/16 | 0/16 | 21/80 (26.25%) | 1.313 |
 
-The canonical [result table](docs/results/tidyhouse-16/README.md) and
-[machine-readable evidence](docs/results/tidyhouse-16/summary.json) are
-generated from preserved panel records by `bvi-eval summarize`; derived values
-are not duplicated by hand in this README.
+The complete human-readable report is in
+[`docs/log/2026-09-21-tidyhouse-three-settings.md`](docs/log/2026-09-21-tidyhouse-three-settings.md).
+The machine-readable episode summary is
+[`docs/results/tidyhouse-16/summary.json`](docs/results/tidyhouse-16/summary.json).
 
-All three settings completed their 16 episodes and all three had zero complete
-five-object task successes. This is a matched 16-plan diagnostic, not a
-reproduction or estimate of the published 1,000-rollout benchmark. Teleport
-changes the navigation handoff distribution, so its larger partial-object count
-does not by itself show that a navigation policy is better.
+All three settings had zero complete five-object task successes. This is a
+matched 16-plan diagnostic, not a reproduction of the published 1,000-rollout
+benchmark. Teleport changes the navigation handoff distribution, so its larger
+partial-object count is not evidence that a navigation policy is better.
 
-Training and fine-tuning are outside the active scope. Next week's update count
-is fixed at zero, every profile records `training_updates = 0`, and the public
-command has no training entry point.
+Training and fine-tuning are outside the active scope. Every profile records
+`training_updates = 0`, and the public CLI contains no training entry point.
 
 ## Install
 
@@ -29,9 +29,8 @@ source .venv/bin/activate
 pip install -e ".[eval]"
 ```
 
-MS-HAB, ManiSkill, assets, and the official PPO/SAC checkpoints are external
-research dependencies and must be installed separately. Provider SDKs and the
-SSH bridge are optional:
+MS-HAB, ManiSkill, assets, and official PPO/SAC checkpoints are external
+dependencies. Provider and SSH dependencies are optional:
 
 ```bash
 pip install -e ".[openai,bridge]"
@@ -39,9 +38,8 @@ pip install -e ".[openai,bridge]"
 
 ## Run
 
-Every `run` command is a non-executing preview unless `--execute` is supplied.
-The preview validates the 16-plan roster and prints the frozen profile without
-creating the output directory.
+`bvi-eval run` is a non-executing validation preview unless `--execute` is
+supplied.
 
 ```bash
 bvi-eval run --setting fixed \
@@ -63,19 +61,13 @@ bvi-eval run --setting teleport \
   --output /path/to/teleport-panel
 ```
 
-Real execution additionally requires Linux, `--mshab-root`, and `--execute`.
-The GPT setting also requires an approved `--authorization-id` and a separately
-started `bvi-eval bridge`; credentials stay in the local environment or ignored
-credential files and are never accepted as command-line values.
+Real execution requires Linux, `--mshab-root`, and `--execute`. GPT execution
+also requires a separately started `bvi-eval bridge` and an approved
+`--authorization-id`. Credentials are accepted only from the local environment
+or an ignored credential file, never from command-line values.
 
-## Repository layout
+## Documentation
 
-- `src/bvi/`: protocol, serial runtime, coordinator, bridge, MS-HAB adapter,
-  goal tools, teleport skill, frozen evaluation profiles, and the CLI.
-- `tests/`: offline contract, accounting, security, and result-validation tests.
-- `docs/results/tidyhouse-16/`: sanitized public evidence for the active table.
-- `docs/media/` and older reports: historical evidence, including explicitly
-  labelled failures and diagnostics; they are not active executable entrypoints.
-
-See [the documentation index](docs/README.md) for evidence boundaries and
-archived research reports.
+[`docs/README.md`](docs/README.md) is the complete documentation index. The
+active tree intentionally excludes old plans, training notes, raw run dumps,
+videos, and superseded diagnostics; they remain recoverable from Git history.

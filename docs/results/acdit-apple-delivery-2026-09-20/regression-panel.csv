@@ -1,6 +1,0 @@
-case_id,seed,status,native_success,scene_id,plan_id,init_id,panel_identity_frozen,reason
-acdit-dev-2024,2024,not_run,null,unverified,unverified,unverified,False,no_whole_body_candidate;historical_mapping_incomplete;evaluation_authorization_pending
-acdit-dev-2025,2025,not_run,null,unverified,unverified,unverified,False,no_whole_body_candidate;historical_mapping_incomplete;evaluation_authorization_pending
-acdit-dev-2026,2026,not_run,null,unverified,unverified,unverified,False,no_whole_body_candidate;historical_mapping_incomplete;evaluation_authorization_pending
-acdit-dev-2027,2027,not_run,null,unverified,unverified,unverified,False,no_whole_body_candidate;historical_mapping_incomplete;evaluation_authorization_pending
-acdit-dev-2028,2028,not_run,null,unverified,unverified,unverified,False,no_whole_body_candidate;historical_mapping_incomplete;evaluation_authorization_pending
