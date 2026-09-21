@@ -1,0 +1,36 @@
+{
+  "id": "TWO-DAY-S1-ORACLE-20260919-START",
+  "at": "2026-09-19T03:49:31.171630+00:00",
+  "status": "preregistered_ready_to_launch_serial_panels",
+  "experiment_ids": [
+    "s1-oracle-base-20260919-r1",
+    "s1-oracle-cand-20260919-r1"
+  ],
+  "protocol": "ia_oracle_train_windows_v1",
+  "candidate_selected_step": 250,
+  "candidate_decision_sha256": "d665a6726c93ef001d2468b494179c790c125fbf40897edc50af2315f56f11d8",
+  "baseline_manifest_sha256": "452df7bb5eeac3e160571f9659d3ccdba3c403ef7c63df2b3c81ca057d22b7c1",
+  "candidate_manifest_sha256": "d1658754a73c9194f523d50e19ef9dc40c229589df3ada271a327b6c96fbdb36",
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028
+  ],
+  "panels": 2,
+  "episodes_per_panel": 5,
+  "actions_per_episode_max": 200,
+  "case_seconds_max": 300,
+  "panel_seconds_max": 2100,
+  "serial": true,
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "gpu0_touched": false,
+  "training_updates": 0,
+  "api_calls_max": 0,
+  "new_rental_usd_max": 0,
+  "lab_charge_usd": null,
+  "repeat": "Only if candidate native success, separately preregister one fresh-process repeat capped600seconds",
+  "failure_handling": "Preserve infra failure and planned unrun cases; no threshold/condition or checkpoint changes",
+  "continuing_costs": "Existing EXITED Runpod40GB retained and chargeable; latestbill01:21UTC15.1223830181USD,unpostedunknown"
+}

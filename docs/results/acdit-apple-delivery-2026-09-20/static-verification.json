@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "copied_files_sha256_verified": 24,
+  "train_parents": 593,
+  "dev_parents": 150,
+  "scene_disjoint": true,
+  "fixed_dev_identities": true,
+  "validation_records": 6,
+  "finite_contiguous_train_updates": 163,
+  "selected_stage1_dev_update_in_snapshot": 145,
+  "selected_stage1_dev_score_in_snapshot": 0.23714786767959595,
+  "python_files_syntax_checked": 9,
+  "gpu_used": false,
+  "fresh_process_model_load": "not_run",
+  "native_validation": "not_run",
+  "hdf5_hash": "recorded_from_training_manifest_not_rehashed_this_turn",
+  "checkpoint_tensor_integrity": "not_independently_checked_this_turn"
+}

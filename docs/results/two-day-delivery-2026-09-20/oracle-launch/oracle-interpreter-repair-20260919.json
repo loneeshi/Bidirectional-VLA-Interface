@@ -1,0 +1,49 @@
+{
+  "schema": "bvi.oracle-interpreter-repair/1",
+  "at_utc": "2026-09-19T03:54:31.427091+00:00",
+  "status": "passed_cpu_only",
+  "reason": "Preserve venv interpreter invocation paths; resolve dereferenced both interpreters to base without numpy",
+  "gpu_forwards": 0,
+  "simulator_actions": 0,
+  "tests": {
+    "argv": [
+      "/home/pshuai/bvi-research/envs/openpi/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_s1_oracle_panel.py",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "/tmp/bvi-oracle-venv-path-fix-20260919"
+    ],
+    "stdout": "............................                                             [100%]\n28 passed in 0.14s\n",
+    "returncode": 0
+  },
+  "interpreter_probes": [
+    {
+      "environment": "openpi",
+      "invoked_path": "/home/pshuai/bvi-research/envs/openpi/bin/python",
+      "resolved_path": "/home/pshuai/bvi-research/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11",
+      "actual": {
+        "executable": "/home/pshuai/bvi-research/envs/openpi/bin/python",
+        "prefix": "/home/pshuai/bvi-research/envs/openpi",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "environment": "acdit",
+      "invoked_path": "/home/pshuai/bvi-research/envs/acdit/bin/python",
+      "resolved_path": "/home/pshuai/bvi-research/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11",
+      "actual": {
+        "executable": "/home/pshuai/bvi-research/envs/acdit/bin/python",
+        "prefix": "/home/pshuai/bvi-research/envs/acdit",
+        "numpy": "1.26.4"
+      }
+    }
+  ],
+  "source_sha256": {
+    "scripts/run_s1_oracle_panel.py": "271c76f3577b29d7372f25063a7c179f0440e28ea038cc2028d176647a825228",
+    "tests/test_s1_oracle_panel.py": "7c1f560916aa896cd17c29007379853895fcfc86a5ed9d48137428d9af0c8eb9"
+  }
+}

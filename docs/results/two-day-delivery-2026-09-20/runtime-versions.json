@@ -1,0 +1,183 @@
+{
+  "schema": "bvi.runtime-versions/1",
+  "captured_at_utc": "2026-09-19T02:10:26.062300+00:00",
+  "method": "read-only SSH; stdlib version metadata; CUDA hidden, JAX CPU; no GPU query/import/init, model forward or simulator call",
+  "interpreters": {
+    "model": {
+      "executable": "/home/pshuai/bvi-research/envs/openpi/bin/python",
+      "python_version": "3.11.13 (main, Sep 18 2025, 19:46:39) [Clang 20.1.4 ]",
+      "prefix": "/home/pshuai/bvi-research/envs/openpi",
+      "packages": {
+        "jax": {
+          "version": "0.5.3",
+          "status": "installed_distribution_metadata"
+        },
+        "jaxlib": {
+          "version": "0.5.3",
+          "status": "installed_distribution_metadata"
+        },
+        "flax": {
+          "version": "0.10.2",
+          "status": "installed_distribution_metadata"
+        },
+        "orbax-checkpoint": {
+          "version": "0.11.13",
+          "status": "installed_distribution_metadata"
+        },
+        "numpy": {
+          "version": "1.26.4",
+          "status": "installed_distribution_metadata"
+        },
+        "h5py": {
+          "version": "3.13.0",
+          "status": "installed_distribution_metadata"
+        },
+        "torch": {
+          "version": "2.7.1",
+          "status": "installed_distribution_metadata"
+        },
+        "torchvision": {
+          "version": "0.22.1",
+          "status": "installed_distribution_metadata"
+        },
+        "mani-skill": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "mshab": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "Pillow": {
+          "version": "11.2.1",
+          "status": "installed_distribution_metadata"
+        },
+        "imageio": {
+          "version": "2.37.0",
+          "status": "installed_distribution_metadata"
+        },
+        "imageio-ffmpeg": {
+          "version": "0.6.0",
+          "status": "installed_distribution_metadata"
+        },
+        "sapien": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "gymnasium": {
+          "version": "0.29.1",
+          "status": "installed_distribution_metadata"
+        },
+        "optax": {
+          "version": "0.2.4",
+          "status": "installed_distribution_metadata"
+        },
+        "chex": {
+          "version": "0.1.89",
+          "status": "installed_distribution_metadata"
+        },
+        "tensorstore": {
+          "version": "0.1.74",
+          "status": "installed_distribution_metadata"
+        },
+        "openpi": {
+          "version": "0.1.0",
+          "status": "installed_distribution_metadata"
+        },
+        "pytest": {
+          "version": "8.3.5",
+          "status": "installed_distribution_metadata"
+        }
+      },
+      "method": "stdlib importlib.metadata only; no target library imported"
+    },
+    "sim": {
+      "executable": "/home/pshuai/bvi-research/envs/acdit/bin/python",
+      "python_version": "3.11.13 (main, Sep 18 2025, 19:46:39) [Clang 20.1.4 ]",
+      "prefix": "/home/pshuai/bvi-research/envs/acdit",
+      "packages": {
+        "jax": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "jaxlib": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "flax": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "orbax-checkpoint": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "numpy": {
+          "version": "1.26.4",
+          "status": "installed_distribution_metadata"
+        },
+        "h5py": {
+          "version": "3.11.0",
+          "status": "installed_distribution_metadata"
+        },
+        "torch": {
+          "version": "2.7.0+cu128",
+          "status": "installed_distribution_metadata"
+        },
+        "torchvision": {
+          "version": "0.22.0+cu128",
+          "status": "installed_distribution_metadata"
+        },
+        "mani-skill": {
+          "version": "3.0.0b18",
+          "status": "installed_distribution_metadata"
+        },
+        "mshab": {
+          "version": "0.0.1",
+          "status": "installed_distribution_metadata"
+        },
+        "Pillow": {
+          "version": "12.3.0",
+          "status": "installed_distribution_metadata"
+        },
+        "imageio": {
+          "version": "2.33.0",
+          "status": "installed_distribution_metadata"
+        },
+        "imageio-ffmpeg": {
+          "version": "0.6.0",
+          "status": "installed_distribution_metadata"
+        },
+        "sapien": {
+          "version": "3.0.0b1",
+          "status": "installed_distribution_metadata"
+        },
+        "gymnasium": {
+          "version": "0.29.1",
+          "status": "installed_distribution_metadata"
+        },
+        "optax": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "chex": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "tensorstore": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "openpi": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        },
+        "pytest": {
+          "version": null,
+          "status": "distribution_metadata_not_found"
+        }
+      },
+      "method": "stdlib importlib.metadata only; no target library imported"
+    }
+  }
+}

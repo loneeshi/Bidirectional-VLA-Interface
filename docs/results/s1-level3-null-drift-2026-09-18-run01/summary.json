@@ -1,0 +1,45 @@
+{
+  "status": "infrastructure_failure",
+  "launch_sha256": "b5df732bd7fff0a817a6b9544b26c427621852cdbfe3f88767a2073a229a70d4",
+  "training_updates": 0,
+  "api_calls": 0,
+  "policy_inference_calls": 0,
+  "source_assets": {
+    "reference_state": {
+      "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/starts/seed2025/reach-state.pt",
+      "sha256": "332928111d25f1cf03060cd760bb17d99c4204d5f0890d807ce24f3e00b20c5b"
+    },
+    "actions_jsonl": {
+      "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/starts/seed2025/events.jsonl",
+      "sha256": "f68ef63fd460a382625339c29a0cc6854071543d10fb2aa7bbcce006c1d11d01"
+    },
+    "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+    "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c"
+  },
+  "threshold_generation_rule": {
+    "version": "same-action-fresh-env-pairwise-max-v1",
+    "expression": "threshold[channel] = max(unit_floor, null_multiplier * max_pairwise_abs_over_repeat_pairs_and_steps)",
+    "strict_comparison_operator": ">",
+    "null_multiplier": 2.0,
+    "translation_floor_m": 0.0001,
+    "rotation_floor_rad": 0.0001,
+    "horizon": 35,
+    "policy_under_test_excluded": true
+  },
+  "threshold_generation_rule_sha256": "1f300bdbbd079690399a9bf90e985310f29a2b3b7fe692e9e9e0af9031661408",
+  "runner_sha256": "2b1ad85fa378d1bd841e48de68bfd06771c119bed7172cdbdea78c711ea666db",
+  "child_runner_sha256": "b8b1c733d52eea25cde564acbcc66074710beebb3e8976872e6e7d30d2e31233",
+  "rows": [
+    {
+      "repeat_index": 0,
+      "exit_code": 1,
+      "result_status": "infrastructure_failure",
+      "steps": 0,
+      "log": "repeat-00.log"
+    }
+  ],
+  "wall_seconds": 14.09871031343937,
+  "error": "RuntimeError('Null repeat 0 failed closed')",
+  "gpu_memory_after_mib": 15,
+  "gpu_release_verified": true
+}

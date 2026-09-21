@@ -1,0 +1,38 @@
+{
+  "H_input_defect": {
+    "status": "not_supported_by_fixed16_audit",
+    "meaning": "No independently evidenced defect found, not all conceivable defects excluded"
+  },
+  "H_small_sample_learnability": {
+    "status": "supported_under_frozen100update_budget",
+    "evidence": "diagnostic-decision.json",
+    "limits": "85 already-seen train rows;not generalization or native success"
+  },
+  "progress_semantics": {
+    "status": "out_of_scope",
+    "reason": "Cannot explain S1 failure; new plan parksS2/progress"
+  },
+  "candidate": {
+    "status": "completed_verified_best250",
+    "gate": "verified_metric_go plus fresh CPU checkpoint restore passed",
+    "initialization": "originalbest855",
+    "scope": "one500update/9000sec candidate;no secondsearch",
+    "updates": 500,
+    "wall_seconds": 6508.438502106816,
+    "decision": "candidate/candidate-decision.json",
+    "step500_rejected": "reach yaw RMSE worsened20.66%,exceeding10%guard even though composite score was lower",
+    "native_status": "completed: baseline0/5 and candidate0/5; all10 native cumulative-force policy failures, no grasp; G1_not_passed",
+    "native_evidence": "oracle-paired-comparison.json"
+  },
+  "G1": {
+    "status": "not_passed",
+    "evidence": "g1-decision.json",
+    "success_repeat": "not_run_no_successful_seed",
+    "next_branches": "No LightNav, GPT, Place or new training"
+  },
+  "remaining_hypotheses": {
+    "status": "not_resolved",
+    "evidence": "oracle-paired-comparison.json",
+    "single_next_experiment": "Proposal only: paired fixed candidate base-command clamp, 20-action cap, native termination unchanged; no execution or new authorization."
+  }
+}

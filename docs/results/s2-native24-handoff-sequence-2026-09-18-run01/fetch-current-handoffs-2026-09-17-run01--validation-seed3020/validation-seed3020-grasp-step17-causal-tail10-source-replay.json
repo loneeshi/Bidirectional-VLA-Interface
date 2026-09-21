@@ -1,0 +1,73 @@
+{
+  "schema": "bvi.native24-source-sequence-replay/1",
+  "status": "verified_source_sequence_replay",
+  "sequence_id": "validation-seed3020-grasp-step17-causal-tail10",
+  "instruction": "Grasp the apple securely.",
+  "parent_episode": {
+    "source_kind": "archived_online_replay",
+    "task": "pick",
+    "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+    "trajectory": "validation-seed3020",
+    "parent_id": 3020
+  },
+  "trajectory_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+  "window": {
+    "start": 8,
+    "end": 17,
+    "length": 10,
+    "selection_rule": "previous_9_through_anchor_source_observations"
+  },
+  "npz_sha256": "f1e2ef06334f05ec47570d3444294eac5b4611b4725b432dcba312b139156d27",
+  "physical_predicates_sha256": "d2adf7b05c716aee45e7f0c341b2faedb450b33f7f69a28c89037122e8e927ca",
+  "frame_observation_sha256": [
+    "aefb455713f543a9c577b42df12315e1eba52da7761245b18b610832797ee30d",
+    "68ff7d143d725ce91ae0337491513e6bca2f9d7c07ecb525a65b20ed9c40871b",
+    "927f866d19c7d8e1bae3945d72718e7fcbdc9aa749e1299eb15556d84dea81df",
+    "2581390d424ac2f7f234d86395070e6c3f1de2475da1497b7fea1a652b9643a8",
+    "e65af081b30781a27ee9df152f3b3cb0e717ccb86e3b56078ae893dadfdc3a21",
+    "1490b57a6a4056922b9732148a2ff5d759fa7c41c26768909f6ef625740839c6",
+    "9c95b1a489147e004d61c4cc577158165ed63a53d12ce548b668a7a37f045a07",
+    "05ee0ec65aed6bacd73a7bbf06c164f857a6717f8d270cc4c296c61018bac966",
+    "f0af157f40232360d3b08bfac91b9edef6d9c5cde0ed6537e2423bfd3b4f2790",
+    "436ee2f4e8e32e382b7b775d437046645220e11e062dcad8d5d27a56a2c9ce4b"
+  ],
+  "sequence_observation_sha256": "de69a7002ace054a7fd169c304fa8a41f4070be7ce58198a4c78311adc2331e2",
+  "reconstruction_frame_observation_sha256": [
+    [
+      "aefb455713f543a9c577b42df12315e1eba52da7761245b18b610832797ee30d",
+      "68ff7d143d725ce91ae0337491513e6bca2f9d7c07ecb525a65b20ed9c40871b",
+      "927f866d19c7d8e1bae3945d72718e7fcbdc9aa749e1299eb15556d84dea81df",
+      "2581390d424ac2f7f234d86395070e6c3f1de2475da1497b7fea1a652b9643a8",
+      "e65af081b30781a27ee9df152f3b3cb0e717ccb86e3b56078ae893dadfdc3a21",
+      "1490b57a6a4056922b9732148a2ff5d759fa7c41c26768909f6ef625740839c6",
+      "9c95b1a489147e004d61c4cc577158165ed63a53d12ce548b668a7a37f045a07",
+      "05ee0ec65aed6bacd73a7bbf06c164f857a6717f8d270cc4c296c61018bac966",
+      "f0af157f40232360d3b08bfac91b9edef6d9c5cde0ed6537e2423bfd3b4f2790",
+      "436ee2f4e8e32e382b7b775d437046645220e11e062dcad8d5d27a56a2c9ce4b"
+    ],
+    [
+      "aefb455713f543a9c577b42df12315e1eba52da7761245b18b610832797ee30d",
+      "68ff7d143d725ce91ae0337491513e6bca2f9d7c07ecb525a65b20ed9c40871b",
+      "927f866d19c7d8e1bae3945d72718e7fcbdc9aa749e1299eb15556d84dea81df",
+      "2581390d424ac2f7f234d86395070e6c3f1de2475da1497b7fea1a652b9643a8",
+      "e65af081b30781a27ee9df152f3b3cb0e717ccb86e3b56078ae893dadfdc3a21",
+      "1490b57a6a4056922b9732148a2ff5d759fa7c41c26768909f6ef625740839c6",
+      "9c95b1a489147e004d61c4cc577158165ed63a53d12ce548b668a7a37f045a07",
+      "05ee0ec65aed6bacd73a7bbf06c164f857a6717f8d270cc4c296c61018bac966",
+      "f0af157f40232360d3b08bfac91b9edef6d9c5cde0ed6537e2423bfd3b4f2790",
+      "436ee2f4e8e32e382b7b775d437046645220e11e062dcad8d5d27a56a2c9ce4b"
+    ]
+  ],
+  "physical_predicate_sequence_sha256": "cfdd54ed298b9630e6e8f92960edf91b4dcbf4c83a7e7f4918e99c264fcb7d8f",
+  "reconstruction_physical_predicate_sha256": [
+    "cfdd54ed298b9630e6e8f92960edf91b4dcbf4c83a7e7f4918e99c264fcb7d8f",
+    "cfdd54ed298b9630e6e8f92960edf91b4dcbf4c83a7e7f4918e99c264fcb7d8f"
+  ],
+  "physical_atol": 1e-05,
+  "initial_state_verified": true,
+  "action_prefix_verified": true,
+  "boundary_observation_verified": true,
+  "physical_predicates_verified": true,
+  "policy_calls": 0,
+  "training_updates": 0
+}

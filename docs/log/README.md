@@ -6,4 +6,4 @@
 
 | 日志 | 覆盖 |
 |---|---|
-| [2026-09-21 TidyHouse 16-plan 三设置对照](2026-09-21-tidyhouse-16plan-panel.md) | Fixed PPO+SAC、GPT+PPO+SAC、Teleport+SAC 在同一批 16 个 TidyHouse validation plan 上的配对结果 |
+| [2026-09-21 TidyHouse 16-plan 三设置对照](2026-09-21-tidyhouse-16plan-panel.md) | Fixed PPO+SAC、GPT+PPO+SAC、标准化 Teleport+SAC 在同一批 16 个 TidyHouse validation plan 上的配对结果 |

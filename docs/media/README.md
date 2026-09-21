@@ -12,6 +12,16 @@ Every video is linked by its exact filename and grouped by test task. Folder nam
 
 ## Recordings
 
+Partial goal-tools paired-panel snapshot (not final16+16): [results and five-row denominator note](goal-tools-paired16-2026-09-20-pre-chunk01/README.md). GPT seed0 has no video because it ended at0 physical steps.
+
+| Test task / batch | Video filename | What it establishes |
+|---|---|---|
+| `goal-tools-paired16-2026-09-20-gpt-seed002` | [gpt-seed-002-attempt-004.mp4](goal-tools-paired16-2026-09-20-gpt-seed002/gpt-seed-002-attempt-004.mp4) | GPT＋official PPO/SAC seed2,2/5 objects,803 actions, native benchmark failure; partial rollout, not full-task success. |
+| `goal-tools-paired16-2026-09-20-pre-chunk01` | [fixed-seed-000-attempt-001.mp4](goal-tools-paired16-2026-09-20-pre-chunk01/fixed-seed-000-attempt-001.mp4) | Fixed PPO/SAC seed0,0/5 objects, native failure at373; not task success. |
+| `goal-tools-paired16-2026-09-20-pre-chunk01` | [fixed-seed-001-attempt-001.mp4](goal-tools-paired16-2026-09-20-pre-chunk01/fixed-seed-001-attempt-001.mp4) | Fixed PPO/SAC seed1,0/5 objects, native failure at266; not task success. |
+| `goal-tools-paired16-2026-09-20-pre-chunk01` | [fixed-seed-002-attempt-001.mp4](goal-tools-paired16-2026-09-20-pre-chunk01/fixed-seed-002-attempt-001.mp4) | Fixed PPO/SAC seed2,2/5 objects, native failure at675; partial execution only. |
+| `goal-tools-paired16-2026-09-20-pre-chunk01` | [gpt-seed-001-attempt-001.mp4](goal-tools-paired16-2026-09-20-pre-chunk01/gpt-seed-001-attempt-001.mp4) | GPT goal-tool seed1,0/5 objects,69 actions then invalid output; not task success. |
+
 | Test task / batch | Video filename | What it establishes |
 |---|---|---|
 | `fetch-tapt-timing-2026-09-17-run01` | [legacy-pre-action-fetch-tapt-pick-episode000-failed.mp4](fetch-tapt-timing-2026-09-17-run01/legacy-pre-action-fetch-tapt-pick-episode000-failed.mp4) | Old pre-action timing; failed at26, no grasp. |
@@ -126,3 +136,27 @@ First evaluable call per family, plus move success. Grasp seed2024 has no evalua
 - [fetch-s1-ia-grasp-seed2025-episode000.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-grasp-seed2025-episode000.mp4)
 - [fetch-s1-ia-move-seed2025-episode000-failed.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2025-episode000-failed.mp4)
 - [fetch-s1-ia-move-seed2026-episode000.mp4](s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2026-episode000.mp4)
+
+## S1-IA oracle-assisted baseline development regression, 2026-09-19 run03
+
+Original S1-IA `best/855`, fixed seeds 2024-2028, native initial states, oracle-assisted invocation sequence. All 5 episodes completed; native success **0/5**, all terminated at the native cumulative-force limit without a grasp. These are failed baseline regression recordings, not candidate results or benchmark success. Recording date is 2026-09-19 UTC. Raw run evidence remains intact in `D:/AI/embodied intelligence/runs/two-day-assets-2026-09-19/s1-oracle-base-20260919-r3/`; the [complete backup receipt](../results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json) binds source and local file hashes.
+
+| Seed | Steps | Result | Exact filename |
+|---|---:|---|---|
+| 2024 | 22 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4](s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4) |
+| 2025 | 34 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4](s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4) |
+| 2026 | 30 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4](s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4) |
+| 2027 | 25 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4](s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4) |
+| 2028 | 40 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4](s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4) |
+
+## S1-IA oracle-assisted candidate development regression, 2026-09-19 run01
+
+Frozen dev8-selected LoRA candidate `best/250`, fixed seeds 2024-2028, the same native initial states and oracle-assisted invocation protocol as baseline run03. All 5 episodes completed; native success **0/5**, all terminated at the native cumulative-force limit without a grasp. These are failed candidate development regression recordings, not benchmark success. Recording date is 2026-09-19 UTC. Raw evidence remains intact in `D:/AI/embodied intelligence/runs/two-day-assets-2026-09-19/s1-oracle-cand-20260919-r1/`; the [complete backup receipt](../results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json) binds source and local file hashes.
+
+| Seed | Steps | Result | Exact filename |
+|---|---:|---|---|
+| 2024 | 23 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4](s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4) |
+| 2025 | 34 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4](s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4) |
+| 2026 | 32 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4](s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4) |
+| 2027 | 19 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4](s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4) |
+| 2028 | 55 | Failed: cumulative-force limit; never grasped | [fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4](s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4) |

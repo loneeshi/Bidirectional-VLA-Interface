@@ -1,0 +1,118 @@
+{
+  "schema": "bvi.s1-bounded-diagnostic-independent-review/1",
+  "reviewed_utc": "2026-09-19T01:56:09.225968+00:00",
+  "status": "agree_with_verified_metric_go",
+  "review_scope": "Local CPU recomputation from byte-verified before/after arrays and supervisor/status/train log; no new model inference or restore",
+  "source_decision_sha256": "982a974d4b04f4fc6a5d08507cc8f9b29e50e570c0bc3930e28ee0084a04329a",
+  "execution_contract_sha256": "86ffc7b3fda2fc702d021e69146b2176de8db408dade71ecf3ff80da0fd79859",
+  "evidence_sha256_checks": {
+    "supervisor.json": true,
+    "status.json": true,
+    "identity.json": true,
+    "selected-rows.json": true,
+    "before.npz": true,
+    "after.npz": true
+  },
+  "paired_rows_masks_targets_exact": true,
+  "rows": 85,
+  "training_parents": [
+    0,
+    1
+  ],
+  "family_rows": {
+    "grasp": 8,
+    "move": 43,
+    "reach": 34
+  },
+  "valid_actions": 611,
+  "gates": {
+    "first_action_active11_rmse": {
+      "before": 0.39953306126673316,
+      "after": 0.2925851237412995,
+      "after_before_ratio": 0.7323176780756226,
+      "improvement_percent": 26.768232192437736,
+      "maximum_ratio": 0.8,
+      "passed": true,
+      "agrees_with_decision": true
+    },
+    "valid_chunk_active11_rmse": {
+      "before": 0.37979509666836686,
+      "after": 0.2696114351827608,
+      "after_before_ratio": 0.7098865613269956,
+      "improvement_percent": 29.011343867300443,
+      "maximum_ratio": 0.8,
+      "passed": true,
+      "agrees_with_decision": true
+    },
+    "reach_yaw_first_rmse": {
+      "before": 0.48438109794407197,
+      "after": 0.37084861194409535,
+      "after_before_ratio": 0.7656133022492851,
+      "improvement_percent": 23.438669775071485,
+      "maximum_ratio": 1.1,
+      "passed": true,
+      "agrees_with_decision": true
+    },
+    "reach_torso_first_rmse": {
+      "before": 0.5106348712852501,
+      "after": 0.3366865261029228,
+      "after_before_ratio": 0.6593488714460386,
+      "improvement_percent": 34.06511285539614,
+      "maximum_ratio": 1.1,
+      "passed": true,
+      "agrees_with_decision": true
+    }
+  },
+  "budget": {
+    "updates": 100,
+    "update_cap": 100,
+    "logged_updates_exact_sequence": true,
+    "processed_microbatch_rows": 800,
+    "elapsed_seconds": 1533.4959423616529,
+    "wall_cap_seconds": 3600,
+    "wall_remaining_seconds": 2066.504057638347,
+    "termination": "normal_exit_update_limit",
+    "passed": true
+  },
+  "checkpoint": {
+    "remote_fresh_cpu_restore_reported": true,
+    "reviewer_repeated_restore": false,
+    "tensors": 71,
+    "dtypes": {
+      "bfloat16": 20,
+      "float32": 51
+    },
+    "parameters_sha256": "183fd978dfa2bfa0c80a135e0366485bf72320899d0d9117aca6d48de0f94ee1",
+    "worker_final_parameter_hash_present": false,
+    "limitation": "Fresh CPU restore establishes readable complete parameter tree; no matching worker final-tree hash was recorded"
+  },
+  "decision": "eligible_for_one_bounded_candidate_from_original_best855",
+  "candidate_scope": {
+    "initialization": "original S1-IA best/855; never diagnostic/100",
+    "max_updates": 500,
+    "max_seconds": 9000,
+    "checkpoint_selection": "frozen development metrics, not online seed outcomes",
+    "candidate_started_by_review": false
+  },
+  "claims": {
+    "training_mapping_improvement": true,
+    "generalization_established": false,
+    "native_pick_established": false,
+    "lightnav_handoff_established": false,
+    "full_chain_established": false,
+    "tapt_established": false,
+    "benchmark_established": false
+  },
+  "limitations": [
+    "Only85 training rows from2 parents; not a success-rate estimate",
+    "Explicit LoRA-only continuation with fresh optimizer; no equal-budget control isolates a unique causal mechanism",
+    "Complete local weight backup was still transferring at review start; do not infer second-copy completion from small evidence files"
+  ],
+  "operations": {
+    "gpu_used": false,
+    "ssh_used": false,
+    "model_forward_calls": 0,
+    "training_updates": 0,
+    "api_calls": 0
+  }
+}

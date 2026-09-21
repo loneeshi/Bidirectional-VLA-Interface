@@ -1,0 +1,31 @@
+{
+  "cards": [
+    "D1",
+    "D2"
+  ],
+  "questions": [
+    "D1: Is reach 0/5 caused by the force threshold/wrapper or policy behavior?",
+    "D2: Is grasp 3/4 distinguishable from closing in place?"
+  ],
+  "source_run": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01",
+  "native_panel": "/home/pshuai/bvi-research/runs/s1-native-panel-2026-09-17-run01",
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028
+  ],
+  "d1_a0_action_cap": 40,
+  "d1_sac_action_cap": 200,
+  "d2_action_cap": 60,
+  "wall_cap_seconds": 1800,
+  "training_updates": 0,
+  "api_calls": 0,
+  "rental_usd": 0,
+  "lab_charge_usd": null,
+  "threshold_changes": 0,
+  "new_seeds": 0,
+  "execute": true,
+  "started_utc": "2026-09-18T16:23:24.933787+00:00"
+}

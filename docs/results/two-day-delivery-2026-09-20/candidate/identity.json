@@ -1,0 +1,66 @@
+{
+  "schema": "bvi.s1-bounded-candidate/1",
+  "source_sha256": "03b29e86035d968df346c851067a052a75bd5a0f29da7792daa05858173f896e",
+  "source_manifest_sha256": "27e4769b8fbd0d610da773f900d50f7056eb29529f8006a3eb530aaf73a29b2e",
+  "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+  "gates": {
+    "decision_sha256": "982a974d4b04f4fc6a5d08507cc8f9b29e50e570c0bc3930e28ee0084a04329a",
+    "execution_contract_sha256": "86ffc7b3fda2fc702d021e69146b2176de8db408dade71ecf3ff80da0fd79859",
+    "diagnostic_evidence": {
+      "supervisor.json": "4e552ad0bf1912ff4ac2ba153716f5030b09031509c7752f3f38a3973c560f94",
+      "status.json": "2027d38d5cb1648cc173aa21e455381a82ed724a54c8787b3a2d4e578fcf0fdf",
+      "identity.json": "750603e9125d1dec12033d7a63999721777edd6d67769ca068dc255d661f8d2f",
+      "selected-rows.json": "38e4b0edc2a2574f41cc985222bccfba1d42fc77a13cb6d550476106461c99b0",
+      "before.npz": "67f3b2be39df9f071f0b191a64551a05b84ff536ca566cd478375b1bc07dde5f",
+      "after.npz": "4410ca2fbb65407cee6a1b5e9a682722b46aabf5b277302d231b95afebd719a5"
+    }
+  },
+  "source_checkpoint_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+  "audit_panel_sha256": "98d8dffbb9e870c2240109026e10bcee82a739f0d9f340d84facfeff67ce8058",
+  "sampling_sha256": "14f5ecf9427443a6352a6d8fe22858fd1f072df00005bd479f751fbc99993b35",
+  "trainer_sha256": "bbe60d0ab7bf985b385cd90f68213a8c8e9aa6b32b50e1ee5005066d83af2e6d",
+  "helper_sha256": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221",
+  "max_updates": 500,
+  "max_seconds": 9000,
+  "finalize_reserve": 900,
+  "accumulation": 8,
+  "checkpoints": [
+    100,
+    250,
+    500,
+    "budget_stop"
+  ],
+  "rng_seed": 19092026,
+  "denoising_steps": 10,
+  "selection": "dev8_relative_rmse_mean_with_reach_yaw_torso_guard_tie_earlier",
+  "policy_metadata": {
+    "robot": "fetch",
+    "state_dim": 24,
+    "action_dim": 13,
+    "state_components": [
+      "native_qpos12",
+      "native_qvel12"
+    ],
+    "base_position_reference": "world",
+    "base_camera": "fetch_head",
+    "wrist_camera": "fetch_hand",
+    "state_conditioning": true,
+    "action_convention": "Fetch13_normalized_pd_joint_delta_pos_body_base_forward_velocity",
+    "training_repo": "bvi/s1-official-pick-medium-train",
+    "evaluation_scope": "S1_official_train_fixed_heldout_native_gate",
+    "state_source": "env_native_agent",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "initialization": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855/params",
+    "training_stage": "S1_IA_single_bank_no_progress",
+    "invocation_aligned": true,
+    "candidate_schema": "bvi.s1-bounded-candidate/1",
+    "candidate_protocol": "best855_lora_only_weighted_train_dev8_v1",
+    "diagnostic_only": false,
+    "source_checkpoint_step": 855,
+    "optimizer_reset": true,
+    "lr_clock": "reset_constant_1e-4",
+    "trainable_scope": "explicit_lora_only_narrower_than_legacy_default",
+    "parameter_dtypes": "preserved"
+  }
+}

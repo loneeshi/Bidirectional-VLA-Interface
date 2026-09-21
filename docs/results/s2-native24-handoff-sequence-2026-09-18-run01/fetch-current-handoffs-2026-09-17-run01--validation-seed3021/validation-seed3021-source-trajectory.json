@@ -1,0 +1,15 @@
+{
+  "schema": "bvi.native24-source-trajectory/1",
+  "status": "verified_source_trajectory",
+  "parent_episode": {
+    "source_kind": "archived_online_replay",
+    "task": "pick",
+    "source_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+    "trajectory": "validation-seed3021",
+    "parent_id": 3021
+  },
+  "source_events_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+  "source_result_sha256": "e5c0d356af8fd9563c6360f7fe4aa193bd9582f804c637a20ce9b841fd9a782a",
+  "digest_contract": "historical-events-jsonl-v1",
+  "trajectory_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14"
+}

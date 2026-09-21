@@ -1,0 +1,30 @@
+{
+  "at_utc": "2026-09-19T03:50:08.367527+00:00",
+  "pid": 1611481,
+  "argv": [
+    "flock",
+    "-n",
+    "/home/pshuai/bvi-research/.gpu1-s1-ia.lock",
+    "/home/pshuai/bvi-research/envs/openpi/bin/python",
+    "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/run_s1_oracle_panel.py",
+    "--checkpoint",
+    "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "--normalizer",
+    "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855/assets/bvi/s1-official-pick-medium-train/norm_stats.json",
+    "--output",
+    "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r1",
+    "--model-python",
+    "/home/pshuai/bvi-research/envs/openpi/bin/python",
+    "--sim-python",
+    "/home/pshuai/bvi-research/envs/acdit/bin/python",
+    "--reference-panel",
+    "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01",
+    "--protocol-manifest",
+    "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen-v2.json",
+    "--variant",
+    "baseline",
+    "--execute"
+  ],
+  "candidate_decision_sha256": "d665a6726c93ef001d2468b494179c790c125fbf40897edc50af2315f56f11d8",
+  "preflight_file": "/home/pshuai/bvi-research/runs/oracle-paired-preflight-20260919.json"
+}

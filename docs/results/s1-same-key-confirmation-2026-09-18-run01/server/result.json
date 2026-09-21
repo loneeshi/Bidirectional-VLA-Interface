@@ -1,0 +1,23 @@
+{
+  "status": "stopped",
+  "training_updates": 0,
+  "progress_head": false,
+  "tapt": false,
+  "inference_calls": 5,
+  "max_inference_calls": 5,
+  "client_disconnects": 0,
+  "denoising_steps": 10,
+  "action_horizon": 10,
+  "internal_action_dim": 32,
+  "external_action_dim": 13,
+  "action_postprocessing": "S1-native24 quantile unnormalization only; client owns clipping/headmask",
+  "precision": "bfloat16",
+  "gpu_idle_limit_mib": 2048,
+  "gpu_guard_scope": "allows pre-existing SAPIEN allocation up to2GiB; no second model permitted",
+  "wall_seconds": 45.58458149060607,
+  "gpu_memory_before_server_mib": 15,
+  "last_seed": 2028,
+  "last_prediction_count": 1,
+  "last_inference_seconds": 0.8472126089036465,
+  "stop_reason": "explicit_shutdown"
+}

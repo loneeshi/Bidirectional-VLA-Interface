@@ -1,0 +1,83 @@
+{
+  "schema": "bvi.s1-oracle-cpu-preparation/1",
+  "recorded_at_utc": "2026-09-19T01:47:28.193555+00:00",
+  "status": "cpu_prepared_not_executed",
+  "source_sha256": {
+    "scripts/run_s1_oracle_panel.py": "de045f068d573e2eb863990cdd15e9b0d864a588239a0758b345e564d5f0125e",
+    "scripts/eval_native_s1_oracle.py": "9a2e59292c2a26caf7b0026fe1ceae755320cf3d3ad6b00e50391366c02b2aec",
+    "scripts/serve_native_s1.py": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89",
+    "src/bvi/s1_oracle_protocol.py": "d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce"
+  },
+  "test_file_sha256": {
+    "tests/test_s1_oracle_panel.py": "ff189f4c822196f910393922e7f5d0a06a6e5f0fb95205ff9f1f231fac8aab88",
+    "tests/test_s1_bounded_candidate.py": "92905ca362b0055455e1ccc2ede048f853e3ed39bbe0efce9e09a0f60ea3b0cc"
+  },
+  "validation": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_s1_oracle_panel.py tests/test_s1_bounded_candidate.py -q",
+    "result": "44 passed",
+    "reported_duration_seconds": 1.31,
+    "scope": "CPU tests; includes actual candidate best_record producer to oracle launcher preflight consumer, evidence tampering, RMSE guards, GPU query mocks, accounting and supervisor timeout mocks",
+    "source_timing_note": "44-test run preceded the root agent final evaluator metadata wording update; source_sha256 records the latest files when this receipt was created. The modified evaluator was not executed."
+  },
+  "interface": {
+    "entrypoint": "scripts/run_s1_oracle_panel.py",
+    "default": "CPU preflight only; --execute required for actual batch",
+    "required_cli": [
+      "--checkpoint",
+      "--normalizer",
+      "--output",
+      "--model-python",
+      "--sim-python",
+      "--reference-panel",
+      "--protocol-manifest",
+      "--variant baseline|candidate"
+    ],
+    "candidate_additional_cli": "--best-json <actual best.json>",
+    "protocol": "ia_oracle_train_windows_v1",
+    "training_stage": "S1_IA_single_bank_no_progress",
+    "seeds": [
+      2024,
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "reference_files": "<reference-panel>/seed<seed>/initial-state.pt; all five SHA256 values must match frozen manifest",
+    "sim_backend": "gpu",
+    "shader": "minimal",
+    "actions_per_case": 200,
+    "inference_calls_per_batch": 1000,
+    "per_case_wall_seconds": 300,
+    "model_loading_limit_seconds": 300,
+    "outer_wall_seconds": 2100,
+    "supervision": "POSIX parent owns a dedicated worker process group; model and simulator descendants inherit the group. Parent kills the entire owned group on exit/timeout. Infrastructure failures stop remaining cases, retaining all five planned rows.",
+    "gpu_guard": "Physical GPU1 exact UUID, memory <1024 MiB, utilization 0, no compute processes; evaluator checks renderer PCI before actions. No GPU0 mutation.",
+    "result_statuses": [
+      "not_run",
+      "running",
+      "success",
+      "policy_failure",
+      "infrastructure_failure"
+    ],
+    "repeat_and_handoff": "Not implemented by this launcher; no automatic repeat, navigation, handoff or API calls."
+  },
+  "candidate_gate": {
+    "selection": "dev8_only_no_online_selection",
+    "required_flags": {
+      "eligible": true,
+      "checkpoint_complete": true,
+      "diagnostic_only": false
+    },
+    "development_evidence": "Selected and baseline dev JSON and NPZ files must exist and match all four recorded SHA256 values. Recompute score from first-action/valid-chunk active11 RMSE ratios; require score <1 and both reach yaw/torso RMSE <=1.1 times baseline. No validation_action_loss field is invented or required.",
+    "checkpoint_identity": "best/<step> must match selected step 1..500. Once a real model server is ready, its restored parameter SHA must equal best.json checkpoint_parameters_sha256; baseline uses original best855 identity.",
+    "manifest": "Frozen protocol manifest includes runtime source hashes, normalizer hash, all five initial-state hashes, fixed protocol/settings and candidate best_json_sha256. Regenerate and review the frozen manifest after any source change."
+  },
+  "limitations": [
+    "No SSH, GPU, simulation, model loading or native task execution in this CPU preparation task.",
+    "No Linux live process-tree cleanup acceptance; supervision tested with mocks on local CPU only.",
+    "No candidate training, candidate fresh restore, native Pick success, G1 pass, real handoff, full target-chain success or benchmark completion is established.",
+    "Root evaluator metadata changes are included in latest source hashes but not exercised by the recorded CPU test command."
+  ],
+  "native_success": null,
+  "g1_passed": false
+}

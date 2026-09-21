@@ -1,0 +1,167 @@
+{
+  "schema": "bvi.native24-handoff-sequence-preregistration/1",
+  "status": "frozen_before_render_or_model_query",
+  "label_contract": "current_observation_v2",
+  "training_manifest_sha256": "fad8f72d5ee3b288302292b60926669fc79cc7a0391954fa8814ca579528248d",
+  "input_manifest_sha256": "8d164a2a0f0ab2fb03cc4b52dd42848d5ad5bc5368cb28c8ee72cba096a4d190",
+  "monitor_contract": {
+    "schema": "bvi.progress-monitor-contract/1",
+    "source_sha256": "651f443fcc30c1af04358f3655f4b679643f88cd463a66697488fd7afd0d2fbd",
+    "evaluation_frequency": "once_per_policy_prediction",
+    "thresholds": {
+      "reach": 0.9,
+      "grasp": 0.6,
+      "move": 0.9,
+      "release": 0.6
+    },
+    "consecutive_threshold_hits": 2,
+    "drop_after_minimum_history": 4,
+    "drop_delta_strictly_greater_than": 0.03,
+    "stagnation_minimum_predictions": 10,
+    "stagnation_delta_strictly_less_than": 0.03,
+    "drop_and_stagnation_require_invocation_index_gt": 0,
+    "replan_cooldown_required": 0,
+    "comparison_semantics": "exact_runtime_python_float_no_rounding_no_epsilon",
+    "chunk_progress_consumed_index": 0,
+    "threshold_precedes_drop_and_stagnation": true,
+    "cooldown_decremented_before_checks": true
+  },
+  "source_replay": {
+    "parents": [
+      3020,
+      3021
+    ],
+    "repetitions": 2,
+    "exact_simulator_actions": 108,
+    "hard_simulator_action_cap": 136,
+    "per_parent_double_replay_actions": {
+      "3020": 40,
+      "3021": 68
+    }
+  },
+  "query_scope": {
+    "cadence": "counterfactual_shadow_one_query_per_contiguous_source_observation",
+    "source_actions_cause_observations": true,
+    "s2_actions_cause_observations": false,
+    "deployment_cadence_evaluated": false,
+    "physical_stagnation_correctness_evaluable": false,
+    "physical_rollback_correctness_evaluable": false,
+    "native_success_evaluated": false,
+    "full_behavior_admission_evaluable": false
+  },
+  "sequences": [
+    {
+      "sequence_id": "validation-seed3020-grasp-step17-causal-tail10",
+      "anchor_case_id": "validation-seed3020-grasp-step17",
+      "classification": "near_grasp_candidate_not_completion",
+      "family": "grasp",
+      "instruction": "Grasp the apple securely.",
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+        "trajectory": "validation-seed3020",
+        "parent_id": 3020
+      },
+      "anchor_observation_index": 17,
+      "invocation_index": 1,
+      "replan_cooldown": 0,
+      "window": {
+        "start": 8,
+        "end": 17,
+        "length": 10,
+        "selection_rule": "previous_9_through_anchor_source_observations"
+      },
+      "starts_at_deployed_family_invocation": false,
+      "expected_first_event": null,
+      "forbidden_events": [
+        "learned_threshold"
+      ]
+    },
+    {
+      "sequence_id": "validation-seed3020-move-step20-causal-tail10",
+      "anchor_case_id": "validation-seed3020-move-step20",
+      "classification": "held_move",
+      "family": "move",
+      "instruction": "Move the held apple to the robot rest pose.",
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+        "trajectory": "validation-seed3020",
+        "parent_id": 3020
+      },
+      "anchor_observation_index": 20,
+      "invocation_index": 2,
+      "replan_cooldown": 0,
+      "window": {
+        "start": 11,
+        "end": 20,
+        "length": 10,
+        "selection_rule": "previous_9_through_anchor_source_observations"
+      },
+      "starts_at_deployed_family_invocation": false,
+      "expected_first_event": null,
+      "forbidden_events": [
+        "learned_threshold"
+      ]
+    },
+    {
+      "sequence_id": "validation-seed3021-grasp-step31-causal-tail10",
+      "anchor_case_id": "validation-seed3021-grasp-step31",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "instruction": "Grasp the apple securely.",
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+        "trajectory": "validation-seed3021",
+        "parent_id": 3021
+      },
+      "anchor_observation_index": 31,
+      "invocation_index": 1,
+      "replan_cooldown": 0,
+      "window": {
+        "start": 22,
+        "end": 31,
+        "length": 10,
+        "selection_rule": "previous_9_through_anchor_source_observations"
+      },
+      "starts_at_deployed_family_invocation": false,
+      "expected_first_event": null,
+      "forbidden_events": [
+        "learned_threshold"
+      ]
+    },
+    {
+      "sequence_id": "validation-seed3021-move-step34-causal-tail10",
+      "anchor_case_id": "validation-seed3021-move-step34",
+      "classification": "unheld_move",
+      "family": "move",
+      "instruction": "Move the held apple to the robot rest pose.",
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+        "trajectory": "validation-seed3021",
+        "parent_id": 3021
+      },
+      "anchor_observation_index": 34,
+      "invocation_index": 2,
+      "replan_cooldown": 0,
+      "window": {
+        "start": 25,
+        "end": 34,
+        "length": 10,
+        "selection_rule": "previous_9_through_anchor_source_observations"
+      },
+      "starts_at_deployed_family_invocation": false,
+      "expected_first_event": null,
+      "forbidden_events": [
+        "learned_threshold"
+      ]
+    }
+  ],
+  "preregistration_sha256": "47ce06e92b14277830ee28f58dda07878bc3d1806b173d3b94cb302067c14270"
+}

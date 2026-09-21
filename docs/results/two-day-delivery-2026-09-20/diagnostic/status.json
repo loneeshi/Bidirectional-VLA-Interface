@@ -1,0 +1,22 @@
+{
+  "status": "completed_diagnostic_requires_review",
+  "additional_updates": 100,
+  "source_checkpoint_step": 855,
+  "optimizer": "reset_AdamW",
+  "learning_rate": 0.0001,
+  "lr_clock": "reset_constant",
+  "progress": false,
+  "family_bank": false,
+  "api_calls": 0,
+  "native_success": null,
+  "go_decision": "not_assessed_requires_paired_behavior_review",
+  "remaining_seconds": 2068.954970356077,
+  "author_commit": "f4eb160ba52b22c1e85fe432de59c24bbbac6187",
+  "source_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+  "trainable_leaves": 20,
+  "exposures": 800,
+  "loss": 0.04161293906508945,
+  "stop_reason": "update_limit",
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-bounded-diagnostic-2026-09-19-run01/diagnostic/100",
+  "checkpoint_complete": true
+}

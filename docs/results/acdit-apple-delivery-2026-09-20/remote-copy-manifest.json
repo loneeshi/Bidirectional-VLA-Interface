@@ -1,0 +1,174 @@
+[
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/contract.json",
+    "local": "run/contract.json",
+    "bytes": 2633,
+    "sha256": "55e702b3eadfda956b93353a7915584f9b365783eb28207cb43082bc2fc45765",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/supervisor.json",
+    "local": "run/supervisor.json",
+    "bytes": 1304,
+    "sha256": "63692c0124b43b30aae32a99fa37ad346b66cfa976cdbe535569b6ef8bdd28b4",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/status.json",
+    "local": "run/stage1/status.json",
+    "bytes": 984,
+    "sha256": "67b15ccb632a87fb3cd29148913fba91500e3ae7a1ebf6509f693b6a2f8a87df",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-checkpoint.json",
+    "local": "run/stage1/latest-checkpoint.json",
+    "bytes": 254,
+    "sha256": "f7318ff474463c22745e7feaea989cdfa163c2ae8fbeca0a2392eb760472f091",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/initialization.json",
+    "local": "run/stage1/initialization.json",
+    "bytes": 106292,
+    "sha256": "f13ab1df624c7f386523f23b8a672fe30adb6fc0ce42a7cbf95cb654fcf2799a",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/frozen-parameters.json",
+    "local": "run/stage1/frozen-parameters.json",
+    "bytes": 67697,
+    "sha256": "c4d2b2c843156209e6e69ec1792b0165b51f9fa72ab569d7eee721c82df03670",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/train.jsonl",
+    "local": "run/stage1/train.jsonl",
+    "bytes": 22671,
+    "sha256": "e4915793c03b5e9af2b2fd48a1462323b601c7d590bf0e7ede6d9681f9ce1b2f",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/validation.jsonl",
+    "local": "run/stage1/validation.jsonl",
+    "bytes": 4264,
+    "sha256": "96b403df00854577be912f563d305b80e5b56ce7193259d9c51becdaf21a5fe6",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/data/training-manifest.json",
+    "local": "run/data/training-manifest.json",
+    "bytes": 8732,
+    "sha256": "050b0e44980c2dd1cbcc5ab05665fc9f7f25f0c11912e5d5db99b9f4cbc0a787",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/data/collection.json",
+    "local": "run/data/collection.json",
+    "bytes": 321484,
+    "sha256": "fee4559c96ae29c37933acc45baf4bef69143ee07b5606b06e7d2fe00ea1a145",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/train_acdit_rdt_bounded.py",
+    "local": "remote-code/train_acdit_rdt_bounded.py",
+    "bytes": 16504,
+    "sha256": "570893676e6c7ebaf05af0e9e4e0f4fab0b4841fb09f5f18055feef1142352f7",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/run_acdit_apple_pipeline.py",
+    "local": "remote-code/run_acdit_apple_pipeline.py",
+    "bytes": 6078,
+    "sha256": "d928e83db392d55ae1e533285a06922a9cd96ce2f6e90b8d03997f20da6dec67",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/collect_acdit_rdt.py",
+    "local": "remote-code/collect_acdit_rdt.py",
+    "bytes": 11447,
+    "sha256": "c21dc5f7aae219f9dea482385290aa83e828bf14d256dc449861dece0ffec732",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/finalize_acdit_rdt_data.py",
+    "local": "remote-code/finalize_acdit_rdt_data.py",
+    "bytes": 4555,
+    "sha256": "eaee52c5ba4da8fcc95369803f315994f1a0ca6999f75adf25d548bf5b061b3f",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/models/acdit_runner.py",
+    "local": "remote-source/models/acdit_runner.py",
+    "bytes": 29291,
+    "sha256": "a90ce91ae96b28c6a47e9f29fa652a992513bb69976ec8e242ceab4b74c4f4f4",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/models/dit_runner.py",
+    "local": "remote-source/models/dit_runner.py",
+    "bytes": 20154,
+    "sha256": "cbdcc10f5fafe533a39779c6958ea20961db4fbb35767a31c23485dc73150bb1",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/model_wrappers/mshab_model.py",
+    "local": "remote-source/model_wrappers/mshab_model.py",
+    "bytes": 11565,
+    "sha256": "e516534042f4cc6402af0780aa85e357b3c7b8a497c4dc722ae14dcb0c353b72",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/data/hdf5_mshab_dataset.py",
+    "local": "remote-source/data/hdf5_mshab_dataset.py",
+    "bytes": 26796,
+    "sha256": "68f4cba06a3bf0abf58d2342c0ef7df88fa72b25f2c273bca219e5512a70e936",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/train/dataset.py",
+    "local": "remote-source/train/dataset.py",
+    "bytes": 28999,
+    "sha256": "ca0cd43e5d84f4e7c3509574d1780ab1e557b60944262c6a849dfdbbea5fb536",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/configs/config.yaml",
+    "local": "remote-source/configs/config.yaml",
+    "bytes": 2315,
+    "sha256": "0e1e962f33a2fbca7faa56e9372e180aa95e7b52c3129270704e66e5683a85f1",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/configs/config_s.yaml",
+    "local": "remote-source/configs/config_s.yaml",
+    "bytes": 2317,
+    "sha256": "0e08560d8bc4136b3f4e46485d09acb5be18309d992814dbbbddc598abfd91a7",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/configs/mshab_languages.json",
+    "local": "remote-source/configs/mshab_languages.json",
+    "bytes": 8150,
+    "sha256": "2f28001f3d064e04a1d745cef07e74f32b26b8dfe59b3ea59d74fe16d53e78e4",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/src/AC-DiT-rdt-20260919/scripts/eval_mshab.py",
+    "missing": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/encoder-lock.json",
+    "local": "assets/encoder-lock.json",
+    "bytes": 1379,
+    "sha256": "f04f3a1c3597210a3967ce1ed5f69ca58b6b19e2caf4f6596bcb6e5a1e3cb96e",
+    "stable_metadata_during_read": true
+  },
+  {
+    "remote": "/home/pshuai/bvi-research/base-package-freeze.txt",
+    "local": "assets/base-package-freeze.txt",
+    "bytes": 3159,
+    "sha256": "e488bec09db7490cdaafda681dea749fd3bf03a2f84ba41cd52ee29dbaf67b6d",
+    "stable_metadata_during_read": true
+  }
+]

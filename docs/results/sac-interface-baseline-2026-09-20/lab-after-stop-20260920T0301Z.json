@@ -1,0 +1,210 @@
+{
+  "checked_at": "2026-09-20T03:01:02.529744+00:00",
+  "files": {
+    "supervisor.json": {
+      "status": "completed_training_native_evaluation_pending",
+      "started_unix": 1789837934.8177912,
+      "deadline_unix": 1789901787.9894974,
+      "pid": 1650149,
+      "task": "set_table/pick/013_apple",
+      "scheduled_task": false,
+      "auto_restart": false,
+      "stages": [
+        {
+          "name": "collection-resume",
+          "exit_code": 0,
+          "wall_seconds": 2921.756594181061
+        },
+        {
+          "name": "finalize",
+          "exit_code": 0,
+          "wall_seconds": 12.404043436050415
+        },
+        {
+          "name": "stage1",
+          "exit_code": 0,
+          "wall_seconds": 13841.588757038116
+        },
+        {
+          "name": "stage2",
+          "exit_code": 0,
+          "wall_seconds": 18541.652970790863
+        }
+      ],
+      "current_stage": "stage2",
+      "updated_unix": 1789873252.3764517,
+      "child_pid": 1817489,
+      "data": {
+        "status": "frozen",
+        "source": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/data/set_table/pick/train/013_apple/demonstrations.h5",
+        "source_sha256": "9c068bdcd223c8c6c6a8437d6ad8cfa7d81d8f7dde589c06a62e6670460464e9",
+        "episodes": 743,
+        "validation_scenes": [
+          8,
+          11,
+          16,
+          18,
+          37,
+          42,
+          43,
+          48,
+          49,
+          52,
+          53,
+          66
+        ],
+        "scene_count": 63,
+        "frames": {
+          "train": 26995,
+          "validation": 7193
+        },
+        "source_kind": "newly_collected_ACDiT_native_SAC",
+        "not_the_original_official_H5": true,
+        "split_seed": 20260919,
+        "selection": "before any model optimization",
+        "unique_episodes": 743,
+        "excluded_duplicate_parents": []
+      },
+      "finished_or_snapshot_unix": 1789873252.2590482,
+      "gpu_snapshot": "GPU-b7ebba23-7824-7601-df32-be55628936c3, 15 MiB, 0 %"
+    },
+    "stage1/status.json": {
+      "status": "completed_bounded_stage",
+      "stage": 1,
+      "updates": 665,
+      "microbatches": 15960,
+      "learning_rate": 0.0001,
+      "gradient_accumulation": 24,
+      "microbatch": 1,
+      "max_updates": 30000,
+      "precision": "float32",
+      "api_calls": 0,
+      "deadline_unix": 1789855268.9918067,
+      "best_score": 0.16561777889728546,
+      "best_checkpoint": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/best.pt",
+      "preflight_only": false,
+      "ema": false,
+      "wall_seconds": 13833.93312997371,
+      "updated_unix": 1789854708.7186754,
+      "trainable_parameters": 162529730,
+      "initial_dev_score": 0.458864688873291,
+      "last_loss": 0.0016726706344722213,
+      "last_grad_norm": 0.016210628673434258,
+      "peak_gpu_bytes": 8534331904,
+      "last_update_seconds": 20.042890015989542,
+      "checkpoint_roundtrip_verified": true,
+      "latest_checkpoint": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-0.pt",
+      "optimizer_checkpoint_verified": true,
+      "checkpoint_generation": 21,
+      "final_checkpoint": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-0.pt",
+      "frozen_parameters_verified": true
+    },
+    "stage2/status.json": {
+      "status": "completed_bounded_stage",
+      "stage": 2,
+      "updates": 607,
+      "microbatches": 9718,
+      "learning_rate": 1e-05,
+      "gradient_accumulation": 16,
+      "microbatch": 1,
+      "max_updates": 20000,
+      "precision": "float32",
+      "api_calls": 0,
+      "deadline_unix": 1789901787.9894974,
+      "best_score": 0.31876155734062195,
+      "best_checkpoint": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage2/best.pt",
+      "preflight_only": false,
+      "ema": false,
+      "wall_seconds": 18507.145217169076,
+      "updated_unix": 1789873223.2695343,
+      "stage1_transfer": "model, all mobility input adaptors, lift3d; explicit upstream initialization fix",
+      "mobility_sha256": "c189af4ef227bcb75a4de01bb97f88c5dd1a673b4e809d65bec52f73fad0d415",
+      "trainable_parameters": 1235166402,
+      "initial_dev_score": 0.6601313948631287,
+      "last_loss": 0.008588740860432154,
+      "last_grad_norm": 0.06811723858118057,
+      "peak_gpu_bytes": 29735605760,
+      "last_update_seconds": 27.918288558721542,
+      "checkpoint_roundtrip_verified": true,
+      "latest_checkpoint": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage2/latest-0.pt",
+      "optimizer_checkpoint_verified": true,
+      "checkpoint_generation": 25,
+      "signal": 15,
+      "final_checkpoint": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage2/latest-0.pt",
+      "frozen_parameters_verified": true
+    },
+    "stage1/latest-checkpoint.json": {
+      "updates": 665,
+      "weights": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-0.pt",
+      "training_state": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage1/latest-0-state.pt",
+      "generation": 20
+    },
+    "stage2/latest-checkpoint.json": {
+      "updates": 607,
+      "weights": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage2/latest-0.pt",
+      "training_state": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/stage2/latest-0-state.pt",
+      "generation": 24
+    }
+  },
+  "checkpoint_inventory": [
+    {
+      "path": "stage1/latest-1.pt",
+      "bytes": 4081351261,
+      "mtime_ns": 1789854298024135748
+    },
+    {
+      "path": "stage1/best.pt",
+      "bytes": 4081241649,
+      "mtime_ns": 1789854290787892784
+    },
+    {
+      "path": "stage1/latest-1-state.pt",
+      "bytes": 1300688135,
+      "mtime_ns": 1789854301696259034
+    },
+    {
+      "path": "stage1/latest-0.pt",
+      "bytes": 4081351261,
+      "mtime_ns": 1789854700330667052
+    },
+    {
+      "path": "stage1/latest-0-state.pt",
+      "bytes": 1300688135,
+      "mtime_ns": 1789854704026809823
+    },
+    {
+      "path": "stage2/latest-1.pt",
+      "bytes": 9016075969,
+      "mtime_ns": 1789872916888029202
+    },
+    {
+      "path": "stage2/best.pt",
+      "bytes": 9016032329,
+      "mtime_ns": 1789873213466648068
+    },
+    {
+      "path": "stage2/latest-1-state.pt",
+      "bytes": 9882070149,
+      "mtime_ns": 1789872930556466471
+    },
+    {
+      "path": "stage2/latest-0.pt",
+      "bytes": 9016075969,
+      "mtime_ns": 1789873183345570480
+    },
+    {
+      "path": "stage2/latest-0-state.pt",
+      "bytes": 9882070149,
+      "mtime_ns": 1789873197954093705
+    }
+  ],
+  "gpu": {
+    "exit_code": 0,
+    "stdout": "0, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46349 MiB, 0 %\n1, GPU-b7ebba23-7824-7601-df32-be55628936c3, 15 MiB, 0 %\n"
+  },
+  "compute_processes": {
+    "exit_code": 0,
+    "stdout": "GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548, 46316 MiB\n"
+  },
+  "owned_training_processes": []
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "bvi.full-run-backup/1",
+  "run_id": "s1-oracle-base-20260919-r1",
+  "source": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r1",
+  "scope": "complete_run_directory",
+  "local": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-base-20260919-r1",
+  "started_at_utc": "2026-09-19T03:51:45.795851+00:00",
+  "status": "verified_complete",
+  "source_mutated": false,
+  "model_restore": "not_performed_by_backup",
+  "planned_stop_seconds": 1200,
+  "deadline_scope": "transfer-loop soft deadline; inventory and hash finalization included in measured elapsed time",
+  "files": [
+    {
+      "path": "server/stdout.log",
+      "bytes": 343,
+      "mtime_ns": 1789789808928329711,
+      "sha256": "65de32d28c48ff0546923a9bf78a7581e3c1f49a57726c8d8c65386be572a5ba",
+      "local_verified": true,
+      "reused": false
+    },
+    {
+      "path": "supervisor.log",
+      "bytes": 577,
+      "mtime_ns": 1789789809296343786,
+      "sha256": "c9f26b37e1b4db7ea27633f57104f57a1d4dd0a932780f85084847b21bf7deaa",
+      "local_verified": true,
+      "reused": false
+    },
+    {
+      "path": "server/result.json",
+      "bytes": 679,
+      "mtime_ns": 1789789808928329711,
+      "sha256": "37b552ce92bf21e139892a59da341fa96911dbce8a0ec38038070c9417810275",
+      "local_verified": true,
+      "reused": false
+    },
+    {
+      "path": "launch.json",
+      "bytes": 2013,
+      "mtime_ns": 1789789808504313493,
+      "sha256": "d7bb3f58a0652413b4d880051c3ce363895a8f1ea6a2bb1eaad68a490052ffaa",
+      "local_verified": true,
+      "reused": false
+    },
+    {
+      "path": "panel.json",
+      "bytes": 2033,
+      "mtime_ns": 1789789809372346692,
+      "sha256": "ce4302ede408c3401904c507f6752dbac3a361096cb93a38910ceabf70b6b1b1",
+      "local_verified": true,
+      "reused": false
+    }
+  ],
+  "source_files": [
+    {
+      "path": "launch.json",
+      "bytes": 2013,
+      "mtime_ns": 1789789808504313493,
+      "sha256": "d7bb3f58a0652413b4d880051c3ce363895a8f1ea6a2bb1eaad68a490052ffaa"
+    },
+    {
+      "path": "panel.json",
+      "bytes": 2033,
+      "mtime_ns": 1789789809372346692,
+      "sha256": "ce4302ede408c3401904c507f6752dbac3a361096cb93a38910ceabf70b6b1b1"
+    },
+    {
+      "path": "server/result.json",
+      "bytes": 679,
+      "mtime_ns": 1789789808928329711,
+      "sha256": "37b552ce92bf21e139892a59da341fa96911dbce8a0ec38038070c9417810275"
+    },
+    {
+      "path": "server/stdout.log",
+      "bytes": 343,
+      "mtime_ns": 1789789808928329711,
+      "sha256": "65de32d28c48ff0546923a9bf78a7581e3c1f49a57726c8d8c65386be572a5ba"
+    },
+    {
+      "path": "supervisor.log",
+      "bytes": 577,
+      "mtime_ns": 1789789809296343786,
+      "sha256": "c9f26b37e1b4db7ea27633f57104f57a1d4dd0a932780f85084847b21bf7deaa"
+    }
+  ],
+  "source_tree_sha256": "66e7535628d0fad41f5b6cc07d423bb4a2ab430d0ef7c935566c568f23ebb96d",
+  "verified_files": 5,
+  "transferred_or_partial_bytes": 5645,
+  "elapsed_seconds": 1.437000000005355,
+  "final_source_tree_sha256": "66e7535628d0fad41f5b6cc07d423bb4a2ab430d0ef7c935566c568f23ebb96d",
+  "second_complete_copy": true,
+  "verified_bytes": 5645,
+  "local_tree_sha256": "66e7535628d0fad41f5b6cc07d423bb4a2ab430d0ef7c935566c568f23ebb96d",
+  "completed_at_utc": "2026-09-19T03:51:47.237520+00:00",
+  "tree_hash_format": "SHA256(sorted relative path + NUL + bytes + NUL + SHA256 + LF)"
+}

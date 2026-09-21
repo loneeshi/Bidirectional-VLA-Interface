@@ -1,0 +1,70 @@
+{
+  "schema": "bvi.s2-diagnostic-entry-adjudication/1",
+  "status": "approved_after_exact_start_attribution",
+  "scope": "diagnostic_20_update_only_not_s2_capability_admission",
+  "created_utc": "2026-09-18T20:49:57.9352512Z",
+  "repo_id": "bvi/s1-official-pick-medium-train",
+  "authorization": {
+    "max_optimizer_updates": 20,
+    "capability_admission": false,
+    "bounded_sft_expansion": false,
+    "online_evaluation": false,
+    "simulator_rollout": false,
+    "external_api_calls": 0,
+    "new_paid_rental": false
+  },
+  "model_identity": {
+    "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "training_stage": "S1_IA_single_bank_no_progress",
+    "pretrained_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "state_contract_sha256": "c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40"
+  },
+  "s1_best_record": {
+    "path": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best.json",
+    "sha256": "22d46f475e7920db6f9265070673ce263fe1937a3a3dcd043dc861fc4b4e3ff7"
+  },
+  "first_action_probe": {
+    "summary": {
+      "path": "/home/pshuai/bvi-research/runs/s1-exact-start-first-action-2026-09-18-run01/summary.json",
+      "sha256": "07c2adb0dfecbdd6d733904b37289dc7fa48b1d7faaececc599f0b5ddd9a102b"
+    },
+    "per_seed": {
+      "path": "/home/pshuai/bvi-research/runs/s1-exact-start-first-action-2026-09-18-run01/per-seed.json",
+      "sha256": "de1ce59943ac36b9558830e776759fdde362f003366e4c9d7d0c3c94e010571e"
+    },
+    "samples": {
+      "path": "/home/pshuai/bvi-research/runs/s1-exact-start-first-action-2026-09-18-run01/samples.npz",
+      "sha256": "42b74b905cc705d358dc0a6c594208fc0e110d8f4f7ca3067271c97b40d3ec01"
+    }
+  },
+  "preprocessing_parity": {
+    "path": "/home/pshuai/bvi-research/runs/s1-exact-start-first-action-2026-09-18-run01/transform-parity.json",
+    "sha256": "7316215f186da8e78bfd0ea09eb6fbc8298dcd28664a945ef2b69f892d9212d9"
+  },
+  "same_key_confirmation": {
+    "summary": {
+      "path": "/home/pshuai/bvi-research/runs/s1-same-key-confirmation-2026-09-18-run01/summary.json",
+      "sha256": "3e6734eaa067cf46f95067790d8bb699e0530873cc5305a4a8c856a5c3d762be"
+    },
+    "per_seed": {
+      "path": "/home/pshuai/bvi-research/runs/s1-same-key-confirmation-2026-09-18-run01/per-seed.json",
+      "sha256": "7ded11dedddf3248670cbbb41f5727424abe7105b31cbe227667ffc45c4be8aa"
+    },
+    "fresh_actions": {
+      "path": "/home/pshuai/bvi-research/runs/s1-same-key-confirmation-2026-09-18-run01/fresh-actions.npz",
+      "sha256": "d5b1a5ba3082c1056f0a82357f0f3c2f99d09c12e431dcaea777b92f571e57f1"
+    },
+    "artifact_manifest": {
+      "path": "/home/pshuai/bvi-research/runs/s1-same-key-confirmation-2026-09-18-run01/artifact-manifest.json",
+      "sha256": "f0b5dd999fca7e8dc11aebff701b908c7c50ac603b941b9e3953428c1543b20f"
+    }
+  },
+  "decision": {
+    "preprocessing": "bit_exact",
+    "same_key_clusters_confirmed": "5/5",
+    "stochastic_tail_candidates": "1/4 native-success SAC references",
+    "stochastic_tail": "not_supported",
+    "action": "permit exactly 20 diagnostic optimizer updates only"
+  }
+}

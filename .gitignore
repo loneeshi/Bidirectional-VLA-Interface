@@ -56,3 +56,8 @@ private/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Raw run exports and per-step render frames stay outside the repository and are
+# referenced by SHA-256 from the owning result README.
+docs/results/**/raw-export.tar.gz
+docs/results/**/frames/

@@ -30,3 +30,13 @@ reach五次全部因原生累计力超限终止（23/35/23/25/31动作），不�
 - [fetch-s1-ia-move-seed2026-episode000.mp4](media/s1-ia-calls-2026-09-18-run01/fetch-s1-ia-move-seed2026-episode000.mp4)
 
 原始归档26,560,486字节已下载验SHA256：7f17419182e26322e4bfd80df2065b172b9bbb135969177bdd0ed7dcde9bd673。全部失败和SAC起点记录保留。外层进程退出，GPU1复核15MiB/0%。server/result.json保留最后waiting_for_next_client快照，它不表示服务仍在运行。新增租机0、API0，lab费用未知；历史云存储本轮未重核。
+
+## D1/D2 冻结诊断结论（2026-09-18 EDT）
+
+诊断代码与原始证据见 [run02 README](results/s1-ia-diagnostics-2026-09-18-run02/README.md) 和 [裁决 JSON](results/s1-ia-diagnostics-2026-09-18-run02/adjudication.json)。
+
+- D1：zero 与初始夹爪开度 hold 在 5 个 reach 起点上各跑 40 步，10/10 累计力保持 0。官方 SAC 同起点 4/5 原生成功，但 seed2024 也因累计力超限失败，峰值 6994.58；IA 为 5/5 超限。按冻结判据归入“阈值刀刃／IA 精度不足”，不是 idle wrapper 会杀掉任何策略，也不再无条件写成已定位具体碰撞体。
+- D2：四个可评估 grasp 起点的中位距离为 4.45cm；固定闭爪 B1 为 3/4，三次成功均 3 步，与 IA 原结果完全同签名。因此 grasp 3/4 信息量为零，从能力证据撤下，只留诊断附录。
+- B3：既有十种子原生 Pick 为 0/10，低于 3/10；未重跑。S1-IA 不换入主线，不放行 S2。
+
+B2 的 +3/+5cm 请求对每个可评估起点都会令至少一个目标落到冻结 5–8cm 带外，统一记 `not_evaluable`，没有夹取、换种子或移动起点。run01 的导入前失败与 run02 原始首版 summary 均保留；`adjudication.json` 对三个派生字段作显式更正，不修改 rollout。

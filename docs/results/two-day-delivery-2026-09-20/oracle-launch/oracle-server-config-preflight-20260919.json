@@ -1,0 +1,9 @@
+{
+  "schema": "bvi.oracle-server-config-preflight/1",
+  "at_utc": "2026-09-19T03:57:46.529732+00:00",
+  "returncode": 0,
+  "stdout": "{\"checks\": [{\"variant\": \"baseline\", \"status\": \"configuration_and_contract_match\", \"checkpoint\": \"/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855\", \"normalizer_sha256\": \"0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2\"}, {\"variant\": \"candidate\", \"status\": \"configuration_and_contract_match\", \"checkpoint\": \"/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/best/250\", \"normalizer_sha256\": \"0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2\"}], \"normalizer_directory\": \"/home/pshuai/bvi-research/runs/s1-official-medium-norm-2026-09-17-run01\", \"provenance_sha256\": \"9b1a6f8edd03abba686d2b5b5f03dcb976f915a9a75e85105efae6c59706c8b7\", \"forward_calls\": 0, \"model_restores\": 0, \"simulator_actions\": 0}\n",
+  "stderr": "",
+  "cuda_visible_devices": "",
+  "jax_platforms": "cpu"
+}

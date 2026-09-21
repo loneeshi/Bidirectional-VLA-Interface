@@ -1,0 +1,114 @@
+{
+  "status": "passed",
+  "gpu_operations": 0,
+  "not_training_data": true,
+  "source": "/home/pshuai/bvi-research/runs/fetch-tapt-teacher-2026-09-16/pick/seed3000/trajectory.h5",
+  "results": [
+    {
+      "base_only": false,
+      "batches": 8,
+      "shapes": {
+        "states": [
+          1,
+          1,
+          128
+        ],
+        "actions": [
+          1,
+          2,
+          128
+        ],
+        "state_elem_mask": [
+          1,
+          128
+        ],
+        "state_norm": [
+          1,
+          128
+        ],
+        "images": [
+          1,
+          6,
+          3,
+          384,
+          384
+        ],
+        "ctrl_freqs": [
+          1
+        ],
+        "pointclouds": [
+          1,
+          2,
+          1024,
+          6
+        ],
+        "in_context_conditions": [
+          1,
+          18
+        ],
+        "lang_embeds": [
+          1,
+          11,
+          1152
+        ],
+        "lang_attn_mask": [
+          1,
+          11
+        ]
+      }
+    },
+    {
+      "base_only": true,
+      "batches": 8,
+      "shapes": {
+        "states": [
+          1,
+          1,
+          128
+        ],
+        "actions": [
+          1,
+          2,
+          128
+        ],
+        "state_elem_mask": [
+          1,
+          128
+        ],
+        "state_norm": [
+          1,
+          128
+        ],
+        "images": [
+          1,
+          6,
+          3,
+          384,
+          384
+        ],
+        "ctrl_freqs": [
+          1
+        ],
+        "pointclouds": [
+          1,
+          2,
+          1024,
+          6
+        ],
+        "in_context_conditions": [
+          1,
+          18
+        ],
+        "lang_embeds": [
+          1,
+          11,
+          1152
+        ],
+        "lang_attn_mask": [
+          1,
+          11
+        ]
+      }
+    }
+  ]
+}

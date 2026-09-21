@@ -1,0 +1,504 @@
+{
+  "schema": "bvi.s1-oracle-lab-preflight/1",
+  "recorded_at_utc": "2026-09-19T02:04:10.738501+00:00",
+  "status": "passed_cpu_preflight_only",
+  "cuda_visible_devices": "",
+  "jax_platforms": "cpu",
+  "gpu_initializations": 0,
+  "forward_calls": 0,
+  "simulator_actions": 0,
+  "native_success": null,
+  "g1_passed": false,
+  "source_sha256": {
+    "scripts/run_s1_oracle_panel.py": "32ae8aa9e66e04bbea11ebd8d1eb04cc2324723931c0a48e8111e3889a925c8e",
+    "scripts/eval_native_s1_oracle.py": "9a2e59292c2a26caf7b0026fe1ceae755320cf3d3ad6b00e50391366c02b2aec",
+    "scripts/serve_native_s1.py": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89",
+    "src/bvi/s1_oracle_protocol.py": "d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce"
+  },
+  "dependency_sha256": {
+    "scripts/serve_native_s1.py": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89",
+    "scripts/train_s1_bounded_candidate.py": "bbe60d0ab7bf985b385cd90f68213a8c8e9aa6b32b50e1ee5005066d83af2e6d",
+    "scripts/train_s1_bounded_diagnostic.py": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221",
+    "scripts/run_lab_fetch_pi05_teacher.py": "cae084c07ab915426455a051c8e95eb9cea237ac030e9107c39dc37d876da271",
+    "scripts/fetch_native_s1_config.py": "df264d03fa033e37a08aa7658590f74f03871aa9e26f592d7bb5991e6d770ecc",
+    "src/bvi/ia_call_predicates.py": "b1551ce47d8710299a5cd0f62b986080b5cc06953f3d608ffd274cedf6e68eb3",
+    "src/bvi/official_fetch_data.py": "e08ce88d924bb9bb8f8b61d448c1c4a16f7ba519b4ca62390afdbf03c377649f",
+    "src/bvi/native_pick_audit.py": "43c0374d772dd68a2df683e680868202e215660e3bb9f7cec192af09e1bcd3bf",
+    "src/bvi/fetch_pi_skill.py": "91b29b1df26d74d672ac0d75c70266c55b785990240f72167dbada2ac657853f",
+    "tests/test_s1_bounded_candidate.py": "92905ca362b0055455e1ccc2ede048f853e3ed39bbe0efce9e09a0f60ea3b0cc"
+  },
+  "dependency_paths": {
+    "scripts/serve_native_s1.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/serve_native_s1.py",
+    "scripts/train_s1_bounded_candidate.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py",
+    "scripts/train_s1_bounded_diagnostic.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py",
+    "scripts/run_lab_fetch_pi05_teacher.py": "/home/pshuai/bvi-research/run_lab_fetch_pi05_teacher.py",
+    "scripts/fetch_native_s1_config.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/fetch_native_s1_config.py",
+    "src/bvi/ia_call_predicates.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/src/bvi/ia_call_predicates.py",
+    "src/bvi/official_fetch_data.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/src/bvi/official_fetch_data.py",
+    "src/bvi/native_pick_audit.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/src/bvi/native_pick_audit.py",
+    "src/bvi/fetch_pi_skill.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/src/bvi/fetch_pi_skill.py",
+    "tests/test_s1_bounded_candidate.py": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py"
+  },
+  "dependencies_match_local": false,
+  "dependency_differences": {
+    "fetch_pi_skill": {
+      "local_sha256": "13c7e0d0d50841714bbdd0540ff132c6e74bf3545d368a259cb677d4aa2ef148",
+      "remote_sha256": "91b29b1df26d74d672ac0d75c70266c55b785990240f72167dbada2ac657853f",
+      "imported_symbol": "JOINT_NAMES",
+      "symbol_exact_match": true,
+      "joint_names": [
+        "root_x_axis_joint",
+        "root_y_axis_joint",
+        "root_z_rotation_joint",
+        "torso_lift_joint",
+        "head_pan_joint",
+        "shoulder_pan_joint",
+        "head_tilt_joint",
+        "shoulder_lift_joint",
+        "upperarm_roll_joint",
+        "elbow_flex_joint",
+        "forearm_roll_joint",
+        "wrist_flex_joint",
+        "wrist_roll_joint",
+        "r_gripper_finger_joint",
+        "l_gripper_finger_joint"
+      ],
+      "action": "preserved_remote_shared_module"
+    }
+  },
+  "launch_pythonpath": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/src:/home/pshuai/bvi-research:/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts:/home/pshuai/bvi-research/src/openpi-author/src",
+  "model_python": "/home/pshuai/bvi-research/envs/openpi/bin/python",
+  "sim_python": "/home/pshuai/bvi-research/envs/acdit/bin/python",
+  "sim_python_evidence": {
+    "path": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01/seed2024.log",
+    "sha256": "0924843042611801fbd238f205cb842d897060540d87a22c824abbf4c1745292",
+    "proof": "Historical seed2024.log contains envs/acdit/lib/python3.11 torch stack"
+  },
+  "reference_panel": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01",
+  "reference_states": [
+    {
+      "seed": 2024,
+      "path": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01/seed2024/initial-state.pt",
+      "bytes": 43544,
+      "sha256": "950f7c15c4cc9f13c262f9d2ae8a787dbcf56641db2c2f587f445bc1b28a9d8c",
+      "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-1717-0', composite_subtask_uids=['set_table-pick-val-1717-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_871.json')",
+      "build_config_idxs": [
+        69
+      ],
+      "task_plan_idxs": [
+        29
+      ],
+      "reset_info": {
+        "elapsed_steps": [
+          0
+        ],
+        "success": [
+          false
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          0
+        ],
+        "subtask_type": [
+          0
+        ],
+        "subtasks_steps_left": [
+          199
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          0.0
+        ],
+        "is_grasped": [
+          false
+        ],
+        "ee_rest": [
+          true
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ],
+        "reconfigure": true
+      },
+      "historical_result_sha256": "b08c22bcef80e0331367d495d776373dbc52974f95230515466e0621ae380e9b",
+      "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c"
+    },
+    {
+      "seed": 2025,
+      "path": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01/seed2025/initial-state.pt",
+      "bytes": 43544,
+      "sha256": "8cc76d7a36e84c32c4ba8213cf817680995137120567fc9759793d8eb26e2b45",
+      "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-231-0', composite_subtask_uids=['set_table-pick-val-231-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_201.json')",
+      "build_config_idxs": [
+        69
+      ],
+      "task_plan_idxs": [
+        4
+      ],
+      "reset_info": {
+        "elapsed_steps": [
+          0
+        ],
+        "success": [
+          false
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          0
+        ],
+        "subtask_type": [
+          0
+        ],
+        "subtasks_steps_left": [
+          199
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          0.0
+        ],
+        "is_grasped": [
+          false
+        ],
+        "ee_rest": [
+          false
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ],
+        "reconfigure": true
+      },
+      "historical_result_sha256": "e40d1bc1a0b4b093a4551a68ba04460b8d5a1638eeb4ff151ad736f775bdd543",
+      "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c"
+    },
+    {
+      "seed": 2026,
+      "path": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01/seed2026/initial-state.pt",
+      "bytes": 43544,
+      "sha256": "d54108c2669dc79848c244c5a3f22a96548b1f57bfed361da845bfc4b2180282",
+      "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-617-0', composite_subtask_uids=['set_table-pick-val-617-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_376.json')",
+      "build_config_idxs": [
+        69
+      ],
+      "task_plan_idxs": [
+        12
+      ],
+      "reset_info": {
+        "elapsed_steps": [
+          0
+        ],
+        "success": [
+          false
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          0
+        ],
+        "subtask_type": [
+          0
+        ],
+        "subtasks_steps_left": [
+          199
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          0.0
+        ],
+        "is_grasped": [
+          false
+        ],
+        "ee_rest": [
+          false
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ],
+        "reconfigure": true
+      },
+      "historical_result_sha256": "e7c52926691be52a4c23af52de211f0ba258f8e51131611fa182ff699e434c63",
+      "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c"
+    },
+    {
+      "seed": 2027,
+      "path": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01/seed2027/initial-state.pt",
+      "bytes": 43544,
+      "sha256": "a114f621ccd01e552d3e18894d2260fa56f75410f9f2f36783245b38dbd996ab",
+      "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-777-0', composite_subtask_uids=['set_table-pick-val-777-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_448.json')",
+      "build_config_idxs": [
+        69
+      ],
+      "task_plan_idxs": [
+        14
+      ],
+      "reset_info": {
+        "elapsed_steps": [
+          0
+        ],
+        "success": [
+          false
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          0
+        ],
+        "subtask_type": [
+          0
+        ],
+        "subtasks_steps_left": [
+          199
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          0.0
+        ],
+        "is_grasped": [
+          false
+        ],
+        "ee_rest": [
+          false
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ],
+        "reconfigure": true
+      },
+      "historical_result_sha256": "f24dff77971d6edd5819e5d75366de50b5fd0c4d877edad6682a17ab579a8476",
+      "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c"
+    },
+    {
+      "seed": 2028,
+      "path": "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01/seed2028/initial-state.pt",
+      "bytes": 43480,
+      "sha256": "4edbe68221d7f88056ee83d60b9c2eafd3c69fb2c0e1f39f03a8f2fd591cc286",
+      "original_plan": "TaskPlan(subtasks=[PickSubtask(type='pick', uid='set_table-pick-val-231-0', composite_subtask_uids=['set_table-pick-val-231-0'], obj_id='013_apple-0', articulation_config=ArticulationConfig(articulation_type='fridge', articulation_id='fridge-0', articulation_handle_link_idx=2, articulation_handle_active_joint_idx=0))], build_config_name='v3_sc3_staging_00.scene_instance.json', init_config_name='val/set_table/episode_201.json')",
+      "build_config_idxs": [
+        69
+      ],
+      "task_plan_idxs": [
+        4
+      ],
+      "reset_info": {
+        "elapsed_steps": [
+          0
+        ],
+        "success": [
+          false
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          0
+        ],
+        "subtask_type": [
+          0
+        ],
+        "subtasks_steps_left": [
+          199
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          0.0
+        ],
+        "is_grasped": [
+          false
+        ],
+        "ee_rest": [
+          false
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ],
+        "reconfigure": true
+      },
+      "historical_result_sha256": "588b3f3b7a73bb4cc1e005fdb9c27720e4979d2b8f0a85bb1f8286f74155affb",
+      "task_plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "spawn_data_sha256": "26e0a345b396bf9aee609eee07cf462424d1cfb71650fea88e118b7fe36c362c"
+    }
+  ],
+  "normalizer": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855/assets/bvi/s1-official-pick-medium-train/norm_stats.json",
+  "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+  "frozen_manifest": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen.json",
+  "frozen_manifest_sha256": "46c403e07f6b66b19f8afdee21e2ad612fca968a26ae73733ae474a8c0c9b3ff",
+  "planned_output": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r1",
+  "output_directory_created": false,
+  "socket_path_bytes": 75,
+  "commands": [
+    {
+      "command": [
+        "/home/pshuai/bvi-research/envs/openpi/bin/python",
+        "-m",
+        "pytest",
+        "--basetemp",
+        "/tmp/bvi-orcpf-1604846",
+        "tests/test_s1_oracle_panel.py",
+        "tests/test_s1_bounded_candidate.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "returncode": 0,
+      "stdout": ".................................................                        [100%]\n49 passed in 0.24s\n"
+    },
+    {
+      "command": [
+        "/home/pshuai/bvi-research/envs/openpi/bin/python",
+        "scripts/run_s1_oracle_panel.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout": "usage: run_s1_oracle_panel.py [-h] --checkpoint CHECKPOINT --normalizer\n                              NORMALIZER --output OUTPUT --model-python\n                              MODEL_PYTHON --sim-python SIM_PYTHON\n                              --reference-panel REFERENCE_PANEL\n                              --protocol-manifest PROTOCOL_MANIFEST --variant\n                              {baseline,candidate} [--best-json BEST_JSON]\n                              [--repeat-seed {2024,2025,2026,2027,2028}]\n                              [--original-panel ORIGINAL_PANEL] [--execute]\n\nCPU preflight by default; --execute runs a frozen five-seed oracle diagnostic.\nA POSIX parent supervises one process group containing only this batch's\nworker, model server and simulator descendants. No automatic repeat,\nnavigation or API dispatch.\n\noptions:\n  -h, --help            show this help message and exit\n  --checkpoint CHECKPOINT\n  --normalizer NORMALIZER\n  --output OUTPUT\n  --model-python MODEL_PYTHON\n  --sim-python SIM_PYTHON\n  --reference-panel REFERENCE_PANEL\n  --protocol-manifest PROTOCOL_MANIFEST\n  --variant {baseline,candidate}\n  --best-json BEST_JSON\n  --repeat-seed {2024,2025,2026,2027,2028}\n  --original-panel ORIGINAL_PANEL\n  --execute\n"
+    },
+    {
+      "command": [
+        "/home/pshuai/bvi-research/envs/acdit/bin/python",
+        "scripts/eval_native_s1_oracle.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout": "usage: eval_native_s1_oracle.py [-h] --seed SEED --output OUTPUT --socket\n                                SOCKET --auth-file AUTH_FILE\n                                [--historical-reset HISTORICAL_RESET]\n                                [--shader {minimal}] [--sim-backend {gpu}]\n                                [--reference-state REFERENCE_STATE]\n\nS1-IA oracle-assisted native Pick; causal training-window prompts,200 total\nactions. Fresh native initial states only; no SAC actions, progress head, or\nsuccess override. Derived from eval_native_s1.py; the historical fixed-\nsentence entry remains unchanged.\n\noptions:\n  -h, --help            show this help message and exit\n  --seed SEED\n  --output OUTPUT\n  --socket SOCKET\n  --auth-file AUTH_FILE\n  --historical-reset HISTORICAL_RESET\n  --shader {minimal}\n  --sim-backend {gpu}\n  --reference-state REFERENCE_STATE\n"
+    },
+    {
+      "command": [
+        "/home/pshuai/bvi-research/envs/openpi/bin/python",
+        "scripts/serve_native_s1.py",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout": "usage: serve_native_s1.py [-h] --checkpoint CHECKPOINT --output OUTPUT\n                          --socket SOCKET --auth-file AUTH_FILE --gpu-uuid\n                          GPU_UUID [--repo-id REPO_ID] --normalizer NORMALIZER\n                          [--max-inference-calls MAX_INFERENCE_CALLS]\n                          [--training-stage {S1_ordinary_target_domain_SFT_not_TAPT,S1_IA_single_bank_no_progress}]\n\nNative24 S1 inference only; independent of frozen historical S1-native24. GPU\nlaunch must be serialized.\n\noptions:\n  -h, --help            show this help message and exit\n  --checkpoint CHECKPOINT\n  --output OUTPUT\n  --socket SOCKET\n  --auth-file AUTH_FILE\n  --gpu-uuid GPU_UUID\n  --repo-id REPO_ID\n  --normalizer NORMALIZER\n  --max-inference-calls MAX_INFERENCE_CALLS\n  --training-stage {S1_ordinary_target_domain_SFT_not_TAPT,S1_IA_single_bank_no_progress}\n"
+    },
+    {
+      "command": [
+        "/home/pshuai/bvi-research/envs/openpi/bin/python",
+        "scripts/run_s1_oracle_panel.py",
+        "--checkpoint",
+        "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+        "--normalizer",
+        "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855/assets/bvi/s1-official-pick-medium-train/norm_stats.json",
+        "--output",
+        "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r1",
+        "--model-python",
+        "/home/pshuai/bvi-research/envs/openpi/bin/python",
+        "--sim-python",
+        "/home/pshuai/bvi-research/envs/acdit/bin/python",
+        "--reference-panel",
+        "/home/pshuai/bvi-research/runs/s1-native-render-aligned-2026-09-18-run01",
+        "--protocol-manifest",
+        "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/docs/results/two-day-delivery-2026-09-20/oracle-baseline-frozen.json",
+        "--variant",
+        "baseline"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"preflight_only\",\n  \"protocol\": \"ia_oracle_train_windows_v1\",\n  \"variant\": \"baseline\",\n  \"checkpoint\": \"/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855\",\n  \"training_stage\": \"S1_IA_single_bank_no_progress\",\n  \"seeds\": [\n    2024,\n    2025,\n    2026,\n    2027,\n    2028\n  ],\n  \"max_actions\": 200,\n  \"shader\": \"minimal\",\n  \"sim_backend\": \"gpu\",\n  \"normalizer_sha256\": \"0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2\",\n  \"reference_sha256\": {\n    \"2024\": \"950f7c15c4cc9f13c262f9d2ae8a787dbcf56641db2c2f587f445bc1b28a9d8c\",\n    \"2025\": \"8cc76d7a36e84c32c4ba8213cf817680995137120567fc9759793d8eb26e2b45\",\n    \"2026\": \"d54108c2669dc79848c244c5a3f22a96548b1f57bfed361da845bfc4b2180282\",\n    \"2027\": \"a114f621ccd01e552d3e18894d2260fa56f75410f9f2f36783245b38dbd996ab\",\n    \"2028\": \"4edbe68221d7f88056ee83d60b9c2eafd3c69fb2c0e1f39f03a8f2fd591cc286\"\n  },\n  \"source_sha256\": {\n    \"scripts/eval_native_s1_oracle.py\": \"9a2e59292c2a26caf7b0026fe1ceae755320cf3d3ad6b00e50391366c02b2aec\",\n    \"scripts/serve_native_s1.py\": \"7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89\",\n    \"src/bvi/s1_oracle_protocol.py\": \"d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce\",\n    \"scripts/run_s1_oracle_panel.py\": \"32ae8aa9e66e04bbea11ebd8d1eb04cc2324723931c0a48e8111e3889a925c8e\"\n  },\n  \"protocol_manifest_sha256\": \"46c403e07f6b66b19f8afdee21e2ad612fca968a26ae73733ae474a8c0c9b3ff\",\n  \"checkpoint_contract_sha256\": \"c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40\",\n  \"selection\": null,\n  \"gpu_uuid\": \"GPU-b7ebba23-7824-7601-df32-be55628936c3\",\n  \"gpu_physical_index\": 1,\n  \"per_case_wall_seconds\": 300,\n  \"total_wall_seconds\": 2100,\n  \"execution_seeds\": [\n    2024,\n    2025,\n    2026,\n    2027,\n    2028\n  ],\n  \"inference_call_cap\": 1000,\n  \"api_calls\": 0,\n  \"training_updates\": 0,\n  \"interpretation\": \"oracle-assisted development regression; not historical fixed-sentence gate\",\n  \"g1_passed\": false,\n  \"repeat\": \"not_run_separate_fresh_process_evidence_required\"\n}\n"
+    }
+  ],
+  "preflight": {
+    "status": "preflight_only",
+    "protocol": "ia_oracle_train_windows_v1",
+    "variant": "baseline",
+    "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "training_stage": "S1_IA_single_bank_no_progress",
+    "seeds": [
+      2024,
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "max_actions": 200,
+    "shader": "minimal",
+    "sim_backend": "gpu",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "reference_sha256": {
+      "2024": "950f7c15c4cc9f13c262f9d2ae8a787dbcf56641db2c2f587f445bc1b28a9d8c",
+      "2025": "8cc76d7a36e84c32c4ba8213cf817680995137120567fc9759793d8eb26e2b45",
+      "2026": "d54108c2669dc79848c244c5a3f22a96548b1f57bfed361da845bfc4b2180282",
+      "2027": "a114f621ccd01e552d3e18894d2260fa56f75410f9f2f36783245b38dbd996ab",
+      "2028": "4edbe68221d7f88056ee83d60b9c2eafd3c69fb2c0e1f39f03a8f2fd591cc286"
+    },
+    "source_sha256": {
+      "scripts/eval_native_s1_oracle.py": "9a2e59292c2a26caf7b0026fe1ceae755320cf3d3ad6b00e50391366c02b2aec",
+      "scripts/serve_native_s1.py": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89",
+      "src/bvi/s1_oracle_protocol.py": "d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce",
+      "scripts/run_s1_oracle_panel.py": "32ae8aa9e66e04bbea11ebd8d1eb04cc2324723931c0a48e8111e3889a925c8e"
+    },
+    "protocol_manifest_sha256": "46c403e07f6b66b19f8afdee21e2ad612fca968a26ae73733ae474a8c0c9b3ff",
+    "checkpoint_contract_sha256": "c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40",
+    "selection": null,
+    "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+    "gpu_physical_index": 1,
+    "per_case_wall_seconds": 300,
+    "total_wall_seconds": 2100,
+    "execution_seeds": [
+      2024,
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "inference_call_cap": 1000,
+    "api_calls": 0,
+    "training_updates": 0,
+    "interpretation": "oracle-assisted development regression; not historical fixed-sentence gate",
+    "g1_passed": false,
+    "repeat": "not_run_separate_fresh_process_evidence_required"
+  },
+  "candidate_followup": "After a real eligible best.json exists, copy the same conditions/source/reference/normalizer; change variant/checkpoint and add best_json_sha256. No candidate manifest or runtime launch yet.",
+  "repeat": "Candidate-only repeat of one already successful original five-seed panel case; separate denominator 1, 600-second outer cap, default CPU preflight. No repeat launched.",
+  "restrictions": [
+    "No --execute, model loading, GPU query, physics environment, native rollout or active trainer modification performed.",
+    "GPU idle/identity and live renderer checks remain deferred to an authorized execute phase after candidate training has stopped.",
+    "No live Linux process-group kill integration test; supervisor tests use mocks."
+  ]
+}

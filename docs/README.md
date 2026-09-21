@@ -17,7 +17,7 @@ evidence in `results/` and `runs/`. See [log/README.md](log/README.md).
 
 | Log | Covers |
 |---|---|
-| [TidyHouse 16-plan, three settings](log/2026-09-21-tidyhouse-16plan-panel.md) | Fixed PPO+SAC, GPT+PPO+SAC and Teleport+SAC on the same 16 TidyHouse validation plans: 0/16 full-task SR in all three arms |
+| [TidyHouse 16-plan, three settings](log/2026-09-21-tidyhouse-16plan-panel.md) | Fixed PPO+SAC (14/80 objects), GPT+PPO+SAC (13/80) and standardized Teleport+SAC (21/80) on the same 16 TidyHouse validation plans: 0/16 full-task SR in all three arms |
 
 ## Start here
 
@@ -91,6 +91,40 @@ evidence in `results/` and `runs/`. See [log/README.md](log/README.md).
 | [fetch-observation-head-followup.md](fetch-observation-head-followup.md) | Observation-only progress head: CPU pairing prepared, head and numerical gates **not implemented** |
 | [fetch-pi05-author-migration.md](fetch-pi05-author-migration.md) | Author OpenPI π₀.₅ on Fetch: model contract, strict loading of 71 tensors, BF16/FP32 attribution |
 | [fetch-v8-native-capability.md](fetch-v8-native-capability.md) | **Frozen V8 native gate: 0/5.** Stop-loss executed; π₀.₅ TAPT training stopped for the week |
+
+## MS-HAB: the 16-plan paired panels (current)
+
+| Document | What it covers |
+|---|---|
+| [baseline-protocol-2026-09-20-v2.md](baseline-protocol-2026-09-20-v2.md) | The comparison and repair rules now in force for every arm |
+| [ppo-sac-paired16-2026-09-20.md](ppo-sac-paired16-2026-09-20.md) | Fixed official-order PPO+SAC arm: scope, authorization and accounting |
+| [goal-tools-paired16-2026-09-20.md](goal-tools-paired16-2026-09-20.md) | Goal-grounded tool planning arm: what GPT does and does not see, and the resume history |
+| [goal-tools-response-repair-launch-v5.md](goal-tools-response-repair-launch-v5.md) | Bounded repair retry of GPT seeds 0 and 1, with all original attempts retained |
+| [gpt-ppo-sac-progress-feedback-v1.md](gpt-ppo-sac-progress-feedback-v1.md) | Progress-feedback variant of the tool-calling arm |
+| [sac-interface-audit-amendment-2026-09-20.md](sac-interface-audit-amendment-2026-09-20.md) | Amendment against the paper's Table 3/4 and §5.5 after the first two outcomes |
+| [sac-followup-2026-09-20.md](sac-followup-2026-09-20.md) | First SAC batch close and the request-budget gate blocking the restart |
+| [vlas-as-tools-method-conformance.md](vlas-as-tools-method-conformance.md) | Living clause-by-clause alignment baseline; the reference for any "we reproduced X" claim |
+
+## S1/S2 diagnostics: the 09-18 to 09-19 chain
+
+| Document | Finding |
+|---|---|
+| [s1-diagnostic-checklist-v2.md](s1-diagnostic-checklist-v2.md) · [s1-native-failure-analysis.md](s1-native-failure-analysis.md) | The checklist the chain followed, and the original S1 native 0/10 attribution |
+| [s1-medium-training.md](s1-medium-training.md) · [s1-ia-sft-revision.md](s1-ia-sft-revision.md) · [s1-ia-call-evaluation.md](s1-ia-call-evaluation.md) | Ordinary S1 SFT, the invocation-aligned revision, and the preregistered call-level evaluation |
+| [s1-exact-start-first-action-probe.md](s1-exact-start-first-action-probe.md) | The zero-training gate that follows the Level-3 first-step split |
+| [level3-null-drift-calibration.md](level3-null-drift-calibration.md) | Physics/numerical drift floor, calibrated before any IA-versus-SAC comparison |
+| [bc-t0a-2026-09-18.md](bc-t0a-2026-09-18.md) · [bc-ia-normalization-audit-2026-09-18.md](bc-ia-normalization-audit-2026-09-18.md) | Official BC T0a diagnostic and the CPU-only pairing/normalization audit |
+| [s1-s2-native-handoff-preparation.md](s1-s2-native-handoff-preparation.md) · [s2-native24-handoff-input-gate-2026-09-18.md](s2-native24-handoff-input-gate-2026-09-18.md) · [s2-native24-handoff-behavior-2026-09-18.md](s2-native24-handoff-behavior-2026-09-18.md) | S1→S2 handoff: preparation, the passed input gate, and the failed offline behavior sub-gate |
+| [s2-offline-decomposition-2026-09-18.md](s2-offline-decomposition-2026-09-18.md) | step0/step20 head x bank offline decomposition over the fixed held-out rows |
+| [vla-contract-audit-2026-09-19.md](vla-contract-audit-2026-09-19.md) | Static input/timing/action-consumption contract audit of frozen S1-IA best/855 |
+
+## AC-DiT Apple line (2026-09-19 to 09-20)
+
+| Document | What it covers |
+|---|---|
+| [acdit-reproduction-audit-2026-09-19.md](acdit-reproduction-audit-2026-09-19.md) | Reproduction check against the authors' two-stage seven-task recipe |
+| [acdit-apple-bounded-2026-09-19.md](acdit-apple-bounded-2026-09-19.md) | Bounded Apple Pick training launch and its verification |
+| [acdit-apple-evaluation-2026-09-20.md](acdit-apple-evaluation-2026-09-20.md) | Mid-training check and the native evaluation gate; capability validation not completed |
 
 ## Evidence
 

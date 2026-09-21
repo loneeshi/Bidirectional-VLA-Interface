@@ -1,0 +1,4 @@
+slot,scene_plan,execution_status,navigation_complete,reached_pick,pick_success,full_chain_success,artifact
+1,not_selected_G1_failed,not_run_G1_failed,,,,,
+2,not_selected_G1_failed,not_run_G1_failed,,,,,
+3,not_selected_G1_failed,not_run_G1_failed,,,,,

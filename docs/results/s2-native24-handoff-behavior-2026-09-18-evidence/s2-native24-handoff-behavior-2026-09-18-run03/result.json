@@ -1,0 +1,10 @@
+{
+  "schema": "bvi.native24-s2-offline-decomposition/1",
+  "status": "failed",
+  "optimizer_updates": 0,
+  "simulator_steps": 0,
+  "error": "ModuleNotFoundError(\"No module named 'flax'\")",
+  "wall_seconds": 11.951083414256573,
+  "native_success_evaluated": false,
+  "capability_admission": false
+}

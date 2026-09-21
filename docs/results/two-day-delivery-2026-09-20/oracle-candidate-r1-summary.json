@@ -1,0 +1,760 @@
+{
+  "schema": "bvi.s1-oracle-panel-evidence-summary/1",
+  "panel_dir": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1",
+  "interpretation": "Single-arm evidence for later paired comparison; no significance test or automatic G1 admission",
+  "variant": "candidate",
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/best/250",
+  "protocol": "ia_oracle_train_windows_v1",
+  "pairing_identity": {
+    "seeds": [
+      2024,
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "execution_seeds": [
+      2024,
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "shader": "minimal",
+    "sim_backend": "gpu",
+    "max_actions": 200,
+    "reference_sha256": {
+      "2024": "950f7c15c4cc9f13c262f9d2ae8a787dbcf56641db2c2f587f445bc1b28a9d8c",
+      "2025": "8cc76d7a36e84c32c4ba8213cf817680995137120567fc9759793d8eb26e2b45",
+      "2026": "d54108c2669dc79848c244c5a3f22a96548b1f57bfed361da845bfc4b2180282",
+      "2027": "a114f621ccd01e552d3e18894d2260fa56f75410f9f2f36783245b38dbd996ab",
+      "2028": "4edbe68221d7f88056ee83d60b9c2eafd3c69fb2c0e1f39f03a8f2fd591cc286"
+    },
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "source_sha256": {
+      "scripts/eval_native_s1_oracle.py": "ae4277675d78d339ccefc70284355016ed596592a0b9cc859aa75ac3c82038e0",
+      "scripts/serve_native_s1.py": "7b045231f0e48fab92b94ef801c68aa00053b6e60a05d71860c121df065c0f89",
+      "src/bvi/s1_oracle_protocol.py": "d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce",
+      "scripts/run_s1_oracle_panel.py": "ad474b44abf772817f6a4398b099ab7cd0d13bd703169e518d046ac349926a47"
+    }
+  },
+  "panel_status": "panel_finished",
+  "supervisor_outcome": "completed",
+  "evidence": {
+    "panel": {
+      "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\panel.json",
+      "sha256": "3b5a4c4b6c161e6efc885a0221bdaf0ce92efa7d5a8cd9667f4bdafa9153104d"
+    },
+    "launch": {
+      "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\launch.json",
+      "sha256": "67c9032810b7e649068937b86d8077b38b27692246b7a481da3a796c540cf92a"
+    }
+  },
+  "planned_count": 5,
+  "completed_count": 5,
+  "native_successes": 0,
+  "policy_failures": 5,
+  "infrastructure_failures": 0,
+  "evidence_invalid": 0,
+  "not_run": 0,
+  "cases": [
+    {
+      "seed": 2024,
+      "status": "policy_failure",
+      "native_success": false,
+      "policy_failure": true,
+      "ever_grasped": false,
+      "steps": 23,
+      "evidence": {
+        "result": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2024\\result.json",
+          "sha256": "a6ea5e21d72323e256b475929c4835e01789d5b105969545215583d0c56e3f2f"
+        },
+        "events": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2024\\events.jsonl",
+          "sha256": "fa4fca76bbb8353d4f0b7bc27dc10be7d3e656c68d24bcfa54851fd93648dacd"
+        }
+      },
+      "video": {
+        "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2024\\fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+        "sha256": "e2afbd4180da240748f14137bbcb46be4d3b70dd4855ed7ba4e720876c08a71d"
+      },
+      "unavailable": [],
+      "final_native_info": {
+        "success": false,
+        "fail": true,
+        "ee_rest": false,
+        "robot_rest": true,
+        "is_static": false,
+        "robot_cumulative_force": 5235.68408203125,
+        "cumulative_force_within_limit": false
+      },
+      "instruction_protocol": "ia_oracle_train_windows_v1",
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "stop_reason": "native_termination",
+      "distance_m": {
+        "first_post_action": 0.7559317541135895,
+        "minimum": 0.7274047169232695,
+        "final": 1.0091791614920067,
+        "observed_steps": 23,
+        "total_steps": 23,
+        "closest_step": 3
+      },
+      "displacements_from_step0": {
+        "1": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.02246236801147461,
+            -0.005734950304031372,
+            -0.002102375030517578
+          ],
+          "tcp_displacement_norm_m": 0.023278050013726903,
+          "object_displacement_vector_m": [
+            -0.019376754760742188,
+            -0.03810456395149231,
+            -0.004428267478942871
+          ],
+          "object_displacement_norm_m": 0.042977040054619574,
+          "distance_change_m": -0.021508378081121382
+        },
+        "5": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.11580562591552734,
+            0.03666028380393982,
+            -0.017559051513671875
+          ],
+          "tcp_displacement_norm_m": 0.12273239055902176,
+          "object_displacement_vector_m": [
+            -0.29898786544799805,
+            -0.3301270306110382,
+            -0.006761312484741211
+          ],
+          "object_displacement_norm_m": 0.44544732053490665,
+          "distance_change_m": -0.008789253655704377
+        },
+        "10": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.2277066707611084,
+            0.052893251180648804,
+            -0.01101827621459961
+          ],
+          "tcp_displacement_norm_m": 0.23402868700291474,
+          "object_displacement_vector_m": [
+            -0.6701252460479736,
+            -0.44739046692848206,
+            -0.006829977035522461
+          ],
+          "object_displacement_norm_m": 0.8057746110890117,
+          "distance_change_m": 0.09547114934543544
+        },
+        "20": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.09347796440124512,
+            -0.12478795647621155,
+            0.027986764907836914
+          ],
+          "tcp_displacement_norm_m": 0.15840903673754175,
+          "object_displacement_vector_m": [
+            -1.3111646175384521,
+            -0.49203720688819885,
+            -0.006829977035522461
+          ],
+          "object_displacement_norm_m": 1.4004641787041185,
+          "distance_change_m": 0.2302211457951382
+        }
+      },
+      "displacement_interpretation": "Endpoint changes relative to each observation robot base; not world-frame travel or causal effect",
+      "clipping": {
+        "steps": 23,
+        "scalars": 69,
+        "scalars_per_channel": [
+          1,
+          2,
+          5,
+          14,
+          9,
+          8,
+          0,
+          8,
+          0,
+          0,
+          16,
+          6,
+          0
+        ],
+        "scope": "executed_chunk_index0"
+      },
+      "family_action_counts": {
+        "reach": 23
+      },
+      "prompt_switches": [],
+      "prompt_switch_evidence_available": true
+    },
+    {
+      "seed": 2025,
+      "status": "policy_failure",
+      "native_success": false,
+      "policy_failure": true,
+      "ever_grasped": false,
+      "steps": 34,
+      "evidence": {
+        "result": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2025\\result.json",
+          "sha256": "7b3f655d83b99250751b204152f38925454242ef7f8bafaec9b174c91962b718"
+        },
+        "events": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2025\\events.jsonl",
+          "sha256": "0c00a949cc5e40cf081fcdaec0519272191713d2a04db396349722081e48668e"
+        }
+      },
+      "video": {
+        "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2025\\fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+        "sha256": "c9a04bf4db8a8ce22e7579221d019702dc53462f5099e2b998c5a81d36b075c3"
+      },
+      "unavailable": [],
+      "final_native_info": {
+        "success": false,
+        "fail": true,
+        "ee_rest": false,
+        "robot_rest": false,
+        "is_static": false,
+        "robot_cumulative_force": 5404.00048828125,
+        "cumulative_force_within_limit": false
+      },
+      "instruction_protocol": "ia_oracle_train_windows_v1",
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "stop_reason": "native_termination",
+      "distance_m": {
+        "first_post_action": 0.9749546125283078,
+        "minimum": 0.659151366516823,
+        "final": 1.1925642798122376,
+        "observed_steps": 34,
+        "total_steps": 34,
+        "closest_step": 11
+      },
+      "displacements_from_step0": {
+        "1": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.022248506546020508,
+            0.007582545280456543,
+            0.000719904899597168
+          ],
+          "tcp_displacement_norm_m": 0.02351614975974926,
+          "object_displacement_vector_m": [
+            -0.013417959213256836,
+            -0.023145675659179688,
+            -0.004441618919372559
+          ],
+          "object_displacement_norm_m": 0.027119954089074253,
+          "distance_change_m": -0.018602634077935387
+        },
+        "5": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.09157729148864746,
+            0.0814792662858963,
+            0.009866952896118164
+          ],
+          "tcp_displacement_norm_m": 0.12297409446846484,
+          "object_displacement_vector_m": [
+            -0.10457968711853027,
+            0.12911532819271088,
+            -0.006819963455200195
+          ],
+          "object_displacement_norm_m": 0.16629549252355397,
+          "distance_change_m": -0.1960903452181224
+        },
+        "10": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.16042590141296387,
+            0.20571719110012054,
+            0.016456007957458496
+          ],
+          "tcp_displacement_norm_m": 0.2613940182104048,
+          "object_displacement_vector_m": [
+            -0.35111093521118164,
+            0.04096400737762451,
+            -0.0068405866622924805
+          ],
+          "object_displacement_norm_m": 0.3535586688955441,
+          "distance_change_m": -0.29458145449634676
+        },
+        "20": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.3752279281616211,
+            0.06402800977230072,
+            0.08875501155853271
+          ],
+          "tcp_displacement_norm_m": 0.39086191447187557,
+          "object_displacement_vector_m": [
+            -1.1777315139770508,
+            -0.3276026248931885,
+            -0.006840705871582031
+          ],
+          "object_displacement_norm_m": 1.2224654572250313,
+          "distance_change_m": 0.04690714297940768
+        }
+      },
+      "displacement_interpretation": "Endpoint changes relative to each observation robot base; not world-frame travel or causal effect",
+      "clipping": {
+        "steps": 34,
+        "scalars": 116,
+        "scalars_per_channel": [
+          1,
+          2,
+          3,
+          16,
+          8,
+          21,
+          1,
+          21,
+          0,
+          0,
+          23,
+          19,
+          1
+        ],
+        "scope": "executed_chunk_index0"
+      },
+      "family_action_counts": {
+        "reach": 34
+      },
+      "prompt_switches": [],
+      "prompt_switch_evidence_available": true
+    },
+    {
+      "seed": 2026,
+      "status": "policy_failure",
+      "native_success": false,
+      "policy_failure": true,
+      "ever_grasped": false,
+      "steps": 32,
+      "evidence": {
+        "result": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2026\\result.json",
+          "sha256": "4a7768a044b5617d323165adfe7cd5919b5868837db8f310fb9506c3a8ef91c3"
+        },
+        "events": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2026\\events.jsonl",
+          "sha256": "01fdea42767718e92111596cfa18f7837ab55b4d3b9aecbfe98c5d64a8cb23f9"
+        }
+      },
+      "video": {
+        "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2026\\fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+        "sha256": "2dde69bf378ddf097581c9d98ff2b64d0512c99eb0ab073d542f4d5e55236086"
+      },
+      "unavailable": [],
+      "final_native_info": {
+        "success": false,
+        "fail": true,
+        "ee_rest": false,
+        "robot_rest": false,
+        "is_static": false,
+        "robot_cumulative_force": 5274.66015625,
+        "cumulative_force_within_limit": false
+      },
+      "instruction_protocol": "ia_oracle_train_windows_v1",
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "stop_reason": "native_termination",
+      "distance_m": {
+        "first_post_action": 1.1498683322853036,
+        "minimum": 0.5926854959385663,
+        "final": 0.9353643659277335,
+        "observed_steps": 32,
+        "total_steps": 32,
+        "closest_step": 13
+      },
+      "displacements_from_step0": {
+        "1": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.01775336265563965,
+            -0.0066182613372802734,
+            -0.00261843204498291
+          ],
+          "tcp_displacement_norm_m": 0.01912693010091773,
+          "object_displacement_vector_m": [
+            0.0024535655975341797,
+            -0.0305938720703125,
+            -0.004383563995361328
+          ],
+          "object_displacement_norm_m": 0.031003558274776764,
+          "distance_change_m": -0.0228900080106893
+        },
+        "5": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.10988092422485352,
+            0.027788162231445312,
+            -0.03217494487762451
+          ],
+          "tcp_displacement_norm_m": 0.11781861714766177,
+          "object_displacement_vector_m": [
+            -0.0674586296081543,
+            -0.29126811027526855,
+            -0.006656765937805176
+          ],
+          "object_displacement_norm_m": 0.29905198762871793,
+          "distance_change_m": -0.24645369908414327
+        },
+        "10": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.22034931182861328,
+            0.05759570002555847,
+            -0.017412424087524414
+          ],
+          "tcp_displacement_norm_m": 0.22841689166386397,
+          "object_displacement_vector_m": [
+            -0.32326698303222656,
+            -0.7193403244018555,
+            -0.00674128532409668
+          ],
+          "object_displacement_norm_m": 0.7886681745557794,
+          "distance_change_m": -0.5132109779775912
+        },
+        "20": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.4123353958129883,
+            0.0497283935546875,
+            0.05664980411529541
+          ],
+          "tcp_displacement_norm_m": 0.419168930232293,
+          "object_displacement_vector_m": [
+            -1.1101369857788086,
+            -1.1561537981033325,
+            -0.006741642951965332
+          ],
+          "object_displacement_norm_m": 1.6028540737735646,
+          "distance_change_m": -0.27736926796051875
+        }
+      },
+      "displacement_interpretation": "Endpoint changes relative to each observation robot base; not world-frame travel or causal effect",
+      "clipping": {
+        "steps": 32,
+        "scalars": 100,
+        "scalars_per_channel": [
+          2,
+          1,
+          4,
+          18,
+          8,
+          20,
+          2,
+          13,
+          0,
+          0,
+          17,
+          15,
+          0
+        ],
+        "scope": "executed_chunk_index0"
+      },
+      "family_action_counts": {
+        "reach": 32
+      },
+      "prompt_switches": [],
+      "prompt_switch_evidence_available": true
+    },
+    {
+      "seed": 2027,
+      "status": "policy_failure",
+      "native_success": false,
+      "policy_failure": true,
+      "ever_grasped": false,
+      "steps": 19,
+      "evidence": {
+        "result": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2027\\result.json",
+          "sha256": "299c70b8a9a7eb63d69c211020f58cf499f89aab5f1550654952e8b40b70b808"
+        },
+        "events": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2027\\events.jsonl",
+          "sha256": "cd6fca08540f57b31a0bae476f1ea5497b6913641b4e3d7ab9290cd07af18066"
+        }
+      },
+      "video": {
+        "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2027\\fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+        "sha256": "6ecea6ee7e70ca5e4bc76e5b847f405ca8446799632a04ce57c771c4790c75d2"
+      },
+      "unavailable": [],
+      "final_native_info": {
+        "success": false,
+        "fail": true,
+        "ee_rest": false,
+        "robot_rest": false,
+        "is_static": false,
+        "robot_cumulative_force": 5032.22998046875,
+        "cumulative_force_within_limit": false
+      },
+      "instruction_protocol": "ia_oracle_train_windows_v1",
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "stop_reason": "native_termination",
+      "distance_m": {
+        "first_post_action": 1.1629193696756575,
+        "minimum": 1.1307286262242524,
+        "final": 1.2028339634006533,
+        "observed_steps": 19,
+        "total_steps": 19,
+        "closest_step": 5
+      },
+      "displacements_from_step0": {
+        "1": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.01569223403930664,
+            0.012159109115600586,
+            0.0077658891677856445
+          ],
+          "tcp_displacement_norm_m": 0.021316640875048434,
+          "object_displacement_vector_m": [
+            -0.016527891159057617,
+            -0.02948164939880371,
+            -0.004385948181152344
+          ],
+          "object_displacement_norm_m": 0.034081892243351036,
+          "distance_change_m": -0.0015072514759426614
+        },
+        "5": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.10655069351196289,
+            0.0070188045501708984,
+            0.025860190391540527
+          ],
+          "tcp_displacement_norm_m": 0.10986839105165996,
+          "object_displacement_vector_m": [
+            -0.28704380989074707,
+            -0.3139914274215698,
+            -0.006668448448181152
+          ],
+          "object_displacement_norm_m": 0.42547530303830366,
+          "distance_change_m": -0.03369799492734771
+        },
+        "10": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.18320298194885254,
+            -0.015782415866851807,
+            0.07030594348907471
+          ],
+          "tcp_displacement_norm_m": 0.19686376745210077,
+          "object_displacement_vector_m": [
+            -0.8101780414581299,
+            -0.5800416469573975,
+            -0.006751418113708496
+          ],
+          "object_displacement_norm_m": 0.9964348211059906,
+          "distance_change_m": 0.05911670379418066
+        },
+        "20": {
+          "available": false,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": null,
+          "tcp_displacement_norm_m": null,
+          "object_displacement_vector_m": null,
+          "object_displacement_norm_m": null,
+          "distance_change_m": null,
+          "reason": "episode_did_not_reach_requested_step"
+        }
+      },
+      "displacement_interpretation": "Endpoint changes relative to each observation robot base; not world-frame travel or causal effect",
+      "clipping": {
+        "steps": 19,
+        "scalars": 52,
+        "scalars_per_channel": [
+          0,
+          2,
+          4,
+          8,
+          10,
+          6,
+          0,
+          8,
+          0,
+          0,
+          8,
+          6,
+          0
+        ],
+        "scope": "executed_chunk_index0"
+      },
+      "family_action_counts": {
+        "reach": 19
+      },
+      "prompt_switches": [],
+      "prompt_switch_evidence_available": true
+    },
+    {
+      "seed": 2028,
+      "status": "policy_failure",
+      "native_success": false,
+      "policy_failure": true,
+      "ever_grasped": false,
+      "steps": 55,
+      "evidence": {
+        "result": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2028\\result.json",
+          "sha256": "3a9662f74326456e4636c8bb2dade6c2b61686f9eda6b55382c7732d1712cadf"
+        },
+        "events": {
+          "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2028\\events.jsonl",
+          "sha256": "bb1eed98880a3738ee48dfe22054d5b0ad95633b2ecd87e83f9dc1e79e54fd4d"
+        }
+      },
+      "video": {
+        "path": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2028\\fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+        "sha256": "a5b13f299a707fba903b3cf334e80ade6498c521a733962e5d8e207ead24352d"
+      },
+      "unavailable": [],
+      "final_native_info": {
+        "success": false,
+        "fail": true,
+        "ee_rest": false,
+        "robot_rest": false,
+        "is_static": false,
+        "robot_cumulative_force": 5186.68505859375,
+        "cumulative_force_within_limit": false
+      },
+      "instruction_protocol": "ia_oracle_train_windows_v1",
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "stop_reason": "native_termination",
+      "distance_m": {
+        "first_post_action": 1.5491023822675993,
+        "minimum": 0.4012778055697787,
+        "final": 0.4012778055697787,
+        "observed_steps": 55,
+        "total_steps": 55,
+        "closest_step": 55
+      },
+      "displacements_from_step0": {
+        "1": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.02140069007873535,
+            0.0069370269775390625,
+            -0.0022649765014648438
+          ],
+          "tcp_displacement_norm_m": 0.022610661151000747,
+          "object_displacement_vector_m": [
+            -0.011911153793334961,
+            0.013581991195678711,
+            -0.004441499710083008
+          ],
+          "object_displacement_norm_m": 0.018603037096201234,
+          "distance_change_m": -0.022062558544127864
+        },
+        "5": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.11609983444213867,
+            0.004514455795288086,
+            -0.0219801664352417
+          ],
+          "tcp_displacement_norm_m": 0.11824838089860065,
+          "object_displacement_vector_m": [
+            -0.011217117309570312,
+            -0.22496414184570312,
+            -0.0068062543869018555
+          ],
+          "object_displacement_norm_m": 0.225346430936657,
+          "distance_change_m": -0.23698462634310302
+        },
+        "10": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.22715222835540771,
+            0.02925848960876465,
+            -0.02261829376220703
+          ],
+          "tcp_displacement_norm_m": 0.23014295834052143,
+          "object_displacement_vector_m": [
+            -0.12426435947418213,
+            -0.561542272567749,
+            -0.00684356689453125
+          ],
+          "object_displacement_norm_m": 0.5751679661837235,
+          "distance_change_m": -0.6058954893166062
+        },
+        "20": {
+          "available": true,
+          "frame": "robot_base",
+          "tcp_displacement_vector_m": [
+            0.38544726371765137,
+            -0.05407726764678955,
+            0.07498753070831299
+          ],
+          "tcp_displacement_norm_m": 0.39637996133167147,
+          "object_displacement_vector_m": [
+            -0.6739099025726318,
+            -1.409488558769226,
+            -0.006843686103820801
+          ],
+          "object_displacement_norm_m": 1.5623249950398579,
+          "distance_change_m": -1.1312447373563546
+        }
+      },
+      "displacement_interpretation": "Endpoint changes relative to each observation robot base; not world-frame travel or causal effect",
+      "clipping": {
+        "steps": 55,
+        "scalars": 150,
+        "scalars_per_channel": [
+          2,
+          8,
+          11,
+          20,
+          10,
+          30,
+          2,
+          35,
+          0,
+          0,
+          20,
+          12,
+          0
+        ],
+        "scope": "executed_chunk_index0"
+      },
+      "family_action_counts": {
+        "reach": 55
+      },
+      "prompt_switches": [],
+      "prompt_switch_evidence_available": true
+    }
+  ]
+}

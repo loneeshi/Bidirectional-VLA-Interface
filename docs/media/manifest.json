@@ -913,6 +913,257 @@
       "sha256": "2597b6a4cd218d5e5d8fa933e325e78c96aef6b3f8cc8d942e4e4711c09978fa",
       "bytes": 105438,
       "scope": "independent invocation from SAC-generated start; not autonomous chain"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "path": "s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "sha256": "c6d6709a36c4a83f988f10bf95662a56c3e3f9158261cb19afb3a55acd0f1200",
+      "bytes": 118521,
+      "status": "failed",
+      "seed": 2024,
+      "scope": "oracle-assisted baseline development regression; original S1-IA best/855; not candidate or benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 22,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r3/seed2024/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-base-20260919-r3\\seed2024\\fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "path": "s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "sha256": "e269bb6c49de98fe3eb9dd7515ab1647cc1e9a565d709bd632eb45c1b4316ced",
+      "bytes": 202290,
+      "status": "failed",
+      "seed": 2025,
+      "scope": "oracle-assisted baseline development regression; original S1-IA best/855; not candidate or benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 34,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r3/seed2025/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-base-20260919-r3\\seed2025\\fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "path": "s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "sha256": "c51f82bed7a668c79e306b4fafce38d53650481dee8f5c1eb73217d9494fa6de",
+      "bytes": 169057,
+      "status": "failed",
+      "seed": 2026,
+      "scope": "oracle-assisted baseline development regression; original S1-IA best/855; not candidate or benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 30,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r3/seed2026/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-base-20260919-r3\\seed2026\\fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "path": "s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "sha256": "f8eaf78723598d4675d4520c2cdd1e6348c64d40749793b5895959d0505ab5df",
+      "bytes": 133951,
+      "status": "failed",
+      "seed": 2027,
+      "scope": "oracle-assisted baseline development regression; original S1-IA best/855; not candidate or benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 25,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r3/seed2027/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-base-20260919-r3\\seed2027\\fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "path": "s1-oracle-baseline-2026-09-19-run03/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "sha256": "18d10addf849e02d625389641c24c3b1757c4204765c6596955fc1466749f811",
+      "bytes": 220344,
+      "status": "failed",
+      "seed": 2028,
+      "scope": "oracle-assisted baseline development regression; original S1-IA best/855; not candidate or benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 40,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-base-20260919-r3/seed2028/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-base-20260919-r3\\seed2028\\fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-baseline-r3-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "path": "s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "sha256": "e2afbd4180da240748f14137bbcb46be4d3b70dd4855ed7ba4e720876c08a71d",
+      "bytes": 129514,
+      "status": "failed",
+      "seed": 2024,
+      "scope": "oracle-assisted candidate development regression; frozen dev8-selected S1-IA LoRA best/250; not benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 23,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-cand-20260919-r1/seed2024/fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2024\\fetch-s1-ia-oracle-pick-seed2024-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "path": "s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "sha256": "c9a04bf4db8a8ce22e7579221d019702dc53462f5099e2b998c5a81d36b075c3",
+      "bytes": 205278,
+      "status": "failed",
+      "seed": 2025,
+      "scope": "oracle-assisted candidate development regression; frozen dev8-selected S1-IA LoRA best/250; not benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 34,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-cand-20260919-r1/seed2025/fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2025\\fetch-s1-ia-oracle-pick-seed2025-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "path": "s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "sha256": "2dde69bf378ddf097581c9d98ff2b64d0512c99eb0ab073d542f4d5e55236086",
+      "bytes": 189808,
+      "status": "failed",
+      "seed": 2026,
+      "scope": "oracle-assisted candidate development regression; frozen dev8-selected S1-IA LoRA best/250; not benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 32,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-cand-20260919-r1/seed2026/fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2026\\fetch-s1-ia-oracle-pick-seed2026-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "path": "s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "sha256": "6ecea6ee7e70ca5e4bc76e5b847f405ca8446799632a04ce57c771c4790c75d2",
+      "bytes": 105735,
+      "status": "failed",
+      "seed": 2027,
+      "scope": "oracle-assisted candidate development regression; frozen dev8-selected S1-IA LoRA best/250; not benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 19,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-cand-20260919-r1/seed2027/fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2027\\fetch-s1-ia-oracle-pick-seed2027-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json"
+    },
+    {
+      "filename": "fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "path": "s1-oracle-candidate-2026-09-19-run01/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "sha256": "a5b13f299a707fba903b3cf334e80ade6498c521a733962e5d8e207ead24352d",
+      "bytes": 258268,
+      "status": "failed",
+      "seed": 2028,
+      "scope": "oracle-assisted candidate development regression; frozen dev8-selected S1-IA LoRA best/250; not benchmark success",
+      "recorded_date_utc": "2026-09-19",
+      "native_success": false,
+      "steps": 55,
+      "native_failure_causes": [
+        "native_cumulative_force_limit"
+      ],
+      "raw_source": "/home/pshuai/bvi-research/runs/s1-oracle-cand-20260919-r1/seed2028/fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "raw_local_source": "D:\\AI\\embodied intelligence\\runs\\two-day-assets-2026-09-19\\s1-oracle-cand-20260919-r1\\seed2028\\fetch-s1-ia-oracle-pick-seed2028-episode000-failed.mp4",
+      "raw_backup_receipt": "docs/results/two-day-delivery-2026-09-20/oracle-candidate-r1-full-backup.json"
+    },
+    {
+      "filename": "fixed-seed-000-attempt-001.mp4",
+      "path": "goal-tools-paired16-2026-09-20-pre-chunk01/fixed-seed-000-attempt-001.mp4",
+      "sha256": "bf89df0eff640cbbcbebf11aab740de7a4289a963122a681e5af145925168737",
+      "bytes": 1380259,
+      "status": "failed",
+      "seed": 0,
+      "scope": "fixed official PPO/SAC; partial paired-panel snapshot; zero of five objects; not benchmark success",
+      "recorded_date_utc": "2026-09-20",
+      "native_success": false,
+      "completed_objects": 0,
+      "steps": 373,
+      "raw_source": "/home/pshuai/bvi-research/runs/goal-tools-paired16-20260920/fixed/seed-000/attempt-001/videos/0.mp4"
+    },
+    {
+      "filename": "fixed-seed-001-attempt-001.mp4",
+      "path": "goal-tools-paired16-2026-09-20-pre-chunk01/fixed-seed-001-attempt-001.mp4",
+      "sha256": "c1adf4562f4f4217aabe7c7aaadad9f4e229daedf09afe0ddce78a8f2ee54106",
+      "bytes": 804472,
+      "status": "failed",
+      "seed": 1,
+      "scope": "fixed official PPO/SAC; partial paired-panel snapshot; zero of five objects; not benchmark success",
+      "recorded_date_utc": "2026-09-20",
+      "native_success": false,
+      "completed_objects": 0,
+      "steps": 266,
+      "raw_source": "/home/pshuai/bvi-research/runs/goal-tools-paired16-20260920/fixed/seed-001/attempt-001/videos/0.mp4"
+    },
+    {
+      "filename": "fixed-seed-002-attempt-001.mp4",
+      "path": "goal-tools-paired16-2026-09-20-pre-chunk01/fixed-seed-002-attempt-001.mp4",
+      "sha256": "5a93ead158eecc575e42d03ffcec43b1848e1e7d04e08466566305331562ebd5",
+      "bytes": 2524350,
+      "status": "failed",
+      "seed": 2,
+      "scope": "fixed official PPO/SAC; partial paired-panel snapshot; two of five objects; not benchmark success",
+      "recorded_date_utc": "2026-09-20",
+      "native_success": false,
+      "completed_objects": 2,
+      "steps": 675,
+      "raw_source": "/home/pshuai/bvi-research/runs/goal-tools-paired16-20260920/fixed/seed-002/attempt-001/videos/0.mp4"
+    },
+    {
+      "filename": "gpt-seed-001-attempt-001.mp4",
+      "path": "goal-tools-paired16-2026-09-20-pre-chunk01/gpt-seed-001-attempt-001.mp4",
+      "sha256": "bad62edc0deda19741d1ecd6e993111768ddd15362075545ca4f16a4fbb92572",
+      "bytes": 279342,
+      "status": "failed",
+      "seed": 1,
+      "scope": "GPT goal-tool planner with official PPO/SAC; zero of five objects; invalid structured output after69 actions; not benchmark success",
+      "recorded_date_utc": "2026-09-20",
+      "native_success": false,
+      "completed_objects": 0,
+      "steps": 69,
+      "raw_source": "/home/pshuai/bvi-research/runs/goal-tools-paired16-20260920/gpt/seed-001/attempt-001/videos/0.mp4"
+    },
+    {
+      "filename": "gpt-seed-002-attempt-004.mp4",
+      "path": "goal-tools-paired16-2026-09-20-gpt-seed002/gpt-seed-002-attempt-004.mp4",
+      "sha256": "f647f0f10e8684b17619b5da2395551e4238b7d5416c3f094e13b82a31a0cc73",
+      "bytes": 2986186,
+      "status": "failed",
+      "seed": 2,
+      "scope": "GPT-5.6 Luna goal-tool planner with official PPO navigation and per-object SAC; two of five objects; native benchmark failure; partial rollout only",
+      "recorded_date_utc": "2026-09-20",
+      "native_success": false,
+      "completed_objects": 2,
+      "steps": 803,
+      "api_requests": 27,
+      "raw_source": "/home/pshuai/bvi-research/runs/goal-tools-paired16-20260920/gpt/seed-002/attempt-004/videos/0.mp4"
     }
   ]
 }
