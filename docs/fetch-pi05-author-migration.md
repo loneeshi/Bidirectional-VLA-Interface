@@ -6,7 +6,8 @@
 > collection has completed50 trajectories. The native gate returned0/5, so this
 > week’s π₀.₅ TAPT updates are stopped. Eight handoff inputs passed replay
 > verification, not learned-head acceptance. See the [actual results](fetch-v8-native-capability.md) and current
-> [priority protocol](mshab-reproduction-priority.md). Historical execution below
+> the then-current priority protocol (that planning document has since been
+> removed as superseded). Historical execution below
 > is retained, not an instruction to resume the old pipeline.
 
 
