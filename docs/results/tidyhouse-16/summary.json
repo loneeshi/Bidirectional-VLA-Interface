@@ -1,0 +1,537 @@
+{
+  "schema": "bvi-tidyhouse-comparison/1",
+  "task": "TidyHouse",
+  "scope": "matched_16_plan_diagnostic_not_1000_rollout_benchmark",
+  "training_updates": 0,
+  "runtime_provenance": {
+    "official_mshab_commit": "e9ff3d23496d38e4431c8d913e147ffa007f7f72",
+    "standardized_teleport_source_commit": "4729821db3fc94a2470cfd625e6f8ab439f01478"
+  },
+  "settings": [
+    {
+      "setting": "fixed",
+      "planned_episodes": 16,
+      "completed_episodes": 16,
+      "infrastructure_failures": 0,
+      "full_task_successes": 0,
+      "completed_objects": 14,
+      "planned_objects": 80,
+      "completed_object_rate": 0.175,
+      "mean_completed_objects": 0.875,
+      "api_requests_final_attempts": 0,
+      "episodes": [
+        {
+          "seed": 0,
+          "plan_uid": "tidy_house-sequential-val-557-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 373,
+          "api_requests": 0,
+          "initial_state_sha256": "65dc99175b6cbbbdc82ba4c1ba05f32e6b969fd3957a862688e43f04934ef333"
+        },
+        {
+          "seed": 1,
+          "plan_uid": "tidy_house-sequential-val-90-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 266,
+          "api_requests": 0,
+          "initial_state_sha256": "9915944b85cc1564194252d40034f3fb482e9603800d3ffc6be23ea3618c47c7"
+        },
+        {
+          "seed": 2,
+          "plan_uid": "tidy_house-sequential-val-147-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 675,
+          "api_requests": 0,
+          "initial_state_sha256": "6986b05c76ca211d05568df92b009c9b526d11dccc6dcc0c1c0c9c1fc61e7d3b"
+        },
+        {
+          "seed": 3,
+          "plan_uid": "tidy_house-sequential-val-189-0",
+          "task_success": false,
+          "completed_objects": 4,
+          "reason": "benchmark_fail",
+          "steps": 1113,
+          "api_requests": 0,
+          "initial_state_sha256": "4a306544ccbc176f0c0012565fed4a3bbb50af9c546c230c717fde31b2a725cb"
+        },
+        {
+          "seed": 4,
+          "plan_uid": "tidy_house-sequential-val-553-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 386,
+          "api_requests": 0,
+          "initial_state_sha256": "4f8f64171b7d3c2690098af2fa5f82cd85682ad918cb5061f0e4f814974daa3b"
+        },
+        {
+          "seed": 5,
+          "plan_uid": "tidy_house-sequential-val-86-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 486,
+          "api_requests": 0,
+          "initial_state_sha256": "9fd846d31e40db4042d032d85ce03c29f930c575bdd04d5d21a710a35ecec24c"
+        },
+        {
+          "seed": 6,
+          "plan_uid": "tidy_house-sequential-val-682-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 430,
+          "api_requests": 0,
+          "initial_state_sha256": "97561470d36718c735d4ba91e0ae27943b8b65c89beef8679ba28d89fb8d952b"
+        },
+        {
+          "seed": 7,
+          "plan_uid": "tidy_house-sequential-val-881-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 264,
+          "api_requests": 0,
+          "initial_state_sha256": "bcad609a6e5a383fa58922348bbb9a8753f1d6675a6e5d2a3c5de8f3865a93e0"
+        },
+        {
+          "seed": 8,
+          "plan_uid": "tidy_house-sequential-val-17-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 198,
+          "api_requests": 0,
+          "initial_state_sha256": "640b9240d9ec89b3cd1e662e71b1667ffda5206e833a046e843b4afd1c72b456"
+        },
+        {
+          "seed": 9,
+          "plan_uid": "tidy_house-sequential-val-629-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 102,
+          "api_requests": 0,
+          "initial_state_sha256": "1dc35a657b6b31305b441917d88bf9035adde04407c15eae512baf2f6cb4eb75"
+        },
+        {
+          "seed": 10,
+          "plan_uid": "tidy_house-sequential-val-586-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 858,
+          "api_requests": 0,
+          "initial_state_sha256": "5a8c672dc41362299529d767dc8daa15b7b58ba3f5c9a2edf97fe5ec986e1e6b"
+        },
+        {
+          "seed": 11,
+          "plan_uid": "tidy_house-sequential-val-327-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 388,
+          "api_requests": 0,
+          "initial_state_sha256": "2ad0e6f5584a5115f926cbd1a534fe9d68a39161dfa4e45d68d56385e6b74bb3"
+        },
+        {
+          "seed": 13,
+          "plan_uid": "tidy_house-sequential-val-850-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 674,
+          "api_requests": 0,
+          "initial_state_sha256": "a6e9cea04a60609e7fc1f70196537be952bdfeb280e0c57a1ef2b6cfeef53f1b"
+        },
+        {
+          "seed": 14,
+          "plan_uid": "tidy_house-sequential-val-113-0",
+          "task_success": false,
+          "completed_objects": 3,
+          "reason": "benchmark_fail",
+          "steps": 1087,
+          "api_requests": 0,
+          "initial_state_sha256": "51bccace2ce683eee63763c535fb62b6659d9636f2fc4a57c76498f32ba9bc76"
+        },
+        {
+          "seed": 16,
+          "plan_uid": "tidy_house-sequential-val-334-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 292,
+          "api_requests": 0,
+          "initial_state_sha256": "64ebea47fdbbeb30cc41db3b9636cfcf8c99e40b647c399aab49293c550cddd6"
+        },
+        {
+          "seed": 19,
+          "plan_uid": "tidy_house-sequential-val-110-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 181,
+          "api_requests": 0,
+          "initial_state_sha256": "0f3029382b1c31c12f9a92b3292258e0d40207b53ccb4dcac27eb0bb59177ca5"
+        }
+      ],
+      "source_sha256": "5fea051d078bf7c347fbddb997aeda12afa1324313ed3ffaa86f7cd83c6b5029"
+    },
+    {
+      "setting": "gpt",
+      "planned_episodes": 16,
+      "completed_episodes": 16,
+      "infrastructure_failures": 0,
+      "full_task_successes": 0,
+      "completed_objects": 13,
+      "planned_objects": 80,
+      "completed_object_rate": 0.1625,
+      "mean_completed_objects": 0.8125,
+      "api_requests_final_attempts": 245,
+      "episodes": [
+        {
+          "seed": 0,
+          "plan_uid": "tidy_house-sequential-val-557-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 740,
+          "api_requests": 20,
+          "initial_state_sha256": "65dc99175b6cbbbdc82ba4c1ba05f32e6b969fd3957a862688e43f04934ef333"
+        },
+        {
+          "seed": 1,
+          "plan_uid": "tidy_house-sequential-val-90-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 471,
+          "api_requests": 16,
+          "initial_state_sha256": "9915944b85cc1564194252d40034f3fb482e9603800d3ffc6be23ea3618c47c7"
+        },
+        {
+          "seed": 2,
+          "plan_uid": "tidy_house-sequential-val-147-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 803,
+          "api_requests": 27,
+          "initial_state_sha256": "6986b05c76ca211d05568df92b009c9b526d11dccc6dcc0c1c0c9c1fc61e7d3b"
+        },
+        {
+          "seed": 3,
+          "plan_uid": "tidy_house-sequential-val-189-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 692,
+          "api_requests": 24,
+          "initial_state_sha256": "4a306544ccbc176f0c0012565fed4a3bbb50af9c546c230c717fde31b2a725cb"
+        },
+        {
+          "seed": 4,
+          "plan_uid": "tidy_house-sequential-val-553-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 386,
+          "api_requests": 10,
+          "initial_state_sha256": "4f8f64171b7d3c2690098af2fa5f82cd85682ad918cb5061f0e4f814974daa3b"
+        },
+        {
+          "seed": 5,
+          "plan_uid": "tidy_house-sequential-val-86-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 615,
+          "api_requests": 18,
+          "initial_state_sha256": "9fd846d31e40db4042d032d85ce03c29f930c575bdd04d5d21a710a35ecec24c"
+        },
+        {
+          "seed": 6,
+          "plan_uid": "tidy_house-sequential-val-682-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 220,
+          "api_requests": 6,
+          "initial_state_sha256": "97561470d36718c735d4ba91e0ae27943b8b65c89beef8679ba28d89fb8d952b"
+        },
+        {
+          "seed": 7,
+          "plan_uid": "tidy_house-sequential-val-881-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 664,
+          "api_requests": 20,
+          "initial_state_sha256": "bcad609a6e5a383fa58922348bbb9a8753f1d6675a6e5d2a3c5de8f3865a93e0"
+        },
+        {
+          "seed": 8,
+          "plan_uid": "tidy_house-sequential-val-17-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 201,
+          "api_requests": 6,
+          "initial_state_sha256": "640b9240d9ec89b3cd1e662e71b1667ffda5206e833a046e843b4afd1c72b456"
+        },
+        {
+          "seed": 9,
+          "plan_uid": "tidy_house-sequential-val-629-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 45,
+          "api_requests": 2,
+          "initial_state_sha256": "1dc35a657b6b31305b441917d88bf9035adde04407c15eae512baf2f6cb4eb75"
+        },
+        {
+          "seed": 10,
+          "plan_uid": "tidy_house-sequential-val-586-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 393,
+          "api_requests": 13,
+          "initial_state_sha256": "5a8c672dc41362299529d767dc8daa15b7b58ba3f5c9a2edf97fe5ec986e1e6b"
+        },
+        {
+          "seed": 11,
+          "plan_uid": "tidy_house-sequential-val-327-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 549,
+          "api_requests": 15,
+          "initial_state_sha256": "2ad0e6f5584a5115f926cbd1a534fe9d68a39161dfa4e45d68d56385e6b74bb3"
+        },
+        {
+          "seed": 13,
+          "plan_uid": "tidy_house-sequential-val-850-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 661,
+          "api_requests": 18,
+          "initial_state_sha256": "a6e9cea04a60609e7fc1f70196537be952bdfeb280e0c57a1ef2b6cfeef53f1b"
+        },
+        {
+          "seed": 14,
+          "plan_uid": "tidy_house-sequential-val-113-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 424,
+          "api_requests": 15,
+          "initial_state_sha256": "51bccace2ce683eee63763c535fb62b6659d9636f2fc4a57c76498f32ba9bc76"
+        },
+        {
+          "seed": 16,
+          "plan_uid": "tidy_house-sequential-val-334-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "request_exceeds_remaining_experiment_wall_budget",
+          "steps": 914,
+          "api_requests": 28,
+          "initial_state_sha256": "64ebea47fdbbeb30cc41db3b9636cfcf8c99e40b647c399aab49293c550cddd6"
+        },
+        {
+          "seed": 19,
+          "plan_uid": "tidy_house-sequential-val-110-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 234,
+          "api_requests": 7,
+          "initial_state_sha256": "0f3029382b1c31c12f9a92b3292258e0d40207b53ccb4dcac27eb0bb59177ca5"
+        }
+      ],
+      "source_sha256": "5fea051d078bf7c347fbddb997aeda12afa1324313ed3ffaa86f7cd83c6b5029"
+    },
+    {
+      "setting": "teleport",
+      "planned_episodes": 16,
+      "completed_episodes": 16,
+      "infrastructure_failures": 0,
+      "full_task_successes": 0,
+      "completed_objects": 21,
+      "planned_objects": 80,
+      "completed_object_rate": 0.2625,
+      "mean_completed_objects": 1.3125,
+      "api_requests_final_attempts": 0,
+      "episodes": [
+        {
+          "seed": 0,
+          "plan_uid": "tidy_house-sequential-val-557-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 732,
+          "api_requests": 0,
+          "initial_state_sha256": "65dc99175b6cbbbdc82ba4c1ba05f32e6b969fd3957a862688e43f04934ef333"
+        },
+        {
+          "seed": 1,
+          "plan_uid": "tidy_house-sequential-val-90-0",
+          "task_success": false,
+          "completed_objects": 2,
+          "reason": "benchmark_fail",
+          "steps": 656,
+          "api_requests": 0,
+          "initial_state_sha256": "9915944b85cc1564194252d40034f3fb482e9603800d3ffc6be23ea3618c47c7"
+        },
+        {
+          "seed": 2,
+          "plan_uid": "tidy_house-sequential-val-147-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 141,
+          "api_requests": 0,
+          "initial_state_sha256": "6986b05c76ca211d05568df92b009c9b526d11dccc6dcc0c1c0c9c1fc61e7d3b"
+        },
+        {
+          "seed": 3,
+          "plan_uid": "tidy_house-sequential-val-189-0",
+          "task_success": false,
+          "completed_objects": 3,
+          "reason": "benchmark_fail",
+          "steps": 879,
+          "api_requests": 0,
+          "initial_state_sha256": "4a306544ccbc176f0c0012565fed4a3bbb50af9c546c230c717fde31b2a725cb"
+        },
+        {
+          "seed": 4,
+          "plan_uid": "tidy_house-sequential-val-553-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 499,
+          "api_requests": 0,
+          "initial_state_sha256": "4f8f64171b7d3c2690098af2fa5f82cd85682ad918cb5061f0e4f814974daa3b"
+        },
+        {
+          "seed": 5,
+          "plan_uid": "tidy_house-sequential-val-86-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 25,
+          "api_requests": 0,
+          "initial_state_sha256": "9fd846d31e40db4042d032d85ce03c29f930c575bdd04d5d21a710a35ecec24c"
+        },
+        {
+          "seed": 6,
+          "plan_uid": "tidy_house-sequential-val-682-0",
+          "task_success": false,
+          "completed_objects": 4,
+          "reason": "benchmark_fail",
+          "steps": 511,
+          "api_requests": 0,
+          "initial_state_sha256": "97561470d36718c735d4ba91e0ae27943b8b65c89beef8679ba28d89fb8d952b"
+        },
+        {
+          "seed": 7,
+          "plan_uid": "tidy_house-sequential-val-881-0",
+          "task_success": false,
+          "completed_objects": 3,
+          "reason": "benchmark_fail",
+          "steps": 447,
+          "api_requests": 0,
+          "initial_state_sha256": "bcad609a6e5a383fa58922348bbb9a8753f1d6675a6e5d2a3c5de8f3865a93e0"
+        },
+        {
+          "seed": 8,
+          "plan_uid": "tidy_house-sequential-val-17-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 12,
+          "api_requests": 0,
+          "initial_state_sha256": "640b9240d9ec89b3cd1e662e71b1667ffda5206e833a046e843b4afd1c72b456"
+        },
+        {
+          "seed": 9,
+          "plan_uid": "tidy_house-sequential-val-629-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 547,
+          "api_requests": 0,
+          "initial_state_sha256": "1dc35a657b6b31305b441917d88bf9035adde04407c15eae512baf2f6cb4eb75"
+        },
+        {
+          "seed": 10,
+          "plan_uid": "tidy_house-sequential-val-586-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 11,
+          "api_requests": 0,
+          "initial_state_sha256": "5a8c672dc41362299529d767dc8daa15b7b58ba3f5c9a2edf97fe5ec986e1e6b"
+        },
+        {
+          "seed": 11,
+          "plan_uid": "tidy_house-sequential-val-327-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 209,
+          "api_requests": 0,
+          "initial_state_sha256": "2ad0e6f5584a5115f926cbd1a534fe9d68a39161dfa4e45d68d56385e6b74bb3"
+        },
+        {
+          "seed": 13,
+          "plan_uid": "tidy_house-sequential-val-850-0",
+          "task_success": false,
+          "completed_objects": 0,
+          "reason": "benchmark_fail",
+          "steps": 571,
+          "api_requests": 0,
+          "initial_state_sha256": "a6e9cea04a60609e7fc1f70196537be952bdfeb280e0c57a1ef2b6cfeef53f1b"
+        },
+        {
+          "seed": 14,
+          "plan_uid": "tidy_house-sequential-val-113-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 274,
+          "api_requests": 0,
+          "initial_state_sha256": "51bccace2ce683eee63763c535fb62b6659d9636f2fc4a57c76498f32ba9bc76"
+        },
+        {
+          "seed": 16,
+          "plan_uid": "tidy_house-sequential-val-334-0",
+          "task_success": false,
+          "completed_objects": 1,
+          "reason": "benchmark_fail",
+          "steps": 209,
+          "api_requests": 0,
+          "initial_state_sha256": "64ebea47fdbbeb30cc41db3b9636cfcf8c99e40b647c399aab49293c550cddd6"
+        },
+        {
+          "seed": 19,
+          "plan_uid": "tidy_house-sequential-val-110-0",
+          "task_success": false,
+          "completed_objects": 3,
+          "reason": "benchmark_fail",
+          "steps": 227,
+          "api_requests": 0,
+          "initial_state_sha256": "0f3029382b1c31c12f9a92b3292258e0d40207b53ccb4dcac27eb0bb59177ca5"
+        }
+      ],
+      "source_sha256": "76367f66a7cae6b25aa46ece7fb37038cf2412d037e005818b44dacdf6c90576"
+    }
+  ]
+}

@@ -7,8 +7,10 @@ wall-clock gate runs before and after each action-producing call.
 """
 from __future__ import annotations
 
+import os
 import time
 from collections.abc import Callable, Mapping
+from dataclasses import replace
 
 from .logging import JsonlLogger
 from .protocol import (AllowedCall, Environment, Observation, ProtocolError, RequirementResult,
@@ -39,6 +41,16 @@ class SerialRuntime:
         self.last_observation = current
         started = self.clock()
         steps = 0
+        last_feedback: SkillFeedback | None = None
+
+        def terminalize(feedback: SkillFeedback | None, status: SkillStatus,
+                        reason: str) -> SkillFeedback | None:
+            if feedback is None:
+                return None
+            return replace(feedback, status=status, reason=reason,
+                           requirements=tuple(RequirementResult(
+                               item.requirement_id, RequirementState.UNKNOWN,
+                               item.evidence) for item in feedback.requirements))
 
         def finish(status: SkillStatus, reason: str,
                    feedback: SkillFeedback | None = None) -> SkillResult:
@@ -86,26 +98,37 @@ class SerialRuntime:
                 if current.sim_step <= previous_step:
                     return finish(SkillStatus.FAILED, "nonmonotonic_environment_step")
                 feedback = skill.feedback(request, transition)
+                last_feedback = feedback
                 validate_feedback(request, feedback)
                 self.logger.emit("skill_step", call_id=request.call_id, step=steps,
                                  frame_id=current.frame_id, action=action,
                                  feedback=feedback, terminated=transition.terminated,
                                  truncated=transition.truncated)
                 if self.clock() - started >= request.timeout_seconds:
-                    return finish(SkillStatus.TIMED_OUT, "environment_exceeded_wall_clock_limit")
+                    return finish(SkillStatus.TIMED_OUT, "environment_exceeded_wall_clock_limit",
+                                  terminalize(last_feedback, SkillStatus.TIMED_OUT,
+                                              "environment_exceeded_wall_clock_limit"))
                 if feedback.status is not SkillStatus.EXECUTING:
                     return finish(feedback.status, feedback.reason or "skill_ended", feedback)
                 if transition.truncated:
-                    return finish(SkillStatus.TIMED_OUT, "environment_truncated")
+                    return finish(SkillStatus.TIMED_OUT, "environment_truncated",
+                                  terminalize(last_feedback, SkillStatus.TIMED_OUT,
+                                              "environment_truncated"))
                 if transition.terminated:
-                    return finish(SkillStatus.FAILED, "environment_terminated_without_skill_success")
+                    return finish(SkillStatus.FAILED, "environment_terminated_without_skill_success",
+                                  terminalize(last_feedback, SkillStatus.FAILED,
+                                              "environment_terminated_without_skill_success"))
                 if AllowedCall(request.skill, request.target_id) not in current.allowed_calls:
                     return finish(SkillStatus.FAILED, "admissibility_changed_without_completion")
-            return finish(SkillStatus.TIMED_OUT, "step_limit")
+            return finish(SkillStatus.TIMED_OUT, "step_limit",
+                          terminalize(last_feedback, SkillStatus.TIMED_OUT, "step_limit"))
         except Exception as exc:
             # Exception type is sufficient for public event logs; messages may
             # contain provider keys or private paths. Full traceback stays with
             # the application runner if it opts into debug logging.
+            if os.getenv("BVI_DEBUG_ADAPTER_EXCEPTION") == "1":
+                self.logger.emit("adapter_exception_debug", exception_type=type(exc).__name__,
+                                 message=str(exc))
             return finish(SkillStatus.FAILED, f"adapter_error:{type(exc).__name__}")
         finally:
             self._active = False

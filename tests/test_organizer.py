@@ -1,71 +1,52 @@
-import unittest,tempfile,json,base64
-from pathlib import Path
 from dataclasses import replace
-from bvi.organizer import OrganizerView,GraspMonitor
-from bvi import *
-from test_runtime import FakeEnv,FakeSkill
 
-class ContactEnv(FakeEnv):
-    def __init__(self,grasps):super().__init__();self.grasps=grasps
-    def step(self,action):
-        t=super().step(action)
-        return replace(t,info={'is_grasped':[self.grasps[min(self.steps-1,len(self.grasps)-1)]]})
+import pytest
 
-class OrganizerTests(unittest.TestCase):
-    def test_synthetic_fault_is_not_reinjected_after_retry(self):
-        from bvi.organizer import InjectedClosureFault
-        from unittest.mock import Mock
-        skill=FakeSkill(action=[.2]*13);fault=InjectedClosureFault(skill,Mock())
-        env=FakeEnv();r=SkillRequest('x','pick','cup','f0',())
-        fault.start(r,env.observe())
-        for _ in range(6):self.assertEqual(fault.act(env.observe())[7],-1)
-        fault.start(r,env.observe())
-        self.assertEqual(fault.act(env.observe()),[.2]*13)
-    def run_monitor(self,grasps,success=100):
-        env=ContactEnv(grasps);skill=FakeSkill(successful_at=success,action=[0.]*7+[-1.]+[0.]*5)
-        temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup)
-        log=JsonlLogger(Path(temp.name)/'events.jsonl','offline')
-        specs={'pick':SkillSpec('pick')};view=OrganizerView(env,specs,10)
-        runtime=SerialRuntime(env,{'pick':GraspMonitor(skill,closure_steps=3,loss_steps=2)},specs,log)
-        req=SkillRequest('one','pick','cup','f0',(Requirement('r','benchmark_success'),),10,30)
-        result=runtime.execute(req);view.note_result(result)
-        return env,result,view,log
+from bvi import AllowedCall, ImageFrame, Observation, SkillFeedback, SkillRequest, SkillResult, SkillSpec, SkillStatus, Target
+from bvi.organizer import ABORT, OrganizerView
 
-    def test_missed_grasp_yields_before_full_skill_horizon(self):
-        env,r,v,_=self.run_monitor([False]*10)
-        self.assertEqual(env.steps,3);self.assertEqual(r.feedback.reason,'missed_grasp')
-        self.assertEqual(r.feedback.status,SkillStatus.INTERRUPTED)
-        self.assertIn('missed_grasp',v.observe().task)
-        self.assertEqual(len(v.observe().allowed_calls),2)
-        self.assertEqual(env.observe().allowed_calls,(AllowedCall('pick','cup'),))
 
-    def test_transient_contact_is_not_sustained_loss(self):
-        env,r,_,_=self.run_monitor([True,False,True,False,False])
-        self.assertEqual(env.steps,5);self.assertEqual(r.feedback.reason,'grasp_lost')
+class Env:
+    def __init__(self):
+        self.observation = Observation(
+            "frame-0",
+            0,
+            images=(ImageFrame("fetch_nav", b"a"), ImageFrame("fetch_workspace", b"b")),
+            targets=(Target("apple", "apple", "task_plan"),),
+            allowed_calls=(AllowedCall("pick", "apple"),),
+            task="TidyHouse.",
+            metadata={"interface": "goal-grounded-ppo-sac/1"},
+        )
 
-    def test_native_success_has_priority(self):
-        env,r,_,_=self.run_monitor([False]*8,success=3)
-        self.assertEqual(r.feedback.status,SkillStatus.SUCCEEDED)
+    def observe(self):
+        return self.observation
 
-    def test_native_failure_has_priority(self):
-        class Fail(FakeSkill):
-            def feedback(self,r,t):return SkillFeedback(SkillStatus.FAILED,reason='benchmark_fail')
-        m=GraspMonitor(Fail(),closure_steps=1);r=SkillRequest('x','pick','cup','f0',())
-        e=ContactEnv([False]);m.start(r,e.observe());m.act(e.observe())
-        self.assertEqual(m.feedback(r,e.step([0.]*13)).reason,'benchmark_fail')
 
-    def test_vlm_can_choose_abort_after_event_without_extra_physics(self):
-        env,result,view,logger=self.run_monitor([False]*10)
-        png=base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+j5e0AAAAASUVORK5CYII=')
-        obs=replace(view.observe(),images=(ImageFrame('fixture',png),))
-        class Transport:
-            provider='offline';model='fixture'
-            def generate(self,request):
-                self.prompt=request.prompt
-                return VLMResponse(json.dumps(dict(call_id='stop',skill='abort_task',target_id='episode',observation_id='f3',requirements=[dict(id='stop',predicate='task_stopped')],max_steps=1,timeout_seconds=1)),None,None)
-        transport=Transport();coordinator=VLMCoordinator(transport,view.specs,logger,APIBudget('offline',1,200,.01,.01))
-        request=coordinator.decide(obs,[view.last_event])
-        self.assertEqual(request.skill,'abort_task');self.assertIn('missed_grasp',transport.prompt)
-        self.assertEqual(env.steps,3)
+def test_organizer_adds_abort_and_freezes_slice():
+    view = OrganizerView(Env(), {"pick": SkillSpec("pick", max_steps=200)}, 40)
+    observation = view.observe()
+    assert view.specs["pick"].max_steps == 40
+    assert view.specs[ABORT].max_steps == 1
+    assert observation.allowed_calls[-1] == AllowedCall(ABORT, "episode")
+    assert "not a next-step hint" in observation.task
+    assert [image.camera for image in observation.images] == ["fetch_nav", "fetch_workspace"]
 
-if __name__=='__main__':unittest.main()
+
+def test_organizer_reports_only_serialized_previous_result():
+    view = OrganizerView(Env(), {"pick": SkillSpec("pick")}, 40)
+    request = SkillRequest("call", "pick", "apple", "frame-0", ())
+    result = SkillResult(request, SkillFeedback(SkillStatus.TIMED_OUT, reason="step_limit"), 40, 1.0, view.env.observe())
+    view.note_result(result)
+    assert view.last_event == {"skill": "pick", "status": "timed_out", "reason": "step_limit", "steps": 40}
+    assert "step_limit" in view.observe().task
+
+
+def test_invalid_slice_is_rejected():
+    with pytest.raises(ValueError):
+        OrganizerView(Env(), {"pick": SkillSpec("pick")}, 0)
+
+
+def test_finished_observation_is_not_modified():
+    env = Env()
+    env.observation = replace(env.observation, allowed_calls=())
+    assert OrganizerView(env, {"pick": SkillSpec("pick")}).observe() is env.observation

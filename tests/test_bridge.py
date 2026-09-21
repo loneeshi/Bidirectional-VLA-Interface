@@ -23,12 +23,16 @@ class FakeProvider:
     def __init__(self):
         self.requests = []
         self.error = None
+        self.reset_count = 0
 
     def generate(self, request):
         self.requests.append(request)
         if self.error:
             raise self.error
         return VLMResponse('{"fixture":true}', "fake-provider-response", {"input_tokens": 9}, "completed")
+
+    def reset_connection(self):
+        self.reset_count += 1
 
 
 class BridgeTests(unittest.TestCase):
@@ -58,7 +62,8 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual(len(self.provider.requests), 1)
         self.assertEqual(other_provider.requests, [])
         records = [json.loads(line) for line in self.processor.logger.path.read_text().splitlines()]
-        self.assertTrue(all(row["accounting_role"] == "mirror_of_remote_attempt" for row in records))
+        self.assertEqual({row["accounting_role"] for row in records},
+                         {"mirror_of_remote_attempt", "physical_provider_attempt"})
         self.assertEqual(records[-1]["bridge_id"], "a" * 32)
 
     def test_unknown_started_attempt_is_never_reissued(self):
@@ -76,6 +81,33 @@ class BridgeTests(unittest.TestCase):
         self.assertNotIn("private", json.dumps(result))
         self.assertEqual(self.processor.process(self.envelope), result)
         self.assertEqual(len(self.provider.requests), 1)
+
+    def test_connection_error_retries_are_individually_claimed_and_bounded(self):
+        ConnectionErrorType=type('APIConnectionError',(Exception,),{})
+        class Flaky(FakeProvider):
+            def generate(self,request):
+                self.requests.append(request)
+                if len(self.requests)<3:raise ConnectionErrorType('private')
+                return VLMResponse('{}','ok',{},'completed')
+        provider=Flaky();processor=BridgeProcessor(provider,
+            replace(self.budget,max_calls=4,max_cost_usd=.4),self.directory/'retry',max_provider_retries=10,
+            retry_delay_seconds=0)
+        result=processor.process(self.envelope)
+        self.assertTrue(result['ok']);self.assertEqual(result['provider_attempts'],3)
+        self.assertEqual(len(list(processor.directory.glob('*.claim.json'))),3)
+        self.assertEqual(provider.reset_count,2)
+        events=[json.loads(x) for x in processor.logger.path.read_text().splitlines()]
+        failures=[x for x in events if x['event']=='bridge_provider_attempt_failed']
+        self.assertEqual([x['exception_chain'] for x in failures],[['APIConnectionError']]*2)
+
+    def test_retry_never_exceeds_global_physical_attempt_budget(self):
+        self.provider.error=type('APIConnectionError',(Exception,),{})('private')
+        processor=BridgeProcessor(self.provider,self.budget,self.directory/'retry-budget',
+                                  max_provider_retries=10,retry_delay_seconds=0)
+        result=processor.process(self.envelope)
+        self.assertFalse(result['ok']);self.assertEqual(result['error_type'],'APIBudgetExhausted')
+        self.assertEqual(len(self.provider.requests),2)
+        self.assertEqual(len(list(processor.directory.glob('*.claim.json'))),2)
 
     def test_changed_payload_with_same_id_cannot_reuse_or_resend(self):
         self.processor.process(self.envelope)
