@@ -92,6 +92,12 @@ evidence in `results/` and `runs/`. See [log/README.md](log/README.md).
 | [fetch-pi05-author-migration.md](fetch-pi05-author-migration.md) | Author OpenPI π₀.₅ on Fetch: model contract, strict loading of 71 tensors, BF16/FP32 attribution |
 | [fetch-v8-native-capability.md](fetch-v8-native-capability.md) | **Frozen V8 native gate: 0/5.** Stop-loss executed; π₀.₅ TAPT training stopped for the week |
 
+## Proposals (not yet executed)
+
+| Document | What it proposes |
+|---|---|
+| [codebase-proposal-2026-09-21.md](codebase-proposal-2026-09-21.md) | Preparing the codebase for the feedback-system week: module status labelling, a `bvi/feedback/` subpackage, the SAC spawn-prior scan, and the measurement changes the current 16-plan panel needs before it can detect an improvement |
+
 ## MS-HAB: the 16-plan paired panels (current)
 
 | Document | What it covers |
