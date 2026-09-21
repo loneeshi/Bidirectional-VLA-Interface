@@ -1,0 +1,9 @@
+{
+  "commit": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+  "source": "src/AC-DiT",
+  "destination": "src/AC-DiT-rdt-20260919",
+  "weighting_upstream_sha": "af98ac7dfef639ca9b875d12f2657d6e720ffe38c56d10b7a3418a0d18b010ad",
+  "weighting_lab_patch_sha": "b4f6a4579376772bc7817dbd0f0feae2609e694bfdff2e1ffd610368bc3f607b",
+  "other_files": "git archive pinned upstream",
+  "GPU_operations": 0
+}

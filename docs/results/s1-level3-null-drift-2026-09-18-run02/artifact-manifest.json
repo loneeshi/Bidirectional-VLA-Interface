@@ -1,0 +1,66 @@
+{
+  "batch": "s1-level3-null-drift-2026-09-18-run01-run02",
+  "source_archive": {
+    "path": "D:/AI/embodied intelligence/runs/s1-level3-null-drift-2026-09-18-run01-run02.tar.gz",
+    "size_bytes": 42585,
+    "sha256": "aa33c7624dfa422925b9ee07b62d46adcad215e1a9a1204584365f217f01e553"
+  },
+  "failed_run01": {
+    "summary_path": "../s1-level3-null-drift-2026-09-18-run01/summary.json",
+    "summary_sha256": "5cc881e0a5c94ec62dd504ceb38a779a7cd605ce1d4e06d3e381a06939a515b7",
+    "expert_replay_actions": 0
+  },
+  "completed_run02_files": [
+    {
+      "path": "launch.json",
+      "size_bytes": 2036,
+      "sha256": "6da8f85135d24be85cf15c5220f18189184b068e95865c0fd744d98eaeb4169b"
+    },
+    {
+      "path": "repeat-00/events.jsonl",
+      "size_bytes": 24941,
+      "sha256": "f3889a39ecbbcf488ddeed61192193a4949d8b70a32fb3effa88dee0d7508def"
+    },
+    {
+      "path": "repeat-00/result.json",
+      "size_bytes": 9867,
+      "sha256": "78b363acd93a6ac97feed8d0f037b269c74c52cf4d7873fe81f66bf5111cc3dd"
+    },
+    {
+      "path": "repeat-01/events.jsonl",
+      "size_bytes": 24941,
+      "sha256": "f3889a39ecbbcf488ddeed61192193a4949d8b70a32fb3effa88dee0d7508def"
+    },
+    {
+      "path": "repeat-01/result.json",
+      "size_bytes": 9869,
+      "sha256": "211285b113927e1aaf057fe658b84300a048031ca710947d244d7bca8bd3eef3"
+    },
+    {
+      "path": "repeat-02/events.jsonl",
+      "size_bytes": 24941,
+      "sha256": "f3889a39ecbbcf488ddeed61192193a4949d8b70a32fb3effa88dee0d7508def"
+    },
+    {
+      "path": "repeat-02/result.json",
+      "size_bytes": 9869,
+      "sha256": "5593eb33f15c10e7cb6409bd8e462012151c072414bf8ffa0c1609f8e0be6b42"
+    },
+    {
+      "path": "summary.json",
+      "size_bytes": 5559,
+      "sha256": "95cdfa13f70fa6c55997bae2a5c88e4540e9c7f0afbab8a0ac759de92602fc5d"
+    },
+    {
+      "path": "thresholds.json",
+      "size_bytes": 28612,
+      "sha256": "3ae9e3e1e76dc788576e670585837a1b536af7069605809617c8939cb66a1f08"
+    }
+  ],
+  "derived_first_divergence": {
+    "path": "../s1-level3-first-divergence-2026-09-18-run01.json",
+    "size_bytes": 209093,
+    "sha256": "569a7f96aea47fa071f71d4d50c194923545bd00305373e023c1e004f5461545"
+  },
+  "note": "The manifest excludes itself. Identical repeat event hashes are an observed result, not deduplicated evidence."
+}

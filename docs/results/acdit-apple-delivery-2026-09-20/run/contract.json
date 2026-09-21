@@ -1,0 +1,57 @@
+{
+  "id": "acdit-apple-bounded-20260919-run01",
+  "created_at": "2026-09-19T05:48:21.259839+00:00",
+  "start_unix": 1789796901.259839,
+  "deadline_unix": 1789901787.9894974,
+  "task": "set_table/pick/013_apple",
+  "scope": "Single-task budget-constrained original RDT AC-DiT two-stage adaptation, not exact seven-task paper reproduction",
+  "max_seconds_total_including_preparation": 64800,
+  "max_training_attempts": 1,
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "source_revision": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+  "collection": {
+    "target_successes": 1000,
+    "minimum_successes": 300,
+    "maximum_attempts": 1500,
+    "num_envs": 16,
+    "max_seconds": 3600,
+    "seed": 20260919,
+    "max_actions_per_episode": 200,
+    "split": "train plans; scene-disjoint 20 percent development before training",
+    "scene_selection": "Seeded cyclic coverage of all available training scenes; explicit reconfigure/build_config_idxs per batch"
+  },
+  "stage1": {
+    "max_seconds": 14400,
+    "max_updates": 30000,
+    "effective_batch": 24,
+    "lr": 0.0001
+  },
+  "stage2": {
+    "deadline": "remaining overall budget",
+    "max_updates": 20000,
+    "effective_batch": 16,
+    "lr": 1e-05
+  },
+  "precision": "float32",
+  "optimizer": "AdamW beta .9/.999, wd .01, clip1",
+  "selection": "Fixed 16 dev observations with deterministic diffusion RNG, active-channel first-action RMSE; no native test selection",
+  "safety": "Finite loss and gradients or fail; no automatic restart; hard timeout; atomic rolling latest and best weights; fail closed before stage2 if stage1 missing",
+  "intentional_differences": [
+    "Apple Pick only",
+    "bounded time, reduced effective batches relative to eight GPUs",
+    "FP32 on Turing",
+    "CPU/no EMA for budget, nonEMA selected",
+    "transfer all mobility input adapters from stage1 to avoid random frozen conditioning"
+  ],
+  "paid_model_api_calls": 0,
+  "new_rental_usd": 0,
+  "lab_charge_usd": null,
+  "scheduled_automation": false,
+  "chat_monitor_after_launch_verified": false,
+  "original_deadline_before_disconnected_wait": 1789861701.259839,
+  "resume_at": "2026-09-19T17:11:27.989497+00:00",
+  "prior_runtime_debit_seconds": 900,
+  "resume_budget_seconds": 63900,
+  "budget_accounting": "User resumed after VPN outage; exclude idle disconnection, conservatively debit 900 seconds for all previous preparation including failed collection and GPU preflights. Remaining single job has hard 63900-second bound. No completed training updates or training restart.",
+  "resume_collection_seconds": 3000
+}

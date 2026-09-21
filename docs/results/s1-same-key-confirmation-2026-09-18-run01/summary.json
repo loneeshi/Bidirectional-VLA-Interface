@@ -1,0 +1,134 @@
+{
+  "status": "completed",
+  "stage": "fresh_server_same_key_cluster_confirmation",
+  "scope": "5 fresh frozen-model calls; no simulator, rollout, training, checkpoint selection, API, or modification/reinterpretation of the invalid bit-exact run",
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028
+  ],
+  "planned_inference_calls": 5,
+  "training_updates": 0,
+  "simulator_steps": 0,
+  "rollout_episodes": 0,
+  "api_calls": 0,
+  "confirmation_spec_frozen_before_inference": {
+    "expected_cases": 5,
+    "fresh_inference_calls_per_case": 1,
+    "distance": "RMSE over 11 applied non-head Fetch13 channels",
+    "anchor_rule": "historical deployed action and exploratory same-key sample0 must be mutual unique nearest neighbors versus exploratory different-key samples1..15",
+    "fresh_rule": "fresh same-key action must be closer to both historical and exploratory sample0 than to every exploratory different-key sample1..15",
+    "strict_inequalities": true,
+    "material_sign_floor": 0.05,
+    "require_all_cases": true
+  },
+  "tail_spec_unchanged": {
+    "expected_identity_case_count": 5,
+    "expected_success_reference_case_count": 4,
+    "samples_per_case": 16,
+    "exact_reproduction_atol": 1e-06,
+    "sac_distance_tail_percentile": 0.9375,
+    "tail_cases_required": 3,
+    "median_sac_rmse_ratio_for_tail_candidate": 0.75,
+    "sac_action_magnitude_for_sign_test": 0.25,
+    "opposite_sign_same_sign_fraction_max": 0.1,
+    "minimum_opposed_channels_for_stable_split": 3,
+    "central_interval_quantiles": [
+      0.05,
+      0.95
+    ],
+    "central_support_fraction_max_for_stable_split": 0.5,
+    "z_scale_floor": 0.05
+  },
+  "exploratory_run": "/home/pshuai/bvi-research/runs/s1-exact-start-first-action-2026-09-18-run01",
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+  "normalizer": "/home/pshuai/bvi-research/runs/s1-official-medium-norm-2026-09-17-run01",
+  "exploratory_artifact_sha256": {
+    "summary.json": "07c2adb0dfecbdd6d733904b37289dc7fa48b1d7faaececc599f0b5ddd9a102b",
+    "transform-parity.json": "7316215f186da8e78bfd0ea09eb6fbc8298dcd28664a945ef2b69f892d9212d9",
+    "per-seed.json": "de1ce59943ac36b9558830e776759fdde362f003366e4c9d7d0c3c94e010571e",
+    "samples.npz": "42b74b905cc705d358dc0a6c594208fc0e110d8f4f7ca3067271c97b40d3ec01"
+  },
+  "exploratory_transform_parity": "bit_exact",
+  "anchor_preflight": [
+    {
+      "seed": 2024,
+      "passed": true,
+      "mutual_unique_nearest": true,
+      "historical_to_exploratory_sample0_rmse": 0.002790208461037598,
+      "historical_to_nearest_different_key_rmse": 0.1108053465901469,
+      "sample0_to_nearest_different_key_rmse": 0.10957425041908975,
+      "historical_same_key_margin_ratio": 0.02518117172953918,
+      "sample0_same_key_margin_ratio": 0.025464088965846076,
+      "material_sign_flip_channels": []
+    },
+    {
+      "seed": 2025,
+      "passed": true,
+      "mutual_unique_nearest": true,
+      "historical_to_exploratory_sample0_rmse": 0.002922925741011326,
+      "historical_to_nearest_different_key_rmse": 0.24415088356758258,
+      "sample0_to_nearest_different_key_rmse": 0.24235480868328196,
+      "historical_same_key_margin_ratio": 0.011971800790973753,
+      "sample0_same_key_margin_ratio": 0.012060522986490898,
+      "material_sign_flip_channels": []
+    },
+    {
+      "seed": 2026,
+      "passed": true,
+      "mutual_unique_nearest": true,
+      "historical_to_exploratory_sample0_rmse": 0.0019753673701518168,
+      "historical_to_nearest_different_key_rmse": 0.29514639909127616,
+      "sample0_to_nearest_different_key_rmse": 0.29422274551558136,
+      "historical_same_key_margin_ratio": 0.006692839134184795,
+      "sample0_same_key_margin_ratio": 0.006713849966596841,
+      "material_sign_flip_channels": []
+    },
+    {
+      "seed": 2027,
+      "passed": true,
+      "mutual_unique_nearest": true,
+      "historical_to_exploratory_sample0_rmse": 0.0009764263823190383,
+      "historical_to_nearest_different_key_rmse": 0.281109523713324,
+      "sample0_to_nearest_different_key_rmse": 0.28157650742404183,
+      "historical_same_key_margin_ratio": 0.0034734731481911646,
+      "sample0_same_key_margin_ratio": 0.0034677125277663276,
+      "material_sign_flip_channels": []
+    },
+    {
+      "seed": 2028,
+      "passed": true,
+      "mutual_unique_nearest": true,
+      "historical_to_exploratory_sample0_rmse": 0.0039024418721155195,
+      "historical_to_nearest_different_key_rmse": 0.17905902363140913,
+      "sample0_to_nearest_different_key_rmse": 0.17716036147670366,
+      "historical_same_key_margin_ratio": 0.021794164812093748,
+      "sample0_same_key_margin_ratio": 0.02202773712802954,
+      "material_sign_flip_channels": []
+    }
+  ],
+  "completed_inference_calls": 5,
+  "wall_seconds": 47.56668221205473,
+  "all_five_same_key_clusters_confirmed": true,
+  "adjudication": {
+    "decision": "stochastic_tail_not_supported",
+    "contract_reasons": [],
+    "tail_candidate_seeds": [
+      2026
+    ],
+    "tail_candidate_count": 1,
+    "success_reference_seeds": [
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "scope_warning": "This confirms functional same-key clustering, not bitwise GPU determinism. The SAC-distance rule is unchanged and uses only native-success SAC references."
+  },
+  "outputs": [
+    "per-seed.json",
+    "fresh-actions.npz"
+  ]
+}

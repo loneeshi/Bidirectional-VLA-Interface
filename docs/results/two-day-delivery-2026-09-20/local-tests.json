@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-09-19T01:48:40.838958+00:00",
+  "scope": "local_cpu_targeted_new_entrypoints",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_s1_bounded_diagnostic.py tests/test_s1_bounded_candidate.py tests/test_s1_oracle_protocol.py tests/test_s1_oracle_panel.py -q",
+  "pythonpath": "src;scripts",
+  "passed": 66,
+  "skipped": 1,
+  "elapsed_seconds": 1.14,
+  "skip": "NNX dependency test unavailable locally; corresponding actual NNX diagnostic tests separately passed on lab CPU",
+  "gpu_execution": false,
+  "native_success_claim": false,
+  "file_sha256": {
+    "scripts/train_s1_bounded_diagnostic.py": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221",
+    "scripts/verify_s1_bounded_diagnostic.py": "ab127fa821937c6aa1d808f4dd93ce32da48d055ece3eba1591b79f1d1b4cff6",
+    "scripts/train_s1_bounded_candidate.py": "bbe60d0ab7bf985b385cd90f68213a8c8e9aa6b32b50e1ee5005066d83af2e6d",
+    "scripts/eval_native_s1_oracle.py": "9a2e59292c2a26caf7b0026fe1ceae755320cf3d3ad6b00e50391366c02b2aec",
+    "scripts/run_s1_oracle_panel.py": "de045f068d573e2eb863990cdd15e9b0d864a588239a0758b345e564d5f0125e",
+    "src/bvi/s1_oracle_protocol.py": "d05d06cb3fc4d1d24a121017aca79c42733b1c7e2b116e375da7efbbcec0d1ce",
+    "tests/test_s1_bounded_diagnostic.py": "d3ad5fb958732de524a46d166881d61b9578fc156c776d777dd2c33255433aaa",
+    "tests/test_s1_bounded_candidate.py": "92905ca362b0055455e1ccc2ede048f853e3ed39bbe0efce9e09a0f60ea3b0cc",
+    "tests/test_s1_oracle_protocol.py": "73478525bda77ba23f52d118b6ebac652f0b590eeb6c484102b2cf020087bcb4",
+    "tests/test_s1_oracle_panel.py": "ff189f4c822196f910393922e7f5d0a06a6e5f0fb95205ff9f1f231fac8aab88"
+  }
+}

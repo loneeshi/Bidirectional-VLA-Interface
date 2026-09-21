@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": "fresh-actions.npz",
+      "bytes": 2891,
+      "sha256": "d5b1a5ba3082c1056f0a82357f0f3c2f99d09c12e431dcaea777b92f571e57f1"
+    },
+    {
+      "path": "per-seed.json",
+      "bytes": 19034,
+      "sha256": "7ded11dedddf3248670cbbb41f5727424abe7105b31cbe227667ffc45c4be8aa"
+    },
+    {
+      "path": "server/metadata.json",
+      "bytes": 2225,
+      "sha256": "f5314a6ae692f0e55d122ef6e0e43e0e13ead0aead563082f5a53da41a06946e"
+    },
+    {
+      "path": "server/ready.json",
+      "bytes": 267,
+      "sha256": "351daa416d1237433d4cccb35b3f43409f1f50cdeb4ce3a05c03958877c920a0"
+    },
+    {
+      "path": "server/result.json",
+      "bytes": 750,
+      "sha256": "dad5ebd1361544064141140f9269cef2389b7cb1f073c48cfa2e221f3e202706"
+    },
+    {
+      "path": "server/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 5369,
+      "sha256": "3e6734eaa067cf46f95067790d8bb699e0530873cc5305a4a8c856a5c3d762be"
+    }
+  ]
+}

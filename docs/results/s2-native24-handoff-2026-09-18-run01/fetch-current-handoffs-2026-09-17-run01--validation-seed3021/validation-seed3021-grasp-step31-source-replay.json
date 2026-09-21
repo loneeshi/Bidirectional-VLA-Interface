@@ -1,0 +1,34 @@
+{
+  "schema": "bvi.native24-source-replay/1",
+  "status": "verified_source_replay",
+  "case_id": "validation-seed3021-grasp-step31",
+  "instruction": "Grasp the apple securely.",
+  "parent_episode": {
+    "source_kind": "archived_online_replay",
+    "task": "pick",
+    "source_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+    "trajectory": "validation-seed3021",
+    "parent_id": 3021
+  },
+  "trajectory_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+  "observation_index": 31,
+  "npz_sha256": "d003db423e9a5a7a2d19e908b3bba1d5b3fcdf0062c5ae4b289027d6da6e4a78",
+  "boundary_observation_sha256": "711196363ece51f2624c6bb3430fb9c054d7d5e942029f43652829b79a0c4bc3",
+  "reconstruction_observation_sha256": [
+    "711196363ece51f2624c6bb3430fb9c054d7d5e942029f43652829b79a0c4bc3",
+    "711196363ece51f2624c6bb3430fb9c054d7d5e942029f43652829b79a0c4bc3"
+  ],
+  "physical_atol": 1e-05,
+  "initial_state_verified": true,
+  "action_prefix_verified": true,
+  "boundary_observation_verified": true,
+  "physical_predicates_verified": true,
+  "policy_calls": 0,
+  "training_updates": 0,
+  "ground_truth": {
+    "source": "source_replay_physical_predicates",
+    "tcp_object_distance_m": 0.4221891462802887,
+    "is_grasped": false,
+    "physical_completion": false
+  }
+}

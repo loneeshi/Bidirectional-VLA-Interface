@@ -1,0 +1,33 @@
+{
+  "id": "TWO-DAY-S1-DIAGNOSTIC-20260919-START",
+  "at": "2026-09-19T01:25:37.871174+00:00",
+  "relates_to": "TWO-DAY-S1-20260919-CONTRACT",
+  "experiment_id": "s1-bounded-diagnostic-2026-09-19-run01",
+  "status": "preregistered_ready_to_launch",
+  "path": "B",
+  "reason": "No independently supported input/time defect after fixed16 CPU export and visual review",
+  "rows": 85,
+  "train_parents": [
+    0,
+    1
+  ],
+  "baseline_step": 855,
+  "checkpoint_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+  "max_updates": 100,
+  "max_seconds": 3600,
+  "api_calls_max": 0,
+  "new_rental_usd_max": 0,
+  "lab_charge_usd": null,
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "gpu0_touched": false,
+  "trainer_sha256": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221",
+  "tests_sha256": "d3ad5fb958732de524a46d166881d61b9578fc156c776d777dd2c33255433aaa",
+  "panel_sha256": "9fbef63cef003b2c55a6ba055fda3b58ec2d2b0a5b22dd34d7f987c6144abc77",
+  "test_record": {
+    "local": "21 passed,1 skipped; actual NNX dependency unavailable locally",
+    "lab_cpu": "17 passed in4.93s; actual NNX restore/filter/update included",
+    "preflight": "passed85rows, source/manifest/norm verified"
+  },
+  "source_delta": "Explicitly freeze all non-LoRA params, preserve original parameter dtype and values; new AdamW LR1e-4. Existing legacy filter allowed other params.",
+  "continuing_costs": "Old stopped Runpod40GB remains chargeable; new bill snapshot15.1223830181USD; unposted costs unknown."
+}

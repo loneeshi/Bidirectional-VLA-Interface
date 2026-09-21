@@ -1,0 +1,1054 @@
+{
+  "schema": "official-mshab-teleport16/1",
+  "status": "finished",
+  "paper_commit": "4729821db3fc94a2470cfd625e6f8ab439f01478",
+  "evaluate_sha256": "bee4cde66324aea5d56055a1edceda28b9009fc41fde4268828ebebde20d57c6",
+  "source_manifest": "/home/pshuai/bvi-research/runs/sac-interface-baseline-20260920/manifest.json",
+  "episodes": [
+    {
+      "seed": 0,
+      "plan_uid": "tidy_house-sequential-val-557-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-001",
+          "status": "infrastructure_failure",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=0",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-001/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-000"
+          ],
+          "started_unix": 1789960447.6253734,
+          "pid": 2125363,
+          "returncode": 1,
+          "finished_unix": 1789960453.2081573,
+          "result": {
+            "reason": "returncode:1"
+          }
+        },
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=0",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-000"
+          ],
+          "started_unix": 1789960510.483363,
+          "pid": 2125758,
+          "returncode": 0,
+          "finished_unix": 1789960619.471258,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 1,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002/official-logs/seed-000/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002/official-logs/seed-000/eval_videos/0.mp4"
+            ]
+          },
+          "validity_adjudications": [
+            {
+              "classification": "recovered_result_parser_only",
+              "time_unix": 1789960695.1034732
+            }
+          ]
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 1,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002/official-logs/seed-000/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-000/attempt-002/official-logs/seed-000/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "plan_uid": "tidy_house-sequential-val-90-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=1",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-001"
+          ],
+          "started_unix": 1789960695.106076,
+          "pid": 2168122,
+          "returncode": 0,
+          "finished_unix": 1789960811.355288,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 3,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001/official-logs/seed-001/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001/official-logs/seed-001/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 3,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001/official-logs/seed-001/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-001/attempt-001/official-logs/seed-001/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "plan_uid": "tidy_house-sequential-val-147-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=2",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-002"
+          ],
+          "started_unix": 1789960811.3640242,
+          "pid": 2210136,
+          "returncode": 0,
+          "finished_unix": 1789960926.9279573,
+          "result": {
+            "task_success": false,
+            "completed_objects": 1,
+            "planned_objects": 5,
+            "failure_subtask_index": 7,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001/official-logs/seed-002/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001/official-logs/seed-002/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 1,
+        "planned_objects": 5,
+        "failure_subtask_index": 7,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001/official-logs/seed-002/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-002/attempt-001/official-logs/seed-002/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "plan_uid": "tidy_house-sequential-val-189-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=3",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-003"
+          ],
+          "started_unix": 1789960927.161956,
+          "pid": 2252070,
+          "returncode": 0,
+          "finished_unix": 1789961047.6932766,
+          "result": {
+            "task_success": false,
+            "completed_objects": 3,
+            "planned_objects": 5,
+            "failure_subtask_index": 15,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001/official-logs/seed-003/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001/official-logs/seed-003/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 3,
+        "planned_objects": 5,
+        "failure_subtask_index": 15,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001/official-logs/seed-003/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-003/attempt-001/official-logs/seed-003/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 4,
+      "plan_uid": "tidy_house-sequential-val-553-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=4",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-004"
+          ],
+          "started_unix": 1789961047.7031004,
+          "pid": 2294082,
+          "returncode": 0,
+          "finished_unix": 1789961156.2325418,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 1,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001/official-logs/seed-004/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001/official-logs/seed-004/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 1,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001/official-logs/seed-004/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-004/attempt-001/official-logs/seed-004/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 5,
+      "plan_uid": "tidy_house-sequential-val-86-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=5",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-005"
+          ],
+          "started_unix": 1789961156.4693434,
+          "pid": 2336154,
+          "returncode": 0,
+          "finished_unix": 1789961287.2102396,
+          "result": {
+            "task_success": false,
+            "completed_objects": 2,
+            "planned_objects": 5,
+            "failure_subtask_index": 11,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001/official-logs/seed-005/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001/official-logs/seed-005/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 2,
+        "planned_objects": 5,
+        "failure_subtask_index": 11,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001/official-logs/seed-005/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-005/attempt-001/official-logs/seed-005/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 6,
+      "plan_uid": "tidy_house-sequential-val-682-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=6",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-006"
+          ],
+          "started_unix": 1789961287.2205362,
+          "pid": 2378099,
+          "returncode": 0,
+          "finished_unix": 1789961406.6733541,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 1,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001/official-logs/seed-006/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001/official-logs/seed-006/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 1,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001/official-logs/seed-006/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-006/attempt-001/official-logs/seed-006/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "plan_uid": "tidy_house-sequential-val-881-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=7",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-007"
+          ],
+          "started_unix": 1789961406.9938707,
+          "pid": 2420094,
+          "returncode": 0,
+          "finished_unix": 1789961523.4432392,
+          "result": {
+            "task_success": false,
+            "completed_objects": 1,
+            "planned_objects": 5,
+            "failure_subtask_index": 5,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001/official-logs/seed-007/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001/official-logs/seed-007/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 1,
+        "planned_objects": 5,
+        "failure_subtask_index": 5,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001/official-logs/seed-007/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-007/attempt-001/official-logs/seed-007/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 8,
+      "plan_uid": "tidy_house-sequential-val-17-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=8",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-008"
+          ],
+          "started_unix": 1789961523.4536738,
+          "pid": 2462022,
+          "returncode": 0,
+          "finished_unix": 1789961633.7292752,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 1,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001/official-logs/seed-008/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001/official-logs/seed-008/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 1,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001/official-logs/seed-008/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-008/attempt-001/official-logs/seed-008/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 9,
+      "plan_uid": "tidy_house-sequential-val-629-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=9",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-009"
+          ],
+          "started_unix": 1789961633.986058,
+          "pid": 2503935,
+          "returncode": 0,
+          "finished_unix": 1789961750.3262374,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 1,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001/official-logs/seed-009/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001/official-logs/seed-009/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 1,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001/official-logs/seed-009/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-009/attempt-001/official-logs/seed-009/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 10,
+      "plan_uid": "tidy_house-sequential-val-586-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=10",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-010"
+          ],
+          "started_unix": 1789961750.3371117,
+          "pid": 2545777,
+          "returncode": 0,
+          "finished_unix": 1789961866.1474326,
+          "result": {
+            "task_success": false,
+            "completed_objects": 1,
+            "planned_objects": 5,
+            "failure_subtask_index": 7,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001/official-logs/seed-010/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001/official-logs/seed-010/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 1,
+        "planned_objects": 5,
+        "failure_subtask_index": 7,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001/official-logs/seed-010/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-010/attempt-001/official-logs/seed-010/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 11,
+      "plan_uid": "tidy_house-sequential-val-327-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=11",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-011"
+          ],
+          "started_unix": 1789961866.4089222,
+          "pid": 2587617,
+          "returncode": 0,
+          "finished_unix": 1789961984.1747808,
+          "result": {
+            "task_success": false,
+            "completed_objects": 1,
+            "planned_objects": 5,
+            "failure_subtask_index": 7,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001/official-logs/seed-011/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001/official-logs/seed-011/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 1,
+        "planned_objects": 5,
+        "failure_subtask_index": 7,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001/official-logs/seed-011/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-011/attempt-001/official-logs/seed-011/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 13,
+      "plan_uid": "tidy_house-sequential-val-850-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=13",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-013"
+          ],
+          "started_unix": 1789961984.1860416,
+          "pid": 2629432,
+          "returncode": 0,
+          "finished_unix": 1789962102.2079933,
+          "result": {
+            "task_success": false,
+            "completed_objects": 1,
+            "planned_objects": 5,
+            "failure_subtask_index": 5,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001/official-logs/seed-013/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001/official-logs/seed-013/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 1,
+        "planned_objects": 5,
+        "failure_subtask_index": 5,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001/official-logs/seed-013/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-013/attempt-001/official-logs/seed-013/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 14,
+      "plan_uid": "tidy_house-sequential-val-113-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=14",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-014"
+          ],
+          "started_unix": 1789962102.4681995,
+          "pid": 2671246,
+          "returncode": 0,
+          "finished_unix": 1789962218.1672385,
+          "result": {
+            "task_success": false,
+            "completed_objects": 2,
+            "planned_objects": 5,
+            "failure_subtask_index": 11,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001/official-logs/seed-014/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001/official-logs/seed-014/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 2,
+        "planned_objects": 5,
+        "failure_subtask_index": 11,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001/official-logs/seed-014/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-014/attempt-001/official-logs/seed-014/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 16,
+      "plan_uid": "tidy_house-sequential-val-334-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=16",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-016"
+          ],
+          "started_unix": 1789962218.1787572,
+          "pid": 2713075,
+          "returncode": 0,
+          "finished_unix": 1789962347.362511,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 3,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001/official-logs/seed-016/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001/official-logs/seed-016/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 3,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001/official-logs/seed-016/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-016/attempt-001/official-logs/seed-016/eval_videos/0.mp4"
+        ]
+      }
+    },
+    {
+      "seed": 19,
+      "plan_uid": "tidy_house-sequential-val-110-0",
+      "status": "completed",
+      "attempts": [
+        {
+          "directory": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001",
+          "status": "completed",
+          "argv": [
+            "/home/pshuai/bvi-research/envs/acdit/bin/python",
+            "-m",
+            "mshab.evaluate",
+            "/home/pshuai/bvi-research/src/mshab-paper-4729821/configs/evaluate.yml",
+            "seed=19",
+            "task=tidy_house",
+            "save_trajectory=False",
+            "max_trajectories=1",
+            "policy_type=rl_per_obj",
+            "eval_env.env_id=SequentialTask-v0",
+            "eval_env.task_plan_fp=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001/tidy_house/task-plan.json",
+            "eval_env.make_env=True",
+            "eval_env.num_envs=1",
+            "eval_env.frame_stack=3",
+            "eval_env.stack=null",
+            "eval_env.max_episode_steps=1000",
+            "eval_env.continuous_task=True",
+            "eval_env.record_video=True",
+            "eval_env.info_on_video=True",
+            "eval_env.save_video_freq=1",
+            "logger.wandb=False",
+            "logger.tensorboard=False",
+            "logger.workspace=/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001/official-logs",
+            "logger.clear_out=False",
+            "logger.exp_name=seed-019"
+          ],
+          "started_unix": 1789962347.621915,
+          "pid": 2754893,
+          "returncode": 0,
+          "finished_unix": 1789962463.9322798,
+          "result": {
+            "task_success": false,
+            "completed_objects": 0,
+            "planned_objects": 5,
+            "failure_subtask_index": 1,
+            "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001/official-logs/seed-019/output.txt",
+            "videos": [
+              "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001/official-logs/seed-019/eval_videos/0.mp4"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "task_success": false,
+        "completed_objects": 0,
+        "planned_objects": 5,
+        "failure_subtask_index": 1,
+        "output": "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001/official-logs/seed-019/output.txt",
+        "videos": [
+          "/home/pshuai/bvi-research/runs/official-teleport16-20260921/seed-019/attempt-001/official-logs/seed-019/eval_videos/0.mp4"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "planned": 16,
+    "completed": 16,
+    "infrastructure_failed": 0,
+    "not_run": 0,
+    "running": 0,
+    "successes": 0,
+    "completed_objects": 12
+  }
+}

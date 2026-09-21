@@ -1,0 +1,56 @@
+{
+  "batch": "s1-expert-replay-level2-2026-09-18-run01",
+  "source_archive": {
+    "path": "D:/AI/embodied intelligence/runs/s1-expert-replay-level2-2026-09-18-run01.tar.gz",
+    "size_bytes": 612594,
+    "sha256": "d9812cc88162fd306e34fb3faf248b77630bd3cf00932a754fd739061c815d5a"
+  },
+  "files": [
+    {
+      "path": "parent000-cpu_reset.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "parent000-cpu_reset/reconstructed-cpu_reset-initial-state.pt",
+      "size_bytes": 52827,
+      "sha256": "af0a65af024716b5f1fb58de500192f18ccc35d84849fbfd86def15fdefa15dc"
+    },
+    {
+      "path": "parent000-cpu_reset/result.json",
+      "size_bytes": 19206,
+      "sha256": "01d28cb8b007d24d14bd46d2056b7236efb9684fd3047b1ccfb165faddadab2f"
+    },
+    {
+      "path": "parent000-cpu_reset/trace.jsonl",
+      "size_bytes": 1531876,
+      "sha256": "35b870ef9dfcd8604dceb9b8db2080a443e44b219cdb6bc64c3074d2ee85fc7d"
+    },
+    {
+      "path": "parent000-gpu_snapshot_restore.log",
+      "size_bytes": 321,
+      "sha256": "a4035055859e12b550a87751d269beb77d867f70ee1a5d6696c500f35a194d85"
+    },
+    {
+      "path": "parent000-gpu_snapshot_restore/reconstructed-gpu_snapshot_restore-initial-state.pt",
+      "size_bytes": 55487,
+      "sha256": "c28bf6ac547efcbb395eec8bb833ba394925a8a97d661608aa06e57facc8c7b2"
+    },
+    {
+      "path": "parent000-gpu_snapshot_restore/result.json",
+      "size_bytes": 24823,
+      "sha256": "4961861c38a649b9038e96fdc13342eace3d52034106476139358cfdcb0c7edd"
+    },
+    {
+      "path": "parent000-gpu_snapshot_restore/trace.jsonl",
+      "size_bytes": 1541140,
+      "sha256": "beb9c4ff163835b683a71424b9836666183591287d09e317c5bf6204736dacbd"
+    },
+    {
+      "path": "summary.json",
+      "size_bytes": 52984,
+      "sha256": "12eb46fd964e1a41d238e5c7d4ab33660675ee14cf0d18101f163482bd39f316"
+    }
+  ],
+  "note": "The manifest intentionally excludes itself. The raw archive also preserves the launcher PID file."
+}

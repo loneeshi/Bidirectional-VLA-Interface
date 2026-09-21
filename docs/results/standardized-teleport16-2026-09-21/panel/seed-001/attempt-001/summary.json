@@ -1,0 +1,726 @@
+{
+  "benchmark_result": false,
+  "benchmark_episode": true,
+  "evaluation_eligible": true,
+  "paired_ppo_episode": true,
+  "reason": "benchmark_fail",
+  "decisions": 25,
+  "first_object_chain_success": true,
+  "api_requests": 0,
+  "vlm": false,
+  "vlm_feedback_loop_observed": false,
+  "task_success": false,
+  "completed_objects": 2,
+  "planned_objects": 5,
+  "steps": 656,
+  "wall_seconds": 78.20146159827709,
+  "skill_results": [
+    {
+      "call_id": "oracle-0",
+      "skill": "navigate",
+      "target_id": "subtask-0-tidy_house-sequential-val-90-0",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-1"
+            ]
+          }
+        ],
+        "reason": "official_paper_teleport",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 1.2661292105913162
+    },
+    {
+      "call_id": "oracle-1",
+      "skill": "pick",
+      "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.76661179587245
+    },
+    {
+      "call_id": "oracle-2",
+      "skill": "pick",
+      "target_id": "subtask-1-tidy_house-sequential-val-90-1",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-48"
+            ]
+          }
+        ],
+        "reason": "oracle_subtask_advanced",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 7,
+      "elapsed_seconds": 0.5435564331710339
+    },
+    {
+      "call_id": "oracle-3",
+      "skill": "navigate",
+      "target_id": "subtask-2-tidy_house-sequential-val-90-2",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-49"
+            ]
+          }
+        ],
+        "reason": "official_paper_teleport",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 1.0560172758996487
+    },
+    {
+      "call_id": "oracle-4",
+      "skill": "place",
+      "target_id": "subtask-3-tidy_house-sequential-val-90-3",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-71"
+            ]
+          }
+        ],
+        "reason": "oracle_subtask_advanced",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 22,
+      "elapsed_seconds": 2.469615124166012
+    },
+    {
+      "call_id": "oracle-5",
+      "skill": "navigate",
+      "target_id": "subtask-4-tidy_house-sequential-val-90-4",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-72"
+            ]
+          }
+        ],
+        "reason": "official_paper_teleport",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 1.0811111591756344
+    },
+    {
+      "call_id": "oracle-6",
+      "skill": "pick",
+      "target_id": "subtask-5-tidy_house-sequential-val-90-5",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-94"
+            ]
+          }
+        ],
+        "reason": "oracle_subtask_advanced",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 22,
+      "elapsed_seconds": 2.4927282631397247
+    },
+    {
+      "call_id": "oracle-7",
+      "skill": "navigate",
+      "target_id": "subtask-6-tidy_house-sequential-val-90-6",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-95"
+            ]
+          }
+        ],
+        "reason": "official_paper_teleport",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 1.0708402208983898
+    },
+    {
+      "call_id": "oracle-8",
+      "skill": "place",
+      "target_id": "subtask-7-tidy_house-sequential-val-90-7",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-135"
+            ]
+          }
+        ],
+        "reason": "oracle_subtask_advanced",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.913617182523012
+    },
+    {
+      "call_id": "oracle-9",
+      "skill": "navigate",
+      "target_id": "subtask-8-tidy_house-sequential-val-90-8",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-136"
+            ]
+          }
+        ],
+        "reason": "official_paper_teleport",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 1.7143607065081596
+    },
+    {
+      "call_id": "oracle-10",
+      "skill": "pick",
+      "target_id": "subtask-9-tidy_house-sequential-val-90-9",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-156"
+            ]
+          }
+        ],
+        "reason": "oracle_subtask_advanced",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 20,
+      "elapsed_seconds": 2.3216651640832424
+    },
+    {
+      "call_id": "oracle-11",
+      "skill": "navigate",
+      "target_id": "subtask-10-tidy_house-sequential-val-90-10",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-157"
+            ]
+          }
+        ],
+        "reason": "official_paper_teleport",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 1.3666912242770195
+    },
+    {
+      "call_id": "oracle-12",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.8339860811829567
+    },
+    {
+      "call_id": "oracle-13",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.006595015525818
+    },
+    {
+      "call_id": "oracle-14",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.044857557862997
+    },
+    {
+      "call_id": "oracle-15",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.0753004103899
+    },
+    {
+      "call_id": "oracle-16",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.059252880513668
+    },
+    {
+      "call_id": "oracle-17",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.0697706900537014
+    },
+    {
+      "call_id": "oracle-18",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.07971753180027
+    },
+    {
+      "call_id": "oracle-19",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.061491873115301
+    },
+    {
+      "call_id": "oracle-20",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.0741377733647823
+    },
+    {
+      "call_id": "oracle-21",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.057872489094734
+    },
+    {
+      "call_id": "oracle-22",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.074864439666271
+    },
+    {
+      "call_id": "oracle-23",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.1325701996684074
+    },
+    {
+      "call_id": "oracle-24",
+      "skill": "place",
+      "target_id": "subtask-11-tidy_house-sequential-val-90-11",
+      "requirements": [
+        {
+          "id": "benchmark-completion",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "failed",
+        "requirements": [
+          {
+            "requirement_id": "benchmark-completion",
+            "state": "unsatisfied",
+            "evidence": [
+              "events.jsonl:mshab_step:seed-1-step-656"
+            ]
+          }
+        ],
+        "reason": "benchmark_fail",
+        "source": "oracle_benchmark",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 19,
+      "elapsed_seconds": 1.4539443328976631
+    }
+  ],
+  "navigation_policy": "teleport",
+  "manipulation_policy": "official",
+  "mixed_teacher_collection": false,
+  "manipulation_predictions": 0,
+  "manipulation_ensemble_samples": 1,
+  "navigation_predictions": 0,
+  "api_cost_usd": 0,
+  "api_cost_status": "no_api_calls"
+}

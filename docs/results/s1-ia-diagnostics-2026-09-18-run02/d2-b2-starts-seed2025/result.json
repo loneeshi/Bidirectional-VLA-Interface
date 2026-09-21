@@ -1,0 +1,16 @@
+{
+  "card": "D2",
+  "seed": 2025,
+  "status": "not_evaluable_target_band",
+  "question": "Does grasp persist from +3 cm and +5 cm earlier states on the same SAC trajectory?",
+  "api_calls": 0,
+  "training_updates": 0,
+  "threshold_changes": 0,
+  "started_utc": "2026-09-18T16:28:48.187546+00:00",
+  "reach_state_sha256": "332928111d25f1cf03060cd760bb17d99c4204d5f0890d807ce24f3e00b20c5b",
+  "grasp_state_sha256": "ed7867a90e79acacc6880ec01b13044bc5131cb817d6b4fd47ad7656dcc38b6e",
+  "wall_seconds": 12.380629852414131,
+  "original_grasp_distance_m": 0.03229675730886574,
+  "target_distances_m": [],
+  "reason_code": "plus_3_5_cm_outside_5_8_cm_band"
+}

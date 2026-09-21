@@ -1,0 +1,370 @@
+{
+  "status": "completed",
+  "episodes": [
+    {
+      "status": "completed",
+      "seed": 2024,
+      "path": "project",
+      "environment": "acdit",
+      "steps": 39,
+      "success_once": true,
+      "native_success": true,
+      "fail_once": false,
+      "training_updates": 0,
+      "api_calls": 0,
+      "checkpoint_revision": "91e96be85128df43728a7511355c3fa999bd2c94",
+      "gpu_before_mib": 15,
+      "protocol": "native termination, max200; not continuous-task paper success-once",
+      "scope": "official wrappers vs independently assembled project-style BC path; not full VLA harness",
+      "max_seconds": 180,
+      "source_revision": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+      "wall_seconds": 8.884860526770353,
+      "initial_state_sha256": "f9086b1a552ce680f43e7345ff76b11ea53047d010ecebbf71002c849d6ccd83",
+      "renderer_pci": "0000:af:00.0",
+      "plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "initial_policy_obs_sha256": "ef17302a5f708c5fd1d6f430a52fddb2f35845949d469d8cd5bb8d8d379672e8",
+      "state_shape": [
+        1,
+        42
+      ],
+      "checkpoint_sha256": "a3593b72dfc3c265fb8a294b6f3bb79c86472d4efada6437d50c66daee7cbd58",
+      "strict_load": true,
+      "terminated": true,
+      "truncated": false,
+      "final_info": {
+        "elapsed_steps": [
+          39
+        ],
+        "success": [
+          true
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          1
+        ],
+        "subtask_type": [
+          100
+        ],
+        "subtasks_steps_left": [
+          160
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          3740.5986328125
+        ],
+        "is_grasped": [
+          true
+        ],
+        "ee_rest": [
+          true
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ]
+      }
+    },
+    {
+      "status": "completed",
+      "seed": 2025,
+      "path": "project",
+      "environment": "acdit",
+      "steps": 108,
+      "success_once": false,
+      "native_success": false,
+      "fail_once": true,
+      "training_updates": 0,
+      "api_calls": 0,
+      "checkpoint_revision": "91e96be85128df43728a7511355c3fa999bd2c94",
+      "gpu_before_mib": 15,
+      "protocol": "native termination, max200; not continuous-task paper success-once",
+      "scope": "official wrappers vs independently assembled project-style BC path; not full VLA harness",
+      "max_seconds": 180,
+      "source_revision": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+      "wall_seconds": 10.747800208628178,
+      "initial_state_sha256": "cd5e6698c5617baf78255a765ee187ccce08abed302c881191d6c631c3e6b521",
+      "renderer_pci": "0000:af:00.0",
+      "plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "initial_policy_obs_sha256": "8e8c383502282ddfad52426891bb0fdfc4760408952282dec2ca067b69db5dab",
+      "state_shape": [
+        1,
+        42
+      ],
+      "checkpoint_sha256": "a3593b72dfc3c265fb8a294b6f3bb79c86472d4efada6437d50c66daee7cbd58",
+      "strict_load": true,
+      "terminated": true,
+      "truncated": false,
+      "final_info": {
+        "elapsed_steps": [
+          108
+        ],
+        "success": [
+          false
+        ],
+        "fail": [
+          true
+        ],
+        "subtask": [
+          0
+        ],
+        "subtask_type": [
+          0
+        ],
+        "subtasks_steps_left": [
+          91
+        ],
+        "robot_force": [
+          96.93798065185547
+        ],
+        "robot_cumulative_force": [
+          5019.671875
+        ],
+        "is_grasped": [
+          false
+        ],
+        "ee_rest": [
+          false
+        ],
+        "robot_rest": [
+          false
+        ],
+        "is_static": [
+          false
+        ],
+        "cumulative_force_within_limit": [
+          false
+        ]
+      }
+    },
+    {
+      "status": "completed",
+      "seed": 2026,
+      "path": "project",
+      "environment": "acdit",
+      "steps": 43,
+      "success_once": true,
+      "native_success": true,
+      "fail_once": false,
+      "training_updates": 0,
+      "api_calls": 0,
+      "checkpoint_revision": "91e96be85128df43728a7511355c3fa999bd2c94",
+      "gpu_before_mib": 15,
+      "protocol": "native termination, max200; not continuous-task paper success-once",
+      "scope": "official wrappers vs independently assembled project-style BC path; not full VLA harness",
+      "max_seconds": 180,
+      "source_revision": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+      "wall_seconds": 8.805940955877304,
+      "initial_state_sha256": "ab9f1343eab48d22b8d006b2fdf643e32af063130c9743a62d06a8d2041e79a3",
+      "renderer_pci": "0000:af:00.0",
+      "plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "initial_policy_obs_sha256": "f8c5e0ee23e3fd196fcc64d65188672e7c6000236762b6c7bde06c62cd8aa69a",
+      "state_shape": [
+        1,
+        42
+      ],
+      "checkpoint_sha256": "a3593b72dfc3c265fb8a294b6f3bb79c86472d4efada6437d50c66daee7cbd58",
+      "strict_load": true,
+      "terminated": true,
+      "truncated": false,
+      "final_info": {
+        "elapsed_steps": [
+          43
+        ],
+        "success": [
+          true
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          1
+        ],
+        "subtask_type": [
+          100
+        ],
+        "subtasks_steps_left": [
+          156
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          163.33248901367188
+        ],
+        "is_grasped": [
+          true
+        ],
+        "ee_rest": [
+          true
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ]
+      }
+    },
+    {
+      "status": "completed",
+      "seed": 2027,
+      "path": "project",
+      "environment": "acdit",
+      "steps": 37,
+      "success_once": true,
+      "native_success": true,
+      "fail_once": false,
+      "training_updates": 0,
+      "api_calls": 0,
+      "checkpoint_revision": "91e96be85128df43728a7511355c3fa999bd2c94",
+      "gpu_before_mib": 15,
+      "protocol": "native termination, max200; not continuous-task paper success-once",
+      "scope": "official wrappers vs independently assembled project-style BC path; not full VLA harness",
+      "max_seconds": 180,
+      "source_revision": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+      "wall_seconds": 8.61812198907137,
+      "initial_state_sha256": "2b0e46d8165c4fc6effa5d4ce8db53bf3452e27c7037b1a02c51ae10291529f8",
+      "renderer_pci": "0000:af:00.0",
+      "plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "initial_policy_obs_sha256": "22c5ce4d45d2c2edf9d95b521cbc5caf39a5d7df7a669c31a53435c2aa1bcd7b",
+      "state_shape": [
+        1,
+        42
+      ],
+      "checkpoint_sha256": "a3593b72dfc3c265fb8a294b6f3bb79c86472d4efada6437d50c66daee7cbd58",
+      "strict_load": true,
+      "terminated": true,
+      "truncated": false,
+      "final_info": {
+        "elapsed_steps": [
+          37
+        ],
+        "success": [
+          true
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          1
+        ],
+        "subtask_type": [
+          100
+        ],
+        "subtasks_steps_left": [
+          162
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          0.0
+        ],
+        "is_grasped": [
+          true
+        ],
+        "ee_rest": [
+          true
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ]
+      }
+    },
+    {
+      "status": "completed",
+      "seed": 2028,
+      "path": "project",
+      "environment": "acdit",
+      "steps": 49,
+      "success_once": true,
+      "native_success": true,
+      "fail_once": false,
+      "training_updates": 0,
+      "api_calls": 0,
+      "checkpoint_revision": "91e96be85128df43728a7511355c3fa999bd2c94",
+      "gpu_before_mib": 15,
+      "protocol": "native termination, max200; not continuous-task paper success-once",
+      "scope": "official wrappers vs independently assembled project-style BC path; not full VLA harness",
+      "max_seconds": 180,
+      "source_revision": "90ad00a926f34da04816ed9c3312aaf3bc845b7f",
+      "wall_seconds": 8.84552376717329,
+      "initial_state_sha256": "d5b0f2d0e544d06a9ad08ea44b26a5db0e5e712a0cdfd72e768505cc562f8c90",
+      "renderer_pci": "0000:af:00.0",
+      "plan_sha256": "135915353c8a56230fcbc68ada7f6a7d58d86119d8c8d1acbb15790d6da08c52",
+      "initial_policy_obs_sha256": "9add5b07acca3af81a7eb9b4ca38bff6b92d921266a251de7cd99c6ecd143972",
+      "state_shape": [
+        1,
+        42
+      ],
+      "checkpoint_sha256": "a3593b72dfc3c265fb8a294b6f3bb79c86472d4efada6437d50c66daee7cbd58",
+      "strict_load": true,
+      "terminated": true,
+      "truncated": false,
+      "final_info": {
+        "elapsed_steps": [
+          49
+        ],
+        "success": [
+          true
+        ],
+        "fail": [
+          false
+        ],
+        "subtask": [
+          1
+        ],
+        "subtask_type": [
+          100
+        ],
+        "subtasks_steps_left": [
+          150
+        ],
+        "robot_force": [
+          0.0
+        ],
+        "robot_cumulative_force": [
+          1870.2823486328125
+        ],
+        "is_grasped": [
+          true
+        ],
+        "ee_rest": [
+          true
+        ],
+        "robot_rest": [
+          true
+        ],
+        "is_static": [
+          true
+        ],
+        "cumulative_force_within_limit": [
+          true
+        ]
+      }
+    }
+  ],
+  "max_seconds": 1800,
+  "training_updates": 0,
+  "api_calls": 0,
+  "wall_seconds": 69.21433522924781,
+  "gpu_after": "15 MiB, 0 %"
+}

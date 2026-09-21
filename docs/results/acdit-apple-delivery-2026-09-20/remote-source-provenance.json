@@ -1,0 +1,107 @@
+{
+  "head": {
+    "code": 128,
+    "output": ""
+  },
+  "status": {
+    "code": 128,
+    "output": ""
+  },
+  "diff": {
+    "code": 129,
+    "output": ""
+  },
+  "instruction_files": [
+    {
+      "name": "lang_embed_3.pt",
+      "bytes": 762060,
+      "sha256": "a923b9637456b117f7f193872e3ab370b6f82bdbe962ff104aa29b776bdb7798"
+    },
+    {
+      "name": "lang_embed_2.pt",
+      "bytes": 762060,
+      "sha256": "4873c7227aebb621a2063c17ac8e42cfb82952b978c52f4b969ad54ce4e318f2"
+    },
+    {
+      "name": "lang_embed_10.pt",
+      "bytes": 762067,
+      "sha256": "509b12735931523545459bf008a01d04f43fe72ab5558a82a305abf72ceb9a50"
+    },
+    {
+      "name": "lang_embed_5.pt",
+      "bytes": 762060,
+      "sha256": "f27f70158d7ab560d898dfd40633c1e944f38d0902f77e9b6bdb7fdd7406c21b"
+    },
+    {
+      "name": "lang_embed_6.pt",
+      "bytes": 762060,
+      "sha256": "14723d44f01f24e696dee1962cb46070823dfbec5506b43a5031afa6407d02b3"
+    },
+    {
+      "name": "lang_embed_1.pt",
+      "bytes": 762060,
+      "sha256": "e1087d52537fb5ddab5bcacb0674309723d757c006f79fd074510267346074fc"
+    },
+    {
+      "name": "lang_embed_12.pt",
+      "bytes": 762067,
+      "sha256": "d44ea172ff3d1e1918fcd9f7f2019910782adc9f36bce3305cbb86e8a30a4d4b"
+    },
+    {
+      "name": "lang_embed_0.pt",
+      "bytes": 762060,
+      "sha256": "8e29d925a7234cbb148d5c3f7fb508e63804f50a243c56fe0dff1feaa07d6de5"
+    },
+    {
+      "name": "lang_embed_11.pt",
+      "bytes": 762067,
+      "sha256": "6b96ea54b65972671418bb99ea3ae8aa8e790d6f3240027e7baa487d60d5684b"
+    },
+    {
+      "name": "lang_embed_9.pt",
+      "bytes": 762060,
+      "sha256": "72277d6a85e55fed03b806085a1aa503404ab26fc4105c96682a2e840c42703d"
+    },
+    {
+      "name": "lang_embed_4.pt",
+      "bytes": 762060,
+      "sha256": "52e9f9a0e6acd0c1ac25a6e78a73f4e557befaa4d6253f8b4ea8aac339a714f3"
+    },
+    {
+      "name": "lang_embed_8.pt",
+      "bytes": 762060,
+      "sha256": "7cb687890dc4cf344acd6fe0f9e4a02051d9706c048b89759cbdfc229fc5b915"
+    },
+    {
+      "name": "lang_embed_13.pt",
+      "bytes": 762067,
+      "sha256": "a8c4aae56a8b49079f19fc7bd9d504e7a8ed1ab764f785816b71382907db6b99"
+    },
+    {
+      "name": "lang_embed_14.pt",
+      "bytes": 762067,
+      "sha256": "95cacf1b147c23716d5a0de274ce3ac5082f6c0629ea7bc71f1768edb5d0d80b"
+    },
+    {
+      "name": "lang_embed_7.pt",
+      "bytes": 762060,
+      "sha256": "cf1c2e638d84b52a3d271c59b3c9e93515e561f0bec08fedbd1576d55512ac47"
+    }
+  ],
+  "asset_inventories": {
+    "runs/acdit-rdt-preparation-20260919": [
+      "asset-result.json",
+      "source.json",
+      "resource-check.json",
+      "asset-plan.json",
+      "cpu-preflight.json",
+      "cpu-preflight-first-error.json",
+      "dataset-smoke/training-manifest.json",
+      "dataset-smoke/result.json"
+    ],
+    "checkpoints/acdit-rdt-init-20260919": [
+      "rdt-1b/config.json",
+      "rdt-170m/config.json"
+    ]
+  }
+}

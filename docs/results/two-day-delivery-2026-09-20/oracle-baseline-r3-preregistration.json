@@ -1,0 +1,22 @@
+{
+  "id": "TWO-DAY-S1-ORACLE-BASE-R3-20260919-REPAIR",
+  "at": "2026-09-19T04:02:21.800859+00:00",
+  "experiment_id": "s1-oracle-base-20260919-r3",
+  "status": "preregistered_infrastructure_retry",
+  "relates_to": "TWO-DAY-S1-ORACLE-BASE-R2-20260919-INFRA",
+  "repair": "Pass original train-only normalizer DIRECTORY, validateprovenance; identical norm_stats bytes and frozen episode protocol",
+  "source_sha256": "ad474b44abf772817f6a4398b099ab7cd0d13bd703169e518d046ac349926a47",
+  "cpu_tests": "37passed Linux, actual fetch_config contracts passed for both855/250",
+  "baseline_absolute_deadline_utc": "2026-09-19T04:25:08Z",
+  "remaining_seconds": "computed at launch; originaldeadline not extended",
+  "api_calls_max": 0,
+  "new_rental_usd_max": 0,
+  "training_updates": 0,
+  "lab_charge_usd": null,
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "gpu0_touched": false,
+  "manifests": {
+    "oracle-baseline-frozen-v4.json": "0fedf722d338b47e5485981dffffed9142436b0f5ec696937cfd5186722d68fe",
+    "oracle-candidate-frozen-v3.json": "cde0dc5930ab66b9e78f174e0abe7031c950a9c665c80856d9a2fc509563fe47"
+  }
+}

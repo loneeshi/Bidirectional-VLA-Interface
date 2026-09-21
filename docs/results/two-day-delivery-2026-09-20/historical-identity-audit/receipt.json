@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-09-19T01:31:34.231520+00:00",
+  "files": [
+    {
+      "run": "s1-native-panel-2026-09-17-run01",
+      "source": "launch.json",
+      "sha256": "22309fcc34c21b419bbf6b8846372892896759caf5c54fdb3232468d4ec695eb",
+      "bytes": 485
+    },
+    {
+      "run": "s1-native-panel-2026-09-17-run01",
+      "source": "server/metadata.json",
+      "sha256": "5525282cec240955b81d7e122d9c5ae5ffbdccad0641e36bfac2602977f289cc",
+      "bytes": 2236
+    },
+    {
+      "run": "s1-native-render-aligned-2026-09-18-run01",
+      "source": "launch.json",
+      "sha256": "121ddb9112823da13353145ba8f4c571f1f790718359310365b9a89ced409127",
+      "bytes": 620
+    },
+    {
+      "run": "s1-native-render-aligned-2026-09-18-run01",
+      "source": "server/metadata.json",
+      "sha256": "0842d1159e30147d069bc21ef1a70296abaa363aba8aaa94a382395cb72ec28b",
+      "bytes": 2236
+    },
+    {
+      "run": "s1-ia-calls-2026-09-18-run01",
+      "source": "launch.json",
+      "sha256": "8514e149637775889f8842165673896df28db7b67a6a94434784b3d804b1028c",
+      "bytes": 729
+    },
+    {
+      "run": "s1-ia-calls-2026-09-18-run01",
+      "source": "server/metadata.json",
+      "sha256": "8e8cc00b01286cca29b986957d01a6697b52d5426e649f901f7ee658ef3b5619",
+      "bytes": 2228
+    }
+  ],
+  "correction": "Both ten-seed fixed-sentence panels use ordinary S1 best6000, parameter374dabe6; best855 uses IA independent calls, parameter7854919f. Do not attribute these0/10 panels tobest855."
+}

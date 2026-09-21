@@ -1,0 +1,7 @@
+{
+  "status": "exited",
+  "worker_exit_code": 0,
+  "elapsed_seconds": 1533.4959423616529,
+  "budget_seconds": 3600,
+  "complete_artifacts_require_status_and_checkpoint_validation": true
+}

@@ -1,0 +1,247 @@
+{
+  "status": "completed",
+  "stage": "exact_start_first_action_stochastic_attribution",
+  "question": "Were the five deployed first actions repeated SAC-reference-distant stochastic tail draws?",
+  "scope": "P0 bit-exact training/server transform audit, then 5 exact starts x 16 sequential frozen-policy samples; official SAC first actions are references (4/5 native-success), not supervised labels; no simulator, rollout, training, checkpoint selection, or API",
+  "seeds": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028
+  ],
+  "samples_per_seed": 16,
+  "planned_inference_calls": 80,
+  "training_updates": 0,
+  "simulator_steps": 0,
+  "rollout_episodes": 0,
+  "api_calls": 0,
+  "gate_spec_frozen_before_inference": {
+    "expected_identity_case_count": 5,
+    "expected_success_reference_case_count": 4,
+    "samples_per_case": 16,
+    "exact_reproduction_atol": 1e-06,
+    "sac_distance_tail_percentile": 0.9375,
+    "tail_cases_required": 3,
+    "median_sac_rmse_ratio_for_tail_candidate": 0.75,
+    "sac_action_magnitude_for_sign_test": 0.25,
+    "opposite_sign_same_sign_fraction_max": 0.1,
+    "minimum_opposed_channels_for_stable_split": 3,
+    "central_interval_quantiles": [
+      0.05,
+      0.95
+    ],
+    "central_support_fraction_max_for_stable_split": 0.5,
+    "z_scale_floor": 0.05
+  },
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+  "normalizer": "/home/pshuai/bvi-research/runs/s1-official-medium-norm-2026-09-17-run01",
+  "input_provenance": [
+    {
+      "seed": 2024,
+      "request": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2024/requests/step000.npz",
+        "sha256": "2d0fb1c2f3540e07b2a5c4ef5ab3019b599a1a5e69ac123b001ffbe1cc7637f4"
+      },
+      "policy_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2024/events.jsonl",
+        "sha256": "852f80ec1a61922d71d7a103881e727cca9009bf937267e39821978a711b97a7"
+      },
+      "policy_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2024/result.json",
+        "sha256": "8f141bfe561404a9884cee736ebd4fca59c4652f5cb8f02bca660e9de0e33493"
+      },
+      "sac_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2024/events.jsonl",
+        "sha256": "78ca8a5c4eb7aaf78cc38850d9f4bd39e355cc3c3dc1333c5080e747df75a7ca"
+      },
+      "sac_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2024/result.json",
+        "sha256": "50d895e5b803649696ba0419c930c09d87359ce525f044cc81e9af1f855dc278"
+      },
+      "reference_state_sha256": "a1d8cb7d4157aaae931599554d7746904863abca3ada30a1314ce58f7987d314",
+      "sac_reference_native_success": false
+    },
+    {
+      "seed": 2025,
+      "request": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2025/requests/step000.npz",
+        "sha256": "8fb6b44b653212834afb724567cb16242634afc89a0c473968dedecab48bd3a5"
+      },
+      "policy_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2025/events.jsonl",
+        "sha256": "7dc5687d2e8582b08043bba3e1df775d66dc2ce686f81602017511d2df45730e"
+      },
+      "policy_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2025/result.json",
+        "sha256": "4423ebab1b13ab6f9ede8a685c64ce3109ac6fbfdc1781af916897714b3d52e9"
+      },
+      "sac_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2025/events.jsonl",
+        "sha256": "2708cabbb5c58c8657861a96a4c4cd3039130d8bf6db204f990736087b2e54b3"
+      },
+      "sac_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2025/result.json",
+        "sha256": "1503331681772240ea4d707afa8d7b53c916168b6313691055f3219dea97430e"
+      },
+      "reference_state_sha256": "332928111d25f1cf03060cd760bb17d99c4204d5f0890d807ce24f3e00b20c5b",
+      "sac_reference_native_success": true
+    },
+    {
+      "seed": 2026,
+      "request": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2026/requests/step000.npz",
+        "sha256": "2b13b6a155078925269c6a3b3daff0d40ddab124738a0bb2d9b3620d172d7fbd"
+      },
+      "policy_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2026/events.jsonl",
+        "sha256": "367466ffe4508cfb6369164c89a0da4db161b32b3658ab046cde99956cdd0fa8"
+      },
+      "policy_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2026/result.json",
+        "sha256": "ccd1e6b377f78b3cc448de2ea68222cded52db456762c5444086fe9e07a14cf0"
+      },
+      "sac_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2026/events.jsonl",
+        "sha256": "adf9529fb2b3f37f24e9533cc02b0a008eef0a6bf9523ba85ae8c59907521e33"
+      },
+      "sac_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2026/result.json",
+        "sha256": "6da7f210960da0bf93cf34bd8f1a568e5d2eb2b1a805507fd7b958026c90afa5"
+      },
+      "reference_state_sha256": "9ccfc98fc7808001dcd2a95fb849727d3177d876f2f9590e1a0bc8354cfeb435",
+      "sac_reference_native_success": true
+    },
+    {
+      "seed": 2027,
+      "request": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2027/requests/step000.npz",
+        "sha256": "90dc76145a71c40bc7f50741ff491310612b29ce287dbdebe72c8aeef38afc57"
+      },
+      "policy_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2027/events.jsonl",
+        "sha256": "a59857e77b2c44d8ec263bd7d2202ed430cb7d135190e1c9fad0b8f58f7fe4ec"
+      },
+      "policy_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2027/result.json",
+        "sha256": "c48acbee8a22663fd4b7ea738228f5aef643b768ec286f1478610bf0e21bae37"
+      },
+      "sac_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2027/events.jsonl",
+        "sha256": "2a4e4b49dd7644941239a7c07ea606663b61bf6592d3836c4eeb5bfb67f9011e"
+      },
+      "sac_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2027/result.json",
+        "sha256": "10244a56d2af893c7eef214101fbd6616b5145bee5f3237c457c265f45022c46"
+      },
+      "reference_state_sha256": "9108582ed603a3187fc7b53811509ef9b71f55f26d898be1b467941cb8cd6f2a",
+      "sac_reference_native_success": true
+    },
+    {
+      "seed": 2028,
+      "request": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2028/requests/step000.npz",
+        "sha256": "0d51fbef055355f7b3d1dacbc4948b0d02bf037a1641a917bb439601537fbe4b"
+      },
+      "policy_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2028/events.jsonl",
+        "sha256": "3601541aa109c625a9dd36716efb48ce5f1e16c3a40863ded739d76a9a0c8e9e"
+      },
+      "policy_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-calls-2026-09-18-run01/reach-seed2028/result.json",
+        "sha256": "e2a78afd99a5d01fba6fc82075416a7617339b81725b0e6f697b96b3684fc091"
+      },
+      "sac_events": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2028/events.jsonl",
+        "sha256": "09bb604ca2776c6a42e1f0650a70fa33159fe86c005fdd673de55150edeb0693"
+      },
+      "sac_result": {
+        "path": "/home/pshuai/bvi-research/runs/s1-ia-diagnostics-2026-09-18-run02/d1-a1-sac-seed2028/result.json",
+        "sha256": "ee0c628fe895ed13b65d7728cae26a76741080aa67c20f768ac0cc7ae63721d3"
+      },
+      "reference_state_sha256": "d7cd8486ec1dd73821b8d79fef03f750fbf8939fbcbe21281e9f29dc4bd55432",
+      "sac_reference_native_success": true
+    }
+  ],
+  "recorded_model_identity_roster": {
+    "pretrained_parameters_sha256": [
+      "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e"
+    ],
+    "normalizer_sha256": [
+      "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2"
+    ],
+    "state_contract_sha256": [
+      "c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40"
+    ]
+  },
+  "transform_parity": {
+    "status": "bit_exact",
+    "bit_exact": true,
+    "artifact": "transform-parity.json"
+  },
+  "completed_seeds": 5,
+  "completed_inference_calls": 80,
+  "wall_seconds": 118.131532933563,
+  "mean_inference_seconds": 0.9466457511298358,
+  "p95_inference_seconds": 0.9045065684244037,
+  "current_model_identity": {
+    "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "pretrained_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "state_contract_sha256": "c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40",
+    "rng_contract": "reset PRNGKey(episode_seed); key,subkey=split(key) per prediction"
+  },
+  "cohort_gate": {
+    "decision": "invalid_cohort",
+    "interpretation": "The predeclared five-start exact-reproduction cohort contract was not met.",
+    "scope_warning": "All five starts are retained for exact-reproduction identity, but SAC-distance voting uses only the four native-success SAC references. SAC is not a supervised label or a necessary action.",
+    "gate_spec": {
+      "expected_identity_case_count": 5,
+      "expected_success_reference_case_count": 4,
+      "samples_per_case": 16,
+      "exact_reproduction_atol": 1e-06,
+      "sac_distance_tail_percentile": 0.9375,
+      "tail_cases_required": 3,
+      "median_sac_rmse_ratio_for_tail_candidate": 0.75,
+      "sac_action_magnitude_for_sign_test": 0.25,
+      "opposite_sign_same_sign_fraction_max": 0.1,
+      "minimum_opposed_channels_for_stable_split": 3,
+      "central_interval_quantiles": [
+        0.05,
+        0.95
+      ],
+      "central_support_fraction_max_for_stable_split": 0.5,
+      "z_scale_floor": 0.05
+    },
+    "contract_reasons": [
+      "one_or_more_exact_reproduction_identity_failures"
+    ],
+    "seeds": [
+      2024,
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "success_reference_seeds": [
+      2025,
+      2026,
+      2027,
+      2028
+    ],
+    "diagnostic_failed_reference_seeds": [
+      2024
+    ],
+    "tail_candidate_seeds": [],
+    "tail_candidate_count": 0,
+    "independent_exchangeable_rank_reference_probability": 0.007080078125,
+    "independence_claimed": false
+  },
+  "sac_reference_native_successes": 4,
+  "outputs": [
+    "transform-parity.json",
+    "per-seed.json",
+    "per-channel.csv",
+    "samples.npz"
+  ]
+}

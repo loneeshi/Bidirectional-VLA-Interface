@@ -1,0 +1,89 @@
+{
+  "schema": "bvi.native24-physical-predicate-sequence/1",
+  "status": "source_replay_physical_predicates",
+  "sequence_id": "validation-seed3020-grasp-step17-causal-tail10",
+  "endpoint_only_classification": "near_grasp_candidate_not_completion",
+  "class_label_propagated_to_prior_frames": false,
+  "frames": [
+    {
+      "observation_index": 8,
+      "tcp_object_distance_m": 0.5419794917106628,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 9,
+      "tcp_object_distance_m": 0.47315195202827454,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 10,
+      "tcp_object_distance_m": 0.4068952202796936,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 11,
+      "tcp_object_distance_m": 0.3400630056858063,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 12,
+      "tcp_object_distance_m": 0.274173766374588,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 13,
+      "tcp_object_distance_m": 0.2099248617887497,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 14,
+      "tcp_object_distance_m": 0.15087787806987762,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 15,
+      "tcp_object_distance_m": 0.09842269122600555,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 16,
+      "tcp_object_distance_m": 0.04666869714856148,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "observation_index": 17,
+      "tcp_object_distance_m": 0.012785776518285275,
+      "is_grasped": false,
+      "physical_completion": false,
+      "terminated": false,
+      "truncated": false
+    }
+  ]
+}

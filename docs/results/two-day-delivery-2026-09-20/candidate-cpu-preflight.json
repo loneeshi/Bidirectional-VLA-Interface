@@ -1,0 +1,70 @@
+{
+  "schema": "bvi.s1-candidate-cpu-preflight/1",
+  "recorded_at_utc": "2026-09-19 01:48:00 UTC",
+  "status": "cpu_tests_and_data_preflight_passed_not_launch_authorization",
+  "candidate_started": false,
+  "gpu_execution": false,
+  "model_forward_calls": 0,
+  "optimizer_updates": 0,
+  "parameter_restore_performed": false,
+  "active_diagnostic_helper": {
+    "path": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py",
+    "sha256_before": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221",
+    "sha256_after": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221",
+    "overwritten": false
+  },
+  "deployed_files": [
+    {
+      "local": "scripts/train_s1_bounded_candidate.py",
+      "remote": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py",
+      "sha256": "bbe60d0ab7bf985b385cd90f68213a8c8e9aa6b32b50e1ee5005066d83af2e6d"
+    },
+    {
+      "local": "tests/test_s1_bounded_candidate.py",
+      "remote": "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py",
+      "sha256": "92905ca362b0055455e1ccc2ede048f853e3ed39bbe0efce9e09a0f60ea3b0cc"
+    }
+  ],
+  "remote_audit_directory_confirmed": "/home/pshuai/bvi-research/runs/two-day-s1-input-audit-2026-09-19-run01",
+  "audit_panel": "audit-panel.json",
+  "tests": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "pytest_seconds": 0.12
+  },
+  "data_preflight": {
+    "train_rows": 6835,
+    "dev_rows": 8,
+    "dev_parents": [
+      20,
+      21
+    ],
+    "dev_family_counts": {
+      "reach": 4,
+      "grasp": 2,
+      "move": 2
+    },
+    "source_sha256": "03b29e86035d968df346c851067a052a75bd5a0f29da7792daa05858173f896e",
+    "source_manifest_sha256": "27e4769b8fbd0d610da773f900d50f7056eb29529f8006a3eb530aaf73a29b2e",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2"
+  },
+  "disk": {
+    "filesystem": "/dev/nvme0n1p2",
+    "available_bytes": 799205289984,
+    "used_percent": 90
+  },
+  "upload_commands": [
+    ".venv/Scripts/python.exe .runtime/lab-server/remote.py put scripts/train_s1_bounded_candidate.py /home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py",
+    ".venv/Scripts/python.exe .runtime/lab-server/remote.py put tests/test_s1_bounded_candidate.py /home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py"
+  ],
+  "command_transport": ".venv/Scripts/python.exe .runtime/lab-server/remote.py exec; remote shell script passed over stdin",
+  "exact_remote_shell_script": "set -e\ncd \"$HOME/bvi-research\"\nexport CUDA_VISIBLE_DEVICES=''\nexport JAX_PLATFORMS=cpu\nexport JAX_PLATFORM_NAME=cpu\nexport PYTHONPATH=\"$HOME/bvi-research/src/Bidirectional-VLA-Interface/src:$HOME/bvi-research:$HOME/bvi-research/src/Bidirectional-VLA-Interface/scripts\"\nsha256sum src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py src/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py\nenvs/openpi/bin/python -m pytest src/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py -q\nenvs/openpi/bin/python src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py --preflight --source \"$HOME/bvi-research/data/fetch-tapt-source/pick/013_apple.h5\" --dataset-manifest \"$HOME/bvi-research/runs/s1-official-medium-2026-09-17-run01/manifest.json\" --normalizer \"$HOME/bvi-research/runs/s1-official-medium-norm-2026-09-17-run01\" --checkpoint \"$HOME/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855\" --audit-panel \"$HOME/bvi-research/runs/two-day-s1-input-audit-2026-09-19-run01/audit-panel.json\" --output \"$HOME/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01\" --decision \"$HOME/bvi-research/runs/s1-bounded-diagnostic-2026-09-19-run01/decision.json\" --diagnostic-run \"$HOME/bvi-research/runs/s1-bounded-diagnostic-2026-09-19-run01\" --execution-contract \"$HOME/bvi-research/runs/two-day-s1-input-audit-2026-09-19-run01/execution-contract.json\"\ndf -B1 \"$HOME/bvi-research\"\nsha256sum src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py\n",
+  "remote_output": "3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221  src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py\r\nbbe60d0ab7bf985b385cd90f68213a8c8e9aa6b32b50e1ee5005066d83af2e6d  src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_candidate.py\r\n92905ca362b0055455e1ccc2ede048f853e3ed39bbe0efce9e09a0f60ea3b0cc  src/Bidirectional-VLA-Interface/tests/test_s1_bounded_candidate.py\r\n......................                                                   [100%]\r\n22 passed in 0.12s\r\n{\"schema\": \"bvi.s1-bounded-candidate/1\", \"status\": \"data_preflight_only_not_launch_authorization\", \"train_rows\": 6835, \"dev_rows\": 8, \"provenance\": {\"source_sha256\": \"03b29e86035d968df346c851067a052a75bd5a0f29da7792daa05858173f896e\", \"source_manifest_sha256\": \"27e4769b8fbd0d610da773f900d50f7056eb29529f8006a3eb530aaf73a29b2e\", \"normalizer_sha256\": \"0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2\"}}\r\nFilesystem         1B-blocks          Used    Available Use% Mounted on\r\n/dev/nvme0n1p2 7936769732608 6737496420352 799205289984  90% /\r\n3dd94984a854528520eb69856f168136ac1417e3db3fd2e94fa3493cd2751221  src/Bidirectional-VLA-Interface/scripts/train_s1_bounded_diagnostic.py\r\n\r\n\r\nEXIT 0\r\n",
+  "costs": {
+    "external_api_usd": 0,
+    "new_rental_usd": 0,
+    "lab_charge_usd": null
+  },
+  "limits": "CPU preflight validates source/manifest/normalizer and checkpoint metadata, not full parameter restore. Real diagnostic verified_metric_go with candidate_eligible=true and passed_cpu_restore remains required before candidate launch. Active training was neither modified nor stopped."
+}

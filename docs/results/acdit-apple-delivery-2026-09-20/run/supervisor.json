@@ -1,0 +1,55 @@
+{
+  "status": "running",
+  "started_unix": 1789837934.8177912,
+  "deadline_unix": 1789901787.9894974,
+  "pid": 1650149,
+  "task": "set_table/pick/013_apple",
+  "scheduled_task": false,
+  "auto_restart": false,
+  "stages": [
+    {
+      "name": "collection-resume",
+      "exit_code": 0,
+      "wall_seconds": 2921.756594181061
+    },
+    {
+      "name": "finalize",
+      "exit_code": 0,
+      "wall_seconds": 12.404043436050415
+    }
+  ],
+  "current_stage": "stage1",
+  "updated_unix": 1789840869.0033114,
+  "child_pid": 1814916,
+  "data": {
+    "status": "frozen",
+    "source": "/home/pshuai/bvi-research/runs/acdit-apple-bounded-20260919-run01/data/set_table/pick/train/013_apple/demonstrations.h5",
+    "source_sha256": "9c068bdcd223c8c6c6a8437d6ad8cfa7d81d8f7dde589c06a62e6670460464e9",
+    "episodes": 743,
+    "validation_scenes": [
+      8,
+      11,
+      16,
+      18,
+      37,
+      42,
+      43,
+      48,
+      49,
+      52,
+      53,
+      66
+    ],
+    "scene_count": 63,
+    "frames": {
+      "train": 26995,
+      "validation": 7193
+    },
+    "source_kind": "newly_collected_ACDiT_native_SAC",
+    "not_the_original_official_H5": true,
+    "split_seed": 20260919,
+    "selection": "before any model optimization",
+    "unique_episodes": 743,
+    "excluded_duplicate_parents": []
+  }
+}

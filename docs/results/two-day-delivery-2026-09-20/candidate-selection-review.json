@@ -1,0 +1,200 @@
+{
+  "schema": "bvi.s1-candidate-independent-selection-review/1",
+  "reviewed_utc": "2026-09-19T03:47:01.649456+00:00",
+  "audit_directory": "D:\\AI\\embodied intelligence\\repo\\Bidirectional-VLA-Interface\\docs\\results\\two-day-delivery-2026-09-20\\candidate-selection-audit-2026-09-19-run01",
+  "status": "independent_dev_selection_consistent",
+  "policy_failure": false,
+  "model_forwards": 0,
+  "parameter_restores": 0,
+  "gpu_execution": false,
+  "active_source_modified": false,
+  "limitations": [
+    "Local independent reconstruction audit only; no fresh full parameter restore or native success claim.",
+    "Source H5 bytes were not reread; source hash checked against frozen source-manifest identity.",
+    "Copied source-manifest and audit-panel checked; root owns final CPU parameter verifier and launch decision."
+  ],
+  "transport_note": "Per-file download hit one SSH protocol-banner reset; subsequent single-connection batch transfer passed all17 SHA checks.",
+  "remote_artifacts": [
+    {
+      "local_name": "supervisor.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/supervisor.json",
+      "bytes": 157,
+      "sha256": "d31127016b3ac607ee6be1474ec90bab2c2c752413e6d21f0b4f6ee3184d1376"
+    },
+    {
+      "local_name": "status.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/status.json",
+      "bytes": 2183,
+      "sha256": "1ac82bf7cd9d182cd2f436cb2e25425a132509322ee7968581e349d15f19032e"
+    },
+    {
+      "local_name": "identity.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/identity.json",
+      "bytes": 3171,
+      "sha256": "788db5464d0bd487e28f8d282791d6611f6389f21918214acd76ea3a17d368d3"
+    },
+    {
+      "local_name": "best.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/best.json",
+      "bytes": 1416,
+      "sha256": "0f7098d4e1fff2dd00f230f3ca81ebb76948115c2fd0bf6f176c1e118a887735"
+    },
+    {
+      "local_name": "selection.jsonl",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/selection.jsonl",
+      "bytes": 574,
+      "sha256": "051224ffa76b8a2430004fc7f4622c1c1c54eabee40b040c5297ca7b647f8ea9"
+    },
+    {
+      "local_name": "dev-roster.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-roster.json",
+      "bytes": 4807,
+      "sha256": "4b7bcb5d6bbb95c50d63fe02f002f5a4395ed2adacb4e6ba2aebc187a74ac51f"
+    },
+    {
+      "local_name": "train-roster.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/train-roster.json",
+      "bytes": 4110162,
+      "sha256": "084072d84e86abb3836a5f18729a4e6e801f280e58fffb5e53c91658107e8182"
+    },
+    {
+      "local_name": "dev-step000.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step000.json",
+      "bytes": 10524,
+      "sha256": "df4c537fb46649307dae4053967d6ca655ee6d83411bb39b471bb306e51a9854"
+    },
+    {
+      "local_name": "dev-step000.npz",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step000.npz",
+      "bytes": 19676,
+      "sha256": "d079ad14c76bad2ff3033150e6e839ffd30ee1e1e9a94947859c6a9b5acb6dd8"
+    },
+    {
+      "local_name": "dev-step100.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step100.json",
+      "bytes": 10499,
+      "sha256": "d6f0a25759cd031268937fa173d9e4893932b4b7ca6058cdb09e6e6da0556f18"
+    },
+    {
+      "local_name": "dev-step100.npz",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step100.npz",
+      "bytes": 20030,
+      "sha256": "49de31095a5d05c2f9cd560a78abd5514538f941cd6388e193b4460d4ebc81bd"
+    },
+    {
+      "local_name": "dev-step250.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step250.json",
+      "bytes": 10537,
+      "sha256": "9705fd71f33a87de43d9c390bd99f0ba68c8c76aefcbe7c5c7106ec09b8ebe06"
+    },
+    {
+      "local_name": "dev-step250.npz",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step250.npz",
+      "bytes": 19551,
+      "sha256": "208d96b349d4db99535f7e04557891b2a7237039af7e5cc96f88c078b3e4051e"
+    },
+    {
+      "local_name": "dev-step500.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step500.json",
+      "bytes": 10533,
+      "sha256": "9030fc9b4e05bf9659b0c1ddfcde664cd355260f04ba8cdddd2f0686e29974a8"
+    },
+    {
+      "local_name": "dev-step500.npz",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/dev-step500.npz",
+      "bytes": 19525,
+      "sha256": "3ec7e1a64414cff89a720447d01c4094ecb933670ce018a1f1de71cd8005dacf"
+    },
+    {
+      "local_name": "source-manifest.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/s1-official-medium-2026-09-17-run01/manifest.json",
+      "bytes": 298009,
+      "sha256": "27e4769b8fbd0d610da773f900d50f7056eb29529f8006a3eb530aaf73a29b2e"
+    },
+    {
+      "local_name": "source-audit-panel.json",
+      "remote_path": "/home/pshuai/bvi-research/runs/two-day-s1-input-audit-2026-09-19-run01/audit-panel.json",
+      "bytes": 9546,
+      "sha256": "98d8dffbb9e870c2240109026e10bcee82a739f0d9f340d84facfeff67ce8058"
+    }
+  ],
+  "supervisor": {
+    "schema": "bvi.s1-bounded-candidate/1",
+    "status": "exited",
+    "worker_exit_code": 0,
+    "elapsed_seconds": 6508.438502106816,
+    "budget_seconds": 9000
+  },
+  "baseline_metrics": {
+    "first_active11_rmse": 0.383258175578685,
+    "chunk_active11_rmse": 0.39609429891720965,
+    "reach_yaw_first_rmse": 0.4114715189079519,
+    "reach_torso_first_rmse": 1.0305014894692524
+  },
+  "checkpoints": [
+    {
+      "step": 100,
+      "first_active11_rmse": 0.37014381218204934,
+      "chunk_active11_rmse": 0.3711393239699117,
+      "reach_yaw_first_rmse": 0.3894735544954749,
+      "reach_torso_first_rmse": 0.8593605348026094,
+      "score": 0.9513896487595626,
+      "first_rmse_ratio": 0.965781908300236,
+      "chunk_rmse_ratio": 0.9369973892188892,
+      "guards": {
+        "reach_yaw_first_rmse": true,
+        "reach_torso_first_rmse": true
+      },
+      "eligible": true
+    },
+    {
+      "step": 250,
+      "first_active11_rmse": 0.34458732008575726,
+      "chunk_active11_rmse": 0.3772949687801355,
+      "reach_yaw_first_rmse": 0.31754975371439836,
+      "reach_torso_first_rmse": 0.787657543833316,
+      "score": 0.9258189853129655,
+      "first_rmse_ratio": 0.8990997245276288,
+      "chunk_rmse_ratio": 0.9525382460983022,
+      "guards": {
+        "reach_yaw_first_rmse": true,
+        "reach_torso_first_rmse": true
+      },
+      "eligible": true
+    },
+    {
+      "step": 500,
+      "first_active11_rmse": 0.3288905384138095,
+      "chunk_active11_rmse": 0.38755782275326717,
+      "reach_yaw_first_rmse": 0.496463848141139,
+      "reach_torso_first_rmse": 0.3736752464802785,
+      "score": 0.9182959712396856,
+      "first_rmse_ratio": 0.8581435684110709,
+      "chunk_rmse_ratio": 0.9784483740683004,
+      "guards": {
+        "reach_yaw_first_rmse": false,
+        "reach_torso_first_rmse": true
+      },
+      "eligible": false
+    }
+  ],
+  "published_best_step": 250,
+  "independent_best_step": 250,
+  "selected_checkpoint_parameters_sha256": "7ff8ae1572bfbc7430605918d19a96903bbd4813cb6dd821632a9bfe4e951919",
+  "roster": {
+    "train_rows": 6835,
+    "development_rows": 8,
+    "development_parents": [
+      20,
+      21
+    ],
+    "family_counts": {
+      "reach": 4,
+      "grasp": 2,
+      "move": 2
+    }
+  },
+  "source_checkpoint_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+  "selection_scope": "frozen_dev8_only_no_online_success",
+  "ready_for_native_evaluation": null
+}

@@ -1,0 +1,25 @@
+{
+  "id": "TWO-DAY-S1-ORACLE-BASE-R2-20260919-REPAIR",
+  "at": "2026-09-19T03:55:06.868672+00:00",
+  "experiment_id": "s1-oracle-base-20260919-r2",
+  "relates_to": "TWO-DAY-S1-ORACLE-BASE-R1-20260919-INFRA",
+  "status": "preregistered_infrastructure_retry",
+  "repair": "preserve venv interpreter symlink paths for model/simulator; original failed baseline retained",
+  "source_sha256": "271c76f3577b29d7372f25063a7c179f0440e28ea038cc2028d176647a825228",
+  "cpu_tests": "28passed laboratory including real symlinks",
+  "baseline_absolute_deadline_utc": "2026-09-19T04:25:08Z",
+  "maximum_remaining_seconds": "computed at launch; original2100second batch deadline not extended",
+  "checkpoint_changed": false,
+  "seeds_changed": false,
+  "native_predicates_changed": false,
+  "api_calls_max": 0,
+  "new_rental_usd_max": 0,
+  "training_updates": 0,
+  "lab_charge_usd": null,
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "gpu0_touched": false,
+  "manifests": {
+    "oracle-baseline-frozen-v3.json": "69f33c6565d6863cff557d9a8ed8683b8477680409b9fc56a2322e902c58a122",
+    "oracle-candidate-frozen-v2.json": "d0a68106dedf716383e820e4641771d5cd67d0976fc069d7f8bf2a8a3a361ead"
+  }
+}

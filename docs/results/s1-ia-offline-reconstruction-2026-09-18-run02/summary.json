@@ -1,0 +1,1661 @@
+{
+  "status": "completed",
+  "stage": "level1_offline_action_reconstruction",
+  "question": "Can frozen S1-IA reconstruct expert Fetch13 actions from recorded observations?",
+  "scope": "teacher-forced recorded observations; no simulator; no rollout; no training; no checkpoint selection",
+  "split": "validation",
+  "samples_per_observation": 4,
+  "max_observations": 128,
+  "max_seconds": 2600,
+  "training_updates": 0,
+  "simulator_steps": 0,
+  "rollout_episodes": 0,
+  "api_calls": 0,
+  "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+  "normalizer": "/home/pshuai/bvi-research/runs/s1-official-medium-norm-2026-09-17-run01",
+  "source": "/home/pshuai/bvi-research/data/fetch-tapt-source/pick/013_apple.h5",
+  "dataset_manifest": "/home/pshuai/bvi-research/runs/s1-official-medium-2026-09-17-run01/manifest.json",
+  "physical_metric_definition": "post-quantile-unnormalization, then controller clipping and stationary-head mask; mapped to sub-controller target delta/target/velocity units, not measured post-physics motion",
+  "stochastic_treatment": "independent sequential flow samples at each identical observation; report sample-mean reconstruction, expected single-sample RMSE, and sample standard deviation",
+  "first_action_interpretation": "strict teacher-forced reconstruction at recorded observation t",
+  "chunk_interpretation": "open-loop horizon prediction from observation t; reported separately",
+  "channel_contract": [
+    {
+      "name": "shoulder_pan",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "shoulder_lift",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "upperarm_roll",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "elbow_flex",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "forearm_roll",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "wrist_flex",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "wrist_roll",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "gripper",
+      "component": "gripper",
+      "unit": "m_joint_target",
+      "lower": -0.01,
+      "upper": 0.05
+    },
+    {
+      "name": "head_pan",
+      "component": "head",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "head_tilt",
+      "component": "head",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "torso_lift",
+      "component": "torso",
+      "unit": "m_delta",
+      "lower": -0.1,
+      "upper": 0.1
+    },
+    {
+      "name": "base_forward",
+      "component": "base",
+      "unit": "m_per_s",
+      "lower": -1.0,
+      "upper": 1.0
+    },
+    {
+      "name": "base_yaw",
+      "component": "base",
+      "unit": "rad_per_s",
+      "lower": -3.14,
+      "upper": 3.14
+    }
+  ],
+  "head_mask_indices": [
+    8,
+    9
+  ],
+  "controller_contract_source": "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/agents/robots/fetch/fetch.py",
+  "provenance": {
+    "source_sha256": "03b29e86035d968df346c851067a052a75bd5a0f29da7792daa05858173f896e",
+    "source_manifest_sha256": "27e4769b8fbd0d610da773f900d50f7056eb29529f8006a3eb530aaf73a29b2e",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2"
+  },
+  "eligible_observations": 2033,
+  "eligible_parent_calls": 150,
+  "selected_observations": 128,
+  "planned_inference_calls": 512,
+  "parent_filter": null,
+  "selection": "farthest-point call subset with target four temporally spread frames per call; round-robin allocation; fixed before inference",
+  "selected_roster": [
+    {
+      "parent_id": 20,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 20,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 5
+    },
+    {
+      "parent_id": 20,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 10
+    },
+    {
+      "parent_id": 20,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 15
+    },
+    {
+      "parent_id": 20,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 21,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 13
+    },
+    {
+      "parent_id": 21,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 14
+    },
+    {
+      "parent_id": 21,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 15
+    },
+    {
+      "parent_id": 23,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 23,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 5
+    },
+    {
+      "parent_id": 23,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 10
+    },
+    {
+      "parent_id": 23,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 24,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 24,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 24,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 23
+    },
+    {
+      "parent_id": 306,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 306,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 2
+    },
+    {
+      "parent_id": 306,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 4
+    },
+    {
+      "parent_id": 306,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 6
+    },
+    {
+      "parent_id": 306,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 9
+    },
+    {
+      "parent_id": 307,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 307,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 23
+    },
+    {
+      "parent_id": 307,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 24
+    },
+    {
+      "parent_id": 307,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 25
+    },
+    {
+      "parent_id": 309,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 309,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 3
+    },
+    {
+      "parent_id": 309,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 6
+    },
+    {
+      "parent_id": 309,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 13
+    },
+    {
+      "parent_id": 310,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 310,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 310,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 26
+    },
+    {
+      "parent_id": 310,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 33
+    },
+    {
+      "parent_id": 312,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 17
+    },
+    {
+      "parent_id": 312,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 18
+    },
+    {
+      "parent_id": 312,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 313,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 16
+    },
+    {
+      "parent_id": 313,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 23
+    },
+    {
+      "parent_id": 313,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 27
+    },
+    {
+      "parent_id": 313,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 31
+    },
+    {
+      "parent_id": 315,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 18
+    },
+    {
+      "parent_id": 315,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 315,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 315,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 316,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 18
+    },
+    {
+      "parent_id": 316,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 316,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 24
+    },
+    {
+      "parent_id": 316,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 31
+    },
+    {
+      "parent_id": 318,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 318,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 318,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 319,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 25
+    },
+    {
+      "parent_id": 319,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 28
+    },
+    {
+      "parent_id": 319,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 32
+    },
+    {
+      "parent_id": 319,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 39
+    },
+    {
+      "parent_id": 321,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 23
+    },
+    {
+      "parent_id": 321,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 24
+    },
+    {
+      "parent_id": 321,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 25
+    },
+    {
+      "parent_id": 321,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 27
+    },
+    {
+      "parent_id": 323,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 323,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 5
+    },
+    {
+      "parent_id": 323,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 8
+    },
+    {
+      "parent_id": 323,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 11
+    },
+    {
+      "parent_id": 324,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 13
+    },
+    {
+      "parent_id": 324,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 15
+    },
+    {
+      "parent_id": 324,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 18
+    },
+    {
+      "parent_id": 324,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 324,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 24
+    },
+    {
+      "parent_id": 326,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 326,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 7
+    },
+    {
+      "parent_id": 326,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 11
+    },
+    {
+      "parent_id": 326,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 15
+    },
+    {
+      "parent_id": 327,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 17
+    },
+    {
+      "parent_id": 327,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 327,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 327,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 27
+    },
+    {
+      "parent_id": 329,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 329,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 9
+    },
+    {
+      "parent_id": 329,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 14
+    },
+    {
+      "parent_id": 329,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 330,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 330,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 29
+    },
+    {
+      "parent_id": 330,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 38
+    },
+    {
+      "parent_id": 330,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 56
+    },
+    {
+      "parent_id": 332,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 332,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 4
+    },
+    {
+      "parent_id": 332,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 9
+    },
+    {
+      "parent_id": 332,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 18
+    },
+    {
+      "parent_id": 333,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 333,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 333,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 26
+    },
+    {
+      "parent_id": 333,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 33
+    },
+    {
+      "parent_id": 335,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 12
+    },
+    {
+      "parent_id": 335,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 13
+    },
+    {
+      "parent_id": 335,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 14
+    },
+    {
+      "parent_id": 335,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 15
+    },
+    {
+      "parent_id": 337,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 337,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 4
+    },
+    {
+      "parent_id": 337,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 9
+    },
+    {
+      "parent_id": 337,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 14
+    },
+    {
+      "parent_id": 337,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 338,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 338,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 338,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 338,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 340,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 340,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 6
+    },
+    {
+      "parent_id": 340,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 13
+    },
+    {
+      "parent_id": 340,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 26
+    },
+    {
+      "parent_id": 341,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 34
+    },
+    {
+      "parent_id": 341,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 40
+    },
+    {
+      "parent_id": 341,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 46
+    },
+    {
+      "parent_id": 341,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 59
+    },
+    {
+      "parent_id": 343,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 15
+    },
+    {
+      "parent_id": 343,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 16
+    },
+    {
+      "parent_id": 343,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 17
+    },
+    {
+      "parent_id": 343,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 18
+    },
+    {
+      "parent_id": 346,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 20
+    },
+    {
+      "parent_id": 346,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 21
+    },
+    {
+      "parent_id": 346,
+      "call_index": 1,
+      "tool_family": "grasp",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 348,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 0
+    },
+    {
+      "parent_id": 348,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 9
+    },
+    {
+      "parent_id": 348,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 14
+    },
+    {
+      "parent_id": 348,
+      "call_index": 0,
+      "tool_family": "reach",
+      "observation_index": 19
+    },
+    {
+      "parent_id": 349,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 22
+    },
+    {
+      "parent_id": 349,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 27
+    },
+    {
+      "parent_id": 349,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 33
+    },
+    {
+      "parent_id": 349,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 39
+    },
+    {
+      "parent_id": 349,
+      "call_index": 2,
+      "tool_family": "move",
+      "observation_index": 45
+    }
+  ],
+  "controller_contract_source_sha256": "cfa07e1dac21bd75f9f63f31742f4d06dd374ab46eb439b5ab367700100a4b39",
+  "completed_observations": 128,
+  "completed_inference_calls": 512,
+  "wall_seconds": 531.065435256809,
+  "mean_inference_seconds": 0.916133898877888,
+  "p95_inference_seconds": 0.9232878657057881,
+  "first_action_physical_metrics": [
+    {
+      "scope": "first_action",
+      "channel": 0,
+      "name": "shoulder_pan",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": -0.024527713617180782,
+      "physical_expert_std": 0.06074649705685053,
+      "physical_expert_min": -0.09960798621177674,
+      "physical_expert_max": 0.09827890396118164,
+      "physical_prediction_mean": -0.027631059487799804,
+      "physical_prediction_std": 0.041210135684990865,
+      "physical_bias": -0.003103345870619022,
+      "physical_mae": 0.03923551260937188,
+      "physical_rmse": 0.05054680420116256,
+      "physical_pearson": 0.5678469331959034,
+      "physical_normalized_rmse_by_expert_std": 0.8320941395823626,
+      "physical_expected_sample_rmse": 0.060019430132888026,
+      "physical_mean_stochastic_std": 0.032086026905961476,
+      "physical_zero_controller_rmse": 0.06551141610409887,
+      "physical_rmse_over_zero_controller": 0.7715724557204311,
+      "controller_applied_bias": -0.03103345870619023,
+      "controller_raw_bias": -0.0323361747956028,
+      "controller_applied_mae": 0.3923551260937188,
+      "controller_raw_mae": 0.3913864251204018,
+      "controller_applied_rmse": 0.5054680420116255,
+      "controller_raw_rmse": 0.5061376473809109,
+      "controller_applied_pearson": 0.5678469331959034,
+      "controller_raw_pearson": 0.5684811680359148,
+      "controller_applied_normalized_rmse_by_expert_std": 0.8320941395823627,
+      "controller_raw_normalized_rmse_by_expert_std": 0.8331964342030035,
+      "controller_applied_expected_sample_rmse": 0.6001943013288802,
+      "controller_raw_expected_sample_rmse": 0.6055955550795499,
+      "controller_applied_mean_stochastic_std": 0.3208602690596148,
+      "controller_raw_mean_stochastic_std": 0.32834558994630636,
+      "raw_out_of_bounds_fraction": 0.0546875,
+      "wrapper_changed_fraction": 0.0546875
+    },
+    {
+      "scope": "first_action",
+      "channel": 1,
+      "name": "shoulder_lift",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": -0.04115248190064449,
+      "physical_expert_std": 0.07859802715038607,
+      "physical_expert_min": -0.09958786964416505,
+      "physical_expert_max": 0.09946895241737366,
+      "physical_prediction_mean": -0.03377154370127756,
+      "physical_prediction_std": 0.07500020824452118,
+      "physical_bias": 0.007380938199366938,
+      "physical_mae": 0.02365253091675186,
+      "physical_rmse": 0.042606133343528814,
+      "physical_pearson": 0.8517473224888598,
+      "physical_normalized_rmse_by_expert_std": 0.5420763712301339,
+      "physical_expected_sample_rmse": 0.04767877275129898,
+      "physical_mean_stochastic_std": 0.01727837313265175,
+      "physical_zero_controller_rmse": 0.08871965192963562,
+      "physical_rmse_over_zero_controller": 0.4802333239237699,
+      "controller_applied_bias": 0.07380938199366938,
+      "controller_raw_bias": 0.06684255874733935,
+      "controller_applied_mae": 0.23652530916751857,
+      "controller_raw_mae": 0.23919335695700283,
+      "controller_applied_rmse": 0.4260613334352881,
+      "controller_raw_rmse": 0.4296208059499957,
+      "controller_applied_pearson": 0.8517473224888591,
+      "controller_raw_pearson": 0.850059356558718,
+      "controller_applied_normalized_rmse_by_expert_std": 0.5420763712301339,
+      "controller_raw_normalized_rmse_by_expert_std": 0.5466050758856553,
+      "controller_applied_expected_sample_rmse": 0.47678772751298987,
+      "controller_raw_expected_sample_rmse": 0.48453295331796264,
+      "controller_applied_mean_stochastic_std": 0.1727837313265175,
+      "controller_raw_mean_stochastic_std": 0.18890618798785,
+      "raw_out_of_bounds_fraction": 0.201171875,
+      "wrapper_changed_fraction": 0.201171875
+    },
+    {
+      "scope": "first_action",
+      "channel": 2,
+      "name": "upperarm_roll",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.04135565403848887,
+      "physical_expert_std": 0.07217370964801463,
+      "physical_expert_min": -0.09949518442153932,
+      "physical_expert_max": 0.09936786890029908,
+      "physical_prediction_mean": 0.04991035112607278,
+      "physical_prediction_std": 0.04957973494420701,
+      "physical_bias": 0.008554697087583918,
+      "physical_mae": 0.03563511330039546,
+      "physical_rmse": 0.05548116410176497,
+      "physical_pearson": 0.6514473613908951,
+      "physical_normalized_rmse_by_expert_std": 0.7687170906461943,
+      "physical_expected_sample_rmse": 0.06206689086003887,
+      "physical_mean_stochastic_std": 0.02377347752477731,
+      "physical_zero_controller_rmse": 0.08318253714156054,
+      "physical_rmse_over_zero_controller": 0.6669809073910163,
+      "controller_applied_bias": 0.08554697087583918,
+      "controller_raw_bias": 0.10152058307630796,
+      "controller_applied_mae": 0.3563511330039546,
+      "controller_raw_mae": 0.362986910350628,
+      "controller_applied_rmse": 0.5548116410176497,
+      "controller_raw_rmse": 0.5611908911542163,
+      "controller_applied_pearson": 0.6514473613908954,
+      "controller_raw_pearson": 0.6481381712802282,
+      "controller_applied_normalized_rmse_by_expert_std": 0.7687170906461943,
+      "controller_raw_normalized_rmse_by_expert_std": 0.7775558356236628,
+      "controller_applied_expected_sample_rmse": 0.6206689086003888,
+      "controller_raw_expected_sample_rmse": 0.6318376416352702,
+      "controller_applied_mean_stochastic_std": 0.2377347752477731,
+      "controller_raw_mean_stochastic_std": 0.26104832413696644,
+      "raw_out_of_bounds_fraction": 0.203125,
+      "wrapper_changed_fraction": 0.203125
+    },
+    {
+      "scope": "first_action",
+      "channel": 3,
+      "name": "elbow_flex",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.009768552142850238,
+      "physical_expert_std": 0.08743360631701277,
+      "physical_expert_min": -0.09985418915748596,
+      "physical_expert_max": 0.0994403064250946,
+      "physical_prediction_mean": 0.013305050391659277,
+      "physical_prediction_std": 0.07959942615141445,
+      "physical_bias": 0.00353649824880904,
+      "physical_mae": 0.0169889688432022,
+      "physical_rmse": 0.03144167781048623,
+      "physical_pearson": 0.9342857796049047,
+      "physical_normalized_rmse_by_expert_std": 0.35960632455770414,
+      "physical_expected_sample_rmse": 0.037132429397454564,
+      "physical_mean_stochastic_std": 0.014052822287256735,
+      "physical_zero_controller_rmse": 0.08797761149614122,
+      "physical_rmse_over_zero_controller": 0.357382716759312,
+      "controller_applied_bias": 0.03536498248809039,
+      "controller_raw_bias": 0.046486292548934216,
+      "controller_applied_mae": 0.169889688432022,
+      "controller_raw_mae": 0.17234592963200157,
+      "controller_applied_rmse": 0.31441677810486224,
+      "controller_raw_rmse": 0.3182102175878726,
+      "controller_applied_pearson": 0.9342857796049053,
+      "controller_raw_pearson": 0.9329883995974071,
+      "controller_applied_normalized_rmse_by_expert_std": 0.3596063245577041,
+      "controller_raw_normalized_rmse_by_expert_std": 0.363944976070323,
+      "controller_applied_expected_sample_rmse": 0.3713242939745456,
+      "controller_raw_expected_sample_rmse": 0.3866442322573335,
+      "controller_applied_mean_stochastic_std": 0.14052822287256733,
+      "controller_raw_mean_stochastic_std": 0.17232387136464838,
+      "raw_out_of_bounds_fraction": 0.27734375,
+      "wrapper_changed_fraction": 0.27734375
+    },
+    {
+      "scope": "first_action",
+      "channel": 4,
+      "name": "forearm_roll",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.026783901218732354,
+      "physical_expert_std": 0.0813304191540744,
+      "physical_expert_min": -0.09930652379989624,
+      "physical_expert_max": 0.0998683214187622,
+      "physical_prediction_mean": 0.022413760083418312,
+      "physical_prediction_std": 0.0709073825657177,
+      "physical_bias": -0.004370141135314043,
+      "physical_mae": 0.02099900485291073,
+      "physical_rmse": 0.03184505408881075,
+      "physical_pearson": 0.9231506118996078,
+      "physical_normalized_rmse_by_expert_std": 0.391551579593887,
+      "physical_expected_sample_rmse": 0.039315225725307636,
+      "physical_mean_stochastic_std": 0.020646080952105825,
+      "physical_zero_controller_rmse": 0.0856271828584372,
+      "physical_rmse_over_zero_controller": 0.37190355942759973,
+      "controller_applied_bias": -0.04370141135314043,
+      "controller_raw_bias": -0.027368613647013262,
+      "controller_applied_mae": 0.2099900485291073,
+      "controller_raw_mae": 0.20747229408425483,
+      "controller_applied_rmse": 0.3184505408881074,
+      "controller_raw_rmse": 0.3171181701373024,
+      "controller_applied_pearson": 0.9231506118996077,
+      "controller_raw_pearson": 0.9215562867326013,
+      "controller_applied_normalized_rmse_by_expert_std": 0.3915515795938869,
+      "controller_raw_normalized_rmse_by_expert_std": 0.389913360137178,
+      "controller_applied_expected_sample_rmse": 0.39315225725307634,
+      "controller_raw_expected_sample_rmse": 0.40054681870074826,
+      "controller_applied_mean_stochastic_std": 0.20646080952105825,
+      "controller_raw_mean_stochastic_std": 0.2358653164089571,
+      "raw_out_of_bounds_fraction": 0.248046875,
+      "wrapper_changed_fraction": 0.248046875
+    },
+    {
+      "scope": "first_action",
+      "channel": 5,
+      "name": "wrist_flex",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.01168675932531187,
+      "physical_expert_std": 0.09271635145441576,
+      "physical_expert_min": -0.0998796820640564,
+      "physical_expert_max": 0.09997844099998474,
+      "physical_prediction_mean": 0.015209367275747357,
+      "physical_prediction_std": 0.08408799054886504,
+      "physical_bias": 0.003522607950435486,
+      "physical_mae": 0.01658013995838701,
+      "physical_rmse": 0.03310235961333668,
+      "physical_pearson": 0.9352959267211761,
+      "physical_normalized_rmse_by_expert_std": 0.3570282813556522,
+      "physical_expected_sample_rmse": 0.03751529958654824,
+      "physical_mean_stochastic_std": 0.013299556610842719,
+      "physical_zero_controller_rmse": 0.09344999823727396,
+      "physical_rmse_over_zero_controller": 0.35422536369972124,
+      "controller_applied_bias": 0.03522607950435486,
+      "controller_raw_bias": 0.044571795835508965,
+      "controller_applied_mae": 0.16580139958387008,
+      "controller_raw_mae": 0.1630788186666905,
+      "controller_applied_rmse": 0.33102359613336674,
+      "controller_raw_rmse": 0.32895582908536547,
+      "controller_applied_pearson": 0.9352959267211763,
+      "controller_raw_pearson": 0.9361807498143541,
+      "controller_applied_normalized_rmse_by_expert_std": 0.3570282813556522,
+      "controller_raw_normalized_rmse_by_expert_std": 0.35479807382961737,
+      "controller_applied_expected_sample_rmse": 0.3751529958654824,
+      "controller_raw_expected_sample_rmse": 0.3810743444508551,
+      "controller_applied_mean_stochastic_std": 0.13299556610842717,
+      "controller_raw_mean_stochastic_std": 0.15964964659445718,
+      "raw_out_of_bounds_fraction": 0.3125,
+      "wrapper_changed_fraction": 0.3125
+    },
+    {
+      "scope": "first_action",
+      "channel": 6,
+      "name": "wrist_roll",
+      "component": "arm",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": -0.022633106989269437,
+      "physical_expert_std": 0.053893167271684604,
+      "physical_expert_min": -0.09828999042510987,
+      "physical_expert_max": 0.09390888214111329,
+      "physical_prediction_mean": -0.012109019343961337,
+      "physical_prediction_std": 0.03990934780597891,
+      "physical_bias": 0.0105240876453081,
+      "physical_mae": 0.03527273123559098,
+      "physical_rmse": 0.044929798879993564,
+      "physical_pearson": 0.601927089269482,
+      "physical_normalized_rmse_by_expert_std": 0.8336826569033292,
+      "physical_expected_sample_rmse": 0.056427415915149645,
+      "physical_mean_stochastic_std": 0.03430289968926375,
+      "physical_zero_controller_rmse": 0.05845281011689253,
+      "physical_rmse_over_zero_controller": 0.7686507935229123,
+      "controller_applied_bias": 0.105240876453081,
+      "controller_raw_bias": 0.1049037323259654,
+      "controller_applied_mae": 0.3527273123559098,
+      "controller_raw_mae": 0.3530644564830254,
+      "controller_applied_rmse": 0.4492979887999356,
+      "controller_raw_rmse": 0.44952551279988223,
+      "controller_applied_pearson": 0.601927089269482,
+      "controller_raw_pearson": 0.6015031681919418,
+      "controller_applied_normalized_rmse_by_expert_std": 0.8336826569033291,
+      "controller_raw_normalized_rmse_by_expert_std": 0.8341048328700887,
+      "controller_applied_expected_sample_rmse": 0.5642741591514964,
+      "controller_raw_expected_sample_rmse": 0.5645810619530266,
+      "controller_applied_mean_stochastic_std": 0.34302899689263744,
+      "controller_raw_mean_stochastic_std": 0.34355521792441435,
+      "raw_out_of_bounds_fraction": 0.005859375,
+      "wrapper_changed_fraction": 0.005859375
+    },
+    {
+      "scope": "first_action",
+      "channel": 7,
+      "name": "gripper",
+      "component": "gripper",
+      "unit": "m_joint_target",
+      "lower": -0.01,
+      "upper": 0.05,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.01770322874072008,
+      "physical_expert_std": 0.027219927000888832,
+      "physical_expert_min": -0.009932504892349243,
+      "physical_expert_max": 0.04998604536056519,
+      "physical_prediction_mean": 0.016954904708818507,
+      "physical_prediction_std": 0.024995731620959045,
+      "physical_bias": -0.0007483240319015739,
+      "physical_mae": 0.005864193414909095,
+      "physical_rmse": 0.011593951763705177,
+      "physical_pearson": 0.9052644797787565,
+      "physical_normalized_rmse_by_expert_std": 0.42593618136178657,
+      "physical_expected_sample_rmse": 0.013064912038364473,
+      "physical_mean_stochastic_std": 0.0044539477343724905,
+      "physical_zero_controller_rmse": 0.02731665397063065,
+      "physical_rmse_over_zero_controller": 0.42442796164458324,
+      "controller_applied_bias": -0.024944134396719164,
+      "controller_raw_bias": -0.024577948837759322,
+      "controller_applied_mae": 0.1954731138303032,
+      "controller_raw_mae": 0.19640280682324374,
+      "controller_applied_rmse": 0.38646505879017257,
+      "controller_raw_rmse": 0.3874005761011053,
+      "controller_applied_pearson": 0.9052644797787565,
+      "controller_raw_pearson": 0.9050145217721137,
+      "controller_applied_normalized_rmse_by_expert_std": 0.4259361813617866,
+      "controller_raw_normalized_rmse_by_expert_std": 0.42696724655630625,
+      "controller_applied_expected_sample_rmse": 0.4354970679454824,
+      "controller_raw_expected_sample_rmse": 0.43803352413882407,
+      "controller_applied_mean_stochastic_std": 0.14846492447908302,
+      "controller_raw_mean_stochastic_std": 0.15935336156618282,
+      "raw_out_of_bounds_fraction": 0.19921875,
+      "wrapper_changed_fraction": 0.19921875
+    },
+    {
+      "scope": "first_action",
+      "channel": 8,
+      "name": "head_pan",
+      "component": "head",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": true,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.0,
+      "physical_expert_std": 0.0,
+      "physical_expert_min": 0.0,
+      "physical_expert_max": 0.0,
+      "physical_prediction_mean": 0.0,
+      "physical_prediction_std": 0.0,
+      "physical_bias": 0.0,
+      "physical_mae": 0.0,
+      "physical_rmse": 0.0,
+      "physical_pearson": null,
+      "physical_normalized_rmse_by_expert_std": null,
+      "physical_expected_sample_rmse": 0.0,
+      "physical_mean_stochastic_std": 0.0,
+      "physical_zero_controller_rmse": 0.0,
+      "physical_rmse_over_zero_controller": null,
+      "controller_applied_bias": 0.0,
+      "controller_raw_bias": -1.3249535498697368e-09,
+      "controller_applied_mae": 0.0,
+      "controller_raw_mae": 1.3437970247784283e-08,
+      "controller_applied_rmse": 0.0,
+      "controller_raw_rmse": 1.7794754717041503e-08,
+      "controller_applied_pearson": null,
+      "controller_raw_pearson": null,
+      "controller_applied_normalized_rmse_by_expert_std": null,
+      "controller_raw_normalized_rmse_by_expert_std": null,
+      "controller_applied_expected_sample_rmse": 0.0,
+      "controller_raw_expected_sample_rmse": 2.949299930907976e-08,
+      "controller_applied_mean_stochastic_std": 0.0,
+      "controller_raw_mean_stochastic_std": 2.5106333096190713e-08,
+      "raw_out_of_bounds_fraction": 0.0,
+      "wrapper_changed_fraction": 1.0
+    },
+    {
+      "scope": "first_action",
+      "channel": 9,
+      "name": "head_tilt",
+      "component": "head",
+      "unit": "rad_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": true,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.0,
+      "physical_expert_std": 0.0,
+      "physical_expert_min": 0.0,
+      "physical_expert_max": 0.0,
+      "physical_prediction_mean": 0.0,
+      "physical_prediction_std": 0.0,
+      "physical_bias": 0.0,
+      "physical_mae": 0.0,
+      "physical_rmse": 0.0,
+      "physical_pearson": null,
+      "physical_normalized_rmse_by_expert_std": null,
+      "physical_expected_sample_rmse": 0.0,
+      "physical_mean_stochastic_std": 0.0,
+      "physical_zero_controller_rmse": 0.0,
+      "physical_rmse_over_zero_controller": null,
+      "controller_applied_bias": 0.0,
+      "controller_raw_bias": -2.9645443878122753e-09,
+      "controller_applied_mae": 0.0,
+      "controller_raw_mae": 1.2453774870712297e-08,
+      "controller_applied_rmse": 0.0,
+      "controller_raw_rmse": 1.5854118086669015e-08,
+      "controller_applied_pearson": null,
+      "controller_raw_pearson": null,
+      "controller_applied_normalized_rmse_by_expert_std": null,
+      "controller_raw_normalized_rmse_by_expert_std": null,
+      "controller_applied_expected_sample_rmse": 0.0,
+      "controller_raw_expected_sample_rmse": 2.745951055843354e-08,
+      "controller_applied_mean_stochastic_std": 0.0,
+      "controller_raw_mean_stochastic_std": 2.316451013044979e-08,
+      "raw_out_of_bounds_fraction": 0.0,
+      "wrapper_changed_fraction": 1.0
+    },
+    {
+      "scope": "first_action",
+      "channel": 10,
+      "name": "torso_lift",
+      "component": "torso",
+      "unit": "m_delta",
+      "lower": -0.1,
+      "upper": 0.1,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.001109176483441842,
+      "physical_expert_std": 0.06660237904563927,
+      "physical_expert_min": -0.0999661386013031,
+      "physical_expert_max": 0.09960754513740541,
+      "physical_prediction_mean": 0.003919751999228538,
+      "physical_prediction_std": 0.05012159841019521,
+      "physical_bias": 0.002810575515786695,
+      "physical_mae": 0.039887914759174234,
+      "physical_rmse": 0.05569735633822299,
+      "physical_pearson": 0.5772175011790663,
+      "physical_normalized_rmse_by_expert_std": 0.836266769090281,
+      "physical_expected_sample_rmse": 0.06500192509096608,
+      "physical_mean_stochastic_std": 0.031895692960429614,
+      "physical_zero_controller_rmse": 0.06661161435523409,
+      "physical_rmse_over_zero_controller": 0.8361508256081847,
+      "controller_applied_bias": 0.028105755157866952,
+      "controller_raw_bias": 0.030426108798110363,
+      "controller_applied_mae": 0.39887914759174237,
+      "controller_raw_mae": 0.3989041584923143,
+      "controller_applied_rmse": 0.5569735633822298,
+      "controller_raw_rmse": 0.5590360134981232,
+      "controller_applied_pearson": 0.5772175011790668,
+      "controller_raw_pearson": 0.5792503006842626,
+      "controller_applied_normalized_rmse_by_expert_std": 0.8362667690902811,
+      "controller_raw_normalized_rmse_by_expert_std": 0.8393634304189703,
+      "controller_applied_expected_sample_rmse": 0.6500192509096607,
+      "controller_raw_expected_sample_rmse": 0.6569979825756872,
+      "controller_applied_mean_stochastic_std": 0.3189569296042961,
+      "controller_raw_mean_stochastic_std": 0.3305130851104948,
+      "raw_out_of_bounds_fraction": 0.1171875,
+      "wrapper_changed_fraction": 0.1171875
+    },
+    {
+      "scope": "first_action",
+      "channel": 11,
+      "name": "base_forward",
+      "component": "base",
+      "unit": "m_per_s",
+      "lower": -1.0,
+      "upper": 1.0,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": 0.25253740171501704,
+      "physical_expert_std": 0.6381284858897363,
+      "physical_expert_min": -0.9615299701690674,
+      "physical_expert_max": 0.9967392683029175,
+      "physical_prediction_mean": 0.25903455838721356,
+      "physical_prediction_std": 0.5128000101099556,
+      "physical_bias": 0.006497156672196525,
+      "physical_mae": 0.24425267927330196,
+      "physical_rmse": 0.38554516248990955,
+      "physical_pearson": 0.7969399187311185,
+      "physical_normalized_rmse_by_expert_std": 0.6041810873751353,
+      "physical_expected_sample_rmse": 0.4332803306866179,
+      "physical_mean_stochastic_std": 0.18131148269969014,
+      "physical_zero_controller_rmse": 0.6862820876060363,
+      "physical_rmse_over_zero_controller": 0.5617881763966914,
+      "controller_applied_bias": 0.006497156672196525,
+      "controller_raw_bias": 0.01398853618280782,
+      "controller_applied_mae": 0.24425267927330196,
+      "controller_raw_mae": 0.2458274330569452,
+      "controller_applied_rmse": 0.38554516248990955,
+      "controller_raw_rmse": 0.3881054686123844,
+      "controller_applied_pearson": 0.7969399187311185,
+      "controller_raw_pearson": 0.7947153622156394,
+      "controller_applied_normalized_rmse_by_expert_std": 0.6041810873751353,
+      "controller_raw_normalized_rmse_by_expert_std": 0.608193298362559,
+      "controller_applied_expected_sample_rmse": 0.4332803306866179,
+      "controller_raw_expected_sample_rmse": 0.4382601637446248,
+      "controller_applied_mean_stochastic_std": 0.18131148269969014,
+      "controller_raw_mean_stochastic_std": 0.1925510508020266,
+      "raw_out_of_bounds_fraction": 0.1328125,
+      "wrapper_changed_fraction": 0.1328125
+    },
+    {
+      "scope": "first_action",
+      "channel": 12,
+      "name": "base_yaw",
+      "component": "base",
+      "unit": "rad_per_s",
+      "lower": -3.14,
+      "upper": 3.14,
+      "stationary_head_masked": false,
+      "physical_n_targets": 128,
+      "physical_samples_per_target": 4,
+      "physical_expert_mean": -0.0888517873842011,
+      "physical_expert_std": 0.9055477964497917,
+      "physical_expert_min": -3.1372852647304534,
+      "physical_expert_max": 2.802293295860291,
+      "physical_prediction_mean": 0.05611377574033315,
+      "physical_prediction_std": 0.42969463407847386,
+      "physical_bias": 0.1449655631245342,
+      "physical_mae": 0.5335559984078682,
+      "physical_rmse": 0.897580087861744,
+      "physical_pearson": 0.2827219033211297,
+      "physical_normalized_rmse_by_expert_std": 0.9912012280088527,
+      "physical_expected_sample_rmse": 0.9786281233374667,
+      "physical_mean_stochastic_std": 0.3349562714953871,
+      "physical_zero_controller_rmse": 0.9098963961773014,
+      "physical_rmse_over_zero_controller": 0.9864640541853982,
+      "controller_applied_bias": 0.046167376791252934,
+      "controller_raw_bias": 0.046167376791252934,
+      "controller_applied_mae": 0.1699222924865822,
+      "controller_raw_mae": 0.1699222924865822,
+      "controller_applied_rmse": 0.2858535311661605,
+      "controller_raw_rmse": 0.2858535311661605,
+      "controller_applied_pearson": 0.28272190332112984,
+      "controller_raw_pearson": 0.28272190332112984,
+      "controller_applied_normalized_rmse_by_expert_std": 0.9912012280088527,
+      "controller_raw_normalized_rmse_by_expert_std": 0.9912012280088527,
+      "controller_applied_expected_sample_rmse": 0.31166500743231423,
+      "controller_raw_expected_sample_rmse": 0.31166500743231423,
+      "controller_applied_mean_stochastic_std": 0.10667397181381755,
+      "controller_raw_mean_stochastic_std": 0.10667397181381755,
+      "raw_out_of_bounds_fraction": 0.0,
+      "wrapper_changed_fraction": 0.0
+    }
+  ],
+  "best_cross_channel_correlations": {
+    "first_action:0": {
+      "scope": "first_action",
+      "predicted_channel": 0,
+      "predicted_name": "shoulder_pan",
+      "expert_channel": 0,
+      "expert_name": "shoulder_pan",
+      "pearson": 0.5678469331959034
+    },
+    "first_action:1": {
+      "scope": "first_action",
+      "predicted_channel": 1,
+      "predicted_name": "shoulder_lift",
+      "expert_channel": 5,
+      "expert_name": "wrist_flex",
+      "pearson": -0.8969997243398536
+    },
+    "first_action:2": {
+      "scope": "first_action",
+      "predicted_channel": 2,
+      "predicted_name": "upperarm_roll",
+      "expert_channel": 2,
+      "expert_name": "upperarm_roll",
+      "pearson": 0.6514473613908954
+    },
+    "first_action:3": {
+      "scope": "first_action",
+      "predicted_channel": 3,
+      "predicted_name": "elbow_flex",
+      "expert_channel": 3,
+      "expert_name": "elbow_flex",
+      "pearson": 0.9342857796049053
+    },
+    "first_action:4": {
+      "scope": "first_action",
+      "predicted_channel": 4,
+      "predicted_name": "forearm_roll",
+      "expert_channel": 4,
+      "expert_name": "forearm_roll",
+      "pearson": 0.9231506118996077
+    },
+    "first_action:5": {
+      "scope": "first_action",
+      "predicted_channel": 5,
+      "predicted_name": "wrist_flex",
+      "expert_channel": 5,
+      "expert_name": "wrist_flex",
+      "pearson": 0.9352959267211763
+    },
+    "first_action:6": {
+      "scope": "first_action",
+      "predicted_channel": 6,
+      "predicted_name": "wrist_roll",
+      "expert_channel": 6,
+      "expert_name": "wrist_roll",
+      "pearson": 0.601927089269482
+    },
+    "first_action:7": {
+      "scope": "first_action",
+      "predicted_channel": 7,
+      "predicted_name": "gripper",
+      "expert_channel": 7,
+      "expert_name": "gripper",
+      "pearson": 0.9052644797787565
+    },
+    "first_action:10": {
+      "scope": "first_action",
+      "predicted_channel": 10,
+      "predicted_name": "torso_lift",
+      "expert_channel": 10,
+      "expert_name": "torso_lift",
+      "pearson": 0.5772175011790668
+    },
+    "first_action:11": {
+      "scope": "first_action",
+      "predicted_channel": 11,
+      "predicted_name": "base_forward",
+      "expert_channel": 5,
+      "expert_name": "wrist_flex",
+      "pearson": -0.863921727207065
+    },
+    "first_action:12": {
+      "scope": "first_action",
+      "predicted_channel": 12,
+      "predicted_name": "base_yaw",
+      "expert_channel": 3,
+      "expert_name": "elbow_flex",
+      "pearson": -0.5669306010710468
+    },
+    "valid_chunk:0": {
+      "scope": "valid_chunk",
+      "predicted_channel": 0,
+      "predicted_name": "shoulder_pan",
+      "expert_channel": 0,
+      "expert_name": "shoulder_pan",
+      "pearson": 0.5874121058905591
+    },
+    "valid_chunk:1": {
+      "scope": "valid_chunk",
+      "predicted_channel": 1,
+      "predicted_name": "shoulder_lift",
+      "expert_channel": 7,
+      "expert_name": "gripper",
+      "pearson": 0.9457190502421398
+    },
+    "valid_chunk:2": {
+      "scope": "valid_chunk",
+      "predicted_channel": 2,
+      "predicted_name": "upperarm_roll",
+      "expert_channel": 2,
+      "expert_name": "upperarm_roll",
+      "pearson": 0.743863920617335
+    },
+    "valid_chunk:3": {
+      "scope": "valid_chunk",
+      "predicted_channel": 3,
+      "predicted_name": "elbow_flex",
+      "expert_channel": 3,
+      "expert_name": "elbow_flex",
+      "pearson": 0.9673624108611335
+    },
+    "valid_chunk:4": {
+      "scope": "valid_chunk",
+      "predicted_channel": 4,
+      "predicted_name": "forearm_roll",
+      "expert_channel": 3,
+      "expert_name": "elbow_flex",
+      "pearson": 0.9441203284144062
+    },
+    "valid_chunk:5": {
+      "scope": "valid_chunk",
+      "predicted_channel": 5,
+      "predicted_name": "wrist_flex",
+      "expert_channel": 5,
+      "expert_name": "wrist_flex",
+      "pearson": 0.9671130269814777
+    },
+    "valid_chunk:6": {
+      "scope": "valid_chunk",
+      "predicted_channel": 6,
+      "predicted_name": "wrist_roll",
+      "expert_channel": 6,
+      "expert_name": "wrist_roll",
+      "pearson": 0.6378133124545214
+    },
+    "valid_chunk:7": {
+      "scope": "valid_chunk",
+      "predicted_channel": 7,
+      "predicted_name": "gripper",
+      "expert_channel": 7,
+      "expert_name": "gripper",
+      "pearson": 0.9674625624907818
+    },
+    "valid_chunk:10": {
+      "scope": "valid_chunk",
+      "predicted_channel": 10,
+      "predicted_name": "torso_lift",
+      "expert_channel": 10,
+      "expert_name": "torso_lift",
+      "pearson": 0.600399442708219
+    },
+    "valid_chunk:11": {
+      "scope": "valid_chunk",
+      "predicted_channel": 11,
+      "predicted_name": "base_forward",
+      "expert_channel": 5,
+      "expert_name": "wrist_flex",
+      "pearson": -0.8947185862260578
+    },
+    "valid_chunk:12": {
+      "scope": "valid_chunk",
+      "predicted_channel": 12,
+      "predicted_name": "base_yaw",
+      "expert_channel": 3,
+      "expert_name": "elbow_flex",
+      "pearson": -0.5803030304382344
+    }
+  },
+  "model_identity": {
+    "checkpoint": "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "pretrained_parameters_sha256": "7854919f17de40ea8c62ee966327904a61503cfe2c0eb1715e3f30ae6e72892e",
+    "normalizer_sha256": "0f6264129ebbe89f8adee0c0caa2f204314674e5a95c882e1710413ee734e8d2",
+    "state_contract_sha256": "c4c4448d1db68590d47253c38ddff618bc8cb723c85fe5c3ecbc35f51860eb40",
+    "rng_contract": "reset PRNGKey(episode_seed); key,subkey=split(key) per prediction"
+  },
+  "outputs": [
+    "per-channel.csv",
+    "cross-channel-correlation.csv",
+    "timeline.csv",
+    "time-curve.csv",
+    "time-curves.svg",
+    "reconstruction-arrays.npz"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "status": "accepted_double_replay",
+  "accepted_cases": [],
+  "training_ready": false,
+  "api_calls": 0,
+  "training_updates": 0,
+  "plan_sha256": "9eb54fa19b46ccaff8860ff6727e5140713803bd98b85360ab815f5fcf2603c2",
+  "script_sha256": "ab0c56aa5d0d72e29816be12e26ca4f0768f890c3f64f9b9864d245043fd016a",
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "cases": [
+    {
+      "case_id": "validation-seed3020-grasp-step17",
+      "hashes": {
+        "observation": "f9f1c4841917931d68d4855e69c8e5adcc708ff02001922db6c38ec605ca4972",
+        "simulator": "c28ee8a9d42c3c19e749832d96a36b21a5171b8368189830ee2ab1eda274feef",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "native24": "436ee2f4e8e32e382b7b775d437046645220e11e062dcad8d5d27a56a2c9ce4b"
+      },
+      "role": "validation",
+      "classification": "near_grasp_candidate_not_completion",
+      "family": "grasp",
+      "instruction": "Grasp the apple securely.",
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+        "trajectory": "validation-seed3020",
+        "parent_id": 3020
+      },
+      "native24_replay_verified": true,
+      "npz_sha256": "f64b2e21f57ed71fc85000f53f8fe4255a5e51f34ac44544a5f094797553d7a1",
+      "input_path": "/home/pshuai/bvi-research/runs/s2-native24-handoff-2026-09-18-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17.npz",
+      "source_trajectory_record_path": "/home/pshuai/bvi-research/runs/s2-native24-handoff-2026-09-18-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-source-trajectory.json",
+      "source_replay_record_path": "/home/pshuai/bvi-research/runs/s2-native24-handoff-2026-09-18-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17-source-replay.json",
+      "ground_truth": {
+        "source": "source_replay_physical_predicates",
+        "tcp_object_distance_m": 0.012785776518285275,
+        "is_grasped": false,
+        "physical_completion": false
+      }
+    },
+    {
+      "case_id": "validation-seed3020-move-step20",
+      "hashes": {
+        "observation": "736289292042fdd77d1075a4b75bc03f912e514b8f554ccbf1cd3dee23b40b2d",
+        "simulator": "8a7fda8b6370b622d67c5dc767ab43bc2dd6046da10ea2cfab5a916e588e6682",
+        "controller": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "native24": "170320a264141318e09ade7a1e4ea5937424c3230323503e5f77c43398ac70e4"
+      },
+      "role": "validation",
+      "classification": "held_move",
+      "family": "move",
+      "instruction": "Move the held apple to the robot rest pose.",
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+        "trajectory": "validation-seed3020",
+        "parent_id": 3020
+      },
+      "native24_replay_verified": true,
+      "npz_sha256": "4b06ea65a494e980de5e7782312e3868612167ed802ca3ce5bc5dce65d1cb1ce",
+      "input_path": "/home/pshuai/bvi-research/runs/s2-native24-handoff-2026-09-18-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20.npz",
+      "source_trajectory_record_path": "/home/pshuai/bvi-research/runs/s2-native24-handoff-2026-09-18-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-source-trajectory.json",
+      "source_replay_record_path": "/home/pshuai/bvi-research/runs/s2-native24-handoff-2026-09-18-run01/fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20-source-replay.json",
+      "ground_truth": {
+        "source": "source_replay_physical_predicates",
+        "tcp_object_distance_m": 0.0181620791554451,
+        "is_grasped": true,
+        "physical_completion": false
+      }
+    }
+  ],
+  "initial_raw_sha256": "3293e73bed86349c7c8e14949f0b8111eb3ee2b11d0c8adef55c9ad46e416a09",
+  "initial_manifest_sha256": "00a3a4e5ee7cc89ab86e0305e2f811351990ca1a3b46041103405d638638d921",
+  "task_plan_sha256": "788ca1d10c5c1c2e2619626b881c635e7a1efd7a98d68f785a9180c033632ec2",
+  "spawn_sha256": "c8a91bbc662e743b24d23031d7ff080ec9e11147e230d69d08b22972da21a9dc",
+  "camera": {
+    "uid": "fetch_workspace",
+    "p": [
+      0.35,
+      0.35,
+      1.5
+    ],
+    "q": [
+      0.9331768199132074,
+      0.05559425802283478,
+      0.31443183553890114,
+      -0.1649937030653019
+    ],
+    "width": 224,
+    "height": 224,
+    "fov": 1.5707963267948966,
+    "near": 0.01,
+    "far": 100,
+    "mount": "agent.base_link"
+  },
+  "environment_source_sha256": {
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/envs/sapien_env.py": "e8baa7f60194696c008d21f98c9993580cb9440e29cf939476819b4f83911cf1",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/ManiSkill/mani_skill/envs/scenes/base_env.py": "8e2a8a2335a115643f8ed4583d77a1622c58450d7eab5605301bff4fc2a2e9e8",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/pick.py": "6bc10aac584b1907ed21c098421bb43120276ee6d1b15df38cc909e0c3321bd4",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/sequential_task.py": "a4230a26514f83c371e2a2c24a9440b7044fcdde675c16df2849a6717ec1c54c",
+    "/home/pshuai/bvi-research/src/AC-DiT/third_party/mshab/mshab/envs/subtask.py": "989d73eed4ef215ba9e999eb5950e219fc66023e9c708acaa1330bfdd5e35637"
+  },
+  "renderer_pci": "af:00.0",
+  "historical_time_limit": 200,
+  "historical_action_cap": 80,
+  "horizon_provenance": "Original online/timing runner env200; 6baddc5 later changed online env limit. Historical process source not archived here; all requested prefixes<35 before both80/200limits.",
+  "physical_atol": 1e-05,
+  "integer_boolean_exact": true,
+  "initial_state_method": "proved_exact_seeded_reset",
+  "policy_calls": 0,
+  "seconds": 50.92445219680667
+}

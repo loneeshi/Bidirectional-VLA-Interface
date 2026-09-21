@@ -1,0 +1,72 @@
+{
+  "panel_status": "completed",
+  "pairs": [
+    {
+      "seed": 2024,
+      "status": "paired",
+      "initial_exact": true,
+      "equal_steps": true,
+      "all_policy_inputs_exact": true,
+      "raw_action_max_abs_difference": 0.0,
+      "all_info_and_qpos_exact": true,
+      "official_success": true,
+      "project_success": true,
+      "official_steps": 39,
+      "project_steps": 39
+    },
+    {
+      "seed": 2025,
+      "status": "paired",
+      "initial_exact": true,
+      "equal_steps": true,
+      "all_policy_inputs_exact": true,
+      "raw_action_max_abs_difference": 0.0,
+      "all_info_and_qpos_exact": true,
+      "official_success": false,
+      "project_success": false,
+      "official_steps": 108,
+      "project_steps": 108
+    },
+    {
+      "seed": 2026,
+      "status": "paired",
+      "initial_exact": true,
+      "equal_steps": true,
+      "all_policy_inputs_exact": true,
+      "raw_action_max_abs_difference": 0.0,
+      "all_info_and_qpos_exact": true,
+      "official_success": true,
+      "project_success": true,
+      "official_steps": 43,
+      "project_steps": 43
+    },
+    {
+      "seed": 2027,
+      "status": "paired",
+      "initial_exact": true,
+      "equal_steps": true,
+      "all_policy_inputs_exact": true,
+      "raw_action_max_abs_difference": 0.0,
+      "all_info_and_qpos_exact": true,
+      "official_success": true,
+      "project_success": true,
+      "official_steps": 37,
+      "project_steps": 37
+    },
+    {
+      "seed": 2028,
+      "status": "paired",
+      "initial_exact": true,
+      "equal_steps": true,
+      "all_policy_inputs_exact": true,
+      "raw_action_max_abs_difference": 0.0,
+      "all_info_and_qpos_exact": true,
+      "official_success": true,
+      "project_success": true,
+      "official_steps": 49,
+      "project_steps": 49
+    }
+  ],
+  "limitation": "Official wrappers versus project-style BC assembly on official environment; not full VLA harness or paper benchmark",
+  "gpu_after": "15 MiB, 7 %"
+}

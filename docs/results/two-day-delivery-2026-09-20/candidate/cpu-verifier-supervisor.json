@@ -1,0 +1,31 @@
+{
+  "status": "exited",
+  "started_at_utc": "2026-09-19T03:45:05.931633+00:00",
+  "argv": [
+    "/home/pshuai/bvi-research/envs/openpi/bin/python",
+    "/home/pshuai/bvi-research/src/Bidirectional-VLA-Interface/scripts/verify_s1_bounded_candidate.py",
+    "--run-dir",
+    "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01",
+    "--source-checkpoint",
+    "/home/pshuai/bvi-research/runs/s1-ia-epoch-2026-09-18-run01/best/855",
+    "--source",
+    "/home/pshuai/bvi-research/data/fetch-tapt-source/pick/013_apple.h5",
+    "--dataset-manifest",
+    "/home/pshuai/bvi-research/runs/s1-official-medium-2026-09-17-run01/manifest.json",
+    "--normalizer",
+    "/home/pshuai/bvi-research/runs/s1-official-medium-norm-2026-09-17-run01",
+    "--audit-panel",
+    "/home/pshuai/bvi-research/runs/two-day-s1-input-audit-2026-09-19-run01/audit-panel.json",
+    "--verify-checkpoint",
+    "--output",
+    "/home/pshuai/bvi-research/runs/s1-bounded-candidate-2026-09-19-run01/candidate-decision.json"
+  ],
+  "seconds_limit": 600,
+  "cuda_visible_devices": "",
+  "jax_platforms": "cpu",
+  "gpu_forwards": 0,
+  "api_calls": 0,
+  "exit_code": 0,
+  "elapsed_seconds": 135.65128767117858,
+  "ended_at_utc": "2026-09-19T03:47:21.582940+00:00"
+}

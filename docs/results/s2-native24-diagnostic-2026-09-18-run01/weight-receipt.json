@@ -1,0 +1,35 @@
+{
+  "schema": "bvi.remote-weight-receipt/1",
+  "created_utc": "2026-09-18T21:10:31.2512967Z",
+  "run": "s2-native24-diagnostic-2026-09-18-run01",
+  "status": "remote_weights_retained_metadata_backed_up",
+  "remote_directory": "/home/pshuai/bvi-research/runs/s2-native24-diagnostic-2026-09-18-run01",
+  "remote_directory_bytes": 8727116709,
+  "best_checkpoint": {
+    "path": "/home/pshuai/bvi-research/runs/s2-native24-diagnostic-2026-09-18-run01/step-0020.pkl",
+    "bytes": 2431704949,
+    "sha256": "c7bfc42c6e177758188b9030dcd56fc751f15c1b021e11f4ca0af0548d3024df",
+    "selection": "heldout_joint_loss_only_fixed_first10_windows_per_family",
+    "step": 20
+  },
+  "resume_checkpoint": {
+    "path": "/home/pshuai/bvi-research/runs/s2-native24-diagnostic-2026-09-18-run01/resume.pkl",
+    "bytes": 2431704949,
+    "sha256": "0d5b8e35ad4e37c35165b8487f29f586dfb1f39fdfb4c2efe1d23019f9dd28e1",
+    "step": 20
+  },
+  "local_metadata_archive": {
+    "path": "D:\\AI\\embodied intelligence\\runs\\s2-native24-diagnostic-2026-09-18-run01-evidence.tar.gz",
+    "bytes": 20113,
+    "sha256": "35ab57bde9a832e608f026995810f6c829a49c415593b5b6fcbfec22ff0487da"
+  },
+  "full_weights_downloaded_locally": false,
+  "retention_note": "The 8.73 GB remote run, including best and resume weights, remains on the laboratory server. Only SHA-verified metadata and validation evidence were downloaded locally; do not claim a full local weight backup.",
+  "resource_close": {
+    "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+    "gpu_memory_mib": 15,
+    "gpu_utilization_percent": 0,
+    "lab_disk_available_gib": 745,
+    "tracked_training_processes": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "bvi-sac-followup-verification/1",
+  "cpu_suite": {"passed": 626, "skipped": 6, "warnings": 1, "wall_seconds": 14.53},
+  "remote_cpu_loader": {
+    "checkpoint": "/home/pshuai/bvi-research/checkpoints/mshab/rl/tidy_house/pick/004_sugar_box/policy.pt",
+    "synthetic_state_51": "RuntimeError: three state projection weights expect 50x42 but constructed 50x51",
+    "synthetic_state_42": "strict load passed; finite output shape [1,13]",
+    "native_rollout": false,
+    "official_runtime_revision": "e9ff3d23496d38e4431c8d913e147ffa007f7f72"
+  },
+  "resource_check": {
+    "old_runner_1833185_present": false,
+    "lightnav_1827922_present_after_sigterm": false,
+    "gpu1_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+    "gpu1_memory_mib": 15,
+    "gpu1_utilization_percent": 0,
+    "gpu1_compute_processes": [],
+    "gpu0_process_untouched": 672548,
+    "local_python_bridge_processes": []
+  },
+  "automation": {"id": "sac", "confirmed_status": "PAUSED"},
+  "fix_deployment": "local_only_not_deployed",
+  "rerun": "blocked_budget_gate_not_started"
+}

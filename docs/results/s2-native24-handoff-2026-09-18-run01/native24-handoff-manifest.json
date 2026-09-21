@@ -1,0 +1,207 @@
+{
+  "schema": "bvi.native24-handoff/1",
+  "status": "verified_handoff_inputs",
+  "label_contract": "current_observation_v2",
+  "training_data": {
+    "schema": "fetch_native24_family_v1",
+    "manifest_sha256": "fad8f72d5ee3b288302292b60926669fc79cc7a0391954fa8814ca579528248d"
+  },
+  "parent_registry": {
+    "path": "parent-registry.json",
+    "sha256": "b49106487c8482bdcb254d4257c208ed4557679a43e75a591f59e43d12b27d5e"
+  },
+  "observation_contract": {
+    "head_rgb": {
+      "shape": [
+        128,
+        128,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "wrist_rgb": {
+      "shape": [
+        128,
+        128,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "state": {
+      "shape": [
+        24
+      ],
+      "dtype": "float32",
+      "source": "env_native_agent"
+    },
+    "policy_input_privileged": false
+  },
+  "classification_contract": {
+    "schema": "bvi.native24-handoff-classification/1",
+    "far_grasp_distance_m": 0.1,
+    "ground_truth_source": "source_replay_physical_predicates",
+    "physical_completion_required": false
+  },
+  "offline_behavior_scope": {
+    "status": "input_only_behavior_not_evaluated",
+    "single_observation_per_case": true,
+    "thresholds_bound": false,
+    "false_completion_evaluable": false,
+    "stagnation_evaluable": false,
+    "rollback_evaluable": false
+  },
+  "cases": [
+    {
+      "case_id": "validation-seed3020-grasp-step17",
+      "role": "validation",
+      "split": "validation",
+      "classification": "near_grasp_candidate_not_completion",
+      "family": "grasp",
+      "instruction": "Grasp the apple securely.",
+      "label_contract": "current_observation_v2",
+      "observation_index": 17,
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+        "trajectory": "validation-seed3020",
+        "parent_id": 3020
+      },
+      "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17.npz",
+      "sha256": "f64b2e21f57ed71fc85000f53f8fe4255a5e51f34ac44544a5f094797553d7a1",
+      "source_trajectory": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-source-trajectory.json",
+        "sha256": "885a48d9d638b1e6341cb62a6a4de13724342f31e14f66dbe743caff3fab5072",
+        "trajectory_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7"
+      },
+      "source_replay": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-grasp-step17-source-replay.json",
+        "sha256": "be796d196d7b6c5ecf1b8cc22b895d61285c50ef58c9f6f3204c9d56e4f39a4c"
+      },
+      "source_replay_verified": true,
+      "policy_input_privileged": false,
+      "model_progress_used_as_ground_truth": false,
+      "ground_truth": {
+        "source": "source_replay_physical_predicates",
+        "tcp_object_distance_m": 0.012785776518285275,
+        "is_grasped": false,
+        "physical_completion": false
+      },
+      "case_sha256": "db5ed64b02aca722c4d548b80d571eb45297ab38971a2252f58a5ed235ff3212"
+    },
+    {
+      "case_id": "validation-seed3020-move-step20",
+      "role": "validation",
+      "split": "validation",
+      "classification": "held_move",
+      "family": "move",
+      "instruction": "Move the held apple to the robot rest pose.",
+      "label_contract": "current_observation_v2",
+      "observation_index": 20,
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7",
+        "trajectory": "validation-seed3020",
+        "parent_id": 3020
+      },
+      "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20.npz",
+      "sha256": "4b06ea65a494e980de5e7782312e3868612167ed802ca3ce5bc5dce65d1cb1ce",
+      "source_trajectory": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-source-trajectory.json",
+        "sha256": "885a48d9d638b1e6341cb62a6a4de13724342f31e14f66dbe743caff3fab5072",
+        "trajectory_sha256": "0521866ad9d80195a1b821e8b87076c2f1c5603da07674e6b0804f4ca81919b7"
+      },
+      "source_replay": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3020/validation-seed3020-move-step20-source-replay.json",
+        "sha256": "2d558010de52b9a3049b5ae43b08177b160b341a65ddffbedf3267150b260459"
+      },
+      "source_replay_verified": true,
+      "policy_input_privileged": false,
+      "model_progress_used_as_ground_truth": false,
+      "ground_truth": {
+        "source": "source_replay_physical_predicates",
+        "tcp_object_distance_m": 0.0181620791554451,
+        "is_grasped": true,
+        "physical_completion": false
+      },
+      "case_sha256": "7dcd67f04e2db4403255a73f9a6d9f1a70333b1e4fc116439c133c969df8149c"
+    },
+    {
+      "case_id": "validation-seed3021-grasp-step31",
+      "role": "validation",
+      "split": "validation",
+      "classification": "far_grasp_diagnostic",
+      "family": "grasp",
+      "instruction": "Grasp the apple securely.",
+      "label_contract": "current_observation_v2",
+      "observation_index": 31,
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+        "trajectory": "validation-seed3021",
+        "parent_id": 3021
+      },
+      "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-grasp-step31.npz",
+      "sha256": "d003db423e9a5a7a2d19e908b3bba1d5b3fcdf0062c5ae4b289027d6da6e4a78",
+      "source_trajectory": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-source-trajectory.json",
+        "sha256": "eb3400d00cd54e7c693fc59de7febdcb7aac8308bfcfcd861e47f4b0ef1d68ef",
+        "trajectory_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14"
+      },
+      "source_replay": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-grasp-step31-source-replay.json",
+        "sha256": "d1e95e2b162bc658cdbca0c33deb9e387ae9d5fd2d791fb64b1a1d5b34948080"
+      },
+      "source_replay_verified": true,
+      "policy_input_privileged": false,
+      "model_progress_used_as_ground_truth": false,
+      "ground_truth": {
+        "source": "source_replay_physical_predicates",
+        "tcp_object_distance_m": 0.4221891462802887,
+        "is_grasped": false,
+        "physical_completion": false
+      },
+      "case_sha256": "c4f39321b9756ee18397ae012685a6fba6b7516f2a08867beb829d6c7aa054dc"
+    },
+    {
+      "case_id": "validation-seed3021-move-step34",
+      "role": "validation",
+      "split": "validation",
+      "classification": "unheld_move",
+      "family": "move",
+      "instruction": "Move the held apple to the robot rest pose.",
+      "label_contract": "current_observation_v2",
+      "observation_index": 34,
+      "parent_episode": {
+        "source_kind": "archived_online_replay",
+        "task": "pick",
+        "source_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14",
+        "trajectory": "validation-seed3021",
+        "parent_id": 3021
+      },
+      "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-move-step34.npz",
+      "sha256": "0e7afd4490a0d174fe2f8c201fb04f0615f28b4503b001c6b84f46354026ddc5",
+      "source_trajectory": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-source-trajectory.json",
+        "sha256": "eb3400d00cd54e7c693fc59de7febdcb7aac8308bfcfcd861e47f4b0ef1d68ef",
+        "trajectory_sha256": "82b31b25873c6f07db2cf19dd82d8f499b233540d32de919ec3c1971a53ffa14"
+      },
+      "source_replay": {
+        "path": "fetch-current-handoffs-2026-09-17-run01--validation-seed3021/validation-seed3021-move-step34-source-replay.json",
+        "sha256": "6f63d5b2624d98ab7155c15d91dc29d1ae9519f71d223da7561cf993fcd5b31e"
+      },
+      "source_replay_verified": true,
+      "policy_input_privileged": false,
+      "model_progress_used_as_ground_truth": false,
+      "ground_truth": {
+        "source": "source_replay_physical_predicates",
+        "tcp_object_distance_m": 0.3431187868118286,
+        "is_grasped": false,
+        "physical_completion": false
+      },
+      "case_sha256": "5d95635653746c3821a76c870ae9e1bbf092fbb44bd89d53d970d23e14daa458"
+    }
+  ]
+}

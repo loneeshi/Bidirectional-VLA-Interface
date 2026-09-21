@@ -1,0 +1,782 @@
+{
+  "benchmark_result": false,
+  "benchmark_episode": true,
+  "evaluation_eligible": true,
+  "paired_ppo_episode": true,
+  "reason": "benchmark_fail",
+  "decisions": 27,
+  "first_object_chain_success": true,
+  "api_requests": 27,
+  "vlm": true,
+  "vlm_feedback_loop_observed": true,
+  "task_success": false,
+  "completed_objects": 2,
+  "planned_objects": 5,
+  "steps": 803,
+  "wall_seconds": 387.532962217927,
+  "skill_results": [
+    {
+      "call_id": "call-1",
+      "skill": "navigate",
+      "target_id": "object-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.7579489313066006
+    },
+    {
+      "call_id": "call-2",
+      "skill": "navigate",
+      "target_id": "object-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.233909159898758
+    },
+    {
+      "call_id": "call-3",
+      "skill": "navigate",
+      "target_id": "object-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.2425722517073154
+    },
+    {
+      "call_id": "call-4",
+      "skill": "navigate",
+      "target_id": "object-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-4:seed-2-step-124"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 4,
+      "elapsed_seconds": 0.37021325156092644
+    },
+    {
+      "call_id": "call-5",
+      "skill": "pick",
+      "target_id": "object-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 4.212859459221363
+    },
+    {
+      "call_id": "call-6",
+      "skill": "pick",
+      "target_id": "object-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-6:seed-2-step-168"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 4,
+      "elapsed_seconds": 0.4012678861618042
+    },
+    {
+      "call_id": "call-7",
+      "skill": "navigate",
+      "target_id": "destination-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.547107618302107
+    },
+    {
+      "call_id": "call-8",
+      "skill": "navigate",
+      "target_id": "destination-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.5561048351228237
+    },
+    {
+      "call_id": "call-9",
+      "skill": "navigate",
+      "target_id": "destination-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.548175599426031
+    },
+    {
+      "call_id": "call-10",
+      "skill": "place",
+      "target_id": "destination-7df706aa8cd2",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-10:seed-2-step-325"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 37,
+      "elapsed_seconds": 4.147414144128561
+    },
+    {
+      "call_id": "call-11",
+      "skill": "navigate",
+      "target_id": "object-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.2833779267966747
+    },
+    {
+      "call_id": "call-12",
+      "skill": "navigate",
+      "target_id": "object-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-12:seed-2-step-382"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 17,
+      "elapsed_seconds": 1.4112656489014626
+    },
+    {
+      "call_id": "call-13",
+      "skill": "pick",
+      "target_id": "object-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 4.179731912910938
+    },
+    {
+      "call_id": "call-14",
+      "skill": "pick",
+      "target_id": "object-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-14:seed-2-step-437"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 15,
+      "elapsed_seconds": 1.3054467476904392
+    },
+    {
+      "call_id": "call-15",
+      "skill": "navigate",
+      "target_id": "destination-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.462776068598032
+    },
+    {
+      "call_id": "call-16",
+      "skill": "navigate",
+      "target_id": "destination-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.4581459872424603
+    },
+    {
+      "call_id": "call-17",
+      "skill": "navigate",
+      "target_id": "destination-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-17:seed-2-step-548"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 31,
+      "elapsed_seconds": 2.676417537033558
+    },
+    {
+      "call_id": "call-18",
+      "skill": "place",
+      "target_id": "destination-c91336c3e8d8",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-18:seed-2-step-575"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 27,
+      "elapsed_seconds": 3.1911518275737762
+    },
+    {
+      "call_id": "call-19",
+      "skill": "navigate",
+      "target_id": "object-5c000a16c425",
+      "requirements": [
+        {
+          "id": "r1",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "r1",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.237768106162548
+    },
+    {
+      "call_id": "call-20",
+      "skill": "navigate",
+      "target_id": "object-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-20:seed-2-step-616"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 0.11181876063346863
+    },
+    {
+      "call_id": "call-21",
+      "skill": "pick",
+      "target_id": "object-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-21:seed-2-step-648"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 32,
+      "elapsed_seconds": 3.532542895525694
+    },
+    {
+      "call_id": "call-22",
+      "skill": "navigate",
+      "target_id": "destination-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.487168177962303
+    },
+    {
+      "call_id": "call-23",
+      "skill": "navigate",
+      "target_id": "destination-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "timed_out",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unknown",
+            "evidence": []
+          }
+        ],
+        "reason": "step_limit",
+        "source": "runtime",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 40,
+      "elapsed_seconds": 3.472266361117363
+    },
+    {
+      "call_id": "call-24",
+      "skill": "navigate",
+      "target_id": "destination-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-24:seed-2-step-764"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 36,
+      "elapsed_seconds": 3.1525891423225403
+    },
+    {
+      "call_id": "call-25",
+      "skill": "pick",
+      "target_id": "object-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-25:seed-2-step-765"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 1,
+      "elapsed_seconds": 0.12452895194292068
+    },
+    {
+      "call_id": "call-26",
+      "skill": "navigate",
+      "target_id": "destination-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "succeeded",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "satisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-26:seed-2-step-785"
+            ]
+          }
+        ],
+        "reason": "requested_native_predicate",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 20,
+      "elapsed_seconds": 1.7845074944198132
+    },
+    {
+      "call_id": "call-27",
+      "skill": "place",
+      "target_id": "destination-5c000a16c425",
+      "requirements": [
+        {
+          "id": "benchmark_success",
+          "predicate": "benchmark_success"
+        }
+      ],
+      "feedback": {
+        "status": "failed",
+        "requirements": [
+          {
+            "requirement_id": "benchmark_success",
+            "state": "unsatisfied",
+            "evidence": [
+              "events.jsonl:grounded_predicate:call-27:seed-2-step-803"
+            ]
+          }
+        ],
+        "reason": "benchmark_fail",
+        "source": "native_requested_target_predicate",
+        "progress": null,
+        "progress_source": "unavailable"
+      },
+      "steps": 18,
+      "elapsed_seconds": 2.430179752409458
+    }
+  ],
+  "navigation_policy": "official",
+  "manipulation_policy": "official",
+  "mixed_teacher_collection": false,
+  "manipulation_predictions": 0,
+  "manipulation_ensemble_samples": 1,
+  "navigation_predictions": 0,
+  "api_cost_usd": null,
+  "api_cost_status": "pending_reconciliation"
+}
