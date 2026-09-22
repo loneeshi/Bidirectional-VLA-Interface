@@ -22,3 +22,9 @@ Every attempt and the fixed 6-row denominator remain in `panel-status.json`.
 API ceiling: 240 requests, 2048 output tokens/request, conservative reservation
 USD 0.30. Actual provider and laboratory charges remain pending reconciliation.
 No training, GPU0 or RunPod.
+
+Launch source: commit `1068263`; remote `panel-v2`. The first panel attempt is
+preserved as a zero-action/zero-API infrastructure failure caused by both runner
+layers creating the same output directory. After the atomic-ownership fix, C0
+seed 0 passed 120 physical actions and two accounted provider responses. This
+establishes stable startup only, not an outcome or SR.
