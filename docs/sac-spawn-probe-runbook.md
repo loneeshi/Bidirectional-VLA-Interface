@@ -25,3 +25,19 @@ run artifacts until publication with hashes under the media policy.
 This runner does not implement C0/C1/C2 continuous long-horizon scheduling, generate
 a success-region prior, or demonstrate a navigation-to-manipulation causal effect.
 Those gates remain pending; no learned prior is invented from checkpoint metadata.
+
+## Verified launch
+
+Executable commit: `9879e59`, branch `research/sac-spawn-probe-20260921`.
+Pinned official runtime: `e9ff3d23496d38e4431c8d913e147ffa007f7f72`.
+Remote root: `/home/pshuai/bvi-research/runs/sac-spawn-probe-20260921`.
+Active attempt: `attempt-004`, launcher PID at verification: `3226646`.
+The first case completed 200 actions and reached native Pick success at step 35;
+the next case was running. This is not a panel SR or a long-horizon result.
+Prior attempts failed before rollout (single-env scene allocation, unsupported
+numeric scene ID, and missing official float conversion). All were preserved;
+their total elapsed time was 90.838 seconds, leaving a conservative 3300-second
+cap on the current attempt. No API requests or new rented resources.
+
+Runner SHA256: `7e46ff4639f854be9a5cc4ae62f2a8bd204e1bacbc9fc9d3d2cfc5a0f0d1beea`.
+Source archive and immutable per-attempt logs remain under the remote root.
