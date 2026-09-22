@@ -230,7 +230,9 @@ def main() -> None:
     parser.add_argument("--reasoning-effort", default="none")
     parser.add_argument("--idle-timeout-seconds", type=float, default=60)
     parser.add_argument("--max-wall-seconds", type=float, default=600)
-    parser.add_argument('--max-provider-retries',type=int,default=0)
+    # This is intentionally required. A silent zero-retry default previously
+    # turned one transient TLS read failure into a terminal panel failure.
+    parser.add_argument('--max-provider-retries', type=int, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     budget = APIBudget(args.authorization_id, args.max_calls, args.max_output_tokens,
