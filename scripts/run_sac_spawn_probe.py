@@ -42,6 +42,7 @@ def worker(a):
     from dacite import from_dict
     from omegaconf import OmegaConf
     from mshab.envs.make import EnvConfig, make_env
+    from mshab.utils.array import to_tensor
     from bvi.logging import JsonlLogger
     from bvi.mshab_adapter import load_rl_policy, jsonable
 
@@ -84,6 +85,7 @@ def worker(a):
                        plan_sha=sha(plan), spawn_sha=sha(spawn), initial_sha=sha(out / 'initial.pt'),
                        env_config=cfg, restore_claim='archive only; wrapper replay not validated')
         save(out / 'binding.json', binding)
+        obs = to_tensor(obs, device=uenv.device, dtype='float')
         adapter = SimpleNamespace(uenv=uenv, logger=logger, observe=lambda: SimpleNamespace(policy=obs))
         policy = load_rl_policy(cfg_path, checkpoint / 'policy.pt', adapter)
         ever_success = False
@@ -95,6 +97,7 @@ def worker(a):
             if not torch.isfinite(action).all():
                 raise RuntimeError('nonfinite_action')
             obs, reward, terminated, truncated, info = env.step(action)
+            obs = to_tensor(obs, device=uenv.device, dtype='float')
             data_info = jsonable(info)
             success = bool(torch.as_tensor(info.get('success', False)).any())
             force_ok = bool(torch.as_tensor(info.get('cumulative_force_within_limit', True)).all())
