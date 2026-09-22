@@ -137,6 +137,25 @@ class CoordinatorTests(unittest.TestCase):
         self.assertIsNone(self.records()[1]["amount"])
         self.assertEqual(self.records()[1]["usage"]["input_tokens"], 10)
 
+    def test_executor_owned_horizon_is_not_model_output(self):
+        payload = {key: value for key, value in self.payload.items() if key != "max_steps"}
+        self.transport.text = json.dumps(payload)
+        horizons = {name: spec.max_steps for name, spec in self.specs.items()}
+        coordinator = VLMCoordinator(self.transport, self.specs, self.logger, self.budget,
+                                     executor_horizons=horizons)
+        request = coordinator.decide(self.obs)
+        self.assertEqual(request.max_steps, self.specs["pick"].max_steps)
+        schema = self.transport.requests[-1].schema
+        self.assertNotIn("max_steps", schema["properties"])
+        self.assertIn("executor, not you", self.transport.requests[-1].system)
+
+    def test_executor_owned_horizon_rejects_model_override(self):
+        horizons = {name: spec.max_steps for name, spec in self.specs.items()}
+        coordinator = VLMCoordinator(self.transport, self.specs, self.logger, self.budget,
+                                     executor_horizons=horizons)
+        with self.assertRaises(ProtocolError):
+            coordinator.decide(self.obs)
+
     def test_missing_or_invalid_image_is_rejected_without_request(self):
         for images in ((), (ImageFrame("head", b"/tmp/image.png"),)):
             with self.subTest(images=images):

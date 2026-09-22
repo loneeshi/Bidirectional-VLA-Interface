@@ -80,7 +80,8 @@ class APIBudget:
             raise ProtocolError("A single request reservation exceeds the experiment cap")
 
 
-def request_schema(observation: Observation, specs: Mapping[str, SkillSpec], tool_interface=False) -> dict[str, Any]:
+def request_schema(observation: Observation, specs: Mapping[str, SkillSpec], tool_interface=False,
+                   executor_horizons: Mapping[str, int] | None = None) -> dict[str, Any]:
     skills = sorted({call.skill for call in observation.allowed_calls if call.skill in specs})
     targets = sorted({call.target_id for call in observation.allowed_calls if call.skill in specs})
     predicates = sorted({p for skill in skills for p in specs[skill].supported_requirements})
@@ -93,9 +94,10 @@ def request_schema(observation: Observation, specs: Mapping[str, SkillSpec], too
             "type": "object", "properties": {"id": {"type": "string"},
                 "predicate": {"type": "string", "enum": predicates}},
             "required": ["id", "predicate"], "additionalProperties": False}},
-        "max_steps": {"type": "integer"},
         "timeout_seconds": {"type": "number"},
     }
+    if executor_horizons is None:
+        properties["max_steps"] = {"type": "integer"}
     if tool_interface:
         properties.update(tool_family={"type": "string", "enum": skills},
                           instruction={"type": "string", "minLength": 1, "maxLength": 160},
@@ -147,7 +149,8 @@ def normalize_repeated_response(text: str) -> tuple[str, int]:
 
 
 def parse_request(text: str, observation: Observation,
-                  specs: Mapping[str, SkillSpec], tool_interface=False) -> SkillRequest:
+                  specs: Mapping[str, SkillSpec], tool_interface=False,
+                  executor_horizons: Mapping[str, int] | None = None) -> SkillRequest:
     def invalid_constant(value: str) -> None:
         raise ProtocolError(f"Invalid JSON constant: {value}")
 
@@ -156,7 +159,9 @@ def parse_request(text: str, observation: Observation,
     except (ValueError, TypeError) as exc:
         raise ProtocolError("Coordinator response is not a strict JSON object") from exc
     fields = {"call_id", "skill", "target_id", "observation_id", "requirements",
-              "max_steps", "timeout_seconds"}
+              "timeout_seconds"}
+    if executor_horizons is None:
+        fields.add("max_steps")
     if tool_interface:
         fields.update(("tool_family", "instruction", "interface_version"))
     if not isinstance(data, dict) or set(data) != fields:
@@ -174,6 +179,11 @@ def parse_request(text: str, observation: Observation,
                 or not all(isinstance(value, str) for value in item.values())):
             raise ProtocolError("Each requirement needs only string id and predicate")
         requirements.append(Requirement(**item))
+    if executor_horizons is not None:
+        try:
+            data["max_steps"] = executor_horizons[data["skill"]]
+        except KeyError as exc:
+            raise ProtocolError("Executor has no fixed horizon for the selected skill") from exc
     request = SkillRequest(**{**data, "requirements": tuple(requirements)})
     validate_request(request, observation, specs)
     return request
@@ -182,7 +192,8 @@ def parse_request(text: str, observation: Observation,
 class VLMCoordinator:
     def __init__(self, transport: VLMTransport, specs: Mapping[str, SkillSpec],
                  logger: JsonlLogger, budget: APIBudget, tool_interface=False,
-                 feedback_profile='raw_v0', feedback_view=None, spawn_prior=None):
+                 feedback_profile='raw_v0', feedback_view=None, spawn_prior=None,
+                 executor_horizons: Mapping[str, int] | None = None):
         from .feedback import FeedbackView
         from .feedback.digest import PROFILES
         if feedback_profile not in PROFILES:
@@ -191,6 +202,13 @@ class VLMCoordinator:
         self.feedback_view = feedback_view or FeedbackView()
         self.spawn_prior = spawn_prior
         self.tool_interface = tool_interface
+        if executor_horizons is not None:
+            if set(executor_horizons) != set(specs):
+                raise ValueError('Executor horizons must cover every registered skill exactly')
+            for skill, horizon in executor_horizons.items():
+                if type(horizon) is not int or horizon != specs[skill].max_steps:
+                    raise ValueError('Executor horizons must equal the registered skill horizons')
+        self.executor_horizons = executor_horizons
         self.transport, self.specs, self.logger, self.budget = transport, specs, logger, budget
         self.calls_reserved = 0
         self.cost_reserved_usd = 0.0
@@ -220,7 +238,8 @@ class VLMCoordinator:
                 > self.budget.max_cost_usd + 1e-12):
             raise APIBudgetExhausted("API experiment budget exhausted")
 
-        schema = request_schema(observation, self.specs, self.tool_interface)
+        schema = request_schema(observation, self.specs, self.tool_interface,
+                                self.executor_horizons)
         context = {"task": observation.task, "frame_id": observation.frame_id,
                    "image_order": [image.camera for image in observation.images],
                    "targets": observation.targets, "allowed_calls": observation.allowed_calls,
@@ -250,6 +269,10 @@ class VLMCoordinator:
                        "not consume language, so the instruction remains logged interface context. "
                        "Use interface_version mshab-tool-family/1. These are heterogeneous backends; "
                        "feedback source labels distinguish benchmark rules from learned progress.")
+        if self.executor_horizons is not None:
+            system += (" The executor, not you, owns each tool's physical-action horizon. "
+                       "Do not output max_steps; a selected tool runs until native completion, "
+                       "its registered horizon, or another terminal execution result.")
         vlm_request = VLMRequest(system, prompt, visible_images, schema,
                                  self.budget.max_output_tokens)
         # Bound request growth across feedback history and encoded images. This
@@ -295,7 +318,8 @@ class VLMCoordinator:
                                           "refusal", "pause_turn"}:
                 raise ProtocolError(f"Coordinator response did not finish: {response.finish_reason}")
             normalized, copies = normalize_repeated_response(response.text)
-            request = parse_request(normalized, observation, self.specs, self.tool_interface)
+            request = parse_request(normalized, observation, self.specs, self.tool_interface,
+                                    self.executor_horizons)
             if copies > 1:
                 self.logger.emit('coordinator_output_normalized', attempt_id=attempt_id,
                                  rule='semantically_identical_json_repetition/2', copies=copies,

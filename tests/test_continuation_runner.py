@@ -20,8 +20,11 @@ def test_all_conditions_have_identical_physical_budgets(tmp_path):
     kw=dict(output=tmp_path/'out',checkpoints=tmp_path/'ckpt',bridge=tmp_path/'bridge',
             authorization='auth',manifest=tmp_path/'manifest.json',prior=tmp_path/'prior.json')
     commands=[runner.command(row,c,**kw) for c in ('C0','C1','C2')]
-    for flag in ('--max-env-steps','--max-calls','--organizer-slice-steps'):
+    for flag in ('--max-env-steps','--organizer-slice-steps'):
         assert len({cmd[cmd.index(flag)+1] for cmd in commands})==1
+    assert commands[0][commands[0].index('--organizer-slice-steps')+1] == '500'
+    calls=[cmd[cmd.index('--max-calls')+1] for cmd in commands]
+    assert calls == ['20','40','40']
 
 
 def test_coordinator_owns_atomic_attempt_directory(tmp_path):
@@ -35,3 +38,9 @@ def test_continuation_source_handles_model_rejection_without_physics():
     source=(Path(__file__).parents[1]/'scripts/run_coordinator.py').read_text()
     assert "except ModelResponseError as exc:" in source
     assert "continuation_request_rejected" in source
+
+
+def test_runner_can_isolate_c0_without_changing_default_panel():
+    source=(Path(__file__).parents[1]/'scripts/run_continuation_c012.py').read_text()
+    assert "default=['C0','C1','C2']" in source
+    assert "for row in selected for c in a.conditions" in source

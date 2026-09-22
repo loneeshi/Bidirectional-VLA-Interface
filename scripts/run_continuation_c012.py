@@ -17,6 +17,7 @@ from run_ppo_sac_paired16 import select_plans
 
 def command(row, condition, output, checkpoints, bridge, authorization,
             manifest, prior, initial_hash=None):
+    max_calls = 20 if condition == 'C0' else 40
     argv=[sys.executable,str(Path(__file__).with_name('run_coordinator.py')),
         '--paired-ppo-episode','--goal-tools','--organizer',
         '--continuation-condition',condition,'--seed',str(row['seed']),
@@ -24,8 +25,8 @@ def command(row, condition, output, checkpoints, bridge, authorization,
         '--policy-type','rl_per_obj','--navigation-policy','official',
         '--manipulation-policy','official','--navigation-camera','fetch_nav',
         '--workspace-camera','--max-env-steps','7000','--max-wall-seconds','900',
-        '--skill-wall-seconds','180','--organizer-slice-steps','40',
-        '--max-calls','40','--provider','openai','--model','gpt-5.6-luna',
+        '--skill-wall-seconds','180','--organizer-slice-steps','500',
+        '--max-calls',str(max_calls),'--provider','openai','--model','gpt-5.6-luna',
         '--transport','bridge','--bridge-dir',str(bridge),'--bridge-timeout-seconds','120',
         '--authorization-id',authorization,'--max-api-cost-usd','0.05',
         '--request-cost-ceiling-usd','0.00125','--max-output-tokens','2048',
@@ -48,23 +49,26 @@ def main():
     p.add_argument('--bridge-dir',type=Path,required=True)
     p.add_argument('--authorization-id',required=True)
     p.add_argument('--plans',type=int,default=2,choices=range(1,17))
+    p.add_argument('--conditions',nargs='+',choices=('C0','C1','C2'),
+                   default=['C0','C1','C2'])
     p.add_argument('--execute',action='store_true')
     a=p.parse_args()
     selected=select_plans(json.loads(a.source_manifest.read_text()))[:a.plans]
     if not a.execute:
-        print(json.dumps({'plans':selected,'conditions':['C0','C1','C2'],
-                          'max_requests':len(selected)*3*40},indent=2)); return
+        print(json.dumps({'plans':selected,'conditions':a.conditions,
+                          'max_requests':len(selected)*len(a.conditions)*40},indent=2)); return
     a.output.mkdir(parents=True,exist_ok=True)
     lock=a.output/'runner.lock'
     with lock.open('x') as f:f.write(str(os.getpid()))
     path=a.output/'panel-status.json'
     spec={'schema':'gpt-sac-continuation/1','plans':selected,
-          'conditions':['C0','C1','C2'],'max_calls':40,'max_steps':7000,
+          'conditions':a.conditions,'max_calls_by_condition':{
+              c:(20 if c=='C0' else 40) for c in a.conditions},'max_steps':7000,
           'prior_sha256':__import__('hashlib').sha256(a.prior.read_bytes()).hexdigest()}
     state=json.loads(path.read_text()) if path.exists() else {
         'specification':spec,'status':'running',
         'episodes':[dict(**row,condition=c,status='not_run',attempts=[])
-                    for row in selected for c in ('C0','C1','C2')]}
+                    for row in selected for c in a.conditions]}
     if state['specification'] != spec:
         lock.unlink(); raise ValueError('Resume specification mismatch')
     env=runtime_environment(OFFICIAL_MSHAB)
@@ -75,7 +79,7 @@ def main():
             'completed':sum(r['condition']==c and r['status']=='completed' for r in state['episodes']),
             'infrastructure_failed':sum(r['condition']==c and r['status']=='infrastructure_failure' for r in state['episodes']),
             'not_run':sum(r['condition']==c and r['status']=='not_run' for r in state['episodes'])}
-            for c in ('C0','C1','C2')}
+            for c in a.conditions}
         atomic_json(path,state)
     save()
     try:

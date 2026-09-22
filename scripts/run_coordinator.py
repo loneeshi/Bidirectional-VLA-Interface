@@ -166,12 +166,15 @@ def main() -> None:
             or args.navigation_policy not in {'official','teleport'} or args.manipulation_policy != 'official'
             or args.policy_type != 'rl_per_obj' or not args.expected_plan_uid
             or args.max_env_steps != 7000 or args.max_wall_seconds != 900
-            or args.skill_wall_seconds != 180 or args.organizer_slice_steps != 40
+            or args.skill_wall_seconds != 180
+            or args.organizer_slice_steps != (500 if args.continuation_condition else 40)
             or args.training_collection or args.record_demonstrations or args.inject_closure_fault
             or args.collect_recovery_after is not None or args.stop_after_subtasks is not None
             or (args.navigation_policy == 'teleport' and not args.dry_run)
             or (not args.dry_run and (not args.organizer or args.model != 'gpt-5.6-luna'
-                or args.transport != 'bridge' or args.max_calls != 40 or args.max_output_tokens > 2048))):
+                or args.transport != 'bridge'
+                or args.max_calls != (20 if args.continuation_condition == 'C0' else 40)
+                or args.max_output_tokens > 2048))):
         parser.error('Paired PPO study requires frozen official PPO/SAC and bounded fixed/GPT execution')
     if args.tool_family_interface and (args.dry_run or not args.organizer
             or args.navigation_policy != 'lightnav' or args.manipulation_policy not in {'official','fetch-pi05'}
@@ -500,7 +503,9 @@ def main() -> None:
             from bvi.feedback import FeedbackView
             coordinator = VLMCoordinator(transport, organizer.specs if organizer else specs, logger, budget,
                 tool_interface=args.tool_family_interface, feedback_profile=args.feedback_profile,
-                feedback_view=FeedbackView(**{key: False for key in args.hide_feedback}), spawn_prior=prior)
+                feedback_view=FeedbackView(**{key: False for key in args.hide_feedback}), spawn_prior=prior,
+                executor_horizons=({name: spec.max_steps for name, spec in organizer.specs.items()}
+                                   if args.continuation_condition else None))
         for index in range(args.max_calls):
             if adapter.ended:
                 reason = "environment_success" if bool(scalar(adapter.last_info.get("success", False))) else "environment_ended"
@@ -567,6 +572,8 @@ def main() -> None:
                 break
             decisions += 1
             result = runtime.execute(request)
+            if args.continuation_condition:
+                adapter.finish_request(request, result.feedback.status is SkillStatus.SUCCEEDED)
             if organizer:
                 organizer.note_result(result)
             history.append({"call_id": request.call_id, "skill": request.skill,

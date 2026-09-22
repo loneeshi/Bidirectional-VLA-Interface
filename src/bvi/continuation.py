@@ -16,41 +16,36 @@ from .protocol import (AllowedCall, ProtocolError, RequirementResult,
 
 
 class RetryLedger:
-    """Count revisits after switching away; adjacent slices are continuations."""
+    """Count full-horizon retries after an unsuccessful tool invocation."""
 
     def __init__(self, max_retries: int):
         if max_retries not in (0, 3):
             raise ValueError('C0 uses 0 retries; C1/C2 use 3')
         self.max_retries = max_retries
         self.active = None
-        self.abandoned = set()
+        self.attempted = set()
         self.completed = set()
         self.retries = {}
 
     def can_call(self, pair):
         if pair in self.completed:
             return False
-        return pair not in self.abandoned or self.retries.get(pair, 0) < self.max_retries
+        return pair not in self.attempted or self.retries.get(pair, 0) < self.max_retries
 
     def begin(self, pair):
-        event = 'continued'
-        if self.active is None:
+        if pair not in self.attempted:
             event = 'attempt_started'
-        elif pair != self.active:
-            if self.active not in self.completed:
-                self.abandoned.add(self.active)
-            if pair in self.abandoned and pair not in self.completed:
-                count = self.retries.get(pair, 0) + 1
-                if count > self.max_retries:
-                    raise ProtocolError('Recovery retry limit exhausted')
-                self.retries[pair] = count
-                event = 'retried'
-            else:
-                event = 'attempt_started'
+        else:
+            count = self.retries.get(pair, 0) + 1
+            if count > self.max_retries:
+                raise ProtocolError('Recovery retry limit exhausted')
+            self.retries[pair] = count
+            event = 'retried'
         self.active = pair
         return event
 
     def finish(self, pair, succeeded):
+        self.attempted.add(pair)
         if succeeded:
             self.completed.add(pair)
 
@@ -90,9 +85,11 @@ class ContinuationGoalAdapter(GoalToolAdapter):
         calls = tuple(call for call in viewed.allowed_calls
                       if self.retry_ledger.can_call((call.skill, call.target_id)))
         text = (f' Continuation condition {self.condition}: native subtask failure and force '
-                'violations are recorded but do not stop this simulated episode. Adjacent slices '
-                'of the same target are one attempt. Cover unfinished object goals before spending '
-                f'recovery retries; at most {self.retry_ledger.max_retries} abandoned-goal revisits.')
+                'violations are recorded but do not stop this simulated episode. Each invocation '
+                'runs until native completion or the official tool horizon: navigate 500 actions, '
+                'pick/place 200 actions. The executor owns this horizon. Cover unfinished object '
+                f'goals before spending recovery retries; at most {self.retry_ledger.max_retries} '
+                'retries after an unsuccessful full-horizon invocation.')
         return replace(viewed, task=viewed.task + text, allowed_calls=calls,
                        metadata={**viewed.metadata, 'continuation_condition': self.condition,
                                  'native_scoring':'independent_final_object_predicates',
@@ -149,7 +146,6 @@ class ContinuationGoalRLSkill(GoalRLSkill):
         status = SkillStatus.SUCCEEDED if done else SkillStatus.EXECUTING
         state = RequirementState.SATISFIED if done else RequirementState.UNSATISFIED
         reason = 'requested_native_predicate' if done else None
-        self.adapter.finish_request(request, done)
         return SkillFeedback(status, tuple(RequirementResult(r.id,state,evidence)
                                             for r in request.requirements),
                              reason, 'native_requested_target_predicate')
