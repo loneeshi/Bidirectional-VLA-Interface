@@ -70,14 +70,16 @@ def worker(a):
     env.env.auto_reset = False
     started = time.monotonic()
     try:
+        build_ids = sorted(env.unwrapped.build_config_idx_to_task_plans)
+        selected_build = build_ids[seed - 100]
         obs, info = env.reset(seed=seed, options={'reconfigure': True,
-            'build_config_idxs': [seed - 100], 'spawn_selection_idxs': [case['spawn_index']]})
+            'build_config_idxs': [selected_build], 'spawn_selection_idxs': [case['spawn_index']]})
         uenv = env.unwrapped
         uid = str(uenv.task_plan[0].composite_subtask_uids[0])
         torch.save({'state': uenv.get_state_dict(), 'python_rng': random.getstate(),
                     'numpy_rng': np.random.get_state(), 'torch_rng': torch.get_rng_state(),
                     'cuda_rng': torch.cuda.get_rng_state_all(), 'observation': obs}, out / 'initial.pt')
-        binding = dict(case, uid=uid, scene=jsonable(getattr(uenv, 'build_config_idxs', None)),
+        binding = dict(case, uid=uid, scene=selected_build,
                        config_sha=sha(cfg_path), checkpoint_sha=sha(checkpoint / 'policy.pt'),
                        plan_sha=sha(plan), spawn_sha=sha(spawn), initial_sha=sha(out / 'initial.pt'),
                        env_config=cfg, restore_claim='archive only; wrapper replay not validated')
