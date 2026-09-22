@@ -88,7 +88,10 @@ def main():
                     state['status']='blocked_missing_c0_pair'; break
                 initial_hash=json.loads((Path(c0['attempts'][-1]['directory'])/'initial-state.json').read_text())['state_sha256']
             dest=a.output/row['condition']/f"seed-{row['seed']:03d}"/'attempt-001'
-            dest.mkdir(parents=True,exist_ok=False)
+            # The coordinator atomically creates its own output directory.
+            dest.parent.mkdir(parents=True,exist_ok=True)
+            if dest.exists():
+                raise FileExistsError('Attempt directory already exists; preserve it and use a new panel')
             argv=command(row,row['condition'],dest,a.checkpoint_root,a.bridge_dir,
                          a.authorization_id,a.source_manifest,a.prior,initial_hash)
             attempt={'directory':str(dest),'argv':argv,'status':'running','started_unix':time.time()}

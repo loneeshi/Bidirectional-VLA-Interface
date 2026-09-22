@@ -22,3 +22,10 @@ def test_all_conditions_have_identical_physical_budgets(tmp_path):
     commands=[runner.command(row,c,**kw) for c in ('C0','C1','C2')]
     for flag in ('--max-env-steps','--max-calls','--organizer-slice-steps'):
         assert len({cmd[cmd.index(flag)+1] for cmd in commands})==1
+
+
+def test_coordinator_owns_atomic_attempt_directory(tmp_path):
+    parent=tmp_path/'C0'/'seed-000'
+    parent.mkdir(parents=True)
+    attempt=parent/'attempt-001'
+    assert not attempt.exists()
