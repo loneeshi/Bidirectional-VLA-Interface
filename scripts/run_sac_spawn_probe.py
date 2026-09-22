@@ -61,6 +61,8 @@ def worker(a):
     spawn = data / 'spawn_data/tidy_house' / case['skill'] / 'train/spawn_data.pt'
     cfg.update(num_envs=1, max_episode_steps=a.steps, continuous_task=True,
                task_plan_fp=str(plan), spawn_data_fp=str(spawn), record_video=True)
+    cfg['env_kwargs'] = dict(cfg.get('env_kwargs', {}),
+                            require_build_configs_repeated_equally_across_envs=False)
     # Use native checkpoint depth input. This is an isolated diagnostic, not
     # the RGB-D matched long-horizon comparison.
     env_cfg = from_dict(EnvConfig, cfg)
@@ -68,7 +70,8 @@ def worker(a):
     env.env.auto_reset = False
     started = time.monotonic()
     try:
-        obs, info = env.reset(seed=seed, options={'spawn_selection_idxs': [case['spawn_index']]})
+        obs, info = env.reset(seed=seed, options={'reconfigure': True,
+            'build_config_idxs': [seed - 100], 'spawn_selection_idxs': [case['spawn_index']]})
         uenv = env.unwrapped
         uid = str(uenv.task_plan[0].composite_subtask_uids[0])
         torch.save({'state': uenv.get_state_dict(), 'python_rng': random.getstate(),
