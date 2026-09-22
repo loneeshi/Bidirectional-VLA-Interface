@@ -1,0 +1,114 @@
+{
+  "schema": "spawn-prior/1",
+  "training_plan_uids": [
+    "tidy_house-pick-train-14603-0",
+    "tidy_house-pick-train-16191-0",
+    "tidy_house-pick-train-17915-0",
+    "tidy_house-pick-train-27696-0",
+    "tidy_house-pick-train-37319-0",
+    "tidy_house-pick-train-6433-0",
+    "tidy_house-place-train-14603-0",
+    "tidy_house-place-train-16191-0",
+    "tidy_house-place-train-17915-0",
+    "tidy_house-place-train-27696-0",
+    "tidy_house-place-train-37319-0",
+    "tidy_house-place-train-6433-0"
+  ],
+  "bins": [
+    {
+      "skill": "pick",
+      "object_category": "024_bowl",
+      "samples": 6,
+      "successes": 6,
+      "strict_successes": 5,
+      "force_violations": 1,
+      "first_success_step_range": [
+        27,
+        44
+      ],
+      "guidance": "navigate close to the object before Pick; use short SAC slices and verify grasp",
+      "official_spawn_distance_xy_m_range": [
+        0.7663083672523499,
+        1.9362943172454834
+      ],
+      "strict_success_distance_xy_m_range": [
+        0.7663083672523499,
+        1.9362943172454834
+      ],
+      "pose_range_status": "relative distance support only; orientation and collision geometry unmeasured"
+    },
+    {
+      "skill": "pick",
+      "object_category": "009_gelatin_box",
+      "samples": 6,
+      "successes": 5,
+      "strict_successes": 5,
+      "force_violations": 1,
+      "first_success_step_range": [
+        27,
+        44
+      ],
+      "guidance": "navigate close to the object before Pick; use short SAC slices and verify grasp",
+      "official_spawn_distance_xy_m_range": [
+        1.1865094900131226,
+        1.617795467376709
+      ],
+      "strict_success_distance_xy_m_range": [
+        1.1865094900131226,
+        1.617795467376709
+      ],
+      "pose_range_status": "relative distance support only; orientation and collision geometry unmeasured"
+    },
+    {
+      "skill": "place",
+      "object_category": "024_bowl",
+      "samples": 6,
+      "successes": 4,
+      "strict_successes": 2,
+      "force_violations": 4,
+      "first_success_step_range": [
+        26,
+        53
+      ],
+      "guidance": "navigate while holding to a clear destination-side approach; minimize prolonged contact during Place",
+      "official_spawn_distance_xy_m_range": [
+        1.3337020874023438,
+        2.0477211475372314
+      ],
+      "strict_success_distance_xy_m_range": [
+        1.3533631563186646,
+        2.0477211475372314
+      ],
+      "pose_range_status": "relative distance support only; orientation and collision geometry unmeasured"
+    },
+    {
+      "skill": "place",
+      "object_category": "009_gelatin_box",
+      "samples": 6,
+      "successes": 5,
+      "strict_successes": 1,
+      "force_violations": 5,
+      "first_success_step_range": [
+        19,
+        56
+      ],
+      "guidance": "navigate while holding to a clear destination-side approach; minimize prolonged contact during Place",
+      "official_spawn_distance_xy_m_range": [
+        1.070746898651123,
+        1.9908287525177002
+      ],
+      "strict_success_distance_xy_m_range": [
+        1.6106289625167847,
+        1.6106289625167847
+      ],
+      "pose_range_status": "relative distance support only; orientation and collision geometry unmeasured"
+    }
+  ],
+  "scope": "two_categories_three_train_scenes_two_spawns_each",
+  "limitations": [
+    "Ranges are relative target distance at official spawns, not an optimum.",
+    "Orientation, arm, torso and collision geometry were not isolated.",
+    "Place guidance is qualitative and force-aware.",
+    "Use only as empirical tool guidance, never as completion evidence."
+  ]
+}

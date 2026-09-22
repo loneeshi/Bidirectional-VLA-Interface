@@ -64,6 +64,8 @@ def main() -> None:
                         choices=['images', 'trajectory', 'progress', 'structured_goals'])
     parser.add_argument('--spawn-prior', type=Path)
     parser.add_argument('--evaluation-manifest', type=Path)
+    parser.add_argument('--continuation-condition', choices=['C0','C1','C2'],
+                        help='Continuous evaluator-feedback development protocol')
     parser.add_argument('--paired-ppo-episode', action='store_true',
                         help='Paired official PPO/SAC fixed-order versus GPT execution study')
     parser.add_argument('--expected-initial-state-sha256')
@@ -149,6 +151,16 @@ def main() -> None:
         prior = load_prior(args.spawn_prior, evaluation_uids)
     elif args.spawn_prior:
         parser.error('Prior file requires prior profile')
+    if args.continuation_condition:
+        if (not args.goal_tools or not args.paired_ppo_episode or args.dry_run
+                or args.navigation_policy != 'official' or args.manipulation_policy != 'official'
+                or args.progress_feedback):
+            parser.error('C0/C1/C2 require live paired goal tools with official PPO/SAC and evaluator feedback')
+        if args.continuation_condition == 'C2':
+            if args.feedback_profile != 'object_trajectory_prior_v1' or prior is None:
+                parser.error('C2 requires the frozen independent capability prior')
+        elif args.feedback_profile == 'object_trajectory_prior_v1' or prior is not None:
+            parser.error('Only C2 may receive the capability prior')
     if args.paired_ppo_episode and (args.benchmark_episode or args.tool_family_interface
             or args.navigation_policy not in {'official','teleport'} or args.manipulation_policy != 'official'
             or args.policy_type != 'rl_per_obj' or not args.expected_plan_uid
@@ -388,8 +400,14 @@ def main() -> None:
         skills = {name: OfficialRLSkill(name, adapter, checkpoint_root, args.policy_type) for name in specs}
         if args.goal_tools:
             from bvi.goal_tools import GoalToolAdapter, GoalRLSkill, ProgressGoalRLSkill
-            adapter = GoalToolAdapter(adapter)
-            skill_class = ProgressGoalRLSkill if args.progress_feedback else GoalRLSkill
+            if args.continuation_condition:
+                from bvi.continuation import ContinuationGoalAdapter, ContinuationGoalRLSkill
+                adapter = ContinuationGoalAdapter(adapter, args.continuation_condition,
+                    prior['data'] if prior is not None else None)
+                skill_class = ContinuationGoalRLSkill
+            else:
+                adapter = GoalToolAdapter(adapter)
+                skill_class = ProgressGoalRLSkill if args.progress_feedback else GoalRLSkill
             skills = {name: skill_class(name, adapter, checkpoint_root, args.policy_type) for name in specs}
             metadata['planning_scope'] = 'whole_goals_request_grounded_tools_native_order_constraint'
             metadata['feedback_contract'] = ({
@@ -592,6 +610,12 @@ def main() -> None:
             if args.paired_ppo_episode or args.benchmark_episode:
                 native_index = int(scalar(adapter.uenv.subtask_pointer))
                 completed_objects = sum(s.type == 'place' for s in adapter.original_plan.subtasks[:native_index])
+            continuation_score = None
+            if args.continuation_condition:
+                continuation_score = adapter.final_object_score()
+                completed_objects = sum(row['satisfied'] for row in continuation_score)
+            continuation_success = (completed_objects == planned_objects
+                                    if args.continuation_condition else None)
             summary = {"benchmark_result": False, "benchmark_episode": args.benchmark_episode or args.paired_ppo_episode,
                        "evaluation_eligible": args.benchmark_episode or args.paired_ppo_episode,
                        "paired_ppo_episode": args.paired_ppo_episode,
@@ -599,9 +623,19 @@ def main() -> None:
                        "first_object_chain_success": completed_objects > 0,
                        "api_requests": api_calls, "vlm": not args.dry_run,
                        "vlm_feedback_loop_observed": not args.dry_run and len(history) >= 2,
-                       "task_success": bool(scalar(adapter.last_info.get("success", False))),
+                       "task_success": (continuation_success if args.continuation_condition else
+                                        bool(scalar(adapter.last_info.get("success", False)))),
                        "completed_objects": min(completed_objects, planned_objects),
+                       "ever_completed_objects": (sum(skill == 'place' for skill,target in
+                            getattr(adapter, 'ever_satisfied', set()))
+                            if args.continuation_condition else None),
                        "planned_objects": planned_objects,
+                       "continuation_condition": args.continuation_condition,
+                       "final_object_score": jsonable(continuation_score),
+                       "official_episode_valid": getattr(adapter, 'official_episode_valid', None),
+                       "force_violation_steps": getattr(adapter, 'force_violation_steps', None),
+                       "native_fail_steps": getattr(adapter, 'native_fail_steps', None),
+                       "retry_counts": jsonable(getattr(getattr(adapter, 'retry_ledger', None), 'retries', {})),
                        "steps": adapter.steps, "wall_seconds": time.monotonic() - started,
                        "skill_results": jsonable(history),
                        "navigation_policy": args.navigation_policy,

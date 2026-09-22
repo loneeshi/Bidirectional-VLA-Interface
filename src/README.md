@@ -22,6 +22,7 @@ scripts/run_ppo_sac_paired16.py (paired batches and resume)
 | `bvi/bridge.py` | active | organizer |
 | `bvi/closed_loop_divergence.py` | frozen | historical training and diagnostics (retained) |
 | `bvi/coordinator.py` | active | organizer |
+| `bvi/continuation.py` | active | evaluation |
 | `bvi/decision_trace.py` | frozen | historical training and diagnostics (retained) |
 | `bvi/diagnostic_noise.py` | frozen | historical training and diagnostics (retained) |
 | `bvi/feedback/__init__.py` | active | feedback |
