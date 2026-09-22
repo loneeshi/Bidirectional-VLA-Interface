@@ -1,4 +1,7 @@
-"""Baseline interfaces, not a pretrained VLA or a learned verifier."""
+"""Baseline interfaces, not a pretrained VLA or a learned verifier.
+
+STATUS: active — core
+"""
 from .coordinator import APIBudget, VLMCoordinator, VLMRequest, VLMResponse, parse_request
 from .logging import JsonlLogger
 from .protocol import (ActionBounds, AllowedCall, Environment, FETCH_ACTION_DIM,
@@ -16,4 +19,3 @@ __all__ = [
     "SkillResult", "SkillSpec", "SkillStatus", "Target", "Transition", "SerialRuntime",
     "validate_request",
 ]
-

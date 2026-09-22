@@ -1,5 +1,7 @@
 """Explicit timing bridge for legacy post-action learned progress.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The author current-observation target is (frame_index + offset)/(episode_len-1).
 Legacy Fetch1199checkpoint instead predicts after the next action. This bridge
 delays its first value until that action has executed; it does not make the

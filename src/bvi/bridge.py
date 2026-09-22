@@ -1,5 +1,7 @@
 """File-spool VLM transport: simulator remote, credentials and paid request local.
 
+STATUS: active — organizer
+
 Both sides use the remote coordinator's attempt ID. Local records are mirrors,
 not additional expenses. A durable local claim prevents a second model request
 after an ambiguous failure or process restart. Completed responses can be resent.

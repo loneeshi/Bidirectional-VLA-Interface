@@ -1,5 +1,7 @@
 """Paper-style navigation teleport inside the current MS-HAB runtime.
 
+STATUS: active — executors
+
 This is intentionally restricted to one-environment TidyHouse evaluation.  The
 state transition follows the teleport branch removed from upstream
 ``mshab/evaluate.py`` after commit 4729821.  Pick/place actions and all native

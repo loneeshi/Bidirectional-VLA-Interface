@@ -1,5 +1,7 @@
 """Versioned boundary between the coordinator, skill implementations and simulator.
 
+STATUS: active — core
+
 Policy observations may contain benchmark privileges. They are deliberately not
 serialized into VLM prompts. Targets/admissible calls are adapter-provided and
 must be declared as oracle metadata when derived from a benchmark task plan.

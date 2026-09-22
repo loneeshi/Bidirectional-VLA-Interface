@@ -1,5 +1,7 @@
 """Optional model-service clients. Predictions are NOT Fetch actions.
 
+STATUS: active — executors
+
 LightNav uses JSON; openpi uses its numpy-aware msgpack codec. Dependencies
 and model servers stay separate from the pinned MS-HAB environment.
 No retries: an uncertain request must not silently run inference twice.

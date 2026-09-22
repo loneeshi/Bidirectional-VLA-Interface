@@ -1,0 +1,1407 @@
+{
+  "independent_unit": "episode",
+  "paired": {
+    "planned": 32,
+    "independent_unit": "episode",
+    "rows": [
+      {
+        "validity": "native_trace",
+        "sha256": "6d31e7b75cc1de0715173b5f7e7406a9f6e767d496b643107fd591dd84905190",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 2
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 0,
+        "plan_uid": "tidy_house-sequential-val-557-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "57aade80a4b087b4ee69995fd233787d9c2636e5df50aeba70b4ab15314fa5f4",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 0,
+        "plan_uid": "tidy_house-sequential-val-557-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "9789cc10c9b2e04cd8c05a3c12c7e9e26b62ebf1f785ed6b3d3b97350980fa46",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 2
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 1,
+        "plan_uid": "tidy_house-sequential-val-90-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "6f9c72f803d3c985a5a1033b2411f8860dbaba7d9b19809494faa90dfd05bb51",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 4
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 1,
+        "plan_uid": "tidy_house-sequential-val-90-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "50695a9ec6715dafb29693b81acc2a5cf3db3419df674180d39b4009c7f05f4a",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 5,
+            "completed": 5
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 2,
+        "plan_uid": "tidy_house-sequential-val-147-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "527938b0f0a2d90ff4f4a74406ea2c7ce6a8b73951b1d403e9105e4c23ff6444",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 6,
+            "completed": 6
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 3
+          },
+          "place": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 2,
+        "plan_uid": "tidy_house-sequential-val-147-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "17de1e48c97f40fbdaf2a009415d09235af1edb9eb9c0239be7f62734718764c",
+        "completed_objects": 4,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 9,
+            "completed": 9
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 5,
+            "completed": 4
+          },
+          "place": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 4
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 3,
+        "plan_uid": "tidy_house-sequential-val-189-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 4,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "3d0ea1d10b8f9e84649bfc7cda2158b197b474da7bee27fe9abae9e34208aace",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 6,
+            "completed": 6
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 3
+          },
+          "place": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 3,
+        "plan_uid": "tidy_house-sequential-val-189-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "a83af89a3b3867f6f25301e4c5c502e131641517e29068eacb1aad7d0a9156e8",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 4,
+        "plan_uid": "tidy_house-sequential-val-553-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "84c61d5d02b615005222a43808268bc002c612f1a1274d0c4d6c134a6c5d1b5d",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 4,
+        "plan_uid": "tidy_house-sequential-val-553-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "fefac222c8386223eb91a2ac029875d5c407f9ec9f4508e43a55af5323899f44",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 5,
+            "completed": 5
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 5,
+        "plan_uid": "tidy_house-sequential-val-86-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "6632731ea6848a056b927f654d5b50168a90ad9a97d54c6500ae9cdf1275c7a8",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 4
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 5,
+        "plan_uid": "tidy_house-sequential-val-86-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "cfa4c75e913deca62ce6c52fa1f46c1fd64de098d6d069d5de04ebee657ad826",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 2
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 6,
+        "plan_uid": "tidy_house-sequential-val-682-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "6d6b52489325fefeda71c6c7f243885ce84be3446f150caec9c9514a6eb2acc2",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 6,
+        "plan_uid": "tidy_house-sequential-val-682-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "95eaed8b5bac446acc88fe04bd9526eac0d0aebf956f2859af8501fdcc28c1f5",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 2
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 7,
+        "plan_uid": "tidy_house-sequential-val-881-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "6565af73fbf21cffb14851c8cf22f39ee075ea2bdf5ddf6a3d8c06102a092f37",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 5,
+            "completed": 5
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 7,
+        "plan_uid": "tidy_house-sequential-val-881-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "8fb5e7b63122edf38eded896cc5a23cd6125f1ec7fda841ee538493b8a23b149",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 8,
+        "plan_uid": "tidy_house-sequential-val-17-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "3ffc521c5250b51440d98d09769f38f6d282a07e88ff796f9786243aecdb41f2",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 8,
+        "plan_uid": "tidy_house-sequential-val-17-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "d43a8e70fa4cb9b67b811c1c811ce7c8dd2abf887e2c39eb1befbc609f9b7e6a",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 9,
+        "plan_uid": "tidy_house-sequential-val-629-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "b7768ca223954b030981a55461f1c5f13025eb746646506fce12423d745a8b52",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 9,
+        "plan_uid": "tidy_house-sequential-val-629-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "5c6c322fc0452a5102955947cf2533b53833118fe06092716b7376bcf60c18fc",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 3
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 10,
+        "plan_uid": "tidy_house-sequential-val-586-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "76fbc2a1fbbe91f64aa86e700e13e249aaf264edff31f2e04cfb15d5d7631a37",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 5,
+            "completed": 5
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 10,
+        "plan_uid": "tidy_house-sequential-val-586-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "efee212199e7410a54f081f348186db136f904b0e9472d5c27a860024c92eb40",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 3,
+            "completed": 3
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 11,
+        "plan_uid": "tidy_house-sequential-val-327-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "128c734ab9f165650ce6ed373fb2988c223cd4c73c0ddd878a14cc669480a708",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 11,
+        "plan_uid": "tidy_house-sequential-val-327-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "fbd058d11ad407e31e6e7a5b44fd172ef9f5923e9ef23295b4457b3b1b407111",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 3,
+            "completed": 3
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 13,
+        "plan_uid": "tidy_house-sequential-val-850-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "d44e0b14be1c0a0b5496956d1e8055ce26957aac5d24bf2b0ec9007627baa8bf",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 13,
+        "plan_uid": "tidy_house-sequential-val-850-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "bcf71d8af1369df4f95fa114a35d52dd01b282d8f4f2ee413ce59fc2e8e82629",
+        "completed_objects": 3,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 8,
+            "completed": 8
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 4
+          },
+          "place": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 3
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 14,
+        "plan_uid": "tidy_house-sequential-val-113-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 3,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "136b2611c1a475c2da0484f1644518a41b84249981f6f5226ae84012014bf447",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 4
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 14,
+        "plan_uid": "tidy_house-sequential-val-113-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "2cbd503fb5f4a91e77c75e7812787726d1d077bcadd5aefe4c80e390a5c7d790",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 16,
+        "plan_uid": "tidy_house-sequential-val-334-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "0a9850bd47cfe5f952d4f8b6a6f62ec6b2a4ef1aa8db435da8e33fd63fa40d65",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 5,
+            "completed": 5
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 16,
+        "plan_uid": "tidy_house-sequential-val-334-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "7934afe534a61443f9d97b3209291f327b2016a9aa602965ef37f31c4979a623",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 19,
+        "plan_uid": "tidy_house-sequential-val-110-0",
+        "arm": "fixed",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "6649535e1815c81ede477dcfe7e91af8de4e86c86cd0024d936303d9666a3543",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 0,
+        "seed": 19,
+        "plan_uid": "tidy_house-sequential-val-110-0",
+        "arm": "gpt",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      }
+    ]
+  },
+  "teleport": {
+    "planned": 16,
+    "independent_unit": "episode",
+    "rows": [
+      {
+        "validity": "native_trace",
+        "sha256": "560944efd4e0927da5fd3e16c47ecba72178d90468035577317a55a5db3302f5",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 6,
+            "completed": 6
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 3
+          },
+          "place": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 6,
+        "seed": 0,
+        "plan_uid": "tidy_house-sequential-val-557-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "a922589a368d0472c2f3f144d0c7435158a1ac67f4ac221d7f278321bb281736",
+        "completed_objects": 2,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 6,
+            "completed": 6
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 3
+          },
+          "place": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 2
+          }
+        },
+        "navigation_bypassed_by_teleport": 6,
+        "seed": 1,
+        "plan_uid": "tidy_house-sequential-val-90-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 2,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "e23c6a87d39c3e023b32830eaa2ce8efaf54991db639caf6e4ff19bb1f433bd6",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 3,
+            "completed": 3
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 3,
+        "seed": 2,
+        "plan_uid": "tidy_house-sequential-val-147-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "a87a99816ba3eec9028e733ab101a084f2c321b74a01e0406ee06d4ecffe4a5d",
+        "completed_objects": 3,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 8,
+            "completed": 8
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 4
+          },
+          "place": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 3
+          }
+        },
+        "navigation_bypassed_by_teleport": 8,
+        "seed": 3,
+        "plan_uid": "tidy_house-sequential-val-189-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 3,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "a158cbd3a6852a962b275388dd64cc9b4947dcc8564ab117b00e73865714de97",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 1,
+        "seed": 4,
+        "plan_uid": "tidy_house-sequential-val-553-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "0ce98586a4242a31a4a2e3b5c2d877ed2b70e3bfb009a6ea91a682a804f1430a",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 1,
+        "seed": 5,
+        "plan_uid": "tidy_house-sequential-val-86-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "83da68306b472e20b96545fe7e9411bc033b4d5bf2161e744a2ebfa2b115e3d6",
+        "completed_objects": 4,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 9,
+            "completed": 9
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 5,
+            "completed": 4
+          },
+          "place": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 4
+          }
+        },
+        "navigation_bypassed_by_teleport": 9,
+        "seed": 6,
+        "plan_uid": "tidy_house-sequential-val-682-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 4,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "7faaa2de04048d7163a0d8a71766a26d5d10367f33e02aac27d3dbfc40175ec2",
+        "completed_objects": 3,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 8,
+            "completed": 8
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 4
+          },
+          "place": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 3
+          }
+        },
+        "navigation_bypassed_by_teleport": 8,
+        "seed": 7,
+        "plan_uid": "tidy_house-sequential-val-881-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 3,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "c9ff7301d883934d4d8ccb136d24f7ed4cc263227e696e9558f05a4e6cb0ccc0",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 1,
+        "seed": 8,
+        "plan_uid": "tidy_house-sequential-val-17-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "a99c19db87ce2943ad6c8fa8eca5db36e8000ef33e5e9aff1bbef08242a35e19",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 2
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 2,
+        "seed": 9,
+        "plan_uid": "tidy_house-sequential-val-629-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "d9abc9986257d7ab98cb2f267b59d6e1f23fcc99eb2d7085a495929aeac5e243",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 1,
+            "completed": 1
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          },
+          "place": {
+            "planned": 5,
+            "reached": 0,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 1,
+        "seed": 10,
+        "plan_uid": "tidy_house-sequential-val-586-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "1a24d8edad93e1381af94ac4c1f4c5a0fc9d444802c868bac713e17601cdfac8",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 4
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 4,
+        "seed": 11,
+        "plan_uid": "tidy_house-sequential-val-327-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "b550ec574003f16efe01a74753b467473c29218351bcbb483a701f14f31c8fec",
+        "completed_objects": 0,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 2,
+            "completed": 2
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 1
+          },
+          "place": {
+            "planned": 5,
+            "reached": 1,
+            "completed": 0
+          }
+        },
+        "navigation_bypassed_by_teleport": 2,
+        "seed": 13,
+        "plan_uid": "tidy_house-sequential-val-850-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 0,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "0a9d5922cdf27eaa200517d642e9162eea579a7f3e68413d6b6375a1e81850e9",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 4
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 4,
+        "seed": 14,
+        "plan_uid": "tidy_house-sequential-val-113-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "b307e9bd49345235d91d4f16b85a4c42b9f11b9926b274654400e0329e13b7d4",
+        "completed_objects": 1,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 4,
+            "completed": 4
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 2
+          },
+          "place": {
+            "planned": 5,
+            "reached": 2,
+            "completed": 1
+          }
+        },
+        "navigation_bypassed_by_teleport": 4,
+        "seed": 16,
+        "plan_uid": "tidy_house-sequential-val-334-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 1,
+        "matches_archive": true
+      },
+      {
+        "validity": "native_trace",
+        "sha256": "1aa24527e299179045790497addd657841b56de4ebf4e8896e618a571e099be5",
+        "completed_objects": 3,
+        "subtasks": {
+          "navigate": {
+            "planned": 10,
+            "reached": 7,
+            "completed": 7
+          },
+          "pick": {
+            "planned": 5,
+            "reached": 4,
+            "completed": 3
+          },
+          "place": {
+            "planned": 5,
+            "reached": 3,
+            "completed": 3
+          }
+        },
+        "navigation_bypassed_by_teleport": 7,
+        "seed": 19,
+        "plan_uid": "tidy_house-sequential-val-110-0",
+        "arm": "teleport",
+        "status": "completed",
+        "expected_objects": 3,
+        "matches_archive": true
+      }
+    ]
+  }
+}

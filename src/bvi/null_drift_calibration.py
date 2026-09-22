@@ -1,4 +1,7 @@
-"""Pure validation and threshold generation for Level-3 null-drift controls."""
+"""Pure validation and threshold generation for Level-3 null-drift controls.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 
 from __future__ import annotations
 

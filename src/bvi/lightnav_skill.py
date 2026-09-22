@@ -1,5 +1,7 @@
 """Experimental LightNav -> Fetch serial skill. B11 passed one diagnostic chain.
 
+STATUS: active — executors
+
 Pinned controller semantics: ManiSkill17121e3f. Robot proprioception is used by
 the tracker/hold controller; no simulator goal positions enter LightNav prompts.
 """

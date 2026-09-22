@@ -1,4 +1,7 @@
-"""Explicit learner-prefix / expert-recovery training collection, never an eval policy."""
+"""Explicit learner-prefix / expert-recovery training collection, never an eval policy.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 from .protocol import ProtocolError
 
 

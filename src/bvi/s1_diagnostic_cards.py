@@ -1,4 +1,7 @@
-"""Pure helpers for the frozen S1-IA D1/D2 diagnostic cards."""
+"""Pure helpers for the frozen S1-IA D1/D2 diagnostic cards.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 
 from __future__ import annotations
 

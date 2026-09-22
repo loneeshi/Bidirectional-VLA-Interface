@@ -1,4 +1,7 @@
-"""Bounded, source-labelled invocation memory; never asserts task success."""
+"""Bounded, source-labelled invocation memory; never asserts task success.
+
+STATUS: active — feedback legacy facade
+"""
 
 from .progress_monitor import THRESHOLDS
 

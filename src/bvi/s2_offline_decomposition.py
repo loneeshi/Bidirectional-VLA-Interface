@@ -1,5 +1,7 @@
 """Pure contracts for the native24 S2 step0/step20 offline decomposition.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The GPU entry point lives in ``scripts/audit_native_s2_decomposition.py``.
 This module deliberately contains no JAX, optimizer, simulator, or model code so
 the roster, identity, parity, queue, and reporting gates are unit-testable on

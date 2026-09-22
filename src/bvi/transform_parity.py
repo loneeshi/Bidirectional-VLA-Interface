@@ -1,4 +1,7 @@
-"""Bit-exact comparison helpers for training and inference transform leaves."""
+"""Bit-exact comparison helpers for training and inference transform leaves.
+
+STATUS: active — evaluation
+"""
 
 from __future__ import annotations
 

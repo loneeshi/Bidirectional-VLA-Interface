@@ -1,5 +1,7 @@
 """Paper-style invocation/progress contract, isolated from legacy MS-HAB v0.1.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 This contract does not itself implement a trained adapter or progress predictor.
 """
 

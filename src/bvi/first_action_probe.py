@@ -1,5 +1,7 @@
 """Exact-start stochastic first-action attribution for Fetch13 policies.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The successful SAC action is a *reference*, not a unique ground-truth label.
 This module only asks whether the deployed S1 action looks like an exceptional
 draw from its own frozen stochastic policy.  It must not be used to claim that

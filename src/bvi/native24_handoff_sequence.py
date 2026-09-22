@@ -1,5 +1,7 @@
 """Contracts for the zero-training native24 wrong-handoff sequence gate.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The sequence gate is separate from the single-frame input gate.  It binds the
 existing progress-monitor source before any model query and requires at least
 ten contiguous observations per class, enabling the frozen two-hit, drop and

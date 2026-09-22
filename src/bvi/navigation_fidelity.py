@@ -1,5 +1,7 @@
 """Opt-in navigation audit controls; historical LightNavSkill stays unchanged.
 
+STATUS: active — evaluation
+
 These are diagnostic factors, not a learned progress/recovery mechanism. The
 caller must assign a fresh episode token on every environment reset, including
 repeated seeds, and clear any queued actions independently of frame history.

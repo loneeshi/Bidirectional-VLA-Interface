@@ -1,4 +1,7 @@
-"""Append-only, flushed JSONL events. Callers keep these outside public source."""
+"""Append-only, flushed JSONL events. Callers keep these outside public source.
+
+STATUS: active — core
+"""
 from __future__ import annotations
 
 import json
@@ -31,4 +34,3 @@ class JsonlLogger:
         with self.path.open("a", encoding="utf-8") as stream:
             stream.write(line + "\n")
             stream.flush()
-

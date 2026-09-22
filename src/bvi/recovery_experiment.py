@@ -1,4 +1,7 @@
-"""Pure helpers for paired-prefix recovery experiments; no simulator truth in prompts."""
+"""Pure helpers for paired-prefix recovery experiments; no simulator truth in prompts.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 
 import copy
 import hashlib

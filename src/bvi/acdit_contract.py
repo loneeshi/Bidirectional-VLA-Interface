@@ -1,5 +1,7 @@
 """Auditable AC-DiT native MS-HAB boundary; no trained TAPT adapters implied.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 Matches PKU-HMI-Lab/AC-DiT@90ad00a. The upstream policy consumes physical
 proprioception and predicts normalized Fetch controller commands. Neither uses
 the pi05 quantile transform. This module never changes the legacy pi05 runner.

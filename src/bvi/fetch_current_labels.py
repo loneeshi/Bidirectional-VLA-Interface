@@ -1,5 +1,7 @@
 """Current-observation labels for verified local teacher intervals.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 Observation indices include both interval endpoints; action indices exclude the
 last endpoint. A failed rollout's end is not a verified completion boundary.
 Invocation-start anchors are supplementary reconstructed temporal supervision,

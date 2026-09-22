@@ -1,5 +1,7 @@
 """Local, exact policy decision artifacts; loading .pt files requires trusted data.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 Inputs contain CPU copies of model tensors. A replayer must move those values to
 the original model device and restore RNG immediately before model execution.
 The recorder captures only explicitly supplied values, never environment vars.

@@ -1,4 +1,7 @@
-"""Build native S1 admission from on-disk episode evidence, not claimed scores."""
+"""Build native S1 admission from on-disk episode evidence, not claimed scores.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 import hashlib
 import json
 from pathlib import Path

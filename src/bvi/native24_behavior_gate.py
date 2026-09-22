@@ -1,5 +1,7 @@
 """Pure-CPU contracts for the native24 zero-training behavior gate.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The gate compares the four head/bank corners and one selective-bank condition
 on a fixed observation roster.  It deliberately owns no model, accelerator,
 transport, or simulator.  Callers supply model ``progress`` chunks and queue

@@ -1,4 +1,7 @@
-"""Frozen diagnostic call predicates; privileged values score, never feed VLA."""
+"""Frozen diagnostic call predicates; privileged values score, never feed VLA.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 import numpy as np
 
 INSTRUCTIONS = {'reach':'Reach the apple with the gripper open.',

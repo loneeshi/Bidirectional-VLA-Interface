@@ -1,13 +1,18 @@
 # Learning Bidirectional Semantic Interfaces for Reliable VLA Tool Use
 
-**Current mainline (2026-09-20 UTC):** no training or fine-tuning. The only
+**当前工作（2026-09-21）：** 本周围绕 GPT + 官方 PPO/SAC 的 evaluator feedback，
+改进轨迹摘要、信息呈现和后续站位先验；continuous rule progress 保留为可选模式。
+入口：[本周设置与实验表](docs/feedback-workbench.md) · [源码索引](src/README.md) ·
+[文档目录](docs/README.md)。以下日期快照为历史记录，不代表当前运行状态。
+
+**Historical scope (2026-09-20 UTC):** no training or fine-tuning. The only
 active evaluation is a resumable 20/1000-rollout TidyHouse validation batch with
 GPT-5.6 Luna organizing LightNav-0 navigation and official object-specific SAC
 Pick/Place. LightNav-0 is the navigation VLA; SAC is the approved interim
 manipulation tool and does not consume language. See the
 [run contract and status](docs/results/sac-interface-baseline-2026-09-20/README.md).
 
-**Current mainline:** [Delivery status and evidence](docs/delivery-2026-09-20.md) · [Experiment log](docs/log/README.md). The completed oracle-assisted development regression measured original S1-IA best/855 at **0/5** and the frozen dev8-selected candidate best/250 at **0/5**. All 10 episodes ended at the native cumulative-force limit without grasping. **G1 failed**: no success rerun, LightNav/GPT integration, or Place evaluation was launched under this gate. This supersedes the old ≥3/10 gate and S2-first priorities; S2 expansion remains paused.
+**Historical mainline:** [Delivery status and evidence](docs/delivery-2026-09-20.md) · [Experiment log](docs/log/README.md). The completed oracle-assisted development regression measured original S1-IA best/855 at **0/5** and the frozen dev8-selected candidate best/250 at **0/5**. All 10 episodes ended at the native cumulative-force limit without grasping. **G1 failed**: no success rerun, LightNav/GPT integration, or Place evaluation was launched under this gate. This supersedes the old ≥3/10 gate and S2-first priorities; S2 expansion remains paused.
 
 The single formal candidate completed 500 updates and passed independent CPU restore/frozen-parameter verification; fixed dev first-action/chunk RMSE improved 10.1%/4.7%. These offline improvements did not establish native Pick success. Both completed panels' full raw evidence and the selected checkpoint have verified complete backups; the two earlier infrastructure-only baseline launches remain separate from the 10 evaluated episodes. [Evaluation and limits](docs/pi05-candidate-evaluation-2026-09-20.md) · [Reproduction](docs/two-day-reproduction-2026-09-20.md).
 

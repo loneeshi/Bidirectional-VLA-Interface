@@ -1,5 +1,7 @@
 """Explicit RGBD/state/action contract for the bounded pi05 recipe adaptation.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 This is not the AC-DiT architecture. Pure helpers are shared by data and deployment.
 """
 import numpy as np

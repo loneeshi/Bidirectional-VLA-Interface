@@ -1,5 +1,7 @@
 """Optional SDK transports; explicit model IDs and credentials are caller-owned.
 
+STATUS: active — organizer
+
 Wire formats checked against official docs on 2026-09-14:
 https://developers.openai.com/api/docs/guides/images-vision
 https://developers.openai.com/api/docs/guides/structured-outputs

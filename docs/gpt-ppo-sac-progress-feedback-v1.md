@@ -1,13 +1,18 @@
 # GPT + PPO/SAC progress-feedback protocol v1
 
+Update 2026-09-21: evaluator feedback is the weekly default. Continuous progress
+is opt-in with batch --feedback-mode continuous_progress or episode
+--progress-feedback. The geometry/grasp observations are simulator privileges;
+using them in a proxy does not make the feedback non-privileged. See
+[current settings](feedback-workbench.md).
+
 Status: implemented locally; CPU contract tests passed. No GPU rollout has yet
 validated this behavior. Existing oracle-feedback experiment results remain
 historical and are not relabeled.
 
 ## Feedback boundary
 
-New GPT + official PPO/SAC runs launched by `run_ppo_sac_paired16.py --goal-tools`
-also pass `--progress-feedback`. The selected tool returns invocation-local
+Explicit continuous-progress runs pass `--progress-feedback`. The selected tool returns invocation-local
 continuous progress in `[0,1]` with source
 `heuristic_policy_observation_relative_geometry_v1`.
 
@@ -36,5 +41,5 @@ separately trained and accepted head and declare its checkpoint and data.
 
 `GoalRLSkill` retains the old native-oracle completion path for exact historical
 reproduction. `ProgressGoalRLSkill` is selected only by `--progress-feedback`.
-The paired runner now enables it for new GPT goal-tool attempts. Old attempts,
+The paired runner enables it only when explicitly selected. Old attempts,
 videos, summaries, and scores must remain labeled native-oracle feedback.

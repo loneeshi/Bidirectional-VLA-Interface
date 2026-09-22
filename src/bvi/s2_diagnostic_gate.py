@@ -1,5 +1,7 @@
 """Fail-closed admission for the native S2 20-update diagnostic only.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 This gate is intentionally separate from the full S2 capability admission.
 It does not replace the native >=3/10 capability gate or the native24
 wrong-handoff validation used by that path.  Its only purpose is to permit a

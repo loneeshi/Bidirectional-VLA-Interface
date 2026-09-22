@@ -1,4 +1,7 @@
-"""Persistent accounting for the 1000-episode TidyHouse SAC-interface baseline."""
+"""Persistent accounting for the 1000-episode TidyHouse SAC-interface baseline.
+
+STATUS: active — evaluation
+"""
 from __future__ import annotations
 
 from datetime import datetime, timezone

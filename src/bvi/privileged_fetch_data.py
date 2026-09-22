@@ -1,4 +1,7 @@
-"""Independent diagnostic arm: all recorded official H5 agent/extra state, never native RGB gate."""
+"""Independent diagnostic arm: all recorded official H5 agent/extra state, never native RGB gate.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 import numpy as np
 
 from . import official_fetch_data as native

@@ -1,5 +1,7 @@
 """Pure helpers for exact S1 training/inference preprocessing audits.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 This module deliberately has no OpenPI, JAX, simulator, or GPU dependency.  The
 runtime audit imports those dependencies only after validating the saved raw
 request files with these helpers.

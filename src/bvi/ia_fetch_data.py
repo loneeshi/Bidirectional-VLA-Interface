@@ -1,4 +1,7 @@
-"""Invocation-aligned action-only data. No family routing or progress loss."""
+"""Invocation-aligned action-only data. No family routing or progress loss.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 import numpy as np
 
 from .official_fetch_data import current_progress_rows, native_policy_observation

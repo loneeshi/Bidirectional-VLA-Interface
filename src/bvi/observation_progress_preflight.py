@@ -1,5 +1,7 @@
 """CPU-only preparation for a paired progress-head comparison, not training.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 Checks archived metadata and binds cache rows. Tensor contents, clean feature
 extraction, action identity and head performance require separate execution.
 """

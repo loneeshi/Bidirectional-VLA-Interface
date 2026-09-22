@@ -1,5 +1,7 @@
 """Declared observation augmentation: forward-facing robot-mounted RGB camera.
 
+STATUS: active — environment
+
 Original head/wrist cameras and all physics/task checks remain unchanged.
 This extra sensor must be disclosed in comparisons with official observations.
 """

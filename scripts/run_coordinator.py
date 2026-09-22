@@ -58,6 +58,12 @@ def main() -> None:
     parser.add_argument('--goal-tools', action='store_true', help='Full goal catalog and request-grounded PPO/SAC')
     parser.add_argument('--progress-feedback', action='store_true',
                         help='Use policy-observation progress; never expose native subtask success to GPT')
+    from bvi.feedback.digest import PROFILES
+    parser.add_argument('--feedback-profile', choices=PROFILES, default='raw_v0')
+    parser.add_argument('--hide-feedback', nargs='+', default=[],
+                        choices=['images', 'trajectory', 'progress', 'structured_goals'])
+    parser.add_argument('--spawn-prior', type=Path)
+    parser.add_argument('--evaluation-manifest', type=Path)
     parser.add_argument('--paired-ppo-episode', action='store_true',
                         help='Paired official PPO/SAC fixed-order versus GPT execution study')
     parser.add_argument('--expected-initial-state-sha256')
@@ -127,6 +133,22 @@ def main() -> None:
         parser.error('Goal tools require a live paired or benchmark organizer mode')
     if args.progress_feedback and not args.goal_tools:
         parser.error('Progress feedback requires goal-grounded tools')
+    if args.progress_feedback and (args.navigation_policy != 'official' or args.manipulation_policy != 'official'):
+        parser.error('Continuous rule progress currently supports PPO/SAC only')
+    if (args.feedback_profile != 'raw_v0' or args.hide_feedback) and not args.goal_tools:
+        parser.error('Feedback profiles/views require goal tools')
+    prior = None
+    if args.feedback_profile == 'object_trajectory_prior_v1':
+        if not args.spawn_prior or not args.evaluation_manifest:
+            parser.error('Prior profile requires frozen prior and full evaluation manifest')
+        from bvi.feedback.spawn_prior import load_prior
+        evaluation_rows = json.loads(args.evaluation_manifest.read_text())['episodes']
+        evaluation_uids = {row['plan_uid'] for row in evaluation_rows}
+        if not args.expected_plan_uid or args.expected_plan_uid not in evaluation_uids:
+            parser.error('Current plan must belong to the evaluation manifest')
+        prior = load_prior(args.spawn_prior, evaluation_uids)
+    elif args.spawn_prior:
+        parser.error('Prior file requires prior profile')
     if args.paired_ppo_episode and (args.benchmark_episode or args.tool_family_interface
             or args.navigation_policy not in {'official','teleport'} or args.manipulation_policy != 'official'
             or args.policy_type != 'rl_per_obj' or not args.expected_plan_uid
@@ -310,6 +332,9 @@ def main() -> None:
         } if args.tool_family_interface else None,
     }
     metadata['training_collection']=args.training_collection
+    metadata['feedback_presentation'] = dict(profile=args.feedback_profile,
+        hidden_channels=sorted(args.hide_feedback), prior=prior,
+        feedback_mode='continuous_progress' if args.progress_feedback else 'evaluator')
     metadata['oracle_timeout_policy']='remaining_experiment_budget_minus_0.5s' if args.dry_run else None
     metadata['stop_after_subtasks']=args.stop_after_subtasks
     metadata['synthetic_closure_fault']=args.inject_closure_fault
@@ -319,7 +344,7 @@ def main() -> None:
     if args.collect_recovery_after is not None:
         metadata['manipulation_policy']='fetch-pi05_then_sac_teacher'
     source_root=Path(__file__).resolve().parents[1]
-    source_files=[Path(__file__).resolve(),*sorted((source_root/'src/bvi').glob('*.py'))]
+    source_files=[Path(__file__).resolve(),*sorted((source_root/'src/bvi').rglob('*.py'))]
     metadata['runtime_source_sha256']={str(p.relative_to(source_root)):hashlib.sha256(p.read_bytes()).hexdigest()
                                        for p in source_files}
     import mshab.envs.sequential_task as mshab_runtime
@@ -437,6 +462,9 @@ def main() -> None:
                                  else 'oracle_benchmark'),
                 'reposition_skill': False, 'abort_is_success': False}
             (args.output / 'run-metadata.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
+        if args.feedback_profile in ('object_trajectory_v1', 'object_trajectory_prior_v1'):
+            from bvi.feedback.trajectory import TrajectorySkill
+            skills = {name: TrajectorySkill(skill, adapter) for name, skill in skills.items()}
         runtime = SerialRuntime(adapter, skills, specs, logger)
         if not args.dry_run:
             if args.transport == "bridge":
@@ -449,8 +477,10 @@ def main() -> None:
                 transport = (OpenAITransport(args.model, image_detail=args.image_detail,
                                             reasoning_effort=args.reasoning_effort)
                              if args.provider == "openai" else AnthropicTransport(args.model))
+            from bvi.feedback import FeedbackView
             coordinator = VLMCoordinator(transport, organizer.specs if organizer else specs, logger, budget,
-                                         tool_interface=args.tool_family_interface)
+                tool_interface=args.tool_family_interface, feedback_profile=args.feedback_profile,
+                feedback_view=FeedbackView(**{key: False for key in args.hide_feedback}), spawn_prior=prior)
         for index in range(args.max_calls):
             if adapter.ended:
                 reason = "environment_success" if bool(scalar(adapter.last_info.get("success", False))) else "environment_ended"
@@ -510,6 +540,13 @@ def main() -> None:
                             "target_id": request.target_id, "requirements": request.requirements,
                             "feedback": result.feedback, "steps": result.steps,
                             "elapsed_seconds": result.elapsed_seconds})
+            if args.feedback_profile != 'raw_v0':
+                history[-1]['instruction'] = request.instruction
+                selected_skill = skills[request.skill]
+                if result.steps and hasattr(selected_skill, 'invocation_digest'):
+                    history[-1]['trajectory'] = selected_skill.invocation_digest(result.feedback.reason or result.feedback.status.value)
+                    logger.emit('invocation_trajectory', call_id=request.call_id,
+                                trajectory=history[-1]['trajectory'])
             print(json.dumps({"call_id": request.call_id, "skill": request.skill,
                 "status": result.feedback.status.value, "steps": result.steps,
                 "reason": result.feedback.reason}), flush=True)

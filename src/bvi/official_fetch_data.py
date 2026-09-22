@@ -1,4 +1,7 @@
-"""Official Fetch H5 contract: native proprioception24, no privileged inputs."""
+"""Official Fetch H5 contract: native proprioception24, no privileged inputs.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 import numpy as np
 from .fetch_segments import segment_episode
 from .fetch_current_labels import verified_teacher_targets

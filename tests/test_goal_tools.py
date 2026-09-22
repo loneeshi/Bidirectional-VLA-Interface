@@ -89,4 +89,5 @@ def test_goal_flag_only_changes_gpt_dispatch():
     sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
     import run_ppo_sac_paired16 as p
     args=(dict(seed=0,plan_uid='p'),'gpt',Path('/o'),Path('/c'),Path('/b'),'auth','sha')
-    assert p.command(*args,goal_tools=True)==p.command(*args)+['--goal-tools','--progress-feedback']
+    assert p.command(*args,goal_tools=True)==p.command(*args)+['--goal-tools']
+    assert p.command(*args,goal_tools=True,feedback_mode='continuous_progress')==p.command(*args)+['--goal-tools','--progress-feedback']

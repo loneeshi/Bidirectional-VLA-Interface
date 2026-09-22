@@ -1,5 +1,7 @@
 """One skill owns the complete action vector until it ends.
 
+STATUS: active — core
+
 This synchronous simulator runtime stops stepping on failure/timeout. It does
 not claim to stop a remote provider bill or implement a real-robot safety hold.
 Blocking policy/environment calls must enforce their own I/O deadlines; the

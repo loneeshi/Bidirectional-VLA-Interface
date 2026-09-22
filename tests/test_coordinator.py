@@ -58,6 +58,25 @@ class CoordinatorTests(unittest.TestCase):
     def records(self):
         return [json.loads(line) for line in self.logger.path.read_text().splitlines()]
 
+    def test_explicit_text_only_view_removes_wire_images(self):
+        from bvi.feedback import FeedbackView
+        self.coordinator.feedback_view = FeedbackView(images=False)
+        self.coordinator.decide(self.obs)
+        request = self.transport.requests[-1]
+        self.assertEqual(request.images, ())
+        self.assertEqual(json.loads(request.prompt)['image_order'], [])
+
+    def test_raw_prompt_context_matches_legacy_bytes(self):
+        from bvi.coordinator import json_default
+        history = [dict(skill='pick', target_id='cup', steps=2)]
+        expected = dict(task=self.obs.task, frame_id=self.obs.frame_id,
+            image_order=[x.camera for x in self.obs.images], targets=self.obs.targets,
+            allowed_calls=self.obs.allowed_calls, skill_contracts=list(self.specs.values()),
+            feedback_history=list(history))
+        self.coordinator.decide(self.obs, history)
+        self.assertEqual(self.transport.requests[-1].prompt,
+                         json.dumps(expected, default=json_default, ensure_ascii=False, allow_nan=False))
+
     def test_only_returned_invalid_response_has_model_error_type(self):
         from bvi.coordinator import ModelResponseError
         self.transport.text = '{}{}'

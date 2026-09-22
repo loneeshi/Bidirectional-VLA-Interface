@@ -1,5 +1,7 @@
 """Strictly paired, observation-only closed-loop divergence diagnostics.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 This module never changes an action, environment, or success predicate.  It can
 be used after a rollout or instantiated by a runner and fed one policy event at
 a time.  A state comparison is emitted only when both runs identify the exact

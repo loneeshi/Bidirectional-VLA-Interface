@@ -1,5 +1,7 @@
 """Opt-in, request-scoped OpenPI noise for paired diagnostics only.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 No global RNG resets: other websocket calls cannot perturb a diagnostic stream.
 The original policy stays unchanged when the diagnostic envelope is absent.
 """

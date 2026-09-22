@@ -1,5 +1,7 @@
 """Fetch TAPT components, not pretrained skills or a paper-score reproduction.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 AC-DiT port: explicit four-bank LoRA on selected manipulation DiT projections.
 Insertion sites must be supplied and recorded by the training configuration.
 Native backbone and mobility expert remain frozen. No automatic family inference.

@@ -1,5 +1,7 @@
 """Goal-grounded PPO/SAC tools with an independent, unchanged native scorer.
 
+STATUS: active — executors
+
 No pointer writes, reset, or evaluate calls. A requested target selects the
 policy's object/goal features and checkpoint, not the benchmark's current task.
 The native sequential scorer still imposes the disclosed object-order constraint.

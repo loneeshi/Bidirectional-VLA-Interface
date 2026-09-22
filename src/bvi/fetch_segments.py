@@ -1,5 +1,7 @@
 """Observable-boundary pilot labels, distinct from learned runtime progress.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 Actions are [start,end), observations are [0,N]. Local progress is supervised
 elapsed fraction toward an evidenced endpoint, not a simulator progress oracle.
 Failed trajectory ends never constitute completion. Thresholds are port choices.

@@ -1,5 +1,7 @@
 """Execution organizer: bounded replanning without changing benchmark pointers.
 
+STATUS: active — organizer
+
 The benchmark chooses which physical skills are feasible. The VLM chooses their
 invocation budget or explicitly aborts. Sensor-derived grasp events yield control
 back to it. This is execution organization, not free task-order planning.

@@ -1,10 +1,14 @@
-> **当前交付更新（2026-09-19 19:06 UTC）：** AC-DiT底盘187更新、全身尚未开始；本轮为训练中期交付。见[训练/评测核查](acdit-apple-evaluation-2026-09-20.md)、[统一VLM接入方案](vlm-integration-methodology-2026-09-20.md)、[证据与复核入口](results/acdit-apple-delivery-2026-09-20/README.md)。原生能力验证和完整权重/数据备份未完成。下方旧S1失败交付保留，不能代表当前无活动训练。
+> **历史交付快照（2026-09-19 19:06 UTC）：** AC-DiT底盘187更新、全身尚未开始；本轮为训练中期交付。见[训练/评测核查](acdit-apple-evaluation-2026-09-20.md)、[统一VLM接入方案](vlm-integration-methodology-2026-09-20.md)、[证据与复核入口](results/acdit-apple-delivery-2026-09-20/README.md)。原生能力验证和完整权重/数据备份未完成。下方旧S1失败交付保留，不能代表当前无活动训练。
 
 # Docs index
 
+**当前入口（2026-09-21）：** [Feedback 工作台与实验表](feedback-workbench.md) ·
+[源码角色索引](../src/README.md)。本周默认 evaluator feedback，continuous progress 保留。
+以下旧交付/训练状态均为历史快照；results、media 和诊断文档保留作复现证据。
+
 Experiment records for the Bidirectional-VLA-Interface project. Files are named by the batch that produced them and are never rewritten after the fact: a superseded document keeps its original findings and gains a pointer to what replaced it. Start here rather than reading them in directory order.
 
-**Current scope:** [Delivery status and evidence](delivery-2026-09-20.md) · [Initial source-freeze receipt](results/two-day-delivery-2026-09-20/source-freeze.json). Superseded planning and authorization documents have been removed; the results and diagnostics they produced are kept in full. The comparison rules now in force are [baseline protocol revision 2](baseline-protocol-2026-09-20-v2.md).
+**Historical scope:** [Delivery status and evidence](delivery-2026-09-20.md) · [Initial source-freeze receipt](results/two-day-delivery-2026-09-20/source-freeze.json). Superseded planning and authorization documents have been removed; the results and diagnostics they produced are kept in full. The comparison rules now in force are [baseline protocol revision 2](baseline-protocol-2026-09-20-v2.md).
 
 **Final native gate:** Original S1-IA best/855 baseline **0/5**; frozen dev8-selected candidate best/250 **0/5**. All 10 oracle-assisted development episodes ended at the native cumulative-force limit without grasping. **G1 failed**, so no success rerun, LightNav/GPT integration, or Place evaluation followed. The candidate completed 500 updates and passed independent full CPU restore/frozen-parameter verification, but offline RMSE improvement did not establish native Pick capability. Both panels' full raw evidence, S1/S2 checkpoints, and the selected candidate checkpoint have verified complete second copies. The two earlier infrastructure-only baseline launches remain separate from the evaluated denominators. Historical fixed-sentence 0/10 belongs to ordinary S1 best6000, not IA best855; see the [identity correction](results/two-day-delivery-2026-09-20/historical-identity-audit/receipt.json).
 
@@ -92,11 +96,11 @@ evidence in `results/` and `runs/`. See [log/README.md](log/README.md).
 | [fetch-pi05-author-migration.md](fetch-pi05-author-migration.md) | Author OpenPI π₀.₅ on Fetch: model contract, strict loading of 71 tensors, BF16/FP32 attribution |
 | [fetch-v8-native-capability.md](fetch-v8-native-capability.md) | **Frozen V8 native gate: 0/5.** Stop-loss executed; π₀.₅ TAPT training stopped for the week |
 
-## Proposals (not yet executed)
+## Feedback implementation
 
 | Document | What it proposes |
 |---|---|
-| [codebase-proposal-2026-09-21.md](codebase-proposal-2026-09-21.md) | Preparing the codebase for the feedback-system week: module status labelling, a `bvi/feedback/` subpackage, the SAC spawn-prior scan, and the measurement changes the current 16-plan panel needs before it can detect an improvement |
+| [feedback-workbench.md](feedback-workbench.md) | Implemented CPU structure, feedback modes/profiles/views, experiment table and remaining scan/pilot work |
 
 ## MS-HAB: the 16-plan paired panels (current)
 

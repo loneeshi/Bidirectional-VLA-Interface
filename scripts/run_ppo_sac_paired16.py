@@ -27,7 +27,8 @@ def select_plans(manifest):
     return rows
 
 
-def command(row, arm, output, checkpoints, bridge, authorization, initial_hash=None, goal_tools=False):
+def command(row, arm, output, checkpoints, bridge, authorization, initial_hash=None, goal_tools=False,
+            feedback_mode='evaluator', feedback_profile='raw_v0', hide_feedback=()):
     argv = [sys.executable, str(Path(__file__).with_name('run_coordinator.py')),
         '--paired-ppo-episode', '--seed', str(row['seed']), '--expected-plan-uid', row['plan_uid'],
         '--checkpoint-root', str(checkpoints), '--policy-type', 'rl_per_obj',
@@ -46,7 +47,15 @@ def command(row, arm, output, checkpoints, bridge, authorization, initial_hash=N
             '--request-cost-ceiling-usd', '0.00125', '--max-output-tokens', '2048',
             '--max-input-bytes', '512000', '--expected-initial-state-sha256', initial_hash]
         if goal_tools:
-            argv += ['--goal-tools', '--progress-feedback']
+            argv += ['--goal-tools']
+            if feedback_mode == 'continuous_progress':
+                argv += ['--progress-feedback']
+            elif feedback_mode != 'evaluator':
+                raise ValueError('Unknown feedback mode')
+            if feedback_profile != 'raw_v0':
+                argv += ['--feedback-profile', feedback_profile]
+            if hide_feedback:
+                argv += ['--hide-feedback', *sorted(hide_feedback)]
     else:
         raise ValueError('Unknown arm')
     return argv
@@ -76,12 +85,17 @@ def main():
     p.add_argument('--authorization-id',required=True)
     p.add_argument('--execute',action='store_true')
     p.add_argument('--goal-tools',action='store_true')
+    p.add_argument('--feedback-mode', choices=['evaluator','continuous_progress'], default='evaluator')
+    p.add_argument('--feedback-profile', choices=['raw_v0','object_v1','object_trajectory_v1'], default='raw_v0')
+    p.add_argument('--hide-feedback', nargs='+', default=[], choices=['images','trajectory','progress','structured_goals'])
     p.add_argument('--retry-infrastructure',action='store_true',help='Preserve failed attempts and retry them after a verified repair')
     p.add_argument('--repair-duplicate-seeds',type=int,nargs='+',
                    help='Retry only these GPT rows after verifying a duplicated-response failure; preserve prior attempts')
     p.add_argument('--max-new-per-arm',type=int,default=2,
                    help='Process at most this many new fixed and GPT rows, then checkpoint the chunk')
     a=p.parse_args()
+    if not a.goal_tools and (a.feedback_mode != 'evaluator' or a.feedback_profile != 'raw_v0' or a.hide_feedback):
+        p.error('Feedback variations require --goal-tools')
     selected=select_plans(json.loads(a.source_manifest.read_text()))
     if a.max_new_per_arm is not None and a.max_new_per_arm < 1:
         p.error('--max-new-per-arm must be positive')
@@ -98,6 +112,15 @@ def main():
     if path.exists() and state.get('goal_tools',False) != a.goal_tools:
         lock.unlink()
         raise ValueError('Changed planning interface requires a new batch directory')
+    presentation = dict(mode=a.feedback_mode, profile=a.feedback_profile, hide=sorted(a.hide_feedback))
+    legacy = dict(mode='evaluator', profile='raw_v0', hide=[])
+    if any('--progress-feedback' in attempt.get('argv', [])
+           for row in state['episodes'] for attempt in row.get('attempts', [])):
+        legacy['mode'] = 'continuous_progress'
+    if path.exists() and state.get('feedback_presentation', legacy) != presentation:
+        lock.unlink()
+        raise ValueError('Changed feedback setting requires a new batch directory')
+    state['feedback_presentation'] = presentation
     env=runtime_environment(OFFICIAL_MSHAB)
     env['MS_ASSET_DIR']='/home/pshuai/bvi-research/assets'
     env['PYTHONHASHSEED']='0'
@@ -150,7 +173,8 @@ def main():
                     state['status']='blocked_fixed_infrastructure';break
                 initial=json.loads((Path(fixed['attempts'][-1]['directory'])/'initial-state.json').read_text())
                 initial_hash=initial['state_sha256']
-            argv=command(row,row['arm'],dest,a.checkpoint_root,a.bridge_dir,a.authorization_id,initial_hash,a.goal_tools)
+            argv=command(row,row['arm'],dest,a.checkpoint_root,a.bridge_dir,a.authorization_id,initial_hash,a.goal_tools,
+                         a.feedback_mode,a.feedback_profile,a.hide_feedback)
             attempt=dict(directory=str(dest),argv=argv,status='running',started_unix=time.time())
             old.append(attempt);row['status']='running';save()
             started_by_arm[row['arm']]+=1

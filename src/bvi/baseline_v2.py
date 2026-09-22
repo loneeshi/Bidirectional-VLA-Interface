@@ -1,5 +1,7 @@
 """CPU contracts for v2 recovery choices and fixed evaluation accounting.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 These validators never execute a policy or mutate a benchmark task pointer.
 Runtime integration must advertise only physically implemented recovery tools.
 """

@@ -1,5 +1,7 @@
 """Causal S1-IA prompt switching that matches the frozen Pick training windows.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 Uses simulator predicates only for instruction selection; never claims learned
 feedback or changes the environment's native success/termination conditions.
 """

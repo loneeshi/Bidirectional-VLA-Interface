@@ -1,4 +1,7 @@
-"""Predeclared functional confirmation for same-key BF16 action clusters."""
+"""Predeclared functional confirmation for same-key BF16 action clusters.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 
 from __future__ import annotations
 

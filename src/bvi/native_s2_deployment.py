@@ -1,5 +1,7 @@
 """Reusable native24 S2 deployment adapter, independent of any transport.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The adapter owns request validation, explicit family/bank selection, queue
 invalidation, preprocessing, response postprocessing and response identities.
 A future Unix-socket/WebSocket service should wrap this class rather than

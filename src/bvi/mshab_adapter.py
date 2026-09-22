@@ -1,5 +1,7 @@
 """Single-environment MS-HAB integration using the pinned upstream wrappers.
 
+STATUS: active — environment
+
 The low-level policy and completion/target metadata use benchmark privileges.
 VLM images are captured from the *same* raw reset/step observations before the
 official depth wrapper discards RGB. No additional get_obs/get_info/evaluate

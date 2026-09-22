@@ -1,5 +1,7 @@
 """Build and validate held-out native24 wrong-handoff evidence.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 ``source_replay_verified`` is deliberately derived, not trusted as a naked
 boolean.  A case is replay verified only when a hash-bound replay record ties
 the exact parent trajectory and observation index to the exact NPZ bytes and

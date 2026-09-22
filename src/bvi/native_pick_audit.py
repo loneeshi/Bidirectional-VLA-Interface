@@ -1,4 +1,7 @@
-"""Observation-only diagnosis; never changes actions or success thresholds."""
+"""Observation-only diagnosis; never changes actions or success thresholds.
+
+STATUS: active — evaluation
+"""
 import numpy as np
 from bvi.s1_capability_gate import SEEDS
 

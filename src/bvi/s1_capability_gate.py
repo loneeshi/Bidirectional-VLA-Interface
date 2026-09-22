@@ -1,5 +1,7 @@
 """New S1 -> S2 admission contract; never authorizes the historical V8 pipeline.
 
+STATUS: frozen — historical training and diagnostics (retained)
+
 The evaluator must produce this report from archived native episode evidence.
 The launcher must separately verify the supplied checkpoint digest against disk.
 """

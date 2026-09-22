@@ -1,4 +1,7 @@
-"""Execute only a Fetch-trained pi05 checkpoint, with bounded action chunks."""
+"""Execute only a Fetch-trained pi05 checkpoint, with bounded action chunks.
+
+STATUS: frozen — historical training and diagnostics (retained)
+"""
 from collections import deque
 import io
 

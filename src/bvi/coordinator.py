@@ -1,5 +1,7 @@
 """Constrained, image-conditioned coordinator with an explicit paid-call budget.
 
+STATUS: active — organizer
+
 No credentials are read and no requests are made by importing this module.
 Transport injection makes the complete validation/logging path testable offline.
 The request cost ceiling is an operator-supplied conservative reservation, not
@@ -179,7 +181,15 @@ def parse_request(text: str, observation: Observation,
 
 class VLMCoordinator:
     def __init__(self, transport: VLMTransport, specs: Mapping[str, SkillSpec],
-                 logger: JsonlLogger, budget: APIBudget, tool_interface=False):
+                 logger: JsonlLogger, budget: APIBudget, tool_interface=False,
+                 feedback_profile='raw_v0', feedback_view=None, spawn_prior=None):
+        from .feedback import FeedbackView
+        from .feedback.digest import PROFILES
+        if feedback_profile not in PROFILES:
+            raise ValueError('Unknown feedback profile')
+        self.feedback_profile = feedback_profile
+        self.feedback_view = feedback_view or FeedbackView()
+        self.spawn_prior = spawn_prior
         self.tool_interface = tool_interface
         self.transport, self.specs, self.logger, self.budget = transport, specs, logger, budget
         self.calls_reserved = 0
@@ -197,7 +207,7 @@ class VLMCoordinator:
 
     def decide(self, observation: Observation,
                history: Sequence[SkillFeedback | Mapping[str, Any]] = ()) -> SkillRequest:
-        if not observation.images:
+        if self.feedback_view.images and not observation.images:
             raise ProtocolError("VLM coordination requires actual encoded camera images")
         for image in observation.images:
             image.validate()
@@ -215,6 +225,9 @@ class VLMCoordinator:
                    "image_order": [image.camera for image in observation.images],
                    "targets": observation.targets, "allowed_calls": observation.allowed_calls,
                    "skill_contracts": list(self.specs.values()), "feedback_history": list(history)}
+        from .feedback import summarize, apply_view
+        context['feedback_history'] = summarize(history, self.feedback_profile, self.spawn_prior)
+        context, visible_images = apply_view(context, observation.images, self.feedback_view)
         prompt = json.dumps(context, default=json_default, ensure_ascii=False, allow_nan=False)
         system = (
             "You coordinate a mobile manipulation simulator. Examine the supplied camera images "
@@ -237,13 +250,13 @@ class VLMCoordinator:
                        "not consume language, so the instruction remains logged interface context. "
                        "Use interface_version mshab-tool-family/1. These are heterogeneous backends; "
                        "feedback source labels distinguish benchmark rules from learned progress.")
-        vlm_request = VLMRequest(system, prompt, observation.images, schema,
+        vlm_request = VLMRequest(system, prompt, visible_images, schema,
                                  self.budget.max_output_tokens)
         # Bound request growth across feedback history and encoded images. This
         # is not a tokenizer or provider bill estimator; the operator must set a
         # conservative cost ceiling for the chosen model and image dimensions.
         input_bytes = len((system + prompt + json.dumps(schema)).encode("utf-8")) + sum(
-            4 * ((len(image.data) + 2) // 3) for image in observation.images)
+            4 * ((len(image.data) + 2) // 3) for image in visible_images)
         if input_bytes > self.budget.max_input_bytes:
             raise ProtocolError("Input exceeds the configured API byte budget")
         attempt_id = uuid.uuid4().hex
@@ -260,7 +273,7 @@ class VLMCoordinator:
                          images=[{"camera": image.camera, "media_type": image.media_type,
                                   "bytes": len(image.data),
                                   "sha256": hashlib.sha256(image.data).hexdigest()}
-                                 for image in observation.images])
+                                 for image in visible_images])
         self.calls_reserved += 1
         self.cost_reserved_usd += self.budget.request_cost_ceiling_usd
         try:
