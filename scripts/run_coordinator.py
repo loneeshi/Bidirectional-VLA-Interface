@@ -173,7 +173,7 @@ def main() -> None:
             or (args.navigation_policy == 'teleport' and not args.dry_run)
             or (not args.dry_run and (not args.organizer or args.model != 'gpt-5.6-luna'
                 or args.transport != 'bridge'
-                or args.max_calls != (20 if args.continuation_condition == 'C0' else 40)
+                or args.max_calls != (24 if args.continuation_condition == 'C0' else 40)
                 or args.max_output_tokens > 2048))):
         parser.error('Paired PPO study requires frozen official PPO/SAC and bounded fixed/GPT execution')
     if args.tool_family_interface and (args.dry_run or not args.organizer

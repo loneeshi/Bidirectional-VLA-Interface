@@ -11,8 +11,10 @@ plans times C0/C1/C2. It is not the final 16-plan panel and is not unseen test.
   sample/success/strict-success counts and uncertainty. It is not an optimum.
 
 All conditions use GPT-5.6 Luna, official PPO navigation and per-object SAC.
-C0 permits at most 20 GPT API requests, one opportunity for each of the twenty
-unique skill/target subtasks; C1/C2 retain up to 40 to permit bounded recovery.
+C0 permits at most 20 valid physical tool decisions, one opportunity for each
+of the twenty unique skill/target subtasks. Its API request cap is 24 so up to
+four schema/incomplete responses can be retried without granting any subtask a
+second physical attempt. C1/C2 retain up to 40 to permit bounded recovery.
 All use 7000 episode actions and 900 seconds. The executor owns
 the official per-invocation horizon: Navigate 500 actions and Pick/Place 200.
 Native completion returns early. GPT does not output `max_steps` and is called

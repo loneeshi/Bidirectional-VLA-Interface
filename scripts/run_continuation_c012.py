@@ -17,7 +17,10 @@ from run_ppo_sac_paired16 import select_plans
 
 def command(row, condition, output, checkpoints, bridge, authorization,
             manifest, prior, initial_hash=None):
-    max_calls = 20 if condition == 'C0' else 40
+    # C0 has only twenty admissible one-shot skill/target executions. Four
+    # additional API slots tolerate schema/incomplete responses without
+    # granting a second physical attempt for any subtask.
+    max_calls = 24 if condition == 'C0' else 40
     argv=[sys.executable,str(Path(__file__).with_name('run_coordinator.py')),
         '--paired-ppo-episode','--goal-tools','--organizer',
         '--continuation-condition',condition,'--seed',str(row['seed']),
@@ -63,7 +66,7 @@ def main():
     path=a.output/'panel-status.json'
     spec={'schema':'gpt-sac-continuation/1','plans':selected,
           'conditions':a.conditions,'max_calls_by_condition':{
-              c:(20 if c=='C0' else 40) for c in a.conditions},'max_steps':7000,
+              c:(24 if c=='C0' else 40) for c in a.conditions},'max_steps':7000,
           'prior_sha256':__import__('hashlib').sha256(a.prior.read_bytes()).hexdigest()}
     state=json.loads(path.read_text()) if path.exists() else {
         'specification':spec,'status':'running',

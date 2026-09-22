@@ -24,7 +24,7 @@ def test_all_conditions_have_identical_physical_budgets(tmp_path):
         assert len({cmd[cmd.index(flag)+1] for cmd in commands})==1
     assert commands[0][commands[0].index('--organizer-slice-steps')+1] == '500'
     calls=[cmd[cmd.index('--max-calls')+1] for cmd in commands]
-    assert calls == ['20','40','40']
+    assert calls == ['24','40','40']
 
 
 def test_coordinator_owns_atomic_attempt_directory(tmp_path):
