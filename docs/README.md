@@ -18,6 +18,8 @@ JSONL/NPY/视频和已停止的方法均不再作为当前文档维护；需要�
 
 ## 使用文档
 
+当前开发实验：[C2 feedback-guided recovery](../research/c2/README.md)。它位于独立研究目录，不替换下列已发布 baseline，也尚无最终 SR。
+
 | 文档 | 内容 |
 |---|---|
 | [architecture.md](architecture.md) | 当前评测代码的模块边界和数据流 |
