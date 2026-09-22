@@ -20,6 +20,7 @@ import time
 from bvi import (APIBudget, JsonlLogger, ProtocolError, Requirement, SerialRuntime,
                  SkillRequest, SkillStatus, VLMCoordinator)
 from bvi.mshab_adapter import OfficialRLSkill, jsonable, make_mshab_adapter, scalar
+from bvi.coordinator import ModelResponseError
 from bvi.providers import AnthropicTransport, OpenAITransport
 
 
@@ -373,6 +374,7 @@ def main() -> None:
     history = []
     decisions = 0
     api_calls = 0
+    invalid_requests = 0
     reason = "not_started"
     coordinator = None
     organizer = None
@@ -531,7 +533,20 @@ def main() -> None:
                         40 if args.paired_ppo_episode else spec.max_steps), timeout)
                 logger.emit("oracle_protocol_decision", request=request, vlm=False)
             else:
-                request = coordinator.decide(observation, history)
+                try:
+                    request = coordinator.decide(observation, history)
+                except ModelResponseError as exc:
+                    api_calls = coordinator.calls_reserved
+                    if not args.continuation_condition:
+                        raise
+                    invalid_requests += 1
+                    logger.emit('continuation_request_rejected', reason=str(exc),
+                                invalid_requests=invalid_requests,
+                                action='reobserve_and_request_again')
+                    if organizer:
+                        organizer.last_event={'status':'rejected','reason':str(exc),
+                                              'physical_steps':0}
+                    continue
                 api_calls = coordinator.calls_reserved
                 if organizer and request.skill == 'abort_task':
                     logger.emit('organizer_abort', request=request, task_success=False)
@@ -622,6 +637,7 @@ def main() -> None:
                        "reason": reason, "decisions": decisions,
                        "first_object_chain_success": completed_objects > 0,
                        "api_requests": api_calls, "vlm": not args.dry_run,
+                       "invalid_requests": invalid_requests,
                        "vlm_feedback_loop_observed": not args.dry_run and len(history) >= 2,
                        "task_success": (continuation_success if args.continuation_condition else
                                         bool(scalar(adapter.last_info.get("success", False)))),

@@ -29,3 +29,9 @@ def test_coordinator_owns_atomic_attempt_directory(tmp_path):
     parent.mkdir(parents=True)
     attempt=parent/'attempt-001'
     assert not attempt.exists()
+
+
+def test_continuation_source_handles_model_rejection_without_physics():
+    source=(Path(__file__).parents[1]/'scripts/run_coordinator.py').read_text()
+    assert "except ModelResponseError as exc:" in source
+    assert "continuation_request_rejected" in source
