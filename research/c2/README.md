@@ -4,9 +4,10 @@ This isolated research implementation does not replace the published three-setti
 `bvi-eval` baseline at the repository root. Run it in a separate Python process:
 both implementations intentionally use the `bvi` package name.
 
-See [experiment design](docs/sac-capability-experiment-design.md) for the three
-feedback variants, task selection, evidence boundaries and budgets. C2 is running
-on three development plans per variant; no final C2 success-rate claim is made.
+See the [current pose-capability design](docs/sac-capability-experiment-design.md)
+and [A1–A3 Pick result log](../../docs/log/2026-09-23-c2-sac-pose-capability.md).
+The earlier feedback-recovery implementation below is retained as historical
+development code; this experiment does not report a full-task success rate.
 
 ## Loop
 

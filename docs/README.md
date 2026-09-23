@@ -13,7 +13,9 @@ JSONL/NPY/视频和已停止的方法均不再作为当前文档维护；需要�
 | Teleport + SAC（官方固定任务顺序） | 16/16 | 0/16 | 21/80（26.25%） | 1.313 |
 
 - [三组实验记录](log/2026-09-21-tidyhouse-three-settings.md)
+- [C2 Pick 站位能力与 GPT 选择](log/2026-09-23-c2-sac-pose-capability.md)：冻结交接的开发实验，不是完整任务 SR
 - [机器可读摘要](results/tidyhouse-16/summary.json)
+- [C2 最小机器摘要](results/c2-pose-capability-2026-09-22/summary.json)
 - [负结果备忘](log/negative-results.md)
 
 ## 使用文档

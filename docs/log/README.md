@@ -7,6 +7,7 @@
 ## 当前日志
 
 - [TidyHouse 三设置：Fixed / GPT / Teleport](2026-09-21-tidyhouse-three-settings.md)
+- [C2 Pick 站位能力与 GPT 选择](2026-09-23-c2-sac-pose-capability.md)
 - [负结果备忘](negative-results.md)
 - [新实验模板](TEMPLATE.md)
 

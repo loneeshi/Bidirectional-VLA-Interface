@@ -1,0 +1,41 @@
+{
+  "schema": "c2-pose-capability-public-summary/1",
+  "unit": "frozen pre-Pick handoff",
+  "scene_scope": "one TidyHouse scene",
+  "source_evaluation_sha256": "4cd540ab7fbd0db2cc65abd181db48bcb6db2c2a58651f04e443e10ec280d69e",
+  "source_a2_summary_sha256": "9434542e0f31a8ea2add95da7a65a439ee86e044f29371362c652f3bb2209ef0",
+  "cases": [
+    {
+      "case": "seed19",
+      "c0_repeats": [true, true, true],
+      "candidate_results": {"C1": false, "C2": false, "C4": true, "C5": false, "C6": false},
+      "infeasible_candidates": ["C3"],
+      "gpt_choice": "C1"
+    },
+    {
+      "case": "seed8",
+      "c0_repeats": [false, false, false],
+      "candidate_results": {"C2": false, "C4": false, "C5": false, "C6": false},
+      "infeasible_candidates": ["C1", "C3"],
+      "gpt_choice": "C5"
+    },
+    {
+      "case": "seed4",
+      "c0_repeats": [false, false, false],
+      "candidate_results": {"C2": false, "C4": false, "C5": false, "C6": false},
+      "infeasible_candidates": ["C1", "C3"],
+      "gpt_choice": "C4"
+    },
+    {
+      "case": "seed9",
+      "c0_repeats": [false, false, false],
+      "candidate_results": {"C1": true, "C2": true, "C3": true, "C4": false, "C5": true, "C6": true},
+      "infeasible_candidates": [],
+      "gpt_choice": "C4"
+    }
+  ],
+  "excluded": [{"case": "seed10", "reason": "historical prefix diverged before handoff; no C0"}],
+  "a3_interpretation": "exploratory; full real inputs frozen after A2 outcomes",
+  "api": {"provider_attempts": 4, "input_tokens": 4682, "output_tokens": 195, "reserved_usd": 0.1, "actual_usd": null},
+  "lab_gpu_actual_cost": null
+}
