@@ -1,0 +1,12 @@
+{
+  "schema": "c2-pick-pre-sac-image-manifest/1",
+  "source_input_freeze_sha256": "02e6c63cdbeca0cedecfd8ea8b567a3467babf919d7d5450219b165ae9df5ffd",
+  "description": "Exact contact sheets supplied to the exploratory A3 model; images are before SAC, not action videos",
+  "images": [
+    {"path": "c2-pick-2026-09-23/seed9-fetch_head.png", "sha256": "17f80c5ab2f3e3f931a4629e28910ec320bda16f4bc5899a7cc3148fd67dbe7e", "bytes": 136735},
+    {"path": "c2-pick-2026-09-23/seed9-fetch_hand.png", "sha256": "eeab87a6c027b7404c70b637b8bf7cff3a55c8f7939aa41e52aa03dd8d11eb34", "bytes": 173769},
+    {"path": "c2-pick-2026-09-23/seed19-fetch_head.png", "sha256": "78b8e7868876144320202fd57cafb70f306e459a0942ab2a814b8a302e9c6b74", "bytes": 94459},
+    {"path": "c2-pick-2026-09-23/seed19-fetch_hand.png", "sha256": "aa8920e224bc17c1ec647ded195a3485ada3e2d275de1d5862652bc76ef0000b", "bytes": 138258}
+  ],
+  "videos": []
+}

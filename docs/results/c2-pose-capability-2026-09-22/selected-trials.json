@@ -1,0 +1,63 @@
+{
+  "schema": "c2-pose-capability-selected-trials/1",
+  "unit": "independent SAC run from a frozen pre-Pick handoff",
+  "strict_success_rule": "official MS-HAB Pick subtask predicate, not full-episode success",
+  "source": "selected fields from archived raw summary.json files; raw files remain outside this public repository",
+  "trials": [
+    {
+      "case": "seed9",
+      "candidate": "C0",
+      "source_run": "seed9-c0-repeat-073",
+      "source_summary_sha256": "b75ad19b7a18dcef60c6931f6f945f951855764468eb4b3d586deda8741f6716",
+      "strict_pick_success": false,
+      "sac_steps": 26,
+      "final_subtask_index": 1,
+      "held_object_at_end": false,
+      "cumulative_force_within_limit": false
+    },
+    {
+      "case": "seed9",
+      "candidate": "C1",
+      "source_run": "a2-seed9-C1-082",
+      "source_summary_sha256": "8c8c1ca4a85c59d4cce6a33e713aead72dd5067a965cc2d3b8b9517d0b5ea8f1",
+      "strict_pick_success": true,
+      "sac_steps": 39,
+      "final_subtask_index": 2,
+      "held_object_at_end": true,
+      "cumulative_force_within_limit": true
+    },
+    {
+      "case": "seed9",
+      "candidate": "C4",
+      "source_run": "a2-seed9-C4-085",
+      "source_summary_sha256": "5a985bd6d57e9547355245b8da10b14cdfa7dbac4f24ac9f1a26120e21d3e73f",
+      "strict_pick_success": false,
+      "sac_steps": 23,
+      "final_subtask_index": 1,
+      "held_object_at_end": false,
+      "cumulative_force_within_limit": false
+    },
+    {
+      "case": "seed19",
+      "candidate": "C1",
+      "source_run": "a2-seed19-C1-068",
+      "source_summary_sha256": "ae3f265a5c52944df413e8a20efd3711468b191542b0809b2827f3941e58911d",
+      "strict_pick_success": false,
+      "sac_steps": 13,
+      "final_subtask_index": 1,
+      "held_object_at_end": false,
+      "cumulative_force_within_limit": false
+    },
+    {
+      "case": "seed19",
+      "candidate": "C4",
+      "source_run": "a2-seed19-C4-070",
+      "source_summary_sha256": "d6837897373e7099b6cf82167d6f765ec9a13e875d2c305117aa11633704d294",
+      "strict_pick_success": true,
+      "sac_steps": 50,
+      "final_subtask_index": 2,
+      "held_object_at_end": true,
+      "cumulative_force_within_limit": true
+    }
+  ]
+}
