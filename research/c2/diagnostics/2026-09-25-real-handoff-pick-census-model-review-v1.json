@@ -1,0 +1,150 @@
+{
+  "schema": "bvi.real-handoff-model-review-comparison/1",
+  "reviewer_type": "model",
+  "model_name": "Claude",
+  "review_input": "original_blinded_contact_sheets_v1",
+  "model_review_sha256": "fd9a6e0a550a8298926f7c97c3b3ae3b7da2a924a9aad0edb6a901034d4a7122",
+  "baseline_summary_sha256": "2a5a9bd51fa9b9cdd2de254218185e8d6a40ea2fdb11457c0491c6b8460f3ae4",
+  "packet_sha256": "cb3cfe597d10b2babafc3ce9a25c0b92d649e4d039abf598ddafe925df6cabe2",
+  "all_failures": {
+    "matches": 11,
+    "total": 20,
+    "wilson_95": [
+      0.34208534245034233,
+      0.7418021417443759
+    ]
+  },
+  "model_classifiable_subset": {
+    "matches": 11,
+    "total": 14,
+    "wilson_95": [
+      0.524107694133997,
+      0.9242861328730683
+    ]
+  },
+  "model_unclassified": 6,
+  "human_review_agreement": null,
+  "measurement_limit": "Original sheets lacked TCP-distance trace, grasp-state trace, and a force y-axis. This comparison is a display-limited model diagnostic, not human agreement.",
+  "cases": [
+    {
+      "plan_position": 1,
+      "automatic_mechanism": "grasped_but_incomplete",
+      "model_mechanism": "grasped_but_incomplete",
+      "agree": true
+    },
+    {
+      "plan_position": 9,
+      "automatic_mechanism": "grasp_failure",
+      "model_mechanism": "arm_or_body_environment_collision",
+      "agree": false
+    },
+    {
+      "plan_position": 12,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 14,
+      "automatic_mechanism": "grasp_failure",
+      "model_mechanism": "unclassified",
+      "agree": false
+    },
+    {
+      "plan_position": 19,
+      "automatic_mechanism": "grasped_but_incomplete",
+      "model_mechanism": "grasped_but_incomplete",
+      "agree": true
+    },
+    {
+      "plan_position": 20,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 23,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 25,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 26,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 31,
+      "automatic_mechanism": "arm_or_body_environment_collision",
+      "model_mechanism": "arm_or_body_environment_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 34,
+      "automatic_mechanism": "grasp_failure",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": false
+    },
+    {
+      "plan_position": 37,
+      "automatic_mechanism": "not_reached",
+      "model_mechanism": "unclassified",
+      "agree": false
+    },
+    {
+      "plan_position": 39,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 42,
+      "automatic_mechanism": "not_reached",
+      "model_mechanism": "unclassified",
+      "agree": false
+    },
+    {
+      "plan_position": 51,
+      "automatic_mechanism": "not_reached",
+      "model_mechanism": "unclassified",
+      "agree": false
+    },
+    {
+      "plan_position": 55,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 57,
+      "automatic_mechanism": "approached_without_contact_timeout",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": false
+    },
+    {
+      "plan_position": 58,
+      "automatic_mechanism": "grasp_failure",
+      "model_mechanism": "unclassified",
+      "agree": false
+    },
+    {
+      "plan_position": 59,
+      "automatic_mechanism": "base_obstacle_collision",
+      "model_mechanism": "base_obstacle_collision",
+      "agree": true
+    },
+    {
+      "plan_position": 61,
+      "automatic_mechanism": "not_reached",
+      "model_mechanism": "unclassified",
+      "agree": false
+    }
+  ]
+}

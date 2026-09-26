@@ -1,0 +1,182 @@
+{
+  "schema": "bvi.real-handoff-model-review-comparison/1",
+  "reviewer_type": "model",
+  "model_name": "Claude",
+  "review_input": "second_blinded_contact_sheets_v2",
+  "context": "Cold-context sub-agent started in the same user session; same model family as round 1. The user reports it saw only the prompt and packet paths, opened all 20 PNGs, and did not see round-1 labels or prior comparisons. This is not an independent human review.",
+  "review_sha256": "82c1b16c000bfe4335577769109ef07765f16d6ca1af7ac4e6eff758bbfff3a9",
+  "packet_sha256": "b881664f639eb55f2123ef7f967abb396d5a0d2b5839dcef7d0a2d210824d21a",
+  "baseline_summary_sha256": "2a5a9bd51fa9b9cdd2de254218185e8d6a40ea2fdb11457c0491c6b8460f3ae4",
+  "template_fields_valid": true,
+  "all_failures": {
+    "automatic_second_matches": 19,
+    "first_second_matches": 10,
+    "total": 20,
+    "second_model_unclassified": 1
+  },
+  "human_review_agreement": null,
+  "plan031_note": "Only non-target contact pair shown is gripper_link | body. CensusContactMeter source constructs pairs exclusively between robot links and external scene actors or non-robot articulations, so body is external in this measurement protocol. This owner relationship was not explained on the blind sheet; second model abstention is reasonable. Automatic arm_or_body_environment_collision is retained.",
+  "interpretation": "Posthoc same-model display diagnostic; v2 adds fields absent from v1. Do not treat 19/20 as independent reviewer accuracy or human agreement. Automatic baseline labels and denominators are unchanged.",
+  "cases": [
+    {
+      "plan_position": 1,
+      "automatic_mechanism": "grasped_but_incomplete",
+      "first_model_mechanism": "grasped_but_incomplete",
+      "second_model_mechanism": "grasped_but_incomplete",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 9,
+      "automatic_mechanism": "grasp_failure",
+      "first_model_mechanism": "arm_or_body_environment_collision",
+      "second_model_mechanism": "grasp_failure",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 12,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 14,
+      "automatic_mechanism": "grasp_failure",
+      "first_model_mechanism": "unclassified",
+      "second_model_mechanism": "grasp_failure",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 19,
+      "automatic_mechanism": "grasped_but_incomplete",
+      "first_model_mechanism": "grasped_but_incomplete",
+      "second_model_mechanism": "grasped_but_incomplete",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 20,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 23,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 25,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 26,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 31,
+      "automatic_mechanism": "arm_or_body_environment_collision",
+      "first_model_mechanism": "arm_or_body_environment_collision",
+      "second_model_mechanism": "unclassified",
+      "automatic_second_agree": false,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 34,
+      "automatic_mechanism": "grasp_failure",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "grasp_failure",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 37,
+      "automatic_mechanism": "not_reached",
+      "first_model_mechanism": "unclassified",
+      "second_model_mechanism": "not_reached",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 39,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 42,
+      "automatic_mechanism": "not_reached",
+      "first_model_mechanism": "unclassified",
+      "second_model_mechanism": "not_reached",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 51,
+      "automatic_mechanism": "not_reached",
+      "first_model_mechanism": "unclassified",
+      "second_model_mechanism": "not_reached",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 55,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 57,
+      "automatic_mechanism": "approached_without_contact_timeout",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "approached_without_contact_timeout",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 58,
+      "automatic_mechanism": "grasp_failure",
+      "first_model_mechanism": "unclassified",
+      "second_model_mechanism": "grasp_failure",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    },
+    {
+      "plan_position": 59,
+      "automatic_mechanism": "base_obstacle_collision",
+      "first_model_mechanism": "base_obstacle_collision",
+      "second_model_mechanism": "base_obstacle_collision",
+      "automatic_second_agree": true,
+      "first_second_agree": true
+    },
+    {
+      "plan_position": 61,
+      "automatic_mechanism": "not_reached",
+      "first_model_mechanism": "unclassified",
+      "second_model_mechanism": "not_reached",
+      "automatic_second_agree": true,
+      "first_second_agree": false
+    }
+  ]
+}

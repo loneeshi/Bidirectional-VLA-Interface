@@ -1,0 +1,365 @@
+{
+  "schema": "bvi.real-handoff-pick-census-summary/1",
+  "scope": "first native PPO Navigate to official SAC Pick only",
+  "planned_roster": 120,
+  "attempted_plans": 64,
+  "handoff_acquisition_wilson_95": [
+    0.8500251490779133,
+    0.9754287986033819
+  ],
+  "navigation_failed": 3,
+  "navigation_already_satisfied_at_reset": 1,
+  "infrastructure_censored": 0,
+  "valid_handoffs": 60,
+  "strict_pick_successes": 40,
+  "strict_pick_success_wilson_95": [
+    0.5405686645211968,
+    0.7727073847647731
+  ],
+  "baseline_failures": 20,
+  "repeatable_failures": 14,
+  "failure_reproducibility_wilson_95": [
+    0.4810271816464765,
+    0.8545227551323956
+  ],
+  "mechanism_among_repeatable_failures": {
+    "approached_without_contact_timeout": {
+      "count": 1,
+      "wilson_95": [
+        0.012722215247890939,
+        0.31468704424151117
+      ]
+    },
+    "base_obstacle_collision": {
+      "count": 6,
+      "wilson_95": [
+        0.21380798904474121,
+        0.6740935542034926
+      ]
+    },
+    "grasp_failure": {
+      "count": 3,
+      "wilson_95": [
+        0.07571386712693182,
+        0.47589230586600295
+      ]
+    },
+    "not_reached": {
+      "count": 4,
+      "wilson_95": [
+        0.11721378644576919,
+        0.5464908432989318
+      ]
+    }
+  },
+  "unclassified_among_repeatable_failures": 0,
+  "automatic_human_agreement": null,
+  "mechanism_by_official_termination": {
+    "approached_without_contact_timeout": {
+      "pick_horizon_exhausted": 1
+    },
+    "arm_or_body_environment_collision": {
+      "cumulative_force_limit": 1
+    },
+    "base_obstacle_collision": {
+      "cumulative_force_limit": 7,
+      "pick_horizon_exhausted": 1
+    },
+    "grasp_failure": {
+      "pick_horizon_exhausted": 2,
+      "cumulative_force_limit": 2
+    },
+    "grasped_but_incomplete": {
+      "pick_horizon_exhausted": 2
+    },
+    "not_reached": {
+      "pick_horizon_exhausted": 4
+    },
+    "strict_success": {
+      "strict_success": 40
+    }
+  },
+  "by_scene": {
+    "v3_sc3_staging_00.scene_instance.json": {
+      "grasp_failure": 1,
+      "strict_success": 2,
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_01.scene_instance.json": {
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_02.scene_instance.json": {
+      "strict_success": 4,
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_03.scene_instance.json": {
+      "approached_without_contact_timeout": 1
+    },
+    "v3_sc3_staging_04.scene_instance.json": {
+      "strict_success": 3
+    },
+    "v3_sc3_staging_05.scene_instance.json": {
+      "strict_success": 1,
+      "grasp_failure": 1
+    },
+    "v3_sc3_staging_06.scene_instance.json": {
+      "strict_success": 1,
+      "arm_or_body_environment_collision": 1
+    },
+    "v3_sc3_staging_07.scene_instance.json": {
+      "strict_success": 3,
+      "not_reached": 2
+    },
+    "v3_sc3_staging_08.scene_instance.json": {
+      "strict_success": 1
+    },
+    "v3_sc3_staging_09.scene_instance.json": {
+      "strict_success": 3
+    },
+    "v3_sc3_staging_10.scene_instance.json": {
+      "strict_success": 3,
+      "not_reached": 1,
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_11.scene_instance.json": {
+      "strict_success": 5
+    },
+    "v3_sc3_staging_12.scene_instance.json": {
+      "strict_success": 2,
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_13.scene_instance.json": {
+      "strict_success": 1
+    },
+    "v3_sc3_staging_14.scene_instance.json": {
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_15.scene_instance.json": {
+      "grasp_failure": 1,
+      "strict_success": 2
+    },
+    "v3_sc3_staging_16.scene_instance.json": {
+      "strict_success": 2,
+      "not_reached": 1
+    },
+    "v3_sc3_staging_17.scene_instance.json": {
+      "strict_success": 3,
+      "grasp_failure": 1
+    },
+    "v3_sc3_staging_18.scene_instance.json": {
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_19.scene_instance.json": {
+      "grasped_but_incomplete": 1,
+      "base_obstacle_collision": 1
+    },
+    "v3_sc3_staging_20.scene_instance.json": {
+      "grasped_but_incomplete": 1,
+      "strict_success": 4
+    }
+  },
+  "by_first_pick_object_category": {
+    "002_master_chef_can": {
+      "strict_success": 4,
+      "base_obstacle_collision": 1
+    },
+    "003_cracker_box": {
+      "strict_success": 3,
+      "arm_or_body_environment_collision": 1,
+      "not_reached": 3,
+      "base_obstacle_collision": 1
+    },
+    "004_sugar_box": {
+      "strict_success": 5,
+      "grasped_but_incomplete": 1,
+      "base_obstacle_collision": 2,
+      "not_reached": 1
+    },
+    "005_tomato_soup_can": {
+      "strict_success": 6,
+      "grasp_failure": 1,
+      "approached_without_contact_timeout": 1
+    },
+    "007_tuna_fish_can": {
+      "strict_success": 6
+    },
+    "008_pudding_box": {
+      "grasped_but_incomplete": 1,
+      "strict_success": 3,
+      "grasp_failure": 1,
+      "base_obstacle_collision": 1
+    },
+    "009_gelatin_box": {
+      "strict_success": 3,
+      "base_obstacle_collision": 2
+    },
+    "010_potted_meat_can": {
+      "base_obstacle_collision": 1,
+      "strict_success": 2,
+      "grasp_failure": 1
+    },
+    "024_bowl": {
+      "strict_success": 8,
+      "grasp_failure": 1
+    }
+  },
+  "handoff_covariates_by_outcome_descriptive_only": {
+    "strict_success": {
+      "base_target_horizontal_distance_m": {
+        "observed": 40,
+        "missing": 0,
+        "mean": 1.4301050872578756,
+        "median": 1.3821357399158711
+      },
+      "target_bearing_left_rad": {
+        "observed": 40,
+        "missing": 0,
+        "mean": 0.1382281797414426,
+        "median": 0.07392553937100743
+      },
+      "tcp_target_distance_m": {
+        "observed": 40,
+        "missing": 0,
+        "mean": 1.143372583528902,
+        "median": 1.1596549133400407
+      },
+      "head_target_segmentation_pixels": {
+        "observed": 40,
+        "missing": 0,
+        "mean": 5.65,
+        "median": 2.0
+      },
+      "target_height_m": {
+        "observed": 40,
+        "missing": 0,
+        "mean": 0.688566043227911,
+        "median": 0.7559433281421661
+      }
+    },
+    "baseline_failure": {
+      "base_target_horizontal_distance_m": {
+        "observed": 20,
+        "missing": 0,
+        "mean": 1.5501255806892782,
+        "median": 1.4677921226805402
+      },
+      "target_bearing_left_rad": {
+        "observed": 20,
+        "missing": 0,
+        "mean": 0.0875770876893483,
+        "median": 0.06943574127593966
+      },
+      "tcp_target_distance_m": {
+        "observed": 20,
+        "missing": 0,
+        "mean": 1.3082677666338545,
+        "median": 1.269592635177308
+      },
+      "head_target_segmentation_pixels": {
+        "observed": 20,
+        "missing": 0,
+        "mean": 6.4,
+        "median": 5.5
+      },
+      "target_height_m": {
+        "observed": 20,
+        "missing": 0,
+        "mean": 0.5283461157232523,
+        "median": 0.5091488063335419
+      }
+    }
+  },
+  "source_furniture_type_missing": 0,
+  "by_source_furniture_type": {
+    "frl_apartment_chair_01": {
+      "strict_success": 11,
+      "grasped_but_incomplete": 1,
+      "base_obstacle_collision": 4,
+      "not_reached": 3
+    },
+    "frl_apartment_sofa": {
+      "grasped_but_incomplete": 1,
+      "base_obstacle_collision": 2,
+      "strict_success": 6,
+      "not_reached": 1
+    },
+    "frl_apartment_table_01": {
+      "grasp_failure": 2,
+      "base_obstacle_collision": 1,
+      "strict_success": 3
+    },
+    "frl_apartment_table_02": {
+      "strict_success": 4
+    },
+    "frl_apartment_tvstand": {
+      "base_obstacle_collision": 1,
+      "arm_or_body_environment_collision": 1,
+      "approached_without_contact_timeout": 1
+    },
+    "kitchen_counter": {
+      "strict_success": 16,
+      "grasp_failure": 2
+    }
+  },
+  "not_a_complete_task_success_measure": true,
+  "protocol_amendment": "stochastic_replay_v1",
+  "mechanism_among_all_natural_baseline_failures": {
+    "approached_without_contact_timeout": {
+      "count": 1,
+      "wilson_95": [
+        0.008881448800795402,
+        0.23613119344674205
+      ]
+    },
+    "arm_or_body_environment_collision": {
+      "count": 1,
+      "wilson_95": [
+        0.008881448800795402,
+        0.23613119344674205
+      ]
+    },
+    "base_obstacle_collision": {
+      "count": 8,
+      "wilson_95": [
+        0.21880653237281708,
+        0.6134184992377468
+      ]
+    },
+    "grasp_failure": {
+      "count": 4,
+      "wilson_95": [
+        0.08065766257979809,
+        0.4160174322518936
+      ]
+    },
+    "grasped_but_incomplete": {
+      "count": 2,
+      "wilson_95": [
+        0.027866481213768224,
+        0.3010336452284873
+      ]
+    },
+    "not_reached": {
+      "count": 4,
+      "wilson_95": [
+        0.08065766257979809,
+        0.4160174322518936
+      ]
+    }
+  },
+  "unstable_replay_failures": {
+    "count": 6,
+    "wilson_95": [
+      0.1454772448676043,
+      0.5189728183535235
+    ]
+  },
+  "replay_agreement": {
+    "denominator": 20,
+    "official_termination_reason": 16,
+    "mechanism": 16,
+    "terminal_step": 14
+  },
+  "failure_mechanism_direction_admissible": true,
+  "unstable_or_unclassified_failures": 6
+}
