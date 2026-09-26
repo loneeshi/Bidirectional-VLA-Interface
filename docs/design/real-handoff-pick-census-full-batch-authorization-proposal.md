@@ -1,6 +1,6 @@
 # 真实导航交接 SAC Pick：完整批次续跑申请
 
-**状态：用户于 2026-09-25 回复“授权”，批准下述完整批次范围；批次已执行，见[结果报告](../diagnostics/2026-09-25-real-handoff-pick-census-result.md)。** [前 12 计划预检](../diagnostics/2026-09-25-real-handoff-pick-first12-amended.md)已在实验室 GPU1 完成，按已批准的[复跑门修订](real-handoff-pick-census-replay-amendment-proposal.md)统计。此申请仅覆盖固定清单剩余计划的位置 12–119，不重抽、重排或加入 seed4／8／9 等手挑起点。
+**状态：用户于 2026-09-25 回复“授权”，批准下述完整批次范围；批次已执行，见[结果报告](../../research/c2/diagnostics/2026-09-25-real-handoff-pick-census-result.md)。** [前 12 计划预检](../../research/c2/diagnostics/2026-09-25-real-handoff-pick-first12-amended.md)已在实验室 GPU1 完成，按已批准的[复跑门修订](real-handoff-pick-census-replay-amendment-proposal.md)统计。此申请仅覆盖固定清单剩余计划的位置 12–119，不重抽、重排或加入 seed4／8／9 等手挑起点。
 
 ## 拟申请的执行范围
 

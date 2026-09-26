@@ -1,6 +1,6 @@
 # 真实导航交接 SAC Pick 基线普查：60 个交接
 
-**状态：固定清单基线采集与自动分类完成；独立人工盲审待补。** 按[运行前设计](../docs/real-handoff-pick-baseline-census-experiment-design.md)、获批的[复跑门修订](../docs/real-handoff-pick-census-replay-amendment-proposal.md)和[完整批次授权](../docs/real-handoff-pick-census-full-batch-authorization-proposal.md)执行。只跑官方 PPO Navigate 后的首次官方 SAC Pick；没有手挑 seed、teleport、底盘干预、GPT、Place、训练或候选扫描。结果仅对应首次 Pick，不是完整 TidyHouse 任务成功率。
+**状态：固定清单基线采集与自动分类完成；独立人工盲审待补。** 按[运行前设计](../../../docs/design/real-handoff-pick-baseline-census-experiment-design.md)、获批的[复跑门修订](../../../docs/design/real-handoff-pick-census-replay-amendment-proposal.md)和[完整批次授权](../../../docs/design/real-handoff-pick-census-full-batch-authorization-proposal.md)执行。只跑官方 PPO Navigate 后的首次官方 SAC Pick；没有手挑 seed、teleport、底盘干预、GPT、Place、训练或候选扫描。结果仅对应首次 Pick，不是完整 TidyHouse 任务成功率。
 
 ## 样本与基线结果
 

@@ -1,6 +1,6 @@
 # 真实交接 Pick 救回扫描：GPU1 双起点预检（2026-09-26 UTC）
 
-**状态：预检完成；本文记录预检结束时的判定。** 后续 14 起点主批及确认复跑已完成，见[主批结果](2026-09-26-real-handoff-pick-rescue-main.md)。本报告执行的是[第二步实验设计](../docs/real-handoff-pick-rescue-upper-bound-experiment-design.md)的运行门 1–2，只检查位置 25（底盘撞障碍）、37（够不到）的 26 个固定条件。没有 GPT、训练、GPU0、RunPod 计算或手工改写底盘位姿。原普查基线仍为首次 Pick 严格成功 40/60；本文不修改该分子分母。
+**状态：预检完成；本文记录预检结束时的判定。** 后续 14 起点主批及确认复跑已完成，见[主批结果](2026-09-26-real-handoff-pick-rescue-main.md)。本报告执行的是[第二步实验设计](../../../docs/design/real-handoff-pick-rescue-upper-bound-experiment-design.md)的运行门 1–2，只检查位置 25（底盘撞障碍）、37（够不到）的 26 个固定条件。没有 GPT、训练、GPU0、RunPod 计算或手工改写底盘位姿。原普查基线仍为首次 Pick 严格成功 40/60；本文不修改该分子分母。
 
 ## 冻结配置与准入
 

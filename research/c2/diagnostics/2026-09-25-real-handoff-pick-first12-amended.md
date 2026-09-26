@@ -1,6 +1,6 @@
 # 真实导航交接 SAC Pick：前 12 计划预检（修订复跑门）
 
-**状态：前 12 计划完成；完整 40–60 交接批次未获授权、未启动。** 原始[实验设计](../docs/real-handoff-pick-baseline-census-experiment-design.md)和用户于 2026-09-25 批准的[复跑门修订](../docs/real-handoff-pick-census-replay-amendment-proposal.md)共同规定本次统计口径。固定 120 计划清单按首个 Navigate UID 的字面字典序取样；本次仅尝试位置 0–11，未替换任何计划。官方 PPO Navigate 后接官方 SAC Pick，不运行 Place、GPT、候选站位或训练。
+**状态：前 12 计划完成；完整 40–60 交接批次未获授权、未启动。** 原始[实验设计](../../../docs/design/real-handoff-pick-baseline-census-experiment-design.md)和用户于 2026-09-25 批准的[复跑门修订](../../../docs/design/real-handoff-pick-census-replay-amendment-proposal.md)共同规定本次统计口径。固定 120 计划清单按首个 Navigate UID 的字面字典序取样；本次仅尝试位置 0–11，未替换任何计划。官方 PPO Navigate 后接官方 SAC Pick，不运行 Place、GPT、候选站位或训练。
 
 ## 首段结果
 
@@ -34,4 +34,4 @@
 
 首段实际累计 915.1961/3600 GPU1 进程秒，包含此前所有接口诊断和两次未产出新 Pick 结论的启动/重试；最终 12 计划批次的 517.558 秒包含复制的旧位置 0、1 回执，故没有重复加入实际累计。新最终批次位置 2–11 实耗 395.7445 秒。GPU1 收尾 15 MiB、0% 利用率；付费模型 API 0、训练 0、新 RunPod 资源 0。实验室单价、币种、账单与货币金额未知，未记为零。历史 RunPod 持久盘仍单列跟踪，详情见[独立账本](../../../../../BVI-research-plan-2026-09-14/finance/ledger-real-handoff-pick-census-20260924.json)。
 
-首段预检已完成，但 2 例自然失败中 1 例复跑不稳定；完整批次即使继续到 40–60 交接，也须按修订口径并列报告自然结果与稳定子集。完整批次的另行授权和资源上限见[续跑申请](../docs/real-handoff-pick-census-full-batch-authorization-proposal.md)。
+首段预检已完成，但 2 例自然失败中 1 例复跑不稳定；完整批次即使继续到 40–60 交接，也须按修订口径并列报告自然结果与稳定子集。完整批次的另行授权和资源上限见[续跑申请](../../../docs/design/real-handoff-pick-census-full-batch-authorization-proposal.md)。

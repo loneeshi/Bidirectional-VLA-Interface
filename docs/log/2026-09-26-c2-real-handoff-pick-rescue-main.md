@@ -1,6 +1,6 @@
 # C2 真实交接 Pick 救回主扫描（2026-09-26 UTC）
 
-实验单位是**一次真实 PPO Navigate→SAC Pick 交接上的一个固定条件**：从同一交接快照还原后，要么不做动作（C0），要么先真实执行一个底盘动作，然后续跑官方 SAC Pick。本文报告 C2 第二步：在不用 GPT 的情况下，普查中 14 个可重复失败有多少能被固定底盘动作救回。它测的是**有限动作库的救回机会**，不是某个在线策略的成功率。设计见[救回上限扫描设计](../../research/c2/docs/real-handoff-pick-rescue-upper-bound-experiment-design.md)，接口预检见[预检日志](2026-09-26-c2-real-handoff-pick-rescue-preflight.md)，完整逐起点判定与证据见[主批结果报告](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md)。原始轨迹与回执保存在实验工作区，未上传 GitHub。
+实验单位是**一次真实 PPO Navigate→SAC Pick 交接上的一个固定条件**：从同一交接快照还原后，要么不做动作（C0），要么先真实执行一个底盘动作，然后续跑官方 SAC Pick。本文报告 C2 第二步：在不用 GPT 的情况下，普查中 14 个可重复失败有多少能被固定底盘动作救回。它测的是**有限动作库的救回机会**，不是某个在线策略的成功率。设计见[救回上限扫描设计](../design/real-handoff-pick-rescue-upper-bound-experiment-design.md)，接口预检见[预检日志](2026-09-26-c2-real-handoff-pick-rescue-preflight.md)，完整逐起点判定与证据见[主批结果报告](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md)。原始轨迹与回执保存在实验工作区，未上传 GitHub。
 
 | 指标 | 结果 |
 |---|---:|

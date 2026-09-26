@@ -69,4 +69,4 @@
 ### 下一步 / TODO
 
 - [ ] 独立人工盲审：用 `blinded-review-full.zip` 完成 20 例标注后生成人工附表与一致率。在此之前，自动标签为主分类，一致率记为缺失。
-- [ ] 第二步救回上限扫描：按[运行前设计](../../research/c2/docs/real-handoff-pick-rescue-upper-bound-experiment-design.md)冻结并申请授权。
+- [ ] 第二步救回上限扫描：按[运行前设计](../design/real-handoff-pick-rescue-upper-bound-experiment-design.md)冻结并申请授权。

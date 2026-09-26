@@ -1,6 +1,6 @@
 # 真实导航交接 SAC Pick 普查：首段预检停止记录
 
-日期：2026-09-25 UTC。执行依据：[运行前设计](../docs/real-handoff-pick-baseline-census-experiment-design.md)。本记录只报告首段 12 计划的预检；40–60 个有效交接的完整普查没有启动。
+日期：2026-09-25 UTC。执行依据：[运行前设计](../../../docs/design/real-handoff-pick-baseline-census-experiment-design.md)。本记录只报告首段 12 计划的预检；40–60 个有效交接的完整普查没有启动。
 
 ## 冻结来源和执行范围
 

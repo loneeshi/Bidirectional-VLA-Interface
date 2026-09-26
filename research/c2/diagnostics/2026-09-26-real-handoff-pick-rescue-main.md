@@ -1,6 +1,6 @@
 # 真实交接 Pick 救回空间：14 起点主扫描结果（2026-09-26 UTC）
 
-**状态：预检、主扫描、全部命中确认复跑及独立审计完成。** 本实验执行[冻结设计](../docs/real-handoff-pick-rescue-upper-bound-experiment-design.md)的第二步：对真实 PPO Navigate→SAC Pick 交接中 14 个可重复失败，在同一 episode 内先真实执行一项固定底盘动作，再按官方严格 Pick 终局判定。它测量当前 11 项有限动作库的救回机会；没有使用 GPT、训练、GPU0 或 RunPod 计算。
+**状态：预检、主扫描、全部命中确认复跑及独立审计完成。** 本实验执行[冻结设计](../../../docs/design/real-handoff-pick-rescue-upper-bound-experiment-design.md)的第二步：对真实 PPO Navigate→SAC Pick 交接中 14 个可重复失败，在同一 episode 内先真实执行一项固定底盘动作，再按官方严格 Pick 终局判定。它测量当前 11 项有限动作库的救回机会；没有使用 GPT、训练、GPU0 或 RunPod 计算。
 
 ## 主结论与判定边界
 

@@ -15,6 +15,8 @@
 - [负结果备忘](negative-results.md)
 - [新实验模板](TEMPLATE.md)
 
+有日志的实验设计见 [docs/design/](../design/README.md)。
+
 ## 规则
 
 1. 一个 setting 对应一个编号实验；共享面板可在文件开头增加总表。

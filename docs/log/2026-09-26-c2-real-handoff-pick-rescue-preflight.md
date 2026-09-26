@@ -1,6 +1,6 @@
 # C2 真实交接 Pick 救回扫描：双起点预检（2026-09-26 UTC）
 
-实验单位是**一次真实 PPO Navigate→SAC Pick 交接上的一个固定条件**：从同一交接快照还原后，要么不做动作（C0），要么先真实执行一个底盘动作，然后续跑官方 SAC Pick。本预检只检查接口能否执行，不计算救回比例。它是 C2 第二步[救回上限扫描](../../research/c2/docs/real-handoff-pick-rescue-upper-bound-experiment-design.md)的运行门 1–2；主批结果见[主扫描日志](2026-09-26-c2-real-handoff-pick-rescue-main.md)。逐条件结果、修复和证据见[预检报告](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-preflight.md)。原始轨迹与回执保存在实验工作区，未上传 GitHub。
+实验单位是**一次真实 PPO Navigate→SAC Pick 交接上的一个固定条件**：从同一交接快照还原后，要么不做动作（C0），要么先真实执行一个底盘动作，然后续跑官方 SAC Pick。本预检只检查接口能否执行，不计算救回比例。它是 C2 第二步[救回上限扫描](../design/real-handoff-pick-rescue-upper-bound-experiment-design.md)的运行门 1–2；主批结果见[主扫描日志](2026-09-26-c2-real-handoff-pick-rescue-main.md)。逐条件结果、修复和证据见[预检报告](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-preflight.md)。原始轨迹与回执保存在实验工作区，未上传 GitHub。
 
 ## 实验 #001：位置 25、37 的 26 条件接口预检
 

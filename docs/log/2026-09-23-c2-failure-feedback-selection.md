@@ -1,6 +1,6 @@
 # C2 结构化失败反馈与 Pick 站位选择（2026-09-23 UTC）
 
-本批问：同一个 C0 Pick 失败后，只增加一张从真实 C0 记录确定性生成的失败卡片，GPT 会不会改选新站位，并因此选中更多官方严格 Pick 成功候选？这是同一场景三个状态的探索性**离线选择**，不是失败后的在线恢复或完整任务成功率。候选 SAC 结果来自各自独立重建的原交接状态。[设计](../../research/c2/docs/failure-feedback-selection-experiment-design.md)、[A1–A3 原记录](2026-09-23-c2-sac-pose-capability.md)和[机器摘要](../results/c2-failure-feedback-selection-2026-09-23/summary.json)给出边界与数字。
+本批问：同一个 C0 Pick 失败后，只增加一张从真实 C0 记录确定性生成的失败卡片，GPT 会不会改选新站位，并因此选中更多官方严格 Pick 成功候选？这是同一场景三个状态的探索性**离线选择**，不是失败后的在线恢复或完整任务成功率。候选 SAC 结果来自各自独立重建的原交接状态。[设计](../design/failure-feedback-selection-experiment-design.md)、[A1–A3 原记录](2026-09-23-c2-sac-pose-capability.md)和[机器摘要](../results/c2-failure-feedback-selection-2026-09-23/summary.json)给出边界与数字。
 
 ## 实验 #004：B0 基础反馈；实验 #005：B1 结构化失败反馈
 

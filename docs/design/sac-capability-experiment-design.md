@@ -44,4 +44,4 @@
 
 ## 记录与解释边界
 
-原始状态/RNG、源码/checkpoint/hash、C0 三次轨迹、每个候选的准入与 SAC 结果、GPT 完整输入输出以及实际资源用量均落盘。严格 Pick 与曾抓住物体、接近目标、整集成功分别报告。所有阶段性进展、异常和数值结果按 [`docs/log/TEMPLATE.md`](../../../docs/log/TEMPLATE.md) 的“问题—配置—结果—观察与结论—下一步”结构写入 result，不追加到本设计。
+原始状态/RNG、源码/checkpoint/hash、C0 三次轨迹、每个候选的准入与 SAC 结果、GPT 完整输入输出以及实际资源用量均落盘。严格 Pick 与曾抓住物体、接近目标、整集成功分别报告。所有阶段性进展、异常和数值结果按 [`docs/log/TEMPLATE.md`](../log/TEMPLATE.md) 的“问题—配置—结果—观察与结论—下一步”结构写入 result，不追加到本设计。

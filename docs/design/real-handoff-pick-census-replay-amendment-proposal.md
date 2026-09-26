@@ -1,6 +1,6 @@
 # 真实导航交接 SAC Pick 普查：快照复跑门修订提案
 
-**状态：2026-09-25 用户回复“批准”，批准本修订下的前 12 计划续跑；完整批次仍未授权。** 原协议见[运行前设计](real-handoff-pick-baseline-census-experiment-design.md)；接口诊断与原始回执见[首段预检记录](../diagnostics/2026-09-25-real-handoff-pick-preflight.md)。本修订只修改“复跑不一致时是否停止采样、如何报告失败机制”两处；其它冻结条件不变。
+**状态：2026-09-25 用户回复“批准”，批准本修订下的前 12 计划续跑；完整批次仍未授权。** 原协议见[运行前设计](real-handoff-pick-baseline-census-experiment-design.md)；接口诊断与原始回执见[首段预检记录](../../research/c2/diagnostics/2026-09-25-real-handoff-pick-preflight.md)。本修订只修改“复跑不一致时是否停止采样、如何报告失败机制”两处；其它冻结条件不变。
 
 ## 修订理由和证据
 
