@@ -1,12 +1,17 @@
 {
   "schema": "c2-pick-pre-sac-image-manifest/1",
   "source_input_freeze_sha256": "02e6c63cdbeca0cedecfd8ea8b567a3467babf919d7d5450219b165ae9df5ffd",
-  "description": "Exact contact sheets supplied to the exploratory A3 model; images are before SAC, not action videos",
+  "description": "A3 pre-SAC contact sheets and separate seed4 Oracle-SAC and fixed-base failure videos rendered from recorded per-action cameras",
   "images": [
     {"path": "c2-pick-2026-09-23/seed9-fetch_head.png", "sha256": "17f80c5ab2f3e3f931a4629e28910ec320bda16f4bc5899a7cc3148fd67dbe7e", "bytes": 136735},
     {"path": "c2-pick-2026-09-23/seed9-fetch_hand.png", "sha256": "eeab87a6c027b7404c70b637b8bf7cff3a55c8f7939aa41e52aa03dd8d11eb34", "bytes": 173769},
     {"path": "c2-pick-2026-09-23/seed19-fetch_head.png", "sha256": "78b8e7868876144320202fd57cafb70f306e459a0942ab2a814b8a302e9c6b74", "bytes": 94459},
     {"path": "c2-pick-2026-09-23/seed19-fetch_hand.png", "sha256": "aa8920e224bc17c1ec647ded195a3485ada3e2d275de1d5862652bc76ef0000b", "bytes": 138258}
   ],
-  "videos": []
+  "videos": [
+    {"path": "c2-pick-2026-09-25-seed4-extended/seed4-fixed-base-extended-001-head-hand-2x-failure.mp4", "sha256": "510c9ca071467c34120c62e5625e9385c8cffe863aa80daa9fdfcfd9821f8a4a", "bytes": 822858, "recording_date_utc": "2026-09-25", "source_case": "seed4-fixed-base-extended-001", "frames_per_camera": 200, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 10, "outcome": "modified_horizon_pick_failure"},
+    {"path": "c2-pick-2026-09-25-seed4-fixed-base/seed4-fixed-base-sac-001-head-hand-2x-failure.mp4", "sha256": "6cf018cb78c2d0ab2bf3a20312e2f77907d07700ed2813a00de512e6e022c9fc", "bytes": 246409, "recording_date_utc": "2026-09-25", "source_case": "seed4-fixed-base-sac-001", "frames_per_camera": 39, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 5, "outcome": "official_strict_pick_failure"},
+    {"path": "c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-001-retry2-head-hand-slow4x-failure.mp4", "sha256": "5d4084da4e8d1f0999d15fee290647a02fbd1a7d30255aea96b254a1860ffe60", "bytes": 462220, "recording_date_utc": "2026-09-24", "source_case": "seed4-oracle-assistant-001-retry2", "frames_per_camera": 39, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 5, "outcome": "official_strict_pick_failure"},
+    {"path": "c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-002-head-hand-slow4x-failure.mp4", "sha256": "ca7cf77c35406a0f6b50b73a842dc122a773a4332cc2fdcb88fa6113b6f99f8f", "bytes": 533519, "recording_date_utc": "2026-09-24", "source_case": "seed4-oracle-assistant-002", "frames_per_camera": 37, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 5, "outcome": "official_strict_pick_failure"}
+  ]
 }

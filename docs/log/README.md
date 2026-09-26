@@ -8,6 +8,7 @@
 
 - [TidyHouse 三设置：Fixed / GPT / Teleport](2026-09-21-tidyhouse-three-settings.md)
 - [C2 Pick 站位能力与 GPT 选择](2026-09-23-c2-sac-pose-capability.md)
+- [C2 结构化失败反馈与 Pick 站位选择](2026-09-23-c2-failure-feedback-selection.md)
 - [C2 真实导航交接 SAC Pick 基线普查](2026-09-25-c2-real-handoff-pick-census.md)
 - [负结果备忘](negative-results.md)
 - [新实验模板](TEMPLATE.md)

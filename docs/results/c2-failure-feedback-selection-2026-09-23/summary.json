@@ -1,0 +1,24 @@
+{
+  "schema": "c2-failure-feedback-selection-public-summary/1",
+  "unit": "one failed C0 Pick handoff with independent A2 candidate SAC outcomes",
+  "scope": "exploratory offline selection in one TidyHouse scene; not online recovery or full-task success",
+  "input_freeze_sha256": "93793ba8633d0e5c00bd7265a559712d788ca8529fde21827a1733a15c33ec4a",
+  "source_evaluation_sha256": "d4af77aed349118aacd7a1ea6f9b68898dcf91afe8b13a313a0b4f0f2826ff65",
+  "source_a2_summary_sha256": "9434542e0f31a8ea2add95da7a65a439ee86e044f29371362c652f3bb2209ef0",
+  "cases": [
+    {"case": "seed8", "candidate_strict_successes": 0, "candidate_count": 4, "oracle_strict_pick": false,
+     "B0": {"choice": "C5", "strict_pick": false}, "B1": {"choice": "C5", "strict_pick": false}},
+    {"case": "seed4", "candidate_strict_successes": 0, "candidate_count": 4, "oracle_strict_pick": false,
+     "B0": {"choice": "C4", "strict_pick": false}, "B1": {"choice": "C4", "strict_pick": false}},
+    {"case": "seed9", "candidate_strict_successes": 5, "candidate_count": 6, "oracle_strict_pick": true,
+     "B0": {"choice": "C1", "strict_pick": true}, "B1": {"choice": "C1", "strict_pick": true}}
+  ],
+  "protocol": {"valid_responses": 6, "total_responses": 6, "external_provider_requests": 6,
+               "provider_retries": 0, "pre_network_local_sdk_failures": 6},
+  "api": {"provider": "OpenAI", "model": "gpt-5.6-luna", "input_tokens": 5002,
+          "output_tokens": 338, "reserved_usd": 0.15, "billed_usd": null},
+  "new_simulator_runs": 0,
+  "new_gpu_usage": 0,
+  "new_training_updates": 0,
+  "new_runpod_resources": 0
+}
