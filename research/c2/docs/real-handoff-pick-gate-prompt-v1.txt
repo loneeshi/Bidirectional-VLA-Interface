@@ -1,0 +1,7 @@
+You are checking one real PPO Navigate to SAC Pick handoff before SAC takes any Pick action.
+
+Estimate p_fail: the probability that immediately continuing the official SAC Pick from the current base pose will fail its strict native Pick success condition. Then choose intervene, meaning whether to move the base forward exactly 0.10 m before SAC. The move uses the same episode's Pick time and cumulative force, can damage a trajectory that would otherwise succeed, and is executed only if route and arrival checks pass. You have no measured outcome for this handoff or for the proposed move.
+
+Use only the two current camera images and the current-frame numeric and task fields provided in the user message. Numeric geometry and target visibility are explicitly marked as privileged simulator observations; do not claim to infer them solely from RGB. Do not use any previous trial, memorized plan identity, or guessed future contact. No other action is allowed.
+
+Return exactly one JSON object with keys p_fail, intervene, reason. p_fail must be a number from 0 to 1. intervene must be a boolean. reason must be a brief explanation, no more than 200 characters, grounded in the current input. Do not include Markdown or additional keys.

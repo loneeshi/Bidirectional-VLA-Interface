@@ -10,3 +10,4 @@
 | [结构化失败反馈与候选站位选择](failure-feedback-selection-experiment-design.md) | [2026-09-23 C2 结构化失败反馈与 Pick 站位选择](../log/2026-09-23-c2-failure-feedback-selection.md) |
 | [真实交接 SAC Pick 基线普查](real-handoff-pick-baseline-census-experiment-design.md)，及其[复跑门修订](real-handoff-pick-census-replay-amendment-proposal.md)与[完整批次授权](real-handoff-pick-census-full-batch-authorization-proposal.md) | [2026-09-25 C2 真实导航交接 SAC Pick 基线普查](../log/2026-09-25-c2-real-handoff-pick-census.md) |
 | [真实交接 Pick 救回上限扫描](real-handoff-pick-rescue-upper-bound-experiment-design.md) | [2026-09-26 救回扫描预检](../log/2026-09-26-c2-real-handoff-pick-rescue-preflight.md)、[2026-09-26 救回主扫描](../log/2026-09-26-c2-real-handoff-pick-rescue-main.md) |
+| [真实交接 Pick 站位门控 V2](real-handoff-pick-gate-v2-experiment-design.md) | [2026-09-26 V2 开发批](../log/2026-09-26-c2-real-handoff-pick-gate-v2-development.md)；预注册区分力门失败，未启动验收 |

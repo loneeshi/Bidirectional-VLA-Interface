@@ -1,0 +1,19 @@
+{
+  "schema": "bvi.experiment-authorization/1",
+  "experiment_id": "real-handoff-pick-gate-development-20260926",
+  "status": "user_approved",
+  "scope": "Existing 60 real PPO Navigate to SAC Pick handoffs at frozen roster positions 0-63. Freeze and debug rule and GPT gate inputs. No holdout positions 64-239, training, GPU0, or RunPod.",
+  "provider": "OpenAI",
+  "provider_model": "gpt-5.6-luna",
+  "provider_requests_max": 60,
+  "provider_output_tokens_per_request_max": 1024,
+  "provider_spend_max_usd": 2.5,
+  "lab_gpu1_process_seconds_max": 1800,
+  "single_process_seconds_max": 300,
+  "lab_project_charge_max": 0,
+  "lab_project_charge_currency": "not_applicable",
+  "lab_charge_basis": "User previously confirmed the laboratory does not charge this project; no invoice supplied.",
+  "prior_experiment_unused_budget_transfer": 0,
+  "user_approval_evidence": "User replied 授权 in this conversation on 2026-09-26 after the development batch caps were presented; authorization recorded 2026-09-26 20:20 UTC.",
+  "holdout_authorized": false
+}
