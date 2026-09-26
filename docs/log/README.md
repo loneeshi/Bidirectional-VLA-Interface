@@ -10,6 +10,8 @@
 - [C2 Pick 站位能力与 GPT 选择](2026-09-23-c2-sac-pose-capability.md)
 - [C2 结构化失败反馈与 Pick 站位选择](2026-09-23-c2-failure-feedback-selection.md)
 - [C2 真实导航交接 SAC Pick 基线普查](2026-09-25-c2-real-handoff-pick-census.md)
+- [C2 真实交接 Pick 救回扫描预检](2026-09-26-c2-real-handoff-pick-rescue-preflight.md)
+- [C2 真实交接 Pick 救回主扫描](2026-09-26-c2-real-handoff-pick-rescue-main.md)
 - [负结果备忘](negative-results.md)
 - [新实验模板](TEMPLATE.md)
 

@@ -4,6 +4,14 @@ This isolated research implementation does not replace the published three-setti
 `bvi-eval` baseline at the repository root. Run it in a separate Python process:
 both implementations intentionally use the `bvi` package name.
 
+The [real-handoff Pick rescue scan](docs/real-handoff-pick-rescue-upper-bound-experiment-design.md)
+has completed its [two-position preflight](diagnostics/2026-09-26-real-handoff-pick-rescue-preflight.md)
+and [14-failure main scan](diagnostics/2026-09-26-real-handoff-pick-rescue-main.md).
+Five of fourteen reproducible failures were confirmed rescued by real base motion
+and same-episode official strict Pick; the best fixed action covered four of five.
+The 45/60 finite-library figure uses retrospective per-position action selection,
+and three unrescued positions remain interface-unresolved.
+
 See the [current pose-capability design](docs/sac-capability-experiment-design.md)
 and [A1–A3 Pick result log](../../docs/log/2026-09-23-c2-sac-pose-capability.md).
 The [failure-feedback selection design](docs/failure-feedback-selection-experiment-design.md)
