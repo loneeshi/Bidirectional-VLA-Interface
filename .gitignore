@@ -48,7 +48,7 @@ private/
 *.hdf5
 *.log
 *.mp4
-!docs/media/*.mp4
+!docs/media/**/*.mp4
 *.webm
 
 # Local editors and operating systems
