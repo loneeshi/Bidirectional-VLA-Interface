@@ -103,7 +103,7 @@
 
 ### 下一步 / TODO
 
-- [ ] 第三步：按 [Pick 前站位检查设计](../../research/c2/docs/real-handoff-pick-gpt-handoff-check-experiment-design.md)，把主问题收窄为何时干预的门控比较，冻结开发集设置后申请授权。
+- [ ] 第三步：按 [Pick 前站位检查设计](../design/real-handoff-pick-gpt-handoff-check-experiment-design.md)，把主问题收窄为何时干预的门控比较，冻结开发集设置后申请授权。
 - [ ] 位置 9、34、51 的接口未决需要修复控制器或另行测量，才能判断是否可救回；在此之前不计入确认救回。
 
 ---

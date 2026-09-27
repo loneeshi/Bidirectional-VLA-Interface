@@ -2,7 +2,7 @@
 
 > **执行后状态（2026-09-26）：** V1 开发输入和模型格式已完成 60/60 次请求；下文保留调用前契约原文。G3 全部选择干预，结果见[开发诊断](../diagnostics/2026-09-26-real-handoff-pick-gate-development.md)。
 
-**状态：CPU 草案，未调用模型。** 主协议见[第三步设计](real-handoff-pick-gpt-handoff-check-experiment-design.md)。模型、分辨率、超时、token 上限及本文件哈希在首次付费开发请求前冻结；验收集开始后不得修改。
+**状态：CPU 草案，未调用模型。** 主协议见[第三步设计](../../../docs/design/real-handoff-pick-gpt-handoff-check-experiment-design.md)。模型、分辨率、超时、token 上限及本文件哈希在首次付费开发请求前冻结；验收集开始后不得修改。
 
 ## 单次请求
 

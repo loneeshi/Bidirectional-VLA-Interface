@@ -12,7 +12,7 @@
 - [C2 真实导航交接 SAC Pick 基线普查](2026-09-25-c2-real-handoff-pick-census.md)
 - [C2 真实交接 Pick 救回扫描预检](2026-09-26-c2-real-handoff-pick-rescue-preflight.md)
 - [C2 真实交接 Pick 救回主扫描](2026-09-26-c2-real-handoff-pick-rescue-main.md)
-- [C2 真实交接 Pick 站位门控 V2 开发批](2026-09-26-c2-real-handoff-pick-gate-v2-development.md)
+- [C2 第三步：Pick 前站位门控开发批（V1、V2）](2026-09-26-c2-real-handoff-pick-gate-v2-development.md)
 - [负结果备忘](negative-results.md)
 - [新实验模板](TEMPLATE.md)
 
