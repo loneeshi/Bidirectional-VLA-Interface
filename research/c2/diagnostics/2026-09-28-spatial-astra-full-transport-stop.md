@@ -38,3 +38,23 @@
 分账：项目 `finance/ledger-real-handoff-spatial-stage1-astra-full-20260928.json`。历史 RunPod 持久存储费用未刷新。
 
 链接：[批准提案](../docs/real-handoff-spatial-stage1-astra-full-api-proposal.md) · [数值边界修复](2026-09-28-spatial-probability-boundary-repair.md)
+
+## 停止后完成的 CPU 静态评分
+
+同一个 CPU 进程正常退出，退出码 0。88 份有效响应包含 69 份场景答复和 19 份动作答复；69 份场景答复的 Q5 均完成静态评分，没有新增 API 或 GPU 作业。
+
+| 设置 | 有效场景答复 | 路线通过 | 更接近目标 | 完整抓取路径 IK |
+|---|---:|---:|---:|---:|
+| RGB-D P0 | 14/20 | 14/14 | 5/14 | 0/14 |
+| RGB-D P1 | 14/20 | 14/14 | 2/14 | 0/14 |
+| RGB P1 | 14/20 | 14/14 | 1/14 | 0/14 |
+| 高分辨率 RGB-D P1 | 13/20 | 11/13 | 5/13 | 0/13 |
+| 特权俯视图 P1 | 14/20 | 13/14 | 10/14 | 0/14 |
+
+零移动的就地抓取也计路线通过；这些数字既不是实际到位率，也不是 Pick SR。分母不同，条件差距应查同交接配对结果；此处仅记录不完整开发集，不作方法效果结论。完整抓取见证为 0 表示冻结的有界 IK 搜索未找到见证，不证明全局不可抓。
+
+- 全静态评分：`astra-development-ssl-stop-full-static.eval-only.json`，SHA-256 `65eb3310061132ec5392e5dbcbbc7885d28330cdbce4cf36eff72da6efb0fd4c`；保存逐项结果、基线及 95% 区间。
+- Q5 配对评分：`astra-development-ssl-stop-q5-paired.eval-only.json`，SHA-256 `4b25a7fbcff4f4884a795de5e5541ebbda86231ae7826b4dea37cb0e41b834c6`；与固定前移、就地抓取基线及特权条件按同交接比较。
+- Q1–Q4 配对评分：`astra-development-ssl-stop-paired.eval-only.json`，SHA-256 `215a2b4d6f6b26dcc0a5973124f82355b5addd2fa7c7f20258119cb327859d6b`。
+
+以上归档均位于本记录列出的 run 根目录。测试、稳定性和正例挑战集尚未完成，最终报告仍不可生成。
