@@ -1,0 +1,39 @@
+{
+  "experiment_id": "real-handoff-pick-batch-navigation-20260927",
+  "status": "user_approved",
+  "authorization_id": "real-handoff-batch-ppo-paused-clock-diagnostic-20260927",
+  "user_approval_evidence": "2026-09-27 user goal approves bounded interface experiments until completion; this separate diagnostic uses a prior screened pose and no provider calls",
+  "phase": "no_provider_paused_clock_interface_diagnostic",
+  "positions": [
+    1
+  ],
+  "manifest_sha256": "234c2eeb24c0eb241b123883bdb5e7986fd23227df7b55af2c496724c46dd368",
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "single_process_seconds_max": 900,
+  "gpu1_process_seconds_max": 900,
+  "lab_project_charge_max": 0,
+  "model": "gpt-5.6-luna",
+  "provider_requests_per_case_max": 2,
+  "provider_requests_total_max": 2,
+  "provider_cost_usd_max": 0.01,
+  "provider_retries": 0,
+  "gpu0": "excluded",
+  "runpod": "excluded",
+  "training": "excluded",
+  "note": "Provider requests planned 0 and prohibited by replay wrapper; 0.01 is a positive schema placeholder, not a spending commitment. The prior accepted pose is used only to test live PPO/SAC and clock mechanics. Diagnostic result excluded from policy scoring.",
+  "code_sha256": {
+    "scripts/run_real_handoff_batch_navigation_case.py": "396c755763aebfa50825f87267bdeb1b3482ef748826a7caee17e611a375da19",
+    "scripts/run_real_handoff_batch_navigation_batch.py": "1fd21d7569ead9eb3353b1821e7c120052af59c35fffc6e5fdd505326399fe14",
+    "scripts/export_c2_collision_bundle.py": "9cc804acbf0e07ce54ef178b4608be76dd2743e444e82881592151030de4bb29",
+    "scripts/extract_c2_grasp_templates.py": "72f54534ed389f24a19a6d797f9e3d00bf97bfc437ab63afec9d443045c43302",
+    "src/bvi/pick_navigation_decider.py": "9a1bee3989df46120947908ab4e6a5db56a7113df3abfbb8fe041574517b29f6",
+    "src/bvi/pick_ppo_batch.py": "5dda8da82110ac96afddaf25c2f051f82981182c56cd8847fc9bb9b78637eb35",
+    "src/bvi/pick_ppo_navigation.py": "e8e2c79681c2c9796951a19eed6e12dbb0ce3e4da3629bdff70a7c6d76bdc959",
+    "src/bvi/pick_ppo_runtime.py": "f02b4ac6030eb843695dc7633b024a77a6e30a91f581ff003f16bcb447a6ac58",
+    "src/bvi/pick_live_grasp.py": "45b58420e670a80ac00d3c1b8d2fff547e6f094a467409f1b0d86d7aff8d6442",
+    "src/bvi/pick_live_route.py": "fcffecce13bada744dbc7c59fd9284a9517172938830bee81778e56035db0ea0",
+    "src/bvi/pick_topdown.py": "2cc61b9fcecb0a56951443b81e35693b64d08093d3cb9136b99ba6409c565e2a"
+  },
+  "diagnostic_wrapper_sha256": "db7fbc9683196bbe328201f4a74b01e3497cda58eb07580ae5932859b6968037",
+  "prior_gpu1_process_seconds_charged": 0
+}

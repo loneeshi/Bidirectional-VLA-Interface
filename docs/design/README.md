@@ -9,6 +9,8 @@
 | [SAC 站位敏感性与 GPT 候选选择](sac-capability-experiment-design.md) | [2026-09-23 C2 Pick 站位能力与 GPT 选择](../log/2026-09-23-c2-sac-pose-capability.md) |
 | [结构化失败反馈与候选站位选择](failure-feedback-selection-experiment-design.md) | [2026-09-23 C2 结构化失败反馈与 Pick 站位选择](../log/2026-09-23-c2-failure-feedback-selection.md) |
 | [真实交接 SAC Pick 基线普查](real-handoff-pick-baseline-census-experiment-design.md)，及其[复跑门修订](real-handoff-pick-census-replay-amendment-proposal.md)与[完整批次授权](real-handoff-pick-census-full-batch-authorization-proposal.md) | [2026-09-25 C2 真实导航交接 SAC Pick 基线普查](../log/2026-09-25-c2-real-handoff-pick-census.md) |
-| [真实交接 Pick 救回上限扫描](real-handoff-pick-rescue-upper-bound-experiment-design.md) | [2026-09-26 救回扫描预检](../log/2026-09-26-c2-real-handoff-pick-rescue-preflight.md)、[2026-09-26 救回主扫描](../log/2026-09-26-c2-real-handoff-pick-rescue-main.md) |
-| [Pick 前站位检查（门控 V1）](real-handoff-pick-gpt-handoff-check-experiment-design.md) | [2026-09-26 第三步门控开发批](../log/2026-09-26-c2-real-handoff-pick-gate-v2-development.md) 实验 #001；GPT 60/60 选择干预，未启动验收 |
-| [真实交接 Pick 站位门控 V2](real-handoff-pick-gate-v2-experiment-design.md) | [2026-09-26 第三步门控开发批](../log/2026-09-26-c2-real-handoff-pick-gate-v2-development.md) 实验 #002；预注册区分力门失败，未启动验收 |
+| [真实交接 Pick 救回上限扫描](real-handoff-pick-rescue-upper-bound-experiment-design.md) | 当前 Weekly 未收录；对应日志已按用户要求从 log 目录移除 |
+| [Pick 前站位检查（门控 V1）](real-handoff-pick-gpt-handoff-check-experiment-design.md) | 当前 Weekly 未收录；对应日志已按用户要求从 log 目录移除 |
+| [真实交接 Pick 站位门控 V2](real-handoff-pick-gate-v2-experiment-design.md) | 当前 Weekly 未收录；对应日志已按用户要求从 log 目录移除 |
+| [真实交接失败集批量站位、PPO 移动与 SAC Pick](real-handoff-batch-ppo-pick-experiment-design.md)及其有界授权记录 | 当前 Weekly 未收录；对应日志已按用户要求从 log 目录移除 |
+| [2,000-token 视觉空间理解开发集校准](real-handoff-spatial-stage1-api-cap2000-development-pilot-proposal.md) | [2026-09-28 开发集校准](../log/2026-09-28-c2-spatial-understanding-cap2000-pilot.md) |

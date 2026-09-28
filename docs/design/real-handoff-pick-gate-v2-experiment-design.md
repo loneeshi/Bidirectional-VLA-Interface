@@ -1,6 +1,6 @@
 # 真实导航交接 Pick 第 0 步干预收益门控：V2 修订设计
 
-**状态：V2 开发批已完成并在预注册区分力门停止；新交接验收未启动。结果见[实验日志](../log/2026-09-26-c2-real-handoff-pick-gate-v2-development.md)。** [V1 开发结果](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-gate-development.md)显示原生 GPT `intervene` 为 60/60，全干预，无法检验“何时干预”。用户选择先修订设计。本版本保留唯一动作 `forward_10` 与官方严格 Pick 评分，把模型预测对象改为**前移相对原站位的成功概率差**；不把原站位失败风险当作动作收益。
+**状态：V2 开发批已完成并在预注册区分力门停止；新交接验收未启动。该实验未列入当前 Weekly，对应日志已从 log 目录移除；既有诊断归档保留。** [V1 开发结果](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-gate-development.md)显示原生 GPT `intervene` 为 60/60，全干预，无法检验“何时干预”。用户选择先修订设计。本版本保留唯一动作 `forward_10` 与官方严格 Pick 评分，把模型预测对象改为**前移相对原站位的成功概率差**；不把原站位失败风险当作动作收益。
 
 ## 要检验的量
 

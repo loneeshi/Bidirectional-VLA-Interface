@@ -1,0 +1,16 @@
+{
+  "schema": "bvi.gpu1-pilot-authorization/1",
+  "experiment_id": "real-handoff-spatial-stage1-20260927",
+  "status": "user_approved",
+  "user_approval_evidence": "User replied 批准 on 2026-09-27 to the two-position GPU1 pilot proposal.",
+  "positions": [5, 8],
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "single_process_seconds_max": 180,
+  "gpu1_process_seconds_max": 360,
+  "processes_max": 2,
+  "parallel_processes_max": 1,
+  "provider_requests_max": 0,
+  "policy_actions_max": 0,
+  "runpod_resources_max": 0,
+  "full_batch_authorized": false
+}

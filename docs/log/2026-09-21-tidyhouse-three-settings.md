@@ -155,6 +155,5 @@
 | 正确固定调度 + 官方 PPO/SAC | 0/16 完整任务 | 调度正确不足以弥补操作链中的失败 |
 | GPT 调度替换固定调度 | 0/16；13/80，未优于 Fixed 的 14/80 | 当前瓶颈不只在调度；不要继续仅换 prompt 重跑 |
 | Standardized teleport 替换 PPO 导航 | 0/16；中途进度增至 21/80 | 交接分布改变但完整操作链仍失败；不能写成导航策略胜出 |
-| 旧 paper-release teleport 面板 | 与标准化轮口径不同 | 不进入三组对照表，不再维护其原始记录 |
 
 机器数据见 [`../results/tidyhouse-16/summary.json`](../results/tidyhouse-16/summary.json)。

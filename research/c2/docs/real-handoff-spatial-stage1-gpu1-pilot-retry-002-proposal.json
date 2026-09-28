@@ -1,0 +1,19 @@
+{
+  "schema": "bvi.gpu1-pilot-authorization/1",
+  "authorization_id": "spatial-stage1-gpu1-pilot-retry-002",
+  "experiment_id": "real-handoff-spatial-stage1-20260927",
+  "status": "user_approved",
+  "user_approval_evidence": "User replied 批准 in the current conversation to the pending retry-002 two-position GPU1 amendment.",
+  "previous_attempt_receipt_sha256": "012497e9b8991a36b2e8ba70d0c17fe91b82218b4cffa525491dde6a32ed3d9d",
+  "previous_attempt_process_seconds": 4.027744762599468,
+  "positions": [5, 8],
+  "gpu_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "single_process_seconds_max": 180,
+  "gpu1_process_seconds_max": 360,
+  "processes_max": 2,
+  "parallel_processes_max": 1,
+  "provider_requests_max": 0,
+  "policy_actions_max": 0,
+  "runpod_resources_max": 0,
+  "full_batch_authorized": false
+}
