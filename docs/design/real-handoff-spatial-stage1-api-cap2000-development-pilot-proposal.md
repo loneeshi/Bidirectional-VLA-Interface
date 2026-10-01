@@ -6,7 +6,7 @@
 
 ## 为什么需要本批
 
-[前批校准](../../research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-dev-calibration-result.md)的 49 个请求意图中，48 份有提供商回复、43 份有效，5 份均因 `max_output_tokens` 在 1,000 token 截止；第 49 份传输结局未知，按原协议停止，11 份未尝试。该批已知估算费用 USD 0.982595，另为未知请求保留 USD 0.055，供应商实账未核。原批名义剩余额度不能自动转入本批。
+[前批校准](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-dev-calibration-result.md)的 49 个请求意图中，48 份有提供商回复、43 份有效，5 份均因 `max_output_tokens` 在 1,000 token 截止；第 49 份传输结局未知，按原协议停止，11 份未尝试。该批已知估算费用 USD 0.982595，另为未知请求保留 USD 0.055，供应商实账未核。原批名义剩余额度不能自动转入本批。
 
 本批只把 `max_output_tokens` 从 1,000 改为 2,000；模型、reasoning=medium、P0/P1、五条件、图像、JSON schema、泄漏审计和评分口径不变。选用尚未发送过的冻结开发集位置 1（仅场景题）和位置 26（场景题及 11 条实测动作 Q2），不重发旧请求。由于样本不同，这能检验新上限在新例上的可用性，不能把两批删失率差异单独归因于上限。
 
@@ -18,7 +18,7 @@
 | 26 | 10 | 10 | 20 | `6d57e2822a9fbe1682ae83b7727bbd930517996afe0fbfb8f6fe0c25fe1bcb9b` |
 | 合计 | 20 | 10 | 30 | — |
 
-实际 Responses JSON 合计 3,378,812 字节；字节数不是输入 token。独立 CPU 预检重建并逐字节对照 30/30 请求，核对开发集身份、原始相机来源、冻结提示词、两模型五条件矩阵、特权图显式标签及非特权条件拒漏，网络请求 0。清单和请求体保存在忽略的 `runs/real-handoff-spatial-stage1-20260927/wire-devcap2000-pos001/`、`wire-devcap2000-pos026/`，预检代码为 [`preflight_real_handoff_spatial_api_dev_cap2000_cpu.py`](../../scripts/preflight_real_handoff_spatial_api_dev_cap2000_cpu.py)。
+实际 Responses JSON 合计 3,378,812 字节；字节数不是输入 token。独立 CPU 预检重建并逐字节对照 30/30 请求，核对开发集身份、原始相机来源、冻结提示词、两模型五条件矩阵、特权图显式标签及非特权条件拒漏，网络请求 0。清单和请求体保存在忽略的 `runs/real-handoff-spatial-stage1-20260927/wire-devcap2000-pos001/`、`wire-devcap2000-pos026/`，预检代码为 `preflight_real_handoff_spatial_api_dev_cap2000_cpu.py`（本地归档：`scripts/preflight_real_handoff_spatial_api_dev_cap2000_cpu.py`）。
 
 ## 申请的独立上限
 

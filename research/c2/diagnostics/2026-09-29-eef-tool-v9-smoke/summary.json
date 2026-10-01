@@ -1,9 +1,0 @@
-{
-  "tool_passed": 2,
-  "denominator": 3,
-  "strict_pick_successes": 0,
-  "actions": 206,
-  "gpu_seconds": 141.31192661449313,
-  "api_requests": 0,
-  "E1_started": false
-}

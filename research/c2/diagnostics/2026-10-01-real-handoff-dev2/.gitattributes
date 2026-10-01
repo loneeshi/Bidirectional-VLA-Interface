@@ -1,2 +1,0 @@
-# Preserve frozen evidence bytes and SHA-256 across checkouts.
-* -text whitespace=cr-at-eol

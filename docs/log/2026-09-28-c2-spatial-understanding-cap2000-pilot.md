@@ -89,7 +89,7 @@ Q1、Q2 的可评标签都为否，因此一直回答“否”也能得到 2/2�
 
 **局限**：只有两个开发起点，Q1/Q2 标签单一，且没有实际移动或 SAC，结果不足以证明选位能提高抓取成功率。与旧 1,000-token 批次样本不同，不能把两批差异只归因于输出上限。
 
-**链接**：[逐项诊断与归档哈希](../../research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-cap2000-development-pilot-result.md) · [运行前提案](../design/real-handoff-spatial-stage1-api-cap2000-development-pilot-proposal.md)
+**链接**：[逐项诊断与归档哈希](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-cap2000-development-pilot-result.md) · [运行前提案](../design/real-handoff-spatial-stage1-api-cap2000-development-pilot-proposal.md)
 
 记录信息：run 为 `real-handoff-spatial-stage1-api-cap2000-development-pilot-20260927`，发送器版本 `177daa9`，评分器版本 `8aeb19a`。输入共 27,722 token、输出共 21,263 token；财务以项目子账 `ledger-real-handoff-spatial-stage1-api-cap2000-20260927.json` 为准。原始请求、响应和评分保留在该 run 归档中。
 
@@ -107,7 +107,7 @@ Q1、Q2 的可评标签都为否，因此一直回答“否”也能得到 2/2�
 
 已知响应输入 80,255、输出 72,202 token，费用估算 USD 4.41265；未知请求另预留 USD 0.13，实账待核。CPU 已复核 Q1–Q4 与删失记录；Q5 完整评分、测试集、稳定性及正例评测仍待完成。GPU1 收尾核查 15 MiB、0%、无计算进程，本批没有新增 GPU 作业或 RunPod 资源。
 
-具体请求、哈希、停止原因和待批恢复办法见[传输停止记录](../../research/c2/diagnostics/2026-09-28-spatial-astra-full-transport-stop.md)。后续批次费用以 `ledger-real-handoff-spatial-stage1-astra-full-20260928.json` 为准。
+具体请求、哈希、停止原因和待批恢复办法见[传输停止记录](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-28-spatial-astra-full-transport-stop.md)。后续批次费用以 `ledger-real-handoff-spatial-stage1-astra-full-20260928.json` 为准。
 
 停止后，CPU 已完成全部 69 份有效场景答复的 Q5 静态评分，进程正常退出；19 份有效动作答复用于 Q2。下面只列不完整开发集的静态结果。
 

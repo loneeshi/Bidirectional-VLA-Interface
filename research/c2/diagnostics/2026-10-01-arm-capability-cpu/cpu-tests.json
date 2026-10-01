@@ -1,9 +1,0 @@
-{
-  "command": "PYTHONPATH=src python -m pytest tests -k eef -q",
-  "passed": 572,
-  "skipped": 3,
-  "deselected": 948,
-  "skip_reason": "three unrelated torch-dependent collection modules unavailable locally; see regression.xml",
-  "gpu_runs": 0,
-  "api_calls": 0
-}

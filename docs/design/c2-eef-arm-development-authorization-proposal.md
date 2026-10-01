@@ -30,6 +30,6 @@ P入口、特权白名单、P提示、配对汇总已移除。locate_point仅在
 
 API只走实验室服务器代理，密钥规则保持执行器计划第三节第1条：~/.config/bvi/openai.env，目录700/文件600，只运行时读，不复制或打印。获批后再确认调度许可、GPU1空闲、源码/资产哈希和真实初态。旧授权模板失效，新模板status=not_authorized。
 
-[CPU回执](../../research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/README.md) · [冻结清单](../../research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/roster.eval-only.json) · [历史实测凭据](../../research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/historical-usage-and-process-time.json) · [源码哈希](../../research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/deployment-freeze.json)
+[CPU回执](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/README.md) · [冻结清单](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/roster.eval-only.json) · [历史实测凭据](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/historical-usage-and-process-time.json) · [源码哈希](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/deployment-freeze.json)
 
 批准后入口为冻结包内run_arm_capability_batch.py，参数authorization/roster/code/lab-root。缺媒体、接口错误、资源触界或未知响应即停批，不能自动重跑。当前不运行、不发布GitHub。

@@ -1,10 +1,10 @@
 # 真实交接 Pick 救回上限扫描（第二步）：冻结设计与结果
 
-按[实验日志模板](../log/TEMPLATE.md)组织。**状态：CPU 冻结、双起点 GPU1 预检、14 起点主扫描、全部命中确认复跑及独立审计已完成。** 详见[预检报告](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-preflight.md)和[主批结果](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md)。下文保留运行前冻结的协议和停止门；末尾结果按完成后的证据更新。
+按[实验日志模板](../log/TEMPLATE.md)组织。**状态：CPU 冻结、双起点 GPU1 预检、14 起点主扫描、全部命中确认复跑及独立审计已完成。** 详见[预检报告](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-preflight.md)和[主批结果](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md)。下文保留运行前冻结的协议和停止门；末尾结果按完成后的证据更新。
 
 本实验是 C2 三步中的第二步。第一步[真实交接基线普查](../log/2026-09-25-c2-real-handoff-pick-census.md)已完成：60 个交接中首次 SAC 严格成功 40 例，可重复失败 14 例，其中"底盘撞障碍＋够不到"占 10 例。本实验**不用 GPT**，只回答一个问题：这 14 个失败里，有多少能被某个预先固定、真实可执行的底盘动作严格救回？由此得到三个数：基线成功率、有限动作库的上限成功率、可救回失败比例。它决定第三步 GPT 比较是否值得做。
 
-本设计沿用[普查前的可救回性草案](../../research/c2/docs/real-handoff-pick-recoverability-design.md)中的动作执行规则、到位门和判读口径，并根据普查结果做了三处修改：
+本设计沿用[普查前的可救回性草案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-pick-recoverability-design.md)中的动作执行规则、到位门和判读口径，并根据普查结果做了三处修改：
 
 1. 样本直接用普查冻结的失败清单；
 2. 加入同快照的无动作对照，用来扣除复跑本身的随机成功；
@@ -114,7 +114,7 @@
 
 - [x] 完成 CPU 阶段冻结、三项接口回归测试及双起点预检。
 - [x] 单独冻结并授权剩余 12 起点主扫描与所有单次命中的确认复跑。
-- [x] 完成主批逐进程核验、命中确认、完整评分与[结果报告](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md)。
+- [x] 完成主批逐进程核验、命中确认、完整评分与[结果报告](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md)。
 
 ---
 

@@ -11,7 +11,7 @@
 3. **执行器做一次系统性对照**：以 Astra（协作代理）的修订计划为基础，先补可观测性，再用标准移动组做 2×2 对照，定出设计原则后冻结。
 
 - 主设计：[末端工具闭环设计](real-handoff-eef-tool-loop-icl-design.md)。
-- 本阶段条件：[640 视觉与近期图像窗口](real-handoff-eef-compact-640-design.md)。
+- 本阶段条件：[640 视觉与近期图像窗口](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-compact-640-design.md)。
 
 ## 一、审查结论：最近的修复为什么没见效
 
@@ -140,9 +140,9 @@
 
 ## 2026-10-01 实施约束与 CPU 回执
 
-- 模型侧冻结：640 四图、guidance-v4-compact、完整精简文字及前后两组图像/显式回看、medium、H0、25 次、200 步、v13 底盘。逐步诊断不进入模型反馈。冻结哈希见 [基础工作诊断](../diagnostics/2026-10-01-eef-systematic-foundations-cpu/README.md)。
+- 模型侧冻结：640 四图、guidance-v4-compact、完整精简文字及前后两组图像/显式回看、medium、H0、25 次、200 步、v13 底盘。逐步诊断不进入模型反馈。冻结哈希见 [基础工作诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-eef-systematic-foundations-cpu/README.md)。
 - A：三个归档请求原文重建一致，服务器三次发送三次完整响应、无补发；估算 USD 0.4194625、未知预留 0，实账待核。旧授权未转入，USD 3 剩余关闭；不能以 n=3 宣称改善显著。新增 Linux 锁、原子落盘、响应恢复、TCP/TLS/发送/头/正文日志。密钥内容仅运行时加载，协作工具只查元数据。
-- B：按 UID 排序，排除全部 64 次普查尝试及已核实曝光，冻结 30 候选、20 有效交接即停、SAC 每例一次。独立 runner 不含失败自动复跑。开发集 2 不用于执行器调试，第 61 号作为第三个入口。见 [独立 B 提案](real-handoff-dev2-authorization-proposal.md)。
+- B：按 UID 排序，排除全部 64 次普查尝试及已核实曝光，冻结 30 候选、20 有效交接即停、SAC 每例一次。独立 runner 不含失败自动复跑。开发集 2 不用于执行器调试，第 61 号作为第三个入口。见 [独立 B 提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-dev2-authorization-proposal.md)。
 - C：新模块 systematic-2x2-v1，旧模块不改；A/B 逐点放行、C/D 每运动步推进。C 的暂时 IK 无解只保持上次可行目标，时钟照进，终点不追回中间参考。顺序 ABCD/BCDA/CDAB/DABC。
 - 18 条草拟移动已生成数值和归档动作前缀；第 58 号历史 turn 8 保留已消耗的 122 步。只恢复关节角或重置时限/累计力均禁止。CPU 规划不是物理入口验收：缺少真实停稳后的状态与历史 IK 缓存，仍有 7 条无法完成当前规划/定时。桌面参考序列 87/95/96 点，不能直接假设每步推进会在 60 步内完成。因此 C 尚未获得可启动回执，未改速、改阈值、替换已执行样本或自动补跑。
 - 意外接触按四条件整组退出配对计时，至少留 15 条且覆盖三个交接和全部类型；力超限、跳解、契约违规仍使对应条件不达标。正常支撑和规定抓取接触须在 C 物理提案中逐项定义；目前未完成该定义，不能运行。
@@ -164,6 +164,6 @@
 
 ### 2026-10-01 暂停后的单次 CPU 验证回执
 
-关节空间候选8/15通过规划与定时，桌面141/147/145参考点，没有达到用户标准；没有继续修补。按指定后备分支冻结协调v2，仅应用150/600预算。小幅修正的首点IK位置残差9.56/9.37/11.29mm、关节边界饱和，无跳解，不证明全局不可达。逐条记录、固定出生站位清单及依赖源码包见[arm CPU诊断](../diagnostics/2026-10-01-arm-capability-cpu/README.md)。下一道门改为[开发组独立授权](../../../docs/design/c2-eef-arm-development-authorization-proposal.md)，不恢复旧2×2或60步前提。脚本及Astra仍未运行，测试组仍需脚本至少7/10及独立批准。
+关节空间候选8/15通过规划与定时，桌面141/147/145参考点，没有达到用户标准；没有继续修补。按指定后备分支冻结协调v2，仅应用150/600预算。小幅修正的首点IK位置残差9.56/9.37/11.29mm、关节边界饱和，无跳解，不证明全局不可达。逐条记录、固定出生站位清单及依赖源码包见[arm CPU诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-cpu/README.md)。下一道门改为[开发组独立授权](../../../docs/design/c2-eef-arm-development-authorization-proposal.md)，不恢复旧2×2或60步前提。脚本及Astra仍未运行，测试组仍需脚本至少7/10及独立批准。
 
 修订二覆盖上述开发规模与门槛：仅V、开发5例及SAC/script，共15进程；脚本至少4/5方可提出测试授权。当前协调v2源码哈希不变。候选桌面141–147点反比末端直线87–96多的问题，按用户要求只记录远端IK构型/连续关节绕行假设，暂不修。新资源门125次/USD65/GPU13500秒，提案重新提交后仍待批准。

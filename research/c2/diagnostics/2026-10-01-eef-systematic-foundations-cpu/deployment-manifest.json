@@ -1,9 +1,0 @@
-{
-  "archive_sha256": "2958912df43fd707be112487b07552791eaaa456b23cb1f727f1125ed696f9ba",
-  "created_at_utc": "2026-10-01T00:01:02.958229+00:00",
-  "source_count": 613,
-  "probe_count": 3,
-  "candidate_count": 30,
-  "gpu_calls": 0,
-  "api_calls": 0
-}

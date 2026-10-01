@@ -1,41 +1,15 @@
-# 文档索引
+# 文档目录
 
-这里仅保留公开仓库当前评测代码所需的文档。旧计划、训练路线、一次性诊断、原始
-JSONL/NPY/视频和已停止的方法均不再作为当前文档维护；需要追溯时可从 Git 历史
-中的 `193a17c` 恢复。
-
-## 当前结果
-
-| 设置 | 完成 episode | 完整任务 SR | 完成物体 | 每集平均 |
-|---|---:|---:|---:|---:|
-| Fixed PPO + SAC（官方固定任务顺序） | 16/16 | 0/16 | 14/80（17.5%） | 0.875 |
-| GPT + PPO + SAC（VLA-as-Tools 通讯协议） | 16/16 | 0/16 | 13/80（16.25%） | 0.813 |
-| Teleport + SAC（官方固定任务顺序） | 16/16 | 0/16 | 21/80（26.25%） | 1.313 |
-
-- [三组实验记录](log/2026-09-21-tidyhouse-three-settings.md)
-- [C2 Pick 站位能力与 GPT 选择](log/2026-09-23-c2-sac-pose-capability.md)：冻结交接的开发实验，不是完整任务 SR
-- [机器可读摘要](results/tidyhouse-16/summary.json)
-- [C2 最小机器摘要](results/c2-pose-capability-2026-09-22/summary.json)
-- [C2 精选逐次 JSON](results/c2-pose-capability-2026-09-22/selected-trials.json)与[调用前图像](media/README.md)
-- [负结果备忘](log/negative-results.md)
-
-## 使用文档
-
-当前开发实验：[C2 feedback-guided recovery](../research/c2/README.md)。它位于独立研究目录，不替换下列已发布 baseline，也尚无最终 SR。
-
-| 文档 | 内容 |
+| 入口 | 用途 |
 |---|---|
-| [architecture.md](architecture.md) | 当前评测代码的模块边界和数据流 |
-| [evaluation.md](evaluation.md) | 三个固定 setting、指标和结论边界 |
-| [reproduction.md](reproduction.md) | 安装、预览、执行、恢复和汇总 |
-| [bridge.md](bridge.md) | GPT setting 的本地凭据桥接方式 |
-| [log/README.md](log/README.md) | 实验日志规则与索引 |
-| [log/TEMPLATE.md](log/TEMPLATE.md) | MS-HAB/VLA 实验日志模板 |
+| [实验日志](log/README.md) | 已完成实验的设置、结果与限制 |
+| [实验设计](design/README.md) | 正式设计及当前运行条件 |
+| [当前 C2 研究](../research/c2/README.md) | 方法与下一验收门 |
+| [演示与哈希](media/README.md) | 成功、失败录像与媒体索引 |
+| [历史诊断索引](../research/c2/diagnostics/README.md) | 旧诊断和被取代提案的 Git 历史入口 |
+| [架构](architecture.md) | 已发布 baseline 的模块边界 |
+| [评测协议](evaluation.md) | 指标与结论边界 |
+| [复现说明](reproduction.md) | 已发布 baseline 的安装与运行 |
+| [凭据桥接](bridge.md) | 已发布 baseline 的桥接方式 |
 
-## 文档维护规则
-
-1. `docs/log/` 只写人可以直接阅读的实验结论，不复制完整事件流。
-2. `docs/results/` 只保留能重新计算公开表格的最小机器摘要。
-3. 未执行的计划、已经放弃的方法和一次性排障过程不进入当前文档。
-4. 重要负结果压缩到 `negative-results.md`，避免重复踩坑。
-5. 任何涉及个人姓名、私有主机、用户名、PID、GPU UUID、凭据或授权 ID 的内容不得发布。
+正式日志保留原始结论。旧附件的相对链接在公开版指向清理前的固定 Git 提交；本地完整证据仍保留。当前树不再逐个列出原始请求、传感器图片和冻结运行文件。

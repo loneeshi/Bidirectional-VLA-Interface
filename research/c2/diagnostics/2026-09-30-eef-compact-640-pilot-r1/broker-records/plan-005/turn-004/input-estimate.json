@@ -1,8 +1,0 @@
-{
-  "image_count": 8,
-  "image_tokens": 3840,
-  "text_bytes": 24511,
-  "input_bound": 29375,
-  "output_cap": 4000,
-  "reserve_usd": "0.5671875"
-}

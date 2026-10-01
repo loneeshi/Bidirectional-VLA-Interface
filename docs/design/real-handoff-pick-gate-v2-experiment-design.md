@@ -1,6 +1,6 @@
 # 真实导航交接 Pick 第 0 步干预收益门控：V2 修订设计
 
-**状态：V2 开发批已完成并在预注册区分力门停止；新交接验收未启动。该实验未列入当前 Weekly，对应日志已从 log 目录移除；既有诊断归档保留。** [V1 开发结果](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-gate-development.md)显示原生 GPT `intervene` 为 60/60，全干预，无法检验“何时干预”。用户选择先修订设计。本版本保留唯一动作 `forward_10` 与官方严格 Pick 评分，把模型预测对象改为**前移相对原站位的成功概率差**；不把原站位失败风险当作动作收益。
+**状态：V2 开发批已完成并在预注册区分力门停止；新交接验收未启动。该实验未列入当前 Weekly，对应日志已从 log 目录移除；既有诊断归档保留。** [V1 开发结果](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-gate-development.md)显示原生 GPT `intervene` 为 60/60，全干预，无法检验“何时干预”。用户选择先修订设计。本版本保留唯一动作 `forward_10` 与官方严格 Pick 评分，把模型预测对象改为**前移相对原站位的成功概率差**；不把原站位失败风险当作动作收益。
 
 ## 要检验的量
 
@@ -11,7 +11,7 @@
 ## 冻结样本与干预
 
 - **开发集**：V1 使用的原普查 60 个有效交接，固定清单位置 0–63、UID 与快照身份不变。首批接口预检严格按其中前两个有效位置 1、3；通过后按其余位置顺序完成。不能挑困难案例。普查首次严格 Pick 标签可用于开发阈值，但不得送入模型。
-- **验收集**：沿已冻结的[176 个候选 UID](../../research/c2/diagnostics/2026-09-26-real-handoff-pick-gate-holdout.json)（位置 64–239，SHA-256 `39e43f4a6f66bed9961f91f0f17547b00c97b4ed0841d4b87becfb4d27497181`）依序收集 120 个有效真实交接；清单耗尽后至少 80 个有效者仅作探索性结果。任何验收终局在 V2 提示词、阈值、代码、模型和输入哈希冻结前不可查看。开发和验收 UID 不重叠。
+- **验收集**：沿已冻结的[176 个候选 UID](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-gate-holdout.json)（位置 64–239，SHA-256 `39e43f4a6f66bed9961f91f0f17547b00c97b4ed0841d4b87becfb4d27497181`）依序收集 120 个有效真实交接；清单耗尽后至少 80 个有效者仅作探索性结果。任何验收终局在 V2 提示词、阈值、代码、模型和输入哈希冻结前不可查看。开发和验收 UID 不重叠。
 - **动作**：`forward_10` 是第二步独立失败起点扫描得出的固定动作，不在 V2 中重新选动作。G1/G2/G3/G4 选中时先做静态路线检查：拒绝则无动作并复用 G0；动作一旦开始，即使未到位也从实际状态继续官方 SAC 并按严格 Pick 终局计分，另列未到位。动作消耗同一 Pick 时钟和累计力。不得直接改 pose、重置预算或把未到位直接记失败。
 
 ## 对照臂与门控
@@ -31,7 +31,7 @@ G3/G4 共用每个交接的一次 GPT 响应；格式错误、超时、身份变
 
 V2 复用 V1 的 60 份开发集同帧图像和第 0 步数字段，manifest SHA-256 `617a6390764cdf662f7c398ff5cd8e509a6c5cbefe11364f9ff6fbe138a2da17`。每次包含头/腕两张 128×128 PNG，`detail=low`；几何值注明 `privileged_simulator_at_handoff`，不能称纯视觉。不得包含普查或 G1/G0′ 结果、失败机制、前次模型输出、计划 UID、Oracle 标签、其他交接经验或验收结局。若某交接输入缺失，但身份和官方 Pick 仍有效，G3/G4 不干预并留在分母；身份或官方计量不可核证才列接口删失。
 
-[V2 提示词提案](../../research/c2/docs/real-handoff-pick-gate-v2-prompt-proposal.txt)和[模型配置提案](../../research/c2/docs/real-handoff-pick-gate-v2-model-config-proposal.json)已写出：`gpt-5.6-luna`、low reasoning、Responses 严格 JSON、两概率加简短理由、最多 1,024 输出 token、30 秒超时、零重试。两项预测都针对**官方严格 Pick**；前移预测包含路线拒绝回退、未到位从实际状态继续、步数与累计力代价。执行授权前需计算并固定提示词、配置、输入 manifest、模型返回身份与所有运行器哈希。不能根据 V2 开发标签再改提示词；若修改，另起版本和预算。
+[V2 提示词提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-pick-gate-v2-prompt-proposal.txt)和[模型配置提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-pick-gate-v2-model-config-proposal.json)已写出：`gpt-5.6-luna`、low reasoning、Responses 严格 JSON、两概率加简短理由、最多 1,024 输出 token、30 秒超时、零重试。两项预测都针对**官方严格 Pick**；前移预测包含路线拒绝回退、未到位从实际状态继续、步数与累计力代价。执行授权前需计算并固定提示词、配置、输入 manifest、模型返回身份与所有运行器哈希。不能根据 V2 开发标签再改提示词；若修改，另起版本和预算。
 
 ## 开发运行、阈值和停止门
 
@@ -43,9 +43,9 @@ V2 复用 V1 的 60 份开发集同帧图像和第 0 步数字段，manifest SHA
 
 ## 拟申请的独立开发资源（目前未授权）
 
-CPU 就绪检查（2026-09-26 UTC）：[独立授权提案](../../research/c2/docs/real-handoff-pick-gate-v2-development-authorization-proposal.json)绑定了开发输入、官方 roster/资产、GPU1 UUID、条件运行器、批控制器、API 调用器、决策协议、开发汇总器、提示词和模型配置的 SHA-256。条件控制器在本地干跑列出固定 120 条，前四条依次是位置 1 与 3 的 G0′/G1；API 干跑生成位置 1 的双图请求，provider 请求 0。未批准的授权提案在网络前被 V2 API 调用器拒绝，且没有生成正式结果目录。V2 决策协议及汇总器的 8 项聚焦测试、运行器语法检查通过。GPU 仿真接口仍需在**获授权后的前两例预检**证明；这些 CPU 检查不构成动作效果或原生 Pick 成功证据。
+CPU 就绪检查（2026-09-26 UTC）：[独立授权提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-pick-gate-v2-development-authorization-proposal.json)绑定了开发输入、官方 roster/资产、GPU1 UUID、条件运行器、批控制器、API 调用器、决策协议、开发汇总器、提示词和模型配置的 SHA-256。条件控制器在本地干跑列出固定 120 条，前四条依次是位置 1 与 3 的 G0′/G1；API 干跑生成位置 1 的双图请求，provider 请求 0。未批准的授权提案在网络前被 V2 API 调用器拒绝，且没有生成正式结果目录。V2 决策协议及汇总器的 8 项聚焦测试、运行器语法检查通过。GPU 仿真接口仍需在**获授权后的前两例预检**证明；这些 CPU 检查不构成动作效果或原生 Pick 成功证据。
 
-实验室只读核查（2026-09-26 20:42 UTC）：原普查远端 `result.json` 与本地归档的原始字节序列化不同；位置 1 的解析后 JSON 完全相同。为避免把空白/序列化差异误判成物理状态差异，另以本地原始结果哈希构建只含 UID、规范化 JSON 哈希和快照哈希的[本地快照绑定](../../runs/real-handoff-pick-gate-20260926/v2-snapshot-binding.json)，SHA-256 `142503ddbcb1fe60b566e42aa6402fbc84db169d40b68485c2613e5e65cc9e5a`。远端 CPU 审计逐例核对规范化结果、UID 和实际快照文件 SHA：**60/60 结果、60/60 快照一致**，快照合计 727,145,097 字节；仿真动作和 provider 请求均 0。V2 条件运行器已改为绑定上述规范化结果哈希，同时仍要求快照文件字节哈希完全一致。远端 CPU 干跑也列出同样 120 条条件与前四条顺序，未启动 GPU。
+实验室只读核查（2026-09-26 20:42 UTC）：原普查远端 `result.json` 与本地归档的原始字节序列化不同；位置 1 的解析后 JSON 完全相同。为避免把空白/序列化差异误判成物理状态差异，另以本地原始结果哈希构建只含 UID、规范化 JSON 哈希和快照哈希的本地快照绑定（本地归档：`runs/real-handoff-pick-gate-20260926/v2-snapshot-binding.json`），SHA-256 `142503ddbcb1fe60b566e42aa6402fbc84db169d40b68485c2613e5e65cc9e5a`。远端 CPU 审计逐例核对规范化结果、UID 和实际快照文件 SHA：**60/60 结果、60/60 快照一致**，快照合计 727,145,097 字节；仿真动作和 provider 请求均 0。V2 条件运行器已改为绑定上述规范化结果哈希，同时仍要求快照文件字节哈希完全一致。远端 CPU 干跑也列出同样 120 条条件与前四条顺序，未启动 GPU。
 
 开发汇总器另做了 60 例真实普查记录的离线终局核对：40 次官方严格 Pick 成功、20 次失败。成功 Pick 的最后 `final_info` 可已切换到下一子任务，不能以其中的 `success` 字段反推 Pick 失败；V2 汇总器现要求普查的官方终止原因、Pick skill 状态和机制标签三者一致，再取 G0。此修正仅影响未来汇总器，未改旧普查结果或任何模型输入。
 

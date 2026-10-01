@@ -1,8 +1,8 @@
 # 真实交接视觉选位：离线空间理解测评、闭环主实验与特权几何消融（设计草案）
 
-**2026-09-28 修订：**后续模型测评只使用 Astra；Q1、Q2 的正例另建平衡挑战集，原 60 个交接及其标签、开发／测试划分保持冻结。执行口径见[修订案](real-handoff-spatial-stage1-astra-positive-challenge-amendment.md)。**同日稍后，正例挑战集暂停**：本周重点转到[跳过 SAC 的末端工具闭环](real-handoff-eef-tool-loop-icl-design.md)，GPU1 优先用于其前置门 G0。下文两模型及 800 次请求是原设计的历史预算，不再作为后续执行计划。
+**2026-09-28 修订：**后续模型测评只使用 Astra；Q1、Q2 的正例另建平衡挑战集，原 60 个交接及其标签、开发／测试划分保持冻结。执行口径见[修订案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-spatial-stage1-astra-positive-challenge-amendment.md)。**同日稍后，正例挑战集暂停**：本周重点转到[跳过 SAC 的末端工具闭环](real-handoff-eef-tool-loop-icl-design.md)，GPU1 优先用于其前置门 G0。下文两模型及 800 次请求是原设计的历史预算，不再作为后续执行计划。
 
-**状态：阶段 1 的题目、输入、阈值、初版提示和开发／测试划分已冻结。60／60 个冻结交接已导出官方头／手 128、256 px RGB-D、同快照碰撞包及仅供特权消融的俯视图；59 例新批次经用户批准后完成，GPU1 实耗 2,828.532120／3,600 进程秒。两批开发集 API 校准已执行，结果分别见[首批](../diagnostics/2026-09-27-real-handoff-spatial-api-dev-calibration-result.md)和[2,000-token 批](../diagnostics/2026-09-27-real-handoff-spatial-api-cap2000-development-pilot-result.md)；后续改为 Astra 单模型，阶段 2 本轮不做。** 本文合并了原"视觉选位主实验与特权几何消融"设计和"模型空间理解离线测评"设计，是后续站位实验唯一的输入边界与实验方案。输入规则同时写在 `AGENTS.md` 的 "C2 GPT input policy (2026-09-27)" 一节。
+**状态：阶段 1 的题目、输入、阈值、初版提示和开发／测试划分已冻结。60／60 个冻结交接已导出官方头／手 128、256 px RGB-D、同快照碰撞包及仅供特权消融的俯视图；59 例新批次经用户批准后完成，GPU1 实耗 2,828.532120／3,600 进程秒。两批开发集 API 校准已执行，结果分别见[首批](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-dev-calibration-result.md)和[2,000-token 批](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-cap2000-development-pilot-result.md)；后续改为 Astra 单模型，阶段 2 本轮不做。** 本文合并了原"视觉选位主实验与特权几何消融"设计和"模型空间理解离线测评"设计，是后续站位实验唯一的输入边界与实验方案。输入规则同时写在 `AGENTS.md` 的 "C2 GPT input policy (2026-09-27)" 一节。
 
 ## 研究问题
 
@@ -106,7 +106,7 @@
 
 ## 执行前门槛
 
-1. **执行器验收**：相对运动控制器按[规划器与控制器设计](navmesh-planner-base-controller-experiment-design.md)的阶段 B 做短距离回归，确认到位率和动作数，把"选位失败"和"执行失败"区分开。该设计的阶段 A、C 使用真值地面网格，只服务于真值几何消融组的执行器。
+1. **执行器验收**：相对运动控制器按[规划器与控制器设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/navmesh-planner-base-controller-experiment-design.md)的阶段 B 做短距离回归，确认到位率和动作数，把"选位失败"和"执行失败"区分开。该设计的阶段 A、C 使用真值地面网格，只服务于真值几何消融组的执行器。
 2. **冻结**：视觉输入字段、目标语义表述、相对指令协议、模型与提示词、每例请求数、候选数、规则基线、每分支动作上限。先完成不调用 API 的泄漏审计和快照恢复测试。
 3. **授权**：分别申请 GPU1 进程秒、每个模型提供方的请求数和金额上限，并按经费规则记账。**目前没有任何新费用授权。**
 
@@ -120,7 +120,7 @@
 | 1.3 稳定性 | 测试集 10 交接，每模型主条件 P1 各补两次：30 次／模型 | API；计入每模型 400 次、两模型 800 次总额 |
 | 2 闭环 | 4 组 × 60 交接 × 最多 3 分支 | GPU1 与 API，按阶段 1 的结果另行估算和授权 |
 
-- #016 的 40 次请求使用了 91,109 输入／13,444 输出 token，均值约 2,278／336；本实验同时含 RGB-D、更多题目和高分辨率，不能沿用这些均值估价。开发集位置 5、8 已完成不发送请求的 CPU 干跑，另补位置 20、23 以覆盖 Q2；60 份实际 JSON 字节与图像部分 token 估算见[独立 API 校准提案](real-handoff-spatial-stage1-api-development-calibration-proposal.md)。提案申请两模型合计 USD 3.50、最多 60 次开发集请求，**尚未授权**；完整 800 次请求的 token 与 USD 上限仍待开发集实耗校准，不得把开发集提案或设计中的总请求数当作使用许可。
+- #016 的 40 次请求使用了 91,109 输入／13,444 输出 token，均值约 2,278／336；本实验同时含 RGB-D、更多题目和高分辨率，不能沿用这些均值估价。开发集位置 5、8 已完成不发送请求的 CPU 干跑，另补位置 20、23 以覆盖 Q2；60 份实际 JSON 字节与图像部分 token 估算见[独立 API 校准提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-spatial-stage1-api-development-calibration-proposal.md)。提案申请两模型合计 USD 3.50、最多 60 次开发集请求，**尚未授权**；完整 800 次请求的 token 与 USD 上限仍待开发集实耗校准，不得把开发集提案或设计中的总请求数当作使用许可。
 
 ## 限制
 
@@ -130,4 +130,4 @@
 
 ## 结果
 
-阶段 1 的 CPU 题库、60 例图像与静态 Q1/Q4 标签已具备；Q1 为 55 例有界搜索无完整见证及 5 例仅端点 IK、按冻结口径不评分，Q4 三方向 60／60 可评。Q2 整理出 145 条真实执行动作，Q3 有 60 条。多数类、Q5 固定动作以及可见深度简单规则已生成可复核的 CPU 回执；其中 Q2/Q4 深度代理覆盖不完整，不能替代真值碰撞与 IK。59 例[渲染主批](../diagnostics/2026-09-27-real-handoff-spatial-render-batch-001-result.md)完成后，四个开发集位置的 60 份模型请求已在本地[临发前重建审计](../diagnostics/2026-09-27-real-handoff-spatial-api-wire-reconstruction.md)中逐字节核对；此后两批开发集校准已有模型答案，但没有测试集成绩；后续改用 Astra，阶段 2 未运行。不从 #016 的 8/20 对 4/20 推断模型选位效果。
+阶段 1 的 CPU 题库、60 例图像与静态 Q1/Q4 标签已具备；Q1 为 55 例有界搜索无完整见证及 5 例仅端点 IK、按冻结口径不评分，Q4 三方向 60／60 可评。Q2 整理出 145 条真实执行动作，Q3 有 60 条。多数类、Q5 固定动作以及可见深度简单规则已生成可复核的 CPU 回执；其中 Q2/Q4 深度代理覆盖不完整，不能替代真值碰撞与 IK。59 例[渲染主批](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-27-real-handoff-spatial-render-batch-001-result.md)完成后，四个开发集位置的 60 份模型请求已在本地[临发前重建审计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-27-real-handoff-spatial-api-wire-reconstruction.md)中逐字节核对；此后两批开发集校准已有模型答案，但没有测试集成绩；后续改用 Astra，阶段 2 未运行。不从 #016 的 8/20 对 4/20 推断模型选位效果。

@@ -1,2 +1,0 @@
-[33;1m2026-09-29 00:13:26,248 - mani_skill  - WARNING - shader_dir argument will be deprecated after ManiSkill v3.0.0 official release. Please use sensor_configs/human_render_camera_configs to set shaders.[0m
-{"position": 5, "status": "smoke_failed", "smoke_passed": false, "simulator_actions": 32}

@@ -1,73 +1,36 @@
 # Bidirectional VLA Interface
 
-Evaluation-only MS-HAB code for comparing three frozen TidyHouse settings:
+研究视觉语言模型如何通过机器人工具完成任务。当前主线在第 2 阶段：MS-HAB 接口执行、抓取能力诊断与失败归因。
 
-| Setting | Episodes | Full-task SR | Completed objects | Mean / episode |
-|---|---:|---:|---:|---:|
-| Fixed PPO + SAC | 16/16 | 0/16 | 14/80 (17.5%) | 0.875 |
-| GPT + PPO + SAC | 16/16 | 0/16 | 13/80 (16.25%) | 0.813 |
-| Teleport + SAC | 16/16 | 0/16 | 21/80 (26.25%) | 1.313 |
+## 从这里开始
 
-The complete human-readable report is in
-[`docs/log/2026-09-21-tidyhouse-three-settings.md`](docs/log/2026-09-21-tidyhouse-three-settings.md).
-The machine-readable episode summary is
-[`docs/results/tidyhouse-16/summary.json`](docs/results/tidyhouse-16/summary.json).
+- [实验结果](docs/log/README.md)：正式日志及各实验的结论边界。
+- [当前研究](research/c2/README.md)：当前方法、设计和待解决问题。
+- [设计索引](docs/design/README.md)：运行前设计与已批准条件。
+- [演示](docs/media/README.md)：保留成功、失败标签的录像。
+- [文档目录](docs/README.md)：安装、协议和历史记录。
 
-All three settings had zero complete five-object task successes. This is a
-matched 16-plan diagnostic, not a reproduction of the published 1,000-rollout
-benchmark. Teleport changes the navigation handoff distribution, so its larger
-partial-object count is not evidence that a navigation policy is better.
+最近在同一组 5 个官方 Pick 出生任务上，固定底盘与允许底盘的 Astra 条件均为 600 步内严格成功 **1/5**，200 步内 **0/5**；脚本参照 **0/5**，未通过测试组门槛。600 步为非官方条件，这些开发组诊断不能作为泛化或完整 benchmark 结果。详见 [5 例实验日志](docs/log/2026-10-01-c2-arm-capability-dev.md)。
 
-Training and fine-tuning are outside the active scope. Every profile records
-`training_updates = 0`, and the public CLI contains no training entry point.
+## 公开代码
 
-## Install
+保留两个有配套入口与离线测试的历史评测实现：
+
+- 根目录 `src/`：三种 TidyHouse setting 的 `bvi-eval`。
+- `research/c2/src/`：早期 C2 feedback recovery 实现；历史使用说明见 [代码说明](research/c2/CODE.md)。
+
+当前 Astra 实验的完整执行器、资产和冻结运行包在本地研究工作目录保存；公开仓库不再放缺少依赖的一部分运行脚本。各次实验的条件、结论和冻结哈希继续公开记录。训练完成、原生任务成功和部署检查分别报告。
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e ".[eval]"
+pip install -e ".[eval,dev]"
+python -m pytest -q
+bvi-eval --help
 ```
 
-MS-HAB, ManiSkill, assets, and official PPO/SAC checkpoints are external
-dependencies. Provider and SSH dependencies are optional:
+MS-HAB、ManiSkill、数据、资产和 PPO/SAC 检查点为外部依赖。安装与执行条件见 [复现说明](docs/reproduction.md)。历史三设置实验均为完整任务 0/16；[完整日志](docs/log/2026-09-21-tidyhouse-three-settings.md)保留局部物体完成数与限制。
 
-```bash
-pip install -e ".[openai,bridge]"
-```
+## 公开文件的范围
 
-## Run
-
-`bvi-eval run` is a non-executing validation preview unless `--execute` is
-supplied.
-
-```bash
-bvi-eval run --setting fixed \
-  --source-manifest /path/to/manifest.json \
-  --checkpoint-root /path/to/checkpoints \
-  --output /path/to/fixed-panel
-
-bvi-eval run --setting gpt \
-  --source-manifest /path/to/manifest.json \
-  --reference-panel /path/to/fixed-panel \
-  --checkpoint-root /path/to/checkpoints \
-  --bridge-dir /path/to/bridge \
-  --output /path/to/gpt-panel
-
-bvi-eval run --setting teleport \
-  --source-manifest /path/to/manifest.json \
-  --reference-panel /path/to/fixed-panel \
-  --checkpoint-root /path/to/checkpoints \
-  --output /path/to/teleport-panel
-```
-
-Real execution requires Linux, `--mshab-root`, and `--execute`. GPT execution
-also requires a separately started `bvi-eval bridge` and an approved
-`--authorization-id`. Credentials are accepted only from the local environment
-or an ignored credential file, never from command-line values.
-
-## Documentation
-
-[`docs/README.md`](docs/README.md) is the complete documentation index. The
-active tree intentionally excludes old plans, training notes, raw run dumps,
-videos, and superseded diagnostics; they remain recoverable from Git history.
+公开页面保留结果、设计、最小摘要、精选媒体和可运行的代码入口。逐请求记录、完整传感器图像、数组、冻结运行包和一次性排障脚本保留在本地。旧公开文件可以通过 [归档索引](research/c2/diagnostics/README.md)回到清理前的 Git 历史，不重写历史。

@@ -1,7 +1,0 @@
-{
-  "cpu_reproduction": "history length",
-  "cause": "observe stores the mutable history list; archive retains the same bundle. Appending the executed call mutates turn-0 history to length1, rejected when the next wire audits archive turn0.",
-  "physical_runs": 0,
-  "api_sends": 0,
-  "original_traceback_available": false
-}

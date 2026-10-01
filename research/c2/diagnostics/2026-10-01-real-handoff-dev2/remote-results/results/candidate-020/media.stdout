@@ -1,1 +1,0 @@
-{"evaluation_only": true, "result_sha256": "2c82b9c14d046f4e668d8da4a93e1ce8711f8c161e3875f20e79e1128d5ed618", "status": "navigation_already_satisfied_at_reset", "artifacts": {"history.html": {"path": "history.html", "sha256": "86e4a91b3c4520f766dafce79f65c04988db22d700fb4d7c8413752ea4fed76b"}}, "errors": [], "no_motion": true, "complete": true}

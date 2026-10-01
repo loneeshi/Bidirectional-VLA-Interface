@@ -1,4 +1,0 @@
-{"name": "plan-005-smoke", "status": "completed", "smoke_passed": true, "strict_pick_success": null, "used_seconds": 28.156310245394707}
-{"name": "plan-008-smoke", "status": "completed", "smoke_passed": true, "strict_pick_success": null, "used_seconds": 57.67108927294612}
-{"name": "plan-011-smoke", "status": "stopped", "smoke_passed": false, "strict_pick_success": null, "used_seconds": 89.84496999531984}
-{"experiment_id": "C2-EEF-BASE-NET-HEADING-R3-20260929", "status": "stopped", "authorization_sha256": "0866e2a972f10085372311a8b8d777871ab87cb2e170493da98fa245a8deed41", "gpu1_process_seconds": 89.84496999531984, "api_requests": 0, "lab_project_charge": 0, "stop_reason": "child failed; stop without retry: plan-011-smoke", "gpu1_final": {"memory_used_mib": 15, "utilization_percent": 3, "compute_processes": []}, "simulator_actions": 162, "policy_inferences": 0, "ended_at_utc": "2026-09-29T19:50:27.057301+00:00"}

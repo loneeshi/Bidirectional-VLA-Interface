@@ -1,16 +1,16 @@
 # 真实导航交接点的 SAC Pick 基线与失败归类：运行前设计草案
 
-> **2026-09-25 完整批次最新状态：**用户已授权并完成 60 个有效原生交接的 SAC 首次 Pick 基线，40/60 严格成功；20 个自然失败已自动分类，独立人工盲审待补。见[完整批次结果](../../research/c2/diagnostics/2026-09-25-real-handoff-pick-census-result.md)。下方同日早期状态注记按历史顺序保留。
+> **2026-09-25 完整批次最新状态：**用户已授权并完成 60 个有效原生交接的 SAC 首次 Pick 基线，40/60 严格成功；20 个自然失败已自动分类，独立人工盲审待补。见[完整批次结果](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-real-handoff-pick-census-result.md)。下方同日早期状态注记按历史顺序保留。
 
-> **2026-09-25 最新状态：修订后的前 12 计划预检已完成。** 10 个有效交接、8 个严格 Pick 成功、2 个自然失败，其中 1 个复跑不稳定。完整 40–60 交接批次尚未获单独授权。见[首段结果](../../research/c2/diagnostics/2026-09-25-real-handoff-pick-first12-amended.md)和[完整批次申请](real-handoff-pick-census-full-batch-authorization-proposal.md)。以下运行前设计及中间状态注记保留原貌，避免把事后结果写成预设。
+> **2026-09-25 最新状态：修订后的前 12 计划预检已完成。** 10 个有效交接、8 个严格 Pick 成功、2 个自然失败，其中 1 个复跑不稳定。完整 40–60 交接批次尚未获单独授权。见[首段结果](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-real-handoff-pick-first12-amended.md)和[完整批次申请](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/docs/design/real-handoff-pick-census-full-batch-authorization-proposal.md)。以下运行前设计及中间状态注记保留原貌，避免把事后结果写成预设。
 
-> **2026-09-25 执行状态：首段预检在快照复跑门停止。** 120 个计划清单已冻结，获准的前 12 个中仅尝试 2 个；取得 1 个真实交接，其 SAC 失败复跑变为严格成功。完整 40–60 交接普查未启动。实际回执、删失尝试和解释见[首段预检记录](../../research/c2/diagnostics/2026-09-25-real-handoff-pick-preflight.md)。下文保留运行前草案，未将事后结果改写为预先设定。
+> **2026-09-25 执行状态：首段预检在快照复跑门停止。** 120 个计划清单已冻结，获准的前 12 个中仅尝试 2 个；取得 1 个真实交接，其 SAC 失败复跑变为严格成功。完整 40–60 交接普查未启动。实际回执、删失尝试和解释见[首段预检记录](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-real-handoff-pick-preflight.md)。下文保留运行前草案，未将事后结果改写为预先设定。
 
 > 同日追加公开状态、GPU 缓冲区及双重还原诊断仍未通过终止步一致门；用户随后批准[复跑门修订](real-handoff-pick-census-replay-amendment-proposal.md)下的前 12 计划续跑。完整 40–60 交接批次仍须另行授权。
 
 按[实验日志模板](../log/TEMPLATE.md)组织。**状态：草案；尚未冻结计划清单、代码、分类阈值和资源授权，也未运行仿真或模型。**
 
-本实验是[真实导航交接点的 Pick 可救回性设计](../../research/c2/docs/real-handoff-pick-recoverability-design.md)的**第一步**，单独拆出。它只回答：真实交接后，SAC 不做任何干预时成功率是多少，失败主要属于哪一类。候选动作扫描、GPT 选择与任何底盘调整都**不在本实验内**。本批产出的交接快照、基线结局和可重复失败清单，将直接作为可救回性实验的输入和分母，不再重复采集。
+本实验是[真实导航交接点的 Pick 可救回性设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-pick-recoverability-design.md)的**第一步**，单独拆出。它只回答：真实交接后，SAC 不做任何干预时成功率是多少，失败主要属于哪一类。候选动作扫描、GPT 选择与任何底盘调整都**不在本实验内**。本批产出的交接快照、基线结局和可重复失败清单，将直接作为可救回性实验的输入和分母，不再重复采集。
 
 ### 为什么先做这一步
 
@@ -88,7 +88,7 @@
 2. **首段预检（需单独授权）**：清单前 12 个计划。只测交接取得率、快照还原一致性、每计划耗时和分类器能否对全部失败给出类别。若快照还原不一致或未归类超过三分之一，停在接口修复，不继续采集。
 3. **完整批次（需另行授权）**：按预检吞吐重算资源上限后，沿清单继续到 40–60 个有效交接或清单用尽。不因中途结果好坏提前停止或换样本。
 4. **结果分流**（写在运行前，避免事后解释）：
-   - "底盘撞障碍"加"够不到"占可重复失败的多数：进入[可救回性实验](../../research/c2/docs/real-handoff-pick-recoverability-design.md)的候选动作扫描。
+   - "底盘撞障碍"加"够不到"占可重复失败的多数：进入[可救回性实验](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-pick-recoverability-design.md)的候选动作扫描。
    - "夹取失败"加"抓后未完成"占多数：底盘调整与 GPT 选站位的空间有限，建议 C2 收束，回到第 2 步 TAPT 或操作策略本身。
    - 基线成功率很高、失败太少（少于 10 个可重复失败）：只报告探索性结果，不启动下一步扫描。
 

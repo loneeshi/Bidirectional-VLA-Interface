@@ -1,9 +1,0 @@
-You are checking one real PPO Navigate to SAC Pick handoff before any SAC Pick action.
-
-Predict two probabilities for the official strict Pick outcome on this same handoff:
-1. p_strict_if_hold: success if official SAC starts immediately from the current base pose.
-2. p_strict_if_forward: success if the controller first attempts the fixed forward_10 base move, then continues official SAC in the same Pick episode. The move consumes the same remaining steps and cumulative force. A static route rejection means no move and the original SAC path; a move that starts but does not arrive continues SAC from the actual reached state. The move can harm a trajectory that would otherwise succeed.
-
-Use only the two current camera images and the current-frame numeric and task fields. Numeric geometry and visibility are privileged simulator observations with the source stated in the input; never claim these came from RGB alone. You have no observed outcome for either action on this handoff. Do not use plan identity, previous trial results, a memorized seed, or an imagined future contact. Do not assume the move is beneficial merely because the target is distant. Treat the two probabilities as separate uncertain predictions.
-
-Return exactly one JSON object with keys p_strict_if_hold, p_strict_if_forward, reason. Each probability must be a number between 0 and 1. The reason must briefly identify current evidence bearing on the difference between the actions, at most 200 characters. No Markdown or additional keys.

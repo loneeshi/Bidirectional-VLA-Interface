@@ -10,7 +10,7 @@
 
 - **主问题**：在真实 PPO Navigate→Pick 交接处，Astra 不调用 SAC，只通过末端工具接口完成 Pick。它自己输出末端轨迹，拿到 IK 路径检查和执行反馈后再调整。这种方式能否达到官方严格 Pick 成功？
 - **上下文学习问题**：同一交接失败后重试时，给 Astra 看此前各次尝试的轨迹、反馈、结局和教训，能否用更少的尝试次数做对？
-- **不在本设计内**：prompt 以外的学习形式（Skill Pool、RPent 式记忆提炼）。这是组会定的长期方向，本周不做。候选方案留存在[跨尝试记忆系统候选方案](astra-memory-system-options.md)。
+- **不在本设计内**：prompt 以外的学习形式（Skill Pool、RPent 式记忆提炼）。这是组会定的长期方向，本周不做。候选方案留存在[跨尝试记忆系统候选方案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/astra-memory-system-options.md)。
 
 ## 参考实现与对齐范围
 
@@ -102,12 +102,12 @@
 ## 前置门（不花 API，必须先过）
 
 > **2026-09-29 调整（用户决定）：**
-> - 原 G0"回放 SAC 轨迹"已停止，改为工具冒烟测试，随后先做 E1 特权试点，见[冒烟测试与 E1 试点设计](real-handoff-eef-tool-smoke-e1-pilot-design.md)。停止原因：回放考的是"模仿 SAC 的动作风格"，不是 Astra 使用工具的方式。
+> - 原 G0"回放 SAC 轨迹"已停止，改为工具冒烟测试，随后先做 E1 特权试点，见[冒烟测试与 E1 试点设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-tool-smoke-e1-pilot-design.md)。停止原因：回放考的是"模仿 SAC 的动作风格"，不是 Astra 使用工具的方式。
 > - 前几轮记录保留在诊断目录。
 > - 执行器保留三条经验：沿路径连续跟踪、关节空间回休息位、IK 选解偏好与防跳解。
 > - G1 须用新执行器 v3 在 CPU 上重做，作为硬门。v3 的 IK 已加入选解偏好，旧版 dogbox 的 108/108 不能代替。
 > - E1 不开放 `locate_point`；G2 改为在 E2 之前完成；G3 在 E1 之前完成。
-> - 2026-09-29 v3 CPU 硬门回执：59 项测试、坐标/动作映射、第 11 号回归通过，G1 107/108 未过；尚不能申请冒烟 GPU。见[CPU 诊断](../diagnostics/2026-09-29-eef-tool-smoke-cpu/README.md)。
+> - 2026-09-29 v3 CPU 硬门回执：59 项测试、坐标/动作映射、第 11 号回归通过，G1 107/108 未过；尚不能申请冒烟 GPU。见[CPU 诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-29-eef-tool-smoke-cpu/README.md)。
 >
 > 下表 G0 一行为原定义，仅作历史记录。
 
@@ -164,9 +164,9 @@ TCP 定义（MS-HAB `agent.tcp`，即 Fetch `gripper_link`）在 G0 中核对并
 5. IK 用手臂 7 关节加躯干升降，并提供 `return_to_rest`；G0 跑只用手臂的对照。
 6. K=3，每次尝试最多 20 次工具调用，成功后停止。
 7. 推理强度：主实验 `medium`，加测 E2-x（`xhigh`）。
-8. [阶段 1 正例挑战集](real-handoff-spatial-stage1-astra-positive-challenge-amendment.md)暂停，GPU1 优先用于 G0。
-9. （2026-09-29）停止回放 SAC 的 G0，改为工具冒烟测试，接着做 E1 特权试点（第 5、8、11 号开发交接，H0，单次），见[冒烟测试与 E1 试点设计](real-handoff-eef-tool-smoke-e1-pilot-design.md)。躯干由程序按需分配；出现可归因于躯干的失败时锁定躯干。
-10. （2026-09-29）底盘纳入 Astra 工具集，原"本周底盘固定"作废。依据：SAC 在 Pick 中移动底盘 0.32–1.06 m；E1 r2 第 11 号在固定底盘下够不到。新增 `move_base`（先转后直行，只用里程计闭环，不做路线预检），接着做 E1-B 特权试点，见[底盘工具与 E1-B 试点设计](real-handoff-eef-base-tool-e1b-pilot-design.md)。
+8. [阶段 1 正例挑战集](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-spatial-stage1-astra-positive-challenge-amendment.md)暂停，GPU1 优先用于 G0。
+9. （2026-09-29）停止回放 SAC 的 G0，改为工具冒烟测试，接着做 E1 特权试点（第 5、8、11 号开发交接，H0，单次），见[冒烟测试与 E1 试点设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-tool-smoke-e1-pilot-design.md)。躯干由程序按需分配；出现可归因于躯干的失败时锁定躯干。
+10. （2026-09-29）底盘纳入 Astra 工具集，原"本周底盘固定"作废。依据：SAC 在 Pick 中移动底盘 0.32–1.06 m；E1 r2 第 11 号在固定底盘下够不到。新增 `move_base`（先转后直行，只用里程计闭环，不做路线预检），接着做 E1-B 特权试点，见[底盘工具与 E1-B 试点设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-base-tool-e1b-pilot-design.md)。
 11. （2026-09-29，用户要求）**Astra 写推理说明，归因要看它的反馈**，适用于之后所有工具闭环实验。
 
     **推理说明**：
@@ -188,7 +188,7 @@ TCP 定义（MS-HAB `agent.tcp`，即 Fetch `gripper_link`）在 G0 中核对并
 12. （2026-09-29，用户决定）**提示加入方法指导，并作为之后所有实验的标准提示。**
     - 内容：机器人常量（由 URDF 计算）与通用推理步骤，不含任何场景真值。推理步骤包括：先用深度估计前方间距再移动；以家具边缘而非目标为停车基准；分段靠近；先用 `check_path` 验证能否够到；预留回休息位的步数。
     - 版本记为 `guidance-v1`，先在 E1-B2 使用，之后 G2、E2、E3 沿用；修改须另记版本。
-    - 见[E1-B2 设计](real-handoff-eef-e1b2-method-guidance-design.md)。
+    - 见[E1-B2 设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-e1b2-method-guidance-design.md)。
 
 
 ## 2026-09-29 工具前置门与E1运行进度
@@ -198,32 +198,32 @@ TCP 定义（MS-HAB `agent.tcp`，即 Fetch `gripper_link`）在 G0 中核对并
 
 ### E1最终回执与前置论据更正
 
-上述运行已结束：E1 r2严格Pick1/3（5成功；8时限；11give_up），无删失；r1协议删失保留。工具门3/3不等同抓取率；此特权开发试点仅证实存在Astra成功实例。新增CPU证据说明部分移动失败后的边界缓存会错误拒绝零位移命令，须在后续条件前修复。SAC教师最大底盘移动0.324/0.496/1.059m，因此不能以其成功证明本轮固定底盘可行；不事后改分母。下一道门是接口修复、固定底盘可行性核对和G2，E2未运行。完整[最终结果](../diagnostics/2026-09-29-eef-e1-pilot-r2/README.md)含逐例、请求审计、源码哈希与财务收尾。
+上述运行已结束：E1 r2严格Pick1/3（5成功；8时限；11give_up），无删失；r1协议删失保留。工具门3/3不等同抓取率；此特权开发试点仅证实存在Astra成功实例。新增CPU证据说明部分移动失败后的边界缓存会错误拒绝零位移命令，须在后续条件前修复。SAC教师最大底盘移动0.324/0.496/1.059m，因此不能以其成功证明本轮固定底盘可行；不事后改分母。下一道门是接口修复、固定底盘可行性核对和G2，E2未运行。完整[最终结果](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/README.md)含逐例、请求审计、源码哈希与财务收尾。
 
-2026-09-29实施进展：底盘工具v12的CPU硬门通过（262项测试、108帧坐标、31份离线请求审计），物理冒烟仍待批准。冒烟20/23/5/8/11，5×180=900进程秒、API0；E1-B新样本预定1/14/26/42与回归5/8/11分别报告，未运行。详细冻结与授权见[底盘提案](real-handoff-eef-base-smoke-authorization-proposal.md)。
+2026-09-29实施进展：底盘工具v12的CPU硬门通过（262项测试、108帧坐标、31份离线请求审计），物理冒烟仍待批准。冒烟20/23/5/8/11，5×180=900进程秒、API0；E1-B新样本预定1/14/26/42与回归5/8/11分别报告，未运行。详细冻结与授权见[底盘提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-base-smoke-authorization-proposal.md)。
 
 
-2026-09-29物理冒烟回执：第20号转向/直行分别12/15步通过；监督器读取缺失strict_pick_success字段后停止，23/5/8/11未运行。实耗47.275746进程秒、API0，旧额度关闭，GPU1空闲。CPU已修复独立r2记录接口（264项通过），v12控制器不变；[剩余四例720秒提案](real-handoff-eef-base-smoke-remaining-authorization-proposal.md)待批，E1-B未启动。
+2026-09-29物理冒烟回执：第20号转向/直行分别12/15步通过；监督器读取缺失strict_pick_success字段后停止，23/5/8/11未运行。实耗47.275746进程秒、API0，旧额度关闭，GPU1空闲。CPU已修复独立r2记录接口（264项通过），v12控制器不变；[剩余四例720秒提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-base-smoke-remaining-authorization-proposal.md)待批，E1-B未启动。
 
 
 ### 2026-09-29 底盘冒烟收口补记
 
-保留第20号通过；剩余授权批次23、5通过，8因两调用合并航向误差0.034638 rad超过0.03 rad停止，11未启动。五例门未通过，未进入E1-B。现有证据为相对指令容差累积，不自动归因躯干。控制器、阈值与样本未改；修正方向待用户确认，复测需新有界授权。见[诊断](../diagnostics/2026-09-29-eef-base-smoke-v12-remaining/README.md)。
+保留第20号通过；剩余授权批次23、5通过，8因两调用合并航向误差0.034638 rad超过0.03 rad停止，11未启动。五例门未通过，未进入E1-B。现有证据为相对指令容差累积，不自动归因躯干。控制器、阈值与样本未改；修正方向待用户确认，复测需新有界授权。见[诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/README.md)。
 
 
 ### 2026-09-29 净航向衔接修复（用户已确认方向）
 
-冒烟SAC序列的末转改为wrap(冻结净航向−实测里程计航向)，第一调用、净目标及验收门不变，两调用仍共用80步。r3脚本独立保留旧版本；v12底层控制器不变。CPU 275项通过，尚无物理复测结果。5/8/11复测申请3×180＝540进程秒、API0，等待单独授权，旧余额不转入。见[复测提案](real-handoff-eef-base-net-heading-r3-authorization-proposal.md)。
+冒烟SAC序列的末转改为wrap(冻结净航向−实测里程计航向)，第一调用、净目标及验收门不变，两调用仍共用80步。r3脚本独立保留旧版本；v12底层控制器不变。CPU 275项通过，尚无物理复测结果。5/8/11复测申请3×180＝540进程秒、API0，等待单独授权，旧余额不转入。见[复测提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-base-net-heading-r3-authorization-proposal.md)。
 
 
 ### 2026-09-29 r3物理复测结果
 
-5/8通过，8的目标衔接bug在本次回放中验证修复；11第一调用61步，末转耗尽剩余19步，最终0.023691 m/0.051453 rad未过门。未调整门槛、未重跑、未进入E1-B，候选速度暂不冻结为最终参数。用户决定后续控制器修订方向；不自动归因躯干。见[诊断](../diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/README.md)。
+5/8通过，8的目标衔接bug在本次回放中验证修复；11第一调用61步，末转耗尽剩余19步，最终0.023691 m/0.051453 rad未过门。未调整门槛、未重跑、未进入E1-B，候选速度暂不冻结为最终参数。用户决定后续控制器修订方向；不自动归因躯干。见[诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/README.md)。
 
 
 ### 2026-09-29 CPU归因补记：第11号接触与漂移
 
-末转K=2的理想速度响应需22步而只剩19步；69–80步评估端采样到forearm_roll_link与外部非目标标签body持续接触，末转20.4 mm漂移主要为横向。未力超限不等于无碰撞。首次零前进转向也有128.6 mm平移；不自动归因躯干。已提出独立v13停稳与转向收敛修订草案，尚未改控制器、启动仿真或申请GPU；原门不变。见[CPU归因](../diagnostics/2026-09-29-eef-base-turn-drift-cpu/README.md)和[v13草案](real-handoff-eef-base-control-v13-revision-proposal.md)。
+末转K=2的理想速度响应需22步而只剩19步；69–80步评估端采样到forearm_roll_link与外部非目标标签body持续接触，末转20.4 mm漂移主要为横向。未力超限不等于无碰撞。首次零前进转向也有128.6 mm平移；不自动归因躯干。已提出独立v13停稳与转向收敛修订草案，尚未改控制器、启动仿真或申请GPU；原门不变。见[CPU归因](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-29-eef-base-turn-drift-cpu/README.md)和[v13草案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-base-control-v13-revision-proposal.md)。
 
 
 ## 2026-09-30 UTC：E1-B2 CPU 准备与选样阻塞
@@ -232,33 +232,33 @@ TCP 定义（MS-HAB `agent.tcp`，即 Fetch `gripper_link`）在 G0 中核对并
 
 沿用既有排除口径（含 CPU IK 调试暴露），仅剩 55、58、61 三个未用开发交接，均 >1.14 m；四新样本要求未满足，未修改分母、未借用测试集。待用户决定三新＋四配对或保留四新要求暂停。最终网络/部署整合与可启动部署包哈希尚未完成。
 
-详情：[CPU 诊断](../diagnostics/2026-09-30-eef-e1b2-cpu/README.md)、[阻塞中的提案草稿](real-handoff-eef-e1b2-authorization-proposal.md)。八例建议 USD1050 上限，七例备选 USD920，均未授权；旧余额不转入。
+详情：[CPU 诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-30-eef-e1b2-cpu/README.md)、[阻塞中的提案草稿](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-e1b2-authorization-proposal.md)。八例建议 USD1050 上限，七例备选 USD920，均未授权；旧余额不转入。
 
 
 ## 2026-09-30 UTC 用户选样修订（覆盖上述四新要求）
 
 用户明确选择方案 1：新组 55、58、61 三例（均 >1.14 m），配对 1、14、26、42 四例；分别报告 k/3、k/4。三例为全部剩余未用开发交接；不放宽排除、不借测试集。配对组仍注明指导据此制定、结果偏乐观。此选择仅批准样本修订，不批准 GPU/API 启动。
 
-其余条件与晋级门不变。资源申请改为最多 182 次 API、USD920、GPU1 串行 7×1800=12600 进程秒。CPU 回归 395/395，部署包与源码已冻结；下一道门为[七例启动提案](real-handoff-eef-e1b2-authorization-proposal.md)的明确批准。此前“选样阻塞/待决定”段落保留为历史记录，以本修订为准。
+其余条件与晋级门不变。资源申请改为最多 182 次 API、USD920、GPU1 串行 7×1800=12600 进程秒。CPU 回归 395/395，部署包与源码已冻结；下一道门为[七例启动提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-e1b2-authorization-proposal.md)的明确批准。此前“选样阻塞/待决定”段落保留为历史记录，以本修订为准。
 
 
 ## 已决定事项 13：2026-09-30 高清视觉主条件开发试点
 
-用户已批准[visual-v1 / guidance-v2 实施设计](real-handoff-eef-visual-pilot-design.md)：四路原生2048 RGB-D保留完整轮内历史，移除首轮特权目标点，新增主动转头与传感器像素定位，只读查询零环境步，v13运动与官方200步不变。先用已暴露开发5/55/58做H0单次诊断，再另提H0/H1重试比较；61及测试集保留。
+用户已批准[visual-v1 / guidance-v2 实施设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-visual-pilot-design.md)：四路原生2048 RGB-D保留完整轮内历史，移除首轮特权目标点，新增主动转头与传感器像素定位，只读查询零环境步，v13运动与官方200步不变。先用已暴露开发5/55/58做H0单次诊断，再另提H0/H1重试比较；61及测试集保留。
 
 本决定明确替代“E1-B2必须成功后才允许准备/申请视觉试点”的顺序：独立CPU、GPU接口和G2通过后可申请视觉试点。E1-B2未完成、未过门的原结果与分母保留，不追认通过。新接口与提示同步改变，整体试点不能单独证明分辨率收益。此处guidance-v2覆盖新条件，guidance-v1及旧版本保持原记录。
 
-CPU436/436通过，3快照实验室CPU反序列化通过且未初始化CUDA；实际高清渲染、头部运动和G2仍待验证。下一道门为[API0接口启动提案](real-handoff-eef-visual-interface-authorization-proposal.md)的独立批准：GPU1串行3×300=900进程秒。API阶段尚未申请启动，后续预算建议USD950只是完整历史保守估算。证据见[CPU诊断](../diagnostics/2026-09-30-eef-visual-cpu/README.md)。本轮无新Pick成功，无API/GPU实验/仿真调用，不发布GitHub。
+CPU436/436通过，3快照实验室CPU反序列化通过且未初始化CUDA；实际高清渲染、头部运动和G2仍待验证。下一道门为[API0接口启动提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-visual-interface-authorization-proposal.md)的独立批准：GPU1串行3×300=900进程秒。API阶段尚未申请启动，后续预算建议USD950只是完整历史保守估算。证据见[CPU诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-30-eef-visual-cpu/README.md)。本轮无新Pick成功，无API/GPU实验/仿真调用，不发布GitHub。
 
 
 ## 2026-09-30：高清接口r5通过
 
-453项CPU回归通过，5/55/58真实接口与双相机G2通过；API0，未运行Astra、未新增严格Pick成功。录像直接读相机避免状态副作用，主动头部与保持通道限幅分离；v13底盘与原40/200步门不变。guidance-v3完整轮内历史预算更新为USD1000.8816保守预留，独立提案申请1010（取代旧950估算，不构成授权）。见[试点授权提案](real-handoff-eef-visual-pilot-authorization-proposal.md)和[接口诊断](../diagnostics/2026-09-30-r5-eef-visual-cpu/README.md)。
+453项CPU回归通过，5/55/58真实接口与双相机G2通过；API0，未运行Astra、未新增严格Pick成功。录像直接读相机避免状态副作用，主动头部与保持通道限幅分离；v13底盘与原40/200步门不变。guidance-v3完整轮内历史预算更新为USD1000.8816保守预留，独立提案申请1010（取代旧950估算，不构成授权）。见[试点授权提案](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-visual-pilot-authorization-proposal.md)和[接口诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-30-r5-eef-visual-cpu/README.md)。
 
 
 ## 2026-09-30：用户改为640与近期图片窗口
 
-用户明确选择640×640实际渲染，当前/上一轮图像+完整精简文字执行记录；不再接续previous_response_id，旧图显式回看，完整档案仍保存。guidance-v4-compact与新模块独立版本，旧条件原结果保留。详见[新设计](real-handoff-eef-compact-640-design.md)。CPU474通过，物理接口与模型预算待批；r1/r2原额度关闭。
+用户明确选择640×640实际渲染，当前/上一轮图像+完整精简文字执行记录；不再接续previous_response_id，旧图显式回看，完整档案仍保存。guidance-v4-compact与新模块独立版本，旧条件原结果保留。详见[新设计](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/real-handoff-eef-compact-640-design.md)。CPU474通过，物理接口与模型预算待批；r1/r2原额度关闭。
 
 ## 已决定事项 14：2026-09-30 执行器系统对照与基础工作（用户决定）
 
@@ -278,7 +278,7 @@ CPU436/436通过，3快照实验室CPU反序列化通过且未初始化CUDA；�
 
 ## 2026-10-01：基础工作实施回执
 
-用户授权按验收顺序完成后直接启动。A 服务器归档请求探测 3/3 完成，响应不执行，估算 USD 0.4194625，实际账单待核；B 已冻结并启动独立原生 PPO/SAC 数据采集，最多 5400 GPU1 进程秒、API 0。544 项相关 CPU 回归通过、3 跳过。C 的 18 条草拟数值移动仍有规划/参考时长问题，物理入口与规定接触定义未验收，不能把 CPU 重建写成四条件物理失败，也不能跳过 C 启动 Astra。模型侧条件及旧分母保持不变。见[实施诊断](../diagnostics/2026-10-01-eef-systematic-foundations-cpu/README.md)。
+用户授权按验收顺序完成后直接启动。A 服务器归档请求探测 3/3 完成，响应不执行，估算 USD 0.4194625，实际账单待核；B 已冻结并启动独立原生 PPO/SAC 数据采集，最多 5400 GPU1 进程秒、API 0。544 项相关 CPU 回归通过、3 跳过。C 的 18 条草拟数值移动仍有规划/参考时长问题，物理入口与规定接触定义未验收，不能把 CPU 重建写成四条件物理失败，也不能跳过 C 启动 Astra。模型侧条件及旧分母保持不变。见[实施诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-eef-systematic-foundations-cpu/README.md)。
 
 ## 已决定事项 15：2026-09-30 站位就绪条件下的抓取能力测评（用户决定，导师重视）
 
@@ -307,7 +307,7 @@ CPU436/436通过，3快照实验室CPU反序列化通过且未初始化CUDA；�
 
 ### 已决定事项 16 的 CPU 落地回执（2026-10-01）
 
-唯一关节空间候选未过门，按用户指定分支冻结协调v2；不再修执行器。验证集出生站位开发10/测试30及种子/哈希已冻结，guidance-v4-arm明确150/600步、禁move_base，P仅首次给特权中心。600步源码门通过，内部601/外层600补偿reset扣步，官方五项判据不变。详见[CPU诊断](../diagnostics/2026-10-01-arm-capability-cpu/README.md)及[开发组待批提案](../../../docs/design/c2-eef-arm-development-authorization-proposal.md)。脚本、V、P均未物理运行；开发集2保留给之后带底盘条件。本轮只本地提交，不发布。
+唯一关节空间候选未过门，按用户指定分支冻结协调v2；不再修执行器。验证集出生站位开发10/测试30及种子/哈希已冻结，guidance-v4-arm明确150/600步、禁move_base，P仅首次给特权中心。600步源码门通过，内部601/外层600补偿reset扣步，官方五项判据不变。详见[CPU诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-cpu/README.md)及[开发组待批提案](../../../docs/design/c2-eef-arm-development-authorization-proposal.md)。脚本、V、P均未物理运行；开发集2保留给之后带底盘条件。本轮只本地提交，不发布。
 
 ## 已决定事项 17：2026-10-01 抓取能力测评只保留 V 条件，开发组 5 例（用户决定）
 

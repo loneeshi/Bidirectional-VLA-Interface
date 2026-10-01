@@ -1,3 +1,0 @@
-{"name": "plan-055-E1B2", "status": "completed", "strict_pick_success": false, "used_seconds": 77.3243056461215}
-{"name": "plan-058-E1B2", "status": "api_censored", "strict_pick_success": false, "used_seconds": 147.53476371988654}
-{"experiment_id": "C2-EEF-E1B2-20260930-GUIDANCE-V1", "status": "stopped", "authorization_sha256": "8895d7b64cf8c1e22af98e6bb79ff0fba28022be91604214d91cf07ccb867531", "gpu1_process_seconds": 147.53476371988654, "api_requests": 0, "lab_project_charge": 0, "stop_reason": "case censored; stop without automatic retry", "gpu1_final": {"memory_used_mib": 15, "utilization_percent": 0, "compute_processes": []}, "simulator_actions": 56, "policy_inferences": 0, "ended_at_utc": "2026-09-30T02:03:05.215145+00:00"}

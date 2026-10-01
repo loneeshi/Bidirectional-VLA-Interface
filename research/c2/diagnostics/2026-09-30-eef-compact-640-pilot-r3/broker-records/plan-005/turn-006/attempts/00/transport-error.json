@@ -1,7 +1,0 @@
-{
-  "exception_type": "URLError",
-  "reason_type": "ConnectionResetError",
-  "reason_errno": 10054,
-  "category": "connection",
-  "elapsed_seconds": 0.15600000007543713
-}

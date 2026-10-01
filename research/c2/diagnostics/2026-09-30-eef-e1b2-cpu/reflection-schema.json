@@ -1,1 +1,0 @@
-{"additionalProperties":false,"properties":{"hindsight":{"maxLength":3000,"minLength":1,"type":"string"}},"required":["hindsight"],"type":"object"}

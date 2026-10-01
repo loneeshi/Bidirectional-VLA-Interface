@@ -2,7 +2,7 @@
 
 状态：代码与 CPU 回归完成；新预算待批准，尚未启动。用户已要求修复并启动；旧固定底盘批的未用额度已关闭，本提案明确新支出上限，不自动转移旧余额。
 
-后续回执：用户随后明确“启动”，本提案新额度已获批准，批次 PID1900102 已启动。上述“待批准”保留为提交时状态，以[启动诊断](../../research/c2/diagnostics/2026-10-01-arm-mobile-five-r1/README.md)为最新状态；运行条件与额度不变。
+后续回执：用户随后明确“启动”，本提案新额度已获批准，批次 PID1900102 已启动。上述“待批准”保留为提交时状态，以[启动诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-mobile-five-r1/README.md)为最新状态；运行条件与额度不变。
 
 ## 冻结条件
 
@@ -27,7 +27,7 @@ API 只通过实验室服务器的既有代理发送，密钥仅由运行时 bro
 
 ## 验证与停止规则
 
-149 项相关 CPU 回归通过；服务器核实 108 份源文件、1046 份资产和 5 份 r3 初态绑定，导入成功、无 CUDA 初始化、API/物理步数均 0；GPU1 在检查时空闲。完整 [CPU 与部署回执](../../research/c2/diagnostics/2026-10-01-arm-mobile-readiness-cpu/README.md)。运行包 SHA-256 `590063d9988a51814f311caa784d2d51565ba276883092a8ecad1404e07ebab2`。
+149 项相关 CPU 回归通过；服务器核实 108 份源文件、1046 份资产和 5 份 r3 初态绑定，导入成功、无 CUDA 初始化、API/物理步数均 0；GPU1 在检查时空闲。完整 [CPU 与部署回执](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-mobile-readiness-cpu/README.md)。运行包 SHA-256 `590063d9988a51814f311caa784d2d51565ba276883092a8ecad1404e07ebab2`。
 
 正常成功、官方力限制/时限、done/give_up、调用次数耗尽均作为有效诊断结果继续下一例。未知 API 结果、基础设施异常、预算触界或缺媒体立即停批，不自动修补/重跑。五例完成即关闭余量，不授权测试组。当前模板明确 status=not_authorized。
 

@@ -148,7 +148,7 @@
 
 - 唯一关节空间候选没有过门：8/15 可生成完整参考，桌面 141/147/145 点，不满足约60步；未调参补跑，按用户指定分支冻结 `arm-coordinated-v2-600`。协调v2在600参考上界下9/15可规划，保留局限。3条小修正是IK首点位置残差超限、关节边界饱和，无跳解；没有宣称目标全局无解或使用豁免。开发、测试同执行器。
 - 固定版源码允许只延长时限：内部 Pick horizon=601、外层600，以补偿reset自带evaluate扣掉的一步；五项成功判据未改。64个原函数CPU真值表案例与Gym边界检查通过。SAC保留官方200/200配置。首个获批进程断言reset后剩余600与单步递减，不符即停，不修累计力或计数。
-- 验证集9类、5000 UID、每UID 100个出生站位。种子20260930，开发10、测试30，完整清单/哈希已冻结。高度层使用初始碰撞网格最低world-z估计支撑面，明确不是接触实测；场景重叠和选择口径见[CPU诊断](../../research/c2/diagnostics/2026-10-01-arm-capability-cpu/README.md)。未读取C2测试快照。
+- 验证集9类、5000 UID、每UID 100个出生站位。种子20260930，开发10、测试30，完整清单/哈希已冻结。高度层使用初始碰撞网格最低world-z估计支撑面，明确不是接触实测；场景重叠和选择口径见[CPU诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-cpu/README.md)。未读取C2测试快照。
 - arm请求、P首轮中心白名单、禁底盘、评估端脚本、原始/累积漏斗、双时限及配对/分层报告、服务器一次发送账本与录像坐标适配均已CPU准备。部署包保存既有依赖的精确源码，不把既有未提交代码默认为可从旧HEAD恢复。
 - [开发组提案](c2-eef-arm-development-authorization-proposal.md)申请500次发送、USD1800、GPU1 120000进程秒；每Astra5400秒、script900秒、SAC300秒。原表USD65/195及1800秒的旧粗估不再适用。USD1800是请求大小上限推得的保守硬界，非预计支出。未转入旧余额。
 - 当前脚本严格成功率与Astra V/P均为“未运行”。只提交本地，不发布GitHub。用户批准开发组后才可运行；脚本不足7/10即停止，不自动修补。
@@ -169,7 +169,7 @@
 
 ### 修订二 CPU 实施回执（未授权）
 
-- 原开发10例前5个 `arm-dev-000` 至 `arm-dev-004` 已同时包含 middle/high；原开发组无low，故无需替换，也不从测试组挪入。新清单与种子/哈希见[修订二CPU诊断](../../research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/README.md)，测试30行逐字段保持不变。
+- 原开发10例前5个 `arm-dev-000` 至 `arm-dev-004` 已同时包含 middle/high；原开发组无low，故无需替换，也不从测试组挪入。新清单与种子/哈希见[修订二CPU诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-revision2-cpu/README.md)，测试30行逐字段保持不变。
 - 删除P运行入口、提示、特权白名单及配对汇总；新增每次有效locate_point到目标碰撞形状三角形表面的无符号最短距离，独立存评估端，无有效点记NA，不回传请求/history/工具结果。
 - 协调v2源码哈希保持原冻结值，未改执行器。关节空间候选桌面141/147/145点比末端直线87/95/96更多，异常；远端目标IK构型或连续关节绕行仅为待查假设，现不修、不重跑。
 - 历史数据核对：40个逻辑请求，旧重试导致实际42次发送；37份唯一已知usage，输入中位数10169、最大14676。5个历史进程耗时32.276–362.425秒，明细及失败/删失口径附于[重新提交的提案](c2-eef-arm-development-authorization-proposal.md)。125次/USD65/13500秒均已写入运行门控；预算触界即停，不保证125次用满。

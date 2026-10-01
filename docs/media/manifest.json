@@ -3,15 +3,178 @@
   "source_input_freeze_sha256": "02e6c63cdbeca0cedecfd8ea8b567a3467babf919d7d5450219b165ae9df5ffd",
   "description": "A3 pre-SAC contact sheets and separate seed4 Oracle-SAC and fixed-base failure videos rendered from recorded per-action cameras",
   "images": [
-    {"path": "c2-pick-2026-09-23/seed9-fetch_head.png", "sha256": "17f80c5ab2f3e3f931a4629e28910ec320bda16f4bc5899a7cc3148fd67dbe7e", "bytes": 136735},
-    {"path": "c2-pick-2026-09-23/seed9-fetch_hand.png", "sha256": "eeab87a6c027b7404c70b637b8bf7cff3a55c8f7939aa41e52aa03dd8d11eb34", "bytes": 173769},
-    {"path": "c2-pick-2026-09-23/seed19-fetch_head.png", "sha256": "78b8e7868876144320202fd57cafb70f306e459a0942ab2a814b8a302e9c6b74", "bytes": 94459},
-    {"path": "c2-pick-2026-09-23/seed19-fetch_hand.png", "sha256": "aa8920e224bc17c1ec647ded195a3485ada3e2d275de1d5862652bc76ef0000b", "bytes": 138258}
+    {
+      "path": "c2-pick-2026-09-23/seed9-fetch_head.png",
+      "sha256": "17f80c5ab2f3e3f931a4629e28910ec320bda16f4bc5899a7cc3148fd67dbe7e",
+      "bytes": 136735
+    },
+    {
+      "path": "c2-pick-2026-09-23/seed9-fetch_hand.png",
+      "sha256": "eeab87a6c027b7404c70b637b8bf7cff3a55c8f7939aa41e52aa03dd8d11eb34",
+      "bytes": 173769
+    },
+    {
+      "path": "c2-pick-2026-09-23/seed19-fetch_head.png",
+      "sha256": "78b8e7868876144320202fd57cafb70f306e459a0942ab2a814b8a302e9c6b74",
+      "bytes": 94459
+    },
+    {
+      "path": "c2-pick-2026-09-23/seed19-fetch_hand.png",
+      "sha256": "aa8920e224bc17c1ec647ded195a3485ada3e2d275de1d5862652bc76ef0000b",
+      "bytes": 138258
+    }
   ],
   "videos": [
-    {"path": "c2-pick-2026-09-25-seed4-extended/seed4-fixed-base-extended-001-head-hand-2x-failure.mp4", "sha256": "510c9ca071467c34120c62e5625e9385c8cffe863aa80daa9fdfcfd9821f8a4a", "bytes": 822858, "recording_date_utc": "2026-09-25", "source_case": "seed4-fixed-base-extended-001", "frames_per_camera": 200, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 10, "outcome": "modified_horizon_pick_failure"},
-    {"path": "c2-pick-2026-09-25-seed4-fixed-base/seed4-fixed-base-sac-001-head-hand-2x-failure.mp4", "sha256": "6cf018cb78c2d0ab2bf3a20312e2f77907d07700ed2813a00de512e6e022c9fc", "bytes": 246409, "recording_date_utc": "2026-09-25", "source_case": "seed4-fixed-base-sac-001", "frames_per_camera": 39, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 5, "outcome": "official_strict_pick_failure"},
-    {"path": "c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-001-retry2-head-hand-slow4x-failure.mp4", "sha256": "5d4084da4e8d1f0999d15fee290647a02fbd1a7d30255aea96b254a1860ffe60", "bytes": 462220, "recording_date_utc": "2026-09-24", "source_case": "seed4-oracle-assistant-001-retry2", "frames_per_camera": 39, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 5, "outcome": "official_strict_pick_failure"},
-    {"path": "c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-002-head-hand-slow4x-failure.mp4", "sha256": "ca7cf77c35406a0f6b50b73a842dc122a773a4332cc2fdcb88fa6113b6f99f8f", "bytes": 533519, "recording_date_utc": "2026-09-24", "source_case": "seed4-oracle-assistant-002", "frames_per_camera": 37, "source_timing": "before each Pick action at 20 Hz", "replay_fps": 5, "outcome": "official_strict_pick_failure"}
+    {
+      "path": "c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-001-retry2-head-hand-slow4x-failure.mp4",
+      "sha256": "5d4084da4e8d1f0999d15fee290647a02fbd1a7d30255aea96b254a1860ffe60",
+      "bytes": 462220,
+      "recording_date_utc": "2026-09-24",
+      "source_case": "seed4-oracle-assistant-001-retry2",
+      "frames_per_camera": 39,
+      "source_timing": "before each Pick action at 20 Hz",
+      "replay_fps": 5,
+      "outcome": "official_strict_pick_failure"
+    },
+    {
+      "path": "c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-002-head-hand-slow4x-failure.mp4",
+      "sha256": "ca7cf77c35406a0f6b50b73a842dc122a773a4332cc2fdcb88fa6113b6f99f8f",
+      "bytes": 533519,
+      "recording_date_utc": "2026-09-24",
+      "source_case": "seed4-oracle-assistant-002",
+      "frames_per_camera": 37,
+      "source_timing": "before each Pick action at 20 Hz",
+      "replay_fps": 5,
+      "outcome": "official_strict_pick_failure"
+    },
+    {
+      "path": "c2-pick-2026-09-25-seed4-extended/seed4-fixed-base-extended-001-head-hand-2x-failure.mp4",
+      "sha256": "510c9ca071467c34120c62e5625e9385c8cffe863aa80daa9fdfcfd9821f8a4a",
+      "bytes": 822858,
+      "recording_date_utc": "2026-09-25",
+      "source_case": "seed4-fixed-base-extended-001",
+      "frames_per_camera": 200,
+      "source_timing": "before each Pick action at 20 Hz",
+      "replay_fps": 10,
+      "outcome": "modified_horizon_pick_failure"
+    },
+    {
+      "path": "c2-pick-2026-09-25-seed4-fixed-base/seed4-fixed-base-sac-001-head-hand-2x-failure.mp4",
+      "sha256": "6cf018cb78c2d0ab2bf3a20312e2f77907d07700ed2813a00de512e6e022c9fc",
+      "bytes": 246409,
+      "recording_date_utc": "2026-09-25",
+      "source_case": "seed4-fixed-base-sac-001",
+      "frames_per_camera": 39,
+      "source_timing": "before each Pick action at 20 Hz",
+      "replay_fps": 5,
+      "outcome": "official_strict_pick_failure"
+    },
+    {
+      "filename": "online-command-vs-executed.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-7af6e6c7/delivery/online-command-vs-executed.mp4",
+      "sha256": "9174868a8bffe95b8cab6ff6bf3d8852fd8f19945880d199c959118a3c62e1b8",
+      "bytes": 2951874,
+      "kind": "historical retained recording"
+    },
+    {
+      "filename": "online-raw.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-7af6e6c7/delivery/online-raw.mp4",
+      "sha256": "0e863f75492fe104cd8a3a3e9a51541ae3afbe1fc0b15c1230cccb598c7b257d",
+      "bytes": 3196951,
+      "kind": "historical retained recording"
+    },
+    {
+      "filename": "online-tcp-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-7af6e6c7/delivery/online-tcp-demo.mp4",
+      "sha256": "6deaad4f23f3a01d16ebeea08044ec756f04f3401fde278d7b601033efab21df",
+      "bytes": 5975548,
+      "kind": "historical retained recording"
+    },
+    {
+      "filename": "online-command-vs-executed.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-f7ff8757/delivery/online-command-vs-executed.mp4",
+      "sha256": "8d16a8b65ce86404dda79a631d453799ea6c93826db7f6aa0323d55b63a6e37c",
+      "bytes": 3154243,
+      "kind": "historical retained recording"
+    },
+    {
+      "filename": "online-raw.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-f7ff8757/delivery/online-raw.mp4",
+      "sha256": "4d60d9409f1cf6b83db533eacf43d749dc3d10903ad3515bfa3bb100bb8024b6",
+      "bytes": 3416721,
+      "kind": "historical retained recording"
+    },
+    {
+      "filename": "online-tcp-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-f7ff8757/delivery/online-tcp-demo.mp4",
+      "sha256": "4ded8acb07d8a5a29f38d348f8d9aa72edb312d54918bd7d75b299d8ad56de3b",
+      "bytes": 6499063,
+      "kind": "historical retained recording"
+    },
+    {
+      "filename": "arm-dev-000-astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-dual-path-2026-10-01-mobile-r1/arm-dev-000/arm-dev-000-astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "7db58980455cc2787ff49e19c8891c7234162a13381845a7901faaa025c0c9c9",
+      "bytes": 3171008,
+      "recorded_at_utc": "2026-10-01T03:55:03.179689+00:00",
+      "case_id": "arm-dev-000",
+      "condition": "V-mobile",
+      "strict_pick_success": true,
+      "termination_category": "official_success",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "arm-dev-001-astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-dual-path-2026-10-01-mobile-r1/arm-dev-001/arm-dev-001-astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "9194b4972968d3563ea4e9ab899b8dd8ed2c89872d9ae80c11a4cd16524007ae",
+      "bytes": 4361188,
+      "recorded_at_utc": "2026-10-01T04:01:28.775896+00:00",
+      "case_id": "arm-dev-001",
+      "condition": "V-mobile",
+      "strict_pick_success": false,
+      "termination_category": "give_up",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "arm-dev-002-astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-dual-path-2026-10-01-mobile-r1/arm-dev-002/arm-dev-002-astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "c55358069b18d13d3da09397e342f29b5d65af01f845bc25d089d0d054175e7a",
+      "bytes": 2389455,
+      "recorded_at_utc": "2026-10-01T04:07:40.468973+00:00",
+      "case_id": "arm-dev-002",
+      "condition": "V-mobile",
+      "strict_pick_success": false,
+      "termination_category": "cumulative_force_limit",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "arm-dev-003-astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-dual-path-2026-10-01-mobile-r1/arm-dev-003/arm-dev-003-astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "f80fca9b9fd2c89fda07aa3e159e5c0462b5e50ada89de5a0ec51ed0f1feb89e",
+      "bytes": 4746661,
+      "recorded_at_utc": "2026-10-01T04:14:11.484376+00:00",
+      "case_id": "arm-dev-003",
+      "condition": "V-mobile",
+      "strict_pick_success": false,
+      "termination_category": "done",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "arm-dev-004-astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-dual-path-2026-10-01-mobile-r1/arm-dev-004/arm-dev-004-astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "84c55784f63920e5b74528427cf5ed16494b5d532e86cacb2f2f5a354179cc3b",
+      "bytes": 2627586,
+      "recorded_at_utc": "2026-10-01T04:19:13.337694+00:00",
+      "case_id": "arm-dev-004",
+      "condition": "V-mobile",
+      "strict_pick_success": false,
+      "termination_category": "give_up",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    }
   ]
 }

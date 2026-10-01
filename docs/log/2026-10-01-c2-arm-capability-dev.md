@@ -64,7 +64,7 @@
 
 允许移动底盘后，"到达目标附近"从 1/5 增加到 3/5，但"抓住目标"没有增加。
 
-**抓空归因。** 对两轮所有闭合指令，测量闭合时夹爪原点到 Astra 自己所量目标表面的距离（沿夹爪接近方向）。详见[抓空归因诊断](../../research/c2/diagnostics/2026-10-01-arm-grasp-standoff-cpu/README.md)。
+**抓空归因。** 对两轮所有闭合指令，测量闭合时夹爪原点到 Astra 自己所量目标表面的距离（沿夹爪接近方向）。详见[抓空归因诊断](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-grasp-standoff-cpu/README.md)。
 
 | 闭合时的距离 | 实际闭合（次） | 夹住物体（次） |
 |---|---:|---:|
@@ -98,7 +98,7 @@
 
 **链接**：
 - 设计：[测评设计](../design/c2-eef-arm-capability-eval-design.md) · [开发组授权提案](../design/c2-eef-arm-development-authorization-proposal.md) · [可移动底盘授权提案](../design/c2-eef-same-five-mobile-authorization-proposal.md)
-- 诊断：[r3 固定底盘](../../research/c2/diagnostics/2026-10-01-arm-capability-development-r3/README.md) · [r1 可移动底盘](../../research/c2/diagnostics/2026-10-01-arm-mobile-five-r1/README.md) · [抓空归因](../../research/c2/diagnostics/2026-10-01-arm-grasp-standoff-cpu/README.md)
+- 诊断：[r3 固定底盘](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-capability-development-r3/README.md) · [r1 可移动底盘](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-mobile-five-r1/README.md) · [抓空归因](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-10-01-arm-grasp-standoff-cpu/README.md)
 - 成功例在线录像：
   - r3：[`online-tcp-demo.mp4`](../media/c2-pick-arm-2026-10-01-arm-dev-000-V-7af6e6c7/delivery/online-tcp-demo.mp4)，位于 `docs/media/c2-pick-arm-2026-10-01-arm-dev-000-V-7af6e6c7/delivery/`；
   - r1：[`online-tcp-demo.mp4`](../media/c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-f7ff8757/delivery/online-tcp-demo.mp4)，位于 `docs/media/c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-f7ff8757/delivery/`；

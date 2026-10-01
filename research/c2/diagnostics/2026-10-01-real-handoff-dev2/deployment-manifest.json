@@ -1,8 +1,0 @@
-{
-  "archive_sha256": "fd0e50917bfe751ce05a09826cd0cce29f10b4cacf23804cb01e374c5e06f7bc",
-  "authorization_sha256": "3cad214eaff30681337389b5b841dc43f5235293b5cf175e0fb38eb8f8171213",
-  "native_policy_observation_unchanged": true,
-  "dry_runs_passed": 30,
-  "api_calls": 0,
-  "gpu_calls": 0
-}

@@ -1,0 +1,27 @@
+{
+  "kind": "Astra issued vs executed 3D scene demo",
+  "source_video_sha256": "2c841fc9c1a915aa74db606910316f238eaef1d402103ed4870a079c6ae778a0",
+  "source_result_sha256": "21448f5a1632ea39445fd37c7bcd0ed743ae12e13de296c0dfa168f56a2d2027",
+  "video_sha256": "9194b4972968d3563ea4e9ab899b8dd8ed2c89872d9ae80c11a4cd16524007ae",
+  "frames": 253,
+  "fps": 20,
+  "resolution": [
+    512,
+    512
+  ],
+  "case_id": "arm-dev-001",
+  "condition": "V-mobile",
+  "recorded_at_utc": "2026-10-01T04:01:28.775896+00:00",
+  "strict_pick_success": false,
+  "termination_category": "give_up",
+  "evaluation_only": true,
+  "provider_calls": 0,
+  "simulator_steps": 0,
+  "source_kind": "online recording, postprocessed; no action replay",
+  "semantics": "pink: issued TCP waypoint connectors, not planner interpolation or a physical forecast; orange: issued base commands; cyan: measured TCP",
+  "command_history": "retain issued paths; never show future commands",
+  "occlusion": "X-ray; no depth buffer; each historical point reprojected through current camera",
+  "output": "c2-pick-arm-dual-path-2026-10-01-mobile-r1/arm-dev-001/arm-dev-001-astra-commanded-vs-executed-3d-demo.mp4",
+  "source_video": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-3d307714/delivery/online-raw.mp4",
+  "source_result": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-3d307714/rendering-result.json"
+}

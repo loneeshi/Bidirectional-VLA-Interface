@@ -1,7 +1,0 @@
-{
-  "compute": "GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548, 46316 MiB\n",
-  "gpu": "0, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46349 MiB, 0 %\n1, GPU-b7ebba23-7824-7601-df32-be55628936c3, 15 MiB, 0 %\n",
-  "storage": "Filesystem     1024-blocks       Used Available Capacity Mounted on\n/dev/nvme0n1p2  7750751692 6693755864 666304400      91% /\n",
-  "runs_writable": true,
-  "scheduling": "Existing user-confirmed GPU1 direct serial"
-}
