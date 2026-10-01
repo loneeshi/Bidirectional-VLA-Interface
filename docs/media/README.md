@@ -12,4 +12,4 @@
 - [seed4-fixed-base-sac-001-head-hand-2x-failure.mp4](c2-pick-2026-09-25-seed4-fixed-base/seed4-fixed-base-sac-001-head-hand-2x-failure.mp4)：固定底盘失败诊断。
 - [seed4-oracle-assistant-001-retry2-head-hand-slow4x-failure.mp4](c2-pick-2026-09-24-seed4-oracle/seed4-oracle-assistant-001-retry2-head-hand-slow4x-failure.mp4)：失败诊断，精确文件以清单为准。
 
-文件、录制日期、结果和 SHA-256 见 [manifest.json](manifest.json)。完整在线录像、传感器帧和原始轨迹仍在本地保留；历史公开附件见 [归档索引](../../research/c2/diagnostics/README.md)。
+文件、录制日期、结果和 SHA-256 见 [manifest.json](manifest.json)。完整在线录像、传感器帧和原始轨迹仍在本地保留。新增媒体需要检查画面及元数据；公开范围见 [发布原则](../../PUBLICATION.md)。

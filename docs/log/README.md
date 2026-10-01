@@ -16,7 +16,7 @@
 - [负结果备忘](negative-results.md)
 - [新实验模板](TEMPLATE.md)
 
-有日志的实验设计见 [docs/design/](../design/README.md)。
+有日志的实验设计见 docs/design/（附件未发布）。
 
 ## 规则
 

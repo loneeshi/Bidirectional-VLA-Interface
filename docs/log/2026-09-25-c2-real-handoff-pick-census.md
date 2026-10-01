@@ -1,6 +1,6 @@
 # C2 真实导航交接 SAC Pick 基线普查（2026-09-24 → 09-25 UTC）
 
-实验单位是**一次真实的原生 PPO Navigate→官方 SAC Pick 交接**，每个计划只取第一次交接。本文只报告首次 Pick 的官方严格成功与失败机制，不是完整五物体 TidyHouse 成功率。这是 C2 后续三步中的第一步：先弄清真实交接分布下 SAC 的失败构成，再决定是否做底盘救回扫描和 GPT 比较。完整结果与核验见[普查结果报告](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-real-handoff-pick-census-result.md)；机器可读数字见[评分 JSON](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-real-handoff-pick-census-score.json)与[逐例表](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-real-handoff-pick-census-cases.csv)。原始轨迹、快照与回执保存在实验工作区，未上传 GitHub。
+实验单位是**一次真实的原生 PPO Navigate→官方 SAC Pick 交接**，每个计划只取第一次交接。本文只报告首次 Pick 的官方严格成功与失败机制，不是完整五物体 TidyHouse 成功率。这是 C2 后续三步中的第一步：先弄清真实交接分布下 SAC 的失败构成，再决定是否做底盘救回扫描和 GPT 比较。完整结果与核验见普查结果报告（附件未发布）；机器可读数字见评分 JSON（附件未发布）与逐例表（附件未发布）。原始轨迹、快照与回执保存在实验工作区，未上传 GitHub。
 
 ## 实验 #001：真实交接首次 SAC Pick 基线与失败归类
 
@@ -69,4 +69,4 @@
 ### 下一步 / TODO
 
 - [ ] 独立人工盲审：用 `blinded-review-full.zip` 完成 20 例标注后生成人工附表与一致率。在此之前，自动标签为主分类，一致率记为缺失。
-- [ ] 第二步救回上限扫描：按[运行前设计](../design/real-handoff-pick-rescue-upper-bound-experiment-design.md)冻结并申请授权。
+- [ ] 第二步救回上限扫描：按运行前设计（附件未发布）冻结并申请授权。

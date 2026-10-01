@@ -4,60 +4,60 @@ This isolated research implementation does not replace the published three-setti
 `bvi-eval` baseline at the repository root. Run it in a separate Python process:
 both implementations intentionally use the `bvi` package name.
 
-The [real-handoff Pick rescue scan](../../docs/design/real-handoff-pick-rescue-upper-bound-experiment-design.md)
-has completed its [two-position preflight](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-preflight.md)
-and [14-failure main scan](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-26-real-handoff-pick-rescue-main.md).
+The real-handoff Pick rescue scan（附件未发布）
+has completed its two-position preflight（附件未发布）
+and 14-failure main scan（附件未发布）.
 Five of fourteen reproducible failures were confirmed rescued by real base motion
 and same-episode official strict Pick; the best fixed action covered four of five.
 The 45/60 finite-library figure uses retrospective per-position action selection,
 and three unrescued positions remain interface-unresolved.
 
-See the [current pose-capability design](../../docs/design/sac-capability-experiment-design.md)
+See the current pose-capability design（附件未发布）
 and [A1–A3 Pick result log](../../docs/log/2026-09-23-c2-sac-pose-capability.md).
-The [failure-feedback selection design](../../docs/design/failure-feedback-selection-experiment-design.md)
+The failure-feedback selection design（附件未发布）
 and [exploratory B0/B1 result log](../../docs/log/2026-09-23-c2-failure-feedback-selection.md)
 cover the completed small, offline information ablation.
-The [Pick start supervision design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/pick-start-supervision-recovery-experiment-design.md)
+The Pick start supervision design（附件未发布）
 was frozen before the later start-time GPT batch. The exploratory batch is
-[archived as diagnostics](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-23-pick-start/README.md) because
+archived as diagnostics（附件未发布） because
 the candidate geometry supplied to GPT was insufficient for a grounded pose
 choice. Its raw trajectories and finance records are retained; the three batch
 notes are not in the formal experiment-log index.
-The [single-seed geometry-guided online Pick design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/seed9-geometry-online-pick-experiment-design.md)
-and [seed8 post-SAC feedback design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/seed8-online-pick-feedback-experiment-design.md)
+The single-seed geometry-guided online Pick design（附件未发布）
+and seed8 post-SAC feedback design（附件未发布）
 were run as separate cases. Their results are
-[archived as exploratory diagnostics](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-24-pick-feedback/README.md):
+archived as exploratory diagnostics（附件未发布）:
 seed9 included a real movement but a deterministic movement control also
 succeeded; seed8 GPT twice chose to continue and never moved. Neither case
 establishes added benefit from GPT. The
-[next input-interface proposal](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/pick-gpt-input-contract-proposal.md)
+next input-interface proposal（附件未发布）
 audits the supplied geometry and images without adding an experiment.
-The [frozen force-event design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/pick-force-event-online-recovery-experiment-design.md)
+The frozen force-event design（附件未发布）
 was then run as single-seed experiment #014. Its
-[diagnostic result](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-24-pick-feedback/2026-09-24-seed8-force-event-recovery.md)
+diagnostic result（附件未发布）
 shows real GPT calls and error feedback, but the selected turn failed dynamic
 arrival validation; it does not establish same-episode Pick recovery.
-The [#015 contact and rescue-feasibility design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/pick-contact-and-rescue-feasibility-experiment-design.md)
-was run without GPT. Its [single-experiment diagnostic result](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-24-pick-feedback/2026-09-24-pick-contact-rescue-feasibility.md)
+The #015 contact and rescue-feasibility design（附件未发布）
+was run without GPT. Its single-experiment diagnostic result（附件未发布）
 identifies seed8 base-link contact with a sofa and tests 30 fixed base-adjustment
 candidates across seed8 and seed4. None produced a legal, arrived, strict Pick
 rescue; seed4's force-trigger boundary did not occur. The raw trajectories and
 process receipts are retained, and no GPT selection benefit is claimed.
-The [seed4 live Oracle feasibility probe](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/seed4-oracle-feasibility-probe-design.md)
+The seed4 live Oracle feasibility probe（附件未发布）
 then tested assistant decisions at real Pick checkpoints while SAC controlled
-the arm. Its [diagnostic record](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-24-pick-feedback/seed4-oracle-live-diagnostic.md)
+the arm. Its diagnostic record（附件未发布）
 shows two failed strict Pick trajectories: base assistance collided with the
 sofa, and the 39-action handoff left too little time to detour and grasp. It is
 not a formal GPT comparison or a recovery witness.
-The [seed4 fixed-base SAC design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/seed4-fixed-base-sac-pick-experiment-design.md)
+The seed4 fixed-base SAC design（附件未发布）
 then tested the user's simpler control: zero forward and turn commands throughout
-one native Pick. The [single-case diagnostic](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-fixed-base-pick/seed4-fixed-base-sac-pick.md)
+one native Pick. The single-case diagnostic（附件未发布）
 shows a valid hold with no new collision, but no target contact or grasp before
 the 39-action timeout. This isolates the obstacle effect from the SAC reach
 failure at that handoff; it does not prove the object is kinematically unreachable.
-The [same-snapshot extended-horizon design](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/docs/seed4-fixed-base-extended-horizon-experiment-design.md)
+The same-snapshot extended-horizon design（附件未发布）
 then changed only the remaining Pick counter from 39 to 200. Its
-[single-case diagnostic](https://github.com/loneeshi/Bidirectional-VLA-Interface/blob/19bb15f07ffa6e464e614419b2156cbb5f87680d/research/c2/diagnostics/2026-09-25-fixed-base-extended/seed4-fixed-base-extended-horizon.md)
+single-case diagnostic（附件未发布）
 kept the first 39 SAC actions and physical feedback identical, then still
 failed without bowl contact or grasp. The edited clock makes this a time-limit
 counterfactual, not a native benchmark result.

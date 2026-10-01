@@ -10,13 +10,11 @@
 
 这些是同一组已暴露开发任务的诊断。执行条件存在差异，不能从此表单独推断底盘的因果收益。脚本参照未通过 ≥4/5 的测试组门槛；30 例测试组尚未运行。
 
-## 当前方法与设计
+## 公开方法摘要
 
-- [抓取能力测评设计](../../docs/design/c2-eef-arm-capability-eval-design.md)：以末尾最新修订为准，删除 P，开发组缩为 5 例。
-- [可移动底盘条件](../../docs/design/c2-eef-same-five-mobile-authorization-proposal.md)：已完成的有界开发组范围，不代表后续预算授权。
-- [视觉输入与真值边界](docs/real-handoff-visual-stance-and-privileged-ablation-design.md)：主条件只用机器人传感器与自身状态，场景真值只在评估端。
-- [工具循环设计](docs/real-handoff-eef-tool-loop-icl-design.md)：方法与后续修订。
-- [执行器计划](docs/real-handoff-eef-executor-systematic-plan.md)：2×2 对照已暂停，协调 v2 保持冻结。
+- Astra 根据机器人 RGB、深度图像及自身状态提出运动指令，并接收工具执行反馈。
+- 主条件不向模型提供场景真值；目标定位误差等真值只用于评估端分析。机器人自身的运动学 IK 检查与执行允许使用。
+- 固定底盘和允许底盘条件使用同一组 5 个开发任务；结果是开发诊断，不是测试集泛化结论。
 - [录像](../../docs/media/README.md)：粉色目标点连线、青色真实 TCP、橙色底盘指令；目标点连线不是逐步物理预测。
 
-旧版本提案、一次性排障和逐请求证据统一通过 [历史索引](diagnostics/README.md)访问。历史 C2 实现的入口、测试和安装说明见 [CODE.md](CODE.md)。完整 Astra 执行器及冻结包在本地研究目录保留。
+运行前设计、内部决定、工作交接及逐请求证据限于本地。公开范围见 [发布原则](../../PUBLICATION.md)。历史 C2 实现的入口、测试和安装说明见 [CODE.md](CODE.md)。完整 Astra 执行器及冻结包在本地研究目录保留。
