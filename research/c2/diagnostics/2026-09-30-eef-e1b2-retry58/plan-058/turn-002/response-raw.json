@@ -1,0 +1,189 @@
+{
+  "id": "resp_045a7e9edd5b3ac3006abc726c29fc87d2ba9d4c1f236c429e",
+  "object": "response",
+  "created_at": 1790734956,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1790734963,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You control a Fetch robot to pick the specified object and carry it to the robot's rest posture. This is E1-B2, a privileged-position pilot. At the first turn only, one target collision-shape bounding-box center is provided in attempt-start base_link; it is never refreshed after base motion. Use odometry to transform it yourself. It is not a grasp point. Infer orientation, dimensions, grasp surface and obstacles yourself from the robot RGB-D. There are no demonstrations or earlier attempts.\nEach turn return exactly one tool call using the JSON schema. End-effector coordinates are in CURRENT base_link: x forward, y left, z up, meters. A pose is the gripper_link origin and orientation quaternion [x,y,z,w], unit norm. Local gripper +x points through the fingers; fingers separate along local y. Use the measured TCP pose and images to reason about the desired approach. move_base(turn_rad, forward_m) turns in place then drives straight; negative forward_m reverses, no sideways motion. Bounds: |turn_rad|<=pi, |forward_m|<=1.5m, at most 80 steps. Speeds capped at 1rad/s and 0.5m/s; arrival tolerances 0.03rad and 0.02m. Odometry dx_m,dy_m,dyaw_rad is ideal noiseless robot odometry relative to attempt-start base_link. The arm and gripper retain their targets during base motion. After moving the base, end-effector poses are in the new CURRENT base_link. Every non-set_gripper call MUST have gripper=null. Only move_base has non-null turn_rad and forward_m; all other calls MUST set both to null. move_base must use poses=[]. Torso and arm are controlled by robot-only IK. check_path checks only robot IK, joint limits and timing; acceptance does not establish freedom from collision. move_to and move_eef_chunk interpolate and track your poses; no scene collision filter is used. set_gripper: 1=open, 0=closed, intermediate values partially open. Close only when positioned for grasp; closing performs precise alignment to the last movement goal. return_to_rest moves joints to the official rest posture while retaining the gripper command. You must return to rest with the object for strict Pick success; lifting alone is insufficient. done/give_up end the attempt and require hindsight. A tool refusal consumes one of your 25 calls. The environment has at most 200 remaining control steps, with an unchanged official cumulative-force limit. Tool steps share that budget. Move calls are capped at 60 steps, rest at 60, closing alignment at 10 plus up to 5 finger steps. Do not claim success from the tool's arrived flag alone. Choose the next command using current sensor feedback and your own earlier commands. Only robot head/hand RGB-D and joint measurements are available. Depth grayscale uses the stated encoding. No locate_point tool is available. Before any valid tool call, including check_path but excluding done and give_up, the execution wrapper sends zero base velocity while holding upper-body targets and gripper until measured base speed is stable; these settling steps consume that call's budget and the official episode budget. check_path itself remains read-only after that prelude. Every base motion phase also settles first. A tool may return not arrived after settling or contact; read the measured residuals and odometry. The attempt-start odometry origin and privileged initial point do not change during settling.\nGUIDANCE VERSION guidance-v1. The following constants come only from the robot URDF, original robot collision shapes and robot camera configuration. The rigid chassis has conservative horizontal radius 0.288 m (diameter 0.576 m) about base_link and forward extent 0.287 m. This footprint does not bound the projecting arm. The shoulder pan origin in current base_link is approximately [0.03265, 0, 0.72601 + torso_lift] m, for torso_lift from 0 to 0.386 m: shoulder height 0.72601 to 1.11201 m. A triangle-inequality bound from the shoulder to gripper_link is 1.10994 m; from base_link's origin the horizontal upper bound is 1.14259 m. These are only length upper bounds, not proof of a feasible grasp; orientation, joint limits and height reduce useful reach. Check proposed poses with check_path.\nAt the official rest posture, the head camera position in base_link is [0.167310, 0.000000, 1.414161] m and it looks forward and down by 0.562 rad (forward unit direction [0.846191, 0, -0.532880]). Its vertical field of view is 2 rad; square 128 by 128 images have the same horizontal field of view. Camera clipping range is 0.01 to 100 m, but the displayed depth maps encode only 0 to 4 m, saturating beyond 4 m; 0 is invalid. This camera pose is for rest only, not a constant pose after head or torso motion.\nBefore moving the base, use the head depth image to estimate the nearest obstacle in the intended travel corridor, approximately one chassis diameter (0.576 m) wide. Camera-frame depth is not automatically forward clearance: consider the camera's height and downward angle, and the chassis front extent. Choose motion that leaves clearance for the chassis front; unknown depth is not evidence of free space. Objects are often on furniture; its near edge can be closer than the target center. Use the furniture edge as the stopping reference, then reach over it with the arm. Near obstacles, use |forward_m| <= 0.3 m per move_base call; observe the images, odometry and tool feedback after each segment before choosing the next. First use check_path on both pregrasp and grasp poses to test robot-only reach, before deciding to approach further. An accepted check_path does not check scene collisions. Reserve up to 60 of the official steps for return_to_rest; monitor remaining steps while aligning and grasping.\nEvery tool call must include note, a brief 1 to 3 sentence explanation of the evidence used (head/hand RGB-D, odometry or earlier tool feedback) and the intended effect of this command. Give a concise decision explanation, not hidden chain-of-thought. done and give_up still require hindsight; they end immediately without settling or environment steps. All other v13 tools and controller parameters are unchanged.\n",
+  "max_output_tokens": 4000,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_045a7e9edd5b3ac3006abc726fd73887d29f6d0d58ea7fb96c",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqvHJzJBCwRpjGyY3nAS2-Sfvvn9lTI57AsA8sS5qZ0WzvRcwny-lfne28TrLbSqFBApjbYHi6Qj35OfIlCio7WdjYRReJzUvIpo9qXthFciVumFKNXp6v0m6vAd0LyQ0GC06pF16larlfvoj2Xi6F_vomY_vwDmoz8DzNp4zK9gwfU6Lc351mFlvQOztmhXOGhpQyPA6M2QuDCBnDAAyL_NfkEdldFomkMSD1gPi-yYBN4WDE4CPFaBu3h9BhycI5hWAYqHsepBz_NQrBLlpHlCSghmcKzFWuo8gKHv6dNPTmBouNvLpvGZYjyx6UpGj1cM-tInEyrxzxnezem62a-S9yVcV_qsAHMV0TvATtaDRVgovAoJxWRZtD0xxsqWmEhscMbYtl6bM3foT7Z8gUrKQOT21yrH-EAcFr--sXtQAjKoqxVN4wLE1MYrc1LJEJgM_qhDkNLoY1wlY65itBwV2_Mr5tfMB76txDS0AlZ0mjn9pzav8pNMnduMWCHjSFonYS8AkOoqyJwXkLPr9UlrlT5D0MwkAikLKGzEPUjxdqk_fwFEJs8Dybm-H88dD1hYvZlyIodMNF4ZirZSJQNBO4SM1P7KP7o0LDiFQm2JRWB2IgHcYWikhIBUWcupXTpOo5x5fiGGwSAtbnA_svz9B3wDRz0cDFw792VAdMrGNEqa2DceQ-Blew3U8iAS6_E1QosXa4N6vGq2T2ZPG-Sdo6pn4YohvKfbMUVQZpjo6F0yltSVdRELlBRQbIijnHQuS2RXp6x_U4x1AV5UJ9cE88rsBQNw2hjxTfp2bfhC5E-h4_zEHLTXzwvcv5Z3albjVFWpJWEFpiVPjPuVKSzwO_18y1t7S2Z38O4j6vyB5ReRNJKXm9smtW66uJ49NTVoNv8aVUkp_xysNlVKjkMqGHGw9OjrQYoI554xyJcE421eQmVyJUD0RZzwG1sPlVeed75zZ3-FEc-7r44w0YMmAUcywF4ic22sdUqbT4n-7_DWN9yJF8l6QTEcDUbdPC4QepG5vdpV3MZFiQme2bVREx18FkWJXK9QEyt-BT_sfchAM6bQSiatAlMLuSN936XXdDQ4rBaoKZgvU6x_sIEAkdVYsbj2lCZIqhOGx1nia7Ax3YBYReC-7JPCkVyXmddJaw5LzFnrhT99Vb1BysVayWZNdRknDnwMxyiQI1_n-MevxKV6DNxxXXbWSAgz2NglYYGcCLTNlxcQb7VaN3LHju4vEfZj7YNpkJ-gmpnGdPajxXFAGh1TzczL25v2NOZknPpeZNkjVEGdaCPhOxBCxxY6ZE05nu66UXVmJGy1f8jhcfEhSWyiwE4zgqVaqIcm5QMKaO1JAtw7VY6iXWy3LfHJmaYShpji9VmxyeMM2kSyfwvdHQq1Cpof8vAc35NWHsVvQwIoTe2XHjcM5Njyzf0Q==",
+      "summary": []
+    },
+    {
+      "id": "msg_045a7e9edd5b3ac3006abc727320e487d298a4da9dd0a63cae",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"forward_m\":0.3,\"gripper\":null,\"hindsight\":\"\",\"note\":\"Odometry places the can 1.55 m ahead, still beyond useful floor-grasp reach. The visible central floor remains clear of the close right-hand furniture, so I will take another limited 0.30 m segment.\",\"poses\":[],\"tool\":\"move_base\",\"turn_rad\":0}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": "resp_045a7e9edd5b3ac3006abc725fe0e487d2ac98c2cda375e837",
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": "detailed"
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "eef_tool_call",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "forward_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "gripper": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "hindsight": {
+            "type": "string"
+          },
+          "note": {
+            "maxLength": 900,
+            "minLength": 1,
+            "type": "string"
+          },
+          "poses": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "position": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "type": "array"
+                },
+                "quaternion_xyzw": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "position",
+                "quaternion_xyzw"
+              ],
+              "type": "object"
+            },
+            "maxItems": 8,
+            "type": "array"
+          },
+          "tool": {
+            "enum": [
+              "move_base",
+              "check_path",
+              "move_to",
+              "move_eef_chunk",
+              "set_gripper",
+              "return_to_rest",
+              "done",
+              "give_up"
+            ],
+            "type": "string"
+          },
+          "turn_rad": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "tool",
+          "poses",
+          "gripper",
+          "hindsight",
+          "turn_rad",
+          "forward_m",
+          "note"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4023,
+    "input_tokens_details": {
+      "cache_write_tokens": 970,
+      "cached_tokens": 3050
+    },
+    "output_tokens": 141,
+    "output_tokens_details": {
+      "reasoning_tokens": 53
+    },
+    "total_tokens": 4164
+  },
+  "user": null,
+  "metadata": {}
+}

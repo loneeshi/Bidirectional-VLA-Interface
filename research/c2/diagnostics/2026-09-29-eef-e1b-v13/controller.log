@@ -1,0 +1,8 @@
+{"name": "plan-001-E1B", "status": "completed", "strict_pick_success": false, "used_seconds": 178.58198844268918}
+{"name": "plan-014-E1B", "status": "completed", "strict_pick_success": false, "used_seconds": 214.42079028487206}
+{"name": "plan-026-E1B", "status": "completed", "strict_pick_success": false, "used_seconds": 250.20126704499125}
+{"name": "plan-042-E1B", "status": "completed", "strict_pick_success": false, "used_seconds": 285.5379069186747}
+{"name": "plan-005-E1B", "status": "completed", "strict_pick_success": true, "used_seconds": 433.1159101128578}
+{"name": "plan-008-E1B", "status": "completed", "strict_pick_success": false, "used_seconds": 625.7601810283959}
+{"name": "plan-011-E1B", "status": "completed", "strict_pick_success": false, "used_seconds": 661.5982728675008}
+{"experiment_id": "C2-EEF-E1B-20260929-V13-R1", "status": "completed", "authorization_sha256": "b120e6ad78827ab7fb99fd7443d3e5fe78f1ef734a02c237c4fedfce2e8ecf18", "gpu1_process_seconds": 661.5982728675008, "api_requests": 0, "lab_project_charge": 0, "gpu1_final": {"memory_used_mib": 15, "utilization_percent": 3, "compute_processes": []}, "simulator_actions": 703, "policy_inferences": 0, "ended_at_utc": "2026-09-29T21:48:55.525222+00:00"}

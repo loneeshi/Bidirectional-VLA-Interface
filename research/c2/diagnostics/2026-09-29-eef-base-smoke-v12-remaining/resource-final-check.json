@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-09-29T19:21:34.473462+00:00",
+  "gpu_compute_processes": "672548, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46316 MiB",
+  "matching_batch_processes": "",
+  "gpu1_compute_processes": [],
+  "runpod": {
+    "pods": [
+      {
+        "id": "uhrazur8gxf9b4",
+        "status": "EXITED",
+        "disk_gb": 20
+      },
+      {
+        "id": "3n65pd7y84sam8",
+        "status": "EXITED",
+        "disk_gb": 20
+      }
+    ],
+    "network_volumes": [],
+    "storage_deleted": false,
+    "storage_charge": "ongoing; invoice not reconciled"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "base_env_path": "/home/pshuai/bvi-research/src/official-mshab-runtime/ManiSkill/mani_skill/envs/sapien_env.py",
+  "sha256": "09a176d2a81924ae3b0234405bab2d45cd861a250c37ea52f12b6994b5753208",
+  "expected_sha256": "09a176d2a81924ae3b0234405bab2d45cd861a250c37ea52f12b6994b5753208",
+  "matched": true,
+  "cuda_initialized": false,
+  "check_stage": "supplementary read-only verification during B; not substituted for prelaunch receipt"
+}

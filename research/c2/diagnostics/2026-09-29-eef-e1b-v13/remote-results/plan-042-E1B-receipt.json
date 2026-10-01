@@ -1,0 +1,23 @@
+{
+  "name": "plan-042-E1B",
+  "position": 42,
+  "mode": "E1B",
+  "status": "finished",
+  "reservation_seconds": 1800,
+  "gpu1_before": {
+    "memory_used_mib": 15,
+    "utilization_percent": 3,
+    "compute_processes": []
+  },
+  "started_at_utc": "2026-09-29T21:42:02.748949+00:00",
+  "command_sha256": "8f7ab25508892803efc97b8574ebf54493682026a0924c7d539d26abdf9ef1a2",
+  "pid": 1712418,
+  "elapsed_process_seconds": 35.33663987368345,
+  "returncode": 0,
+  "timed_out": false,
+  "gpu1_after": {
+    "memory_used_mib": 15,
+    "utilization_percent": 3,
+    "compute_processes": []
+  }
+}

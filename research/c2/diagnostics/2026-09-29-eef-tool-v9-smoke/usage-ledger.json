@@ -1,0 +1,117 @@
+{
+  "experiment_id": "C2-EEF-TOOL-SMOKE-20260929-V9-R1",
+  "status": "stopped",
+  "authorization_sha256": "abc5cbde79509f1dc34883db34a2f3eeecfa871b2eeccf7273437c8b7ed9760d",
+  "gpu1_process_seconds": 141.31192661449313,
+  "api_requests": 0,
+  "lab_project_charge": 0,
+  "records": [
+    {
+      "name": "plan-005-smoke",
+      "position": 5,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:29:23.925025+00:00",
+      "command_sha256": "7af0098187a75a6eeef3cf6b9828a2f5dd8f1083b0681434c6567eb580c54f04",
+      "pid": 1661171,
+      "elapsed_process_seconds": 39.79770748317242,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-008-smoke",
+      "position": 8,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:30:03.991950+00:00",
+      "command_sha256": "703d11cdfde1f29bc945a4cf8d1297e4c16e8803a90e2ec45be82512583b5602",
+      "pid": 1662032,
+      "elapsed_process_seconds": 53.29064226895571,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-011-smoke",
+      "position": 11,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:30:57.656385+00:00",
+      "command_sha256": "4ab22467adfaea06bd419579cf7d32448eb37c3ac4bff0e2a0cd038fd646a5d4",
+      "pid": 1662974,
+      "elapsed_process_seconds": 48.22357686236501,
+      "returncode": 1,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    }
+  ],
+  "case_results": [
+    {
+      "position": 5,
+      "mode": "smoke",
+      "status": "completed",
+      "strict_pick_success": false,
+      "simulator_actions": 53,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    },
+    {
+      "position": 8,
+      "mode": "smoke",
+      "status": "completed",
+      "strict_pick_success": false,
+      "simulator_actions": 69,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    },
+    {
+      "position": 11,
+      "mode": "smoke",
+      "status": "smoke_failed",
+      "strict_pick_success": false,
+      "simulator_actions": 84,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    }
+  ],
+  "stop_reason": "child failed; stop without retry: plan-011-smoke",
+  "gpu1_final": {
+    "memory_used_mib": 15,
+    "utilization_percent": 3,
+    "compute_processes": []
+  },
+  "simulator_actions": 206,
+  "policy_inferences": 0,
+  "ended_at_utc": "2026-09-29T05:31:46.181346+00:00"
+}

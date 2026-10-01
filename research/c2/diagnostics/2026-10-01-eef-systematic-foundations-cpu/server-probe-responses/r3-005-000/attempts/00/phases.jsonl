@@ -1,0 +1,11 @@
+{"phase": "tcp", "status": "started"}
+{"phase": "tcp", "status": "completed", "seconds": 0.022408507764339447}
+{"phase": "tls", "status": "started"}
+{"phase": "tls", "status": "completed", "seconds": 0.015858113765716553}
+{"phase": "send", "status": "started"}
+{"phase": "send", "status": "completed", "seconds": 0.013478964567184448, "bytes": 841704}
+{"phase": "response_headers", "status": "started"}
+{"phase": "response_headers", "status": "completed", "seconds": 7.028163690119982}
+{"phase": "http_status", "status_code": 200}
+{"phase": "response_body", "status": "started"}
+{"phase": "response_body", "status": "completed", "seconds": 0.06565818935632706, "bytes": 14553}

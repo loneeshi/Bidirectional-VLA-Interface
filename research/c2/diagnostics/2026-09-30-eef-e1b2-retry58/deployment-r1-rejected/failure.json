@@ -1,0 +1,6 @@
+{
+  "reason": "supervisor self-hash referenced old batch filename",
+  "api_requests": 0,
+  "gpu_case_processes": 0,
+  "simulator_actions": 0
+}

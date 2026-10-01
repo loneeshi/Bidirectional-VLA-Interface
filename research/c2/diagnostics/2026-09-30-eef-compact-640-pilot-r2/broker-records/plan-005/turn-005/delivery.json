@@ -1,0 +1,45 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "head",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The fingers opened as intended, and the can remains upright in the head view. I will refresh its lid position after the small measured base settling displacement.",
+    "observation_id": "obs-005-253064a76e45df10",
+    "pan_rad": null,
+    "pixel": [
+      355,
+      314
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "Head obs-005 shows the same can; finger separation is now 0.066 m.",
+      "expected_change": "Refresh the can surface in the current base frame.",
+      "next_check": "Use the refreshed lid location for the angled approach.",
+      "uncertainty": "Finger clearance and can dimensions remain estimates."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "6050ddc65064047390631bbfaf178287d4c326557e6bc42cb64add662d575002",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_08872c4dd1129702016abd4fa9440887d2be6d83c5a2ee5e22",
+  "usage": {
+    "input_tokens": 10903,
+    "input_tokens_details": {
+      "cache_write_tokens": 8969,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 171,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 11074
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.1448375"
+}

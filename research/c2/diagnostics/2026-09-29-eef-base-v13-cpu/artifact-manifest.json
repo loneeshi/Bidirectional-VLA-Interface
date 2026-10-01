@@ -1,0 +1,16 @@
+{
+  "sha256": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "ablations.json": "4dd43e92bd09ac4f7dea4765d4c2be7e3f47e96535e5cd836e844b7e05c53e2b",
+    "base-smoke-samples.json": "ae7e498a3371e08a772db58033999fcfee3f8a77f172724a57bf39946afb4c8f",
+    "cpu-revision-history.json": "a7af5eb303d9ae178b094cd74140e8d09e1be49f66713517f6cf502647549bd2",
+    "cpu-tests.json": "5cf83b499737d0039f500d1e606c6c646401676301708b8d3bf6a161549097fa",
+    "deployment-manifest.json": "b6c773c96e1b2cbc07d4a2a3e29a2d036d11d10fe2022278cba4c8e22b341332",
+    "frozen-parameters.json": "b67c61484bfdf739b76beb33b30c5c4ae70a51515e10a5aa4f2ee099b061a132",
+    "hard-gates.json": "99134fe01adc46585c795eeeb7e03afe8e22b4350e824f32a1b2063212f40d93",
+    "package-verification.json": "a54736c689d4eec8b5a9611b2abfd0c3a86f0d50130d8ddcd0b85ed9d11ed0d8",
+    "README.md": "c31deae54376062284281db8d2ade8d940f88c6de6c50507b62e507810fc9a6e",
+    "response-fit.json": "1e16d33d93691a5f31a470277fad355c735f2393fda08e94a0b8617f56b181db",
+    "server-preflight.json": "285de826c9dd0fde290da9870e94bfc102fa25720137935cdc4d80d10b60fd45"
+  }
+}

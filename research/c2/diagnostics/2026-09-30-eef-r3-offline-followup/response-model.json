@@ -1,0 +1,767 @@
+{
+  "schema": "bvi.eef-streaming-response/1",
+  "at_utc": "2026-09-29T00:54:35.725803+00:00",
+  "source_sha256": {
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-005-sac0\\frames.jsonl": "41e247687e0c17cf0323d2f64de214cc80a79048cce8580f7d43939fd8aa4c89",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-005-sac1\\frames.jsonl": "2fda3767dc8a95d788db4c2505da25b3047da89c66499105267e6f3b4a6b7ec7",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-008-sac0\\frames.jsonl": "37f3c155d715d96b6625cc06f551da6d9c75dce2f066cd079049dadabb44e51e",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-008-sac1\\frames.jsonl": "37f3c155d715d96b6625cc06f551da6d9c75dce2f066cd079049dadabb44e51e",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-011-sac0\\frames.jsonl": "d2872d667a261c2f28272a45317cfd3b65e337da0abcaf2805024b18f6018708",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-011-sac1\\frames.jsonl": "10ff5c5e036a64395d71296d4aae3d895c9602d0b0aa2264b8075f8740ef9c9f",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-005-joint\\frames.jsonl": "41e247687e0c17cf0323d2f64de214cc80a79048cce8580f7d43939fd8aa4c89",
+    "runs\\real-handoff-eef-g0-20260928-run02\\results\\plan-008-joint\\frames.jsonl": "37f3c155d715d96b6625cc06f551da6d9c75dce2f066cd079049dadabb44e51e",
+    "runs\\real-handoff-eef-g0-dogbox-20260928-run01\\results\\plan-005-ik8\\frames.jsonl": "5e83c588b8f3eae65bff374b7c862b01de05eecff9a0b24035c500d1d0ae70b5",
+    "src/bvi/eef_tools.py": "cf52eced5ddf54736f8bb2696cf64407b43874406482a414ca6aff60f82e138e",
+    "src/bvi/eef_g0.py": "909565967405229ca2483a12fe64ade4389ba390a568c5e63d32c464c1ec2e5e",
+    "scripts/run_eef_g0_case.py": "d21b0780276661823ab8ec765bf97d85047f3dc3e99cd0dd1f7ba6d810302233",
+    "runs\\real-handoff-eef-g0-20260928-run02\\fetch.urdf": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256"
+  },
+  "alignment_code_evidence": "step(action) -> adapter.step -> sample(grip, action); initial sample(grip) has action=None",
+  "alignment": {
+    "plan-005-sac0": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.38523972686239627,
+      "correct_pair_rmse_at_ratio_point39": 0.012221680739220416,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.015503658098246548
+    },
+    "plan-005-sac1": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.38651193522927985,
+      "correct_pair_rmse_at_ratio_point39": 0.012334770649265537,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.015260106513787598
+    },
+    "plan-008-sac0": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.3899084143892829,
+      "correct_pair_rmse_at_ratio_point39": 0.00932200108909742,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.01224157634712558
+    },
+    "plan-008-sac1": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.3899084143892829,
+      "correct_pair_rmse_at_ratio_point39": 0.00932200108909742,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.01224157634712558
+    },
+    "plan-011-sac0": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.3924295661632037,
+      "correct_pair_rmse_at_ratio_point39": 0.012393495677862945,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.015292797920330305
+    },
+    "plan-011-sac1": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.38894948720573985,
+      "correct_pair_rmse_at_ratio_point39": 0.015047083931738607,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.0172969679478689
+    },
+    "plan-005-joint": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.38523972686239627,
+      "correct_pair_rmse_at_ratio_point39": 0.012221680739220416,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.015503658098246548
+    },
+    "plan-008-joint": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.3899084143892829,
+      "correct_pair_rmse_at_ratio_point39": 0.00932200108909742,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.01224157634712558
+    },
+    "plan-005-dogbox": {
+      "correct_pair": "action in frame i versus q[i]-q[i-1]",
+      "median_response_ratio_abs_action_gt_point1": 0.3897701779016448,
+      "correct_pair_rmse_at_ratio_point39": 0.0009327107189304382,
+      "wrong_previous_action_rmse_at_ratio_point39": 0.0029613975329419824
+    }
+  },
+  "model": {
+    "equation": "dq[t] = rho*dq[t-1] + beta*0.1*action[t]",
+    "joint_parameters": [
+      {
+        "name": "shoulder_pan_joint",
+        "rho": 0.14016459284418112,
+        "beta": 0.3337348589636018
+      },
+      {
+        "name": "shoulder_lift_joint",
+        "rho": 0.33173799148257077,
+        "beta": 0.25391909420899783
+      },
+      {
+        "name": "upperarm_roll_joint",
+        "rho": 0.13303224806254774,
+        "beta": 0.3298583198257589
+      },
+      {
+        "name": "elbow_flex_joint",
+        "rho": 0.07943867660638389,
+        "beta": 0.37604155808043893
+      },
+      {
+        "name": "forearm_roll_joint",
+        "rho": 0.0228691267140055,
+        "beta": 0.3786131624721823
+      },
+      {
+        "name": "wrist_flex_joint",
+        "rho": 0.44285970781059397,
+        "beta": 0.20471418973791572
+      },
+      {
+        "name": "wrist_roll_joint",
+        "rho": 0.003597626711478783,
+        "beta": 0.39243769499337633
+      },
+      {
+        "name": "torso_lift_joint",
+        "rho": 0.8686151546736689,
+        "beta": 0.03674780353009761
+      }
+    ],
+    "gripper": {
+      "alpha": 0.2051635887164995,
+      "bias_m": 0.003948761436464198,
+      "equation": "d[t] = clip(d[t-1]+alpha*(clip(0.06*(a_grip+1)-0.02,0,0.1)-d[t-1])+bias,0,0.1)"
+    },
+    "reference_speed_limits": [
+      0.06461286544799805,
+      0.0675039291381836,
+      0.05540043115615845,
+      0.06346970796585083,
+      0.0433315634727478,
+      0.041043758392333984,
+      0.03989031910896301,
+      0.03873129189014435
+    ],
+    "initial_delta": "zero for first transition (unknown pre-snapshot velocity); no differences cross trajectories",
+    "head_model_note": "Stationary-head teachers do not identify head dynamics; median arm beta extrapolated for auxiliary rest. This limits rest predictions."
+  },
+  "validation": {
+    "plan-005-sac0": {
+      "split": "fit",
+      "metrics": {
+        "transitions": 18,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.007108980944641488,
+            "one_step_mae": 0.0049120644597673265,
+            "rollout_q_rmse": 0.01142056430837391,
+            "observed_response_median": 0.40051690813025154
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.003169321830498612,
+            "one_step_mae": 0.0028580599015199724,
+            "rollout_q_rmse": 0.015318454721698556,
+            "observed_response_median": 0.34695742954226916
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.003212989841116088,
+            "one_step_mae": 0.0024287617980767477,
+            "rollout_q_rmse": 0.004481828680099732,
+            "observed_response_median": 0.38027058311005335
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.0018058487849269085,
+            "one_step_mae": 0.0014921299863235064,
+            "rollout_q_rmse": 0.0070755536491518755,
+            "observed_response_median": 0.4174680607956651
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0007184971728635885,
+            "one_step_mae": 0.0005155944431979672,
+            "rollout_q_rmse": 0.002194075474777054,
+            "observed_response_median": 0.389528470603131
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.00791441281558763,
+            "one_step_mae": 0.004360279083598474,
+            "rollout_q_rmse": 0.024029512081459918,
+            "observed_response_median": 0.38794389095748905
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 8.991324247367211e-05,
+            "one_step_mae": 6.191544932306167e-05,
+            "rollout_q_rmse": 0.0007361590188468083,
+            "observed_response_median": 0.39227493424356863
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.002852024373265906,
+            "one_step_mae": 0.0027199351883097477,
+            "rollout_q_rmse": 0.04675013631859106,
+            "observed_response_median": 0.07908532182523839
+          }
+        ],
+        "finger_one_step_rmse_m": 0.004414991135688188,
+        "finger_rollout_rmse_m": 0.0073628923590303725
+      }
+    },
+    "plan-005-sac1": {
+      "split": "fit",
+      "metrics": {
+        "transitions": 18,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.00719829629800684,
+            "one_step_mae": 0.004894926082340604,
+            "rollout_q_rmse": 0.011105261144608131,
+            "observed_response_median": 0.390733370302422
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.0030400000664348972,
+            "one_step_mae": 0.002734971376753449,
+            "rollout_q_rmse": 0.01474589419603062,
+            "observed_response_median": 0.3501012899424061
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.0031033344455095114,
+            "one_step_mae": 0.0022970267976357823,
+            "rollout_q_rmse": 0.004140991004661637,
+            "observed_response_median": 0.3817648809474554
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.0017622811556516713,
+            "one_step_mae": 0.0014701589505305452,
+            "rollout_q_rmse": 0.00722784621923183,
+            "observed_response_median": 0.40291964755374887
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0006407051216605373,
+            "one_step_mae": 0.0004305336118195435,
+            "rollout_q_rmse": 0.0016884430948463916,
+            "observed_response_median": 0.3884044525998706
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.007659174955076888,
+            "one_step_mae": 0.004367095827425549,
+            "rollout_q_rmse": 0.0239441210183167,
+            "observed_response_median": 0.3884921284448146
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 8.362868089002438e-05,
+            "one_step_mae": 5.676357526251817e-05,
+            "rollout_q_rmse": 0.0006647087540740892,
+            "observed_response_median": 0.3923338719850616
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.0027950342966974826,
+            "one_step_mae": 0.002606345448927872,
+            "rollout_q_rmse": 0.04980120561819624,
+            "observed_response_median": 0.07508404400802748
+          }
+        ],
+        "finger_one_step_rmse_m": 0.004206894086781323,
+        "finger_rollout_rmse_m": 0.00614807929911098
+      }
+    },
+    "plan-008-sac0": {
+      "split": "fit",
+      "metrics": {
+        "transitions": 37,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.007850883715003283,
+            "one_step_mae": 0.0047217082972025644,
+            "rollout_q_rmse": 0.011648419809429662,
+            "observed_response_median": 0.3737560927683025
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.005730088187355671,
+            "one_step_mae": 0.0029776377983227386,
+            "rollout_q_rmse": 0.022803347476908674,
+            "observed_response_median": 0.38785731389064854
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.003367754531303198,
+            "one_step_mae": 0.0024745178770414246,
+            "rollout_q_rmse": 0.005671103445770226,
+            "observed_response_median": 0.3683144685295277
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.002851585228474308,
+            "one_step_mae": 0.0021515535948203103,
+            "rollout_q_rmse": 0.02172583812034929,
+            "observed_response_median": 0.3811637336571506
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0027011611358602012,
+            "one_step_mae": 0.0014093933225288345,
+            "rollout_q_rmse": 0.012750698825241767,
+            "observed_response_median": 0.3951489981979037
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.006793770591123273,
+            "one_step_mae": 0.0036153775460153635,
+            "rollout_q_rmse": 0.04378251615034317,
+            "observed_response_median": 0.3921742519315979
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 0.000738173831731918,
+            "one_step_mae": 0.0002972845340297311,
+            "rollout_q_rmse": 0.0036661115208546148,
+            "observed_response_median": 0.3923642605434679
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.005420612977638602,
+            "one_step_mae": 0.0031415945378784286,
+            "rollout_q_rmse": 0.07471060451003726,
+            "observed_response_median": 0.2231893235990608
+          }
+        ],
+        "finger_one_step_rmse_m": 0.005046499896743251,
+        "finger_rollout_rmse_m": 0.012030852927229036
+      }
+    },
+    "plan-008-sac1": {
+      "split": "fit",
+      "metrics": {
+        "transitions": 37,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.007850883715003283,
+            "one_step_mae": 0.0047217082972025644,
+            "rollout_q_rmse": 0.011648419809429662,
+            "observed_response_median": 0.3737560927683025
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.005730088187355671,
+            "one_step_mae": 0.0029776377983227386,
+            "rollout_q_rmse": 0.022803347476908674,
+            "observed_response_median": 0.38785731389064854
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.003367754531303198,
+            "one_step_mae": 0.0024745178770414246,
+            "rollout_q_rmse": 0.005671103445770226,
+            "observed_response_median": 0.3683144685295277
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.002851585228474308,
+            "one_step_mae": 0.0021515535948203103,
+            "rollout_q_rmse": 0.02172583812034929,
+            "observed_response_median": 0.3811637336571506
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0027011611358602012,
+            "one_step_mae": 0.0014093933225288345,
+            "rollout_q_rmse": 0.012750698825241767,
+            "observed_response_median": 0.3951489981979037
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.006793770591123273,
+            "one_step_mae": 0.0036153775460153635,
+            "rollout_q_rmse": 0.04378251615034317,
+            "observed_response_median": 0.3921742519315979
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 0.000738173831731918,
+            "one_step_mae": 0.0002972845340297311,
+            "rollout_q_rmse": 0.0036661115208546148,
+            "observed_response_median": 0.3923642605434679
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.005420612977638602,
+            "one_step_mae": 0.0031415945378784286,
+            "rollout_q_rmse": 0.07471060451003726,
+            "observed_response_median": 0.2231893235990608
+          }
+        ],
+        "finger_one_step_rmse_m": 0.005046499896743251,
+        "finger_rollout_rmse_m": 0.012030852927229036
+      }
+    },
+    "plan-011-sac0": {
+      "split": "fit",
+      "metrics": {
+        "transitions": 50,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.013047480212712204,
+            "one_step_mae": 0.007936570892896086,
+            "rollout_q_rmse": 0.05538880050053419,
+            "observed_response_median": 0.3543493929527501
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.005063843082483695,
+            "one_step_mae": 0.0032011640842319385,
+            "rollout_q_rmse": 0.06863407200080952,
+            "observed_response_median": 0.3585057179942528
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.007872562186883763,
+            "one_step_mae": 0.004533566356134366,
+            "rollout_q_rmse": 0.04814428295877759,
+            "observed_response_median": 0.39124751930450463
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.004363173321575296,
+            "one_step_mae": 0.002434632408149095,
+            "rollout_q_rmse": 0.046821346661375,
+            "observed_response_median": 0.4050112083906474
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0015929376692616422,
+            "one_step_mae": 0.0011391223280974047,
+            "rollout_q_rmse": 0.010054767769515121,
+            "observed_response_median": 0.3949404915102743
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.004556032928950802,
+            "one_step_mae": 0.002560134372775346,
+            "rollout_q_rmse": 0.046797091470901796,
+            "observed_response_median": 0.3953373051749307
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 0.0001923673082823395,
+            "one_step_mae": 0.00010226965973485677,
+            "rollout_q_rmse": 0.001476280809373603,
+            "observed_response_median": 0.3925700522282271
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.004544310228744695,
+            "one_step_mae": 0.0036703041682667466,
+            "rollout_q_rmse": 0.11842686529237431,
+            "observed_response_median": 0.047022210518301036
+          }
+        ],
+        "finger_one_step_rmse_m": 0.005437628799128233,
+        "finger_rollout_rmse_m": 0.0147395400573581
+      }
+    },
+    "plan-011-sac1": {
+      "split": "fit",
+      "metrics": {
+        "transitions": 70,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.011266363671407438,
+            "one_step_mae": 0.006479991820377476,
+            "rollout_q_rmse": 0.022989941070258778,
+            "observed_response_median": 0.39443231274872254
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.006769594998306574,
+            "one_step_mae": 0.0033737238382928977,
+            "rollout_q_rmse": 0.13734573510402734,
+            "observed_response_median": 0.36877185281276753
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.007958861010128849,
+            "one_step_mae": 0.004478660854789258,
+            "rollout_q_rmse": 0.054365333735946125,
+            "observed_response_median": 0.36595335668364637
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.004058466083873558,
+            "one_step_mae": 0.0021568622396782333,
+            "rollout_q_rmse": 0.0547188786179598,
+            "observed_response_median": 0.3983022713572384
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.001495082973781094,
+            "one_step_mae": 0.0009501744616956736,
+            "rollout_q_rmse": 0.0182008911256681,
+            "observed_response_median": 0.39082792603631855
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.011730988558997598,
+            "one_step_mae": 0.007793357950936229,
+            "rollout_q_rmse": 0.2305843875333232,
+            "observed_response_median": 0.3924173070442033
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 0.00023175472355469544,
+            "one_step_mae": 0.00010534690939397696,
+            "rollout_q_rmse": 0.0022486614140837624,
+            "observed_response_median": 0.39249614516787545
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.004756630740080615,
+            "one_step_mae": 0.003992369272493908,
+            "rollout_q_rmse": 0.10128105231809849,
+            "observed_response_median": 0.0
+          }
+        ],
+        "finger_one_step_rmse_m": 0.005230296282936331,
+        "finger_rollout_rmse_m": 0.017427513212548137
+      }
+    },
+    "plan-005-joint": {
+      "split": "heldout",
+      "metrics": {
+        "transitions": 18,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.007108980944641488,
+            "one_step_mae": 0.0049120644597673265,
+            "rollout_q_rmse": 0.01142056430837391,
+            "observed_response_median": 0.40051690813025154
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.003169321830498612,
+            "one_step_mae": 0.0028580599015199724,
+            "rollout_q_rmse": 0.015318454721698556,
+            "observed_response_median": 0.34695742954226916
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.003212989841116088,
+            "one_step_mae": 0.0024287617980767477,
+            "rollout_q_rmse": 0.004481828680099732,
+            "observed_response_median": 0.38027058311005335
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.0018058487849269085,
+            "one_step_mae": 0.0014921299863235064,
+            "rollout_q_rmse": 0.0070755536491518755,
+            "observed_response_median": 0.4174680607956651
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0007184971728635885,
+            "one_step_mae": 0.0005155944431979672,
+            "rollout_q_rmse": 0.002194075474777054,
+            "observed_response_median": 0.389528470603131
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.00791441281558763,
+            "one_step_mae": 0.004360279083598474,
+            "rollout_q_rmse": 0.024029512081459918,
+            "observed_response_median": 0.38794389095748905
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 8.991324247367211e-05,
+            "one_step_mae": 6.191544932306167e-05,
+            "rollout_q_rmse": 0.0007361590188468083,
+            "observed_response_median": 0.39227493424356863
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.002852024373265906,
+            "one_step_mae": 0.0027199351883097477,
+            "rollout_q_rmse": 0.04675013631859106,
+            "observed_response_median": 0.07908532182523839
+          }
+        ],
+        "finger_one_step_rmse_m": 0.004414991135688188,
+        "finger_rollout_rmse_m": 0.0073628923590303725
+      }
+    },
+    "plan-008-joint": {
+      "split": "heldout",
+      "metrics": {
+        "transitions": 37,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.007850883715003283,
+            "one_step_mae": 0.0047217082972025644,
+            "rollout_q_rmse": 0.011648419809429662,
+            "observed_response_median": 0.3737560927683025
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.005730088187355671,
+            "one_step_mae": 0.0029776377983227386,
+            "rollout_q_rmse": 0.022803347476908674,
+            "observed_response_median": 0.38785731389064854
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.003367754531303198,
+            "one_step_mae": 0.0024745178770414246,
+            "rollout_q_rmse": 0.005671103445770226,
+            "observed_response_median": 0.3683144685295277
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.002851585228474308,
+            "one_step_mae": 0.0021515535948203103,
+            "rollout_q_rmse": 0.02172583812034929,
+            "observed_response_median": 0.3811637336571506
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.0027011611358602012,
+            "one_step_mae": 0.0014093933225288345,
+            "rollout_q_rmse": 0.012750698825241767,
+            "observed_response_median": 0.3951489981979037
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.006793770591123273,
+            "one_step_mae": 0.0036153775460153635,
+            "rollout_q_rmse": 0.04378251615034317,
+            "observed_response_median": 0.3921742519315979
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 0.000738173831731918,
+            "one_step_mae": 0.0002972845340297311,
+            "rollout_q_rmse": 0.0036661115208546148,
+            "observed_response_median": 0.3923642605434679
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.005420612977638602,
+            "one_step_mae": 0.0031415945378784286,
+            "rollout_q_rmse": 0.07471060451003726,
+            "observed_response_median": 0.2231893235990608
+          }
+        ],
+        "finger_one_step_rmse_m": 0.005046499896743251,
+        "finger_rollout_rmse_m": 0.012030852927229036
+      }
+    },
+    "plan-005-dogbox": {
+      "split": "heldout",
+      "metrics": {
+        "transitions": 200,
+        "joint_errors": [
+          {
+            "name": "shoulder_pan_joint",
+            "one_step_rmse": 0.00033657836737400305,
+            "one_step_mae": 0.00015801837191330812,
+            "rollout_q_rmse": 0.002210992668661879,
+            "observed_response_median": 0.3449057224825061
+          },
+          {
+            "name": "shoulder_lift_joint",
+            "one_step_rmse": 0.00035581048924647246,
+            "one_step_mae": 0.00023534706189530145,
+            "rollout_q_rmse": 0.005757473536729531,
+            "observed_response_median": 0.31433248121049384
+          },
+          {
+            "name": "upperarm_roll_joint",
+            "one_step_rmse": 0.0007466000740590423,
+            "one_step_mae": 0.00020045260430223325,
+            "rollout_q_rmse": 0.002525175917224448,
+            "observed_response_median": 0.3928886806752693
+          },
+          {
+            "name": "elbow_flex_joint",
+            "one_step_rmse": 0.00023119546426173866,
+            "one_step_mae": 0.00017511101406980458,
+            "rollout_q_rmse": 0.00426850413246163,
+            "observed_response_median": 0.4018565299547775
+          },
+          {
+            "name": "forearm_roll_joint",
+            "one_step_rmse": 0.00016174111590191314,
+            "one_step_mae": 5.715935651429353e-05,
+            "rollout_q_rmse": 0.0022206289658449063,
+            "observed_response_median": 0.39217610348461374
+          },
+          {
+            "name": "wrist_flex_joint",
+            "one_step_rmse": 0.0011576640624128404,
+            "one_step_mae": 0.0007289246625031102,
+            "rollout_q_rmse": 0.011841804713234783,
+            "observed_response_median": 0.38518682278934613
+          },
+          {
+            "name": "wrist_roll_joint",
+            "one_step_rmse": 5.541879078223482e-06,
+            "one_step_mae": 3.183528755846723e-06,
+            "rollout_q_rmse": 0.00041887344037010654,
+            "observed_response_median": 0.39230897487834687
+          },
+          {
+            "name": "torso_lift_joint",
+            "one_step_rmse": 0.00026408507837503135,
+            "one_step_mae": 0.00020069280627039117,
+            "rollout_q_rmse": 0.034490715705715276,
+            "observed_response_median": 0.1742428656482047
+          }
+        ],
+        "finger_one_step_rmse_m": 0.004124739809638531,
+        "finger_rollout_rmse_m": 0.01605500628706901
+      }
+    }
+  },
+  "parameters": {
+    "gain": 2.6045596675565914,
+    "lookahead": 1,
+    "release_tolerance": 0.05,
+    "joint_tolerance": 0.002,
+    "endpoint_steps_cap": 10,
+    "gripper_steps_cap": 5,
+    "gripper_stable_steps": 2,
+    "gripper_change_m": 0.001
+  },
+  "selection_basis": "K = median inverse per-joint fitted steady response beta/(1-rho); L=1 avoids aggressive preview; 0.05 release, endpoint10, gripper5 preserved; speeds measured max per channel from all six SAC only. No gate/teacher tuning.",
+  "limitations": "No contact, target identity, grasp or official success physics. Head dynamics extrapolated. One-step residuals and free rollout errors both reported; predictions cannot replace physical replay.",
+  "duplicate_payloads": [
+    [
+      "plan-005-sac0",
+      "plan-005-joint"
+    ],
+    [
+      "plan-008-sac0",
+      "plan-008-sac1"
+    ],
+    [
+      "plan-008-sac0",
+      "plan-008-joint"
+    ],
+    [
+      "plan-008-sac1",
+      "plan-008-joint"
+    ]
+  ],
+  "gpu_process_seconds": 0,
+  "api_requests": 0,
+  "simulator_actions": 0
+}

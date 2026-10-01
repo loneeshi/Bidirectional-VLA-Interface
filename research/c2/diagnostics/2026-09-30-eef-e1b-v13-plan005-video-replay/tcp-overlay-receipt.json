@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/eef-e1b-v13-plan005-video-20260930-r2/capture/eef-e1b-v13-plan005-recorded-action-replay.mp4",
+  "source_video_sha256": "5b35e0a0e0d7265bada918fd71d3c2cd9d46d202253dbea348659641473d186b",
+  "source_result": "/home/pshuai/bvi-research/runs/eef-e1b-20260929-v13-r1/results/plan-005-E1B/result.json",
+  "source_result_sha256": "7d2432c82baa44fc68070fe45365058c6e3a4122ca26565ff6e4efb7cae0ec97",
+  "output": "/home/pshuai/bvi-research/runs/eef-e1b-v13-plan005-video-20260930-r2/capture/eef-e1b-v13-plan005-tcp-trajectory-demo.mp4",
+  "output_sha256": "2b1ef8be1912e3ca29604b0e206e3aa298bdba870a43bb1604d1ac5135e1210f",
+  "frames": 147,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 5,
+  "source_status": "completed",
+  "source_strict_pick_success": true,
+  "source_mode": "E1-B-privileged-H0-v13",
+  "kind_label": "recorded-action replay",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

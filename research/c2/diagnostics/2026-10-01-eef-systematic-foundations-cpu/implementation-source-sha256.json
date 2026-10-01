@@ -1,0 +1,20 @@
+{
+  "scripts/eef_server_transport.py": "507cd4cce8f06fc6fdc780a3620d017336f365ccb6e8d3aee827b12736b76e50",
+  "scripts/eef_server_broker.py": "fc1d26e019f235590303a20df398cb311be9e1d7e83eb5d7d28e2e292ffbc27a",
+  "scripts/run_eef_server_broker.py": "c1ab11c1faa6bbe799e8f50e5069bc5361e92e376a47126914f338517e35a4a3",
+  "scripts/operate_eef_server_probes.py": "f6da3a62fa309479a49b5bc9cf0a4182887f8389b3ba335182d8d96a7ebaa935",
+  "scripts/prepare_eef_systematic_foundations.py": "6672361119807d92f1643cc1b8971698e65aa7d4c273859d4e3a8c979536889f",
+  "scripts/prepare_real_handoff_dev2.py": "bea8e3aaaeb58c6394ff3e2d704caf215a28faf087312d649baf9a0568aed611",
+  "scripts/run_real_handoff_dev2_case.py": "29ff5b74dfc8f7b849edc2c9c537ffa197aa0effa294f504ea701ccd9c9d6fff",
+  "scripts/run_real_handoff_dev2_batch.py": "d4aec73fd4f41c3f544f1625181fbf50a607c8f3bb0140f4c8e08382594054bd",
+  "scripts/collect_real_handoff_dev2.py": "917aa4a0d27d170c9d11b93bc82c502e140ee57fe3256a41998f3d98dd56d2f9",
+  "scripts/prepare_eef_systematic_movements.py": "a8efb7eed6024006afefa7b432969c5a6205e7dc0866eb301150295419980d9e",
+  "scripts/analyze_eef_systematic_archive.py": "6e65a9530ed5cb72316b656832c99c22a75b8ec357a9e127cd068a0ea7a54a1e",
+  "src/bvi/eef_systematic.py": "be0366f1b3216c9c85465512786f5690fc4d77f32f4d705044a26fee988c4de2",
+  "src/bvi/eef_systematic_score.py": "d5157ea5b613b6f8cca6c5949f900ef361da2696c24703e4564a400d533935d4",
+  "src/bvi/dev2.py": "c6b5ea8fe8fb754030b9596eba3172e9445ed7aaca8fb4b90fbc5faada65a3f2",
+  "tests/test_eef_systematic.py": "490e8b59376a9fc02660eac26c93400e98c7a32daba6f7f91571663f4a7d3d9f",
+  "tests/test_eef_server_broker.py": "760948c3de1fdecdaa558abc3faeba3ace482762e17b8ea55a14a102f4d545b8",
+  "tests/test_dev2.py": "85f60730285e9dc94de4b1f93005b1fc56edabdba0377aa55824f11f4c0aa816",
+  "scripts/register_dev2_media.py": "fea18e4513320de4d4de1c46ec21e42296381f3a5b08ee873960378a63f87a9d"
+}

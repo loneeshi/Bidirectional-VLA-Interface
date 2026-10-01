@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "7d11baf0e8ae531773be3bfbda0babc7c1962ada38e5cd6957b2fc9594a8f119",
+  "archive_bytes": 492989733,
+  "full_archive_path": "/home/pshuai/bvi-research/runs/real-handoff-dev2-20261001-r1/full-results.tar",
+  "full_archive_sha256": "8b409dbd2847a62114414896682273d26c992c67b44d97321d811b1d3cb89f25",
+  "raw_online_frames_preserved": true,
+  "recovered_after_collection_ssh_timeout": true
+}

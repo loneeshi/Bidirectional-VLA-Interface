@@ -1,0 +1,33 @@
+{
+  "schema": "bvi.systematic-model-freeze/1",
+  "recorded_at_utc": "2026-10-01T00:01:02.958229+00:00",
+  "visual_main": true,
+  "resolution": [
+    640,
+    640
+  ],
+  "sensors": [
+    "head_rgb",
+    "head_depth",
+    "hand_rgb",
+    "hand_depth"
+  ],
+  "prompt_version": "guidance-v4-compact",
+  "prompt_sha256": "b309b16325880514283ae29701b5b1f23cbea0cfd0aeee43c8ca46dcffe457ea",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "tool_cap": 25,
+  "official_step_cap": 200,
+  "history": "H0; full compact text; previous/current images plus explicit recall",
+  "base_controller": "v13",
+  "output_token_cap": 4000,
+  "diagnostics_enter_model_request": false,
+  "condition_sources": {
+    "src/bvi/eef_compact_config.py": "896bea7fa4154555ecf2ce7be45882d9d613e6a7c623fedb0c289998b42c162d",
+    "src/bvi/eef_compact_contract.py": "e61c96c5e42ee5ed6f84031f1e2fffad36f5e9466e859275364544e4cc3b5b68",
+    "src/bvi/eef_compact_dispatch.py": "70fe04423204d808152557451c73449e0ef9dc9e0705415a0ead0a7bafa233ee",
+    "src/bvi/eef_guidance_v4.py": "5b3c996a35dbcc032c6b4ae1416f6246b6c2d5a177565cffdd82c30ced0daba5",
+    "src/bvi/eef_tools_v13.py": "45aab10d6bb7a0d7d71314a4e1d1c0c6a3e5fccdb8def87e8b27c421386b0635",
+    "src/bvi/eef_visual_history.py": "0a25b987f06509f275da3fb81aede3b3691432c2c27194e5fb9c3da8bed3d4f4"
+  }
+}

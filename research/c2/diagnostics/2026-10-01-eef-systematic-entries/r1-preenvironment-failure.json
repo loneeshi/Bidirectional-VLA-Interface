@@ -1,0 +1,38 @@
+{
+  "batch": {
+    "status": "stopped",
+    "receipts": [
+      {
+        "position": 5,
+        "wall_seconds": 4.227134384214878,
+        "status": "failed",
+        "exit_code": 1
+      }
+    ],
+    "api_requests": 0
+  },
+  "results": [
+    {
+      "position": 5,
+      "mode": "systematic-entry-api0",
+      "status": "infrastructure_censored",
+      "authorization_sha256": "fb5c1d6363566be6eef4f39cd5cc13f51131d72b1dbfd7984affefdd608df227",
+      "strict_pick_success": false,
+      "api_requests": 0,
+      "simulator_actions": 0,
+      "policy_inferences": 0,
+      "training_updates": 0,
+      "frames": [],
+      "error_type": "FileNotFoundError",
+      "error_message": "[Errno 2] No such file or directory: '/home/pshuai/.maniskill/data/scene_datasets/replica_cad_dataset/rearrange/task_plans/tidy_house/sequential/val/all.json'",
+      "smoke_passed": false,
+      "recording": {
+        "kind": "online frozen prefix and entry settling; evaluation only",
+        "frames": 0,
+        "directory": "recording-frames"
+      },
+      "wall_seconds": 3.5353654511272907
+    }
+  ],
+  "gpu": "GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548\n"
+}

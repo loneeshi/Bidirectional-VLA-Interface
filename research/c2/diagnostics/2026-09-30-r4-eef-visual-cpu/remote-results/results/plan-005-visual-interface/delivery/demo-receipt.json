@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/eef-visual-20260930r4-interface/results/plan-005-visual-interface/delivery/online-raw.mp4",
+  "source_video_sha256": "3839013f14fe32c4d4a071807a1395c117fb63670fc7c24103d185cb482c7d50",
+  "source_result": "/home/pshuai/bvi-research/runs/eef-visual-20260930r4-interface/results/plan-005-visual-interface/result.json",
+  "source_result_sha256": "ed6d11d5bd9022d8d19e83fc9c992413984484465ba132269dc5f9b8b4f6d75b",
+  "output": "/home/pshuai/bvi-research/runs/eef-visual-20260930r4-interface/results/plan-005-visual-interface/delivery/online-tcp-demo.mp4",
+  "output_sha256": "93015f1236a5fdf243c374a66f1bdbeb9b8572a30672ef527781812460ea2ded",
+  "frames": 78,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 5,
+  "source_status": "infrastructure_censored",
+  "source_strict_pick_success": false,
+  "source_mode": "visual-interface-api0",
+  "kind_label": "online interface check",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

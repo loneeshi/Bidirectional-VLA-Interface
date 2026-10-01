@@ -1,0 +1,291 @@
+{
+  "at_utc": "2026-09-29T21:52:35.934242+00:00",
+  "rows": [
+    {
+      "position": 1,
+      "group": "new",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": false,
+      "tool_calls": 14,
+      "simulator_actions": 200,
+      "termination_category": "time_limit",
+      "net_base_translation_m": 0.5441439261028498,
+      "max_base_displacement_m": 0.5463873837485053,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "08ac9a95296afa67506ac00802e01f7b505daac17927fcbe87bd732e94a4d980",
+      "official_final_eval_only": {
+        "is_grasped": true,
+        "ee_rest": false,
+        "robot_rest": true,
+        "is_static": false,
+        "robot_cumulative_force": 0.0,
+        "subtasks_steps_left": 0
+      },
+      "sampled_non_target_contacts_eval_only": [
+        {
+          "robot_link": "l_gripper_finger_link",
+          "other": "scs-[0]_frl_apartment_sofa-6",
+          "impulse_ns": 0.42085927724838257,
+          "external_identity": {
+            "scene_key": "scs-[0]_frl_apartment_sofa-6",
+            "kind": "actor",
+            "other_name": "scs-[0]_frl_apartment_sofa-6",
+            "entity_name": "scene-0_scs-[0]_frl_apartment_sofa-6",
+            "pair_index": 3540
+          }
+        }
+      ],
+      "distance_to_shoulder_horizontal_m": 1.185069524101506,
+      "stratum": "outside",
+      "outside_moved_strict_success": false
+    },
+    {
+      "position": 14,
+      "group": "new",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": false,
+      "tool_calls": 1,
+      "simulator_actions": 33,
+      "termination_category": "cumulative_force_limit",
+      "net_base_translation_m": 0.5730519300629415,
+      "max_base_displacement_m": 0.5730519300629416,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "b8becef641342068882b6df1d0ae7e87719fbdf4ab48907ce91632f3a59d14e0",
+      "official_final_eval_only": {
+        "is_grasped": false,
+        "ee_rest": true,
+        "robot_rest": true,
+        "is_static": false,
+        "robot_cumulative_force": 5321.09375,
+        "subtasks_steps_left": 167
+      },
+      "sampled_non_target_contacts_eval_only": [
+        {
+          "robot_link": "base_link",
+          "other": "scs-[0]_frl_apartment_table_01-5",
+          "impulse_ns": 48.34273910522461,
+          "external_identity": {
+            "scene_key": "scs-[0]_frl_apartment_table_01-5",
+            "kind": "actor",
+            "other_name": "scs-[0]_frl_apartment_table_01-5",
+            "entity_name": "scene-0_scs-[0]_frl_apartment_table_01-5",
+            "pair_index": 395
+          }
+        }
+      ],
+      "distance_to_shoulder_horizontal_m": 1.5818048680358083,
+      "stratum": "outside",
+      "outside_moved_strict_success": false
+    },
+    {
+      "position": 26,
+      "group": "new",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": false,
+      "tool_calls": 1,
+      "simulator_actions": 46,
+      "termination_category": "cumulative_force_limit",
+      "net_base_translation_m": 0.7400851547324984,
+      "max_base_displacement_m": 0.7400851547324985,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "8d5af86f11d9f8641ec05f1a12213f70d85d6056df99450a2e9b6f4c07617c32",
+      "official_final_eval_only": {
+        "is_grasped": false,
+        "ee_rest": true,
+        "robot_rest": true,
+        "is_static": false,
+        "robot_cumulative_force": 5152.21240234375,
+        "subtasks_steps_left": 154
+      },
+      "sampled_non_target_contacts_eval_only": [
+        {
+          "robot_link": "base_link",
+          "other": "scs-[0]_frl_apartment_sofa-6",
+          "impulse_ns": 3.3722023963928223,
+          "external_identity": {
+            "scene_key": "scs-[0]_frl_apartment_sofa-6",
+            "kind": "actor",
+            "other_name": "scs-[0]_frl_apartment_sofa-6",
+            "entity_name": "scene-0_scs-[0]_frl_apartment_sofa-6",
+            "pair_index": 393
+          }
+        }
+      ],
+      "distance_to_shoulder_horizontal_m": 1.534865813399727,
+      "stratum": "outside",
+      "outside_moved_strict_success": false
+    },
+    {
+      "position": 42,
+      "group": "new",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": false,
+      "tool_calls": 1,
+      "simulator_actions": 25,
+      "termination_category": "cumulative_force_limit",
+      "net_base_translation_m": 0.1524504987418335,
+      "max_base_displacement_m": 0.1524504987418335,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "52a8884f1eb3af05d59788ba24f4800443d02d81ee4fe5fdd964367dae6b31ff",
+      "official_final_eval_only": {
+        "is_grasped": false,
+        "ee_rest": true,
+        "robot_rest": true,
+        "is_static": true,
+        "robot_cumulative_force": 5452.90625,
+        "subtasks_steps_left": 175
+      },
+      "sampled_non_target_contacts_eval_only": [
+        {
+          "robot_link": "base_link",
+          "other": "scs-[0]_frl_apartment_sofa-6",
+          "impulse_ns": 6.344457626342773,
+          "external_identity": {
+            "scene_key": "scs-[0]_frl_apartment_sofa-6",
+            "kind": "actor",
+            "other_name": "scs-[0]_frl_apartment_sofa-6",
+            "entity_name": "scene-0_scs-[0]_frl_apartment_sofa-6",
+            "pair_index": 405
+          }
+        }
+      ],
+      "distance_to_shoulder_horizontal_m": 1.5225746726027265,
+      "stratum": "outside",
+      "outside_moved_strict_success": false
+    },
+    {
+      "position": 5,
+      "group": "regression",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": true,
+      "tool_calls": 13,
+      "simulator_actions": 146,
+      "termination_category": "official_success",
+      "net_base_translation_m": 0.2019425300829219,
+      "max_base_displacement_m": 0.20349134230401247,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "7d2432c82baa44fc68070fe45365058c6e3a4122ca26565ff6e4efb7cae0ec97",
+      "official_final_eval_only": {
+        "is_grasped": true,
+        "ee_rest": true,
+        "robot_rest": true,
+        "is_static": true,
+        "robot_cumulative_force": 0.0,
+        "subtasks_steps_left": 500
+      },
+      "sampled_non_target_contacts_eval_only": [],
+      "distance_to_shoulder_horizontal_m": 0.8389672728175769,
+      "stratum": "inside",
+      "outside_moved_strict_success": false
+    },
+    {
+      "position": 8,
+      "group": "regression",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": false,
+      "tool_calls": 15,
+      "simulator_actions": 200,
+      "termination_category": "time_limit",
+      "net_base_translation_m": 0.3947071168667346,
+      "max_base_displacement_m": 0.3990439797248996,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "153fc2a776f539155940f45ab2e46eefe15e0e9d3c3bb807b685f02707ddd0a9",
+      "official_final_eval_only": {
+        "is_grasped": false,
+        "ee_rest": false,
+        "robot_rest": false,
+        "is_static": true,
+        "robot_cumulative_force": 0.0,
+        "subtasks_steps_left": 0
+      },
+      "sampled_non_target_contacts_eval_only": [],
+      "distance_to_shoulder_horizontal_m": 1.0096313130275807,
+      "stratum": "inside",
+      "outside_moved_strict_success": false
+    },
+    {
+      "position": 11,
+      "group": "regression",
+      "status": "completed",
+      "censored": false,
+      "strict_pick_success": false,
+      "tool_calls": 1,
+      "simulator_actions": 53,
+      "termination_category": "cumulative_force_limit",
+      "net_base_translation_m": 1.0010879035578413,
+      "max_base_displacement_m": 1.0010879035578413,
+      "error_type": null,
+      "error_message": null,
+      "source_sha256": "275873c011a9cbc6d813a2a670fbe1de0e28fff8ec0538b034d6b1ab4c8d6c04",
+      "official_final_eval_only": {
+        "is_grasped": false,
+        "ee_rest": true,
+        "robot_rest": true,
+        "is_static": false,
+        "robot_cumulative_force": 5232.15234375,
+        "subtasks_steps_left": 147
+      },
+      "sampled_non_target_contacts_eval_only": [
+        {
+          "robot_link": "base_link",
+          "other": "body",
+          "impulse_ns": 31.944276809692383,
+          "external_identity": {
+            "scene_key": "scs-[0]_kitchen_counter-0",
+            "kind": "articulation_link",
+            "articulation_name": "scs-[0]_kitchen_counter-0",
+            "link_index": 1,
+            "other_name": "body",
+            "entity_name": "body",
+            "pair_index": 490
+          }
+        },
+        {
+          "robot_link": "forearm_roll_link",
+          "other": "body",
+          "impulse_ns": 4.338865756988525,
+          "external_identity": {
+            "scene_key": "scs-[0]_kitchenCupboard_01-0",
+            "kind": "articulation_link",
+            "articulation_name": "scs-[0]_kitchenCupboard_01-0",
+            "link_index": 1,
+            "other_name": "body",
+            "entity_name": "body",
+            "pair_index": 3099
+          }
+        }
+      ],
+      "distance_to_shoulder_horizontal_m": 1.9649131834938327,
+      "stratum": "outside",
+      "outside_moved_strict_success": false
+    }
+  ],
+  "new_successes": 0,
+  "new_denominator": 4,
+  "regression_successes": 1,
+  "regression_denominator": 3,
+  "censored_count": 0,
+  "not_run_count": 0,
+  "advancement_gate_passed": false,
+  "gpu_process_seconds": 661.5982728675008,
+  "api_attempts": 46,
+  "input_tokens": 300965,
+  "output_tokens": 5294,
+  "conservative_unbilled_usage_estimate_usd": "4.0267625",
+  "unknown_outcome_reserve_usd": "0",
+  "provider_actual_bill_usd": null,
+  "api_authorization_remaining_closed_usd": "535.9732375",
+  "no_automatic_G2_or_E2": true
+}

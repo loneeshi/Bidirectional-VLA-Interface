@@ -1,0 +1,48 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "head",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "A small red-and-white can is visible on the wooden furniture in the head view. I will measure its visible surface before planning a grasp.",
+    "observation_id": "obs-000-f2ed5e1c8c40f4a1",
+    "pan_rad": null,
+    "pixel": [
+      354,
+      324
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "The can at head pixel [354,324] is the likely tomato soup can.",
+      "expected_change": "Obtain a surface point for the can without moving.",
+      "next_check": "Inspect depth location and estimate grasp geometry.",
+      "uncertainty": "Can dimensions and reachability are unknown; robot obscures much of the scene."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "reflection": null,
+  "api_attempts": 1,
+  "api_attempted": true,
+  "request_sha256": "fec3e7e05964c181f4c85825f35ed219d145579cb3e587eb5fd0c07269d0748e",
+  "logical_request_id": "r3-005-000",
+  "authorization_sha256": "67cb7e78aeefc25ed27bf0b59a2b758dc57edba015da0d4547723bb433341834",
+  "reason": null,
+  "provider_id": "resp_0279b9a56a3d529b016abda2d6897087d28e1a638faa0da57b",
+  "usage": {
+    "input_tokens": 4681,
+    "input_tokens_details": {
+      "cache_write_tokens": 4678,
+      "cached_tokens": 0
+    },
+    "output_tokens": 179,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4860
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.0674625"
+}

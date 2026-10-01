@@ -1,0 +1,41 @@
+{
+  "evaluation_only": true,
+  "result_sha256": "bf8f349d9d2b9e3eb97d515ddea903a827890f89ba35eff08ace3581d4ecb4b6",
+  "status": "completed",
+  "artifacts": {
+    "history.html": {
+      "path": "history.html",
+      "sha256": "f9e2de45083355a26048d0c103a115be5a82763817960bf758cc67a26609b11b"
+    },
+    "trajectory.svg": {
+      "path": "trajectory.svg",
+      "sha256": "4201baaae5341d88d5950126d54561b75b340ff8b07be98e1ae75d5c8cda2895"
+    },
+    "trajectory.html": {
+      "path": "trajectory.html",
+      "sha256": "d26ce4d4cc7b7f5f10df272ea6e166777390634932e10fe9e220f8ce81ec781c"
+    },
+    "online-raw.mp4": {
+      "path": "online-raw.mp4",
+      "sha256": "af4969d5a40454e04058f17993ce76685e94e58bafccccfa6a14d7c8c2de2fd9"
+    },
+    "online-tcp-demo.mp4": {
+      "path": "online-tcp-demo.mp4",
+      "sha256": "f3d049acd9c317a88cd9ba5fdbc36102e7aba5fe870b21711ed435555a78e09c"
+    },
+    "demo-receipt.json": {
+      "path": "demo-receipt.json",
+      "sha256": "e7207a4df32f3f40ba54af9ba2b4fdb37d2b7957654cb8e38eba7930d297303f"
+    },
+    "online-command-vs-executed.mp4": {
+      "path": "online-command-vs-executed.mp4",
+      "sha256": "97f7684c3721e144524a3f5cb60c6016c5bdf8f9038b869f926b1b8f12bf82fd"
+    },
+    "command-overlay-receipt.json": {
+      "path": "command-overlay-receipt.json",
+      "sha256": "4d79476b3c5b997b12cff63b456354a313c8b63a0f4b79896971984abb307b95"
+    }
+  },
+  "errors": [],
+  "complete": true
+}

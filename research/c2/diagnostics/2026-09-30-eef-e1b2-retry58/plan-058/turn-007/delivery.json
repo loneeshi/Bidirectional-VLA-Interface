@@ -1,0 +1,36 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "forward_m": null,
+    "gripper": 1,
+    "hindsight": "",
+    "note": "Both approach poses passed robot-only IK. I will open the fingers fully before descending so the can can enter without being pushed aside.",
+    "poses": [],
+    "tool": "set_gripper",
+    "turn_rad": null
+  },
+  "reflection": null,
+  "provider_id": "resp_045a7e9edd5b3ac3006abc72a8ad5087d292709844df8caf15",
+  "returned_model": "gpt-6-astra",
+  "usage": {
+    "input_tokens": 8357,
+    "input_tokens_details": {
+      "cache_write_tokens": 839,
+      "cached_tokens": 7515
+    },
+    "output_tokens": 114,
+    "output_tokens_details": {
+      "reasoning_tokens": 47
+    },
+    "total_tokens": 8471
+  },
+  "input_tokens": 8357,
+  "output_tokens": 114,
+  "estimated_usd": "0.1101625",
+  "reasoning_summaries": [
+    "**Calculating dimensions and gaps**\n\nI'm working on figuring out the dimensions here. I've got 81 steps plus the need to close things to the rest of 60, but they’re not fully aligned. I need an open gap that's .064, which seems enough. Can I use a width of .055? It looks like a potted meat can is .1 by .055. So, I need to open to .1, which requires one more step. Let's see how this shapes up!"
+  ],
+  "api_attempted": true,
+  "request_bundle_sha256": "b2c98e97f4614fd60beae6e78b3352cc3ed632d9d3d2e8eb82513ad1d7075ed1"
+}

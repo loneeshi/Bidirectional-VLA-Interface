@@ -1,0 +1,34 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "forward_m": 0.3,
+    "gripper": null,
+    "hindsight": "",
+    "note": "Odometry places the can 1.55 m ahead, still beyond useful floor-grasp reach. The visible central floor remains clear of the close right-hand furniture, so I will take another limited 0.30 m segment.",
+    "poses": [],
+    "tool": "move_base",
+    "turn_rad": 0
+  },
+  "reflection": null,
+  "provider_id": "resp_045a7e9edd5b3ac3006abc726c29fc87d2ba9d4c1f236c429e",
+  "returned_model": "gpt-6-astra",
+  "usage": {
+    "input_tokens": 4023,
+    "input_tokens_details": {
+      "cache_write_tokens": 970,
+      "cached_tokens": 3050
+    },
+    "output_tokens": 141,
+    "output_tokens_details": {
+      "reasoning_tokens": 53
+    },
+    "total_tokens": 4164
+  },
+  "input_tokens": 4023,
+  "output_tokens": 141,
+  "estimated_usd": "0.0573375",
+  "reasoning_summaries": [],
+  "api_attempted": true,
+  "request_bundle_sha256": "b59da6479fe47f0cb01c613c51a0b199692732cfa999759d47f24e9fce488dbc"
+}

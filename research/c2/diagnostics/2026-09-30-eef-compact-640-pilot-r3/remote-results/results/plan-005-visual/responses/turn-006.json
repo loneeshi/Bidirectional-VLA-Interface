@@ -1,0 +1,46 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "hand",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The pregrasp stopped 4.1 cm short with an orientation residual; the hand view now clearly shows the can lid. I will refresh its location before the final approach.",
+    "observation_id": "obs-006-3452cc608a9deb97",
+    "pan_rad": null,
+    "pixel": [
+      350,
+      311
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "Hand obs-006 shows the soup can still upright on the cabinet; pregrasp did not fully arrive.",
+      "expected_change": "Obtain a fresh lid surface position.",
+      "next_check": "Refine grasp goal using current depth and remaining 136 steps.",
+      "uncertainty": "Exact grasp alignment remains unresolved; cabinet clearance is visual only."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "api_attempts": 2,
+  "request_bundle_sha256": "90e68426bce93793addee3c3f23ea9a605de5d2613759a537013658809bd0462",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_0c324646dfce798b016abd56582ca087d2b0fd4038ddebc37d",
+  "usage": {
+    "input_tokens": 11646,
+    "input_tokens_details": {
+      "cache_write_tokens": 9712,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 185,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 11831
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.154825"
+}

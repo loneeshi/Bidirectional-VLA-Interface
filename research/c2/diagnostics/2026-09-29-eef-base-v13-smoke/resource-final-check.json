@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-09-29T21:19:50.630804+00:00",
+  "pids_absent": {
+    "1700801": true,
+    "1700940": true,
+    "1703681": true,
+    "1706387": true,
+    "1707192": true,
+    "1708079": true
+  },
+  "compute": "672548, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46316 MiB\n",
+  "runpod": {
+    "checked_at_utc": "2026-09-29T21:24:33.959549+00:00",
+    "pods": [
+      {
+        "id": "uhrazur8gxf9b4",
+        "status": "EXITED",
+        "disk_gb": 20
+      },
+      {
+        "id": "3n65pd7y84sam8",
+        "status": "EXITED",
+        "disk_gb": 20
+      }
+    ],
+    "network_volumes": [],
+    "storage_deleted": false,
+    "storage_bill": "not reconciled; continuing storage"
+  }
+}

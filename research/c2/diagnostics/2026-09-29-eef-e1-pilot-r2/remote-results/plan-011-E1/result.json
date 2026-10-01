@@ -1,0 +1,419 @@
+{
+  "position": 11,
+  "mode": "E1-privileged-H0",
+  "status": "completed",
+  "authorization_sha256": "333f886bfdbc2a1c527d0a7de7499edb23f654181ddf58e6f9bf972bc8980f89",
+  "strict_pick_success": false,
+  "api_requests": 2,
+  "simulator_actions": 0,
+  "policy_inferences": 0,
+  "training_updates": 0,
+  "frames": [],
+  "restore": {
+    "state_max_error": 2.384185791015625e-07,
+    "policy_input_equal": true,
+    "pointer": 1
+  },
+  "tcp_fk_eval_max_abs": 6.718977673125792e-07,
+  "remaining_horizon": 200,
+  "official_rest_tolerance": 0.6,
+  "official_force_limit": 5000.0,
+  "controller_validated": true,
+  "action_wrapper_flags": [
+    {
+      "base": true,
+      "head": false,
+      "torso": false
+    }
+  ],
+  "version": "eef-tool-v11-measured-torso-momentum-r1",
+  "commands": [
+    {
+      "turn": 0,
+      "call": {
+        "gripper": null,
+        "hindsight": "",
+        "poses": [
+          {
+            "position": [
+              1.81,
+              -0.1902,
+              0.9271
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "tool": "check_path"
+      },
+      "result": {
+        "accepted": false,
+        "reason": "ik_not_found",
+        "records": [
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.32422380848556587,
+              0.5619698166847229,
+              -0.9384378203096954,
+              0.6980442964058495,
+              0.8759061494971178,
+              -0.09670270864050501,
+              2.154789261201112,
+              -0.053185347475793954,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 0.0004784123461330745,
+            "rotation_error_rad": 0.00010863250185984517,
+            "reason": "ok",
+            "fallback_unregularized": false,
+            "max_rotation_delta": 0.06599533190542228,
+            "torso_delta": 2.479553229406406e-09,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": []
+          },
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.31013952932285654,
+              0.5619698166847229,
+              -0.9037305139132411,
+              0.6903460808362576,
+              0.8183011668156992,
+              -0.12447328195350638,
+              2.149772750249918,
+              -0.06814542392476675,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 0.0007419727808801374,
+            "rotation_error_rad": 0.00016107712019552343,
+            "reason": "ok",
+            "fallback_unregularized": false,
+            "max_rotation_delta": 0.05760498268141845,
+            "torso_delta": 0.0,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": []
+          },
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.29407031723766164,
+              0.5619698166847229,
+              -0.8692404456691037,
+              0.677620776960187,
+              0.7582179354534783,
+              -0.14920324379003214,
+              2.145497709097597,
+              -0.08640298114995737,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 0.0010596704881743948,
+            "rotation_error_rad": 0.00022756965188753666,
+            "reason": "ok",
+            "fallback_unregularized": false,
+            "max_rotation_delta": 0.060083231362221046,
+            "torso_delta": 0.0,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": []
+          },
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.2771210290311228,
+              0.5619698166847229,
+              -0.8337399468975448,
+              0.6636840954282501,
+              0.6948197646813212,
+              -0.17249398039053654,
+              2.1423503537382356,
+              -0.10613743140049747,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 0.0014539140473258253,
+            "rotation_error_rad": 0.0003137039728995726,
+            "reason": "ok",
+            "fallback_unregularized": false,
+            "max_rotation_delta": 0.06339817077215715,
+            "torso_delta": 0.0,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": []
+          },
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.25925223470738346,
+              0.5619698166847229,
+              -0.7968020712638659,
+              0.6486586308899605,
+              0.6273484626972611,
+              -0.1943522221366396,
+              2.140670708985006,
+              -0.1273280257292928,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 0.001960540692807563,
+            "rotation_error_rad": 0.0004284067773972825,
+            "reason": "ok",
+            "fallback_unregularized": false,
+            "max_rotation_delta": 0.06747130198406026,
+            "torso_delta": 0.0,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": []
+          },
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.23258410692425732,
+              0.5619698166847229,
+              -0.7454936242710242,
+              0.6319019161861479,
+              0.5257782942155599,
+              -0.22236870807781184,
+              2.1567935934113636,
+              -0.15413697995172848,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 2.2076699176994166e-16,
+            "rotation_error_rad": 1.482708641057035e-16,
+            "reason": "ok",
+            "fallback_unregularized": true,
+            "max_rotation_delta": 0.1015701684817012,
+            "torso_delta": 0.0,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": [
+              "pose_tolerance",
+              "pose_tolerance"
+            ]
+          },
+          {
+            "accepted": true,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.16028153805170126,
+              0.5619698166847229,
+              -0.72323096224192,
+              0.3340046967399264,
+              0.43601343487835487,
+              -0.04367661076806861,
+              2.16,
+              -0.25857898930026213,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 1.9204837728467534e-11,
+            "rotation_error_rad": 7.490761466361111e-11,
+            "reason": "ok",
+            "fallback_unregularized": true,
+            "max_rotation_delta": 0.2978972194462215,
+            "torso_delta": 0.0,
+            "candidate_count": 2,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": [
+              "pose_tolerance",
+              "pose_tolerance"
+            ]
+          },
+          {
+            "accepted": false,
+            "qpos": [
+              -0.06853175908327103,
+              -1.010878324508667,
+              -2.153643846511841,
+              0.38615,
+              0.003032064065337181,
+              -0.14106787206595464,
+              0.5619698166847229,
+              -0.6801640429946414,
+              0.25835856011720626,
+              0.3592444712136812,
+              2.851555112037829e-07,
+              2.16,
+              -0.28547887131386673,
+              0.029671138152480125,
+              0.0295932088047266
+            ],
+            "position_error_m": 0.0026572047205792597,
+            "rotation_error_rad": 0.000772573661529336,
+            "reason": "ik_not_found",
+            "fallback_unregularized": true,
+            "max_rotation_delta": 0.07676896366467378,
+            "torso_delta": 0.0,
+            "candidate_count": 0,
+            "rejected_jump_candidates": 0,
+            "fallback_reasons": [
+              "pose_tolerance",
+              "pose_tolerance"
+            ]
+          }
+        ],
+        "readonly": true,
+        "steps_used": 0
+      },
+      "public_result": {
+        "accepted": false,
+        "reason": "ik_not_found",
+        "readonly": true,
+        "steps_used": 0
+      }
+    },
+    {
+      "turn": 1,
+      "call": {
+        "gripper": null,
+        "hindsight": "The sugar box is approximately 1.99 m forward of the fixed base, beyond the arm's reach. A reachability check for a gripper pose short of the target failed with ik_not_found. No motion or grasp was attempted; completing the pick would require repositioning the base, which is not permitted.",
+        "poses": [],
+        "tool": "give_up"
+      },
+      "result": {
+        "accepted": true,
+        "reason": "give_up",
+        "steps_used": 0
+      },
+      "public_result": {
+        "accepted": true,
+        "reason": "give_up",
+        "steps_used": 0
+      }
+    }
+  ],
+  "official_contacts_eval_only": [],
+  "torso_damping_derivation": {
+    "mass_kg": 29.157648076433205,
+    "stiffness": 1000.0,
+    "damping": 100.0,
+    "extra_velocity_seconds": 0.24151221399202227
+  },
+  "settling_parameters": {
+    "position_gain": 1.0,
+    "velocity_step_gain": 0.5,
+    "action_cap": 0.25,
+    "action_change_cap": 0.25,
+    "official_delta_scale": 0.1
+  },
+  "control_dt": 0.05,
+  "settling_velocity_source": "measured robot.qvel",
+  "privileged_eval_only": {
+    "definition": "AABB of all target collision shapes in target local frame, transformed once into base_link",
+    "asset_origin_base_m": [
+      1.9884848594665527,
+      -0.19018927216529846,
+      0.9271087050437927
+    ],
+    "bbox_center_local_m": [
+      -9.787455201148987e-05,
+      0.00012258067727088928,
+      0.0
+    ]
+  },
+  "tool_calls": 2,
+  "termination_category": "give_up",
+  "executor_trace": [],
+  "ik_records": [],
+  "official_final_info": {
+    "elapsed_steps": [
+      30
+    ],
+    "success": [
+      false
+    ],
+    "fail": [
+      false
+    ],
+    "subtask": [
+      1
+    ],
+    "subtask_type": [
+      0
+    ],
+    "subtasks_steps_left": [
+      200
+    ],
+    "robot_force": [
+      0.0
+    ],
+    "robot_cumulative_force": [
+      0.0
+    ],
+    "is_grasped": [
+      false
+    ],
+    "oriented_correctly": [
+      true
+    ],
+    "navigated_close": [
+      true
+    ],
+    "is_static": [
+      true
+    ],
+    "cumulative_force_within_limit": [
+      true
+    ],
+    "obj_at_goal_progressive_3": [
+      false
+    ],
+    "obj_at_goal_progressive_7": [
+      false
+    ],
+    "obj_at_goal_progressive_11": [
+      false
+    ],
+    "obj_at_goal_progressive_15": [
+      false
+    ],
+    "obj_at_goal_progressive_19": [
+      false
+    ]
+  },
+  "wall_seconds": 43.39151442423463
+}

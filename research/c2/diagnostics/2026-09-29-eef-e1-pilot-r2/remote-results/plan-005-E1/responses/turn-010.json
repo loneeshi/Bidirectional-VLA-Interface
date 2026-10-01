@@ -1,0 +1,18 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "gripper": 0,
+    "hindsight": "",
+    "poses": [],
+    "tool": "set_gripper"
+  },
+  "provider_id": "resp_0a41b038e3cea9be006abb5423135487d2b8ed149dc3cf9019",
+  "returned_model": "gpt-6-astra",
+  "service_tier": "default",
+  "input_tokens": 8956,
+  "output_tokens": 47,
+  "estimated_usd": "0.09191",
+  "api_attempted": true,
+  "request_bundle_sha256": "8b5d4e9a2a81e759e13d97bb71a7a7a88c7336aefa6e4702c1e596fea9c00116"
+}

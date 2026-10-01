@@ -1,0 +1,15 @@
+{
+  "id": "arm-mobile-five-20261001-r1-approved",
+  "at": "2026-10-01T03:55:00.294503+00:00",
+  "status": "authorized_ready_to_launch",
+  "authorization_evidence": "User explicitly said 启动 after USD65/API125/GPU9000 proposal",
+  "currency": "USD",
+  "usd_hard_cap": "65",
+  "provider_requests_cap": 125,
+  "gpu1_process_seconds_cap": 9000,
+  "processes": 5,
+  "condition": "V-mobile",
+  "prior_budget_transferred": 0,
+  "provider_sends_before_launch": 0,
+  "provider_bill_usd": null
+}

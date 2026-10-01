@@ -1,0 +1,35 @@
+{
+  "checked_at_utc": "2026-09-28T16:17:21Z",
+  "gpu1_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "gpu1_memory_used_mib": 15,
+  "gpu1_utilization_percent": 0,
+  "gpu1_compute_processes": [],
+  "gpu0_other_user_process_present": true,
+  "workspace_writable": true,
+  "official_source_readable": true,
+  "disk_available_gb_approx": 636,
+  "quota_output": "none",
+  "sbatch_qsub_in_path": false,
+  "scheduler_policy": "unconfirmed_launch_gate",
+  "credentials_git_ignored": true,
+  "pytest": {
+    "command": "pytest tests/test_eef_tools.py -q",
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0
+  },
+  "new_api_calls": 0,
+  "new_simulator_actions": 0,
+  "new_gpu_process_seconds": 0,
+  "lab_project_charge": {
+    "amount": 0,
+    "source": "user_confirmation_no_invoice"
+  },
+  "historical_runpod_storage": "not_refreshed_this_turn",
+  "source_sha256": {
+    "src/bvi/eef_tools.py": "e89b95f184a15d6d64964ec73996191c5b9da101196b095b6ce60c45a1519dd6",
+    "scripts/prepare_eef_g0_cpu.py": "d9fb29b88452efbf162914499f3e232d66f4cb9555bcc19f2f6fbce4a82eb1c3",
+    "tests/test_eef_tools.py": "2f15585c26cb15d71e5a70fd1fa6564b8a55f2ee004d30b2124d7570e227f129",
+    "research/c2/docs/real-handoff-eef-g0-authorization-proposal.md": "6939e8ac69230fbb185974e76d370cafabfe0b43a9e58479260a5d6358adfe2f"
+  }
+}

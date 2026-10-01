@@ -1,0 +1,176 @@
+{
+  "status": "completed_retry",
+  "original_censor_preserved": true,
+  "case": {
+    "position": 58,
+    "group": "new",
+    "stratum": "outside",
+    "strict_pick_success": false,
+    "censored": false,
+    "reflection_status": "valid",
+    "first_base_forward_m": 0.3,
+    "translation_call_count": 4,
+    "multiple_translation_segments": true,
+    "all_nonzero_segments_at_most_03_m": true,
+    "segmentation_scope": "descriptive; obstacle proximity must be checked against the contemporaneous sensor images",
+    "paired_optimism_warning": false,
+    "attribution": {
+      "category": "模型推理有误",
+      "decisive_notes": [
+        {
+          "turn": 8,
+          "tool": "move_eef_chunk",
+          "note": "The gripper is open and the checked approach places its fingers vertically around the estimated can center. I will descend through the pregrasp to the grasp pose, then use the hand view to verify alignment before closing.",
+          "requested": {
+            "forward_m": null,
+            "gripper": null,
+            "hindsight": "",
+            "note": "The gripper is open and the checked approach places its fingers vertically around the estimated can center. I will descend through the pregrasp to the grasp pose, then use the hand view to verify alignment before closing.",
+            "poses": [
+              {
+                "position": [
+                  0.66,
+                  -0.175,
+                  0.3
+                ],
+                "quaternion_xyzw": [
+                  0,
+                  0.707107,
+                  0,
+                  0.707107
+                ]
+              },
+              {
+                "position": [
+                  0.66,
+                  -0.175,
+                  0.17
+                ],
+                "quaternion_xyzw": [
+                  0,
+                  0.707107,
+                  0,
+                  0.707107
+                ]
+              }
+            ],
+            "tool": "move_eef_chunk",
+            "turn_rad": null
+          },
+          "measured_result": {
+            "arrived": false,
+            "reason": "tool_step_limit",
+            "steps_used": 60,
+            "position_error_m": 0.10963534865114989,
+            "rotation_error_rad": 0.023173120226104623,
+            "arm_ik_wait_steps": 0
+          }
+        },
+        {
+          "turn": 9,
+          "tool": "move_to",
+          "note": "The arm stopped 0.11 m above the grasp pose, and the hand image now shows the small rectangular can on the rug ahead of the fingers. I will complete the short downward motion; the remaining step budget is tight.",
+          "requested": {
+            "forward_m": null,
+            "gripper": null,
+            "hindsight": "",
+            "note": "The arm stopped 0.11 m above the grasp pose, and the hand image now shows the small rectangular can on the rug ahead of the fingers. I will complete the short downward motion; the remaining step budget is tight.",
+            "poses": [
+              {
+                "position": [
+                  0.66,
+                  -0.175,
+                  0.17
+                ],
+                "quaternion_xyzw": [
+                  0,
+                  0.707107,
+                  0,
+                  0.707107
+                ]
+              }
+            ],
+            "tool": "move_to",
+            "turn_rad": null
+          },
+          "measured_result": {
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 10,
+            "position_error_m": 0.006211812889409593,
+            "rotation_error_rad": 0.02492672417612381,
+            "arm_ik_wait_steps": 0
+          }
+        },
+        {
+          "turn": 10,
+          "tool": "set_gripper",
+          "note": "The measured gripper pose is within 7 mm of the requested grasp and the can is visible between the approach lines in the hand image. I will close now, then attempt the required return if control steps remain.",
+          "requested": {
+            "forward_m": null,
+            "gripper": 0,
+            "hindsight": "",
+            "note": "The measured gripper pose is within 7 mm of the requested grasp and the can is visible between the approach lines in the hand image. I will close now, then attempt the required return if control steps remain.",
+            "poses": [],
+            "tool": "set_gripper",
+            "turn_rad": null
+          },
+          "measured_result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 8,
+            "enter_closed": true,
+            "command": 0.0,
+            "finger_distance_m": 0.024297241121530533,
+            "stable": false
+          }
+        }
+      ],
+      "hindsight": [
+        {
+          "source": "post_terminal_reflection",
+          "hindsight": "The attempt failed at the time limit. Short base advances brought the estimated target within reach, and the final downward move reached within 7 mm of the requested grasp pose. However, navigation consumed much of the budget, and the arm approach used 60 steps rather than the 22-step minimum reported by the path check. Only eight steps remained when I commanded gripper closure. No closure result or secure hold was observed, and no return was attempted. The visible can and accurate TCP pose did not establish successful finger alignment. I should have budgeted for actual arm execution time and preserved a firm reserve for grasp verification and return."
+        }
+      ],
+      "review_status": "reviewed; notes are self-reports",
+      "sensor_evidence": [
+        "turn-010/hand_rgb.png shows the can, but visibility alone does not prove finger alignment; final official is_grasped=false.",
+        "Per-turn observation steps_remaining: 78 before turn8, 18 before turn9, 8 before turn10."
+      ],
+      "action_evidence": [
+        "Four forward commands of 0.3m each arrived; final base translation 1.320041m (includes settling drift).",
+        "turn8 requested descend through both poses, used 60 steps and stopped 0.109635m above goal; turn9 used10; turn10 closure used final8; no return_to_rest."
+      ],
+      "decisive_turns": [
+        8,
+        9,
+        10
+      ],
+      "qualification": "Budget planning failure is supported; an execution shortfall also occurred at turn8. Cannot claim a correct grasp would succeed with extra time. No torso blame."
+    }
+  },
+  "strict_pick_success": false,
+  "termination": "time_limit",
+  "tool_calls": 11,
+  "api_requests": 12,
+  "valid_responses": 12,
+  "reflection_valid": true,
+  "gpu_process_seconds": 180.07471007481217,
+  "simulator_actions": 200,
+  "estimated_usd": "1.1211125",
+  "provider_actual_bill_usd": null,
+  "combined_known_estimate_usd": "1.3460375",
+  "prior_unknown_request_reserve_usd": "0.5848",
+  "combined_estimate_and_unknown_reserve_usd": "1.9308375",
+  "parent_total_usd_cap": "920",
+  "not_started": [
+    61,
+    1,
+    14,
+    26,
+    42
+  ],
+  "new_group_status": "Two completed failures (55, retry58), one unstarted (61); original58 censor separately retained; no complete k/3 rate",
+  "paired_group_status": "four unstarted; no k/4 result",
+  "deployment_r1_rejected_before_case": true
+}

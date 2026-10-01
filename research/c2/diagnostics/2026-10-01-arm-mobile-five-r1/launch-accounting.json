@@ -1,0 +1,14 @@
+{
+  "id": "arm-mobile-five-20261001-r1-launched",
+  "at": "2026-10-01T03:56:02.511098+00:00",
+  "status": "running",
+  "pid": 1900102,
+  "authorization_sha256": "b5afed4e645ff2fdcabb0d1212dea79da3a17a56ba00ef1016d458286c73b6e9",
+  "provider_sends_snapshot": 2,
+  "estimated_definitive_usd": "0.07145",
+  "outstanding_reserved_usd": "0.495",
+  "provider_bill_usd": null,
+  "gpu1_process_state": "first process active; elapsed time not yet closed",
+  "live_accounting": "/home/pshuai/bvi-research/runs/arm-mobile-five-20261001-r1/api-ledger.json",
+  "gpu_accounting": "/home/pshuai/bvi-research/runs/arm-mobile-five-20261001-r1/batch.json"
+}

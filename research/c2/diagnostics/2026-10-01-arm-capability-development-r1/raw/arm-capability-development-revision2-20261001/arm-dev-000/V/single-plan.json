@@ -1,0 +1,20 @@
+{
+  "dataset": "ReplicaCADTidyHouseVal",
+  "plans": [
+    {
+      "subtasks": [
+        {
+          "type": "pick",
+          "uid": "tidy_house-pick-val-2385-0",
+          "composite_subtask_uids": [
+            "tidy_house-pick-val-2385-0"
+          ],
+          "obj_id": "005_tomato_soup_can-0",
+          "articulation_config": null
+        }
+      ],
+      "build_config_name": "v3_sc3_staging_02.scene_instance.json",
+      "init_config_name": "val/tidy_house/episode_528.json"
+    }
+  ]
+}

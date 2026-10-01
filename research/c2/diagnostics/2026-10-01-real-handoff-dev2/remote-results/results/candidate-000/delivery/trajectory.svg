@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1120" role="img" aria-label="Robot base and tool trajectory">
+<rect width="1440" height="1120" fill="#f7f9fc"/>
+<text x="48" y="48" fill="#203047" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="start">Case 64 | dev2-native-ppo-sac</text>
+<text x="48" y="83" fill="#147f60" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="start">STRICT PICK SUCCESS   •   75 recorded steps   •   2 tool calls   •   base net 2.247 m   •   termination: strict_success</text>
+<text x="48" y="111" fill="#59697c" font-family="Arial, sans-serif" font-size="15" font-weight="normal" text-anchor="start">Evaluation-side trajectory; no scene geometry or third-person image entered the model request.</text>
+<rect x="40" y="135" width="660" height="480" rx="14" fill="white" stroke="#dce4ed"/>
+<rect x="740" y="135" width="660" height="480" rx="14" fill="white" stroke="#dce4ed"/>
+<text x="66" y="172" fill="#203047" font-family="Arial, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Top view: base + tool tip (x/y meters)</text>
+<text x="766" y="172" fill="#203047" font-family="Arial, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Side view: tool tip (x/z meters)</text>
+<line x1="196.9" y1="210.0" x2="196.9" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="196.90079253860208" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">-2.00</text>
+<line x1="396.1" y1="210.0" x2="396.1" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="396.12697925528056" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.00</text>
+<line x1="595.4" y1="210.0" x2="595.4" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="595.353165971959" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">2.00</text>
+<line x1="92.0" y1="436.5" x2="652.0" y2="436.5" stroke="#e8edf2" stroke-width="1"/>
+<text x="84" y="440.4968873645506" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">-2.00</text>
+<line x1="92.0" y1="237.3" x2="652.0" y2="237.3" stroke="#e8edf2" stroke-width="1"/>
+<text x="84" y="241.27070064787213" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">0.00</text>
+<line x1="831.1" y1="210.0" x2="831.1" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="831.068782245169" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">-1.00</text>
+<line x1="988.7" y1="210.0" x2="988.7" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="988.7181591089679" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">-0.50</text>
+<line x1="1146.4" y1="210.0" x2="1146.4" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="1146.3675359727672" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.00</text>
+<line x1="1304.0" y1="210.0" x2="1304.0" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="1304.016912836566" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.50</text>
+<line x1="790.0" y1="417.2" x2="1350.0" y2="417.2" stroke="#e8edf2" stroke-width="1"/>
+<text x="782" y="421.1888809543266" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">1.00</text>
+<line x1="790.0" y1="259.5" x2="1350.0" y2="259.5" stroke="#e8edf2" stroke-width="1"/>
+<text x="782" y="263.53950409052754" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">1.50</text>
+<line x1="396.1" y1="210.0" x2="396.1" y2="566.0" stroke="#d7dfe9" stroke-width="1" stroke-dasharray="5 5"/>
+<line x1="92.0" y1="237.3" x2="652.0" y2="237.3" stroke="#d7dfe9" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="402.12697925528056" y="222" fill="#64788f" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start">start base</text>
+<polyline points="396.1,237.3 396.3,237.3 397.4,237.2 399.4,237.4 402.4,238.0 405.8,239.1 409.5,240.9 413.1,243.2 416.5,246.2 419.6,249.6 422.2,253.5 424.1,257.8 425.5,262.2 426.2,266.9 426.3,271.6 426.0,276.3 425.3,281.0 424.2,285.7 423.0,290.4 421.5,295.0 420.0,299.7 418.3,304.3 416.6,308.9 414.9,313.5 413.2,318.2 411.4,322.8 409.5,327.4 407.7,332.0 405.8,336.5 403.9,341.1 402.0,345.7 400.1,350.2 398.2,354.8 396.2,359.4 394.3,363.9 392.3,368.4 390.3,372.8 388.3,377.2 386.3,381.6 384.3,386.0 382.3,390.5 380.3,395.0 378.3,399.5 376.4,404.0 374.5,408.5 372.5,413.1 370.5,417.6 368.5,422.1 366.5,426.6 364.3,431.0 362.1,435.4 359.7,439.8 357.3,444.1 354.8,448.4 352.3,452.6 349.8,456.6 347.4,460.3 345.7,463.2 344.7,465.1 344.4,466.0 344.6,466.1 345.0,465.8 345.6,465.1 346.3,464.1 347.2,463.0 348.1,461.8 349.0,460.7 349.8,459.7 350.6,458.6 351.3,457.7 351.8,457.1 351.9,456.8 351.9,456.7 351.9,456.7 351.8,456.7 351.8,456.7" fill="none" stroke="#147d89" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="447.0,237.7 445.7,240.1 445.3,246.2 445.4,253.2 445.1,261.1 444.0,269.3 442.2,277.2 439.6,284.5 436.0,291.3 431.9,297.3 427.1,302.6 422.5,307.2 418.6,311.4 415.4,315.4 412.8,319.5 410.7,323.7 408.9,328.1 407.4,332.5 405.8,337.0 404.3,341.6 402.7,346.2 400.9,350.8 399.1,355.3 397.2,359.9 395.2,364.4 393.2,369.0 391.3,373.5 389.4,378.1 387.3,382.5 385.2,387.0 383.2,391.5 381.2,396.0 379.1,400.6 377.0,405.0 375.0,409.6 372.9,414.0 369.8,420.4 366.6,426.9 364.0,433.5 361.5,440.3 358.4,446.7 354.9,453.0 350.9,458.9 346.7,464.7 342.7,470.5 338.7,476.3 334.6,482.0 330.2,487.4 325.7,492.8 322.2,498.6 318.1,504.2 313.8,509.7 309.6,515.5 306.1,521.4 303.0,527.1 300.3,532.5 297.9,537.0 297.2,538.6 297.0,538.8 297.1,537.6 297.3,535.4 297.9,532.5 298.8,529.3 299.9,525.6 301.3,521.7 302.8,517.7 304.5,513.8 306.3,510.1 308.1,506.3 309.9,502.7 311.5,499.6 312.8,497.1 314.0,495.4 315.0,494.0 315.5,493.1 315.6,492.3" fill="none" stroke="#df8a19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1307.3,338.6 1303.3,338.5 1302.0,338.8 1302.2,339.2 1301.5,340.4 1297.8,340.4 1292.3,340.3 1283.8,340.8 1272.7,340.8 1259.5,340.5 1244.5,340.1 1229.8,339.8 1217.4,339.4 1207.4,339.2 1199.1,339.0 1192.6,339.0 1186.9,339.1 1181.9,339.1 1177.0,339.0 1172.3,339.0 1167.3,338.9 1161.6,338.8 1155.7,338.9 1149.6,338.9 1143.4,339.0 1137.2,339.0 1131.1,339.0 1124.9,338.8 1118.4,338.8 1111.8,338.9 1105.4,339.0 1099.1,338.9 1092.6,338.7 1085.9,338.6 1079.5,338.5 1072.8,338.3 1062.9,342.1 1053.0,347.0 1044.8,351.8 1036.8,356.9 1026.9,362.0 1015.9,366.9 1003.2,371.7 989.8,376.3 977.1,380.7 964.5,385.2 951.7,390.7 937.8,397.9 923.5,406.5 912.5,415.9 899.4,424.7 885.6,430.2 872.4,432.4 861.5,432.5 851.7,430.6 843.0,428.8 835.5,435.4 833.1,441.1 832.7,440.2 832.9,437.3 833.7,431.9 835.5,424.4 838.3,415.0 841.9,404.3 846.1,392.3 850.8,379.8 856.2,367.2 861.9,355.6 867.7,346.1 873.5,339.3 878.6,335.6 882.7,334.9 886.4,335.6 889.5,335.9 891.3,335.3 891.5,335.4" fill="none" stroke="#df8a19" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="396.1" cy="237.3" r="7" fill="white" stroke="#147d89" stroke-width="3"/>
+<circle cx="351.8" cy="456.7" r="7" fill="#147d89"/>
+<circle cx="447.0" cy="237.7" r="7" fill="white" stroke="#df8a19" stroke-width="3"/>
+<circle cx="315.6" cy="492.3" r="7" fill="#df8a19"/>
+<circle cx="1307.3" cy="338.6" r="7" fill="white" stroke="#df8a19" stroke-width="3"/>
+<circle cx="891.5" cy="335.4" r="7" fill="#df8a19"/>
+<circle cx="297.2" cy="538.6" r="9" fill="#147f60" stroke="white" stroke-width="2"/>
+<circle cx="833.1" cy="441.1" r="9" fill="#147f60" stroke="white" stroke-width="2"/>
+<text x="95" y="593" fill="#526278" font-family="Arial, sans-serif" font-size="15" font-weight="normal" text-anchor="start">teal: base   orange: TCP tip   green: first grasp   ○ start   ● end</text>
+<text x="790" y="593" fill="#526278" font-family="Arial, sans-serif" font-size="15" font-weight="normal" text-anchor="start">horizontal x / vertical z in start-base coordinates (meters)</text>
+<rect x="40" y="640" width="1360" height="160" rx="14" fill="white" stroke="#dce4ed"/>
+<text x="64" y="675" fill="#203047" font-family="Arial, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Tool calls on the official step clock</text>
+<rect x="70.0" y="704" width="606.7" height="42" fill="#8d99a6" stroke="white"/>
+<text x="373.3333333333333" y="731" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">navigate</text>
+<rect x="676.7" y="704" width="693.3" height="42" fill="#8d99a6" stroke="white"/>
+<text x="1023.3333333333333" y="731" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">pick</text>
+<text x="70.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">0</text>
+<text x="382.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">18</text>
+<text x="711.3333333333334" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">37</text>
+<text x="1040.6666666666665" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">56</text>
+<text x="1370.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">75</text>
+<rect x="40" y="825" width="660" height="245" rx="14" fill="white" stroke="#dce4ed"/>
+<rect x="740" y="825" width="660" height="245" rx="14" fill="white" stroke="#dce4ed"/>
+<text x="65" y="861" fill="#203047" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="start">Finger opening (meters)</text>
+<text x="765" y="861" fill="#203047" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="start">Official cumulative force</text>
+<polyline points="65.0,990.9 73.1,1010.2 81.3,1001.5 89.4,1007.0 97.5,1012.4 105.7,1009.4 113.8,1011.5 121.9,1011.8 130.1,1009.8 138.2,1007.6 146.3,1005.0 154.5,1002.6 162.6,1003.1 170.7,1002.1 178.9,997.9 187.0,993.0 195.1,987.2 203.3,983.7 211.4,981.7 219.5,980.2 227.7,979.0 235.8,978.7 243.9,978.3 252.1,977.3 260.2,976.2 268.3,974.9 276.5,973.9 284.6,972.9 292.7,972.3 300.9,970.9 309.0,969.8 317.1,968.4 325.3,967.2 333.4,965.2 341.5,962.6 349.7,959.9 357.8,941.7 365.9,929.9 374.1,922.8 382.2,918.4 390.3,915.7 398.5,914.0 406.6,913.0 414.7,912.4 422.9,912.1 431.0,911.9 439.1,911.7 447.3,911.6 455.4,911.5 463.5,911.6 471.7,911.5 479.8,911.4 487.9,911.4 496.1,911.4 504.2,911.5 512.3,911.6 520.5,919.4 528.6,949.3 536.7,948.7 544.9,948.8 553.0,948.8 561.1,948.9 569.3,948.9 577.4,948.9 585.5,948.8 593.7,948.9 601.8,948.8 609.9,948.8 618.1,949.0 626.2,949.0 634.3,948.9 642.5,948.9 650.6,949.1 658.7,949.1 666.9,949.2 675.0,949.1" fill="none" stroke="#9957ae" stroke-width="3"/>
+<polyline points="765.0,1025.0 773.1,1025.0 781.3,1025.0 789.4,1025.0 797.5,1025.0 805.7,1025.0 813.8,1025.0 821.9,1025.0 830.1,1025.0 838.2,1025.0 846.3,1025.0 854.5,1025.0 862.6,1025.0 870.7,1025.0 878.9,1025.0 887.0,1025.0 895.1,1025.0 903.3,1025.0 911.4,1025.0 919.5,1025.0 927.7,1025.0 935.8,1025.0 943.9,1025.0 952.1,1025.0 960.2,1025.0 968.3,1025.0 976.5,1025.0 984.6,1025.0 992.7,1025.0 1000.9,1025.0 1009.0,1025.0 1017.1,1025.0 1025.3,1025.0 1033.4,1025.0 1041.5,1025.0 1049.7,1025.0 1057.8,1025.0 1065.9,1025.0 1074.1,1025.0 1082.2,1025.0 1090.3,1025.0 1098.5,1025.0 1106.6,1025.0 1114.7,1025.0 1122.9,1025.0 1131.0,1025.0 1139.1,1025.0 1147.3,1025.0 1155.4,1025.0 1163.5,1025.0 1171.7,1025.0 1179.8,1025.0 1187.9,1025.0 1196.1,1025.0 1204.2,1025.0 1212.3,1025.0 1220.5,1025.0 1228.6,1025.0 1236.7,1025.0 1244.9,1025.0 1253.0,1025.0 1261.1,1025.0 1269.3,1025.0 1277.4,1025.0 1285.5,1025.0 1293.7,1025.0 1301.8,1025.0 1309.9,1025.0 1318.1,1025.0 1326.2,1025.0 1334.3,1025.0 1342.5,1025.0 1350.6,1025.0 1358.7,1025.0 1366.9,1025.0 1375.0,1025.0" fill="none" stroke="#b64b45" stroke-width="3"/>
+<line x1="765.0" y1="911.4" x2="1375.0" y2="911.4" stroke="#b64b45" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="1375" y="906.3636363636364" fill="#b64b45" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="end">limit 5000</text>
+<text x="65" y="1051" fill="#617185" font-family="Arial, sans-serif" font-size="14" font-weight="normal" text-anchor="start">Green dots mark the first official is_grasped=true transition in the path panels.</text>
+<circle id="cursor-base" cx="351.8" cy="456.7" r="11" fill="none" stroke="#111827" stroke-width="2"/>
+<circle id="cursor-tip" cx="315.6" cy="492.3" r="11" fill="none" stroke="#111827" stroke-width="2"/>
+<circle id="cursor-side" cx="891.5" cy="335.4" r="11" fill="none" stroke="#111827" stroke-width="2"/>
+<line id="cursor-time" x1="1370" y1="704" x2="1370" y2="1025" stroke="#111827" stroke-width="2" opacity="0.6"/>
+<text x="40" y="1102" fill="#617185" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start">XY is relative to the attempt-start base when its entry qpos is archived; otherwise relative to first recorded frame. TCP is transformed from each current base_link into that same frame. No scene mesh or object ground truth is plotted.</text>
+</svg>

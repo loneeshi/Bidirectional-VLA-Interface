@@ -1,0 +1,25 @@
+{
+  "name": "plan-005-visual",
+  "position": 5,
+  "mode": "visual",
+  "status": "finished",
+  "reservation_seconds": 1800,
+  "gpu1_before": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "started_at_utc": "2026-09-30T16:55:12.376254+00:00",
+  "command_sha256": "782cb040fa5f817d2cadf141b6c65ca4aeca9111316bf31aa143df52075f14d8",
+  "pid": 1752886,
+  "elapsed_process_seconds": 50.18852736055851,
+  "returncode": 1,
+  "timed_out": false,
+  "gpu1_after": {
+    "memory_used_mib": 15,
+    "utilization_percent": 9,
+    "compute_processes": []
+  },
+  "delivery": "/home/pshuai/bvi-research/runs/eef-visual-20260930-pilot-r2/results/plan-005-visual/delivery/README.md",
+  "delivery_complete": true
+}

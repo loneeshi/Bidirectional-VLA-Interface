@@ -1,0 +1,223 @@
+{
+  "scope": "31 archived E1 sensor/proprioception fixtures converted to E1-B schema with zero relative odometry; offline only, not new requests or experimental observations",
+  "rows": [
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-000/request-bundle.json",
+      "source_sha256": "1d13b450ea127c78d50d59bccce518c3ae94275cb9301147d4702ffa5636245e",
+      "e1b_wire_sha256": "9a9f5042a87c276931ed4762ebf413320f7c28e1812f5d4da423b4b7a68a6300",
+      "turn": 0,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-001/request-bundle.json",
+      "source_sha256": "1f91ce67fc629f18cc9b34cd72c2d6ebd27bde475d9a4fb0f1b2e2e453d88555",
+      "e1b_wire_sha256": "1c88fa66e43bd3485f7d130f91216ce37ab7ac619947c5fa6b77a210b77fcdc4",
+      "turn": 1,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-002/request-bundle.json",
+      "source_sha256": "e8b16c8cda8e6abef945b7c814721d086df876afef251264e7ea8b29b879ff00",
+      "e1b_wire_sha256": "62dc025474a8fe27317944325307351638357844e93d442a2b7600ef4c1971c3",
+      "turn": 2,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-003/request-bundle.json",
+      "source_sha256": "28d280636ddab102014418f3f2c2b10bcd679d7373faf9e92fc28604de7e05e5",
+      "e1b_wire_sha256": "5751d3ccc4aebfc35fb3722551cb4a9baa6f5b4af45b0103a55ba441846e2c3f",
+      "turn": 3,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-004/request-bundle.json",
+      "source_sha256": "d52b45cd383429dd2a27ee11535a48b488c20b7514cd4ca34c4839cd1e742123",
+      "e1b_wire_sha256": "f9f5aa4af431ee2fed51504c156b5978fe5f69e59e2636b7590bc2f8f3a74c70",
+      "turn": 4,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-005/request-bundle.json",
+      "source_sha256": "63beab8207ee00fa273bdb35fdb9100543c48fc32a01209d3255dfa2e3179442",
+      "e1b_wire_sha256": "59db2dbc31efe7498b9c79e0eaaed830d296b8778acc79066e194d102fb10b25",
+      "turn": 5,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-006/request-bundle.json",
+      "source_sha256": "f25d00dba1d7f441edff5b670ee4d8fe02cc4319f246a9dbced2751494470262",
+      "e1b_wire_sha256": "d3b46ee421299e46845f081ba2ea009d3a25804d81f213a93a3f0775bdd82903",
+      "turn": 6,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-007/request-bundle.json",
+      "source_sha256": "251982ac996476aa24afdefd5a118f59d1972979e8f847823f7d8069beee83a8",
+      "e1b_wire_sha256": "e8fec13ded17d15cdfb96253fa105da904f6d21a8179ece6647dd19c08753300",
+      "turn": 7,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-008/request-bundle.json",
+      "source_sha256": "90628fa22907d292c2b9c4a65e43cbc13b03bf3e43248ea694bac05b142bc81f",
+      "e1b_wire_sha256": "62938765c2bee1d70b8f583e2ba866127a70709e38c1cfd46ae98a153879dbc8",
+      "turn": 8,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-009/request-bundle.json",
+      "source_sha256": "863c38440c35899eb1b7e011fb55d623838c22bb9cbcb9c4231b9fe5bb6ee02f",
+      "e1b_wire_sha256": "87e52e8d13bc3ea969788c4877d4e96a1217ab677ff31ade55c06ee882c09438",
+      "turn": 9,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-010/request-bundle.json",
+      "source_sha256": "8b5d4e9a2a81e759e13d97bb71a7a7a88c7336aefa6e4702c1e596fea9c00116",
+      "e1b_wire_sha256": "feac6fb374af2297489f6d8d3a2e73c3f0378831c03313e5e5456e2fc342e8cf",
+      "turn": 10,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-011/request-bundle.json",
+      "source_sha256": "ad5ac94efce667c646214744a4dfe8de90732ed778c453fed2f242d037023a24",
+      "e1b_wire_sha256": "78af975360c89125ab792312d13b7f930df8d5cfa225158bc5bd57b00a70a83e",
+      "turn": 11,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-005/turn-012/request-bundle.json",
+      "source_sha256": "9794bdfa9bd0ba395c59948a938e7b8430b3510f46a485e90f300b02ea34d98e",
+      "e1b_wire_sha256": "2c1ac3c2b52d6272ca3478ea2fdcc1f0e476a35cef7c8a557bc015c3d903c175",
+      "turn": 12,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-000/request-bundle.json",
+      "source_sha256": "aba66e82298da8793ae7180c74595d93e835fdaa958c4c5f049804f670f7fad1",
+      "e1b_wire_sha256": "62d14741119eebb8265405b541c4a39f9c7814309ce7ee39d0e7c6d682fd1379",
+      "turn": 0,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-001/request-bundle.json",
+      "source_sha256": "ba022c046bdeac807baf1aa5d0c2027f138aa9ff389b93c5fa163e50843406f4",
+      "e1b_wire_sha256": "de220e1d5e849f25b39aaaf351f2762d816e0acd878c8b91b0f000bac36058a1",
+      "turn": 1,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-002/request-bundle.json",
+      "source_sha256": "4c67944045ba09c93f772db2a8e314f968c5662723a086cfab77e51c8563e5b7",
+      "e1b_wire_sha256": "9c74c35045cd066364809ef03e60f8eb3ca6bb6fede60c416e86b5389c5145a2",
+      "turn": 2,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-003/request-bundle.json",
+      "source_sha256": "293a2a38d19ffb361c3bc2b83c9dd0e5cfbd34118243f47a3267a3c3f439ddb3",
+      "e1b_wire_sha256": "35f8000aee9060245dd6c1df297d595d8a4dd5ccf72020b18b0916e75868a84e",
+      "turn": 3,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-004/request-bundle.json",
+      "source_sha256": "9c165af268f24f48af7e2cee1481da65ec712ca469ea3abded15e7748ebd1c2c",
+      "e1b_wire_sha256": "5dfbc46b71b82a6ea8fa42b41c87e2b61c01baaf9de7f3f938011dcdb1e54521",
+      "turn": 4,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-005/request-bundle.json",
+      "source_sha256": "0c469d63a859ddf1b8ddb633afd60ec6006f8120ba2582e1c60458213aa01ea1",
+      "e1b_wire_sha256": "eb018a0d00ccad9a2c93d8a4ac37341ad03e0e0d3fe887ed2298daea9b159355",
+      "turn": 5,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-006/request-bundle.json",
+      "source_sha256": "2e64d8817e90ca244a601bec740b749ac0069ce4ecb2390155ab8f8fdfe96c79",
+      "e1b_wire_sha256": "a648b7ae509e240ae29e905c1fd5037cb647db448610ae70b7694e73e7a77e78",
+      "turn": 6,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-007/request-bundle.json",
+      "source_sha256": "cbd7d8312f1687346324237c701848019e596ec83897874f1ec306605ee9b9c5",
+      "e1b_wire_sha256": "4c4383d608c37e186a17b8479c4d1a6e82c4f0a4a77aff310db95f6a855f68b5",
+      "turn": 7,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-008/request-bundle.json",
+      "source_sha256": "de7772c34af7a4572107add35ee8693ba2349f580751c91596e6429799dab491",
+      "e1b_wire_sha256": "b9ef798c2127480318903fa67453e3212a998b207ca55817e080b561dca726fa",
+      "turn": 8,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-009/request-bundle.json",
+      "source_sha256": "d9af812de2fccf5bf78cdbfab83ee9f3d214dbb904de05b0860fe2a48740352a",
+      "e1b_wire_sha256": "27ce5ccb53a107c019556e73414ed463e3fe77797b5ffd79adab73e84e0c87cd",
+      "turn": 9,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-010/request-bundle.json",
+      "source_sha256": "2d7db98aaaabe5fedf43f7b6eb5a5f7934a20b34d2f9416faf24381c2b663dbe",
+      "e1b_wire_sha256": "58bdda94445ab0cb18cf119d3a796d04bf93717d2f7d93b60a0228bcc4ee45ee",
+      "turn": 10,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-011/request-bundle.json",
+      "source_sha256": "708ccf02538e6c0ef34ec208cfec17b07f0c341a01f9524ac6b1292054e7e358",
+      "e1b_wire_sha256": "b11651664a54baf88ac7bab8b3ec4e991d837868262315bd36cb369c029692da",
+      "turn": 11,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-012/request-bundle.json",
+      "source_sha256": "4c2ffe7eef977c5a2c2dc25fd4b7ede0bd2fc870ea4faf37794a052ddda9a011",
+      "e1b_wire_sha256": "9eb22b52e40219e410bad32928207900de4558aaafd77cfd5b770d880cf87c14",
+      "turn": 12,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-013/request-bundle.json",
+      "source_sha256": "91af59c8967f4418d80965b45b135f06c95029de08c733c1b743c856738a3667",
+      "e1b_wire_sha256": "4ca95484355eb72e6bae94f71eadf5584169b2bf4ae3e86f3c1a96249baaaf95",
+      "turn": 13,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-014/request-bundle.json",
+      "source_sha256": "2e050387b54e9ce698230efbf547ef783b729c80c8b5fe51347c6db23804c0e8",
+      "e1b_wire_sha256": "f978d28b2d814eea0c18c776a9a6733a679edd9fa650c1d6cc20e381414f2070",
+      "turn": 14,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-008/turn-015/request-bundle.json",
+      "source_sha256": "87a04ca32255991213a4269afc6381993da62acb2623b6b40a40a9c98ad7e17f",
+      "e1b_wire_sha256": "a6ce8b5fc73ec6f0499daadfb2dd2a963169d257581c30bb37ef05d42c6e2671",
+      "turn": 15,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-011/turn-000/request-bundle.json",
+      "source_sha256": "caddda79b6ea8025e000b2185046b527651e23d2fcf124900f832256e4c06049",
+      "e1b_wire_sha256": "f4c7f25a90b5f7fc87f5a8415fb6a1803e4bbde1a272ec61d035f1b70be2e29d",
+      "turn": 0,
+      "passed": true
+    },
+    {
+      "source": "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/plan-011/turn-001/request-bundle.json",
+      "source_sha256": "a3a2926a981336e9a0f14b5f95c80fd654c740f652fe893f29db7650ad0f2f99",
+      "e1b_wire_sha256": "b2a75b44087bd843d9bde8a57427a98526650f002d605cdd0f2a728e857b41d8",
+      "turn": 1,
+      "passed": true
+    }
+  ],
+  "api_requests": 0
+}

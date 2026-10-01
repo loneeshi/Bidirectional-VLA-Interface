@@ -1,0 +1,277 @@
+{
+  "batches": [
+    {
+      "batch": "eef-compact-640-20260930-pilot-r1",
+      "sends": 9,
+      "transport_failures": 1,
+      "logical_requests": 9,
+      "logical_missing_response": 1,
+      "attempts": [
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-000",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-001",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-002",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-003",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-004",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-005",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-006",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-007",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r1/broker-records/plan-005/turn-008",
+          "transport_failed": true,
+          "response_saved": false
+        }
+      ]
+    },
+    {
+      "batch": "eef-compact-640-20260930-pilot-r2",
+      "sends": 12,
+      "transport_failures": 1,
+      "logical_requests": 12,
+      "logical_missing_response": 1,
+      "attempts": [
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-000",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-001",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-002",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-003",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-004",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-005",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-006",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-007",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-008",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-009",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-010",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-011",
+          "transport_failed": true,
+          "response_saved": false
+        }
+      ]
+    },
+    {
+      "batch": "eef-compact-640-20260930-pilot-r3",
+      "sends": 21,
+      "transport_failures": 3,
+      "logical_requests": 19,
+      "logical_missing_response": 1,
+      "attempts": [
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-000/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-001/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-002/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-003/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-004/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-005/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-006/attempts/00",
+          "transport_failed": true,
+          "response_saved": false
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-006/attempts/01",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-007/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-008/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-009/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-000/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-001/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-002/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-003/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-004/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-005/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-006/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-055/turn-007/attempts/00",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-058/turn-000/attempts/00",
+          "transport_failed": true,
+          "response_saved": false
+        },
+        {
+          "path": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-058/turn-000/attempts/01",
+          "transport_failed": true,
+          "response_saved": false
+        }
+      ]
+    },
+    {
+      "batch": "eef-visual-20260930-pilot-r1",
+      "sends": 2,
+      "transport_failures": 0,
+      "logical_requests": 2,
+      "logical_missing_response": 0,
+      "attempts": [
+        {
+          "path": "runs/eef-visual-20260930-pilot-r1/broker-records/plan-005/turn-000",
+          "transport_failed": false,
+          "response_saved": true
+        },
+        {
+          "path": "runs/eef-visual-20260930-pilot-r1/broker-records/plan-005/turn-001",
+          "transport_failed": false,
+          "response_saved": true
+        }
+      ]
+    },
+    {
+      "batch": "eef-visual-20260930-pilot-r2",
+      "sends": 1,
+      "transport_failures": 1,
+      "logical_requests": 1,
+      "logical_missing_response": 1,
+      "attempts": [
+        {
+          "path": "runs/eef-visual-20260930-pilot-r2/broker-records/plan-005/turn-000",
+          "transport_failed": true,
+          "response_saved": false
+        }
+      ]
+    }
+  ],
+  "scope": "locally archived visual/compact broker-records with durable response or transport-error; exclude no-network validation rejections",
+  "sends": 45,
+  "transport_failures": 6
+}

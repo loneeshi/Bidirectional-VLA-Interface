@@ -1,0 +1,89 @@
+{
+  "source": "frozen E1 r2 position8, current measured proprioception after 60-step partial movement",
+  "probe": "zero-displacement goal equal to measured FK; robot-only, no scene inputs",
+  "original_cached_initial_boundary": {
+    "accepted": false,
+    "reason": "boundary_jump_rejected",
+    "records": [
+      {
+        "accepted": true,
+        "qpos": [
+          0.0,
+          0.0,
+          0.0,
+          1.4411786120856977e-05,
+          0.020350420847535133,
+          -0.6869915732592933,
+          0.5786277055740356,
+          -1.2147946282917546,
+          0.609510939581277,
+          1.854016987235136,
+          -0.2234802947843293,
+          0.3314200493845749,
+          -0.0045332324528581935,
+          0.049966298043727875,
+          0.05000000074505806
+        ],
+        "position_error_m": 4.449557262054371e-16,
+        "rotation_error_rad": 3.458003866700705e-16,
+        "reason": "ok",
+        "fallback_unregularized": true,
+        "max_rotation_delta": 0.07395504848120416,
+        "torso_delta": 0.010054015053886449,
+        "candidate_count": 2,
+        "rejected_jump_candidates": 0,
+        "fallback_reasons": [
+          "pose_tolerance",
+          "pose_tolerance"
+        ]
+      }
+    ]
+  },
+  "readonly_counterfactual_actual_boundary": {
+    "accepted": true,
+    "reason": "ok",
+    "records": [
+      {
+        "accepted": true,
+        "qpos": [
+          0.0,
+          0.0,
+          0.0,
+          1.4411786120856977e-05,
+          0.020350420847535133,
+          -0.6869915732592933,
+          0.5786277055740356,
+          -1.2147946282917546,
+          0.609510939581277,
+          1.854016987235136,
+          -0.2234802947843293,
+          0.3314200493845749,
+          -0.0045332324528581935,
+          0.049966298043727875,
+          0.05000000074505806
+        ],
+        "position_error_m": 4.449557262054371e-16,
+        "rotation_error_rad": 3.458003866700705e-16,
+        "reason": "ok",
+        "fallback_unregularized": true,
+        "max_rotation_delta": 0.07395504848120416,
+        "torso_delta": 0.010054015053886449,
+        "candidate_count": 2,
+        "rejected_jump_candidates": 0,
+        "fallback_reasons": [
+          "pose_tolerance",
+          "pose_tolerance"
+        ]
+      }
+    ],
+    "minimum_steps": 1,
+    "keyframe_ends": [
+      1
+    ]
+  },
+  "steps": 0,
+  "gpu_process_seconds": 0,
+  "api_requests": 0,
+  "simulator_actions": 0,
+  "interpretation": "Stale last_plan_endpoint can reject even a no-motion path after a partially executed failed move. Counterfactual is diagnostic only; no deployed controller or experiment altered."
+}

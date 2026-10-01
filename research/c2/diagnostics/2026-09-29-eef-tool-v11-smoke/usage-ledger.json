@@ -1,0 +1,116 @@
+{
+  "experiment_id": "C2-EEF-TOOL-SMOKE-20260929-V11-R1",
+  "status": "completed",
+  "authorization_sha256": "73294ad121f11eddf722640f02db0e6bd8de9da05d722a7403109ce588c8ecb7",
+  "gpu1_process_seconds": 148.77784921601415,
+  "api_requests": 0,
+  "lab_project_charge": 0,
+  "records": [
+    {
+      "name": "plan-005-smoke",
+      "position": 5,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:41:50.223837+00:00",
+      "command_sha256": "2ce306ba39976fc02b8d330a6e077b61ade6a15bb195d6bad60731f38169aab3",
+      "pid": 1669823,
+      "elapsed_process_seconds": 39.99596819654107,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-008-smoke",
+      "position": 8,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:42:30.508592+00:00",
+      "command_sha256": "a3fa8151820d7551695eed44238f5a1a59b62ffcb3e3fc1d21dd93a7f65e6e41",
+      "pid": 1670748,
+      "elapsed_process_seconds": 57.753334421664476,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-011-smoke",
+      "position": 11,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:43:28.607189+00:00",
+      "command_sha256": "0dfa5c7fcafec0a580fe80f9a99da9becf8656b6876d4a64dde2e2be05d8dad1",
+      "pid": 1671672,
+      "elapsed_process_seconds": 51.0285465978086,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    }
+  ],
+  "case_results": [
+    {
+      "position": 5,
+      "mode": "smoke",
+      "status": "completed",
+      "strict_pick_success": false,
+      "simulator_actions": 54,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    },
+    {
+      "position": 8,
+      "mode": "smoke",
+      "status": "completed",
+      "strict_pick_success": false,
+      "simulator_actions": 69,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    },
+    {
+      "position": 11,
+      "mode": "smoke",
+      "status": "completed",
+      "strict_pick_success": false,
+      "simulator_actions": 92,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    }
+  ],
+  "gpu1_final": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "simulator_actions": 215,
+  "policy_inferences": 0,
+  "ended_at_utc": "2026-09-29T05:44:19.977078+00:00"
+}

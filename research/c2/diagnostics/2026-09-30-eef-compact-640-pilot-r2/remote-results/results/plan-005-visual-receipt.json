@@ -1,0 +1,25 @@
+{
+  "name": "plan-005-visual",
+  "position": 5,
+  "mode": "visual",
+  "status": "finished",
+  "reservation_seconds": 1800,
+  "gpu1_before": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "started_at_utc": "2026-09-30T18:04:58.133300+00:00",
+  "command_sha256": "575efc5fcdc0016ab138e8c7c70abac2ccf429a05932129aa14d432992af3af7",
+  "pid": 1761910,
+  "elapsed_process_seconds": 220.6504034884274,
+  "returncode": 1,
+  "timed_out": false,
+  "gpu1_after": {
+    "memory_used_mib": 15,
+    "utilization_percent": 4,
+    "compute_processes": []
+  },
+  "delivery": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-pilot-r2/results/plan-005-visual/delivery/README.md",
+  "delivery_complete": true
+}

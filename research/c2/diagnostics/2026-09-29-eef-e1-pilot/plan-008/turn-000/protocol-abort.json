@@ -1,0 +1,7 @@
+{
+  "status": "censored",
+  "reason": "protocol_context_not_preserved",
+  "api_attempted": false,
+  "call": null,
+  "request_bundle_sha256": "1ac1a85e1a7e686f47fabbfae137983217e4cd77556a7f331cb74c5eb5379db0"
+}

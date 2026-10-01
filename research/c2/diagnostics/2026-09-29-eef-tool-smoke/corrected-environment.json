@@ -1,0 +1,13 @@
+{
+  "interpreter": "/home/pshuai/bvi-research/envs/acdit/bin/python",
+  "python_version": "3.11.13",
+  "python_binary_sha256": "55e8f2734d0e882df2013e591fc2cd91fc31a4fc4d82dd0e78326af8fd3abdc1",
+  "gymnasium": "0.29.1",
+  "numpy": "1.26.4",
+  "scipy": "1.17.1",
+  "torch": "2.7.0+cu128",
+  "pillow": "12.3.0",
+  "cuda_initialized": false,
+  "purpose": "Independent CPU diagnosis and preparation, not an experiment rerun",
+  "source_snapshot_cpu_gate_sha256": "d01dcc75729dd10e1d7a825a6554590a87dfff21d37d6b4d227bc0cf5fd3a904"
+}

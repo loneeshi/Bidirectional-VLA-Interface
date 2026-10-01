@@ -1,0 +1,45 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "hand",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The pregrasp arrived within 9 mm, and the hand view shows the can centered between the open fingers. I will refresh the lid position before descending.",
+    "observation_id": "obs-007-7a19c27b23b915e6",
+    "pan_rad": null,
+    "pixel": [
+      323,
+      368
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "In obs-007 hand view, the upright target is centered ahead of the open gripper.",
+      "expected_change": "Obtain a current lid surface point without motion.",
+      "next_check": "Compare the lid measurement with the planned angled grasp.",
+      "uncertainty": "Cabinet clearance and finger contact depth remain estimated."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "ec6d7141acce77b29bc6064d335f806289a858f6dd014ca2f8912daa46af7edd",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_0e28f6a4f259cf5b016abd4fe10e5087d2ba59743dea1bbbc2",
+  "usage": {
+    "input_tokens": 12454,
+    "input_tokens_details": {
+      "cache_write_tokens": 10520,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 178,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 12632
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.164575"
+}

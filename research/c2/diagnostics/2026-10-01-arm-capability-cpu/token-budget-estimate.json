@@ -1,0 +1,35 @@
+{
+  "model": "gpt-6-astra",
+  "service_tier": "default",
+  "request_count_cap": 500,
+  "attempt_count": 20,
+  "tool_call_cap_per_attempt": 25,
+  "all_sends_cap_per_attempt": 25,
+  "reflection_rule": "at most one, only if an unused send slot remains; never a 26th send",
+  "transport_rule": "every possibly billable send including retransmission consumes one slot; unknown outcomes retained; stop for reconciliation",
+  "per_request_hard_bound": {
+    "image_count": 12,
+    "image_tokens": 5760,
+    "text_bytes": 262144,
+    "input_bound": 268928,
+    "output_cap": 4000,
+    "reserve_usd": "3.5616"
+  },
+  "maximum_reserved_usd": "1780.8000",
+  "proposed_usd_cap": "1800.00",
+  "pricing_url": "https://developers.openai.com/api/docs/pricing",
+  "rates_per_million_usd": {
+    "input": 10,
+    "cache_write_reserve": 12.5,
+    "output": 50
+  },
+  "estimate_type": "hard upper bound, not expected spend or provider bill",
+  "astra_wall_seconds_each": 5400,
+  "sac_wall_seconds_each": 300,
+  "script_wall_seconds_each": 900,
+  "gpu1_process_seconds_cap": 120000,
+  "gpu_bound_basis": "Astra 1800 and script 300 at 200 steps scaled by 600/200; conservative hard wall bound includes waiting and recording; not measured throughput",
+  "authorized": false,
+  "api_calls_made": 0,
+  "gpu_runs_started": 0
+}

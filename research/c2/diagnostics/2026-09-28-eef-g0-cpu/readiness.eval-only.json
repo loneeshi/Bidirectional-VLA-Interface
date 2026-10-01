@@ -1,0 +1,335 @@
+{
+  "status": "cpu_preparation_only",
+  "freeze_sha256": "ed800316c145acdbb5d36347d877de856f6e2406eec8897e997789231f434d62",
+  "census_sha256": "2a5a9bd51fa9b9cdd2de254218185e8d6a40ea2fdb11457c0491c6b8460f3ae4",
+  "archive_sha256": "b32c0b527b7427115205e6af6b34a6c944c7a9ca452d61f9cc2b1b7cbf858928",
+  "roster": [
+    {
+      "census_row_index": 3,
+      "plan_position": 5,
+      "plan_uid": "tidy_house-sequential-val-102-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "e56a12e95d6a4b630a9c5bae36ebaea6b73a952104e17f38c4767b57789e847a",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-005/full-handoff-capture.pt",
+      "snapshot_bytes": 12138059,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 6,
+      "plan_position": 8,
+      "plan_uid": "tidy_house-sequential-val-105-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "6cf3378cc558f08c473b32f394601782c2dcb20e6be2e64b75217fd9810318e0",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-008/full-handoff-capture.pt",
+      "snapshot_bytes": 12125058,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 9,
+      "plan_position": 11,
+      "plan_uid": "tidy_house-sequential-val-108-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "4717bd0aabf5c6d74c864d3f2bc2738c0897696680dd5ed9e89d3c2c84d828fb",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-011/full-handoff-capture.pt",
+      "snapshot_bytes": 12101548,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 15,
+      "plan_position": 17,
+      "plan_uid": "tidy_house-sequential-val-113-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "2ea5ec7030a43a0c2e7c5a17954a84122e44d022453066bf66b0dde32a3337b9",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-017/full-handoff-capture.pt",
+      "snapshot_bytes": 12113302,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 27,
+      "plan_position": 29,
+      "plan_uid": "tidy_house-sequential-val-124-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "b4944cffbe3378bb747554fd5f33cbefee3ef53607daadb8838aeb1f7db9ff45",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-029/full-handoff-capture.pt",
+      "snapshot_bytes": 12129355,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 30,
+      "plan_position": 32,
+      "plan_uid": "tidy_house-sequential-val-127-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "21d65ce07d0c0eaeca1c983d9566724086609905d03da2d25d1ff929f4b941c3",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-032/full-handoff-capture.pt",
+      "snapshot_bytes": 12130997,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 33,
+      "plan_position": 35,
+      "plan_uid": "tidy_house-sequential-val-13-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "5fcea944655b064b749357aac0855c53b593238f5cd53ba7e1025db8cbf800e4",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-035/full-handoff-capture.pt",
+      "snapshot_bytes": 12081269,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 36,
+      "plan_position": 38,
+      "plan_uid": "tidy_house-sequential-val-132-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "7fa99cbecf011410aa694045a42607cf7c103bb5fb4c152660f8ad7b200b9787",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-038/full-handoff-capture.pt",
+      "snapshot_bytes": 12118135,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 42,
+      "plan_position": 45,
+      "plan_uid": "tidy_house-sequential-val-139-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "e8718970bef43098db02975a5ca257f9050ea5c62bc738acc2fc019f863f8dd3",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-045/full-handoff-capture.pt",
+      "snapshot_bytes": 12121536,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 45,
+      "plan_position": 48,
+      "plan_uid": "tidy_house-sequential-val-141-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "eb656a51c66f9752ddccbbc81aad4983c623c685c01860e54b99c0e3d12eff47",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-048/full-handoff-capture.pt",
+      "snapshot_bytes": 12107264,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    },
+    {
+      "census_row_index": 48,
+      "plan_position": 52,
+      "plan_uid": "tidy_house-sequential-val-145-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "ddad4890eb2caa7258f3fa39521b397a222e60f7dff23674eca1a26ff9baee58",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-052/full-handoff-capture.pt",
+      "snapshot_bytes": 12106507,
+      "snapshot_hash_verified": true,
+      "restore_status": "archive_integrity_only_runtime_restore_pending"
+    }
+  ],
+  "robot_only_audits": [
+    {
+      "plan_position": 5,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 4.033637184264194e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 8.77579806742303e-07,
+          "rotation_error_rad": 1.830460718034249e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 8.755057441227747e-07,
+          "rotation_error_rad": 1.8252529792594295e-07
+        }
+      }
+    },
+    {
+      "plan_position": 8,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 4.4002009025323474e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 7.34888328337459e-07,
+          "rotation_error_rad": 1.49988948555754e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 7.33008580949669e-07,
+          "rotation_error_rad": 1.4946500779982486e-07
+        }
+      }
+    },
+    {
+      "plan_position": 11,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 6.842559731046194e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 8.97163456100741e-07,
+          "rotation_error_rad": 1.7745900026156108e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 8.951932881155301e-07,
+          "rotation_error_rad": 1.7693150693822303e-07
+        }
+      }
+    },
+    {
+      "plan_position": 17,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 8.41607737445127e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 8.170799532901085e-07,
+          "rotation_error_rad": 1.6319187900099059e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 8.151691611649847e-07,
+          "rotation_error_rad": 1.6266078638925327e-07
+        }
+      }
+    },
+    {
+      "plan_position": 29,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 4.6331544301114747e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 7.19111982382403e-07,
+          "rotation_error_rad": 1.6901566730897117e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 7.173188628454664e-07,
+          "rotation_error_rad": 1.684993373955504e-07
+        }
+      }
+    },
+    {
+      "plan_position": 32,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 7.331153665524059e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 8.805638374499949e-07,
+          "rotation_error_rad": 1.7858820219444576e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 8.786821254351765e-07,
+          "rotation_error_rad": 1.780603960770182e-07
+        }
+      }
+    },
+    {
+      "plan_position": 35,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 5.128097196327452e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 7.682643163615611e-07,
+          "rotation_error_rad": 1.652551417883242e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 7.664648937067658e-07,
+          "rotation_error_rad": 1.6473163055756783e-07
+        }
+      }
+    },
+    {
+      "plan_position": 38,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 4.587201164890642e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 9.174810118399961e-07,
+          "rotation_error_rad": 1.9687715843292467e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 9.156557657652104e-07,
+          "rotation_error_rad": 1.963503488833937e-07
+        }
+      }
+    },
+    {
+      "plan_position": 45,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 2.838708119679012e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 5.80907782054732e-07,
+          "rotation_error_rad": 7.223149956622448e-08
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 2.3014305510523433e-07,
+          "rotation_error_rad": 3.418277032775252e-08
+        }
+      }
+    },
+    {
+      "plan_position": 48,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 5.098362894917496e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 8.938224381422432e-07,
+          "rotation_error_rad": 1.7686081953569573e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 8.919062825676549e-07,
+          "rotation_error_rad": 1.7633243871609017e-07
+        }
+      }
+    },
+    {
+      "plan_position": 52,
+      "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+      "tcp_fk_vs_simulator_eval_only_max_abs": 4.312359674352173e-07,
+      "known_anchor_fk_roundtrip": {
+        "8dof": {
+          "accepted": true,
+          "position_error_m": 8.137484680459245e-07,
+          "rotation_error_rad": 1.6265457117392948e-07
+        },
+        "7dof": {
+          "accepted": true,
+          "position_error_m": 8.118686955324507e-07,
+          "rotation_error_rad": 1.6212399937111346e-07
+        }
+      }
+    }
+  ],
+  "api_calls": 0,
+  "gpu_process_seconds": 0,
+  "simulator_actions": 0,
+  "G0": "pending_authorization_and_runtime_replay",
+  "G1": "anchor_fk_self_consistency_only_full_sac_poses_pending",
+  "G2": "synthetic_backprojection_tests_only_surface_error_pending"
+}

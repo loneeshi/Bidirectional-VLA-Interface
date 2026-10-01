@@ -1,0 +1,144 @@
+{
+  "status": "development_complete_no_test_authorization",
+  "jobs": [
+    {
+      "case_id": "arm-dev-000",
+      "condition": "V",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 381.6404029279947,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-000",
+      "condition": "SAC",
+      "status": "completed",
+      "max_seconds": 300,
+      "exit_code": 0,
+      "wall_seconds": 18.02273626998067,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-000",
+      "condition": "script",
+      "status": "completed",
+      "max_seconds": 600,
+      "exit_code": 0,
+      "wall_seconds": 56.83982032164931,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-001",
+      "condition": "V",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 213.2173120342195,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-001",
+      "condition": "SAC",
+      "status": "completed",
+      "max_seconds": 300,
+      "exit_code": 0,
+      "wall_seconds": 24.543539974838495,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-001",
+      "condition": "script",
+      "status": "completed",
+      "max_seconds": 600,
+      "exit_code": 0,
+      "wall_seconds": 27.54683581739664,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-002",
+      "condition": "V",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 322.0522954054177,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-002",
+      "condition": "SAC",
+      "status": "completed",
+      "max_seconds": 300,
+      "exit_code": 0,
+      "wall_seconds": 21.684217743575573,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-002",
+      "condition": "script",
+      "status": "completed",
+      "max_seconds": 600,
+      "exit_code": 0,
+      "wall_seconds": 26.34798426926136,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-003",
+      "condition": "V",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 581.6659037284553,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-003",
+      "condition": "SAC",
+      "status": "completed",
+      "max_seconds": 300,
+      "exit_code": 0,
+      "wall_seconds": 24.293292216956615,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-003",
+      "condition": "script",
+      "status": "completed",
+      "max_seconds": 600,
+      "exit_code": 0,
+      "wall_seconds": 28.255493581295013,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-004",
+      "condition": "V",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 309.70142671465874,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-004",
+      "condition": "SAC",
+      "status": "completed",
+      "max_seconds": 300,
+      "exit_code": 0,
+      "wall_seconds": 27.702864944934845,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-004",
+      "condition": "script",
+      "status": "completed",
+      "max_seconds": 600,
+      "exit_code": 0,
+      "wall_seconds": 43.19852025806904,
+      "media_complete": true
+    }
+  ],
+  "gpu1_process_seconds": 2136.2827804014087,
+  "prior_gpu1_process_seconds": 29.570134192705154,
+  "api_ledger": "api-ledger.json",
+  "test_gate_met": false
+}

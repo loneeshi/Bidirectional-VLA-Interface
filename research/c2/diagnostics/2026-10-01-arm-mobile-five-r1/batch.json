@@ -1,0 +1,54 @@
+{
+  "status": "mobile_development_complete_no_test_authorization",
+  "jobs": [
+    {
+      "case_id": "arm-dev-000",
+      "condition": "V-mobile",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 368.02004446834326,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-001",
+      "condition": "V-mobile",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 352.15666360780597,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-002",
+      "condition": "V-mobile",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 377.3501763418317,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-003",
+      "condition": "V-mobile",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 284.44889333099127,
+      "media_complete": true
+    },
+    {
+      "case_id": "arm-dev-004",
+      "condition": "V-mobile",
+      "status": "completed",
+      "max_seconds": 1800,
+      "exit_code": 0,
+      "wall_seconds": 281.3924797959626,
+      "media_complete": true
+    }
+  ],
+  "gpu1_process_seconds": 1663.3682575449347,
+  "prior_gpu1_process_seconds": 0.0,
+  "api_ledger": "api-ledger.json",
+  "test_authorized": false
+}

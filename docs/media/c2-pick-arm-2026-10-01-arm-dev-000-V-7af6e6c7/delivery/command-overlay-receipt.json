@@ -1,0 +1,25 @@
+{
+  "kind": "eef_tcp_3d_scene_projection",
+  "video": "/home/pshuai/bvi-research/runs/arm-capability-development-revision2-20261001-r3/arm-dev-000/V/media-source/delivery/online-command-vs-executed.mp4",
+  "video_sha256": "9174868a8bffe95b8cab6ff6bf3d8852fd8f19945880d199c959118a3c62e1b8",
+  "source_video_sha256": "0e863f75492fe104cd8a3a3e9a51541ae3afbe1fc0b15c1230cccb598c7b257d",
+  "source_result_sha256": "1ed938804ce7d4a0b6cac9244bc8e20f9011e684a908432589c39c370a280995",
+  "frames": 218,
+  "fps": 20.0,
+  "resolution": [
+    512,
+    512
+  ],
+  "position": 0,
+  "original_strict_pick_success": true,
+  "kind_label": "online",
+  "initial_qpos_source": "initial_robot_state",
+  "camera": "frozen MS-HAB human render camera on torso_lift_link; fovy=1.75",
+  "trajectory": "recorded TCP transformed by robot root qpos and projected into each current camera pose",
+  "occlusion": "X-ray overlay; original RGB video has no depth buffer",
+  "evaluation_only": true,
+  "model_calls": 0,
+  "simulator_steps": 0,
+  "command_overlay": true,
+  "command_semantics": "issued waypoint connectors/base commands, not model physical predictions; no future commands displayed"
+}

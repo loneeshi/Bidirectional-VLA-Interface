@@ -1,0 +1,34 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "forward_m": 0.3,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The closer reach check still failed at floor height. I will advance one final 0.30 m segment, leaving the target about 0.66 m ahead and retaining the remaining budget for grasping and return.",
+    "poses": [],
+    "tool": "move_base",
+    "turn_rad": 0
+  },
+  "reflection": null,
+  "provider_id": "resp_045a7e9edd5b3ac3006abc7293191887d28af4a7c9435a5f49",
+  "returned_model": "gpt-6-astra",
+  "usage": {
+    "input_tokens": 6687,
+    "input_tokens_details": {
+      "cache_write_tokens": 892,
+      "cached_tokens": 5792
+    },
+    "output_tokens": 83,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 6770
+  },
+  "input_tokens": 6687,
+  "output_tokens": 83,
+  "estimated_usd": "0.0877375",
+  "reasoning_summaries": [],
+  "api_attempted": true,
+  "request_bundle_sha256": "ec4570b8585d512798ad2c08e9615771f4b084655b8ae583ff81bd2a13fa9a95"
+}

@@ -1,0 +1,9 @@
+{
+  "api_calls": 78,
+  "input_byte_cap": 14336,
+  "max_reserved_context": 1014624,
+  "context_limit": 1050000,
+  "three_cases_usd_estimate": "1000.8816",
+  "authorization": false,
+  "rates": "Existing frozen estimator; not new price verification, not provider bill"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "arm-cpu-artifacts-v1",
+  "sha256": {
+    "authorization.NOT-AUTHORIZED.json": "b17a0f85dab738cc159af130966124c308f40b9c54acc1143a79f5eab162927f",
+    "cpu-tests.json": "3842d41a5ae52cbc32bdd58219a427ad66997ec2d873cb655ae8d0ef3da2fbda",
+    "deployment-freeze.json": "10cd3422bc65a425ca53f4787c179494ffcfbd9e556d0a8d25fa0fbc73fa3449",
+    "deployment-import-check.json": "ae25fe9df783bd9ed4e6c811d9bbfc9d4a9c542e7bd2167968ccd5ac0c0fb26f",
+    "development-scope.pending.json": "da05e06e405db2eda2aba8ff2b139866ac15f8d48e77ac19c49d8f5818be8007",
+    "executor-cpu.json": "ba890efe7a93f14f8e553e7074947e7e46e5a3dc5fbd713ce97160a0885ddd08",
+    "executor-freeze.json": "52a108306f209c7426bbe77da3bffd8b7d9a2e6c17f20c610b9a30c7b986dceb",
+    "guidance-v4-arm-V.txt": "54ed22cf812d5c435174f8c9fbb78f5abd6827edfdb1596e84c9db3c36de9e45",
+    "horizon-check.json": "263f63f00157e14ad6a6258abe7fc324c96da81d08c8317706f80f1511a0e9e1",
+    "horizon-reset-offset-check.json": "33e0245920d61e54b106c150faae48d4fefcae871108142b5b1352dcf44a9f8e",
+    "README.md": "8891423f4bc8a6dc812f8368138345959389dfe7ebd37f4510be79f294bc53e9",
+    "regression.xml": "07e6460c45a2e0a579526b7d1d14d81c8b5c664df36ed655c92c73d5b4182c98",
+    "report-format.md": "e325a8f854fb637b2661a384c3d78c5fc38bad37a1ff7bd7dfdb4c6b95fe569d",
+    "resource-closeout.json": "3fbbaca2f2b2a86003473f37e09fd44f29f21c760e2747ed2bdafbb5e0a09682",
+    "roster.eval-only.json": "e8a77b7db924afcd0020dac855f1e54146f3f56de6e29d444a1eb178f036aeb5",
+    "runtime-assets.cpu.json": "c47f3183045089aef71fd5a6bcfdde10fcf0a1ba5f48b5fa58c883c29feb8efd",
+    "token-budget-estimate.json": "7eb1948645d2e9468db61c8e7e43d0a55cef6c4286d2bae73733c369600bb65b"
+  },
+  "candidate_pool_sha256": "6b8185117683b99574485df21625c207fcf3413558ce4d81b81fc0672fce6ab4",
+  "script_sources": {
+    "scripts\\audit_arm_joint_approach_cpu.py": "f89ba8f20c76b00793d786f6cac5dbfa1cb6f5c9366eb5a26925510f9aff4031",
+    "scripts\\audit_arm_runtime_assets_cpu.py": "0a2e2e922a0ac539ba334d0876ab0185e2167c0f83375c5d6f4a4127644a68e3",
+    "scripts\\check_arm_deployment_cpu.py": "2549396cc72d417063f733d3f5fc3e6b4aab5abb80dc2f786581aca1495f144d",
+    "scripts\\check_arm_horizon_cpu.py": "57a93f8f0689bf59b06db9975c3622f8bc36443a9d358607d2ef9eaaac6be867",
+    "scripts\\finalize_arm_capability_cpu.py": "c4b75993774f08f27085b1c4d17c60b9ae6f96769699c37d3d7b0ec68f16c754",
+    "scripts\\freeze_arm_capability_cpu.py": "53b6db115b15be8e5c3a5c3fe4b1b346279ac87ba4fff8a04c32e701b0e0b1b7",
+    "scripts\\freeze_arm_deployment_cpu.py": "c4e70e28d0ee5f91778b5fd95bdd45976470573eac860f4542d8dabe39186258",
+    "scripts\\prepare_arm_spawn_catalog_cpu.py": "b62aa07e19deb8ba8857c12ec5bbe2710ee5893264b85c4ac8ad8e45bfd47d79"
+  },
+  "status": "historical_rejected_proposal",
+  "removed_from_current_tree": [
+    "guidance-v4-arm-P.txt",
+    "frozen-runtime.zip"
+  ],
+  "originals_in_git": "eb26098"
+}

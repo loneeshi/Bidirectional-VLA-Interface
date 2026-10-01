@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-09-29T03:54:55.320319+00:00",
+  "cpu_sources_unchanged": true,
+  "payload_sha_verified": true,
+  "archive_member_hashes_verified": 448,
+  "protected_v1_v2_hashes": {
+    "src/bvi/eef_tools.py": "cf52eced5ddf54736f8bb2696cf64407b43874406482a414ca6aff60f82e138e",
+    "src/bvi/eef_g0.py": "909565967405229ca2483a12fe64ade4389ba390a568c5e63d32c464c1ec2e5e",
+    "src/bvi/eef_streaming.py": "51cc56b8f025c5d71ccf1a235ece1053858ac0173ac0f9cbab38349626fbc80e",
+    "src/bvi/eef_streaming_v2.py": "eca892bd093d5a94eb53a39aa55930092fd8a4b076a6bafb72da45f2b6e0afb0",
+    "src/bvi/eef_response_model.py": "36f38b49fef59612cea5c8f5d4eba76194e69fc80355c015bd91138155c027f7"
+  },
+  "no_gpu_api_simulator": true
+}

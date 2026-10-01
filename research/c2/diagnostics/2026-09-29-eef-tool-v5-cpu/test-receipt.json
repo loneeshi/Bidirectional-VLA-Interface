@@ -1,0 +1,22 @@
+{
+  "at_utc": "2026-09-29T05:05:28.929232+00:00",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_eef_tools.py",
+    "tests/test_eef_g0.py",
+    "tests/test_eef_streaming_stage_a.py",
+    "tests/test_eef_streaming_stage_a_v2.py",
+    "tests/test_eef_tools_v3.py",
+    "tests/test_eef_smoke_authorization.py",
+    "tests/test_eef_tools_v4.py",
+    "tests/test_eef_v4_smoke_authorization.py",
+    "tests/test_eef_v4_supervisor_wiring.py",
+    "tests/test_eef_tools_v5.py"
+  ],
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 69%]\n...............................                                          [100%]\n103 passed in 2.18s\n",
+  "stderr": ""
+}

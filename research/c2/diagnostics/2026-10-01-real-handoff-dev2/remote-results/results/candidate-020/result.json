@@ -1,0 +1,59 @@
+{
+  "schema": "bvi.real-handoff-dev2-case/1",
+  "plan_position": 20,
+  "row": {
+    "plan_uid": "tidy_house-sequential-val-175-0",
+    "asset_plan_index": 175,
+    "build_config_name": "v3_sc3_staging_20.scene_instance.json",
+    "task_plan_index_within_build_config": 7,
+    "init_config_name": "val/tidy_house/episode_256.json",
+    "first_pick_uid": "tidy_house-sequential-val-175-1",
+    "first_pick_obj_id": "008_pudding_box-0",
+    "historical_reset_seeds": [],
+    "original_census_position": 85
+  },
+  "seed": 175,
+  "status": "navigation_already_satisfied_at_reset",
+  "api_requests": 0,
+  "training_updates": 0,
+  "simulator_actions": 0,
+  "policy_inferences": 0,
+  "official_mshab_commit": "e9ff3d23496d38e4431c8d913e147ffa007f7f72",
+  "sequential_task_sha256": "47fd4999f7326568a550890caa48eac070901525373fac667ff56384eeb2a6be",
+  "roster_sha256": "379e6a72dca359a90a920eb9d27a9284668ba8e13aa60ee2dbdbf10252d5f99d",
+  "plan_uid": "tidy_house-sequential-val-175-0",
+  "position": 85,
+  "handoff_valid": false,
+  "strict_pick_success": false,
+  "commands": [],
+  "frames": [],
+  "control_dt": 0.05,
+  "mode": "dev2-native-ppo-sac",
+  "condition": "dev2-native-ppo-sac",
+  "evaluation_only": true,
+  "binding": {
+    "build_config_index": 89,
+    "task_plan_index": 7,
+    "first_uid": "tidy_house-sequential-val-175-0",
+    "policy_state_shape": [
+      1,
+      42
+    ],
+    "native_horizons": {
+      "navigate": 500,
+      "pick": 200,
+      "place": 200
+    },
+    "initial_subtask_pointer": 1
+  },
+  "navigation": {
+    "status": "zero_step_reset_transition",
+    "steps": 0,
+    "reason": "Official reset selected first Pick without a Navigate action"
+  },
+  "wall_seconds": 15.752459559589624,
+  "recording": {
+    "kind": "online native PPO/SAC reference",
+    "frames": 0
+  }
+}

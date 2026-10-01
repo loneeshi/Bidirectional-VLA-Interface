@@ -1,0 +1,49 @@
+{
+  "version": "eef-tool-v12-odometry-base-r1",
+  "base": {
+    "turn_limit_rad": 3.141592653589793,
+    "forward_limit_m": 1.5,
+    "linear_velocity_cap_m_s": 0.5,
+    "angular_velocity_cap_rad_s": 1.0,
+    "position_tolerance_m": 0.02,
+    "yaw_tolerance_rad": 0.03,
+    "steps_per_call": 80,
+    "sac_smoke_sequence_step_cap": 80,
+    "control_hz": 20,
+    "status": "candidate speeds frozen for first smoke; acceptance pending"
+  },
+  "arm_parameters": {
+    "previous_weight": 0.005,
+    "rest_weight": 0.02,
+    "position_tolerance": 0.002,
+    "rotation_tolerance": 0.02,
+    "rotation_jump": 0.5,
+    "torso_jump": 0.1,
+    "translation_sample": 0.02,
+    "rotation_sample": 0.1,
+    "max_nfev": 180,
+    "feedback": 1.0,
+    "release_rotation": 0.05,
+    "release_torso": 0.01,
+    "endpoint_position": 0.01,
+    "endpoint_rotation": 0.05,
+    "close_align_cap": 10,
+    "close_wait_cap": 5,
+    "finger_stable": 0.001,
+    "torso_stable": 0.001,
+    "rest_cap": 60
+  },
+  "settling_parameters": {
+    "position_gain": 1.0,
+    "velocity_step_gain": 0.5,
+    "action_cap": 0.25,
+    "action_change_cap": 0.25,
+    "official_delta_scale": 0.1
+  },
+  "environment_step_cap": 200,
+  "e1b_calls_cap": 25,
+  "stratum_threshold_m": 1.14,
+  "base_motion_success_threshold_m": 0.02,
+  "response_model_refitted": false,
+  "old_versions_modified": false
+}

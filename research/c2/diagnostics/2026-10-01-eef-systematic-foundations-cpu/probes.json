@@ -1,0 +1,56 @@
+{
+  "requests": [
+    {
+      "id": "r3-005-000",
+      "context": "contexts/r3-005-000.json",
+      "output": "responses/r3-005-000",
+      "request_sha256": "fec3e7e05964c181f4c85825f35ed219d145579cb3e587eb5fd0c07269d0748e",
+      "request_bytes": 841704,
+      "source": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-000",
+      "source_bundle_sha256": "4dfaf36fa30cf82cab5e8500943398d0fe95c333edf4da440b4d98485dff0127",
+      "estimate": {
+        "image_count": 4,
+        "image_tokens": 1920,
+        "text_bytes": 12784,
+        "input_bound": 15728,
+        "output_cap": 4000,
+        "reserve_usd": "0.3966"
+      }
+    },
+    {
+      "id": "r3-005-005",
+      "context": "contexts/r3-005-005.json",
+      "output": "responses/r3-005-005",
+      "request_sha256": "ddba40b8f701f2d7da1e0399f7a0af0327f2d82e571ff6f6ee738335cc774541",
+      "request_bytes": 1681275,
+      "source": "runs/eef-compact-640-20260930-pilot-r3/broker-records/plan-005/turn-005",
+      "source_bundle_sha256": "5a8b7a7a17484d8d9ffdf2d68934c2a38f564e5cbbeef6af848ae72929320f80",
+      "estimate": {
+        "image_count": 8,
+        "image_tokens": 3840,
+        "text_bytes": 26843,
+        "input_bound": 31707,
+        "output_cap": 4000,
+        "reserve_usd": "0.5963375"
+      }
+    },
+    {
+      "id": "r2-005-011",
+      "context": "contexts/r2-005-011.json",
+      "output": "responses/r2-005-011",
+      "request_sha256": "f585059e4d4ef628b92384198a9b59db7c1b3665388d658d7ed98a255185cda1",
+      "request_bytes": 1665063,
+      "source": "runs/eef-compact-640-20260930-pilot-r2/broker-records/plan-005/turn-011",
+      "source_bundle_sha256": "ac251a453b76e45ee2ddc153e71efeccf2a63e7b6b834af465d01b9ae1b16630",
+      "estimate": {
+        "image_count": 8,
+        "image_tokens": 3840,
+        "text_bytes": 41895,
+        "input_bound": 46759,
+        "output_cap": 4000,
+        "reserve_usd": "0.7844875"
+      }
+    }
+  ],
+  "responses_execute_actions": false
+}

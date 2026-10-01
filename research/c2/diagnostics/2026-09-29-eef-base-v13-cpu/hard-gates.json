@@ -1,0 +1,20 @@
+{
+  "all_passed": true,
+  "source_sha256": {
+    "src/bvi/eef_base_contract_v13.py": "42e54d676ee9ea156224bcc10a613d1903b97af06a49314aa52bad44b3f1c434",
+    "src/bvi/eef_tools_v13.py": "45aab10d6bb7a0d7d71314a4e1d1c0c6a3e5fccdb8def87e8b27c421386b0635",
+    "src/bvi/eef_e1b_dispatch_v13.py": "1f34cad86ad7f7f1b30b3d930d11cea9e1b14457f0bd4e3eb4335c46e6417762",
+    "src/bvi/census_contact_v13.py": "ffaaefbeaaa14862df63666bc5d3c1427acc467984620935c28a0fe4bcb5fa48",
+    "src/bvi/eef_base_smoke_sequence_v13.py": "95df5ba3e655516798ad40274474ae9fd9d7206e0351391d07257f749ce03ba5",
+    "scripts/run_eef_base_smoke_case_v13.py": "351362c48689fdd7d606cd7368d6edc31f058fbe4ad9fc2bb9beabc0b7a60324",
+    "scripts/run_eef_base_smoke_batch_v13.py": "6886784e29787f9e0e52a6c9ea0078de3b6535129c32157bbb3992cb77344d37",
+    "scripts/build_eef_base_v13_payload.py": "92ee385d30c57a9ca563de2ad2837d7a6c6c76660c459e5cb02cf7411ac5fc22",
+    "scripts/prepare_eef_base_v13_cpu.py": "75f5661d8ecdcbdc3f443cdf447552dee302166ac671d06ecc9de7cf5029987c",
+    "scripts/audit_eef_base_v13_cpu.py": "4e69d3c2410edfce7c864978e5ad72bc8c2c87b9772c36871e8ea25feaa5eb7d",
+    "tests/test_eef_tools_v13.py": "8a7a11e551d15b972530fb37e1d03dc25473351edfeb0f56c805e8a0291d43de",
+    "tests/test_eef_smoke_v13.py": "801002d63ebf914d538a177ec5b0aab6a3fe32f19392c310954971285a457bb5"
+  },
+  "gpu_seconds": 0,
+  "api_requests": 0,
+  "simulator_steps": 0
+}

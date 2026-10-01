@@ -1,0 +1,804 @@
+{
+  "schema": "bvi.real-handoff-dev2-roster/1",
+  "selection": "literal plan UID order; exclude all verified exposure; first 30; stop at 20 valid handoffs",
+  "source_task_plans_sha256": "fb76fcbd8ad6c6e372035c695e3d325b820cbba8cfdd58d019f92fa77b33379e",
+  "plans": [
+    {
+      "plan_uid": "tidy_house-sequential-val-156-0",
+      "asset_plan_index": 156,
+      "build_config_name": "v3_sc3_staging_02.scene_instance.json",
+      "task_plan_index_within_build_config": 5,
+      "init_config_name": "val/tidy_house/episode_239.json",
+      "first_pick_uid": "tidy_house-sequential-val-156-1",
+      "first_pick_obj_id": "005_tomato_soup_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 64
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-157-0",
+      "asset_plan_index": 157,
+      "build_config_name": "v3_sc3_staging_17.scene_instance.json",
+      "task_plan_index_within_build_config": 6,
+      "init_config_name": "val/tidy_house/episode_24.json",
+      "first_pick_uid": "tidy_house-sequential-val-157-1",
+      "first_pick_obj_id": "007_tuna_fish_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 65
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-158-0",
+      "asset_plan_index": 158,
+      "build_config_name": "v3_sc3_staging_02.scene_instance.json",
+      "task_plan_index_within_build_config": 6,
+      "init_config_name": "val/tidy_house/episode_240.json",
+      "first_pick_uid": "tidy_house-sequential-val-158-1",
+      "first_pick_obj_id": "010_potted_meat_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 66
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-159-0",
+      "asset_plan_index": 159,
+      "build_config_name": "v3_sc3_staging_10.scene_instance.json",
+      "task_plan_index_within_build_config": 10,
+      "init_config_name": "val/tidy_house/episode_241.json",
+      "first_pick_uid": "tidy_house-sequential-val-159-1",
+      "first_pick_obj_id": "004_sugar_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 67
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-16-0",
+      "asset_plan_index": 16,
+      "build_config_name": "v3_sc3_staging_11.scene_instance.json",
+      "task_plan_index_within_build_config": 2,
+      "init_config_name": "val/tidy_house/episode_112.json",
+      "first_pick_uid": "tidy_house-sequential-val-16-1",
+      "first_pick_obj_id": "004_sugar_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 68
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-160-0",
+      "asset_plan_index": 160,
+      "build_config_name": "v3_sc3_staging_09.scene_instance.json",
+      "task_plan_index_within_build_config": 7,
+      "init_config_name": "val/tidy_house/episode_242.json",
+      "first_pick_uid": "tidy_house-sequential-val-160-1",
+      "first_pick_obj_id": "003_cracker_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 69
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-161-0",
+      "asset_plan_index": 161,
+      "build_config_name": "v3_sc3_staging_15.scene_instance.json",
+      "task_plan_index_within_build_config": 9,
+      "init_config_name": "val/tidy_house/episode_243.json",
+      "first_pick_uid": "tidy_house-sequential-val-161-1",
+      "first_pick_obj_id": "005_tomato_soup_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 70
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-162-0",
+      "asset_plan_index": 162,
+      "build_config_name": "v3_sc3_staging_11.scene_instance.json",
+      "task_plan_index_within_build_config": 12,
+      "init_config_name": "val/tidy_house/episode_244.json",
+      "first_pick_uid": "tidy_house-sequential-val-162-1",
+      "first_pick_obj_id": "024_bowl-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 71
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-163-0",
+      "asset_plan_index": 163,
+      "build_config_name": "v3_sc3_staging_10.scene_instance.json",
+      "task_plan_index_within_build_config": 11,
+      "init_config_name": "val/tidy_house/episode_245.json",
+      "first_pick_uid": "tidy_house-sequential-val-163-1",
+      "first_pick_obj_id": "009_gelatin_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 72
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-164-0",
+      "asset_plan_index": 164,
+      "build_config_name": "v3_sc3_staging_15.scene_instance.json",
+      "task_plan_index_within_build_config": 10,
+      "init_config_name": "val/tidy_house/episode_246.json",
+      "first_pick_uid": "tidy_house-sequential-val-164-1",
+      "first_pick_obj_id": "009_gelatin_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 73
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-165-0",
+      "asset_plan_index": 165,
+      "build_config_name": "v3_sc3_staging_10.scene_instance.json",
+      "task_plan_index_within_build_config": 12,
+      "init_config_name": "val/tidy_house/episode_247.json",
+      "first_pick_uid": "tidy_house-sequential-val-165-1",
+      "first_pick_obj_id": "007_tuna_fish_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 74
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-166-0",
+      "asset_plan_index": 166,
+      "build_config_name": "v3_sc3_staging_03.scene_instance.json",
+      "task_plan_index_within_build_config": 5,
+      "init_config_name": "val/tidy_house/episode_248.json",
+      "first_pick_uid": "tidy_house-sequential-val-166-1",
+      "first_pick_obj_id": "010_potted_meat_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 75
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-167-0",
+      "asset_plan_index": 167,
+      "build_config_name": "v3_sc3_staging_15.scene_instance.json",
+      "task_plan_index_within_build_config": 11,
+      "init_config_name": "val/tidy_house/episode_249.json",
+      "first_pick_uid": "tidy_house-sequential-val-167-1",
+      "first_pick_obj_id": "009_gelatin_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 76
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-168-0",
+      "asset_plan_index": 168,
+      "build_config_name": "v3_sc3_staging_19.scene_instance.json",
+      "task_plan_index_within_build_config": 6,
+      "init_config_name": "val/tidy_house/episode_25.json",
+      "first_pick_uid": "tidy_house-sequential-val-168-1",
+      "first_pick_obj_id": "007_tuna_fish_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 77
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-169-0",
+      "asset_plan_index": 169,
+      "build_config_name": "v3_sc3_staging_03.scene_instance.json",
+      "task_plan_index_within_build_config": 6,
+      "init_config_name": "val/tidy_house/episode_250.json",
+      "first_pick_uid": "tidy_house-sequential-val-169-1",
+      "first_pick_obj_id": "024_bowl-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 78
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-170-0",
+      "asset_plan_index": 170,
+      "build_config_name": "v3_sc3_staging_02.scene_instance.json",
+      "task_plan_index_within_build_config": 7,
+      "init_config_name": "val/tidy_house/episode_251.json",
+      "first_pick_uid": "tidy_house-sequential-val-170-1",
+      "first_pick_obj_id": "009_gelatin_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 80
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-171-0",
+      "asset_plan_index": 171,
+      "build_config_name": "v3_sc3_staging_03.scene_instance.json",
+      "task_plan_index_within_build_config": 7,
+      "init_config_name": "val/tidy_house/episode_252.json",
+      "first_pick_uid": "tidy_house-sequential-val-171-1",
+      "first_pick_obj_id": "002_master_chef_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 81
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-172-0",
+      "asset_plan_index": 172,
+      "build_config_name": "v3_sc3_staging_10.scene_instance.json",
+      "task_plan_index_within_build_config": 13,
+      "init_config_name": "val/tidy_house/episode_253.json",
+      "first_pick_uid": "tidy_house-sequential-val-172-1",
+      "first_pick_obj_id": "008_pudding_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 82
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-173-0",
+      "asset_plan_index": 173,
+      "build_config_name": "v3_sc3_staging_12.scene_instance.json",
+      "task_plan_index_within_build_config": 7,
+      "init_config_name": "val/tidy_house/episode_254.json",
+      "first_pick_uid": "tidy_house-sequential-val-173-1",
+      "first_pick_obj_id": "005_tomato_soup_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 83
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-174-0",
+      "asset_plan_index": 174,
+      "build_config_name": "v3_sc3_staging_10.scene_instance.json",
+      "task_plan_index_within_build_config": 14,
+      "init_config_name": "val/tidy_house/episode_255.json",
+      "first_pick_uid": "tidy_house-sequential-val-174-1",
+      "first_pick_obj_id": "004_sugar_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 84
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-175-0",
+      "asset_plan_index": 175,
+      "build_config_name": "v3_sc3_staging_20.scene_instance.json",
+      "task_plan_index_within_build_config": 7,
+      "init_config_name": "val/tidy_house/episode_256.json",
+      "first_pick_uid": "tidy_house-sequential-val-175-1",
+      "first_pick_obj_id": "008_pudding_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 85
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-176-0",
+      "asset_plan_index": 176,
+      "build_config_name": "v3_sc3_staging_07.scene_instance.json",
+      "task_plan_index_within_build_config": 9,
+      "init_config_name": "val/tidy_house/episode_257.json",
+      "first_pick_uid": "tidy_house-sequential-val-176-1",
+      "first_pick_obj_id": "005_tomato_soup_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 86
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-177-0",
+      "asset_plan_index": 177,
+      "build_config_name": "v3_sc3_staging_18.scene_instance.json",
+      "task_plan_index_within_build_config": 8,
+      "init_config_name": "val/tidy_house/episode_258.json",
+      "first_pick_uid": "tidy_house-sequential-val-177-1",
+      "first_pick_obj_id": "003_cracker_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 87
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-178-0",
+      "asset_plan_index": 178,
+      "build_config_name": "v3_sc3_staging_00.scene_instance.json",
+      "task_plan_index_within_build_config": 8,
+      "init_config_name": "val/tidy_house/episode_259.json",
+      "first_pick_uid": "tidy_house-sequential-val-178-1",
+      "first_pick_obj_id": "008_pudding_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 88
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-179-0",
+      "asset_plan_index": 179,
+      "build_config_name": "v3_sc3_staging_13.scene_instance.json",
+      "task_plan_index_within_build_config": 6,
+      "init_config_name": "val/tidy_house/episode_26.json",
+      "first_pick_uid": "tidy_house-sequential-val-179-1",
+      "first_pick_obj_id": "008_pudding_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 89
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-18-0",
+      "asset_plan_index": 18,
+      "build_config_name": "v3_sc3_staging_16.scene_instance.json",
+      "task_plan_index_within_build_config": 0,
+      "init_config_name": "val/tidy_house/episode_114.json",
+      "first_pick_uid": "tidy_house-sequential-val-18-1",
+      "first_pick_obj_id": "007_tuna_fish_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 90
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-180-0",
+      "asset_plan_index": 180,
+      "build_config_name": "v3_sc3_staging_00.scene_instance.json",
+      "task_plan_index_within_build_config": 9,
+      "init_config_name": "val/tidy_house/episode_260.json",
+      "first_pick_uid": "tidy_house-sequential-val-180-1",
+      "first_pick_obj_id": "024_bowl-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 91
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-181-0",
+      "asset_plan_index": 181,
+      "build_config_name": "v3_sc3_staging_08.scene_instance.json",
+      "task_plan_index_within_build_config": 7,
+      "init_config_name": "val/tidy_house/episode_261.json",
+      "first_pick_uid": "tidy_house-sequential-val-181-1",
+      "first_pick_obj_id": "002_master_chef_can-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 92
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-182-0",
+      "asset_plan_index": 182,
+      "build_config_name": "v3_sc3_staging_16.scene_instance.json",
+      "task_plan_index_within_build_config": 11,
+      "init_config_name": "val/tidy_house/episode_262.json",
+      "first_pick_uid": "tidy_house-sequential-val-182-1",
+      "first_pick_obj_id": "003_cracker_box-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 93
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-183-0",
+      "asset_plan_index": 183,
+      "build_config_name": "v3_sc3_staging_00.scene_instance.json",
+      "task_plan_index_within_build_config": 10,
+      "init_config_name": "val/tidy_house/episode_263.json",
+      "first_pick_uid": "tidy_house-sequential-val-183-1",
+      "first_pick_obj_id": "024_bowl-0",
+      "historical_reset_seeds": [],
+      "original_census_position": 94
+    }
+  ],
+  "target_valid_handoffs": 20,
+  "candidate_cap": 30,
+  "exclusions": [
+    {
+      "plan_uid": "tidy_house-sequential-val-0-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-1-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-001-E1B/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-10-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-100-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-101-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-102-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-005-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-005-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-005-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-005-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-005-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-005-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/remote-results/plan-005-E1/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1-pilot/remote-results/plan-005-E1/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-005-E1B/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-interface-r1/remote-results/results/plan-005-visual-interface/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-pilot-r1/remote-results/results/plan-005-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-pilot-r2/remote-results/results/plan-005-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-pilot-r3/remote-results/results/plan-005-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-coordinated-interface-r1/remote-results/results/plan-005-visual-interface/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-coordinated-interface-r2/remote-results/results/plan-005-visual-interface/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-visual-pilot-r1/remote-results/results/plan-005-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-visual-pilot-r2/remote-results/results/plan-005-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-r4-eef-visual-cpu/remote-results/results/plan-005-visual-interface/result.json",
+        "research/c2/diagnostics/2026-09-30-r5-eef-visual-cpu/remote-results/results/plan-005-visual-interface/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-103-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-104-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-105-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-008-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-008-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-008-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-008-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-008-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-008-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/remote-results/plan-008-E1/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-008-E1B/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-106-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-107-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-108-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-011-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-011-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-011-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-011-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1-pilot-r2/remote-results/plan-011-E1/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-011-E1B/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-109-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-11-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-110-0",
+      "reasons": [
+        "historical_bound_panel",
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-014-E1B/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-111-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-112-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-113-0",
+      "reasons": [
+        "historical_bound_panel",
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-114-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-115-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-116-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12/results/plan-020-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12/results/plan-020-smoke/restore-01/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12/results/plan-020-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-020-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-020-smoke/restore-01/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-020-smoke/restore-02/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-020-smoke/restore-03/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-020-smoke/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-117-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-118-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-119-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-023-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-023-smoke/restore-01/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-smoke-v12-remaining/results/plan-023-smoke/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-023-smoke/restore-00/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-023-smoke/restore-01/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-023-smoke/restore-02/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-023-smoke/restore-03/result.json",
+        "research/c2/diagnostics/2026-09-29-eef-base-v13-smoke/results/plan-023-smoke/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-12-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-120-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-121-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-026-E1B/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-122-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-123-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-124-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-125-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-126-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-127-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-128-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-129-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-13-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-130-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-131-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-132-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-133-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-134-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-135-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-136-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-29-eef-e1b-v13/remote-results/plan-042-E1B/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-137-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-138-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-139-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-14-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-140-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-141-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-142-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-143-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-144-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-145-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-146-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-147-0",
+      "reasons": [
+        "historical_bound_panel",
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-148-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-interface-r1/remote-results/results/plan-055-visual-interface/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-pilot-r3/remote-results/results/plan-055-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-e1b2-cpu/remote-results/plan-055-E1B2/result.json",
+        "research/c2/diagnostics/2026-09-30-r5-eef-visual-cpu/remote-results/results/plan-055-visual-interface/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-149-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-15-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-150-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-interface-r1/remote-results/results/plan-058-visual-interface/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-compact-640-pilot-r3/remote-results/results/plan-058-visual/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-e1b2-cpu/remote-results/plan-058-E1B2/result.json",
+        "research/c2/diagnostics/2026-09-30-eef-e1b2-retry58/remote-results/plan-058-E1B2/result.json",
+        "research/c2/diagnostics/2026-09-30-r5-eef-visual-cpu/remote-results/results/plan-058-visual-interface/result.json"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-151-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-152-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-153-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-154-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-155-0",
+      "reasons": [
+        "original_census_attempted_including_navigation_failures"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-17-0",
+      "reasons": [
+        "historical_bound_panel"
+      ]
+    },
+    {
+      "plan_uid": "tidy_house-sequential-val-189-0",
+      "reasons": [
+        "historical_bound_panel"
+      ]
+    }
+  ],
+  "source_roster_sha256": "7297bbd68767af8217487358956aa250789cc77747362aedaf4e432b4ca71610",
+  "census_summary_sha256": "2a5a9bd51fa9b9cdd2de254218185e8d6a40ea2fdb11457c0491c6b8460f3ae4"
+}

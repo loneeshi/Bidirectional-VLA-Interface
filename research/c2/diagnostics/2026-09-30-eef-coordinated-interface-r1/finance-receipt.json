@@ -1,0 +1,17 @@
+{
+  "id": "C2-COORDINATED-2026-09-30-interface-r1",
+  "status": "closed_interface_failed",
+  "authorization_sha256": "77976cdf50ef11b53b8fa1961a08f2e24e5f0f96d165eb82d2240f64e0fe055c",
+  "authorized_utc": "2026-09-30T18:56:28.146622+00:00",
+  "scope": {
+    "gpu_seconds": 900,
+    "requests": 0,
+    "old_balance_transferred": 0
+  },
+  "entries": [],
+  "actual_gpu_process_seconds": 56.637864887714386,
+  "api_requests": 0,
+  "simulator_actions": 83,
+  "lab_project_charge": 0,
+  "remaining_scope_closed": true
+}

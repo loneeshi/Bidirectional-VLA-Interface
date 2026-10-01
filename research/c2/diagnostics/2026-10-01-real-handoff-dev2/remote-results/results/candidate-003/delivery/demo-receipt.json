@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/real-handoff-dev2-20261001-r1/results/candidate-003/delivery/online-raw.mp4",
+  "source_video_sha256": "07ea736cb1c7012f1dd177674cc4be08db9f33ddfc2c54d7812e12cc28eea92b",
+  "source_result": "/home/pshuai/bvi-research/runs/real-handoff-dev2-20261001-r1/results/candidate-003/result.json",
+  "source_result_sha256": "66190437be4439a27d9b5e03a714f82fe5c59d4936bf05e34978c06951312367",
+  "output": "/home/pshuai/bvi-research/runs/real-handoff-dev2-20261001-r1/results/candidate-003/delivery/online-tcp-demo.mp4",
+  "output_sha256": "1de358fb4b6f52c88ff45002cca4ae98f31ae1bc75413e63d0589482385351d7",
+  "frames": 107,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 67,
+  "source_status": "completed",
+  "source_strict_pick_success": true,
+  "source_mode": "dev2-native-ppo-sac",
+  "kind_label": "online native PPO/SAC reference",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

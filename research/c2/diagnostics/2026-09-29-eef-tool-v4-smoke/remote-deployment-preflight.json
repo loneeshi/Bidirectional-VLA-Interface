@@ -1,0 +1,8 @@
+{
+  "command": "CUDA_VISIBLE_DEVICES= MS_ASSET_DIR=/home/pshuai/bvi-research/assets PYTHONPATH=/home/pshuai/bvi-research/runs/eef-tool-smoke-20260929-v4-r1/code/src:/home/pshuai/bvi-research/runs/eef-tool-smoke-20260929-v4-r1/code/scripts /home/pshuai/bvi-research/envs/acdit/bin/python /home/pshuai/bvi-research/runs/eef-tool-smoke-20260929-v4-r1/code/scripts/check_eef_g0_runtime_cpu.py --lab-root /home/pshuai/bvi-research --census-root /home/pshuai/bvi-research/runs/real-handoff-pick-census-20260925 --manifest /home/pshuai/bvi-research/runs/eef-tool-smoke-20260929-v4-r1/manifest.eval-only.json --output /home/pshuai/bvi-research/runs/eef-tool-smoke-20260929-v4-r1/prelaunch-runtime-cpu-gate.json",
+  "stdout": "{\"status\": \"cpu_runtime_gate_passed\", \"sequential_sha256\": \"47fd4999f7326568a550890caa48eac070901525373fac667ff56384eeb2a6be\", \"base_env_sha256\": \"09a176d2a81924ae3b0234405bab2d45cd861a250c37ea52f12b6994b5753208\", \"snapshot_cpu_deserialization_positions\": [5, 8, 11], \"cuda_initialized\": false, \"simulator_actions\": 0, \"api_requests\": 0}\n\n\n",
+  "status": "passed",
+  "gpu_process_seconds": 0,
+  "api_requests": 0,
+  "simulator_actions": 0
+}

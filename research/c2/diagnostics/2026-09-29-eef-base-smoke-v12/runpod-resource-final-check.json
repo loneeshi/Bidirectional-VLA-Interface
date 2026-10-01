@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-09-29 19:04:09 UTC",
+  "pods": [
+    {
+      "id": "uhrazur8gxf9b4",
+      "status": "EXITED",
+      "persistent_storage_gb": 20
+    },
+    {
+      "id": "3n65pd7y84sam8",
+      "status": "EXITED",
+      "persistent_storage_gb": 20
+    }
+  ],
+  "pagination": {
+    "hasNextPage": false,
+    "nextCursor": null
+  },
+  "network_volumes": [],
+  "billing_refreshed": false,
+  "mutations": false
+}

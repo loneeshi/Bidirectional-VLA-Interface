@@ -1,0 +1,23 @@
+{
+  "name": "plan-005-smoke",
+  "position": 5,
+  "mode": "smoke",
+  "status": "finished",
+  "reservation_seconds": 180,
+  "gpu1_before": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "started_at_utc": "2026-09-29T21:17:15.247528+00:00",
+  "command_sha256": "e5653fecdf04a76463eba2571c7a1a46035cc3aefce69eecd506ae80de2f8736",
+  "pid": 1706387,
+  "elapsed_process_seconds": 29.3140278570354,
+  "returncode": 0,
+  "timed_out": false,
+  "gpu1_after": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  }
+}

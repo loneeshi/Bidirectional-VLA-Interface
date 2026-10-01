@@ -1,0 +1,119 @@
+{
+  "experiment_id": "C2-EEF-E1-20260929-R1",
+  "status": "completed",
+  "authorization_sha256": "476faaf26944eb521de73a24652082a1eef481d27fd0c1f5509b4c63f75e07c3",
+  "gpu1_process_seconds": 207.4274323657155,
+  "api_requests": 0,
+  "lab_project_charge": 0,
+  "records": [
+    {
+      "name": "plan-005-E1",
+      "position": 5,
+      "mode": "E1",
+      "status": "finished",
+      "reservation_seconds": 1800,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:51:36.966178+00:00",
+      "command_sha256": "815c6ce89517f3a38e80119f76d22f5faae06752a2ecfc10522440515fe131fa",
+      "pid": 1673801,
+      "elapsed_process_seconds": 152.21426274254918,
+      "returncode": 1,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 8,
+        "compute_processes": []
+      },
+      "censored": true
+    },
+    {
+      "name": "plan-008-E1",
+      "position": 8,
+      "mode": "E1",
+      "status": "finished",
+      "reservation_seconds": 1800,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:54:09.486934+00:00",
+      "command_sha256": "e95bc63aea257ef4bf91324b901c5676a0feb06a937f3e8df9f85702870f613f",
+      "pid": 1674741,
+      "elapsed_process_seconds": 27.80420982092619,
+      "returncode": 1,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "censored": true
+    },
+    {
+      "name": "plan-011-E1",
+      "position": 11,
+      "mode": "E1",
+      "status": "finished",
+      "reservation_seconds": 1800,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T05:54:37.660009+00:00",
+      "command_sha256": "148b261ff8610c94050f46d6e151a4d193a66e44ba3af8fec33d40b5b9da1339",
+      "pid": 1675553,
+      "elapsed_process_seconds": 27.408959802240133,
+      "returncode": 1,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "censored": true
+    }
+  ],
+  "case_results": [
+    {
+      "position": 5,
+      "mode": "E1-privileged-H0",
+      "status": "api_censored",
+      "strict_pick_success": false,
+      "simulator_actions": 64,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    },
+    {
+      "position": 8,
+      "mode": "E1-privileged-H0",
+      "status": "api_censored",
+      "strict_pick_success": false,
+      "simulator_actions": 0,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    },
+    {
+      "position": 11,
+      "mode": "E1-privileged-H0",
+      "status": "api_censored",
+      "strict_pick_success": false,
+      "simulator_actions": 0,
+      "policy_inferences": 0,
+      "return_to_rest_official_robot_rest": null
+    }
+  ],
+  "gpu1_final": {
+    "memory_used_mib": 15,
+    "utilization_percent": 3,
+    "compute_processes": []
+  },
+  "simulator_actions": 64,
+  "policy_inferences": 0,
+  "ended_at_utc": "2026-09-29T05:55:05.384443+00:00"
+}

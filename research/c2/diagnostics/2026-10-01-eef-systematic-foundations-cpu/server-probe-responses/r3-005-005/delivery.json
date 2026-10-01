@@ -1,0 +1,59 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": null,
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The fingers opened as commanded, and head obs-005 still shows the can on the cabinet. I will move to the checked slanted pregrasp, then inspect alignment before descending.",
+    "observation_id": null,
+    "pan_rad": null,
+    "pixel": null,
+    "poses": [
+      {
+        "position": [
+          0.65,
+          -0.133,
+          1.17
+        ],
+        "quaternion_xyzw": [
+          0,
+          0.38268343,
+          0,
+          0.92387953
+        ]
+      }
+    ],
+    "task_state": {
+      "belief": "Opening succeeded; the can remains visible in head obs-005.",
+      "expected_change": "Reach a slanted pregrasp above and in front of the can.",
+      "next_check": "Inspect current hand/head alignment and motion residuals.",
+      "uncertainty": "Can dimensions and cabinet clearance remain approximate."
+    },
+    "tilt_rad": null,
+    "tool": "move_to",
+    "turn_rad": null
+  },
+  "reflection": null,
+  "api_attempts": 1,
+  "api_attempted": true,
+  "request_sha256": "ddba40b8f701f2d7da1e0399f7a0af0327f2d82e571ff6f6ee738335cc774541",
+  "logical_request_id": "r3-005-005",
+  "authorization_sha256": "67cb7e78aeefc25ed27bf0b59a2b758dc57edba015da0d4547723bb433341834",
+  "reason": null,
+  "provider_id": "resp_002c3b1d9fdc399e016abda2dcea0487d2b6cdcb5f99a990f3",
+  "usage": {
+    "input_tokens": 10895,
+    "input_tokens_details": {
+      "cache_write_tokens": 8961,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 199,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 11094
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.1461375"
+}

@@ -1,0 +1,8 @@
+{
+  "code_and_artifact_hashes_passed": true,
+  "status": "pending_user_approval",
+  "deployment_sha256": "063fd7942bd0149df6f1a48295b4a21a3977517f1c9aae052c7071e75682f58e",
+  "uploaded": false,
+  "launched": false,
+  "superseded_local_only_package": "runs/eef-base-smoke-20260929-v13-r1/deployment.zip was never uploaded or launched"
+}

@@ -1,0 +1,11 @@
+{
+  "changed_runtime_files": [
+    "scripts/run_arm_capability_case.py",
+    "src/bvi/eef_arm_sensing.py"
+  ],
+  "executor_unchanged": true,
+  "tests_passed": 40,
+  "full_loop_rounds": 25,
+  "physical_runs": 0,
+  "api_sends": 0
+}

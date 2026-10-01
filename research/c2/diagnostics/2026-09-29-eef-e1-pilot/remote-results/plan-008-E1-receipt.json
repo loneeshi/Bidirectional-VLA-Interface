@@ -1,0 +1,23 @@
+{
+  "name": "plan-008-E1",
+  "position": 8,
+  "mode": "E1",
+  "status": "finished",
+  "reservation_seconds": 1800,
+  "gpu1_before": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "started_at_utc": "2026-09-29T05:54:09.486934+00:00",
+  "command_sha256": "e95bc63aea257ef4bf91324b901c5676a0feb06a937f3e8df9f85702870f613f",
+  "pid": 1674741,
+  "elapsed_process_seconds": 27.80420982092619,
+  "returncode": 1,
+  "timed_out": false,
+  "gpu1_after": {
+    "memory_used_mib": 15,
+    "utilization_percent": 3,
+    "compute_processes": []
+  }
+}

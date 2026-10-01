@@ -1,0 +1,45 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "head",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The measured front surface is at [0.829,-0.131,0.975] m, with no motion. I will measure the lid to estimate the can center and a top-down grasp.",
+    "observation_id": "obs-001-f2ed5e1c8c40f4a1",
+    "pan_rad": null,
+    "pixel": [
+      355,
+      314
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "Head obs-001 shows the upright target can on the cabinet.",
+      "expected_change": "Measure lid surface without motion.",
+      "next_check": "Estimate top-down pregrasp and grasp poses and check reach.",
+      "uncertainty": "Diameter appears about 6 cm; height and lid center need confirmation."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "174c4ea87d5cdde6b80f5e51f0e7dbfb6fb027be3bf31cc95bbf0be3ff66aec7",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_04000ba5254a70dc016abd4f71723887d294e68df10a78c406",
+  "usage": {
+    "input_tokens": 7877,
+    "input_tokens_details": {
+      "cache_write_tokens": 5943,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 197,
+    "output_tokens_details": {
+      "reasoning_tokens": 9
+    },
+    "total_tokens": 8074
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.1083125"
+}

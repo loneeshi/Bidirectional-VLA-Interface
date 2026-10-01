@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "budget.json": "316840c51462ac4b7f754ebe015e405d15eb44b64c3955ee419bc140016b73ec",
+    "prompt.txt": "c74f8ab42baede22ed434554364f7ca73f3f169cca0964db3123c18025ffced1",
+    "proposal-manifest.json": "1aaf34f7ab1a56d037cac001a8c7670fb958ec18fc48babafad1ed257fd3e882",
+    "README.md": "e2b16d6b3f42ecc75437681cbc1fcc6da6c6c3802a5305f0e391d94f652ead4c",
+    "schema.json": "72cf45a66cc32be7a398dafe246876d91046353f96c2ff43e463549cb8bb1c5a",
+    "wire-profiles.json": "fc0d3284eaa83602163f1c5f005af496b7b70fc7b9ca3fc794d7af81d8b55d2d"
+  }
+}

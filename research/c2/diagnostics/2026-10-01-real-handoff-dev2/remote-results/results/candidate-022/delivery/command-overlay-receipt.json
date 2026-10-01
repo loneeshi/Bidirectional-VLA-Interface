@@ -1,0 +1,25 @@
+{
+  "kind": "eef_tcp_3d_scene_projection",
+  "video": "/home/pshuai/bvi-research/runs/real-handoff-dev2-20261001-r1/results/candidate-022/delivery/online-command-vs-executed.mp4",
+  "video_sha256": "bbb649879faac90d9e40bce74f5dacddae77f3e580d1c1c4a7e950e97b5a150a",
+  "source_video_sha256": "dfac93a83cf54e5508b0631f99df29e779019c51061e128ab7555a841c4e0a72",
+  "source_result_sha256": "79b9b23f3a866733d8b6d1a8ab2e4a99478a1c1bf1f92446652f417414e930e1",
+  "frames": 149,
+  "fps": 20.0,
+  "resolution": [
+    512,
+    512
+  ],
+  "position": 87,
+  "original_strict_pick_success": true,
+  "kind_label": "online",
+  "initial_qpos_source": "initial_robot_state",
+  "camera": "frozen MS-HAB human render camera on torso_lift_link; fovy=1.75",
+  "trajectory": "recorded TCP transformed by robot root qpos and projected into each current camera pose",
+  "occlusion": "X-ray overlay; original RGB video has no depth buffer",
+  "evaluation_only": true,
+  "model_calls": 0,
+  "simulator_steps": 0,
+  "command_overlay": true,
+  "command_semantics": "issued waypoint connectors/base commands, not model physical predictions; no future commands displayed"
+}

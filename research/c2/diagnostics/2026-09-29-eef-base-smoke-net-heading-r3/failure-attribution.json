@@ -1,0 +1,87 @@
+{
+  "basis": "Recorded physical trace, CPU analysis only; no extra simulation",
+  "case8_bug_fixed_in_this_replay": true,
+  "case11": {
+    "position": 11,
+    "source_sha256": "19a6b8b47eb19bc696b45efece774dd03cf04df327036a7df079eeb025625783",
+    "steps": 80,
+    "commands": [
+      {
+        "instruction": 0,
+        "passed": true,
+        "result": {
+          "accepted": true,
+          "arrived": true,
+          "reason": "ok",
+          "steps_used": 61,
+          "requested_turn_rad": 0.07819521839488633,
+          "requested_forward_m": 1.0375729596390475,
+          "actual_turn_rad": 0.10605144500732422,
+          "actual_forward_m": 1.026592813667938,
+          "position_error_m": 0.011050759396224692,
+          "rotation_error_rad": 0.027856226612437886,
+          "official_terminated": false
+        },
+        "frozen_command": {
+          "turn_rad": 0.07819521839488633,
+          "forward_m": 1.0375729596390475
+        },
+        "effective_command": {
+          "turn_rad": 0.07819521839488633,
+          "forward_m": 1.0375729596390475
+        },
+        "measured_yaw_before_final_turn_rad": null
+      },
+      {
+        "instruction": 1,
+        "passed": false,
+        "result": {
+          "accepted": true,
+          "arrived": false,
+          "reason": "tool_step_limit",
+          "steps_used": 19,
+          "requested_turn_rad": -0.29423069953918457,
+          "requested_forward_m": 0.0,
+          "actual_turn_rad": -0.24277782440185547,
+          "actual_forward_m": -0.008513927924695632,
+          "position_error_m": 0.020398673519882525,
+          "rotation_error_rad": 0.0514528751373291,
+          "official_terminated": false
+        },
+        "frozen_command": {
+          "turn_rad": -0.26637447292674665,
+          "forward_m": 0.0
+        },
+        "effective_command": {
+          "turn_rad": -0.29423069953918457,
+          "forward_m": 0.0
+        },
+        "measured_yaw_before_final_turn_rad": 0.10605144500732422
+      }
+    ],
+    "net_pose_errors": {
+      "xy_m": 0.02369053287607845,
+      "yaw_rad": 0.0514528751373291
+    },
+    "passed": false,
+    "force_ok": true,
+    "remaining_time_ok": true,
+    "max_cumulative_force": 973.3358154296875,
+    "control_dt": 0.05,
+    "odometry_error_max": {
+      "xy_m": 3.5514722270195974e-07,
+      "yaw_rad": 4.917383193969727e-07
+    },
+    "phase_counts": {
+      "base_turn": 29,
+      "base_drive": 51
+    }
+  },
+  "finding": "First call arrived in61 steps; final turn exhausted remaining19 steps before yaw and position converged. The second call stayed in turn phase for19 steps.",
+  "causal_limits": [
+    "No evidence sufficient to attribute failure to torso",
+    "No evidence that merely extending time would pass final XY and yaw criteria",
+    "No claim of collision-free execution: cumulative force stayed below official limit"
+  ],
+  "new_controller_or_threshold_changes": false
+}

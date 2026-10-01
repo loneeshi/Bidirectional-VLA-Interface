@@ -1,0 +1,477 @@
+{
+  "frozen_source_sha256": "74809b513480af1a5bf3bd26220beec33fc754c9c7399d7306a9b9d166e70fb4",
+  "prior_selection_sha256": "c1074362a4b89cf5c86b5ad8a77dc8b1350a8f27f902ccefb97d022f074a2ead",
+  "development_rows": [
+    {
+      "plan_position": 1,
+      "plan_uid": "tidy_house-sequential-val-1-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "3329fad95a133e52869dd5e3fe89e788eba8c5999832064a1b995c1603e72ce8",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.185069524101506
+    },
+    {
+      "plan_position": 5,
+      "plan_uid": "tidy_house-sequential-val-102-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "e56a12e95d6a4b630a9c5bae36ebaea6b73a952104e17f38c4767b57789e847a",
+      "split": "development",
+      "excluded": true,
+      "stratum": "inside",
+      "distance_to_shoulder_horizontal_m": 0.8389672728175769
+    },
+    {
+      "plan_position": 8,
+      "plan_uid": "tidy_house-sequential-val-105-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "6cf3378cc558f08c473b32f394601782c2dcb20e6be2e64b75217fd9810318e0",
+      "split": "development",
+      "excluded": true,
+      "stratum": "inside",
+      "distance_to_shoulder_horizontal_m": 1.0096313130275807
+    },
+    {
+      "plan_position": 11,
+      "plan_uid": "tidy_house-sequential-val-108-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "4717bd0aabf5c6d74c864d3f2bc2738c0897696680dd5ed9e89d3c2c84d828fb",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.9649131834938327
+    },
+    {
+      "plan_position": 14,
+      "plan_uid": "tidy_house-sequential-val-110-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "ba911fa7c692a5687fa949775ca5187d7e114ea2662fbcde7737c8f86787d23c",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.5818048680358083
+    },
+    {
+      "plan_position": 17,
+      "plan_uid": "tidy_house-sequential-val-113-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "2ea5ec7030a43a0c2e7c5a17954a84122e44d022453066bf66b0dde32a3337b9",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.8206516006314648
+    },
+    {
+      "plan_position": 20,
+      "plan_uid": "tidy_house-sequential-val-116-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "forward_30",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "44c0a63c6f65332fd39dd0f2c335ad7d87cabfdc950ff53aae5c7c8ad47b37a4",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.2508497713943718
+    },
+    {
+      "plan_position": 23,
+      "plan_uid": "tidy_house-sequential-val-119-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "forward_30",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "e70b7a934f62891a3a5f7026e070af3e6b8e2f1ecc90a3f65128b54341e5c4cc",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.2675690917900142
+    },
+    {
+      "plan_position": 26,
+      "plan_uid": "tidy_house-sequential-val-121-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "forward_30",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "091eb8c7a4080754e809c93466ef4ef0a7edd132f4532972307c69f9cd96afaf",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.534865813399727
+    },
+    {
+      "plan_position": 29,
+      "plan_uid": "tidy_house-sequential-val-124-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "b4944cffbe3378bb747554fd5f33cbefee3ef53607daadb8838aeb1f7db9ff45",
+      "split": "development",
+      "excluded": true,
+      "stratum": "inside",
+      "distance_to_shoulder_horizontal_m": 0.9334626917256511
+    },
+    {
+      "plan_position": 32,
+      "plan_uid": "tidy_house-sequential-val-127-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "21d65ce07d0c0eaeca1c983d9566724086609905d03da2d25d1ff929f4b941c3",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.9030252224917759
+    },
+    {
+      "plan_position": 35,
+      "plan_uid": "tidy_house-sequential-val-13-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "5fcea944655b064b749357aac0855c53b593238f5cd53ba7e1025db8cbf800e4",
+      "split": "development",
+      "excluded": true,
+      "stratum": "inside",
+      "distance_to_shoulder_horizontal_m": 1.0031077218192728
+    },
+    {
+      "plan_position": 38,
+      "plan_uid": "tidy_house-sequential-val-132-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "7fa99cbecf011410aa694045a42607cf7c103bb5fb4c152660f8ad7b200b9787",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.5079739915336305
+    },
+    {
+      "plan_position": 42,
+      "plan_uid": "tidy_house-sequential-val-136-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "dc2239e93e15dd4a1463b90ec1698401f95aa11fa470986e9f2200958dd70dfc",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.5225746726027265
+    },
+    {
+      "plan_position": 45,
+      "plan_uid": "tidy_house-sequential-val-139-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "e8718970bef43098db02975a5ca257f9050ea5c62bc738acc2fc019f863f8dd3",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.4352002049109642
+    },
+    {
+      "plan_position": 48,
+      "plan_uid": "tidy_house-sequential-val-141-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "eb656a51c66f9752ddccbbc81aad4983c623c685c01860e54b99c0e3d12eff47",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.9287888113339502
+    },
+    {
+      "plan_position": 52,
+      "plan_uid": "tidy_house-sequential-val-145-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "ddad4890eb2caa7258f3fa39521b397a222e60f7dff23674eca1a26ff9baee58",
+      "split": "development",
+      "excluded": true,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.8052957941463812
+    },
+    {
+      "plan_position": 55,
+      "plan_uid": "tidy_house-sequential-val-148-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "0d6022c8b03fac5edf090c1656dba976d50acab1737bcea5e2d993dd806a4212",
+      "split": "development",
+      "excluded": false,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.6149226786127058
+    },
+    {
+      "plan_position": 58,
+      "plan_uid": "tidy_house-sequential-val-150-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "forward_30",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "ebc5f59837846cf8e0e83ecf8a6bdb56fc09af8d75d0d3e7ab2662e82a8f8526",
+      "split": "development",
+      "excluded": false,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.9541163723539343
+    },
+    {
+      "plan_position": 61,
+      "plan_uid": "tidy_house-sequential-val-153-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "0ec254560d26f4220e0286aabe4197c5b8449d7557ba83bf81bf4afebec835f0",
+      "split": "development",
+      "excluded": false,
+      "stratum": "outside",
+      "distance_to_shoulder_horizontal_m": 1.7613774645199014
+    }
+  ],
+  "excluded_positions": [
+    1,
+    5,
+    8,
+    11,
+    14,
+    17,
+    20,
+    23,
+    26,
+    29,
+    32,
+    35,
+    38,
+    42,
+    45,
+    48,
+    52
+  ],
+  "exclusion_evidence": [
+    {
+      "path": "runs\\real-handoff-eef-g0-20260928-run02\\manifest.eval-only.json",
+      "sha256": "3e4459918050d3dafa8c8064b6772725e528b1b1c6054c923876b5af1b8aa2eb",
+      "positions": [
+        5,
+        8,
+        11,
+        17,
+        29,
+        32,
+        35,
+        38,
+        45,
+        48,
+        52
+      ],
+      "exposure": "CPU IK anchor audit"
+    },
+    {
+      "path": "runs\\real-handoff-eef-g0-dogbox-20260928-run01\\manifest.eval-only.json",
+      "sha256": "a773f13787d57828516abffe8341f543d8146a1db4ddb79069ad54879158cd19",
+      "positions": [
+        5,
+        8,
+        11,
+        17,
+        29,
+        32,
+        35,
+        38,
+        45,
+        48,
+        52
+      ],
+      "exposure": "CPU IK anchor audit"
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-e1-pilot\\usage-ledger.json",
+      "sha256": "142c198e41f034e64f19d29a3c1a76165a28b06bd32a98a2f069dd5d8813e477",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-e1-pilot-r2\\usage-ledger.json",
+      "sha256": "e1c27ff7b961b1fc73c1385b31e90f687a82cf2cc941eb848af3c5f98e52d464",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-smoke-runtime-retry01\\usage-ledger.json",
+      "sha256": "afeaaa25cb0b9d66886aa5011e2cd288031d6395e36a7d6e986ed1556aabc8cc",
+      "positions": [
+        5
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-v10-smoke\\usage-ledger.json",
+      "sha256": "f739888c3940cf0a5884721cd987b63b62aa18ca370f8fd13dce267997c6e07d",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-v11-smoke\\usage-ledger.json",
+      "sha256": "39e3438bdac62dacbe8f9c777ad5686dd47358a7e35904dab39bf999e9321e7b",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-v4-smoke\\usage-ledger.json",
+      "sha256": "9859ee7adec376b20d34e870f4ef3ed85af39a0c71658dfcf5f5b0c7cd1a7703",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-v7-smoke\\usage-ledger.json",
+      "sha256": "b86baa7bf597476b8efc8ee552c97198eae0fa389d517668f99f396708841f18",
+      "positions": [
+        5
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-v8-smoke\\usage-ledger.json",
+      "sha256": "4f1e7cdf671db071e5151fcdd4bcd2c0bd1f99e15421576c4f45f8e4ac2666ab",
+      "positions": [
+        5
+      ]
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-tool-v9-smoke\\usage-ledger.json",
+      "sha256": "fe671a05096b8eac97f4270d9189ac4fe8fadb04c1f103d57f76a7dbad550614",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "runs\\real-handoff-eef-g0-20260928-run01\\usage-ledger.json",
+      "sha256": "35c74edac5addfc3a2b3cf5923eb1828c0d225ca8fee7c8295271879e9164bd9",
+      "positions": [
+        5
+      ]
+    },
+    {
+      "path": "runs\\real-handoff-eef-g0-20260928-run02\\usage-ledger.json",
+      "sha256": "08756c50b62025740deb5ecc088c6580ae25665c0e19b28a77020b26f99bcf90",
+      "positions": [
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "path": "runs\\real-handoff-eef-g0-dogbox-20260928-run01\\usage-ledger.json",
+      "sha256": "7cecbfec26f883c59cbc228fe1ee2faf127571cda6570e165dc4926ed18e9db6",
+      "positions": [
+        5
+      ]
+    },
+    {
+      "path": "research/c2/diagnostics/2026-09-29-eef-e1b-v13/usage-ledger.json",
+      "sha256": "f91e14b1f28426524f30343d9e76d7194670db0625574bf5faf1423825d6edf7",
+      "positions": [
+        1,
+        14,
+        26,
+        42,
+        5,
+        8,
+        11
+      ],
+      "exposure": "E1-B tool-loop attempt"
+    }
+  ],
+  "eligible_positions": [
+    55,
+    58,
+    61
+  ],
+  "provisional_new_positions": [
+    55,
+    58,
+    61
+  ],
+  "paired_positions": [
+    1,
+    14,
+    26,
+    42
+  ],
+  "required_new_count": 3,
+  "required_outside_count": 3,
+  "selection_gate_passed": true,
+  "sample_decision": "User selected option 1: three new plus four paired; no launch authorization",
+  "blocked_reason": null,
+  "gpu_calls": 0,
+  "api_calls": 0,
+  "simulator_actions": 0
+}

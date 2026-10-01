@@ -1,0 +1,16 @@
+{
+  "kind": "recorded_action_physical_replay",
+  "position": 5,
+  "live_astra_requests": 0,
+  "sac_inferences": 0,
+  "source_sha256": "7d2432c82baa44fc68070fe45365058c6e3a4122ca26565ff6e4efb7cae0ec97",
+  "snapshot_sha256": "e56a12e95d6a4b630a9c5bae36ebaea6b73a952104e17f38c4767b57789e847a",
+  "max_wall_seconds": 1750.0,
+  "steps_replayed": 0,
+  "max_qpos_abs_error": 0.0,
+  "official_strict_pick": false,
+  "status": "failed_or_censored",
+  "error_type": "ValueError",
+  "error": "official environment source changed",
+  "wall_seconds": 3.4657962545752525
+}

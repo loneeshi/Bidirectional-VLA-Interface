@@ -1,0 +1,17 @@
+{
+  "status": "cpu_runtime_gate_passed",
+  "sequential_sha256": "47fd4999f7326568a550890caa48eac070901525373fac667ff56384eeb2a6be",
+  "base_env_sha256": "09a176d2a81924ae3b0234405bab2d45cd861a250c37ea52f12b6994b5753208",
+  "snapshot_cpu_deserialization_positions": [
+    1,
+    14,
+    26,
+    42,
+    5,
+    8,
+    11
+  ],
+  "cuda_initialized": false,
+  "simulator_actions": 0,
+  "api_requests": 0
+}

@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-09-30T05:28:27.886881+00:00",
+  "tests": 58,
+  "passed": 58,
+  "new_broker_tests": 6,
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_eef_visual.py tests/test_eef_visual_history.py tests/test_eef_visual_broker.py -q",
+  "api_requests": 0,
+  "gpu_process_seconds": 0,
+  "source_sha256": {
+    "scripts/eef_visual_broker.py": "eb5b64fc2659237f7e01021bea2462d6856eda1f35362856d5288d21ac989db2",
+    "scripts/run_eef_visual_broker.py": "d8596390de1b0f079873b3e3ec8bdcf253598786b8e87b242c285a56bd451cc0",
+    "tests/test_eef_visual_broker.py": "9b19eaa3a739628d37040183f10ca544757a597b95f8e91df5f27af184ab2d93"
+  },
+  "deployment_sha256": "2ead6de87e712a0cdf30a5225040ee168eb3123da7aece8453478fc6c8d4fd84",
+  "authorization_pending_sha256": "dec91be28bf215043673a103ebc85f24e0c043ca2c1316d6fee81ed81e29888f",
+  "status": "pending_user_authorization"
+}

@@ -1,0 +1,6 @@
+{
+  "scripts/run_eef_systematic_entry.py": "26c361de8345ab8d4725394c443511d4226ca85acd78233ccf3b8918f55381a9",
+  "scripts/run_eef_systematic_entry_batch.py": "9b64c07354e48ff4f78508abcae905dfbb0a5d67da1a5f290a12fb2e5b626db8",
+  "scripts/score_eef_systematic_entries.py": "41209b0f3a7ce8b749c76d98640ac58387ba110ae2c8799b7d6e15453ad019f8",
+  "tests/test_eef_systematic_entry.py": "42893d32bf1b212c23456faeeb58153196321955ac970ff0356311decd41965c"
+}

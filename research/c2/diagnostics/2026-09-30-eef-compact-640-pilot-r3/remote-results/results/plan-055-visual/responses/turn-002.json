@@ -1,0 +1,70 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": null,
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The measured box surface is about 1.52 m horizontally from the base, beyond nominal arm reach. I will test overhead pregrasp and grasp poses before considering an approach.",
+    "observation_id": null,
+    "pan_rad": null,
+    "pixel": null,
+    "poses": [
+      {
+        "position": [
+          1.17,
+          0.98,
+          1.0
+        ],
+        "quaternion_xyzw": [
+          0,
+          0.70710678,
+          0,
+          0.70710678
+        ]
+      },
+      {
+        "position": [
+          1.17,
+          0.98,
+          0.87
+        ],
+        "quaternion_xyzw": [
+          0,
+          0.70710678,
+          0,
+          0.70710678
+        ]
+      }
+    ],
+    "task_state": {
+      "belief": "obs-001 head depth located likely pudding surface at [1.167,0.977,0.773].",
+      "expected_change": "Determine whether pregrasp and grasp have robot-only IK solutions.",
+      "next_check": "IK results and nearest furniture edge for possible base approach.",
+      "uncertainty": "Box label and exact dimensions remain uncertain; no scene clearance established."
+    },
+    "tilt_rad": null,
+    "tool": "check_path",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "api_attempts": 1,
+  "request_bundle_sha256": "a23d35424a84a1aaf4ea51c3c9f92dddfd14785f9ce96b4204618ec32dde7d3f",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_0231d7f9c96a6481016abd574bf30c87d29c3bb5fb3d91c528",
+  "usage": {
+    "input_tokens": 8581,
+    "input_tokens_details": {
+      "cache_write_tokens": 6647,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 249,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 8830
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.1197125"
+}

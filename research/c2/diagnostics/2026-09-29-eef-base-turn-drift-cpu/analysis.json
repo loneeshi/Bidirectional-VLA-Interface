@@ -1,0 +1,811 @@
+{
+  "scope": "offline arithmetic on recorded trajectories; no new physics simulation",
+  "source_sha256": {
+    "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-005-smoke/result.json": "f64d07e3221bbde17455b2c302d004242c720c845153820c32682fa8b48d1eda",
+    "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-008-smoke/result.json": "cf9017107c91b877d685e3420738813a3915eae9a3530b9b89ae463cd7453ce0",
+    "research/c2/diagnostics/2026-09-29-eef-base-smoke-net-heading-r3/results/plan-011-smoke/result.json": "19a6b8b47eb19bc696b45efece774dd03cf04df327036a7df079eeb025625783",
+    "src/bvi/eef_tools_v12.py": "86becae1190c3aa3d9d3e505311397e9b39247446a827c1d0d1b29c8fbab4c81",
+    "src/bvi/census_contact.py": "0380c6dd2a70b386e2f87f49f900e6d2aeab6c4278ab2bca72cfeb9da6fe1532",
+    "runs/eef-base-e1b-cpu-sources/pd_base_vel.py": "fb76732d9f674433061d69c513b738ade11b0b78c7b502423b1dcb980af3f798"
+  },
+  "cases": [
+    {
+      "position": 5,
+      "first_call_steps": 19,
+      "terminal_turn_steps": 12,
+      "initial_zero_forward_turn_xy_drift_m": 0.0,
+      "terminal": [
+        {
+          "step": 20,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.20191359519958493,
+          "measured_step_average_w_rad_s": -0.19106388092041016,
+          "yaw_tracking_error_rad_s": 0.010849714279174777,
+          "xy_from_turn_entry_m": [
+            0.002418041229248047,
+            -0.0013724565505981445
+          ],
+          "drift_norm_m": 0.0027803885285375427,
+          "along_entry_heading_m": 0.0027795714468105566,
+          "lateral_entry_heading_m": 6.740134789922432e-05,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 21,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.18280720710754395,
+          "measured_step_average_w_rad_s": -0.18230199813842776,
+          "yaw_tracking_error_rad_s": 0.0005052089691161832,
+          "xy_from_turn_entry_m": [
+            0.004071354866027832,
+            -0.0022121667861938477
+          ],
+          "drift_norm_m": 0.004633531302912253,
+          "along_entry_heading_m": 0.004629294090476749,
+          "lateral_entry_heading_m": 0.0001981124906328892,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 22,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.16457700729370117,
+          "measured_step_average_w_rad_s": -0.16660571098327637,
+          "yaw_tracking_error_rad_s": -0.0020287036895751953,
+          "xy_from_turn_entry_m": [
+            0.005161285400390625,
+            -0.0027729272842407227
+          ],
+          "drift_norm_m": 0.005859009533015973,
+          "along_entry_heading_m": 0.005852404921812004,
+          "lateral_entry_heading_m": 0.00027811749157986886,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 23,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.14791643619537354,
+          "measured_step_average_w_rad_s": -0.149918794631958,
+          "yaw_tracking_error_rad_s": -0.0020023584365844727,
+          "xy_from_turn_entry_m": [
+            0.005867958068847656,
+            -0.0031632184982299805
+          ],
+          "drift_norm_m": 0.006666249557682239,
+          "along_entry_heading_m": 0.006659172814339668,
+          "lateral_entry_heading_m": 0.0003070840179139169,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 24,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.13292455673217773,
+          "measured_step_average_w_rad_s": -0.13471603393554688,
+          "yaw_tracking_error_rad_s": -0.0017914772033691406,
+          "xy_from_turn_entry_m": [
+            0.006322145462036133,
+            -0.003437519073486328
+          ],
+          "drift_norm_m": 0.007196253235102721,
+          "along_entry_heading_m": 0.007189761882217039,
+          "lateral_entry_heading_m": 0.0003055891044282696,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 25,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.11945295333862305,
+          "measured_step_average_w_rad_s": -0.12103796005249023,
+          "yaw_tracking_error_rad_s": -0.0015850067138671875,
+          "xy_from_turn_entry_m": [
+            0.0066111087799072266,
+            -0.0036314725875854492
+          ],
+          "drift_norm_m": 0.0075428345105902316,
+          "along_entry_heading_m": 0.007537335418929921,
+          "lateral_entry_heading_m": 0.0002879708955701725,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 26,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.107349157333374,
+          "measured_step_average_w_rad_s": -0.10874629020690918,
+          "yaw_tracking_error_rad_s": -0.001397132873535184,
+          "xy_from_turn_entry_m": [
+            0.006792545318603516,
+            -0.003769516944885254
+          ],
+          "drift_norm_m": 0.007768393006475638,
+          "along_entry_heading_m": 0.0077639410138111735,
+          "lateral_entry_heading_m": 0.00026296356614618566,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 27,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.0964745283126831,
+          "measured_step_average_w_rad_s": -0.09771347045898438,
+          "yaw_tracking_error_rad_s": -0.0012389421463012695,
+          "xy_from_turn_entry_m": [
+            0.006904482841491699,
+            -0.003868579864501953
+          ],
+          "drift_norm_m": 0.00791440417697272,
+          "along_entry_heading_m": 0.00791089607896205,
+          "lateral_entry_heading_m": 0.00023561983012073805,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 28,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.08670318126678467,
+          "measured_step_average_w_rad_s": -0.08780121803283693,
+          "yaw_tracking_error_rad_s": -0.00109803676605226,
+          "xy_from_turn_entry_m": [
+            0.00697171688079834,
+            -0.0039397478103637695
+          ],
+          "drift_norm_m": 0.008007899167401814,
+          "along_entry_heading_m": 0.008005166311142693,
+          "lateral_entry_heading_m": 0.0002091922709393638,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 29,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.07792305946350098,
+          "measured_step_average_w_rad_s": -0.07890582084655763,
+          "yaw_tracking_error_rad_s": -0.0009827613830566545,
+          "xy_from_turn_entry_m": [
+            0.0070095062255859375,
+            -0.003992438316345215
+          ],
+          "drift_norm_m": 0.008066767706854426,
+          "along_entry_heading_m": 0.008064681311464197,
+          "lateral_entry_heading_m": 0.00018345729985354666,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 30,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.07003247737884521,
+          "measured_step_average_w_rad_s": -0.07090926170349121,
+          "yaw_tracking_error_rad_s": -0.0008767843246459961,
+          "xy_from_turn_entry_m": [
+            0.007029056549072266,
+            -0.004031658172607422
+          ],
+          "drift_norm_m": 0.008103203291958553,
+          "along_entry_heading_m": 0.008101625731152633,
+          "lateral_entry_heading_m": 0.00015988778294010516,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 31,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.06294155120849607,
+          "measured_step_average_w_rad_s": -0.06373047828674316,
+          "yaw_tracking_error_rad_s": -0.0007889270782470981,
+          "xy_from_turn_entry_m": [
+            0.007037520408630371,
+            -0.004058837890625
+          ],
+          "drift_norm_m": 0.008124091242979869,
+          "along_entry_heading_m": 0.008122868652052716,
+          "lateral_entry_heading_m": 0.00014093752432004555,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        }
+      ],
+      "tracking_groups": {
+        "no_sampled_contact": {
+          "count": 12,
+          "mean_abs_yaw_tracking_error_rad_s": 0.002095421155293785
+        },
+        "sampled_contact": {
+          "count": 0,
+          "mean_abs_yaw_tracking_error_rad_s": null
+        }
+      },
+      "initial_error_rad": -0.10095679759979248,
+      "ideal_velocity_response": {
+        "2.0": {
+          "steps": 12,
+          "residuals_rad": [
+            -0.10095679759979248,
+            -0.09086111783981324,
+            -0.08177500605583192,
+            -0.07359750545024873,
+            -0.06623775490522386,
+            -0.05961397941470148,
+            -0.053652581473231334,
+            -0.048287323325908196,
+            -0.04345859099331738,
+            -0.03911273189398564,
+            -0.035201458704587074,
+            -0.03168131283412837,
+            -0.02851318155071553
+          ]
+        },
+        "4.0": {
+          "steps": 6,
+          "residuals_rad": [
+            -0.10095679759979248,
+            -0.08076543807983398,
+            -0.06461235046386718,
+            -0.05168988037109375,
+            -0.041351904296875,
+            -0.033081523437499996,
+            -0.02646521875
+          ]
+        }
+      },
+      "first_contact_step": null
+    },
+    {
+      "position": 8,
+      "first_call_steps": 49,
+      "terminal_turn_steps": 2,
+      "initial_zero_forward_turn_xy_drift_m": 0.006364297538852605,
+      "terminal": [
+        {
+          "step": 50,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.06927609443664556,
+          "measured_step_average_w_rad_s": -0.06855964660644531,
+          "yaw_tracking_error_rad_s": 0.0007164478302002508,
+          "xy_from_turn_entry_m": [
+            3.5762786865234375e-05,
+            -3.5762786865234375e-05
+          ],
+          "drift_norm_m": 5.057621821307284e-05,
+          "along_entry_heading_m": 4.903105120781156e-05,
+          "lateral_entry_heading_m": -1.2406041519893473e-05,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 51,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.06242012977600104,
+          "measured_step_average_w_rad_s": -0.06300091743469238,
+          "yaw_tracking_error_rad_s": -0.0005807876586913438,
+          "xy_from_turn_entry_m": [
+            6.198883056640625e-05,
+            -5.3763389587402344e-05
+          ],
+          "drift_norm_m": 8.205557369805799e-05,
+          "along_entry_heading_m": 8.07752793127628e-05,
+          "lateral_entry_heading_m": -1.4438539637462611e-05,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        }
+      ],
+      "tracking_groups": {
+        "no_sampled_contact": {
+          "count": 2,
+          "mean_abs_yaw_tracking_error_rad_s": 0.0006486177444457973
+        },
+        "sampled_contact": {
+          "count": 0,
+          "mean_abs_yaw_tracking_error_rad_s": null
+        }
+      },
+      "initial_error_rad": -0.03463804721832278,
+      "ideal_velocity_response": {
+        "2.0": {
+          "steps": 2,
+          "residuals_rad": [
+            -0.03463804721832278,
+            -0.031174242496490503,
+            -0.028056818246841454
+          ]
+        },
+        "4.0": {
+          "steps": 1,
+          "residuals_rad": [
+            -0.03463804721832278,
+            -0.027710437774658224
+          ]
+        }
+      },
+      "first_contact_step": null
+    },
+    {
+      "position": 11,
+      "first_call_steps": 61,
+      "terminal_turn_steps": 19,
+      "initial_zero_forward_turn_xy_drift_m": 0.12858128245580483,
+      "terminal": [
+        {
+          "step": 62,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.5884613990783691,
+          "measured_step_average_w_rad_s": -0.5344057083129883,
+          "yaw_tracking_error_rad_s": 0.05405569076538086,
+          "xy_from_turn_entry_m": [
+            -0.00016826391220092773,
+            -0.00040030479431152344
+          ],
+          "drift_norm_m": 0.000434231127969832,
+          "along_entry_heading_m": 0.0004328809392932007,
+          "lateral_entry_heading_m": 3.4216441875053555e-05,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 63,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.5350208282470703,
+          "measured_step_average_w_rad_s": -0.5290699005126953,
+          "yaw_tracking_error_rad_s": 0.005950927734375,
+          "xy_from_turn_entry_m": [
+            0.00026702880859375,
+            -0.0009518861770629883
+          ],
+          "drift_norm_m": 0.00098863121471183,
+          "along_entry_heading_m": 0.0007231733399430525,
+          "lateral_entry_heading_m": 0.0006741008819888894,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 64,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.4821138381958008,
+          "measured_step_average_w_rad_s": -0.4891061782836914,
+          "yaw_tracking_error_rad_s": -0.006992340087890625,
+          "xy_from_turn_entry_m": [
+            0.0006090998649597168,
+            -0.0013376474380493164
+          ],
+          "drift_norm_m": 0.0014697970315706332,
+          "along_entry_heading_m": 0.0009089222373777426,
+          "lateral_entry_heading_m": 0.0011550600332511222,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 65,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.43320322036743164,
+          "measured_step_average_w_rad_s": -0.4398965835571289,
+          "yaw_tracking_error_rad_s": -0.006693363189697266,
+          "xy_from_turn_entry_m": [
+            0.0007590651512145996,
+            -0.0015501976013183594
+          ],
+          "drift_norm_m": 0.00172606271813096,
+          "along_entry_heading_m": 0.0010289423437123536,
+          "lateral_entry_heading_m": 0.0013858463696374743,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 66,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.38921356201171875,
+          "measured_step_average_w_rad_s": -0.39504528045654297,
+          "yaw_tracking_error_rad_s": -0.005831718444824219,
+          "xy_from_turn_entry_m": [
+            0.0007965564727783203,
+            -0.0016521215438842773
+          ],
+          "drift_norm_m": 0.0018341231720066151,
+          "along_entry_heading_m": 0.0011022926184943876,
+          "lateral_entry_heading_m": 0.0014659327383288751,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 67,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.34970903396606445,
+          "measured_step_average_w_rad_s": -0.35473823547363287,
+          "yaw_tracking_error_rad_s": -0.005029201507568415,
+          "xy_from_turn_entry_m": [
+            0.0007743239402770996,
+            -0.0016865730285644531
+          ],
+          "drift_norm_m": 0.001855830311522938,
+          "along_entry_heading_m": 0.0011431050108126886,
+          "lateral_entry_heading_m": 0.0014619907932070734,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 68,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.31423521041870117,
+          "measured_step_average_w_rad_s": -0.31859874725341786,
+          "yaw_tracking_error_rad_s": -0.004363536834716686,
+          "xy_from_turn_entry_m": [
+            0.0007238984107971191,
+            -0.001681685447692871
+          ],
+          "drift_norm_m": 0.0018308727028760266,
+          "along_entry_heading_m": 0.00116190458004292,
+          "lateral_entry_heading_m": 0.0014149461477426812,
+          "sampled_non_target_contacts": [],
+          "cumulative_force": 0.0
+        },
+        {
+          "step": 69,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.2823753356933594,
+          "measured_step_average_w_rad_s": -0.2787160873413086,
+          "yaw_tracking_error_rad_s": 0.0036592483520507812,
+          "xy_from_turn_entry_m": [
+            0.0006887912750244141,
+            -0.001615762710571289
+          ],
+          "drift_norm_m": 0.0017564516951577226,
+          "along_entry_heading_m": 0.0011194461055394807,
+          "lateral_entry_heading_m": 0.0013535002675341174,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.6951591372489929
+            }
+          ],
+          "cumulative_force": 69.51591491699219
+        },
+        {
+          "step": 70,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.2545037269592285,
+          "measured_step_average_w_rad_s": -0.22308826446533203,
+          "yaw_tracking_error_rad_s": 0.031415462493896484,
+          "xy_from_turn_entry_m": [
+            0.001190781593322754,
+            -0.0016309022903442383
+          ],
+          "drift_norm_m": 0.0020193570966142564,
+          "along_entry_heading_m": 0.0009025162670359703,
+          "lateral_entry_heading_m": 0.0018064516244233656,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8136745691299438
+            }
+          ],
+          "cumulative_force": 150.88336181640625
+        },
+        {
+          "step": 71,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.23219490051269534,
+          "measured_step_average_w_rad_s": -0.19811153411865234,
+          "yaw_tracking_error_rad_s": 0.034083366394042997,
+          "xy_from_turn_entry_m": [
+            0.0022377967834472656,
+            -0.0018587112426757812
+          ],
+          "drift_norm_m": 0.0029090448479967227,
+          "along_entry_heading_m": 0.0006244057996220844,
+          "lateral_entry_heading_m": 0.0028412425670918317,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8395348191261292
+            }
+          ],
+          "cumulative_force": 234.83685302734375
+        },
+        {
+          "step": 72,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.21238374710083008,
+          "measured_step_average_w_rad_s": -0.17683506011962885,
+          "yaw_tracking_error_rad_s": 0.03554868698120123,
+          "xy_from_turn_entry_m": [
+            0.003664851188659668,
+            -0.0022341012954711914
+          ],
+          "drift_norm_m": 0.004292125677731983,
+          "along_entry_heading_m": 0.00030300341768488325,
+          "lateral_entry_heading_m": 0.004281417027377445,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8693287372589111
+            }
+          ],
+          "cumulative_force": 321.76971435546875
+        },
+        {
+          "step": 73,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.1947002410888672,
+          "measured_step_average_w_rad_s": -0.15814781188964844,
+          "yaw_tracking_error_rad_s": 0.03655242919921875,
+          "xy_from_turn_entry_m": [
+            0.005358338356018066,
+            -0.002710700035095215
+          ],
+          "drift_norm_m": 0.0060049716583710526,
+          "along_entry_heading_m": -5.075340004701608e-05,
+          "lateral_entry_heading_m": 0.006004757173293793,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8842148780822754
+            }
+          ],
+          "cumulative_force": 410.19122314453125
+        },
+        {
+          "step": 74,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.17888545989990234,
+          "measured_step_average_w_rad_s": -0.1420307159423828,
+          "yaw_tracking_error_rad_s": 0.03685474395751953,
+          "xy_from_turn_entry_m": [
+            0.007233023643493652,
+            -0.003256559371948242
+          ],
+          "drift_norm_m": 0.007932326895077012,
+          "along_entry_heading_m": -0.0004261324129673236,
+          "lateral_entry_heading_m": 0.007920872498467625,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8865882158279419
+            }
+          ],
+          "cumulative_force": 498.85003662109375
+        },
+        {
+          "step": 75,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.16468238830566406,
+          "measured_step_average_w_rad_s": -0.12862205505371094,
+          "yaw_tracking_error_rad_s": 0.036060333251953125,
+          "xy_from_turn_entry_m": [
+            0.009218394756317139,
+            -0.0038379430770874023
+          ],
+          "drift_norm_m": 0.009985419818227896,
+          "along_entry_heading_m": -0.0008207466880334243,
+          "lateral_entry_heading_m": 0.009951632218904626,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8620192408561707
+            }
+          ],
+          "cumulative_force": 585.0519409179688
+        },
+        {
+          "step": 76,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.15182018280029297,
+          "measured_step_average_w_rad_s": -0.11710643768310547,
+          "yaw_tracking_error_rad_s": 0.0347137451171875,
+          "xy_from_turn_entry_m": [
+            0.011250972747802734,
+            -0.004436969757080078
+          ],
+          "drift_norm_m": 0.01209425848892949,
+          "along_entry_heading_m": -0.0012213505977145154,
+          "lateral_entry_heading_m": 0.012032430806553822,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8300046324729919
+            }
+          ],
+          "cumulative_force": 668.0524291992188
+        },
+        {
+          "step": 77,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.14010953903198242,
+          "measured_step_average_w_rad_s": -0.1065492630004883,
+          "yaw_tracking_error_rad_s": 0.03356027603149413,
+          "xy_from_turn_entry_m": [
+            0.013288497924804688,
+            -0.005037903785705566
+          ],
+          "drift_norm_m": 0.014211426798585882,
+          "along_entry_heading_m": -0.0016225303219087684,
+          "lateral_entry_heading_m": 0.014118500168433317,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.8012007474899292
+            }
+          ],
+          "cumulative_force": 748.1724853515625
+        },
+        {
+          "step": 78,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.1294546127319336,
+          "measured_step_average_w_rad_s": -0.09692192077636719,
+          "yaw_tracking_error_rad_s": 0.032532691955566406,
+          "xy_from_turn_entry_m": [
+            0.015305161476135254,
+            -0.00563812255859375
+          ],
+          "drift_norm_m": 0.01631062211555091,
+          "along_entry_heading_m": -0.0020147714002510912,
+          "lateral_entry_heading_m": 0.016185706348535694,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.7728922367095947
+            }
+          ],
+          "cumulative_force": 825.4617309570312
+        },
+        {
+          "step": 79,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.11976242065429686,
+          "measured_step_average_w_rad_s": -0.08823394775390625,
+          "yaw_tracking_error_rad_s": 0.03152847290039061,
+          "xy_from_turn_entry_m": [
+            0.017287254333496094,
+            -0.006230354309082031
+          ],
+          "drift_norm_m": 0.018375703447968367,
+          "along_entry_heading_m": -0.002398243007846428,
+          "lateral_entry_heading_m": 0.01821853198484972,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.7502409815788269
+            }
+          ],
+          "cumulative_force": 900.48583984375
+        },
+        {
+          "step": 80,
+          "phase": "base_turn",
+          "command_v_m_s": 0.0,
+          "command_w_rad_s": -0.11093902587890629,
+          "measured_step_average_w_rad_s": -0.08033275604248047,
+          "yaw_tracking_error_rad_s": 0.030606269836425823,
+          "xy_from_turn_entry_m": [
+            0.01922774314880371,
+            -0.006811738014221191
+          ],
+          "drift_norm_m": 0.020398673519882466,
+          "along_entry_heading_m": -0.0027722592281783877,
+          "lateral_entry_heading_m": 0.02020941513608283,
+          "sampled_non_target_contacts": [
+            {
+              "robot_link": "forearm_roll_link",
+              "other": "body",
+              "impulse_ns": 0.7284995913505554
+            }
+          ],
+          "cumulative_force": 973.3358154296875
+        }
+      ],
+      "tracking_groups": {
+        "no_sampled_contact": {
+          "count": 7,
+          "mean_abs_yaw_tracking_error_rad_s": 0.01270239693777901
+        },
+        "sampled_contact": {
+          "count": 12,
+          "mean_abs_yaw_tracking_error_rad_s": 0.03142631053924561
+        }
+      },
+      "initial_error_rad": -0.29423069953918457,
+      "ideal_velocity_response": {
+        "2.0": {
+          "steps": 22,
+          "residuals_rad": [
+            -0.29423069953918457,
+            -0.2648076295852661,
+            -0.2383268666267395,
+            -0.21449417996406556,
+            -0.193044761967659,
+            -0.1737402857708931,
+            -0.1563662571938038,
+            -0.1407296314744234,
+            -0.12665666832698108,
+            -0.11399100149428297,
+            -0.10259190134485467,
+            -0.0923327112103692,
+            -0.08309944008933229,
+            -0.07478949608039906,
+            -0.06731054647235915,
+            -0.06057949182512323,
+            -0.05452154264261091,
+            -0.049069388378349815,
+            -0.044162449540514834,
+            -0.03974620458646335,
+            -0.035771584127817016,
+            -0.032194425715035314,
+            -0.028974983143531783
+          ]
+        },
+        "4.0": {
+          "steps": 11,
+          "residuals_rad": [
+            -0.29423069953918457,
+            -0.24423069953918458,
+            -0.19538455963134765,
+            -0.15630764770507813,
+            -0.1250461181640625,
+            -0.10003689453125,
+            -0.080029515625,
+            -0.06402361250000001,
+            -0.05121889,
+            -0.040975112,
+            -0.0327800896,
+            -0.02622407168
+          ]
+        }
+      },
+      "first_contact_step": 69
+    }
+  ],
+  "limitations": [
+    "Contacts sampled only at final physics substep of each control step",
+    "body label is not a unique scene identity",
+    "Ideal gain comparison ignores inertia, contact and XY drift; not a predicted physical pass"
+  ],
+  "assertions_passed": true,
+  "gpu_seconds": 0,
+  "api_requests": 0,
+  "simulator_steps": 0
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "post-run CPU logging fixes; not deployed or run against provider",
+  "tests": "9 passed in 0.40s",
+  "compile": "run_eef_visual_batch.py passed",
+  "source_sha256": {
+    "scripts/eef_visual_broker.py": "422a0f539dc8eb4266513bf4d88f3cab5aa35ed106fb92f390f1c79b1b583b49",
+    "scripts/run_eef_visual_batch.py": "0a37ecc9b1ec59a655e10335a88d51c530c04e3106d6fbb154f3da9c396142ea",
+    "tests/test_eef_visual_broker.py": "2549943fda4dc58c105b34325f345b4249ddeae1781d02a7cc8c83f9d8e61ba1"
+  },
+  "api_requests": 0,
+  "gpu_process_seconds": 0,
+  "frozen_r1_package_unchanged": true
+}

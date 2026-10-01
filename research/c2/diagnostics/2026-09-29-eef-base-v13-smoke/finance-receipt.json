@@ -1,0 +1,190 @@
+{
+  "id": "C2-EEF-BASE-V13-20260929",
+  "status": "closed_completed",
+  "requested_scope": {
+    "gpu_process_seconds": 900,
+    "process_count": 5,
+    "single_process_seconds": 180,
+    "api_requests": 0
+  },
+  "authorized_scope": {
+    "gpu_process_seconds": 900,
+    "process_count": 5,
+    "single_process_seconds": 180,
+    "api_requests": 0
+  },
+  "actual_usage": {
+    "gpu_process_seconds": 282.9171396009624,
+    "gpu_process_count": 5,
+    "simulator_actions": 400,
+    "api_requests": 0
+  },
+  "old_balance_transferred": 0,
+  "deployment_sha256": "063fd7942bd0149df6f1a48295b4a21a3977517f1c9aae052c7071e75682f58e",
+  "lab_project_charge": {
+    "amount": 0,
+    "basis": "user-confirmed historical rate; no invoice"
+  },
+  "historical_storage": "unchanged, continuing tracked cost; not included in API0",
+  "authorization_evidence": "User replied 1 to the concrete final v13 proposal: 20/23 contract, 5/8/11 scenario, 5x180=900 GPU1 process seconds, API0. No E1-B launch.",
+  "launch_receipt": {
+    "supervisor_pid": 1700801,
+    "started_at_utc": "2026-09-29T21:14:00.286862+00:00",
+    "command": [
+      "/home/pshuai/bvi-research/envs/acdit/bin/python",
+      "/home/pshuai/bvi-research/runs/eef-base-smoke-20260929-v13-r2/code/scripts/run_eef_base_smoke_batch_v13.py",
+      "--root",
+      "/home/pshuai/bvi-research/runs/eef-base-smoke-20260929-v13-r2",
+      "--census-root",
+      "/home/pshuai/bvi-research/runs/real-handoff-pick-census-20260925"
+    ]
+  },
+  "unused_seconds_closed": 617.0828603990376,
+  "resource_final_check": {
+    "checked_at_utc": "2026-09-29T21:19:50.630804+00:00",
+    "pids_absent": {
+      "1700801": true,
+      "1700940": true,
+      "1703681": true,
+      "1706387": true,
+      "1707192": true,
+      "1708079": true
+    },
+    "compute": "672548, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46316 MiB\n",
+    "runpod": {
+      "checked_at_utc": "2026-09-29T21:24:33.959549+00:00",
+      "pods": [
+        {
+          "id": "uhrazur8gxf9b4",
+          "status": "EXITED",
+          "disk_gb": 20
+        },
+        {
+          "id": "3n65pd7y84sam8",
+          "status": "EXITED",
+          "disk_gb": 20
+        }
+      ],
+      "network_volumes": [],
+      "storage_deleted": false,
+      "storage_bill": "not reconciled; continuing storage"
+    }
+  },
+  "process_receipts": [
+    {
+      "name": "plan-020-smoke",
+      "position": 20,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T21:14:07.492176+00:00",
+      "command_sha256": "6454e4b289a2d74583fff56ad4587d67dcaff5141fc5035a55722c86b549fece",
+      "pid": 1700940,
+      "elapsed_process_seconds": 92.82284962758422,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-023-smoke",
+      "position": 23,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T21:15:40.618749+00:00",
+      "command_sha256": "761ad59a7a0627468cbc700d74b1e127159ca06fa9194b151bd80575e1938306",
+      "pid": 1703681,
+      "elapsed_process_seconds": 94.38062582165003,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-005-smoke",
+      "position": 5,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T21:17:15.247528+00:00",
+      "command_sha256": "e5653fecdf04a76463eba2571c7a1a46035cc3aefce69eecd506ae80de2f8736",
+      "pid": 1706387,
+      "elapsed_process_seconds": 29.3140278570354,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-008-smoke",
+      "position": 8,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T21:17:44.787892+00:00",
+      "command_sha256": "5d05020246c069741293a92886784a5e410b5ba1d2b8bb0b091bbbbdf87ae1f1",
+      "pid": 1707192,
+      "elapsed_process_seconds": 31.869956333190203,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-011-smoke",
+      "position": 11,
+      "mode": "smoke",
+      "status": "finished",
+      "reservation_seconds": 180,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-29T21:18:17.007769+00:00",
+      "command_sha256": "0b9c648f2d623dd52a943f4a725bc48ccc971cb35fcb5bda46bc1256510fa862",
+      "pid": 1708079,
+      "elapsed_process_seconds": 34.52967996150255,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      }
+    }
+  ]
+}

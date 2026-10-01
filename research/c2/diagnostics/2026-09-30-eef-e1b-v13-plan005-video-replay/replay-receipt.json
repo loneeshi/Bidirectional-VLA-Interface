@@ -1,0 +1,18 @@
+{
+  "kind": "recorded_action_physical_replay",
+  "position": 5,
+  "live_astra_requests": 0,
+  "sac_inferences": 0,
+  "source_sha256": "7d2432c82baa44fc68070fe45365058c6e3a4122ca26565ff6e4efb7cae0ec97",
+  "snapshot_sha256": "e56a12e95d6a4b630a9c5bae36ebaea6b73a952104e17f38c4767b57789e847a",
+  "max_wall_seconds": 1750.0,
+  "steps_replayed": 146,
+  "max_qpos_abs_error": 7.164478302001953e-05,
+  "official_strict_pick": true,
+  "status": "matched_strict_success",
+  "restore_state_max_error": 2.384185791015625e-07,
+  "handoff_input_equal": true,
+  "video": "eef-e1b-v13-plan005-recorded-action-replay.mp4",
+  "video_sha256": "5b35e0a0e0d7265bada918fd71d3c2cd9d46d202253dbea348659641473d186b",
+  "wall_seconds": 34.67265026271343
+}

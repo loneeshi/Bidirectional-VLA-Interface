@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1120" role="img" aria-label="Robot base and tool trajectory">
+<rect width="1440" height="1120" fill="#f7f9fc"/>
+<text x="48" y="48" fill="#203047" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="start">Case 42 | E1-B-privileged-H0-v13</text>
+<text x="48" y="83" fill="#b64b45" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="start">STRICT PICK FAILURE / INCOMPLETE   •   25 recorded steps   •   1 tool calls   •   base net 0.152 m   •   termination: cumulative_force_limit</text>
+<text x="48" y="111" fill="#59697c" font-family="Arial, sans-serif" font-size="15" font-weight="normal" text-anchor="start">Evaluation-side trajectory; no scene geometry or third-person image entered the model request.</text>
+<rect x="40" y="135" width="660" height="480" rx="14" fill="white" stroke="#dce4ed"/>
+<rect x="740" y="135" width="660" height="480" rx="14" fill="white" stroke="#dce4ed"/>
+<text x="66" y="172" fill="#203047" font-family="Arial, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Top view: base + tool tip (x/y meters)</text>
+<text x="766" y="172" fill="#203047" font-family="Arial, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Side view: tool tip (x/z meters)</text>
+<line x1="140.2" y1="210.0" x2="140.2" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="140.170415837987" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.00</text>
+<line x1="285.2" y1="210.0" x2="285.2" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="285.1857866472874" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.20</text>
+<line x1="430.2" y1="210.0" x2="430.2" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="430.20115745658774" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.40</text>
+<line x1="575.2" y1="210.0" x2="575.2" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="575.2165282658881" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.60</text>
+<line x1="92.0" y1="533.6" x2="652.0" y2="533.6" stroke="#e8edf2" stroke-width="1"/>
+<text x="84" y="537.5762452420133" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">-0.20</text>
+<line x1="92.0" y1="388.6" x2="652.0" y2="388.6" stroke="#e8edf2" stroke-width="1"/>
+<text x="84" y="392.5608744327129" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">0.00</text>
+<line x1="92.0" y1="243.5" x2="652.0" y2="243.5" stroke="#e8edf2" stroke-width="1"/>
+<text x="84" y="247.54550362341257" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">0.20</text>
+<line x1="868.4" y1="210.0" x2="868.4" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="868.4314134424855" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.40</text>
+<line x1="989.1" y1="210.0" x2="989.1" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="989.1093795441803" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.50</text>
+<line x1="1109.8" y1="210.0" x2="1109.8" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="1109.7873456458751" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.60</text>
+<line x1="1230.5" y1="210.0" x2="1230.5" y2="566.0" stroke="#e8edf2" stroke-width="1"/>
+<text x="1230.46531174757" y="583" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">0.70</text>
+<line x1="790.0" y1="560.4" x2="1350.0" y2="560.4" stroke="#e8edf2" stroke-width="1"/>
+<text x="782" y="564.4139263780012" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">1.10</text>
+<line x1="790.0" y1="439.7" x2="1350.0" y2="439.7" stroke="#e8edf2" stroke-width="1"/>
+<text x="782" y="443.7359602763062" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">1.20</text>
+<line x1="790.0" y1="319.1" x2="1350.0" y2="319.1" stroke="#e8edf2" stroke-width="1"/>
+<text x="782" y="323.05799417461117" fill="#718197" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">1.30</text>
+<line x1="140.2" y1="210.0" x2="140.2" y2="566.0" stroke="#d7dfe9" stroke-width="1" stroke-dasharray="5 5"/>
+<line x1="92.0" y1="388.6" x2="652.0" y2="388.6" stroke="#d7dfe9" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="146.170415837987" y="222" fill="#64788f" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start">start base</text>
+<polyline points="140.2,388.6 138.2,388.5 136.8,388.5 135.9,388.5 135.4,388.5 135.0,388.5 134.7,388.5 137.9,388.5 146.1,388.5 157.6,388.5 171.2,388.5 186.4,388.5 202.5,388.5 219.3,388.5 236.5,388.5 249.4,389.2 249.8,390.7 250.0,391.5 250.1,391.9 250.1,392.2 250.2,392.5 250.3,392.8 250.3,393.2 250.4,393.5 250.5,393.8 250.6,394.2" fill="none" stroke="#147d89" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="496.7,383.2 496.7,383.2 495.4,383.1 494.5,383.2 494.0,383.2 493.6,383.2 493.3,383.2 496.2,383.4 504.3,383.5 515.8,383.5 529.6,383.5 544.8,383.5 561.0,383.5 577.8,383.5 595.0,383.5 609.3,383.0 609.2,383.7 609.2,384.2 609.1,383.9 609.0,383.6 609.0,383.3 608.9,383.0 609.0,382.7 609.0,382.4 609.0,382.1 609.1,381.8" fill="none" stroke="#df8a19" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="979.2,385.8 979.2,385.8 977.0,385.7 975.5,385.6 974.5,385.7 973.9,385.7 973.5,385.8 978.3,385.1 991.8,384.6 1011.0,384.4 1033.8,384.4 1059.1,384.6 1086.1,384.9 1114.0,385.1 1142.7,385.3 1166.5,387.6 1166.4,390.6 1166.3,391.6 1166.1,391.6 1166.0,391.0 1165.9,390.3 1165.9,389.5 1166.0,388.9 1166.0,388.3 1166.1,387.8 1166.1,387.4" fill="none" stroke="#df8a19" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="140.2" cy="388.6" r="7" fill="white" stroke="#147d89" stroke-width="3"/>
+<circle cx="250.6" cy="394.2" r="7" fill="#147d89"/>
+<circle cx="496.7" cy="383.2" r="7" fill="white" stroke="#df8a19" stroke-width="3"/>
+<circle cx="609.1" cy="381.8" r="7" fill="#df8a19"/>
+<circle cx="979.2" cy="385.8" r="7" fill="white" stroke="#df8a19" stroke-width="3"/>
+<circle cx="1166.1" cy="387.4" r="7" fill="#df8a19"/>
+<text x="95" y="593" fill="#526278" font-family="Arial, sans-serif" font-size="15" font-weight="normal" text-anchor="start">teal: base   orange: TCP tip   green: first grasp   ○ start   ● end</text>
+<text x="790" y="593" fill="#526278" font-family="Arial, sans-serif" font-size="15" font-weight="normal" text-anchor="start">horizontal x / vertical z in start-base coordinates (meters)</text>
+<rect x="40" y="640" width="1360" height="160" rx="14" fill="white" stroke="#dce4ed"/>
+<text x="64" y="675" fill="#203047" font-family="Arial, sans-serif" font-size="21" font-weight="bold" text-anchor="start">Tool calls on the official step clock</text>
+<rect x="70.0" y="704" width="1300.0" height="42" fill="#147d89" stroke="white"/>
+<text x="720.0" y="731" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">move_base</text>
+<text x="70.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">0</text>
+<text x="382.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">6</text>
+<text x="694.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">12</text>
+<text x="1006.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">18</text>
+<text x="1370.0" y="783" fill="#5c6b7d" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">25</text>
+<rect x="40" y="825" width="660" height="245" rx="14" fill="white" stroke="#dce4ed"/>
+<rect x="740" y="825" width="660" height="245" rx="14" fill="white" stroke="#dce4ed"/>
+<text x="65" y="861" fill="#203047" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="start">Finger opening (meters)</text>
+<text x="765" y="861" fill="#203047" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="start">Official cumulative force</text>
+<polyline points="65.0,914.1 89.4,914.1 113.8,914.1 138.2,914.1 162.6,914.1 187.0,914.1 211.4,914.1 235.8,914.1 260.2,914.1 284.6,914.1 309.0,914.1 333.4,914.1 357.8,914.1 382.2,914.1 406.6,914.1 431.0,914.1 455.4,914.1 479.8,914.1 504.2,914.1 528.6,914.1 553.0,914.1 577.4,914.1 601.8,914.1 626.2,914.1 650.6,914.1 675.0,914.1" fill="none" stroke="#9957ae" stroke-width="3"/>
+<polyline points="765.0,1025.0 789.4,1025.0 813.8,1025.0 838.2,1025.0 862.6,1025.0 887.0,1025.0 911.4,1025.0 935.8,1025.0 960.2,1025.0 984.6,1025.0 1009.0,1025.0 1033.4,1025.0 1057.8,1025.0 1082.2,1025.0 1106.6,1025.0 1131.0,1011.3 1155.4,1000.8 1179.8,990.4 1204.2,980.0 1228.6,969.6 1253.0,959.1 1277.4,948.7 1301.8,938.3 1326.2,927.9 1350.6,917.5 1375.0,907.1" fill="none" stroke="#b64b45" stroke-width="3"/>
+<line x1="765.0" y1="916.9" x2="1375.0" y2="916.9" stroke="#b64b45" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="1375" y="911.8700204116963" fill="#b64b45" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="end">limit 5000</text>
+<text x="65" y="1051" fill="#617185" font-family="Arial, sans-serif" font-size="14" font-weight="normal" text-anchor="start">Green dots mark the first official is_grasped=true transition in the path panels.</text>
+<circle id="cursor-base" cx="250.6" cy="394.2" r="11" fill="none" stroke="#111827" stroke-width="2"/>
+<circle id="cursor-tip" cx="609.1" cy="381.8" r="11" fill="none" stroke="#111827" stroke-width="2"/>
+<circle id="cursor-side" cx="1166.1" cy="387.4" r="11" fill="none" stroke="#111827" stroke-width="2"/>
+<line id="cursor-time" x1="1370" y1="704" x2="1370" y2="1025" stroke="#111827" stroke-width="2" opacity="0.6"/>
+<text x="40" y="1102" fill="#617185" font-family="Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="start">XY is relative to the attempt-start base when its entry qpos is archived; otherwise relative to first recorded frame. TCP is transformed from each current base_link into that same frame. No scene mesh or object ground truth is plotted.</text>
+</svg>

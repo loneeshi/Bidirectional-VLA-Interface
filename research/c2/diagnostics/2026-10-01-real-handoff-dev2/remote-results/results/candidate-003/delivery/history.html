@@ -1,0 +1,30 @@
+<meta charset="utf-8"><h1>Single-attempt execution history</h1>
+<p>Model notes are self-reports. Evaluation-only artifacts are not model inputs.</p>
+<p>{&#x27;position&#x27;: 67, &#x27;mode&#x27;: &#x27;dev2-native-ppo-sac&#x27;, &#x27;status&#x27;: &#x27;completed&#x27;, &#x27;strict_pick_success&#x27;: True, &#x27;termination_category&#x27;: &#x27;strict_success&#x27;}</p>
+<p>Recording: {&#x27;kind&#x27;: &#x27;online native PPO/SAC reference&#x27;, &#x27;frames&#x27;: 107}</p>
+<h2>All executed commands (evaluation record)</h2><pre>[
+  {
+    &quot;turn&quot;: 0,
+    &quot;start_step&quot;: 0,
+    &quot;call&quot;: {
+      &quot;tool&quot;: &quot;navigate&quot;,
+      &quot;note&quot;: &quot;Official native reference policy; no Astra&quot;
+    },
+    &quot;result&quot;: {
+      &quot;steps_used&quot;: 71,
+      &quot;reason&quot;: &quot;succeeded&quot;
+    }
+  },
+  {
+    &quot;turn&quot;: 1,
+    &quot;start_step&quot;: 71,
+    &quot;call&quot;: {
+      &quot;tool&quot;: &quot;pick&quot;,
+      &quot;note&quot;: &quot;Official native reference policy; no Astra&quot;
+    },
+    &quot;result&quot;: {
+      &quot;steps_used&quot;: 35,
+      &quot;reason&quot;: &quot;succeeded&quot;
+    }
+  }
+]</pre>

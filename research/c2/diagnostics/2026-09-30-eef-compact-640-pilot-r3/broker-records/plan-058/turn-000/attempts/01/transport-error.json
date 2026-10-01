@@ -1,0 +1,7 @@
+{
+  "exception_type": "SSLError",
+  "errno": 1,
+  "reason_type": "str",
+  "category": "unclassified_transport",
+  "elapsed_seconds": 0.18700000003445894
+}

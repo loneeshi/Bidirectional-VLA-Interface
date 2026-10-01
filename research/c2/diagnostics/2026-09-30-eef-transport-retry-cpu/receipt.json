@@ -1,0 +1,22 @@
+{
+  "utc": "2026-09-30T18:20:12.414710+00:00",
+  "targeted_tests": "20 passed in 1.53s",
+  "source_sha256": {
+    "scripts/eef_compact_retry_broker.py": "e0be5b1fbdfc4ec9233939e558f9cb8a516fc05df43cb6c3855a54b6ea441340",
+    "scripts/run_eef_compact_broker.py": "60825bad59908509156b6cd0c848d7e053418fef349f2c0a243af8c3c74c49c6",
+    "scripts/run_eef_compact_case.py": "8df7f8d5e36e478c1b29f24d63bd6f82972cd67f53f0f1ead825d3f93e84ba6b",
+    "tests/test_eef_compact_retry.py": "bc880da3d3e0383f8af236ca9fe8cb01a695dde1d9f1187ecd75ff819eb58a51"
+  },
+  "gpu_process_seconds": 0,
+  "model_api_requests": 0,
+  "usd_cap_source": "authorization.json usd_cap; no implementation default",
+  "policy": {
+    "version": "bounded-transport-v1",
+    "max_retries": 2,
+    "backoff_seconds": [
+      1,
+      2
+    ]
+  },
+  "eef_regression_tests": "480 passed in 10.25s"
+}

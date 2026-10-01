@@ -1,0 +1,293 @@
+{
+  "experiment_id": "C2-EEF-E1-20260929-R1",
+  "status": "closed",
+  "authorization_sha256": "476faaf26944eb521de73a24652082a1eef481d27fd0c1f5509b4c63f75e07c3",
+  "scope": {
+    "gpu_seconds": 5400,
+    "requests": 60,
+    "usd": "32.00",
+    "old_balance_transferred": 0
+  },
+  "entries": [
+    {
+      "request_id": "005-000",
+      "position": 5,
+      "turn": 0,
+      "reserved_at_utc": "2026-09-29T05:52:05.621906+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.01885",
+      "request_sha256": "4110d3daa667df0c128ed703b8c44013b6ae86a2444b7ad5331cc7a70b6e5709",
+      "request_bundle_sha256": "fd4ee81458f44d037a3d6151512fb9f1c5a40127188883be7f5943ccc66f3e4e",
+      "reason": null,
+      "call": {
+        "gripper": 1,
+        "hindsight": "",
+        "poses": [],
+        "tool": "set_gripper"
+      },
+      "provider_id": "resp_05560dfe26f05b95016abb5205f99087d2bb82e5bff6cdd6b1",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1165,
+      "output_tokens": 144,
+      "finished_at_utc": "2026-09-29T05:52:14.693715+00:00",
+      "response_sha256": "4a7e257cfdc4369cebac4cf66510b30bc5dff6ea8bedec19a7c084a25167f52e"
+    },
+    {
+      "request_id": "005-001",
+      "position": 5,
+      "turn": 1,
+      "reserved_at_utc": "2026-09-29T05:52:16.115291+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.02284",
+      "request_sha256": "3b01fb3e5e5a9bf9294d9a012ee713c44a628a617c4cea67aa0e3e0a724a82ac",
+      "request_bundle_sha256": "f0db84cc7f3bc4a698c542d40f9cb65d721124633678ae7eaf6e1b8e18ead9b4",
+      "reason": null,
+      "call": {
+        "gripper": null,
+        "hindsight": "",
+        "poses": [
+          {
+            "position": [
+              0.42,
+              -0.35,
+              1.15
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.7071068,
+              0,
+              0.7071068
+            ]
+          }
+        ],
+        "tool": "move_to"
+      },
+      "provider_id": "resp_04d86700cbf25a14016abb520f63a087d291dc350ca311bb78",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1194,
+      "output_tokens": 218,
+      "finished_at_utc": "2026-09-29T05:52:25.047001+00:00",
+      "response_sha256": "4dbfb552ebaefa01e4bf650374ef34923d5eb43e2727f2018d2b5c67f940d9fb"
+    },
+    {
+      "request_id": "005-002",
+      "position": 5,
+      "turn": 2,
+      "reserved_at_utc": "2026-09-29T05:52:31.179573+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.03643",
+      "request_sha256": "7d51e4ba75848bb9715f0a2a6b22dea5e718ded42f8d80599b2a1a04df709acc",
+      "request_bundle_sha256": "3b0036c87b48f65dabeb14d9f6f54334caa70c7b62d7e24f6cca352566297f21",
+      "reason": null,
+      "call": {
+        "gripper": null,
+        "hindsight": "",
+        "poses": [
+          {
+            "position": [
+              0.7,
+              -0.1,
+              1.2
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.70710678,
+              0,
+              0.70710678
+            ]
+          }
+        ],
+        "tool": "move_to"
+      },
+      "provider_id": "resp_0a86cfb26a5c5be1016abb521e7dac87d287557242b47f0a22",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1298,
+      "output_tokens": 469,
+      "finished_at_utc": "2026-09-29T05:52:49.043480+00:00",
+      "response_sha256": "d98548f4b24148f44fa9a8f9f3d3e5882f4f9fe46c7abf24f730f26d4e91cc16"
+    },
+    {
+      "request_id": "005-003",
+      "position": 5,
+      "turn": 3,
+      "reserved_at_utc": "2026-09-29T05:52:55.253387+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.02941",
+      "request_sha256": "921950271964ac4b504e1fa3bee8391665cb2977d8f9aec751b86440a9ea80ab",
+      "request_bundle_sha256": "d61d3ab88821e17432e0bc26fc1edb5d015ba038f2852785b1828dea4aef1ea6",
+      "reason": null,
+      "call": {
+        "gripper": null,
+        "hindsight": "",
+        "poses": [
+          {
+            "position": [
+              0.77,
+              -0.11,
+              1.06
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.70710678,
+              0,
+              0.70710678
+            ]
+          }
+        ],
+        "tool": "move_to"
+      },
+      "provider_id": "resp_0bb3e8acaa8016eb016abb5236954487d2b52b389501de79d5",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1411,
+      "output_tokens": 306,
+      "finished_at_utc": "2026-09-29T05:53:05.330566+00:00",
+      "response_sha256": "ea0d235c04c81bfa73b7566bbeb89d8cfca948665ef06c83339a93e7eff8f0bb"
+    },
+    {
+      "request_id": "005-004",
+      "position": 5,
+      "turn": 4,
+      "reserved_at_utc": "2026-09-29T05:53:09.280463+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.0246",
+      "request_sha256": "221c09ad0dd11fe55301fa96f262bbd1950df360a5337167ac405aea39aa53ad",
+      "request_bundle_sha256": "55767a771e7d903cb896eda743fd904429b306301abee731bed2dda7a937257a",
+      "reason": null,
+      "call": {
+        "gripper": null,
+        "hindsight": "",
+        "poses": [
+          {
+            "position": [
+              0.77,
+              -0.11,
+              0.98
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.70710678,
+              0,
+              0.70710678
+            ]
+          }
+        ],
+        "tool": "move_to"
+      },
+      "provider_id": "resp_09a5685d3838c7c9016abb5244b9c487d29e4d3a14cb3d92a5",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1520,
+      "output_tokens": 188,
+      "finished_at_utc": "2026-09-29T05:53:17.314236+00:00",
+      "response_sha256": "3c957f2138e8eca2901c38bf2b026bb14a25028ef0d0cdf6a0906e02636ed37a"
+    },
+    {
+      "request_id": "005-005",
+      "position": 5,
+      "turn": 5,
+      "reserved_at_utc": "2026-09-29T05:53:21.413565+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.02883",
+      "request_sha256": "80baffe70af284269f0e8c37732d9033511a6993c4d5ea8eb7045aedbfdd0ebc",
+      "request_bundle_sha256": "50edd02cd7044074ab256bb276cdbda776b4b5d91d90657cdbb5e14ed777ae58",
+      "reason": null,
+      "call": {
+        "gripper": null,
+        "hindsight": "",
+        "poses": [
+          {
+            "position": [
+              0.77,
+              -0.11,
+              0.94
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.70710678,
+              0,
+              0.70710678
+            ]
+          }
+        ],
+        "tool": "move_to"
+      },
+      "provider_id": "resp_046513ecb0dd7678016abb5250b1c887d28c306873c00fb3fc",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1618,
+      "output_tokens": 253,
+      "finished_at_utc": "2026-09-29T05:53:30.002754+00:00",
+      "response_sha256": "533cede1ce8a6abb0492896556632513589f73af91a584b33fe8ea463bb3a6ac"
+    },
+    {
+      "request_id": "005-006",
+      "position": 5,
+      "turn": 6,
+      "reserved_at_utc": "2026-09-29T05:53:32.853427+00:00",
+      "status": "valid",
+      "reserve_usd": "0.52768",
+      "estimated_usd": "0.02445",
+      "request_sha256": "b675d6cc28bd4c256658c5edfd391bb35924dafe4dd946f1bf786fa3a3c9ace2",
+      "request_bundle_sha256": "029f253fc378ec60b1233e92c788fa260011ae375f7bb3464d0be3accd188b02",
+      "reason": null,
+      "call": {
+        "gripper": 0,
+        "hindsight": "",
+        "poses": [],
+        "tool": "set_gripper"
+      },
+      "provider_id": "resp_022307d40361169d016abb525c277087d2a3ffd35ef6f70167",
+      "returned_model": "gpt-6-astra",
+      "service_tier": "default",
+      "input_tokens": 1725,
+      "output_tokens": 144,
+      "finished_at_utc": "2026-09-29T05:53:40.048094+00:00",
+      "response_sha256": "68981ed0f74d9241c2d1a6a431daf1f533dd81d6d8a2c1bab00d82b9e14473c6"
+    },
+    {
+      "request_id": "005-007",
+      "position": 5,
+      "turn": 7,
+      "reserved_at_utc": "2026-09-29T05:53:42.965718+00:00",
+      "status": "unknown_provider_outcome",
+      "reserve_usd": "0.52768",
+      "estimated_usd": null,
+      "request_sha256": "10dcc9a64b2c5d60c2dfb00e3983a8dd799ef9f3a880576f2856999ef732def8",
+      "request_bundle_sha256": "082f061820d940a3792d0759d0dd2eb1b86cd1a910229904d90f68591ee44be1",
+      "interruption_evidence": "Broker interrupted after detecting missing response lineage; no response bytes received; no retry."
+    }
+  ],
+  "lab_project_charge": {
+    "amount": 0,
+    "basis": "User confirmation, no invoice"
+  },
+  "historical_runpod_storage": "Separate outstanding category, no live bill refresh",
+  "provider_actual_bill_usd": null,
+  "gpu_process_seconds": 207.4274323657155,
+  "gpu_process_count": 3,
+  "remaining_gpu_seconds_closed": 5192.5725676342845,
+  "api_attempts": 8,
+  "actual_or_reserved_usd": "0.71309",
+  "final_resource_check": {
+    "pids_absent": {
+      "1673662": true,
+      "1673801": true,
+      "1674741": true,
+      "1675553": true
+    },
+    "compute": "GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548, 46316 MiB\n",
+    "gpu": "0, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46349 MiB, 0 %\n1, GPU-b7ebba23-7824-7601-df32-be55628936c3, 15 MiB, 0 %\n"
+  },
+  "closed_at_utc": "2026-09-29T05:56:25.589197+00:00",
+  "protocol_correction": "All r1 cases censored: within-attempt context omitted after first request. Not scored as model task failures."
+}

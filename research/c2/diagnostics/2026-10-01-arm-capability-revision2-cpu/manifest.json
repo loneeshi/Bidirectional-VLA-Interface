@@ -1,0 +1,21 @@
+{
+  "revision": 2,
+  "sha256": {
+    "authorization.NOT-AUTHORIZED.json": "3f8fbbe92e1938897ad3edc41f5585e4885f1a4985db7fbfa96b44a9bbcb76a7",
+    "cpu-tests.json": "cd19a5cba5a38bc4f8e6b0d5bf97bdddeefb0dbb4900886957f3d3e7e3d519ba",
+    "deployment-freeze.json": "bb96988b10e5f5e680f71af199f266bec2515dec4396981babcef3ce43ba3339",
+    "deployment-import-check.json": "ec07d3e39efa10956faef6ad805eb8805d0cf9d933a3b4822515cc4a30541a89",
+    "executor-unchanged.json": "359a83a6e3ce408f80839282a31586845e5acd6e3aec0829233cf2645f399160",
+    "frozen-runtime.zip": "c707199c50fcd935c8c6f8ef401ba409addc9acbb529477f763af2f3e5c620e2",
+    "guidance-v4-arm-V.txt": "54ed22cf812d5c435174f8c9fbb78f5abd6827edfdb1596e84c9db3c36de9e45",
+    "historical-usage-and-process-time.json": "64429c7658b51bf4f7ba353ff3ae95678eda8cbfe2ae00d56b5fde49d8978bed",
+    "horizon-reset-offset-check.json": "33e0245920d61e54b106c150faae48d4fefcae871108142b5b1352dcf44a9f8e",
+    "README.md": "86b6b62aa919880ceac7841323745c141f1a442da9dfb9434e841489a44b23f5",
+    "regression.xml": "627368c5e78c363ff02201cdf26ba8132841f8ea99a89ea7e7a11c8a8dafc4d8",
+    "report-format.md": "34e4fbde42f8adb0787e2133740b3f1b456b5b11e78d4712ef588ae8c4b11dea",
+    "resource-closeout.json": "0dff8b9042a3fa57ae231dfdd0e62890c48933c0e5f4a529ba7828b2e804968e",
+    "roster.eval-only.json": "55372a36bc3549ac936bdfed06b0011350ff197f7b135c9e6d107f94c4b95fb8",
+    "runtime-assets.cpu.json": "c47f3183045089aef71fd5a6bcfdde10fcf0a1ba5f48b5fa58c883c29feb8efd",
+    "token-budget-estimate.json": "7cec92a731f813f9612e12d847815dc017e109e7d294e4efb29176e73795ecd5"
+  }
+}

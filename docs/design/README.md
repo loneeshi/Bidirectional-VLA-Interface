@@ -14,3 +14,6 @@
 | [真实交接 Pick 站位门控 V2](real-handoff-pick-gate-v2-experiment-design.md) | 当前 Weekly 未收录；对应日志已按用户要求从 log 目录移除 |
 | [真实交接失败集批量站位、PPO 移动与 SAC Pick](real-handoff-batch-ppo-pick-experiment-design.md)及其有界授权记录 | 当前 Weekly 未收录；对应日志已按用户要求从 log 目录移除 |
 | [2,000-token 视觉空间理解开发集校准](real-handoff-spatial-stage1-api-cap2000-development-pilot-proposal.md) | [2026-09-28 开发集校准](../log/2026-09-28-c2-spatial-understanding-cap2000-pilot.md) |
+| [末端执行器 G0 提案](real-handoff-eef-g0-authorization-proposal.md)与[源路径修订](real-handoff-eef-g0-source-repair-amendment.md) | 对应记录已按用户要求移出 log 目录，见[诊断记录](../../research/c2/diagnostics/2026-09-28-eef-g0-cpu/run-record.md) |
+| [G0 dogbox 数值修订](real-handoff-eef-g0-dogbox-pilot-proposal.md) | 对应记录已按用户要求移出 log 目录，见[诊断记录](../../research/c2/diagnostics/2026-09-28-eef-dogbox-pilot/run-record.md) |
+| [官方出生站位抓取能力测评](c2-eef-arm-capability-eval-design.md)、[开发组授权提案](c2-eef-arm-development-authorization-proposal.md)与[可移动底盘授权提案](c2-eef-same-five-mobile-authorization-proposal.md) | [2026-10-01 开发组 5 例](../log/2026-10-01-c2-arm-capability-dev.md) |

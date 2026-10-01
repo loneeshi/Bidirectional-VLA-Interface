@@ -1,0 +1,352 @@
+{
+  "sources": [
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-base-smoke-net-heading-r3\\results\\plan-005-smoke\\result.json",
+      "sha256": "f64d07e3221bbde17455b2c302d004242c720c845153820c32682fa8b48d1eda"
+    },
+    {
+      "path": "research\\c2\\diagnostics\\2026-09-29-eef-base-smoke-net-heading-r3\\results\\plan-008-smoke\\result.json",
+      "sha256": "cf9017107c91b877d685e3420738813a3915eae9a3530b9b89ae463cd7453ce0"
+    }
+  ],
+  "selected_steps": [
+    {
+      "position": 5,
+      "step": 2
+    },
+    {
+      "position": 5,
+      "step": 3
+    },
+    {
+      "position": 5,
+      "step": 4
+    },
+    {
+      "position": 5,
+      "step": 5
+    },
+    {
+      "position": 5,
+      "step": 6
+    },
+    {
+      "position": 5,
+      "step": 7
+    },
+    {
+      "position": 5,
+      "step": 8
+    },
+    {
+      "position": 5,
+      "step": 9
+    },
+    {
+      "position": 5,
+      "step": 10
+    },
+    {
+      "position": 5,
+      "step": 11
+    },
+    {
+      "position": 5,
+      "step": 12
+    },
+    {
+      "position": 5,
+      "step": 13
+    },
+    {
+      "position": 5,
+      "step": 14
+    },
+    {
+      "position": 5,
+      "step": 15
+    },
+    {
+      "position": 5,
+      "step": 16
+    },
+    {
+      "position": 5,
+      "step": 17
+    },
+    {
+      "position": 5,
+      "step": 18
+    },
+    {
+      "position": 5,
+      "step": 19
+    },
+    {
+      "position": 5,
+      "step": 20
+    },
+    {
+      "position": 5,
+      "step": 21
+    },
+    {
+      "position": 5,
+      "step": 22
+    },
+    {
+      "position": 5,
+      "step": 23
+    },
+    {
+      "position": 5,
+      "step": 24
+    },
+    {
+      "position": 5,
+      "step": 25
+    },
+    {
+      "position": 5,
+      "step": 26
+    },
+    {
+      "position": 5,
+      "step": 27
+    },
+    {
+      "position": 5,
+      "step": 28
+    },
+    {
+      "position": 5,
+      "step": 29
+    },
+    {
+      "position": 5,
+      "step": 30
+    },
+    {
+      "position": 5,
+      "step": 31
+    },
+    {
+      "position": 8,
+      "step": 2
+    },
+    {
+      "position": 8,
+      "step": 3
+    },
+    {
+      "position": 8,
+      "step": 4
+    },
+    {
+      "position": 8,
+      "step": 5
+    },
+    {
+      "position": 8,
+      "step": 6
+    },
+    {
+      "position": 8,
+      "step": 7
+    },
+    {
+      "position": 8,
+      "step": 8
+    },
+    {
+      "position": 8,
+      "step": 9
+    },
+    {
+      "position": 8,
+      "step": 10
+    },
+    {
+      "position": 8,
+      "step": 11
+    },
+    {
+      "position": 8,
+      "step": 12
+    },
+    {
+      "position": 8,
+      "step": 13
+    },
+    {
+      "position": 8,
+      "step": 14
+    },
+    {
+      "position": 8,
+      "step": 15
+    },
+    {
+      "position": 8,
+      "step": 16
+    },
+    {
+      "position": 8,
+      "step": 17
+    },
+    {
+      "position": 8,
+      "step": 18
+    },
+    {
+      "position": 8,
+      "step": 19
+    },
+    {
+      "position": 8,
+      "step": 20
+    },
+    {
+      "position": 8,
+      "step": 21
+    },
+    {
+      "position": 8,
+      "step": 22
+    },
+    {
+      "position": 8,
+      "step": 23
+    },
+    {
+      "position": 8,
+      "step": 24
+    },
+    {
+      "position": 8,
+      "step": 25
+    },
+    {
+      "position": 8,
+      "step": 26
+    },
+    {
+      "position": 8,
+      "step": 27
+    },
+    {
+      "position": 8,
+      "step": 28
+    },
+    {
+      "position": 8,
+      "step": 29
+    },
+    {
+      "position": 8,
+      "step": 30
+    },
+    {
+      "position": 8,
+      "step": 31
+    },
+    {
+      "position": 8,
+      "step": 32
+    },
+    {
+      "position": 8,
+      "step": 33
+    },
+    {
+      "position": 8,
+      "step": 34
+    },
+    {
+      "position": 8,
+      "step": 35
+    },
+    {
+      "position": 8,
+      "step": 36
+    },
+    {
+      "position": 8,
+      "step": 37
+    },
+    {
+      "position": 8,
+      "step": 38
+    },
+    {
+      "position": 8,
+      "step": 39
+    },
+    {
+      "position": 8,
+      "step": 40
+    },
+    {
+      "position": 8,
+      "step": 41
+    },
+    {
+      "position": 8,
+      "step": 42
+    },
+    {
+      "position": 8,
+      "step": 43
+    },
+    {
+      "position": 8,
+      "step": 44
+    },
+    {
+      "position": 8,
+      "step": 45
+    },
+    {
+      "position": 8,
+      "step": 46
+    },
+    {
+      "position": 8,
+      "step": 47
+    },
+    {
+      "position": 8,
+      "step": 48
+    },
+    {
+      "position": 8,
+      "step": 49
+    },
+    {
+      "position": 8,
+      "step": 50
+    },
+    {
+      "position": 8,
+      "step": 51
+    }
+  ],
+  "fits": [
+    {
+      "channel": "linear",
+      "rho": 0.6618654969317679,
+      "beta": 0.33611604511281234,
+      "rmse": 0.0002775860314417296,
+      "a": 0.84
+    },
+    {
+      "channel": "angular",
+      "rho": 0.037328111306414766,
+      "beta": 0.9618894594236916,
+      "rmse": 0.0007152859524938596,
+      "a": 4.81
+    }
+  ],
+  "method": "OLS v[k+1]=rho*v[k]+beta*u[k]; a=floor(100*0.25*(1-rho)*vmax/0.05)/100",
+  "limits": "No case11 data. Zero sampled contact is not proof of zero contact at every physics substep."
+}

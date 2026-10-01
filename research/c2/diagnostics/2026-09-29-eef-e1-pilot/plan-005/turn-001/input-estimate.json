@@ -1,0 +1,33 @@
+{
+  "wire_sha256": "3b01fb3e5e5a9bf9294d9a012ee713c44a628a617c4cea67aa0e3e0a724a82ac",
+  "model": "gpt-6-astra",
+  "image_count": 4,
+  "estimated_image_tokens": 80,
+  "non_image_json_bytes": 5160,
+  "images": [
+    {
+      "width": 128,
+      "height": 128,
+      "patches": 16,
+      "estimated_image_tokens": 20
+    },
+    {
+      "width": 128,
+      "height": 128,
+      "patches": 16,
+      "estimated_image_tokens": 20
+    },
+    {
+      "width": 128,
+      "height": 128,
+      "patches": 16,
+      "estimated_image_tokens": 20
+    },
+    {
+      "width": 128,
+      "height": 128,
+      "patches": 16,
+      "estimated_image_tokens": 20
+    }
+  ]
+}

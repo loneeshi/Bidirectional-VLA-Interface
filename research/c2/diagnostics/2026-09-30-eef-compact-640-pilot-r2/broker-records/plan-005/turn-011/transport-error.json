@@ -1,0 +1,6 @@
+{
+  "exception_type": "URLError",
+  "reason_type": "ConnectionResetError",
+  "reason_errno": 10054,
+  "category": "connection"
+}

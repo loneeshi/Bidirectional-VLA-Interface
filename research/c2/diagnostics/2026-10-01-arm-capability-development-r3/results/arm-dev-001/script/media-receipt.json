@@ -1,0 +1,21 @@
+{
+  "evaluation_only": true,
+  "result_sha256": "be1d9eabc73a7a44d798574a6bb0aa5bede3f978c1c609c5629817cb7caf94f6",
+  "status": "completed",
+  "artifacts": {
+    "history.html": {
+      "path": "history.html",
+      "sha256": "d9e1ad253920281261d6ffbcaf0fcc99a912e68cb1be0e7b2049537032923d40"
+    }
+  },
+  "errors": [],
+  "no_motion": true,
+  "complete": true,
+  "case_id": "arm-dev-001",
+  "condition": "script",
+  "raw_result_sha256": "c2fae0542de46e1584ed3552e0be5a3a8457341443788d99ef6560cd5fbc39f9",
+  "recorded_at_utc": "2026-10-01T03:05:28.200147+00:00",
+  "outcome": "script_sequence_end",
+  "raw_qpos_preserved": true,
+  "media_directory": "media-source/delivery"
+}

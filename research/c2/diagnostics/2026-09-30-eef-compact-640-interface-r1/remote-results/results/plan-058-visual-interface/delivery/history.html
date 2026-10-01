@@ -1,0 +1,56 @@
+<meta charset="utf-8"><h1>Single-attempt execution history</h1>
+<p>Model notes are self-reports. Evaluation-only artifacts are not model inputs.</p>
+<p>{&#x27;position&#x27;: 58, &#x27;mode&#x27;: &#x27;visual-interface-api0&#x27;, &#x27;status&#x27;: &#x27;completed&#x27;, &#x27;strict_pick_success&#x27;: False, &#x27;termination_category&#x27;: None}</p>
+<p>Recording: {&#x27;kind&#x27;: &#x27;online interface check&#x27;, &#x27;frames&#x27;: 56, &#x27;directory&#x27;: &#x27;recording-frames&#x27;}</p>
+<h2>All executed commands (evaluation record)</h2><pre>[
+  {
+    &quot;turn&quot;: 0,
+    &quot;call&quot;: {
+      &quot;tool&quot;: &quot;look&quot;,
+      &quot;pan_rad&quot;: 0.3,
+      &quot;tilt_rad&quot;: 0.7120000000000001,
+      &quot;note&quot;: &quot;Scripted API0 interface check&quot;
+    },
+    &quot;result&quot;: {
+      &quot;accepted&quot;: true,
+      &quot;arrived&quot;: true,
+      &quot;head_error_rad&quot;: 0.002147841453552235,
+      &quot;reason&quot;: &quot;ok&quot;,
+      &quot;steps_used&quot;: 27
+    }
+  },
+  {
+    &quot;turn&quot;: 1,
+    &quot;call&quot;: {
+      &quot;tool&quot;: &quot;look&quot;,
+      &quot;pan_rad&quot;: -0.3,
+      &quot;tilt_rad&quot;: 0.41200000000000003,
+      &quot;note&quot;: &quot;Scripted API0 interface check&quot;
+    },
+    &quot;result&quot;: {
+      &quot;accepted&quot;: true,
+      &quot;arrived&quot;: true,
+      &quot;head_error_rad&quot;: 0.0019034922122955211,
+      &quot;reason&quot;: &quot;ok&quot;,
+      &quot;steps_used&quot;: 26
+    }
+  },
+  {
+    &quot;turn&quot;: 2,
+    &quot;call&quot;: {
+      &quot;tool&quot;: &quot;return_to_rest&quot;,
+      &quot;note&quot;: &quot;Scripted API0 interface check&quot;
+    },
+    &quot;result&quot;: {
+      &quot;arrived&quot;: true,
+      &quot;steps_used&quot;: 2,
+      &quot;criteria&quot;: {
+        &quot;ee_rest&quot;: true,
+        &quot;robot_rest&quot;: true,
+        &quot;is_static&quot;: true
+      },
+      &quot;max_rest_joint_error&quot;: 0.29803666472435,
+      &quot;method&quot;: &quot;joint_space_no_ik&quot;
+    }
+  }
+]</pre>

@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "position": 5,
+      "version": "eef-tool-v11-measured-torso-momentum-r1",
+      "smoke_passed": true,
+      "strict_pick_success": false,
+      "simulator_actions": 54
+    },
+    {
+      "position": 8,
+      "version": "eef-tool-v11-measured-torso-momentum-r1",
+      "smoke_passed": true,
+      "strict_pick_success": false,
+      "simulator_actions": 69
+    },
+    {
+      "position": 11,
+      "version": "eef-tool-v11-measured-torso-momentum-r1",
+      "smoke_passed": true,
+      "strict_pick_success": false,
+      "simulator_actions": 92
+    }
+  ],
+  "gpu_process_seconds": 148.77784921601415,
+  "api_requests": 0
+}

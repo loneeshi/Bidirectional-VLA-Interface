@@ -1,0 +1,24 @@
+[
+  {
+    "evaluation_only": true,
+    "result_sha256": "4febd95a0c1cceed781e1b3fbb8a099a9ead10ba27890775f4e30a9c30669bdf",
+    "status": "infrastructure_censored",
+    "artifacts": {
+      "history.html": {
+        "path": "history.html",
+        "sha256": "dd7466e75fcf1566e627fd1d1ec0a9e1d6422f7066e71bd92afb0ea804d103bb"
+      }
+    },
+    "errors": [],
+    "no_motion": true,
+    "complete": true,
+    "case_id": "arm-dev-000",
+    "condition": "V",
+    "raw_result_sha256": "557bd49924269575805a4331ccf13c4817c7bc46822ca84216b70c2b231e7f3a",
+    "recorded_at_utc": "2026-10-01T02:46:59.771130+00:00",
+    "outcome": "worker_process_limit_or_error",
+    "raw_qpos_preserved": true,
+    "media_directory": "media-source/delivery",
+    "directory": "arm-dev-000/V/media-source/delivery"
+  }
+]

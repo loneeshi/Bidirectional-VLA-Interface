@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "accepted_position": 58,
+  "rejected_wrong_position": true,
+  "rejected_27_requests": true,
+  "rejected_2_processes": true,
+  "original_censor_preserved": true,
+  "cpu_regression_passed": 395
+}

@@ -1,0 +1,47 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "hand",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The fingers closed completely with stable=false, while the can remains on the cabinet; the grasp missed. I will measure the visible lid again to correct the approach depth.",
+    "observation_id": "obs-010-00ab7b80fab8648b",
+    "pan_rad": null,
+    "pixel": [
+      321,
+      400
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "Obs-010 hand and head views show the can still on the cabinet, beyond the closed fingertips.",
+      "expected_change": "Obtain a fresh lid location for a deeper grasp.",
+      "next_check": "Check a corrected grasp pose before reopening and advancing.",
+      "uncertainty": "Finger contact offset was overestimated; secure capture has not occurred."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "821f3ee3518ee74fe798e7baa3dfe2d974874cd6804e58b8408fefbf97ceda8d",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_0ffc690f7d5bf513016abd5014d0b887d2b2b76c1b2f74d5bb",
+  "usage": {
+    "input_tokens": 14676,
+    "input_tokens_details": {
+      "cache_write_tokens": 12742,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 258,
+    "output_tokens_details": {
+      "reasoning_tokens": 74
+    },
+    "total_tokens": 14934
+  },
+  "reasoning_summaries": [
+    "**Adjusting measurements for fit**\n\nI need to make sure my fingertip measurements are correct! I’ll measure the lid fresh and think about shifting it forward about .055 and adjusting the z-axis by -.055. The current origin is at .765, and the target is at .857, with a delta of .092 and -.062. I’m wondering if my fingers can reach the tip in the image. It looks like the gripper's origin might need to be .06 instead of .14. I also need to get the depth of the lid right."
+  ],
+  "estimated_usd": "0.19635"
+}

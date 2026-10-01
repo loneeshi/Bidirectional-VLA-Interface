@@ -1,0 +1,37 @@
+{
+  "cpu_only": true,
+  "provider_sends": 0,
+  "physical_steps": 0,
+  "current_prompt_sha256": "32b7c39ee19504f2914631e9d48a99d021ff77f21d74cdb7f8ee4b24b54603ff",
+  "constants_present": {
+    "radius 0.288 m": true,
+    "forward extent 0.287 m": true,
+    "diameter 0.576 m": true,
+    "0.5 m/s": true,
+    "1 rad/s": true,
+    "0.03 rad and 0.02 m": true,
+    "80 steps": true,
+    "600 control steps": true,
+    "150 steps per call": true,
+    "move_base is disabled": true
+  },
+  "current_schema_allows_base": false,
+  "quaternion_reproduction": {
+    "validator_error": "quaternion must be unit xyzw",
+    "public_feedback_reason": "invalid_tool_call",
+    "specific_error_returned": false
+  },
+  "historical_invalid_calls_by_case": {
+    "arm-dev-002": 1,
+    "arm-dev-003": 4,
+    "arm-dev-004": 8
+  },
+  "worker_checks_base_mapping": false,
+  "maximum_combined_base_command": {
+    "turn_rad": 3.141592653589793,
+    "forward_m": 1.5,
+    "minimum_steps_without_acceleration_or_settling": 123,
+    "base_call_cap": 80
+  },
+  "scope": "audit only; no change to frozen executor or historical results"
+}

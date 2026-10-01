@@ -1,0 +1,148 @@
+{
+  "cases": [
+    {
+      "candidate": "candidate-000",
+      "plan_uid": "tidy_house-sequential-val-156-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan064-1ba61bc0",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan064-1ba61bc0\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-001",
+      "plan_uid": "tidy_house-sequential-val-157-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan065-c7de2a80",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan065-c7de2a80\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-002",
+      "plan_uid": "tidy_house-sequential-val-158-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan066-78338d78",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan066-78338d78\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-003",
+      "plan_uid": "tidy_house-sequential-val-159-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan067-66190437",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan067-66190437\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-004",
+      "plan_uid": "tidy_house-sequential-val-16-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan068-aa4f6c08",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan068-aa4f6c08\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-005",
+      "plan_uid": "tidy_house-sequential-val-160-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan069-ec43c327",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan069-ec43c327\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-006",
+      "plan_uid": "tidy_house-sequential-val-161-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan070-986e8fbc",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan070-986e8fbc\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-007",
+      "plan_uid": "tidy_house-sequential-val-162-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan071-f80ba93b",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan071-f80ba93b\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-008",
+      "plan_uid": "tidy_house-sequential-val-163-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan072-ea42c6bd",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan072-ea42c6bd\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-009",
+      "plan_uid": "tidy_house-sequential-val-164-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan073-b32fd6d7",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan073-b32fd6d7\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-010",
+      "plan_uid": "tidy_house-sequential-val-165-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan074-8b110e1f",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan074-8b110e1f\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-011",
+      "plan_uid": "tidy_house-sequential-val-166-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan075-9fb10805",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan075-9fb10805\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-012",
+      "plan_uid": "tidy_house-sequential-val-167-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan076-98968cd1",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan076-98968cd1\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-013",
+      "plan_uid": "tidy_house-sequential-val-168-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan077-2b39d83c",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan077-2b39d83c\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-014",
+      "plan_uid": "tidy_house-sequential-val-169-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan078-eb274ab1",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan078-eb274ab1\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-015",
+      "plan_uid": "tidy_house-sequential-val-170-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan080-04b306f6",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan080-04b306f6\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-016",
+      "plan_uid": "tidy_house-sequential-val-171-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan081-2cadd736",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan081-2cadd736\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-017",
+      "plan_uid": "tidy_house-sequential-val-172-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan082-27cbac79",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan082-27cbac79\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-018",
+      "plan_uid": "tidy_house-sequential-val-173-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan083-30329605",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan083-30329605\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-019",
+      "plan_uid": "tidy_house-sequential-val-174-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan084-3c1f0717",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan084-3c1f0717\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-020",
+      "plan_uid": "tidy_house-sequential-val-175-0",
+      "no_motion": true
+    },
+    {
+      "candidate": "candidate-021",
+      "plan_uid": "tidy_house-sequential-val-176-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan086-cbdd6c7e",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan086-cbdd6c7e\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-022",
+      "plan_uid": "tidy_house-sequential-val-177-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan087-79b9b23f",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan087-79b9b23f\\delivery\\README.md"
+    },
+    {
+      "candidate": "candidate-023",
+      "plan_uid": "tidy_house-sequential-val-178-0",
+      "directory": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan088-f04614ed",
+      "index": "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\docs\\media\\c2-pick-dev2-2026-10-01-plan088-f04614ed\\delivery\\README.md"
+    }
+  ],
+  "no_astra_predictions_fabricated": true
+}

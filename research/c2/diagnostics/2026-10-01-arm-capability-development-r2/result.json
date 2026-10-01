@@ -1,0 +1,240 @@
+{
+  "case_id": "arm-dev-000",
+  "position": 0,
+  "condition": "V",
+  "status": "infrastructure_censored",
+  "recorded_at_utc": "2026-10-01T02:46:59.771130+00:00",
+  "strict_pick_success": false,
+  "frames": [],
+  "commands": [
+    {
+      "turn": 0,
+      "call": {
+        "camera": "hand",
+        "forward_m": null,
+        "gripper": null,
+        "hindsight": "",
+        "note": "The hand view shows a red-and-white cylindrical can on the chair beside a small green item. I will measure the can's top surface.",
+        "observation_id": "obs-000-0bac1c56added0fd",
+        "pan_rad": null,
+        "pixel": [
+          412,
+          107
+        ],
+        "poses": [],
+        "task_state": {
+          "belief": "The red-and-white can in obs-000 hand view is the likely tomato soup can.",
+          "expected_change": "Obtain the can top surface location in base coordinates.",
+          "next_check": "Estimate can dimensions and a top-down grasp.",
+          "uncertainty": "Exact can size and chair clearance remain unknown."
+        },
+        "tilt_rad": null,
+        "tool": "locate_point",
+        "turn_rad": null
+      },
+      "result": {
+        "accepted": true,
+        "readonly": true,
+        "reason": "ok",
+        "valid": true,
+        "point_base_m": [
+          0.8719689068472206,
+          0.12295899030419694,
+          0.4996853883670751
+        ],
+        "depth_m": 0.549,
+        "depth_spread_m": 0.0030000000000000027,
+        "observation_id": "obs-000-0bac1c56added0fd",
+        "steps_used": 0,
+        "settle_steps": 0,
+        "motion_steps": 0,
+        "steps_remaining": 600
+      },
+      "start_step": 0,
+      "reasoning_summaries": []
+    }
+  ],
+  "simulator_actions": 0,
+  "api_requests": 1,
+  "control_dt": 0.05,
+  "initial_robot_state": {
+    "qpos": [
+      -1.242008147528395e-05,
+      0.0007492062286473811,
+      4.16936731338501,
+      0.38554757833480835,
+      0.0005309050320647657,
+      -0.4171978831291199,
+      0.5088408589363098,
+      -0.9944080114364624,
+      0.7832494378089905,
+      1.0499557256698608,
+      -0.0876682922244072,
+      2.1110124588012695,
+      -0.05829500034451485,
+      0.014189100824296474,
+      0.013138530775904655
+    ],
+    "tcp_base": [
+      [
+        -0.49510760721655667,
+        -0.3024244097908052,
+        0.8144985780460139,
+        0.4749332877619355
+      ],
+      [
+        0.14502076141901363,
+        0.8955471084675193,
+        0.4206713150107993,
+        -0.003494158420888111
+      ],
+      [
+        -0.8566431205780765,
+        0.3263967721625761,
+        -0.3995343678435011,
+        1.2318888093317426
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "base_world_eval_only": [
+      [
+        -0.5167255401611328,
+        0.8561511635780334,
+        9.706765169426035e-09,
+        1.245490550994873
+      ],
+      [
+        -0.8561511635780334,
+        -0.5167255401611328,
+        -3.910549395413909e-08,
+        -3.5117790699005127
+      ],
+      [
+        -2.8464482326739926e-08,
+        -2.8517263217509026e-08,
+        1.0,
+        0.019999999552965164
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "finger_distance_m": 0.02732763160020113
+  },
+  "initial_binding": {
+    "uid": "tidy_house-pick-val-2385-0",
+    "spawn_index": 36,
+    "seed": 20260930,
+    "qpos": [
+      -1.242008147528395e-05,
+      0.0007492062286473811,
+      4.16936731338501,
+      0.38554757833480835,
+      0.0005309050320647657,
+      -0.4171978831291199,
+      0.5088408589363098,
+      -0.9944080114364624,
+      0.7832494378089905,
+      1.0499557256698608,
+      -0.0876682922244072,
+      2.1110124588012695,
+      -0.05829500034451485,
+      0.014189100824296474,
+      0.013138530775904655
+    ],
+    "base_world": [
+      [
+        -0.5167255401611328,
+        0.8561511635780334,
+        9.706765169426035e-09,
+        1.245490550994873
+      ],
+      [
+        -0.8561511635780334,
+        -0.5167255401611328,
+        -3.910549395413909e-08,
+        -3.5117790699005127
+      ],
+      [
+        -2.8464482326739926e-08,
+        -2.8517263217509026e-08,
+        1.0,
+        0.019999999552965164
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "target_world": [
+      [
+        0.37928152084350586,
+        -0.9252813458442688,
+        0.00020151666831225157,
+        0.8987099528312683
+      ],
+      [
+        0.9252813458442688,
+        0.37928158044815063,
+        0.0002076025994028896,
+        -4.32349967956543
+      ],
+      [
+        -0.00026852235896512866,
+        0.00010771974484669045,
+        0.9999999403953552,
+        0.4739779531955719
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "configured_horizon": 600,
+  "internal_pick_horizon": 601,
+  "initial_steps_left": 600,
+  "initial_evaluation": {
+    "step": 0,
+    "strict_success": false,
+    "is_grasped": false,
+    "object_z_m": 0.4739779531955719,
+    "tcp_box_distance_m": 0.8201678913649512
+  },
+  "localization_eval_only": [
+    {
+      "evaluation_only": true,
+      "observation_id": "obs-000-0bac1c56added0fd",
+      "surface_distance_m": 0.00035375928022988144,
+      "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+      "status": "scored",
+      "point_object_eval_only": [
+        0.002074641166007307,
+        -0.0007429062026987898,
+        0.04570804623548935
+      ],
+      "turn": 0,
+      "step": 0
+    }
+  ],
+  "error_type": "ValueError",
+  "wall_seconds": 21.24961742386222,
+  "recording": {
+    "kind": "online official-spawn V",
+    "frames": 1,
+    "directory": "recording-frames"
+  },
+  "termination_category": "worker_process_limit_or_error"
+}

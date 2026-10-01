@@ -1,0 +1,46 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "poses": [
+      {
+        "position": [
+          0.672,
+          -0.0594,
+          0.419
+        ],
+        "quaternion_xyzw": [
+          0.212631,
+          0.67438,
+          -0.212631,
+          0.67438
+        ]
+      }
+    ],
+    "tool": "move_to",
+    "turn_rad": null
+  },
+  "provider_id": "resp_0058ed249b204a5f006abc30369f6087d2a991d1d0f26637fd",
+  "returned_model": "gpt-6-astra",
+  "service_tier": "default",
+  "usage": {
+    "input_tokens": 9203,
+    "input_tokens_details": {
+      "cache_write_tokens": 821,
+      "cached_tokens": 8379
+    },
+    "output_tokens": 77,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 9280
+  },
+  "input_tokens": 9203,
+  "output_tokens": 77,
+  "estimated_usd": "0.1188875",
+  "api_attempted": true,
+  "request_bundle_sha256": "6dce5319a3368da5e2a1bacd923ca26f66191902c8b5d6ebd2ff3ccadce7c6a3"
+}

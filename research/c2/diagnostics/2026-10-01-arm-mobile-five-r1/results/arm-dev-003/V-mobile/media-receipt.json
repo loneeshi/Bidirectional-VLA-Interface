@@ -1,0 +1,48 @@
+{
+  "evaluation_only": true,
+  "result_sha256": "81464a82f8d142966c3fc9aba584c54d2a4b69e67936091bd136bd6e722ede17",
+  "status": "completed",
+  "artifacts": {
+    "history.html": {
+      "path": "history.html",
+      "sha256": "be015a27206a5587b83a87f1cf5bdf1ff597914a4aef3f64e3f9320df770964c"
+    },
+    "trajectory.svg": {
+      "path": "trajectory.svg",
+      "sha256": "495136ee6023b3c96c29d61f35ef0f6f9b394c23aac9ad04b5ecfedc37c6b48e"
+    },
+    "trajectory.html": {
+      "path": "trajectory.html",
+      "sha256": "4b718f0eaa57bebfcf21502b5dede35bc78fa34cdafb3a84f619802eaed26166"
+    },
+    "online-raw.mp4": {
+      "path": "online-raw.mp4",
+      "sha256": "e7f60ef33958228771b15ae7c84747fc20ef88dadc30fb35533c2cfe17846632"
+    },
+    "online-tcp-demo.mp4": {
+      "path": "online-tcp-demo.mp4",
+      "sha256": "1748dc4b5270ec61d4a4ab71971970804aadd339faccc3dbd5d043924632d55d"
+    },
+    "demo-receipt.json": {
+      "path": "demo-receipt.json",
+      "sha256": "b51a27ce6398bb0c31f9d93bfa068820bbb4232660f7b778c8a277dcfa91b7a7"
+    },
+    "online-command-vs-executed.mp4": {
+      "path": "online-command-vs-executed.mp4",
+      "sha256": "bafeaa1d15d511bcc97286dd3024ba802e0f5caa4d8266f4669b60af5b10126a"
+    },
+    "command-overlay-receipt.json": {
+      "path": "command-overlay-receipt.json",
+      "sha256": "fcb67566de7284b91bb550465b6e1405052a6d1e1114b9b4a7ef621eed2a80e9"
+    }
+  },
+  "errors": [],
+  "complete": true,
+  "case_id": "arm-dev-003",
+  "condition": "V-mobile",
+  "raw_result_sha256": "79ff0e6a2a411403683f958a325a92645bc5b11bb8953baed697501491ee8655",
+  "recorded_at_utc": "2026-10-01T04:14:11.484376+00:00",
+  "outcome": "done",
+  "raw_qpos_preserved": true,
+  "media_directory": "media-source/delivery"
+}

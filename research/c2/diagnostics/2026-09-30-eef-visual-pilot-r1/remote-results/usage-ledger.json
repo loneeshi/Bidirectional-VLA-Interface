@@ -1,0 +1,59 @@
+{
+  "experiment_id": "C2-VISUAL-PILOT-2026-09-30-r1",
+  "status": "stopped",
+  "authorization_sha256": "c7164a4ce83b9bc1b9d80e7f9242005dc774e486b5ad83f6f81fd5e79ec7b060",
+  "gpu1_process_seconds": 102.17479313910007,
+  "api_requests": 0,
+  "lab_project_charge": 0,
+  "records": [
+    {
+      "name": "plan-005-visual",
+      "position": 5,
+      "mode": "visual",
+      "status": "finished",
+      "reservation_seconds": 1800,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-30T06:25:10.549219+00:00",
+      "command_sha256": "56fc2785bbf8e7f5dbb3dde04497ccbb34e990958e38abcabbddf9b5c6dea3b5",
+      "pid": 1744087,
+      "elapsed_process_seconds": 102.17479313910007,
+      "returncode": 1,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 8,
+        "compute_processes": []
+      },
+      "delivery": "/home/pshuai/bvi-research/runs/eef-visual-20260930-pilot-r1/results/plan-005-visual/delivery/README.md",
+      "delivery_complete": true,
+      "censored": true
+    }
+  ],
+  "case_results": [
+    {
+      "position": 5,
+      "mode": "visual-guidance-v3-H0-v13",
+      "status": "api_censored",
+      "strict_pick_success": false,
+      "simulator_actions": 0,
+      "policy_inferences": 0,
+      "group": "exposed_development_diagnostic",
+      "base_translation_m": 0.0,
+      "termination_category": "api_censored",
+      "tool_calls": 2
+    }
+  ],
+  "stop_reason": "case censored; stop without automatic retry",
+  "gpu1_final": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "simulator_actions": 0,
+  "policy_inferences": 0,
+  "ended_at_utc": "2026-09-30T06:26:53.100787+00:00"
+}

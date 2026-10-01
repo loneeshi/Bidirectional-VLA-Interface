@@ -1,0 +1,21 @@
+{
+  "case_id": "arm-dev-000",
+  "position": 0,
+  "condition": "V",
+  "status": "infrastructure_censored",
+  "recorded_at_utc": "2026-10-01T02:35:17.954513+00:00",
+  "strict_pick_success": false,
+  "frames": [],
+  "commands": [],
+  "simulator_actions": 0,
+  "api_requests": 0,
+  "error_type": "FileNotFoundError",
+  "wall_seconds": 4.521219477057457,
+  "recording": {
+    "kind": "online official-spawn V",
+    "frames": 0,
+    "directory": "recording-frames"
+  },
+  "termination_category": "worker_process_limit_or_error",
+  "raw_result_sha256": "13ba2ceb0d488bd64bf9eaf688cd0ac7138cac3340eb9ab92c545c62af148728"
+}

@@ -1,0 +1,1042 @@
+{
+  "source": "research\\c2\\diagnostics\\2026-09-30-eef-coordinated-interface-r2\\remote-results\\results\\plan-005-visual-interface\\result.json",
+  "source_sha256": "1ed24ece7aec52a0b6e0676b47c4679971f5ebc8c97ea0b0c92fab4ae87a0baf",
+  "urdf_sha256": "7503ea2dc96eb3d1130c81f7ff1e397f30df46459b3dbf10cf5d0d247c5b1256",
+  "model_sha256": "e99f57be8395ea8d49ea4e89aae98bf865aa7f0df7002c5c4b0bd8d370ed329d",
+  "commands": [
+    {
+      "turn": 1,
+      "actual_motion_steps": 58,
+      "actual_total_steps": 60,
+      "actual_reference_dwell": {
+        "4": 1,
+        "8": 1,
+        "10": 1,
+        "12": 1,
+        "14": 1,
+        "16": 1,
+        "18": 1,
+        "19": 1,
+        "21": 1,
+        "22": 1,
+        "24": 1,
+        "25": 1,
+        "27": 1,
+        "29": 1,
+        "30": 1,
+        "31": 1,
+        "33": 2,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "39": 1,
+        "40": 2,
+        "41": 1,
+        "43": 3,
+        "44": 1,
+        "45": 1,
+        "46": 4,
+        "47": 7,
+        "48": 5,
+        "49": 6,
+        "50": 3,
+        "51": 2
+      },
+      "actual_action_sign_reversals_per_channel": [
+        25,
+        31,
+        30,
+        21,
+        21,
+        31,
+        24,
+        0,
+        51,
+        54,
+        23,
+        0,
+        0
+      ],
+      "actual_joint_motion_reversals_per_joint": [
+        24,
+        21,
+        28,
+        10,
+        48,
+        25,
+        51,
+        30,
+        30,
+        21,
+        22,
+        31,
+        24,
+        13,
+        12
+      ],
+      "reconstructed_reference_count": 57,
+      "archived_reference_count": 57,
+      "max_reconstructed_arm_compensation_rad": 0.3113395288845284,
+      "measurements": [
+        {
+          "step": 7,
+          "reference_index": 4,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.014372764921861236,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            1,
+            5,
+            7
+          ]
+        },
+        {
+          "step": 8,
+          "reference_index": 8,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.03918941073798088,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            5,
+            7
+          ]
+        },
+        {
+          "step": 9,
+          "reference_index": 10,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.056399161096044814,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 10,
+          "reference_index": 12,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.0636241224745242,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            5,
+            7
+          ]
+        },
+        {
+          "step": 11,
+          "reference_index": 14,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.06802570215939818,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            5,
+            7
+          ]
+        },
+        {
+          "step": 12,
+          "reference_index": 16,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.0673616741415235,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            7
+          ]
+        },
+        {
+          "step": 13,
+          "reference_index": 18,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.07963660358634783,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 14,
+          "reference_index": 19,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.05077066092549298,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            3,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 15,
+          "reference_index": 21,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.08169547436314328,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            1,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 16,
+          "reference_index": 22,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.07010392773975527,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            7
+          ]
+        },
+        {
+          "step": 17,
+          "reference_index": 24,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.08279344702161406,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            2,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 18,
+          "reference_index": 25,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.048552773471421506,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            3,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 19,
+          "reference_index": 27,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.07166758163097864,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 20,
+          "reference_index": 29,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.09997925317528411,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            2,
+            7
+          ]
+        },
+        {
+          "step": 21,
+          "reference_index": 30,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.050862828992626063,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            3,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 22,
+          "reference_index": 31,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.017935105478325664,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "step": 23,
+          "reference_index": 33,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.10551785513541745,
+          "estimated_blocking_joints": [
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 24,
+          "reference_index": 33,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.09450611764447192,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            7,
+            10
+          ]
+        },
+        {
+          "step": 25,
+          "reference_index": 35,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.13642682347728163,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            2,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 26,
+          "reference_index": 36,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.0672430310555927,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 27,
+          "reference_index": 37,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.0048392869141205,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 28,
+          "reference_index": 38,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.01106638298602336,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "step": 29,
+          "reference_index": 39,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.07730604369998195,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 30,
+          "reference_index": 40,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.1746031958323715,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 31,
+          "reference_index": 40,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.007964928310593145,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 32,
+          "reference_index": 41,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.01954402201239125,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 33,
+          "reference_index": 43,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.20789666380017513,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint",
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 34,
+          "reference_index": 43,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.21047824148320426,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 35,
+          "reference_index": 43,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.035227250769379825,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 36,
+          "reference_index": 44,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.026253338406571736,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            0,
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "step": 37,
+          "reference_index": 45,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.1945801603042101,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 38,
+          "reference_index": 46,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.2654723815649027,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 39,
+          "reference_index": 46,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.046676277092570384,
+          "estimated_blocking_joints": [
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 40,
+          "reference_index": 46,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.08413764841062932,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 41,
+          "reference_index": 46,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.1169832375708979,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            7
+          ]
+        },
+        {
+          "step": 42,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.17446620386416312,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "forearm_roll_joint",
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 43,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.25122690550969384,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "forearm_roll_joint",
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 44,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.235428582706255,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 45,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.002161480833866136,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 46,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.20421345392286527,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "step": 47,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.16139854783457297,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            9
+          ]
+        },
+        {
+          "step": 48,
+          "reference_index": 47,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.0659323018290765,
+          "estimated_blocking_joints": [],
+          "actual_saturated_action_channels": [
+            2,
+            7,
+            9
+          ]
+        },
+        {
+          "step": 49,
+          "reference_index": 48,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.23066039397230398,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint",
+            "forearm_roll_joint",
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 50,
+          "reference_index": 48,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.2651101941921121,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 51,
+          "reference_index": 48,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.2005636027245652,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            2,
+            4,
+            5,
+            7,
+            9
+          ]
+        },
+        {
+          "step": 52,
+          "reference_index": 48,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.0026593145991471445,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 53,
+          "reference_index": 48,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.056076645980525086,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 54,
+          "reference_index": 49,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.21429686049293295,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint",
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 55,
+          "reference_index": 49,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.3113395288845284,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint",
+            "forearm_roll_joint",
+            "torso_lift_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 56,
+          "reference_index": 49,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.28532122113668645,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 57,
+          "reference_index": 49,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.04698484066011499,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 58,
+          "reference_index": 49,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.07347482986187526,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 59,
+          "reference_index": 49,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.09396538627637163,
+          "estimated_blocking_joints": [
+            "shoulder_pan_joint",
+            "upperarm_roll_joint",
+            "elbow_flex_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "step": 60,
+          "reference_index": 50,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.17062787112903255,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 61,
+          "reference_index": 50,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.2274781197314697,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "step": 62,
+          "reference_index": 50,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.15769953932692893,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint",
+            "forearm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "step": 63,
+          "reference_index": 51,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.17556232403642902,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            2,
+            4,
+            5,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "step": 64,
+          "reference_index": 51,
+          "reconstructed_ik_accepted": true,
+          "estimated_max_arm_compensation_rad": 0.005057181254656928,
+          "estimated_blocking_joints": [
+            "upperarm_roll_joint"
+          ],
+          "actual_saturated_action_channels": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    }
+  ],
+  "gpu_calls": 0,
+  "api_calls": 0,
+  "simulator_actions": 0,
+  "classification": "actual dwell/actions; reconstructed target/IK/blocking joints; historical solver cache unavailable",
+  "not_a_physical_counterfactual": true
+}

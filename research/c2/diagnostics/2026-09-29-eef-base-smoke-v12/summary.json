@@ -1,0 +1,82 @@
+{
+  "status": "stopped_supervisor_result_schema_error",
+  "position20_passed": true,
+  "completed_positions": [
+    20
+  ],
+  "unstarted_positions": [
+    23,
+    5,
+    8,
+    11
+  ],
+  "full_smoke_gate_passed": false,
+  "rows": [
+    {
+      "restore": 0,
+      "smoke_passed": true,
+      "actions": 12,
+      "force_ok": true,
+      "remaining_time_ok": true,
+      "max_odometry_xy_error_m": 1.4009704367903625e-07,
+      "max_odometry_yaw_error_rad": 3.427267074446183e-07,
+      "strict_pick_success": false,
+      "control_dt": 0.05,
+      "commands": [
+        {
+          "instruction": 0,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 12,
+            "requested_turn_rad": 0.09999999999999988,
+            "requested_forward_m": 0.0,
+            "actual_turn_rad": 0.07153844833374023,
+            "actual_forward_m": -0.002886842495028721,
+            "position_error_m": 0.002914919684000886,
+            "rotation_error_rad": 0.028461551666259632,
+            "official_terminated": false
+          }
+        }
+      ]
+    },
+    {
+      "restore": 1,
+      "smoke_passed": true,
+      "actions": 15,
+      "force_ok": true,
+      "remaining_time_ok": true,
+      "max_odometry_xy_error_m": 1.3680587811717684e-07,
+      "max_odometry_yaw_error_rad": 2.906890586018563e-07,
+      "strict_pick_success": false,
+      "control_dt": 0.05,
+      "commands": [
+        {
+          "instruction": 0,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 15,
+            "requested_turn_rad": 0.0,
+            "requested_forward_m": 0.09999999999999999,
+            "actual_turn_rad": 0.009626150131225586,
+            "actual_forward_m": 0.08124293568224177,
+            "position_error_m": 0.018763219761547184,
+            "rotation_error_rad": 0.009626150131225586,
+            "official_terminated": false
+          }
+        }
+      ]
+    }
+  ],
+  "actual_gpu1_process_seconds": 47.275746054947376,
+  "actual_processes": 1,
+  "simulator_actions": 27,
+  "api_requests": 0,
+  "stop_reason": "'strict_pick_success'",
+  "unused_seconds_closed": 852.7242539450526
+}

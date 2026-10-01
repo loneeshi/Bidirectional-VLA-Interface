@@ -1,0 +1,63 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The target center is near floor height and currently beyond arm reach. I will test a vertical approach above the can and a top-down grasp before selecting base motion; these poses are not collision-checked.",
+    "poses": [
+      {
+        "position": [
+          1.98,
+          -0.166,
+          0.29
+        ],
+        "quaternion_xyzw": [
+          0,
+          0.70710678,
+          0,
+          0.70710678
+        ]
+      },
+      {
+        "position": [
+          1.98,
+          -0.166,
+          0.18
+        ],
+        "quaternion_xyzw": [
+          0,
+          0.70710678,
+          0,
+          0.70710678
+        ]
+      }
+    ],
+    "tool": "check_path",
+    "turn_rad": null
+  },
+  "reflection": null,
+  "provider_id": "resp_02b61f8c6c42447e006abc6daab9d087d28cfbc616ebe17aac",
+  "returned_model": "gpt-6-astra",
+  "usage": {
+    "input_tokens": 2154,
+    "input_tokens_details": {
+      "cache_write_tokens": 657,
+      "cached_tokens": 1494
+    },
+    "output_tokens": 195,
+    "output_tokens_details": {
+      "reasoning_tokens": 43
+    },
+    "total_tokens": 2349
+  },
+  "input_tokens": 2154,
+  "output_tokens": 195,
+  "estimated_usd": "0.036675",
+  "reasoning_summaries": [
+    "**Evaluating view target**\n\nI need to figure out the view for the target, which is at a low floor and seems to be behind some furniture. It looks like there are some obstacles on the right, like this big blue and white cylinder that might block the camera's view. I’ll have to visually parse the scene to check if it’s even reachable. My initial impression is that it might be challenging to get to."
+  ],
+  "api_attempted": true,
+  "request_bundle_sha256": "9ecb2611e03a257587c89572ed7923376203b24b3bd7deadfaf9c92882379264"
+}

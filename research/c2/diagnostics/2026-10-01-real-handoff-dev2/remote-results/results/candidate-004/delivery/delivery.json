@@ -1,0 +1,41 @@
+{
+  "evaluation_only": true,
+  "result_sha256": "aa4f6c080220ced21626db7474ef29c9eab58b964870dd6b8e4092a01ac5f2be",
+  "status": "completed",
+  "artifacts": {
+    "history.html": {
+      "path": "history.html",
+      "sha256": "9db12b080b7c3b1e7509754e439f5f623d28e27f9a318e35b7b7199a1dd8d633"
+    },
+    "trajectory.svg": {
+      "path": "trajectory.svg",
+      "sha256": "289bde3f34eaffd13675b01e55ecf1e25bad1598c9c8fba78c3ac6b9fc146ab3"
+    },
+    "trajectory.html": {
+      "path": "trajectory.html",
+      "sha256": "1ac2ed0ee49a4078c759cf95bc9b2b8f2fa3beb3d6b9faf4ba81c1018a992582"
+    },
+    "online-raw.mp4": {
+      "path": "online-raw.mp4",
+      "sha256": "6cedcc4d88472c79e0e2cbf002e341a630ef0951e32bf7686d8a34da76dbe5ec"
+    },
+    "online-tcp-demo.mp4": {
+      "path": "online-tcp-demo.mp4",
+      "sha256": "cd16ff56f8f1011b4b6969d0aa259a0f5ac3a32d04224c9aeae0a3a0c4b8a700"
+    },
+    "demo-receipt.json": {
+      "path": "demo-receipt.json",
+      "sha256": "ef4a05666ac88b5eee807ef72c9803d48cd209249dd299a4f900ff2bf1698215"
+    },
+    "online-command-vs-executed.mp4": {
+      "path": "online-command-vs-executed.mp4",
+      "sha256": "b4a97347c6a0da86a908d9697ad630b848b7c08d7d7d99c4baedf74f8a9b54e9"
+    },
+    "command-overlay-receipt.json": {
+      "path": "command-overlay-receipt.json",
+      "sha256": "afc42503711cc558381ed0034df6857cc439122bc600d89a1efe1140c084e1de"
+    }
+  },
+  "errors": [],
+  "complete": true
+}

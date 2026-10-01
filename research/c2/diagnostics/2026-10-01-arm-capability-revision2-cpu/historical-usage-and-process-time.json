@@ -1,0 +1,658 @@
+{
+  "processes": [
+    {
+      "run": 1,
+      "position": 5,
+      "elapsed_process_seconds": 210.69515081122518,
+      "returncode": 1,
+      "censored": true,
+      "timed_out": false
+    },
+    {
+      "run": 2,
+      "position": 5,
+      "elapsed_process_seconds": 220.6504034884274,
+      "returncode": 1,
+      "censored": true,
+      "timed_out": false
+    },
+    {
+      "run": 3,
+      "position": 5,
+      "elapsed_process_seconds": 362.42515871301293,
+      "returncode": 0,
+      "censored": null,
+      "timed_out": false
+    },
+    {
+      "run": 3,
+      "position": 55,
+      "elapsed_process_seconds": 166.04021684080362,
+      "returncode": 0,
+      "censored": null,
+      "timed_out": false
+    },
+    {
+      "run": 3,
+      "position": 58,
+      "elapsed_process_seconds": 32.275518242269754,
+      "returncode": 1,
+      "censored": true,
+      "timed_out": false
+    }
+  ],
+  "source_sha256": {
+    "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\remote-results\\usage-ledger.json": "ba567d5a6ff310473229297e2598aa8148772b072b015e71db86804f7292b03d",
+    "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\finance-receipt.json": "f693452fbf9a75f6fc61fba954476883626244f7dc55e44f9046823ac92f0231",
+    "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\remote-results\\usage-ledger.json": "70de2ae45a2d2648a1a8be3e20978b1e797c8f4b4bb82b36c7e218db4b79ab7a",
+    "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\finance-receipt.json": "6cabe429e6fd4e832dd0d16034382abb6f43b2c53491b31d66d4667ca050ffa4",
+    "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\remote-results\\usage-ledger.json": "b16c153191429508ba3b35ef86613d7a4d81fc81376c93b7cea20374a4ce8fd1",
+    "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\finance-receipt.json": "ec5aed215c63cd4c83214c218396b4f1a9e992a40a046c6c861cfbd782f6d3f2"
+  },
+  "responses": {
+    "resp_028623254690469f016abd4d92191487d28b8fb20ff4198c14": {
+      "usage": {
+        "input_tokens": 4681,
+        "input_tokens_details": {
+          "cache_write_tokens": 4678,
+          "cached_tokens": 0
+        },
+        "output_tokens": 178,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4859
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-000\\response-raw.json",
+      "sha256": "2ba11f2ea001b422b3dcfddef737c09bcfbaea341b74d450c4954895b81fc270"
+    },
+    "resp_0d70faeb37cb79e8016abd4d9e6cdc87d2a4cf1f1c61e06917": {
+      "usage": {
+        "input_tokens": 7870,
+        "input_tokens_details": {
+          "cache_write_tokens": 5936,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 264,
+        "output_tokens_details": {
+          "reasoning_tokens": 73
+        },
+        "total_tokens": 8134
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-001\\response-raw.json",
+      "sha256": "50fafec29aa88ba2ef83ef83a0920cc960553e10e9f4917d9376fac231f4ba2d"
+    },
+    "resp_032c2e1c6b384711016abd4dad95f087d2a13d3f10ba59a54a": {
+      "usage": {
+        "input_tokens": 8655,
+        "input_tokens_details": {
+          "cache_write_tokens": 6721,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 325,
+        "output_tokens_details": {
+          "reasoning_tokens": 74
+        },
+        "total_tokens": 8980
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-002\\response-raw.json",
+      "sha256": "edd1a04633857a4269106cb3be0eef7e36a1fd1da9ba081672657b6197f13b15"
+    },
+    "resp_00a014944acaaf27016abd4dc1c4c487d2878938abfb66a4fe": {
+      "usage": {
+        "input_tokens": 9422,
+        "input_tokens_details": {
+          "cache_write_tokens": 7488,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 268,
+        "output_tokens_details": {
+          "reasoning_tokens": 52
+        },
+        "total_tokens": 9690
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-003\\response-raw.json",
+      "sha256": "a1171b291303ad1f690b7490bfb8da2adad925a1625300f204eb8fdca7b94ad8"
+    },
+    "resp_05f412362fa9dec5016abd4dda1f5887d2b531240e5d4959b0": {
+      "usage": {
+        "input_tokens": 10157,
+        "input_tokens_details": {
+          "cache_write_tokens": 8223,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 156,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 10313
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-004\\response-raw.json",
+      "sha256": "ffc2fa8ee732f99d4a4c26ba7a5b25cb036d0629d35840851e1dbe734f087035"
+    },
+    "resp_01509fc1c2f37ca8016abd4de649c087d2885881ccebb27fe6": {
+      "usage": {
+        "input_tokens": 10890,
+        "input_tokens_details": {
+          "cache_write_tokens": 8956,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 193,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11083
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-005\\response-raw.json",
+      "sha256": "9e30f29c9b182c062c3e715aabcdd8934c0139bdab7a78af0785c9188146bc26"
+    },
+    "resp_0c8e1a54b0b61733016abd4e257c5487d2b00c9b550f68032d": {
+      "usage": {
+        "input_tokens": 11612,
+        "input_tokens_details": {
+          "cache_write_tokens": 9678,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 187,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11799
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-006\\response-raw.json",
+      "sha256": "a26480ba009d2733ac5b75df75da2ca48e16811c82fc9db0ea2c62faee97493f"
+    },
+    "resp_0d852edf4bbafc29016abd4e31380087d2911628fe654231a0": {
+      "usage": {
+        "input_tokens": 12368,
+        "input_tokens_details": {
+          "cache_write_tokens": 10434,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 285,
+        "output_tokens_details": {
+          "reasoning_tokens": 59
+        },
+        "total_tokens": 12653
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r1\\broker-records\\plan-005\\turn-007\\response-raw.json",
+      "sha256": "5378d4918a9e3a1da0478c08e4dd87d060081ae7ff57c29bd2f0cdad3a35618c"
+    },
+    "resp_08e21f851b0536ac016abd4f664dc087d295746fedf7d74a6c": {
+      "usage": {
+        "input_tokens": 4681,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 4678
+        },
+        "output_tokens": 184,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4865
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-000\\response-raw.json",
+      "sha256": "f7ee3c01101e8a2c3afddfcbf09f0ce0fb82c392b6a2230020c8ab4facb9bfb9"
+    },
+    "resp_04000ba5254a70dc016abd4f71723887d294e68df10a78c406": {
+      "usage": {
+        "input_tokens": 7877,
+        "input_tokens_details": {
+          "cache_write_tokens": 5943,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 197,
+        "output_tokens_details": {
+          "reasoning_tokens": 9
+        },
+        "total_tokens": 8074
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-001\\response-raw.json",
+      "sha256": "eb3a4179622a5738ab8d19e24c3e2568c46beb6844cff697705431a68b3483a1"
+    },
+    "resp_00031df42f323614016abd4f7cfa0487d297d27047d8839839": {
+      "usage": {
+        "input_tokens": 8659,
+        "input_tokens_details": {
+          "cache_write_tokens": 6725,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 318,
+        "output_tokens_details": {
+          "reasoning_tokens": 61
+        },
+        "total_tokens": 8977
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-002\\response-raw.json",
+      "sha256": "a6d35796e3e75a4946b0cd9f931c2ab9f2b49d756e28307a69ee55b31a9c0f37"
+    },
+    "resp_0a64e37abff9bad6016abd4f8da50887d2bcfb4cc52db21a03": {
+      "usage": {
+        "input_tokens": 9432,
+        "input_tokens_details": {
+          "cache_write_tokens": 7498,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 272,
+        "output_tokens_details": {
+          "reasoning_tokens": 45
+        },
+        "total_tokens": 9704
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-003\\response-raw.json",
+      "sha256": "788503059dfee89f26ea59cb7431e0afe36b41fa7c64d79ded8b3994a2f329e7"
+    },
+    "resp_095ff4b65e8e8a61016abd4f9ee9dc87d2b79e34a420e9b53b": {
+      "usage": {
+        "input_tokens": 10178,
+        "input_tokens_details": {
+          "cache_write_tokens": 8244,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 154,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 10332
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-004\\response-raw.json",
+      "sha256": "5e0de938203fa61b4c2dbd6b0a58112e88fcd170001ecf8af05017ee7d5a1d3a"
+    },
+    "resp_08872c4dd1129702016abd4fa9440887d2be6d83c5a2ee5e22": {
+      "usage": {
+        "input_tokens": 10903,
+        "input_tokens_details": {
+          "cache_write_tokens": 8969,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 171,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11074
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-005\\response-raw.json",
+      "sha256": "c309f8ccedb2f8de2e1ba4bebe14979ac9f105bbc2789fbed2a64d1f954b3022"
+    },
+    "resp_08f013ca6d11f1cb016abd4fb403ac87d29f38e0f6a5e55ae8": {
+      "usage": {
+        "input_tokens": 11664,
+        "input_tokens_details": {
+          "cache_write_tokens": 9730,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 207,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11871
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-006\\response-raw.json",
+      "sha256": "604047200c693e96b22fae5f885c27dfc04954c5836e694538255ed5e278d8c0"
+    },
+    "resp_0e28f6a4f259cf5b016abd4fe10e5087d2ba59743dea1bbbc2": {
+      "usage": {
+        "input_tokens": 12454,
+        "input_tokens_details": {
+          "cache_write_tokens": 10520,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 178,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 12632
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-007\\response-raw.json",
+      "sha256": "7e19498bb056bb53076fe695ed21d727dbbdd8253791707843ee044f66876638"
+    },
+    "resp_0380433758a1d7cc016abd4fee309887d28c1ea3076d7a7b40": {
+      "usage": {
+        "input_tokens": 13236,
+        "input_tokens_details": {
+          "cache_write_tokens": 11302,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 271,
+        "output_tokens_details": {
+          "reasoning_tokens": 66
+        },
+        "total_tokens": 13507
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-008\\response-raw.json",
+      "sha256": "e26c8fae2b75c78d3aba4a59161df828e437bd6616227b367ef0c9e954d1f363"
+    },
+    "resp_0d83991eed419bf5016abd5000ab1887d2a91ad5162d4be89b": {
+      "usage": {
+        "input_tokens": 13982,
+        "input_tokens_details": {
+          "cache_write_tokens": 12048,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 209,
+        "output_tokens_details": {
+          "reasoning_tokens": 52
+        },
+        "total_tokens": 14191
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-009\\response-raw.json",
+      "sha256": "e6536539046f9f45bc30cdfae328d52408cf52afbe780ee323e5f27d074b4ff6"
+    },
+    "resp_0ffc690f7d5bf513016abd5014d0b887d2b2b76c1b2f74d5bb": {
+      "usage": {
+        "input_tokens": 14676,
+        "input_tokens_details": {
+          "cache_write_tokens": 12742,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 258,
+        "output_tokens_details": {
+          "reasoning_tokens": 74
+        },
+        "total_tokens": 14934
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r2\\broker-records\\plan-005\\turn-010\\response-raw.json",
+      "sha256": "1ff7e5f178751a572f030a559813c0edb320924143140087d289398896fa827a"
+    },
+    "resp_0380b9e9d600781f016abd55b1e86c87d2b39f7471dc3ccc8d": {
+      "usage": {
+        "input_tokens": 4681,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 4678
+        },
+        "output_tokens": 168,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4849
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-000\\attempts\\00\\response-raw.json",
+      "sha256": "fd86f3d9e30121c86e034068c833c163ff8d940d50d56d710f6e4491430cc225"
+    },
+    "resp_0f6ca0c6a6ab5986016abd55be664c87d2a60d6efa386709dd": {
+      "usage": {
+        "input_tokens": 7860,
+        "input_tokens_details": {
+          "cache_write_tokens": 5926,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 279,
+        "output_tokens_details": {
+          "reasoning_tokens": 94
+        },
+        "total_tokens": 8139
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-001\\attempts\\00\\response-raw.json",
+      "sha256": "7df1a40295cd9df5efca5305b67080eba3bc8764c9f296d9f219bd177b569b7b"
+    },
+    "resp_0d4f12589b327cc6016abd55cf016487d28c9ec788adf4b05a": {
+      "usage": {
+        "input_tokens": 8639,
+        "input_tokens_details": {
+          "cache_write_tokens": 6705,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 349,
+        "output_tokens_details": {
+          "reasoning_tokens": 100
+        },
+        "total_tokens": 8988
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-002\\attempts\\00\\response-raw.json",
+      "sha256": "0c4db716b847fc879322744a00dfb010c148a8fd9e19de50a78aae1618252c9b"
+    },
+    "resp_006b8731153eef6b016abd55e1bb9487d2b00e3dfa77546c46": {
+      "usage": {
+        "input_tokens": 9404,
+        "input_tokens_details": {
+          "cache_write_tokens": 7470,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 298,
+        "output_tokens_details": {
+          "reasoning_tokens": 52
+        },
+        "total_tokens": 9702
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-003\\attempts\\00\\response-raw.json",
+      "sha256": "34bbec516efbdb707629ad8b0e762e625dd8dfcb0eec501a8eabb7c9786c0c25"
+    },
+    "resp_0b3289d7d963904c016abd55f55a4087d2a0b30c2bdd3db8a5": {
+      "usage": {
+        "input_tokens": 10169,
+        "input_tokens_details": {
+          "cache_write_tokens": 8235,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 149,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 10318
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-004\\attempts\\00\\response-raw.json",
+      "sha256": "b751a44e55e259c02f329deaae247d0fba56ff88145a492bd7061b6f5732c439"
+    },
+    "resp_00b30b1d03ccf41f016abd5601458c87d289f7c9f6e31ecdfd": {
+      "usage": {
+        "input_tokens": 10895,
+        "input_tokens_details": {
+          "cache_write_tokens": 8961,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 199,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11094
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-005\\attempts\\00\\response-raw.json",
+      "sha256": "7b9db79029a9f7a0259428b2d60a23a04313b23761f7f1f69ef64dcbab30d71c"
+    },
+    "resp_0c324646dfce798b016abd56582ca087d2b0fd4038ddebc37d": {
+      "usage": {
+        "input_tokens": 11646,
+        "input_tokens_details": {
+          "cache_write_tokens": 9712,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 185,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11831
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-006\\attempts\\01\\response-raw.json",
+      "sha256": "04ef5813bc2d4c70de06c9d9823e57db31086e65b9a3ebf911f26d00dbaa9195"
+    },
+    "resp_0ad5f7703d769412016abd5664c41c87d2a5aa9f21a137a2a4": {
+      "usage": {
+        "input_tokens": 12413,
+        "input_tokens_details": {
+          "cache_write_tokens": 10479,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 243,
+        "output_tokens_details": {
+          "reasoning_tokens": 36
+        },
+        "total_tokens": 12656
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-007\\attempts\\00\\response-raw.json",
+      "sha256": "7c47c1d9defe8583e238dae859decdd0fe3d66c1f5882367505ba12938c7503a"
+    },
+    "resp_01c4e80f98f8fbc0016abd56dc857c87d29ceca7d00927cb1f": {
+      "usage": {
+        "input_tokens": 13208,
+        "input_tokens_details": {
+          "cache_write_tokens": 11274,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 238,
+        "output_tokens_details": {
+          "reasoning_tokens": 53
+        },
+        "total_tokens": 13446
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-008\\attempts\\00\\response-raw.json",
+      "sha256": "e4c8ba2be99003e7b40622ed0fe64132f186f37ccb1364e24afa49cd5be96562"
+    },
+    "resp_0e2066de0d43d003016abd56f2d68087d2a8b6f0d6d9632c9f": {
+      "usage": {
+        "input_tokens": 13913,
+        "input_tokens_details": {
+          "cache_write_tokens": 11979,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 210,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 14123
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-005\\turn-009\\attempts\\00\\response-raw.json",
+      "sha256": "ef93dcfff568597334a4375f0212e345f7bdd406f97a0203ec68b85839155bd0"
+    },
+    "resp_052a5cfbba287720016abd5728dc6887d2930672faf8ee3d17": {
+      "usage": {
+        "input_tokens": 4657,
+        "input_tokens_details": {
+          "cache_write_tokens": 2723,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 196,
+        "output_tokens_details": {
+          "reasoning_tokens": 40
+        },
+        "total_tokens": 4853
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-000\\attempts\\00\\response-raw.json",
+      "sha256": "94c4ddac490d546e1b1e82005469330f1d22c518c3d4e37b1ecc0a498837a3bb"
+    },
+    "resp_016edcd309bf88f0016abd573ebe6087d2ad3736d5aa360f88": {
+      "usage": {
+        "input_tokens": 7788,
+        "input_tokens_details": {
+          "cache_write_tokens": 5854,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 187,
+        "output_tokens_details": {
+          "reasoning_tokens": 17
+        },
+        "total_tokens": 7975
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-001\\attempts\\00\\response-raw.json",
+      "sha256": "adb4e91436d581418cff7d478537ad8f95a45360e4ba7b63d5a6f7d9310f189a"
+    },
+    "resp_0231d7f9c96a6481016abd574bf30c87d29c3bb5fb3d91c528": {
+      "usage": {
+        "input_tokens": 8581,
+        "input_tokens_details": {
+          "cache_write_tokens": 6647,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 249,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 8830
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-002\\attempts\\00\\response-raw.json",
+      "sha256": "19e313abbb085386d58ad8d89188ec823fa07f171a10506bbbceaacfa606abd3"
+    },
+    "resp_041480819977b43b016abd576091e487d293814471878f19c4": {
+      "usage": {
+        "input_tokens": 9375,
+        "input_tokens_details": {
+          "cache_write_tokens": 7441,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 165,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 9540
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-003\\attempts\\00\\response-raw.json",
+      "sha256": "1e058e33ca4ddb6e3adf5ef3057ed0e6742d97a33f15c8d9aeef6ede3a50b4a4"
+    },
+    "resp_0bb2c130d771ef6d016abd576e390487d2974e8a8815675155": {
+      "usage": {
+        "input_tokens": 10160,
+        "input_tokens_details": {
+          "cache_write_tokens": 8226,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 274,
+        "output_tokens_details": {
+          "reasoning_tokens": 83
+        },
+        "total_tokens": 10434
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-004\\attempts\\00\\response-raw.json",
+      "sha256": "0403fb2e68e049a4f24252019ce0741429eba166b234aab4cd21ac6f39e79f8f"
+    },
+    "resp_0b5756a5ad940234016abd5781f21087d2b8f57770d793502d": {
+      "usage": {
+        "input_tokens": 10970,
+        "input_tokens_details": {
+          "cache_write_tokens": 9036,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 269,
+        "output_tokens_details": {
+          "reasoning_tokens": 76
+        },
+        "total_tokens": 11239
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-005\\attempts\\00\\response-raw.json",
+      "sha256": "5d359d6e23d750ffadb3514c6f2bfd429a7c099b830c68a2e80d346de6116bc7"
+    },
+    "resp_09283f73f3606933016abd5791b80087d28b3c4e3eb41a3b50": {
+      "usage": {
+        "input_tokens": 11781,
+        "input_tokens_details": {
+          "cache_write_tokens": 9847,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 270,
+        "output_tokens_details": {
+          "reasoning_tokens": 82
+        },
+        "total_tokens": 12051
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-006\\attempts\\00\\response-raw.json",
+      "sha256": "ea2e44f1c4ca30191c3eabf2b0eace5f036e257ae93eb77f19a8e1b66a368b8e"
+    },
+    "resp_0f738aa64f56fc60016abd57a109f887d29774ff03cffc9c3c": {
+      "usage": {
+        "input_tokens": 12587,
+        "input_tokens_details": {
+          "cache_write_tokens": 10653,
+          "cached_tokens": 1931
+        },
+        "output_tokens": 371,
+        "output_tokens_details": {
+          "reasoning_tokens": 130
+        },
+        "total_tokens": 12958
+      },
+      "source": "research\\c2\\diagnostics\\2026-09-30-eef-compact-640-pilot-r3\\broker-records\\plan-055\\turn-007\\attempts\\00\\response-raw.json",
+      "sha256": "3a169d8a4f02820c095b40b494559f43fe180609ec574ca57bab82f1ee146097"
+    }
+  },
+  "tokens": {
+    "logical_requests": 40,
+    "recorded_sends": 42,
+    "known_unique_usage_responses": 37,
+    "unknown_usage_sends": 5,
+    "input_median": 10169,
+    "input_max": 14676,
+    "output_median": 210,
+    "output_max": 371,
+    "deduplication": "provider response id; duplicate archived copies are not extra requests"
+  },
+  "scope": "historical640 r1-r3; includes censored/failed processes, not600-step throughput validation"
+}

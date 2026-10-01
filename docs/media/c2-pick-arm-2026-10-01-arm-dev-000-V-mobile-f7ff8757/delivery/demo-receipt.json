@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/arm-mobile-five-20261001-r1/arm-dev-000/V-mobile/media-source/delivery/online-raw.mp4",
+  "source_video_sha256": "4d60d9409f1cf6b83db533eacf43d749dc3d10903ad3515bfa3bb100bb8024b6",
+  "source_result": "/home/pshuai/bvi-research/runs/arm-mobile-five-20261001-r1/arm-dev-000/V-mobile/media-source/result.json",
+  "source_result_sha256": "0638b9748688c316c45668d26b35bd66d504a3b2503c892086966a8ec83d3ac0",
+  "output": "/home/pshuai/bvi-research/runs/arm-mobile-five-20261001-r1/arm-dev-000/V-mobile/media-source/delivery/online-tcp-demo.mp4",
+  "output_sha256": "4ded8acb07d8a5a29f38d348f8d9aa72edb312d54918bd7d75b299d8ad56de3b",
+  "frames": 227,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 0,
+  "source_status": "completed",
+  "source_strict_pick_success": true,
+  "source_mode": "V-mobile",
+  "kind_label": "online official-spawn V-mobile",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

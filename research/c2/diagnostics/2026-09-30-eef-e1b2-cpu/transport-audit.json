@@ -1,0 +1,103 @@
+{
+  "kind": "read-only historical local network event audit",
+  "events": [
+    {
+      "utc": "2026-09-30T02:02:41.1979147Z",
+      "log": "Microsoft-Windows-WLAN-AutoConfig/Operational",
+      "event_id": 11004,
+      "summary": "Wireless security stopped"
+    },
+    {
+      "utc": "2026-09-30T02:02:46.5348058Z",
+      "log": "Microsoft-Windows-WLAN-AutoConfig/Operational",
+      "event_id": 11010,
+      "summary": "Wireless security started"
+    },
+    {
+      "utc": "2026-09-30T02:02:46.5723730Z",
+      "log": "Microsoft-Windows-WLAN-AutoConfig/Operational",
+      "event_id": 11005,
+      "summary": "Wireless security succeeded"
+    },
+    {
+      "utc": "2026-09-30T02:02:47.7205283Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 2071,
+      "summary": "A network interface address has gone down"
+    },
+    {
+      "utc": "2026-09-30T02:02:48.4758717Z",
+      "log": "Microsoft-Windows-NetworkProfile/Operational",
+      "event_id": 4004,
+      "summary": "Network state change notification"
+    },
+    {
+      "utc": "2026-09-30T02:02:48.8502432Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 2071,
+      "summary": "A network interface address has gone down"
+    },
+    {
+      "utc": "2026-09-30T02:02:49.1190513Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 2012,
+      "summary": "Network reconfiguration; new network interface"
+    },
+    {
+      "utc": "2026-09-30T02:02:49.3370880Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 2012,
+      "summary": "Network reconfiguration; new network interface"
+    },
+    {
+      "utc": "2026-09-30T02:02:49.3556026Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 3021,
+      "summary": "Establishing VPN; activating VPN adapter"
+    },
+    {
+      "utc": "2026-09-30T02:02:49.5630157Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 3021,
+      "summary": "Establishing VPN; activating VPN adapter"
+    },
+    {
+      "utc": "2026-09-30T02:02:50.9939424Z",
+      "log": "Microsoft-Windows-NetworkProfile/Operational",
+      "event_id": 4004,
+      "summary": "Network state change notification"
+    },
+    {
+      "utc": "2026-09-30T02:02:57.7334382Z",
+      "log": "Cisco Secure Client - AnyConnect VPN",
+      "event_id": 2071,
+      "summary": "A network interface address has gone down"
+    },
+    {
+      "utc": "2026-09-30T02:03:02.6923771Z",
+      "log": "Microsoft-Windows-NetworkProfile/Operational",
+      "event_id": 4004,
+      "summary": "Network state change notification"
+    }
+  ],
+  "privacy": "SSID, MAC, interface GUID, addresses, usernames and VPN hosts omitted",
+  "api_retries": 0,
+  "new_gpu_runs": 0,
+  "api_failure": {
+    "start_utc": "2026-09-30T02:02:33.717054+00:00",
+    "error_utc": "2026-09-30T02:02:47.715551+00:00",
+    "elapsed_seconds": 13.998497,
+    "error_type": "RemoteDisconnected",
+    "http_status": null,
+    "provider_response_id": null,
+    "configured_timeout_seconds": 180
+  },
+  "conclusion": "Strongest evidence points to local Wi-Fi/VPN network reconfiguration, not a proven request-code error or confirmed OpenAI outage; packet-level causation not proven.",
+  "openai_status_checked": {
+    "url": "https://status.openai.com/api/v2/incidents.json",
+    "latest_api_incident_resolved_utc": "2026-09-29T23:14:02Z",
+    "failure_utc": "2026-09-30T02:02:47.715551Z",
+    "matching_public_incident_found": false,
+    "caveat": "Public incident absence does not exclude individual provider errors."
+  }
+}

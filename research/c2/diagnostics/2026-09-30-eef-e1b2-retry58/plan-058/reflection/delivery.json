@@ -1,0 +1,28 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": null,
+  "reflection": {
+    "hindsight": "The attempt failed at the time limit. Short base advances brought the estimated target within reach, and the final downward move reached within 7 mm of the requested grasp pose. However, navigation consumed much of the budget, and the arm approach used 60 steps rather than the 22-step minimum reported by the path check. Only eight steps remained when I commanded gripper closure. No closure result or secure hold was observed, and no return was attempted. The visible can and accurate TCP pose did not establish successful finger alignment. I should have budgeted for actual arm execution time and preserved a firm reserve for grasp verification and return."
+  },
+  "provider_id": "resp_045a7e9edd5b3ac3006abc72e0fee087d2a0ee200dd7a51608",
+  "returned_model": "gpt-6-astra",
+  "usage": {
+    "input_tokens": 9602,
+    "input_tokens_details": {
+      "cache_write_tokens": 9599,
+      "cached_tokens": 0
+    },
+    "output_tokens": 139,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 9741
+  },
+  "input_tokens": 9602,
+  "output_tokens": 139,
+  "estimated_usd": "0.126975",
+  "reasoning_summaries": [],
+  "api_attempted": true,
+  "request_bundle_sha256": "f41cca5abb6fbd3d610bc540733559e07361d36a38d3678289191df02d4bd179"
+}

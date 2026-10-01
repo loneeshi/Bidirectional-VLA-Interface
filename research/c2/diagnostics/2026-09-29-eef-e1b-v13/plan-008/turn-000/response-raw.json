@@ -1,0 +1,183 @@
+{
+  "id": "resp_0b732bcb3fce7dbb006abc317bf73487d285bfc897e9d0ae3e",
+  "object": "response",
+  "created_at": 1790718332,
+  "status": "completed",
+  "access_programs": null,
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1790718336,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You control a Fetch robot to pick the specified object and carry it to the robot's rest posture. This is E1-B, a privileged-position pilot. At the first turn only, one target collision-shape bounding-box center is provided in attempt-start base_link; it is never refreshed after base motion. Use odometry to transform it yourself. It is not a grasp point. Infer orientation, dimensions, grasp surface and obstacles yourself from the robot RGB-D. There are no demonstrations or earlier attempts.\nEach turn return exactly one tool call using the JSON schema. End-effector coordinates are in CURRENT base_link: x forward, y left, z up, meters. A pose is the gripper_link origin and orientation quaternion [x,y,z,w], unit norm. Local gripper +x points through the fingers; fingers separate along local y. Use the measured TCP pose and images to reason about the desired approach. move_base(turn_rad, forward_m) turns in place then drives straight; negative forward_m reverses, no sideways motion. Bounds: |turn_rad|<=pi, |forward_m|<=1.5m, at most 80 steps. Speeds capped at 1rad/s and 0.5m/s; arrival tolerances 0.03rad and 0.02m. Odometry dx_m,dy_m,dyaw_rad is ideal noiseless robot odometry relative to attempt-start base_link. The arm and gripper retain their targets during base motion. After moving the base, end-effector poses are in the new CURRENT base_link. Every non-set_gripper call MUST have gripper=null. Only move_base has non-null turn_rad and forward_m; all other calls MUST set both to null. move_base must use poses=[]. Torso and arm are controlled by robot-only IK. check_path checks only robot IK, joint limits and timing; acceptance does not establish freedom from collision. move_to and move_eef_chunk interpolate and track your poses; no scene collision filter is used. set_gripper: 1=open, 0=closed, intermediate values partially open. Close only when positioned for grasp; closing performs precise alignment to the last movement goal. return_to_rest moves joints to the official rest posture while retaining the gripper command. You must return to rest with the object for strict Pick success; lifting alone is insufficient. done/give_up end the attempt and require hindsight. A tool refusal consumes one of your 25 calls. The environment has at most 200 remaining control steps, with an unchanged official cumulative-force limit. Tool steps share that budget. Move calls are capped at 60 steps, rest at 60, closing alignment at 10 plus up to 5 finger steps. Do not claim success from the tool's arrived flag alone. Choose the next command using current sensor feedback and your own earlier commands. Only robot head/hand RGB-D and joint measurements are available. Depth grayscale uses the stated encoding. No locate_point tool is available. Before any valid tool call, including check_path, done and give_up, the execution wrapper sends zero base velocity while holding upper-body targets and gripper until measured base speed is stable; these settling steps consume that call's budget and the official episode budget. check_path itself remains read-only after that prelude. Every base motion phase also settles first. A tool may return not arrived after settling or contact; read the measured residuals and odometry. The attempt-start odometry origin and privileged initial point do not change during settling.",
+  "max_output_tokens": 4000,
+  "max_tool_calls": null,
+  "model": "gpt-6-astra",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b732bcb3fce7dbb006abc317cea4487d29033884e7dafa76a",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqvDGA5Iy_z0uXvgON6GLJNRSQ29lJYUsil8NmpzAEfcxL03JARzIKsiJ6UYLXjLhddoRIst3Wyr1PviG-wS3r0XE78uXjuazAMdC31Qaxb1zhrXSvhfj2DOkOQVzlSBOrQYqWQ_kNcIGxGnuYq17MFw_zHjYchz1-spEHQeVNYFeIzP4JjqVbY-YKx71abpr3118LK-kTA6rq38RRL3c6kVbqC_U9DcGDjdKOO9YaqhVnrp4CMPax5dmu6Plo7lQ9XTAblvGzzNQFqxxJBcWn5WCLKWrXMaSjxft8Qdexmh6ey_3Dx2-6Fvin8qsj0p5eFNdnKs-2bqB2azZV6xOSGuOmoqmgfS0f53UVx9sOYr3n4jwjgZy4OiiMU_J3Wsh7gIXZTKuLBVOVuBD46jZlhy0yooeIqQFY1ucXf6aIDNBj0iGoBTYEshaje2VCAQ26xyluX-la6aajvkhZNgfxZRYR4sIRiQs2fNcCL2BB4P_hyoGsaUjjekyDf1Jmj4JcBAoykomjBNtSacwao0zKbZZ41Yh61pU3hyQignJ_WNoyvk9Bneqw3QPkab9k7xQDyKtYdmq84LtBL9F--TJlKTMUkMkxK6RdVB6p40rsUrC3-zE648FSK0ImY49LyaFtU9C9fFEg9MrDU7A5U8pZea4av4JC3msmH-ec2Ck5D86S7ZBvmnxVJvKQLfw4w6fM1frRoXTDg-LGFwklh3kX0XYUAu17BgXSe1ovmfMVzQfag6dKu1HbVq2qFgpL9E09IrpsUmsL8hGcBv_eSoRCYmm_qLyQubCXgyQpfegiV-8RiaaMqVjo49jEiu80ttNdAXG3i6EkEUnFDQVnxngqHWINUJbLsf2ZlEgNmMsfIXhVvwFCelh-TOmtIlpKxKjqsZpT-A4DY2ddgI8slL65KkyShM1HU0FB9wyOcGtP0s_xwRkKx0MNeCpHjS6vmZEZ_Vqi0slCZMHT1a3sNsZb3iUYbr5eIPhm3Z8ntEBitLR195YwyXwGyxF8sVwqhgMdp3oIj9Jay5KYyv7Idh74fWsQV7yDc8H3-628wGoRX5nGoddyAJ8wriCKJBUypiidDFnfWuqOU8CaPzayeIRKYig1IeVVXN0-1y3OBaLH42-Vu0BQ2il8r-p9GQdn2co0fNwLOSHtl-SnZNEhKCbyCZucPqvtjNFUN-feL7ESFkIQvqjsVaI1NaCTrgWABGT2luC1wGtYcB7DygjrrRad3vul_6VBrwj-3qAjKFZTPJC9zNxhRF1uWdJ82V7_qkcqTrQxWSWjEOku-9djSgQ9UsDw28l_xA1lBWIyaF9zw3-jLmAdnTslH9VKAWM6-TAD7jXisqOO4WdOpesIesNWE1supRGS0n-WaG8QqlXW4dke_qDAGMUqM-orlV2RkfMgMcR2cvPW53val1KMJ737TOJDf7lU4P0q7zV7s7HgeOBQ5T6bJV_wskqFgZHZtp6zQue1aajrdG6M-qa19i0kLi1oKslU16o1YYhybSORTfE7UJLYLXx6fakcTmtlvBvwV1CgFC7WDM96fPXLFmcj_SHp8X2Q294C_2coyuentTbSbJHONOIr2b0SPEk5P0e-hmHj9atAYHg7nZJ_H-nywHayYRJMg2-9Qc86aJ8xnNnxkphWBBv18H_ql2NZDRJiB-Mb1RVCT9lMjXfgTzqhTtMFQw==",
+      "summary": []
+    },
+    {
+      "id": "msg_0b732bcb3fce7dbb006abc317f77bc87d2ac2a0a7211c1b245",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"forward_m\":0.4,\"gripper\":null,\"hindsight\":\"\",\"poses\":[],\"tool\":\"move_base\",\"turn_rad\":0.0}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "eef_tool_call",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "forward_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "gripper": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "hindsight": {
+            "type": "string"
+          },
+          "poses": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "position": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 3,
+                  "minItems": 3,
+                  "type": "array"
+                },
+                "quaternion_xyzw": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "position",
+                "quaternion_xyzw"
+              ],
+              "type": "object"
+            },
+            "maxItems": 8,
+            "type": "array"
+          },
+          "tool": {
+            "enum": [
+              "move_base",
+              "check_path",
+              "move_to",
+              "move_eef_chunk",
+              "set_gripper",
+              "return_to_rest",
+              "done",
+              "give_up"
+            ],
+            "type": "string"
+          },
+          "turn_rad": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "tool",
+          "poses",
+          "gripper",
+          "hindsight",
+          "turn_rad",
+          "forward_m"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1520,
+    "input_tokens_details": {
+      "cache_write_tokens": 1517,
+      "cached_tokens": 0
+    },
+    "output_tokens": 135,
+    "output_tokens_details": {
+      "reasoning_tokens": 93
+    },
+    "total_tokens": 1655
+  },
+  "user": null,
+  "metadata": {}
+}

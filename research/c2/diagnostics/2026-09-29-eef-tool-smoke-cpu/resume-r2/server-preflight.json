@@ -1,0 +1,33 @@
+{
+  "recorded_at_utc": "2026-09-29T03:54:55.320319+00:00",
+  "method": "read-only SSH, no installs/uploads/launches",
+  "gpu1_uuid": "GPU-b7ebba23-7824-7601-df32-be55628936c3",
+  "gpu1_memory_mib": 15,
+  "gpu1_utilization_percent": 0,
+  "gpu1_compute_processes": [],
+  "gpu0_other_user_process_untouched": true,
+  "server_root": "/home/pshuai/bvi-research",
+  "runs_writable": true,
+  "available_disk_report": "636G",
+  "squeue_found": false,
+  "qstat_found": false,
+  "scheduling_clearance_confirmed": false,
+  "scheduling_note": "No scheduler command found; local lab scheduling rules not independently established. Confirm direct serial GPU1 permission before launch.",
+  "mshab_commit": "e9ff3d23496d38e4431c8d913e147ffa007f7f72",
+  "sequential_task_sha256": "47fd4999f7326568a550890caa48eac070901525373fac667ff56384eeb2a6be",
+  "base_env_sha256": "09a176d2a81924ae3b0234405bab2d45cd861a250c37ea52f12b6994b5753208",
+  "snapshot_sha256": {
+    "5": "e56a12e95d6a4b630a9c5bae36ebaea6b73a952104e17f38c4767b57789e847a",
+    "8": "6cf3378cc558f08c473b32f394601782c2dcb20e6be2e64b75217fd9810318e0",
+    "11": "4717bd0aabf5c6d74c864d3f2bc2738c0897696680dd5ed9e89d3c2c84d828fb"
+  },
+  "snapshots_verified_against_remote_files": true,
+  "runtime_python_exists": true,
+  "credentials_paths_ignored_verified": [
+    ".env.server.local",
+    ".runtime/lab-server/known_hosts"
+  ],
+  "gpu_process_seconds": 0,
+  "api_requests": 0,
+  "simulator_actions": 0
+}

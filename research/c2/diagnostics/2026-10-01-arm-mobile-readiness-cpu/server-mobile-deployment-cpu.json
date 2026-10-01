@@ -1,0 +1,42 @@
+{
+  "archive_sha256": "590063d9988a51814f311caa784d2d51565ba276883092a8ecad1404e07ebab2",
+  "source_hash_count": 108,
+  "asset_hash_count": 1046,
+  "imports_passed": true,
+  "unapproved_scope_rejected": true,
+  "effective_asset_directory": "/home/pshuai/bvi-research/assets/data",
+  "cuda_initialized": false,
+  "provider_sends": 0,
+  "physical_steps": 0,
+  "credential_permissions_valid": true,
+  "credential_content_read": false,
+  "gpu1_idle": true,
+  "gpu_processes": [
+    "GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548"
+  ],
+  "base_enabled": true,
+  "robot_specifications": {
+    "source": "fixed Fetch robot model and frozen controller; no scene geometry",
+    "frame": "current base_link; x forward, y left, z up",
+    "chassis_radius_m": 0.288,
+    "chassis_diameter_m": 0.576,
+    "chassis_forward_extent_m": 0.287,
+    "footprint_scope": "rigid chassis only; excludes projecting arm",
+    "max_linear_speed_m_s": 0.5,
+    "max_angular_speed_rad_s": 1.0,
+    "control_frequency_hz": 20,
+    "base_call_step_cap": 80,
+    "arm_call_step_cap": 150,
+    "rest_step_cap": 150,
+    "look_step_cap": 40,
+    "gripper_step_cap": 15,
+    "episode_step_cap": 600,
+    "tool_call_cap": 25,
+    "base_position_tolerance_m": 0.02,
+    "base_yaw_tolerance_rad": 0.03,
+    "max_turn_rad": 3.141592653589793,
+    "max_forward_m": 1.5,
+    "motion": "turn then straight drive; negative distance reverses; no lateral drive"
+  },
+  "reference_binding_hashes_checked": 5
+}

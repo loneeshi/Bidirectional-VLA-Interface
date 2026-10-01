@@ -1,0 +1,32 @@
+{
+  "objective": "Execute the approved experiment according to its design until its specified terminal gate",
+  "audited_at_utc": "2026-09-28T20:31:58.011153+00:00",
+  "checks": {
+    "independent_authorization": true,
+    "authorized_limits": true,
+    "frozen_source_hashes": true,
+    "deployment_archive_hash": true,
+    "evidence_archive_hash": true,
+    "three_frozen_teacher_bindings": true,
+    "runtime_cpu_gate": true,
+    "snapshot_restore_and_official_controller": true,
+    "complete_recorded_state_fields": true,
+    "robot_sensor_files_present": true,
+    "official_eval_sidecar_present": true,
+    "G1_result_and_return_to_rest_recorded": true,
+    "correct_failure_gate_stop": true,
+    "no_automatic_retry_or_remaining_launch": true,
+    "within_budget_no_api_no_policy": true,
+    "finance_authorization_and_process_record": true,
+    "both_log_indexes": true,
+    "design_moved_and_indexed": true,
+    "daily_and_weekly_record": true,
+    "CPU_diagnostic_separate": true,
+    "relative_log_links": true
+  },
+  "all_checks_passed": true,
+  "experiment_terminal": "failed_acceptance_gate",
+  "experiment_passed": false,
+  "remote_terminal_evidence": "Live ps: supervisor 1643599 and child 1643740 absent; GPU1 15 MiB/0%, no compute process; terminal supervisor log re-read",
+  "new_runs_or_requests": 0
+}

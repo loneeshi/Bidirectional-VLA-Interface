@@ -1,0 +1,32 @@
+{
+  "status": "valid",
+  "reason": null,
+  "call": {
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "Failed to secure the bowl. Initial closures were above the grasp surface; the final lower approach encountered contact and closing alignment failed. The remaining control budget is insufficient to recover and return to rest.",
+    "poses": [],
+    "tool": "give_up",
+    "turn_rad": null
+  },
+  "provider_id": "resp_0b732bcb3fce7dbb006abc321b148087d2b8c399b5d7c41cf0",
+  "returned_model": "gpt-6-astra",
+  "service_tier": "default",
+  "usage": {
+    "input_tokens": 13009,
+    "input_tokens_details": {
+      "cache_write_tokens": 690,
+      "cached_tokens": 12316
+    },
+    "output_tokens": 74,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 13083
+  },
+  "input_tokens": 13009,
+  "output_tokens": 74,
+  "estimated_usd": "0.1663125",
+  "api_attempted": true,
+  "request_bundle_sha256": "7f157d5aa303d1d5628da3e4eb4c72879c0189ff6676ec5b644a7412b9f7323e"
+}

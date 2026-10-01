@@ -1,0 +1,45 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "head",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "A small red-and-white can is visible on the wooden cabinet in the head view. I will measure its visible surface before planning a grasp.",
+    "observation_id": "obs-000-f2ed5e1c8c40f4a1",
+    "pan_rad": null,
+    "pixel": [
+      354,
+      324
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "Head obs-000 shows the likely soup can on a cabinet.",
+      "expected_change": "Obtain a base-frame surface point on the can.",
+      "next_check": "Use depth and cabinet geometry to estimate grasp location.",
+      "uncertainty": "Can dimensions and reachable grasp pose are unknown; robot obscures much of head view."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "c3a955b72fa620e7293bca09668e7bb1e3cf6e65b8d514be056b9ccdecdf94d2",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_028623254690469f016abd4d92191487d28b8fb20ff4198c14",
+  "usage": {
+    "input_tokens": 4681,
+    "input_tokens_details": {
+      "cache_write_tokens": 4678,
+      "cached_tokens": 0
+    },
+    "output_tokens": 178,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4859
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.0674125"
+}

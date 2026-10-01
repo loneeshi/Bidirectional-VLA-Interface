@@ -1,0 +1,12 @@
+{
+  "supervisor_pid": 1709557,
+  "started_at_utc": "2026-09-29T21:37:42.788555+00:00",
+  "command": [
+    "/home/pshuai/bvi-research/envs/acdit/bin/python",
+    "/home/pshuai/bvi-research/runs/eef-e1b-20260929-v13-r1/code/scripts/run_eef_e1b_batch.py",
+    "--root",
+    "/home/pshuai/bvi-research/runs/eef-e1b-20260929-v13-r1",
+    "--census-root",
+    "/home/pshuai/bvi-research/runs/real-handoff-pick-census-20260925"
+  ]
+}

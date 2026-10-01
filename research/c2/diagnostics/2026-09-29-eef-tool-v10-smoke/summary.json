@@ -1,0 +1,357 @@
+{
+  "rows": [
+    {
+      "position": 5,
+      "passed": true,
+      "strict_pick_success": false,
+      "steps": 53,
+      "commands": [
+        {
+          "instruction": 0,
+          "passed": true,
+          "result": {
+            "accepted": false,
+            "reason": "ik_not_found",
+            "readonly": true,
+            "steps_used": 0
+          }
+        },
+        {
+          "instruction": 1,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 1,
+            "alignment": null,
+            "enter_closed": false,
+            "command": 1.0,
+            "finger_distance_m": 0.06631052866578102,
+            "stable": null,
+            "control": "damped_native_position"
+          }
+        },
+        {
+          "instruction": 2,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "minimum_steps": 4,
+            "keyframe_ends": [
+              3,
+              9,
+              14
+            ],
+            "readonly": true,
+            "steps_used": 0
+          }
+        },
+        {
+          "instruction": 3,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 22,
+            "position_error_m": 0.0026908353594773636,
+            "rotation_error_rad": 0.01194230382500156,
+            "arm_ik_wait_steps": 0,
+            "torso_target_m": 0.2763461189558826,
+            "reference_count": 24,
+            "reference_completed": true,
+            "reference_clock": "shared_release_cursor"
+          }
+        },
+        {
+          "instruction": 4,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 14,
+            "alignment": {
+              "position_error_m": 0.0019002025799972927,
+              "rotation_error_rad": 0.0005822179357832344,
+              "torso_delta_m": 7.012486457824707e-05,
+              "steps_used": 9,
+              "torso_anchor_m": 0.28395556071581224
+            },
+            "enter_closed": true,
+            "command": 0.0,
+            "finger_distance_m": 0.0,
+            "stable": false,
+            "control": "damped_native_position"
+          }
+        },
+        {
+          "instruction": 5,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 8,
+            "position_error_m": 0.005400678887970719,
+            "rotation_error_rad": 0.01527453363069925,
+            "arm_ik_wait_steps": 0,
+            "torso_target_m": 0.3747278502644026,
+            "reference_count": 15,
+            "reference_completed": true,
+            "reference_clock": "shared_release_cursor"
+          }
+        },
+        {
+          "instruction": 6,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "steps_used": 8,
+            "criteria": {
+              "ee_rest": true,
+              "robot_rest": true,
+              "is_static": true
+            },
+            "max_rest_joint_error": 0.016218997955322223,
+            "method": "joint_space_no_ik"
+          }
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "passed": true,
+      "strict_pick_success": false,
+      "steps": 69,
+      "commands": [
+        {
+          "instruction": 0,
+          "passed": true,
+          "result": {
+            "accepted": false,
+            "reason": "ik_not_found",
+            "readonly": true,
+            "steps_used": 0
+          }
+        },
+        {
+          "instruction": 1,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 1,
+            "alignment": null,
+            "enter_closed": false,
+            "command": 1.0,
+            "finger_distance_m": 0.0594540499150753,
+            "stable": null,
+            "control": "damped_native_position"
+          }
+        },
+        {
+          "instruction": 2,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "minimum_steps": 11,
+            "keyframe_ends": [
+              12,
+              27,
+              44
+            ],
+            "readonly": true,
+            "steps_used": 0
+          }
+        },
+        {
+          "instruction": 3,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 39,
+            "position_error_m": 0.00773026112885673,
+            "rotation_error_rad": 0.03196835428046291,
+            "arm_ik_wait_steps": 0,
+            "torso_target_m": 0.0,
+            "reference_count": 50,
+            "reference_completed": true,
+            "reference_clock": "shared_release_cursor"
+          }
+        },
+        {
+          "instruction": 4,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 10,
+            "alignment": {
+              "position_error_m": 0.0014758252062191757,
+              "rotation_error_rad": 0.005211250253792246,
+              "torso_delta_m": 0.0001402494963258505,
+              "steps_used": 5,
+              "torso_anchor_m": 2.081239708469307e-05
+            },
+            "enter_closed": true,
+            "command": 0.0,
+            "finger_distance_m": 0.0,
+            "stable": false,
+            "control": "damped_native_position"
+          }
+        },
+        {
+          "instruction": 5,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 5,
+            "position_error_m": 0.008278699879989082,
+            "rotation_error_rad": 0.03126842990919267,
+            "arm_ik_wait_steps": 0,
+            "torso_target_m": 0.0,
+            "reference_count": 5,
+            "reference_completed": true,
+            "reference_clock": "shared_release_cursor"
+          }
+        },
+        {
+          "instruction": 6,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "steps_used": 14,
+            "criteria": {
+              "ee_rest": true,
+              "robot_rest": true,
+              "is_static": true
+            },
+            "max_rest_joint_error": 0.02160511207580562,
+            "method": "joint_space_no_ik"
+          }
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "passed": false,
+      "strict_pick_success": false,
+      "steps": 102,
+      "commands": [
+        {
+          "instruction": 0,
+          "passed": true,
+          "result": {
+            "accepted": false,
+            "reason": "ik_not_found",
+            "readonly": true,
+            "steps_used": 0
+          }
+        },
+        {
+          "instruction": 1,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 1,
+            "alignment": null,
+            "enter_closed": false,
+            "command": 1.0,
+            "finger_distance_m": 0.07514940947294235,
+            "stable": null,
+            "control": "damped_native_position"
+          }
+        },
+        {
+          "instruction": 2,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "minimum_steps": 12,
+            "keyframe_ends": [
+              9,
+              22,
+              30
+            ],
+            "readonly": true,
+            "steps_used": 0
+          }
+        },
+        {
+          "instruction": 3,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "reason": "ok",
+            "steps_used": 47,
+            "position_error_m": 0.004403587050356833,
+            "rotation_error_rad": 0.004102844109255132,
+            "arm_ik_wait_steps": 0,
+            "torso_target_m": 0.10010510162923753,
+            "reference_count": 44,
+            "reference_completed": true,
+            "reference_clock": "shared_release_cursor"
+          }
+        },
+        {
+          "instruction": 4,
+          "passed": true,
+          "result": {
+            "accepted": true,
+            "reason": "ok",
+            "steps_used": 8,
+            "alignment": {
+              "position_error_m": 0.0017029282701367056,
+              "rotation_error_rad": 0.0022350700518628413,
+              "torso_delta_m": 0.0008047372102737427,
+              "steps_used": 3,
+              "torso_anchor_m": 0.09100279870205309
+            },
+            "enter_closed": true,
+            "command": 0.0,
+            "finger_distance_m": 0.0,
+            "stable": false,
+            "control": "damped_native_position"
+          }
+        },
+        {
+          "instruction": 5,
+          "passed": false,
+          "result": {
+            "arrived": false,
+            "reason": "tool_step_limit",
+            "steps_used": 20,
+            "position_error_m": 0.021182379284019486,
+            "rotation_error_rad": 0.022030456097477186,
+            "arm_ik_wait_steps": 0,
+            "torso_target_m": 0.1925352075630247,
+            "reference_count": 16,
+            "reference_completed": false,
+            "reference_clock": "shared_release_cursor"
+          }
+        },
+        {
+          "instruction": 6,
+          "passed": true,
+          "result": {
+            "arrived": true,
+            "steps_used": 26,
+            "criteria": {
+              "ee_rest": true,
+              "robot_rest": true,
+              "is_static": true
+            },
+            "max_rest_joint_error": 0.00862107467651363,
+            "method": "joint_space_no_ik"
+          }
+        }
+      ]
+    }
+  ],
+  "gpu_seconds": 150.64264429360628,
+  "api_requests": 0
+}

@@ -1,0 +1,8 @@
+{
+  "wire_sha256": "5da9263e9c0526bdf297bfe3d1e7dfea873c2f771d5f9bddedca6fe9871b80d8",
+  "model": "gpt-6-astra",
+  "image_count": 0,
+  "estimated_image_tokens": 0,
+  "non_image_json_bytes": 920,
+  "images": []
+}

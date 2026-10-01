@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-09-29T04:38:33.828121+00:00",
+  "command": "date -u '+%Y-%m-%dT%H:%M:%SZ'; nvidia-smi --query-gpu=index,uuid,memory.used,utilization.gpu --format=csv,noheader; nvidia-smi --query-compute-apps=gpu_uuid,pid,used_memory --format=csv,noheader; df -Pk /home/pshuai/bvi-research; test -w /home/pshuai/bvi-research/runs && echo runs_writable; test -x /home/pshuai/bvi-research/envs/acdit/bin/python && echo acdit_executable; sha256sum /home/pshuai/bvi-research/envs/acdit/bin/python; command -v sbatch || true; command -v srun || true; test -d /home/pshuai/bvi-research/assets && echo asset_root_exists",
+  "exit_code": 0,
+  "stdout": "2026-09-29T04:38:32Z\n0, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46349 MiB, 0 %\n1, GPU-b7ebba23-7824-7601-df32-be55628936c3, 15 MiB, 0 %\nGPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548, 46316 MiB\nFilesystem     1024-blocks       Used Available Capacity Mounted on\n/dev/nvme0n1p2  7750751692 6693695700 666364564      91% /\nruns_writable\nacdit_executable\n55e8f2734d0e882df2013e591fc2cd91fc31a4fc4d82dd0e78326af8fd3abdc1  /home/pshuai/bvi-research/envs/acdit/bin/python\nasset_root_exists\n\n\n",
+  "stderr": "",
+  "new_gpu_processes": 0,
+  "scheduler_basis": "Existing user-confirmed direct GPU1 serial scheduling; command availability alone does not grant permission. Recheck before launch."
+}

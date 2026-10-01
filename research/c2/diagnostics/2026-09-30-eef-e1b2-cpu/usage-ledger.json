@@ -1,0 +1,92 @@
+{
+  "experiment_id": "C2-EEF-E1B2-20260930-GUIDANCE-V1",
+  "status": "stopped",
+  "authorization_sha256": "8895d7b64cf8c1e22af98e6bb79ff0fba28022be91604214d91cf07ccb867531",
+  "gpu1_process_seconds": 147.53476371988654,
+  "api_requests": 0,
+  "lab_project_charge": 0,
+  "records": [
+    {
+      "name": "plan-055-E1B2",
+      "position": 55,
+      "mode": "E1B2",
+      "status": "finished",
+      "reservation_seconds": 1800,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 0,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-30T02:00:37.009805+00:00",
+      "command_sha256": "df0edfa11c908cbad52aa69a10ae1155cbd90bf86567d87f87f818a8fb106432",
+      "pid": 1719306,
+      "elapsed_process_seconds": 77.3243056461215,
+      "returncode": 0,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      }
+    },
+    {
+      "name": "plan-058-E1B2",
+      "position": 58,
+      "mode": "E1B2",
+      "status": "finished",
+      "reservation_seconds": 1800,
+      "gpu1_before": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "started_at_utc": "2026-09-30T02:01:54.647517+00:00",
+      "command_sha256": "b9324084017d43d7447bce0951e90a0fe5172d288945887cb4b85a9677f3ccf0",
+      "pid": 1720227,
+      "elapsed_process_seconds": 70.21045807376504,
+      "returncode": 1,
+      "timed_out": false,
+      "gpu1_after": {
+        "memory_used_mib": 15,
+        "utilization_percent": 3,
+        "compute_processes": []
+      },
+      "censored": true
+    }
+  ],
+  "case_results": [
+    {
+      "position": 55,
+      "mode": "E1-B2-guidance-v1-H0-v13",
+      "status": "completed",
+      "strict_pick_success": false,
+      "simulator_actions": 45,
+      "policy_inferences": 0,
+      "group": "new",
+      "base_translation_m": 0.2908390994700221,
+      "termination_category": "cumulative_force_limit",
+      "tool_calls": 3
+    },
+    {
+      "position": 58,
+      "mode": "E1-B2-guidance-v1-H0-v13",
+      "status": "api_censored",
+      "strict_pick_success": false,
+      "simulator_actions": 11,
+      "policy_inferences": 0,
+      "group": "new",
+      "base_translation_m": 0.13702529914001169,
+      "termination_category": "api_censored",
+      "tool_calls": 1
+    }
+  ],
+  "stop_reason": "case censored; stop without automatic retry",
+  "gpu1_final": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "simulator_actions": 56,
+  "policy_inferences": 0,
+  "ended_at_utc": "2026-09-30T02:03:05.215145+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": null,
+    "forward_m": null,
+    "gripper": 1,
+    "hindsight": "",
+    "note": "The horizontal pregrasp and grasp passed the robot-only path check without motion. I will open the fingers before approaching the upright can.",
+    "observation_id": null,
+    "pan_rad": null,
+    "pixel": null,
+    "poses": [],
+    "task_state": {
+      "belief": "Head obs-004 shows the can unchanged; horizontal grasp IK is feasible.",
+      "expected_change": "Fingers open to surround the can.",
+      "next_check": "Check opening and move to the pregrasp.",
+      "uncertainty": "Scene clearance is visual only; hand view does not yet show the approach."
+    },
+    "tilt_rad": null,
+    "tool": "set_gripper",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "3a8be1c2baa170d72c26b6da717474ffda10f42d27bc2268eb531b5520c60880",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_05f412362fa9dec5016abd4dda1f5887d2b531240e5d4959b0",
+  "usage": {
+    "input_tokens": 10157,
+    "input_tokens_details": {
+      "cache_write_tokens": 8223,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 156,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 10313
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.1347625"
+}

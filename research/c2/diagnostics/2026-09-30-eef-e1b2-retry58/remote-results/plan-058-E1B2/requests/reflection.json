@@ -1,0 +1,8 @@
+{
+  "position": 58,
+  "turn": 11,
+  "kind": "reflection",
+  "authorization_sha256": "30eeb87e12d02415dbf994671f6b13de632f5e3b9d586e143f8ec77fee03ea02",
+  "outcome": "failure",
+  "termination_category": "time_limit"
+}

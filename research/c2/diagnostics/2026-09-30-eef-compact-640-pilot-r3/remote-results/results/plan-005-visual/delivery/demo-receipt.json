@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-pilot-r3/results/plan-005-visual/delivery/online-raw.mp4",
+  "source_video_sha256": "98d5e1eb15c01b50a07b952d15c78f189126137daeafa503d070509ff1c669e8",
+  "source_result": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-pilot-r3/results/plan-005-visual/result.json",
+  "source_result_sha256": "941271d8c99e6864770bc78ac9dc02f98b6f23ae05ac37e2538fbc0277194ce9",
+  "output": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-pilot-r3/results/plan-005-visual/delivery/online-tcp-demo.mp4",
+  "output_sha256": "63646223ccdbd0ef954fca05300b7cf8113386e9fa9279fb0540fd7c1beef23f",
+  "frames": 152,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 5,
+  "source_status": "completed",
+  "source_strict_pick_success": false,
+  "source_mode": "compact-640-guidance-v4-H0-v13",
+  "kind_label": "online Astra attempt",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

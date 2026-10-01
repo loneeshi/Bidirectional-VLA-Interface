@@ -1,0 +1,56 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": null,
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The refreshed lid measurement agrees with the earlier estimate. I will move to the checked angled pregrasp, above and in front of the can.",
+    "observation_id": null,
+    "pan_rad": null,
+    "pixel": null,
+    "poses": [
+      {
+        "position": [
+          0.68,
+          -0.137,
+          1.17
+        ],
+        "quaternion_xyzw": [
+          0,
+          0.38268343,
+          0,
+          0.92387953
+        ]
+      }
+    ],
+    "task_state": {
+      "belief": "Head obs-006 shows the upright can; refreshed lid is [0.864,-0.137,1.004] m.",
+      "expected_change": "Open gripper reaches the angled pregrasp without contacting the can.",
+      "next_check": "Inspect hand and head alignment and measured pose residual.",
+      "uncertainty": "Scene clearance remains visual; IK checked robot reach only."
+    },
+    "tilt_rad": null,
+    "tool": "move_to",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "fec0296c31f8b9eebd11cfbc8b5794f368998e517b279775bf7a8b2f6c98c1cf",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_08f013ca6d11f1cb016abd4fb403ac87d29f38e0f6a5e55ae8",
+  "usage": {
+    "input_tokens": 11664,
+    "input_tokens_details": {
+      "cache_write_tokens": 9730,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 207,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 11871
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.15615"
+}

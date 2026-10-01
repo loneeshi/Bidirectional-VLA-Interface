@@ -1,0 +1,16 @@
+{
+  "version": "v13",
+  "linear_decel": 0.84,
+  "angular_decel": 4.81,
+  "linear_limit": 0.5,
+  "angular_limit": 1.0,
+  "tail_gain": 2.0,
+  "tail_switch": "max(2*tolerance,(dt/(1-rho_max)+dt)*speed_limit), rho_max=0.6618654969317679",
+  "settle_sensor": "norm(qvel[0:2]),abs(qvel[2])",
+  "settle_linear_lt": 0.02,
+  "settle_angular_lt": 0.03,
+  "settle_consecutive": 2,
+  "per_call_cap": 80,
+  "episode_cap": 200,
+  "case11_used_for_fitting": false
+}

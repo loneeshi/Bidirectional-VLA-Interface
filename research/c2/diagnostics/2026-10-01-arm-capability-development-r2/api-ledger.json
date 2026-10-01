@@ -1,0 +1,55 @@
+{
+  "authorization_sha256": "9f917594aea09c569c08a304fadeb13179648e5a1d5268a1e670e77d817e3eb7",
+  "status": "running",
+  "entries": [
+    {
+      "request_id": "arm-dev-000-V-tool-000",
+      "case_id": "arm-dev-000",
+      "condition": "V",
+      "wire_sha256": "8343fe2d2ea7d64efb831a897f786c33b2f58dd85facdddee51ac4ae7be63e5a",
+      "status": "valid",
+      "reserve_usd": "0.3994",
+      "estimated_usd": "0.0669125",
+      "reserved_at_epoch": 1790822833.8032305,
+      "reason": null,
+      "call": {
+        "camera": "hand",
+        "forward_m": null,
+        "gripper": null,
+        "hindsight": "",
+        "note": "The hand view shows a red-and-white cylindrical can on the chair beside a small green item. I will measure the can's top surface.",
+        "observation_id": "obs-000-0bac1c56added0fd",
+        "pan_rad": null,
+        "pixel": [
+          412,
+          107
+        ],
+        "poses": [],
+        "task_state": {
+          "belief": "The red-and-white can in obs-000 hand view is the likely tomato soup can.",
+          "expected_change": "Obtain the can top surface location in base coordinates.",
+          "next_check": "Estimate can dimensions and a top-down grasp.",
+          "uncertainty": "Exact can size and chair clearance remain unknown."
+        },
+        "tilt_rad": null,
+        "tool": "locate_point",
+        "turn_rad": null
+      },
+      "reflection": null,
+      "provider_id": "resp_066142c0b3c3d56f016abdc9b29f7487d29f72310d7594d583",
+      "usage": {
+        "input_tokens": 4673,
+        "input_tokens_details": {
+          "cache_write_tokens": 4670,
+          "cached_tokens": 0
+        },
+        "output_tokens": 170,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 4843
+      },
+      "reasoning_summaries": []
+    }
+  ]
+}

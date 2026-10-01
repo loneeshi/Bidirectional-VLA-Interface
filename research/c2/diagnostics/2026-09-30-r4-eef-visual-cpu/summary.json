@@ -1,0 +1,73 @@
+{
+  "position": 5,
+  "render_state_guard_passed_for_recorded_frames": true,
+  "steps": 77,
+  "api_requests": 0,
+  "look_results": [
+    {
+      "accepted": true,
+      "arrived": true,
+      "head_error_rad": 0.002367037534713734,
+      "reason": "ok",
+      "steps_used": 37
+    },
+    {
+      "accepted": true,
+      "arrived": false,
+      "head_error_rad": 0.22448293417692183,
+      "reason": "tool_step_limit",
+      "steps_used": 40
+    }
+  ],
+  "g2_observed_frames": [
+    {
+      "head": {
+        "valid_pixels": 4737,
+        "target_pixels": 4737,
+        "invalid_fraction": 0.0,
+        "surface_error_p95_m": 0.0015449122721897422,
+        "surface_error_max_m": 0.001730954314979839,
+        "camera_extrinsic_max_abs": 3.47955120272303e-07,
+        "passed_when_visible": true,
+        "reference": "same-pixel rendered target surface in evaluation-only world frame; not an independent depth-noise test"
+      },
+      "hand": {
+        "valid_pixels": 9784,
+        "target_pixels": 9784,
+        "invalid_fraction": 0.0,
+        "surface_error_p95_m": 0.0014705826597711093,
+        "surface_error_max_m": 0.0021334780983656232,
+        "camera_extrinsic_max_abs": 3.875880496551076e-07,
+        "passed_when_visible": true,
+        "reference": "same-pixel rendered target surface in evaluation-only world frame; not an independent depth-noise test"
+      }
+    },
+    {
+      "head": {
+        "valid_pixels": 5442,
+        "target_pixels": 5442,
+        "invalid_fraction": 0.0,
+        "surface_error_p95_m": 0.0015552782916423756,
+        "surface_error_max_m": 0.0018585731031859976,
+        "camera_extrinsic_max_abs": 4.3965426177461353e-07,
+        "passed_when_visible": true,
+        "reference": "same-pixel rendered target surface in evaluation-only world frame; not an independent depth-noise test"
+      },
+      "hand": {
+        "valid_pixels": 14444,
+        "target_pixels": 14444,
+        "invalid_fraction": 0.0,
+        "surface_error_p95_m": 0.001445885017083005,
+        "surface_error_max_m": 0.002016013920636433,
+        "camera_extrinsic_max_abs": 5.060908025433797e-07,
+        "passed_when_visible": true,
+        "reference": "same-pixel rendered target surface in evaluation-only world frame; not an independent depth-noise test"
+      }
+    }
+  ],
+  "batch_passed": false,
+  "remaining_cases_started": false,
+  "official_force": 0,
+  "official_termination": false,
+  "media_directory": "docs/media/c2-pick-visual-2026-09-30-plan005-ed6d11d5/delivery"
+}

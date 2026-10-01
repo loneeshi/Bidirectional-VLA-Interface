@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-09-29T03:37:23.584376+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "cpu_gates_passed": false,
+  "gpu_authorization_proposal_created": false,
+  "gpu_process_seconds": 0,
+  "api_requests": 0,
+  "simulator_actions": 0,
+  "design_sha256": {
+    "research/c2/docs/real-handoff-eef-tool-smoke-e1-pilot-design.md": "a696b6218b12266d6c774f350d4534ddc497de97560f010bca73d8c904687f4e",
+    "research/c2/docs/real-handoff-eef-tool-loop-icl-design.md": "91e844e5d86a3a4c2b50fe2490c9180fcff9d2d604b30cf5ac072cf269db1d93",
+    "research/c2/docs/real-handoff-eef-g0-streaming-executor-design.md": "f755011d3e2ce12f46a58d764938e654a450ecf42914782267c3a874f54856bd"
+  },
+  "files_sha256": {
+    "frozen-parameters.json": "20d8f0eac43ddcd6a89cb38820364c9a9f0f24be7c42a8185dcacf7984b9aa5c",
+    "g1-progress.json": "208e99253bacc64a955dd07691867689c601315eb070e84af674b61942feaee9",
+    "g1-rejection-attribution.json": "8a123e7dcea2980363f574ee355a82824b1b8747ca9a2a2d7cefbb3fd81f164b",
+    "hard-gates.json": "4e716c4fbd91e4e7378daa7dc806d86d625ea7bcc07c45085ea8ebe8debe08d1",
+    "prediction-005.json": "5060822b14e9d779fe3bbfbaf5ef5b496b22bd3ccca67e74bcdf5462d78b2e1b",
+    "prediction-008.json": "b1e34476b0c3c9433c15711655fe1fd5152a242509a17398d8eecf91ee178359",
+    "prediction-011.json": "3bdee25e7355c30e55795591cfa05bc226326804feccefcae786e79fa987ed95",
+    "preservation-check.json": "cbefb1fc57a4e6aa666c5645596b8778801402e82ef9c6dd0033a3fb8c19f293",
+    "README.md": "37a60a283074017387effdd2cd7a51eadaf0f8a8dc6c3dbc4a5812241c6a5a34",
+    "smoke-poses.json": "c6dae6326cd28d0fd3ca144785240e1e429e1bcc1fb710f5697cf02c4703c944",
+    "test-receipt.json": "e366d972c698108ddf19073e1454c079df71fa1662b427afc76d6205f0f92c46"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "exit_code": 0,
+  "command": [
+    "D:\\AI\\Embodied Intelligence\\VLA as Tools\\repo\\Bidirectional-VLA-Interface\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_eef_tools.py",
+    "tests/test_eef_g0.py",
+    "tests/test_eef_streaming_stage_a.py",
+    "tests/test_eef_streaming_stage_a_v2.py",
+    "tests/test_eef_tools_v3.py",
+    "tests/test_eef_smoke_authorization.py",
+    "tests/test_eef_tools_v4.py",
+    "tests/test_eef_v4_smoke_authorization.py",
+    "tests/test_eef_v4_supervisor_wiring.py",
+    "tests/test_eef_tools_v5.py",
+    "tests/test_eef_tools_v6.py",
+    "tests/test_eef_tools_v7.py",
+    "tests/test_eef_tools_v8.py",
+    "tests/test_eef_tools_v9.py",
+    "tests/test_eef_v9_smoke_authorization.py",
+    "tests/test_eef_v9_supervisor_wiring.py",
+    "tests/test_eef_tools_v10.py",
+    "tests/test_eef_v10_smoke_authorization.py",
+    "tests/test_eef_v10_supervisor_wiring.py"
+  ],
+  "stdout": "........................................................................ [ 47%]\n........................................................................ [ 94%]\n........                                                                 [100%]\n152 passed in 2.85s\n",
+  "stderr": ""
+}

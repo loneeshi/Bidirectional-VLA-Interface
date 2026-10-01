@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-interface-r1/results/plan-055-visual-interface/delivery/online-raw.mp4",
+  "source_video_sha256": "af4969d5a40454e04058f17993ce76685e94e58bafccccfa6a14d7c8c2de2fd9",
+  "source_result": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-interface-r1/results/plan-055-visual-interface/result.json",
+  "source_result_sha256": "bf8f349d9d2b9e3eb97d515ddea903a827890f89ba35eff08ace3581d4ecb4b6",
+  "output": "/home/pshuai/bvi-research/runs/eef-compact-640-20260930-interface-r1/results/plan-055-visual-interface/delivery/online-tcp-demo.mp4",
+  "output_sha256": "f3d049acd9c317a88cd9ba5fdbc36102e7aba5fe870b21711ed435555a78e09c",
+  "frames": 48,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 55,
+  "source_status": "completed",
+  "source_strict_pick_success": false,
+  "source_mode": "visual-interface-api0",
+  "kind_label": "online interface check",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

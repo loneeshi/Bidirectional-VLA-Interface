@@ -1,0 +1,13 @@
+{
+  "status": "invalid_call",
+  "reason": "invalid_tool_call",
+  "call": null,
+  "provider_id": "resp_0a41b038e3cea9be006abb53a76da487d2b28ed6d005eb2f1d",
+  "returned_model": "gpt-6-astra",
+  "service_tier": "default",
+  "input_tokens": 1166,
+  "output_tokens": 194,
+  "estimated_usd": "0.02136",
+  "api_attempted": true,
+  "request_bundle_sha256": "1d13b450ea127c78d50d59bccce518c3ae94275cb9301147d4702ffa5636245e"
+}

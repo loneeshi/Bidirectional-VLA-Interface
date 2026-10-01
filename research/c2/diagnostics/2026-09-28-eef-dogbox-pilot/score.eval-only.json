@@ -1,0 +1,120 @@
+{
+  "schema": "bvi.eef-dogbox-pilot-score/1",
+  "status": "stopped",
+  "frozen_denominator": 3,
+  "processes_observed": 1,
+  "processes_not_run": 8,
+  "strict_pick_success_executed": 0,
+  "strict_pick_executed_denominator": 1,
+  "G1_current_case": {
+    "known_accepted": 19,
+    "previous_accepted": 19,
+    "points": 19,
+    "sequence": {
+      "accepted": true,
+      "reason": "ok",
+      "minimum_steps": 40,
+      "read_only": true
+    }
+  },
+  "termination": "official Pick time limit",
+  "motion_failure": {
+    "keyframe": 16,
+    "steps": 199,
+    "reason": "step_budget"
+  },
+  "return_to_rest": {
+    "joint_target_reached": false,
+    "max_rest_error": 0.10387531399726868,
+    "steps": 200,
+    "stopped": true
+  },
+  "official_final_info": {
+    "elapsed_steps": [
+      262
+    ],
+    "success": [
+      false
+    ],
+    "fail": [
+      true
+    ],
+    "subtask": [
+      1
+    ],
+    "subtask_type": [
+      0
+    ],
+    "subtasks_steps_left": [
+      0
+    ],
+    "robot_force": [
+      0.0
+    ],
+    "robot_cumulative_force": [
+      0.0
+    ],
+    "is_grasped": [
+      false
+    ],
+    "ee_rest": [
+      false
+    ],
+    "robot_rest": [
+      true
+    ],
+    "is_static": [
+      false
+    ],
+    "cumulative_force_within_limit": [
+      true
+    ],
+    "robot_target_pairwise_force": [
+      0.0
+    ],
+    "obj_at_goal_progressive_3": [
+      false
+    ],
+    "obj_at_goal_progressive_7": [
+      false
+    ],
+    "obj_at_goal_progressive_11": [
+      false
+    ],
+    "obj_at_goal_progressive_15": [
+      false
+    ],
+    "obj_at_goal_progressive_19": [
+      false
+    ],
+    "adapter_subtask_before": 1,
+    "adapter_subtask_after": 1
+  },
+  "ever_is_grasped": false,
+  "max_robot_cumulative_force": 0.0,
+  "base_max_abs_motion": 0.00524294376373291,
+  "simulator_actions": 200,
+  "api_requests": 0,
+  "policy_inferences": 0,
+  "gpu1_process_seconds": 59.110455233603716,
+  "gpu1_final": {
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_processes": []
+  },
+  "remaining_authorized_seconds": 1560.8895447663963,
+  "evidence_sha256": "f2fc342abdaf7a149849e50a45a835e66aa36b59e3102620f2f4390ed4afe8cf",
+  "restore": {
+    "state_max_error": 2.384185791015625e-07,
+    "policy_input_equal": true,
+    "pointer": 1
+  },
+  "torso": {
+    "min_m": 0.22221119701862335,
+    "max_m": 0.3861500024795532,
+    "peak_to_peak_m": 0.16393880546092987,
+    "total_absolute_delta_m": 0.25463688373565674,
+    "max_rest_deviation_m": 0.16378880298137666
+  },
+  "inference": "IK feasibility passed for this teacher, but per-waypoint physical settling consumed official horizon; causal remedies not tested"
+}

@@ -1,0 +1,46 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "head",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "The reach check found no IK solution. I will measure the near table edge to bound a short approach rather than use target distance as clearance.",
+    "observation_id": "obs-003-461a3eeb9bc36367",
+    "pan_rad": null,
+    "pixel": [
+      332,
+      421
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "Target remains beyond current reach; table blocks a direct long approach.",
+      "expected_change": "Measure nearest table edge in the intended corridor.",
+      "next_check": "Compare edge range with chassis extent and side obstacles.",
+      "uncertainty": "Full corridor clearance and exact target dimensions remain unknown."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "api_attempts": 1,
+  "request_bundle_sha256": "7bb2d3fcd10b4671a47fe10a1b709d487022bec440a127e872868477e2d7e788",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_041480819977b43b016abd576091e487d293814471878f19c4",
+  "usage": {
+    "input_tokens": 9375,
+    "input_tokens_details": {
+      "cache_write_tokens": 7441,
+      "cached_tokens": 1931
+    },
+    "output_tokens": 165,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 9540
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.1254375"
+}

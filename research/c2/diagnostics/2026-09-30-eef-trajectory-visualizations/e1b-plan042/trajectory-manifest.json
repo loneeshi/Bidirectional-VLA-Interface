@@ -1,0 +1,13 @@
+{
+  "position": 42,
+  "mode": "E1-B-privileged-H0-v13",
+  "status": "completed",
+  "strict_pick_success": false,
+  "steps": 25,
+  "commands": 1,
+  "source_sha256": "52a8884f1eb3af05d59788ba24f4800443d02d81ee4fe5fdd964367dae6b31ff",
+  "initial_pose_source": "base_call_entry",
+  "video_relative": null,
+  "svg_sha256": "af399957a1670cf878eaf7f6051d0fcc62ab929d93f950113eab62ac5071f30f",
+  "html_sha256": "e34bafc10ee5aeb8db4c788e863913184cb1f34e6a0a2ca72abbb81c24f7d619"
+}

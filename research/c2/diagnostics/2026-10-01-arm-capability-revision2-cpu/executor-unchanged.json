@@ -1,0 +1,7 @@
+{
+  "version": "arm-coordinated-v2-600",
+  "sha256": "c5aef29c0ca3ade254fe95a815ef85e823797b7c313f578a52f294654d95192b",
+  "modified": false,
+  "prior_executor_freeze_sha256": "52a108306f209c7426bbe77da3bffd8b7d9a2e6c17f20c610b9a30c7b986dceb",
+  "deferred_issue": "joint candidate desktop141/147/145 vs Cartesian87/95/96 unexpectedly longer; distant endpoint IK branch or non-shortest continuous-joint wrap are hypotheses only; no repair or new candidate run"
+}

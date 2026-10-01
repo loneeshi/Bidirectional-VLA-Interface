@@ -1,0 +1,132 @@
+{
+  "status": "posthoc_cpu_diagnosis_not_frozen_G0_result",
+  "position": 5,
+  "rows": [
+    {
+      "step": 4,
+      "goal_within_bounds": true,
+      "known_q_residual": [
+        -8.881784197001252e-16,
+        -8.326672684688674e-17,
+        -2.220446049250313e-16,
+        -2.061126251053116e-17,
+        -2.6933898810866808e-17,
+        -3.655033730232509e-17
+      ],
+      "variants": [
+        {
+          "method": "trf",
+          "max_nfev": 180,
+          "nfev": 180,
+          "status": 0,
+          "optimality": 0.0021218774089825443,
+          "position_error_m": 0.0034632684652552747,
+          "rotation_error_rad": 0.0009054617669398708
+        },
+        {
+          "method": "trf",
+          "max_nfev": 1800,
+          "nfev": 1800,
+          "status": 0,
+          "optimality": 2.3526958399021753e-07,
+          "position_error_m": 4.5335370912900283e-07,
+          "rotation_error_rad": 1.1697708216370437e-07
+        },
+        {
+          "method": "dogbox",
+          "max_nfev": 180,
+          "nfev": 4,
+          "status": 1,
+          "optimality": 1.0696808673295436e-13,
+          "position_error_m": 9.744467158205675e-14,
+          "rotation_error_rad": 1.3843922591130754e-13
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "goal_within_bounds": true,
+      "known_q_residual": [
+        4.440892098500626e-16,
+        -1.5959455978986625e-16,
+        0.0,
+        3.520533716544619e-17,
+        -6.938893903907226e-17,
+        1.0573298840562923e-16
+      ],
+      "variants": [
+        {
+          "method": "trf",
+          "max_nfev": 180,
+          "nfev": 180,
+          "status": 0,
+          "optimality": 0.0017754006584949707,
+          "position_error_m": 0.006387491180975591,
+          "rotation_error_rad": 0.001682750649114129
+        },
+        {
+          "method": "trf",
+          "max_nfev": 1800,
+          "nfev": 1800,
+          "status": 0,
+          "optimality": 8.564556411232937e-08,
+          "position_error_m": 1.236832053829193e-07,
+          "rotation_error_rad": 3.5741834049803125e-08
+        },
+        {
+          "method": "dogbox",
+          "max_nfev": 180,
+          "nfev": 4,
+          "status": 1,
+          "optimality": 2.1149141519721711e-13,
+          "position_error_m": 8.893200907995044e-14,
+          "rotation_error_rad": 2.2803944004800036e-13
+        }
+      ]
+    },
+    {
+      "step": 18,
+      "goal_within_bounds": true,
+      "known_q_residual": [
+        -4.440892098500626e-16,
+        -8.326672684688674e-17,
+        0.0,
+        1.9065403898105e-18,
+        -1.387778780781447e-17,
+        5.081083765070662e-17
+      ],
+      "variants": [
+        {
+          "method": "trf",
+          "max_nfev": 180,
+          "nfev": 180,
+          "status": 0,
+          "optimality": 0.001990578768262205,
+          "position_error_m": 0.005104219704031302,
+          "rotation_error_rad": 0.0006805701012667181
+        },
+        {
+          "method": "trf",
+          "max_nfev": 1800,
+          "nfev": 1800,
+          "status": 0,
+          "optimality": 8.600276933368503e-10,
+          "position_error_m": 3.539844573024168e-09,
+          "rotation_error_rad": 6.522222748589392e-10
+        },
+        {
+          "method": "dogbox",
+          "max_nfev": 180,
+          "nfev": 4,
+          "status": 1,
+          "optimality": 5.32415067035734e-15,
+          "position_error_m": 3.5030351459352663e-15,
+          "rotation_error_rad": 4.277885088245197e-15
+        }
+      ]
+    }
+  ],
+  "gpu_process_seconds": 0,
+  "api_requests": 0,
+  "simulator_actions": 0
+}

@@ -1,0 +1,13 @@
+{
+  "utc": "2026-09-30T18:13:50.830509+00:00",
+  "model_api_calls": 0,
+  "unauthenticated_http_probes": 40,
+  "gpu_process_seconds": 0,
+  "source_sha256": {
+    "scripts/eef_compact_broker.py": "4271c2ed0d2a86cfab0b8972a174b68d04791cf4bc78ca7c32aeb357010422e7",
+    "scripts/run_eef_compact_broker.py": "e4055a1d8a24da0667857d781e390ab9432f655d4fa7477dd637d67f6faf8641",
+    "src/bvi/eef_compact_api.py": "3c31c9f657289433cb074af6086304b8390a8422d055564fab98f06bb21fed6d"
+  },
+  "historical_unknown_charges_unchanged": true,
+  "experiment_code_modified": false
+}

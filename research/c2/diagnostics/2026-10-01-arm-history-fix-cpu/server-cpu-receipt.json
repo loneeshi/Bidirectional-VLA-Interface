@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "36bae1f9d6764aa53c2b522ccd21b3d56c491769f2237f01ceebdca95cfdabad",
+  "source_files": 99,
+  "effective_asset_directory": "/home/pshuai/bvi-research/assets/data",
+  "asset_directory_exists": true,
+  "duplicate_data_path_rejected": true,
+  "imports_passed": true,
+  "unapproved_scope_rejected": true,
+  "cuda_initialized": false,
+  "simulator_steps": 0,
+  "provider_sends": 0,
+  "physical_runtime_checked": false,
+  "python": "3.11.13 (main, Sep 18 2025, 19:46:39) [Clang 20.1.4 ]"
+}

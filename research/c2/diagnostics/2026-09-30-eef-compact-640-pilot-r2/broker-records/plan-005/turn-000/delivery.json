@@ -1,0 +1,45 @@
+{
+  "status": "valid",
+  "call": {
+    "camera": "head",
+    "forward_m": null,
+    "gripper": null,
+    "hindsight": "",
+    "note": "A small red-and-white can is visible on the wooden cabinet in the head view. I will measure its front surface before selecting a grasp.",
+    "observation_id": "obs-000-f2ed5e1c8c40f4a1",
+    "pan_rad": null,
+    "pixel": [
+      354,
+      325
+    ],
+    "poses": [],
+    "task_state": {
+      "belief": "The can at head pixel [354,325] is the likely tomato soup can.",
+      "expected_change": "Obtain a base-frame surface measurement without motion.",
+      "next_check": "Use measured location to estimate can dimensions and reachable grasp.",
+      "uncertainty": "Can center and cabinet clearance are not yet measured; hand view only shows part of the can."
+    },
+    "tilt_rad": null,
+    "tool": "locate_point",
+    "turn_rad": null
+  },
+  "api_attempted": true,
+  "request_bundle_sha256": "ee98866e07fe319521901d6a9b7d89dfff78150a9c4ab3112da8edb83587988b",
+  "reason": null,
+  "reflection": null,
+  "provider_id": "resp_08e21f851b0536ac016abd4f664dc087d295746fedf7d74a6c",
+  "usage": {
+    "input_tokens": 4681,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 4678
+    },
+    "output_tokens": 184,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4865
+  },
+  "reasoning_summaries": [],
+  "estimated_usd": "0.0677125"
+}

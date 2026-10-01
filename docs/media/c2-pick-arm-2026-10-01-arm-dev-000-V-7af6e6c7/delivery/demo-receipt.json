@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/arm-capability-development-revision2-20261001-r3/arm-dev-000/V/media-source/delivery/online-raw.mp4",
+  "source_video_sha256": "0e863f75492fe104cd8a3a3e9a51541ae3afbe1fc0b15c1230cccb598c7b257d",
+  "source_result": "/home/pshuai/bvi-research/runs/arm-capability-development-revision2-20261001-r3/arm-dev-000/V/media-source/result.json",
+  "source_result_sha256": "1ed938804ce7d4a0b6cac9244bc8e20f9011e684a908432589c39c370a280995",
+  "output": "/home/pshuai/bvi-research/runs/arm-capability-development-revision2-20261001-r3/arm-dev-000/V/media-source/delivery/online-tcp-demo.mp4",
+  "output_sha256": "6deaad4f23f3a01d16ebeea08044ec756f04f3401fde278d7b601033efab21df",
+  "frames": 218,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 0,
+  "source_status": "completed",
+  "source_strict_pick_success": true,
+  "source_mode": "V",
+  "kind_label": "online official-spawn V",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

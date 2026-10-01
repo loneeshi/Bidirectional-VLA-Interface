@@ -7,6 +7,7 @@
 
 ## 当前日志
 
+- [C2 官方出生站位抓取能力测评：开发组 5 例](2026-10-01-c2-arm-capability-dev.md)
 - [TidyHouse 三设置：Fixed / GPT / Teleport](2026-09-21-tidyhouse-three-settings.md)
 - [C2 Pick 站位能力与 GPT 选择](2026-09-23-c2-sac-pose-capability.md)
 - [C2 结构化失败反馈与 Pick 站位选择](2026-09-23-c2-failure-feedback-selection.md)

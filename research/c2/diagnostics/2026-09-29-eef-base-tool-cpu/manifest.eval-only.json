@@ -1,0 +1,69 @@
+{
+  "roster": [
+    {
+      "plan_position": 5,
+      "plan_uid": "tidy_house-sequential-val-102-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "e56a12e95d6a4b630a9c5bae36ebaea6b73a952104e17f38c4767b57789e847a",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-005/full-handoff-capture.pt"
+    },
+    {
+      "plan_position": 8,
+      "plan_uid": "tidy_house-sequential-val-105-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "6cf3378cc558f08c473b32f394601782c2dcb20e6be2e64b75217fd9810318e0",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-008/full-handoff-capture.pt"
+    },
+    {
+      "plan_position": 11,
+      "plan_uid": "tidy_house-sequential-val-108-0",
+      "q2_action_ids": [],
+      "snapshot_sha256": "4717bd0aabf5c6d74c864d3f2bc2738c0897696680dd5ed9e89d3c2c84d828fb",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-011/full-handoff-capture.pt"
+    },
+    {
+      "plan_position": 20,
+      "plan_uid": "tidy_house-sequential-val-116-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "forward_30",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "44c0a63c6f65332fd39dd0f2c335ad7d87cabfdc950ff53aae5c7c8ad47b37a4",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-020/full-handoff-capture.pt"
+    },
+    {
+      "plan_position": 23,
+      "plan_uid": "tidy_house-sequential-val-119-0",
+      "q2_action_ids": [
+        "turn_left_10",
+        "turn_right_10",
+        "turn_left_20",
+        "turn_right_20",
+        "turn_left_35",
+        "turn_right_35",
+        "forward_10",
+        "forward_20",
+        "forward_30",
+        "backward_10",
+        "backward_20"
+      ],
+      "snapshot_sha256": "e70b7a934f62891a3a5f7026e070af3e6b8e2f1ecc90a3f65128b54341e5c4cc",
+      "split": "development",
+      "archive_member": "results-full-proposal/plan-023/full-handoff-capture.pt"
+    }
+  ],
+  "freeze_sha256": "74809b513480af1a5bf3bd26220beec33fc754c9c7399d7306a9b9d166e70fb4"
+}

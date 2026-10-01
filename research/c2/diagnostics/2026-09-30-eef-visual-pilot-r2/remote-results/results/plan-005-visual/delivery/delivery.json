@@ -1,0 +1,14 @@
+{
+  "evaluation_only": true,
+  "result_sha256": "902c6b1cb25ed0c4917302c99c9b1b7bedd2ce42823d076b6ade01731f666632",
+  "status": "api_censored",
+  "artifacts": {
+    "history.html": {
+      "path": "history.html",
+      "sha256": "f0ced13dc5e9e8eb938926cf3f905f358cbf3b7e8fea36d570f5bcce62ef0865"
+    }
+  },
+  "errors": [],
+  "no_motion": true,
+  "complete": true
+}

@@ -1,0 +1,13 @@
+{
+  "position": 58,
+  "mode": "E1-B2-guidance-v1-H0-v13",
+  "status": "api_censored",
+  "strict_pick_success": false,
+  "steps": 11,
+  "commands": 1,
+  "source_sha256": "455d17ef8a33d4c2bd999971c65dc3fcc57a235460f1b5fe2f2b2465c0e299e8",
+  "initial_pose_source": "base_call_entry",
+  "video_relative": null,
+  "svg_sha256": "54cdec3fc7c7f9a41e0cc41faf5e3f9cbe4f1c800a124e48a341df874dde266d",
+  "html_sha256": "2cda3fe78df9ba3b00c255926bc1de44553e0d6576a63ba5947040571f1ab3a5"
+}

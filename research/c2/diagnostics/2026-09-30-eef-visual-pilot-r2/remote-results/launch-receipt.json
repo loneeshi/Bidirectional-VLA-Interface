@@ -1,0 +1,1 @@
+{"pid": 1752747, "utc": "2026-09-30T16:55:06.470897+00:00", "command": ["/home/pshuai/bvi-research/envs/acdit/bin/python", "/home/pshuai/bvi-research/runs/eef-visual-20260930-pilot-r2/code/scripts/run_eef_visual_batch.py", "--root", "/home/pshuai/bvi-research/runs/eef-visual-20260930-pilot-r2", "--census-root", "/home/pshuai/bvi-research/runs/real-handoff-pick-census-20260925"]}

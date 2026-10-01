@@ -1,0 +1,812 @@
+{
+  "contract_passed": 8,
+  "contract_total": 8,
+  "contract_gate_passed": true,
+  "rows": [
+    {
+      "position": 20,
+      "group": "contract",
+      "steps": 89,
+      "source_sha256": "05bb555bb053f9cc9459d5290e3429e62934580613016a5bd4529b227a8970a0",
+      "records": [
+        {
+          "steps": 16,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.09999999999999988,
+                "forward_m": -0.0
+              },
+              "effective_command": {
+                "turn_rad": 0.09999999999999988,
+                "forward_m": -0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 16,
+                "requested_turn_rad": 0.09999999999999988,
+                "requested_forward_m": -0.0,
+                "actual_turn_rad": 0.07196617126464844,
+                "actual_forward_m": -0.002857893246717092,
+                "position_error_m": 0.0028745840592442596,
+                "rotation_error_rad": 0.028033828735351426,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 4,
+              "base_turn": 12,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 1.2880080690700195e-07,
+            "yaw_rad": 3.948807716369629e-07
+          }
+        },
+        {
+          "steps": 22,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.09999999999999999
+              },
+              "effective_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.09999999999999999
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 22,
+                "requested_turn_rad": 0.0,
+                "requested_forward_m": 0.09999999999999999,
+                "actual_turn_rad": -0.0009694099426269531,
+                "actual_forward_m": 0.08793014135915318,
+                "position_error_m": 0.012083882369418111,
+                "rotation_error_rad": 0.0009694099426269531,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 8,
+              "base_turn": 0,
+              "base_drive": 14
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 1.0237145585805909e-07,
+            "yaw_rad": 2.5634653866291046e-07
+          }
+        },
+        {
+          "steps": 24,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.34999999999999987,
+                "forward_m": -0.0
+              },
+              "effective_command": {
+                "turn_rad": 0.34999999999999987,
+                "forward_m": -0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 24,
+                "requested_turn_rad": 0.34999999999999987,
+                "requested_forward_m": -0.0,
+                "actual_turn_rad": 0.3227424621582031,
+                "actual_forward_m": -0.002835958693684651,
+                "position_error_m": 0.0028614055303552363,
+                "rotation_error_rad": 0.027257537841796742,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 4,
+              "base_turn": 20,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 1.3541051405286389e-07,
+            "yaw_rad": 2.980232238769531e-07
+          }
+        },
+        {
+          "steps": 27,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.3
+              },
+              "effective_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.3
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 27,
+                "requested_turn_rad": 0.0,
+                "requested_forward_m": 0.3,
+                "actual_turn_rad": 0.005988359451293944,
+                "actual_forward_m": 0.2956014998337504,
+                "position_error_m": 0.004492482374295375,
+                "rotation_error_rad": 0.005988359451293944,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 10,
+              "base_turn": 0,
+              "base_drive": 17
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 1.4781883380075756e-07,
+            "yaw_rad": 3.9022415876301814e-07
+          }
+        }
+      ]
+    },
+    {
+      "position": 23,
+      "group": "contract",
+      "steps": 100,
+      "source_sha256": "3e498d8a9183c2cae7f2084a3f0973c15e2f380a81da51d1d1cb8ed3cd564d12",
+      "records": [
+        {
+          "steps": 19,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.09999999999999996,
+                "forward_m": 0.0
+              },
+              "effective_command": {
+                "turn_rad": 0.09999999999999996,
+                "forward_m": 0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 19,
+                "requested_turn_rad": 0.09999999999999996,
+                "requested_forward_m": 0.0,
+                "actual_turn_rad": 0.07200658321380615,
+                "actual_forward_m": 0.008626662203266048,
+                "position_error_m": 0.008693885914243351,
+                "rotation_error_rad": 0.027993416786193798,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 7,
+              "base_turn": 12,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 3.0698816490420855e-07,
+            "yaw_rad": 3.399327397346496e-07
+          }
+        },
+        {
+          "steps": 25,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.09999999999999987
+              },
+              "effective_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.09999999999999987
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 25,
+                "requested_turn_rad": 0.0,
+                "requested_forward_m": 0.09999999999999987,
+                "actual_turn_rad": -0.0008409023284912109,
+                "actual_forward_m": 0.08687945649429828,
+                "position_error_m": 0.013121554585971222,
+                "rotation_error_rad": 0.0008409023284912109,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 11,
+              "base_turn": 0,
+              "base_drive": 14
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 3.033326938445698e-07,
+            "yaw_rad": 3.064633347094059e-07
+          }
+        },
+        {
+          "steps": 27,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.35,
+                "forward_m": 0.0
+              },
+              "effective_command": {
+                "turn_rad": 0.35,
+                "forward_m": 0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 27,
+                "requested_turn_rad": 0.35,
+                "requested_forward_m": 0.0,
+                "actual_turn_rad": 0.322773814201355,
+                "actual_forward_m": 0.008092983688763837,
+                "position_error_m": 0.008696149510835673,
+                "rotation_error_rad": 0.027226185798644997,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 7,
+              "base_turn": 20,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 3.0307931942850455e-07,
+            "yaw_rad": 4.172325134277344e-07
+          }
+        },
+        {
+          "steps": 29,
+          "contract_gate": {
+            "passed": true,
+            "checks": {
+              "one_call": true,
+              "odometry": true,
+              "count": true,
+              "no_steps_after_terminal": true,
+              "reported_residuals": true,
+              "terminal_flag": true,
+              "steps_report": true,
+              "arrival_claim": true,
+              "arrival_without_contact": true,
+              "settle_before_motion": true,
+              "settled_when_arrived": true
+            },
+            "sampled_contact": false,
+            "contact_return_scope": "contact may prevent arrival; honest bounded failure is a valid contact return"
+          },
+          "scenario_all_calls_arrived": null,
+          "net_pose_errors": null,
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.29999999999999993
+              },
+              "effective_command": {
+                "turn_rad": 0.0,
+                "forward_m": 0.29999999999999993
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 29,
+                "requested_turn_rad": 0.0,
+                "requested_forward_m": 0.29999999999999993,
+                "actual_turn_rad": -0.0008537173271179199,
+                "actual_forward_m": 0.2980223004690309,
+                "position_error_m": 0.002029840532502837,
+                "rotation_error_rad": 0.0008537173271179199,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 13,
+              "base_turn": 0,
+              "base_drive": 16
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 3.1467433854291944e-07,
+            "yaw_rad": 2.0908191800117493e-07
+          }
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "group": "scenario",
+      "steps": 40,
+      "source_sha256": "0c4e931ba1f2d48ba494c8031416ccdec129c8b4be3e36e9d259da289e9d96bd",
+      "records": [
+        {
+          "steps": 40,
+          "contract_gate": null,
+          "scenario_all_calls_arrived": false,
+          "net_pose_errors": {
+            "xy_m": 0.006532635415688408,
+            "yaw_rad": 0.027086734771728516
+          },
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": false,
+              "frozen_command": {
+                "turn_rad": -0.015252844539530035,
+                "forward_m": 0.21872145669600557
+              },
+              "effective_command": {
+                "turn_rad": -0.015252844539530035,
+                "forward_m": 0.21872145669600557
+              },
+              "result": {
+                "accepted": true,
+                "arrived": false,
+                "reason": "residual_after_settle",
+                "steps_used": 24,
+                "requested_turn_rad": -0.015252844539530035,
+                "requested_forward_m": 0.21872145669600557,
+                "actual_turn_rad": -0.0459648072719574,
+                "actual_forward_m": 0.21144652459765523,
+                "position_error_m": 0.007802737787463097,
+                "rotation_error_rad": 0.030711962732427364,
+                "official_terminated": false
+              }
+            },
+            {
+              "instruction": 1,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": -0.12819786265765928,
+                "forward_m": 0.0
+              },
+              "effective_command": {
+                "turn_rad": -0.09748589992523193,
+                "forward_m": 0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 16,
+                "requested_turn_rad": -0.09748589992523193,
+                "requested_forward_m": 0.0,
+                "actual_turn_rad": -0.07039916515350342,
+                "actual_forward_m": 0.0013972267673171832,
+                "position_error_m": 0.00142002068184773,
+                "rotation_error_rad": 0.027086734771728516,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 10,
+              "base_turn": 0,
+              "base_drive": 14
+            },
+            {
+              "base_settle": 4,
+              "base_turn": 12,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 8.721862741788542e-08,
+            "yaw_rad": 6.258487701416016e-07
+          }
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "group": "scenario",
+      "steps": 61,
+      "source_sha256": "513a5a5a56d586c7d7d0f4a1cb8376da300629c756a701533de951f6d93989ad",
+      "records": [
+        {
+          "steps": 61,
+          "contract_gate": null,
+          "scenario_all_calls_arrived": true,
+          "net_pose_errors": {
+            "xy_m": 0.005684608838022027,
+            "yaw_rad": 0.028156578540802012
+          },
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": 0.0951939259787347,
+                "forward_m": 0.4717232277127342
+              },
+              "effective_command": {
+                "turn_rad": 0.0951939259787347,
+                "forward_m": 0.4717232277127342
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 55,
+                "requested_turn_rad": 0.0951939259787347,
+                "requested_forward_m": 0.4717232277127342,
+                "actual_turn_rad": 0.12381458282470703,
+                "actual_forward_m": 0.4712048769768033,
+                "position_error_m": 0.005660345994891021,
+                "rotation_error_rad": 0.028620656845972328,
+                "official_terminated": false
+              }
+            },
+            {
+              "instruction": 1,
+              "passed": true,
+              "frozen_command": {
+                "turn_rad": -0.006162289263799414,
+                "forward_m": 0.0
+              },
+              "effective_command": {
+                "turn_rad": -0.03478294610977174,
+                "forward_m": 0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": true,
+                "reason": "ok",
+                "steps_used": 6,
+                "requested_turn_rad": -0.03478294610977174,
+                "requested_forward_m": 0.0,
+                "actual_turn_rad": -0.0066263675689697266,
+                "actual_forward_m": 1.777870467322818e-05,
+                "position_error_m": 3.1366544350648986e-05,
+                "rotation_error_rad": 0.028156578540802026,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 8,
+              "base_turn": 11,
+              "base_drive": 36
+            },
+            {
+              "base_settle": 4,
+              "base_turn": 2,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 0.0,
+          "contact_identities": [],
+          "odometry_max": {
+            "xy_m": 5.784112699202451e-07,
+            "yaw_rad": 5.774199962546578e-07
+          }
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "group": "scenario",
+      "steps": 110,
+      "source_sha256": "dc0d693376e0c5ce06358c7ac93477c7d685035721e650262fe3fc6abf4518cd",
+      "records": [
+        {
+          "steps": 110,
+          "contract_gate": null,
+          "scenario_all_calls_arrived": false,
+          "net_pose_errors": {
+            "xy_m": 0.044869842564757595,
+            "yaw_rad": 0.030392408370971683
+          },
+          "commands": [
+            {
+              "instruction": 0,
+              "passed": false,
+              "frozen_command": {
+                "turn_rad": 0.07819521839488633,
+                "forward_m": 1.0375729596390475
+              },
+              "effective_command": {
+                "turn_rad": 0.07819521839488633,
+                "forward_m": 1.0375729596390475
+              },
+              "result": {
+                "accepted": true,
+                "arrived": false,
+                "reason": "tool_step_limit",
+                "steps_used": 80,
+                "requested_turn_rad": 0.07819521839488633,
+                "requested_forward_m": 1.0375729596390475,
+                "actual_turn_rad": 0.11073970794677734,
+                "actual_forward_m": 1.0325048293422188,
+                "position_error_m": 0.005115760791071684,
+                "rotation_error_rad": 0.032544489551891015,
+                "official_terminated": false
+              }
+            },
+            {
+              "instruction": 1,
+              "passed": false,
+              "frozen_command": {
+                "turn_rad": -0.26637447292674665,
+                "forward_m": 0.0
+              },
+              "effective_command": {
+                "turn_rad": -0.2989189624786377,
+                "forward_m": 0.0
+              },
+              "result": {
+                "accepted": true,
+                "arrived": false,
+                "reason": "residual_after_settle",
+                "steps_used": 30,
+                "requested_turn_rad": -0.2989189624786377,
+                "requested_forward_m": 0.0,
+                "actual_turn_rad": -0.268526554107666,
+                "actual_forward_m": -0.019794343871063304,
+                "position_error_m": 0.042856177608310154,
+                "rotation_error_rad": 0.030392408370971683,
+                "official_terminated": false
+              }
+            }
+          ],
+          "call_phase_steps": [
+            {
+              "base_settle": 13,
+              "base_turn": 10,
+              "base_drive": 57
+            },
+            {
+              "base_settle": 6,
+              "base_turn": 24,
+              "base_drive": 0
+            }
+          ],
+          "max_cumulative_force": 1523.47021484375,
+          "contact_identities": [
+            {
+              "articulation_name": "scs-[0]_kitchenCupboard_01-0",
+              "entity_name": "body",
+              "kind": "articulation_link",
+              "link_index": 1,
+              "other_name": "body",
+              "pair_index": 3099,
+              "scene_key": "scs-[0]_kitchenCupboard_01-0"
+            },
+            {
+              "articulation_name": "scs-[0]_kitchen_counter-0",
+              "entity_name": "body",
+              "kind": "articulation_link",
+              "link_index": 1,
+              "other_name": "body",
+              "pair_index": 490,
+              "scene_key": "scs-[0]_kitchen_counter-0"
+            }
+          ],
+          "odometry_max": {
+            "xy_m": 3.923740596587063e-07,
+            "yaw_rad": 5.364418030062712e-07
+          }
+        }
+      ]
+    }
+  ],
+  "gpu_process_seconds": 282.9171396009624,
+  "simulator_actions": 400,
+  "api_requests": 0,
+  "e1b_started": false,
+  "strict_pick_experiment": false
+}

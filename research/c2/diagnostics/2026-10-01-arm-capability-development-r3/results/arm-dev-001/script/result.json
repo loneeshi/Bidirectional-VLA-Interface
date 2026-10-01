@@ -1,0 +1,424 @@
+{
+  "case_id": "arm-dev-001",
+  "position": 1,
+  "condition": "script",
+  "status": "completed",
+  "recorded_at_utc": "2026-10-01T03:05:28.200147+00:00",
+  "strict_pick_success": false,
+  "frames": [],
+  "commands": [
+    {
+      "turn": 0,
+      "call": {
+        "tool": "check_path",
+        "poses": [
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.5323733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ]
+          },
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.4123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ]
+          },
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.5123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ]
+          }
+        ],
+        "gripper": null,
+        "turn_rad": null,
+        "forward_m": null,
+        "hindsight": "",
+        "note": "Evaluation-only scripted reference: execute the fixed first accepted approach.",
+        "pan_rad": null,
+        "tilt_rad": null,
+        "camera": null,
+        "pixel": null,
+        "observation_id": null,
+        "task_state": {
+          "belief": "evaluation-only fixed heuristic",
+          "uncertainty": "evaluation-only fixed heuristic",
+          "expected_change": "evaluation-only fixed heuristic",
+          "next_check": "evaluation-only fixed heuristic"
+        }
+      },
+      "result": {
+        "accepted": false,
+        "reason": "ik_not_found",
+        "readonly": true,
+        "minimum_steps_is_lower_bound": true,
+        "steps_used": 0,
+        "settle_steps": 0,
+        "motion_steps": 0,
+        "steps_remaining": 600
+      },
+      "start_step": 0
+    },
+    {
+      "turn": 1,
+      "call": {
+        "tool": "check_path",
+        "poses": [
+          {
+            "position": [
+              1.571925525665283,
+              0.2418873906135559,
+              0.4123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.4123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.5123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "gripper": null,
+        "turn_rad": null,
+        "forward_m": null,
+        "hindsight": "",
+        "note": "Evaluation-only scripted reference: execute the fixed first accepted approach.",
+        "pan_rad": null,
+        "tilt_rad": null,
+        "camera": null,
+        "pixel": null,
+        "observation_id": null,
+        "task_state": {
+          "belief": "evaluation-only fixed heuristic",
+          "uncertainty": "evaluation-only fixed heuristic",
+          "expected_change": "evaluation-only fixed heuristic",
+          "next_check": "evaluation-only fixed heuristic"
+        }
+      },
+      "result": {
+        "accepted": false,
+        "reason": "ik_not_found",
+        "readonly": true,
+        "minimum_steps_is_lower_bound": true,
+        "steps_used": 0,
+        "settle_steps": 0,
+        "motion_steps": 0,
+        "steps_remaining": 600
+      },
+      "start_step": 0
+    },
+    {
+      "turn": 2,
+      "call": {
+        "tool": "check_path",
+        "poses": [
+          {
+            "position": [
+              1.6919255256652832,
+              0.12188739061355591,
+              0.4123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ]
+          },
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.4123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ]
+          },
+          {
+            "position": [
+              1.6919255256652832,
+              0.2418873906135559,
+              0.5123733341693878
+            ],
+            "quaternion_xyzw": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ]
+          }
+        ],
+        "gripper": null,
+        "turn_rad": null,
+        "forward_m": null,
+        "hindsight": "",
+        "note": "Evaluation-only scripted reference: execute the fixed first accepted approach.",
+        "pan_rad": null,
+        "tilt_rad": null,
+        "camera": null,
+        "pixel": null,
+        "observation_id": null,
+        "task_state": {
+          "belief": "evaluation-only fixed heuristic",
+          "uncertainty": "evaluation-only fixed heuristic",
+          "expected_change": "evaluation-only fixed heuristic",
+          "next_check": "evaluation-only fixed heuristic"
+        }
+      },
+      "result": {
+        "accepted": false,
+        "reason": "ik_not_found",
+        "readonly": true,
+        "minimum_steps_is_lower_bound": true,
+        "steps_used": 0,
+        "settle_steps": 0,
+        "motion_steps": 0,
+        "steps_remaining": 600
+      },
+      "start_step": 0
+    }
+  ],
+  "simulator_actions": 0,
+  "api_requests": 0,
+  "control_dt": 0.05,
+  "initial_robot_state": {
+    "qpos": [
+      -0.0006035860860720277,
+      0.0004282008158043027,
+      5.262494087219238,
+      0.3854677081108093,
+      0.0004689251072704792,
+      -0.4297820031642914,
+      0.5088352560997009,
+      -0.9684675335884094,
+      0.6461988091468811,
+      0.935932457447052,
+      -0.01841922663152218,
+      2.0926575660705566,
+      0.0034460772294551134,
+      0.014095759019255638,
+      0.013236794620752335
+    ],
+    "tcp_base": [
+      [
+        -0.414145882144299,
+        -0.11363309231111456,
+        0.9030895352260118,
+        0.5119685329841642
+      ],
+      [
+        0.2504396771369927,
+        0.9396554885609447,
+        0.23308266973932448,
+        -0.02974952523966665
+      ],
+      [
+        -0.8750789429636843,
+        0.32269967949954015,
+        -0.36069621627133097,
+        1.2347045718494205
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "base_world_eval_only": [
+      [
+        0.5227770805358887,
+        0.8524694442749023,
+        -1.726125731238426e-08,
+        0.5226114988327026
+      ],
+      [
+        -0.8524694442749023,
+        0.5227770805358887,
+        -1.3606854309955452e-08,
+        -1.8812669515609741
+      ],
+      [
+        -2.5756365928941705e-09,
+        2.182804692552054e-08,
+        1.0,
+        0.019999999552965164
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "finger_distance_m": 0.027332553640007973
+  },
+  "initial_binding": {
+    "uid": "tidy_house-pick-val-1446-0",
+    "spawn_index": 35,
+    "seed": 20260931,
+    "qpos": [
+      -0.0006035860860720277,
+      0.0004282008158043027,
+      5.262494087219238,
+      0.3854677081108093,
+      0.0004689251072704792,
+      -0.4297820031642914,
+      0.5088352560997009,
+      -0.9684675335884094,
+      0.6461988091468811,
+      0.935932457447052,
+      -0.01841922663152218,
+      2.0926575660705566,
+      0.0034460772294551134,
+      0.014095759019255638,
+      0.013236794620752335
+    ],
+    "base_world": [
+      [
+        0.5227770805358887,
+        0.8524694442749023,
+        -1.726125731238426e-08,
+        0.5226114988327026
+      ],
+      [
+        -0.8524694442749023,
+        0.5227770805358887,
+        -1.3606854309955452e-08,
+        -1.8812669515609741
+      ],
+      [
+        -2.5756365928941705e-09,
+        2.182804692552054e-08,
+        1.0,
+        0.019999999552965164
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "target_world": [
+      [
+        0.023724019527435303,
+        0.9996694326400757,
+        0.009917443618178368,
+        1.61331307888031
+      ],
+      [
+        -0.9996470212936401,
+        0.02360248565673828,
+        0.012198429554700851,
+        -3.1971285343170166
+      ],
+      [
+        0.011960320174694061,
+        -0.010203339159488678,
+        0.9998764395713806,
+        0.4323733150959015
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "configured_horizon": 600,
+  "internal_pick_horizon": 601,
+  "initial_steps_left": 600,
+  "initial_evaluation": {
+    "step": 0,
+    "strict_success": false,
+    "is_grasped": false,
+    "object_z_m": 0.4323733150959015,
+    "tcp_box_distance_m": 1.4068214705564304
+  },
+  "script_result": {
+    "status": "no_accepted_path"
+  },
+  "executor_trace": [],
+  "ik_records": [],
+  "first_strict_success_step": null,
+  "success_within_200": false,
+  "success_within_600": false,
+  "horizon_description": "nonofficial 600-step horizon; 200-step prefix of same run",
+  "termination_category": "script_sequence_end",
+  "funnel": {
+    "raw": {
+      "check_path_accepted": false,
+      "tcp_near_bbox": false,
+      "is_grasped": false,
+      "grasped_lift_5cm": false,
+      "strict_success": false
+    },
+    "cumulative": {
+      "check_path_accepted": false,
+      "tcp_near_bbox": false,
+      "is_grasped": false,
+      "grasped_lift_5cm": false,
+      "strict_success": false
+    }
+  },
+  "wall_seconds": 25.028998397290707,
+  "recording": {
+    "kind": "online official-spawn script",
+    "frames": 1,
+    "directory": "recording-frames"
+  }
+}

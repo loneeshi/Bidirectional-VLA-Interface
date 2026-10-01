@@ -1,0 +1,7 @@
+{
+  "status": "censored",
+  "reason": "transport_or_provider_parse_error",
+  "call": null,
+  "api_attempted": true,
+  "request_bundle_sha256": "33d3ef33defffe98616801cbedf04d1010fd02168eb5300addf4bd558cd78a8d"
+}

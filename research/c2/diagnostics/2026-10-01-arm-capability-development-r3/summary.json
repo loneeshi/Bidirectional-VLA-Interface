@@ -1,0 +1,921 @@
+{
+  "conditions": {
+    "V": {
+      "200": {
+        "planned_n": 5,
+        "valid_n": 5,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.43448246478317476
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.43448246478317476
+        ]
+      },
+      "600": {
+        "planned_n": 5,
+        "valid_n": 5,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.03622410863243014,
+          0.6244653702374747
+        ],
+        "fixed_denominator_wilson95": [
+          0.03622410863243014,
+          0.6244653702374747
+        ]
+      }
+    },
+    "SAC": {
+      "200": {
+        "planned_n": 5,
+        "valid_n": 5,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 4,
+        "valid_wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ],
+        "fixed_denominator_wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ]
+      },
+      "600": {
+        "planned_n": 5,
+        "valid_n": 5,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 4,
+        "valid_wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ],
+        "fixed_denominator_wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ]
+      }
+    },
+    "script": {
+      "200": {
+        "planned_n": 5,
+        "valid_n": 5,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.43448246478317476
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.43448246478317476
+        ]
+      },
+      "600": {
+        "planned_n": 5,
+        "valid_n": 5,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.43448246478317476
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.43448246478317476
+        ]
+      }
+    }
+  },
+  "script_success_subset": {
+    "V": {
+      "200": {
+        "planned_n": 0,
+        "valid_n": 0,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": null,
+        "valid_wilson95": null,
+        "fixed_denominator_wilson95": null
+      },
+      "600": {
+        "planned_n": 0,
+        "valid_n": 0,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": null,
+        "valid_wilson95": null,
+        "fixed_denominator_wilson95": null
+      }
+    }
+  },
+  "strata": {
+    "005_tomato_soup_can/middle": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "009_gelatin_box/middle": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "002_master_chef_can/high": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "010_potted_meat_can/middle": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "003_cracker_box/middle": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    }
+  },
+  "scenes": {
+    "v3_sc3_staging_02.scene_instance.json": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "v3_sc3_staging_20.scene_instance.json": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "v3_sc3_staging_10.scene_instance.json": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "v3_sc3_staging_07.scene_instance.json": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    },
+    "v3_sc3_staging_18.scene_instance.json": {
+      "V": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "SAC": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 1,
+        "valid_wilson95": [
+          0.20654931437723745,
+          1.0
+        ],
+        "fixed_denominator_wilson95": [
+          0.20654931437723745,
+          1.0
+        ]
+      },
+      "script": {
+        "planned_n": 1,
+        "valid_n": 1,
+        "censored_n": 0,
+        "unrun_n": 0,
+        "success_k": 0,
+        "valid_wilson95": [
+          0.0,
+          0.7934506856227626
+        ],
+        "fixed_denominator_wilson95": [
+          0.0,
+          0.7934506856227626
+        ]
+      }
+    }
+  },
+  "correlation_note": "scene-clustered observations; Wilson intervals are unadjusted descriptive binomial intervals",
+  "sac_600_note": "SAC is observed only within its official 200-step configuration; no 600-step SAC extrapolation",
+  "localization_eval_only": {
+    "arm-dev-000": [
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-000-0bac1c56added0fd",
+        "surface_distance_m": 0.0001579189679459525,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.0016434297394193331,
+          0.001745469007349093,
+          0.04483555382969673
+        ],
+        "turn": 0,
+        "step": 0
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-001-0bac1c56added0fd",
+        "surface_distance_m": 0.06407710613092849,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.04668360104533731,
+          0.08249120446586597,
+          -0.06452515267212783
+        ],
+        "turn": 1,
+        "step": 0
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-007-214c354e44e0b35b",
+        "surface_distance_m": 0.000696744570097858,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.0009768087649796309,
+          -0.0008542757031552994,
+          0.045177953438922946
+        ],
+        "turn": 7,
+        "step": 55
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-009-828378815c2ac683",
+        "surface_distance_m": 0.0006122776228672911,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.004391129802683191,
+          -0.00015688953363413027,
+          0.045755039792720886
+        ],
+        "turn": 9,
+        "step": 102
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-011-45918cc4de280080",
+        "surface_distance_m": 0.0008888149282066034,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.002369099561306154,
+          0.0002993322753571115,
+          0.0450317877204619
+        ],
+        "turn": 11,
+        "step": 114
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-015-e0cfb7600d26aba1",
+        "surface_distance_m": 0.0004021522515729181,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.0021282518819132346,
+          0.0011853977878302224,
+          0.04505669550554853
+        ],
+        "turn": 15,
+        "step": 130
+      }
+    ],
+    "arm-dev-001": [
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-006-087b20394391f0ce",
+        "surface_distance_m": 0.0021334238047933975,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          -0.02128677647538524,
+          -0.013173622192824364,
+          0.016396963282777843
+        ],
+        "turn": 6,
+        "step": 144
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-007-087b20394391f0ce",
+        "surface_distance_m": 0.0006882615777587516,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          -0.00832477923534336,
+          -0.017394907355826383,
+          0.013869862999441929
+        ],
+        "turn": 7,
+        "step": 144
+      }
+    ],
+    "arm-dev-002": [
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-001-bf5fbbb3f2569230",
+        "surface_distance_m": 0.4059060323496685,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          -0.40798715940488384,
+          0.1685079944885004,
+          0.06481395021886305
+        ],
+        "turn": 1,
+        "step": 27
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-002-bf5fbbb3f2569230",
+        "surface_distance_m": 0.00031410921015852017,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.007326774816745554,
+          0.010963286177625653,
+          0.04811885813323602
+        ],
+        "turn": 2,
+        "step": 27
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-008-f8e87bd2f1816722",
+        "surface_distance_m": 0.0009565778730711065,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.010840238111036182,
+          0.03349128004045587,
+          0.007497835913110706
+        ],
+        "turn": 8,
+        "step": 106
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-010-d4d7384186141201",
+        "surface_distance_m": 0.0006224543438858317,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.009002260600706288,
+          0.03452649566206367,
+          0.008491955712060628
+        ],
+        "turn": 10,
+        "step": 128
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-014-4d074d0a8f6f42c2",
+        "surface_distance_m": 0.000763623506940625,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.006733383949483723,
+          0.035197189887386626,
+          0.015445552299245269
+        ],
+        "turn": 14,
+        "step": 156
+      }
+    ],
+    "arm-dev-003": [
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-002-025da2090aede3d9",
+        "surface_distance_m": 2.241911149134656,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          1.5734811033865514,
+          -1.644427958305643,
+          -0.24789047990805907
+        ],
+        "turn": 2,
+        "step": 32
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-004-03ad57e4a88a175e",
+        "surface_distance_m": 2.244927506935399,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          1.5783419091176158,
+          -1.6439422587342785,
+          -0.24845786632296368
+        ],
+        "turn": 4,
+        "step": 72
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-015-0a22a9b8fb0ddacf",
+        "surface_distance_m": 2.246123809192705,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          1.5773301806261746,
+          -1.646518769176011,
+          -0.24865132926455902
+        ],
+        "turn": 15,
+        "step": 222
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-017-d018941e93fd7d72",
+        "surface_distance_m": 2.2411809476815723,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          1.5709710212360957,
+          -1.6456522476998008,
+          -0.24883066868199927
+        ],
+        "turn": 17,
+        "step": 256
+      }
+    ],
+    "arm-dev-004": [
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-000-b5489c9656081c3f",
+        "surface_distance_m": 0.002048851620467191,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          -0.00010798344566287366,
+          0.005127729754512075,
+          0.10644161082928161
+        ],
+        "turn": 0,
+        "step": 0
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-001-b5489c9656081c3f",
+        "surface_distance_m": 0.002449516750673692,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          -0.014211715736092256,
+          -0.06613539712854127,
+          0.10574830556299131
+        ],
+        "turn": 1,
+        "step": 0
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-002-b5489c9656081c3f",
+        "surface_distance_m": 0.0007649293809015251,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          -0.003922335660785703,
+          0.06526779573843283,
+          0.10625844361259806
+        ],
+        "turn": 2,
+        "step": 0
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-004-b5489c9656081c3f",
+        "surface_distance_m": 0.0004677383665497631,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.023732291322697274,
+          0.004716739799123251,
+          0.10601498580529145
+        ],
+        "turn": 4,
+        "step": 0
+      },
+      {
+        "evaluation_only": true,
+        "observation_id": "obs-017-684b76ea2afd0173",
+        "surface_distance_m": 0.0015309340458193388,
+        "definition": "unsigned minimum Euclidean distance to all target collision-shape triangle surfaces at this call",
+        "status": "scored",
+        "point_object_eval_only": [
+          0.01080204121052375,
+          -0.0028465182831493713,
+          0.1064162643739156
+        ],
+        "turn": 17,
+        "step": 39
+      }
+    ]
+  },
+  "test_authorized": false,
+  "test_gate_met": false,
+  "next_action": "stop and report; no automatic repair or test run"
+}

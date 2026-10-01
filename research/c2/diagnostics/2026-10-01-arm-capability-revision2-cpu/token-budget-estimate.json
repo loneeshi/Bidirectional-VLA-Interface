@@ -1,0 +1,38 @@
+{
+  "revision": 2,
+  "authorized": false,
+  "provider_requests_cap": 125,
+  "usd_cap": "65",
+  "astra_wall_seconds_each": 1800,
+  "script_wall_seconds_each": 600,
+  "sac_wall_seconds_each": 300,
+  "gpu1_process_seconds_cap": 13500,
+  "token_evidence": {
+    "logical_requests": 40,
+    "recorded_sends": 42,
+    "known_unique_usage_responses": 37,
+    "unknown_usage_sends": 5,
+    "input_median": 10169,
+    "input_max": 14676,
+    "output_median": 210,
+    "output_max": 371,
+    "deduplication": "provider response id; duplicate archived copies are not extra requests"
+  },
+  "round25_scenario": {
+    "input_tokens": 30000,
+    "output_tokens": 4000,
+    "single_request_usd": "0.50",
+    "125_requests_usd": "62.50"
+  },
+  "rates_per_million_usd": {
+    "input": 10,
+    "cache_write_reserve": 12.5,
+    "output": 50
+  },
+  "all_input_cache_write_scenario_125_usd": "71.875",
+  "reservation": "existing estimator on each actual serialized wire; output allowance and conservative cache-write reserve",
+  "stop": "refuse next send when committed plus its reserve exceeds USD65; no guarantee125 sends fit; no automatic cap increase",
+  "text_safety_limit_used_to_set_batch_budget": false,
+  "new_provider_sends": 0,
+  "new_gpu_runs": 0
+}

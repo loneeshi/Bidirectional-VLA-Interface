@@ -1,0 +1,21 @@
+{
+  "authorization.json": "f14a599dcc94acb6716de2470359f51f6fd5ceda766969fa80805271ff9c4bd8",
+  "closeout.json": "885d7105f26c68b35c2ef3724f59a3e6c3c3e8478f061f5ca4e2d21e6c72722a",
+  "diagnose-startup-cpu.py": "413a4a7fa612bb40a5be1f19fb599efd188a053af7aae7a41bd6a6d1769a3831",
+  "launch-approved.py": "45df6151c0d223b9de001d2f6ec2b233628f975df4232221ba907da4a1b3bed6",
+  "launch.json": "995a3f07a564f95b7554736b3c38969c7fbf4c56600336871fb4cf82ae074dff",
+  "raw\\arm-capability-development-revision2-20261001\\api-ledger.json": "37d3d14ed0002c24ae62af37e76db65926c9430adbbe46f68560fc6a9669a165",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\media-receipt.json": "fd94bbbbe879fdbcc8562c7cea22b0ea69d896b64c8e88e8841aa38f3e5a72ae",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\media-source\\delivery\\delivery.json": "5018dc31ab89e1a45cddddcd2a1eba21ace3b1950b09c2372cf378173fef0975",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\media-source\\delivery\\history.html": "0bcd668758a0007a99cd5f7afe627d52c3305b1e494c370eacbfc5325341a523",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\media-source\\delivery\\README.md": "f06df23c958b6558c99e5127c0f3feed2dc6e0286cce1581862779dab6eb2625",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\media-source\\result.json": "cfdbdfa3b822cb33a450fde607e45822e1f54494a0a102c5969bd6e5727a3d23",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\result.json": "13ba2ceb0d488bd64bf9eaf688cd0ac7138cac3340eb9ab92c545c62af148728",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V\\single-plan.json": "fda6e578c25eb58d67b645f70580ef32607c979afd00ea3dbbd086fb8f34b977",
+  "raw\\arm-capability-development-revision2-20261001\\arm-dev-000\\V-worker.log": "55953d880c799ed3bc4238208509234e60225114ff92cf98028b0bd606d0c124",
+  "raw\\arm-capability-development-revision2-20261001\\batch.json": "140c35659334e332ee43cfc59d6aa28a53bd11cedc57a764572b499176ed031f",
+  "raw\\arm-capability-development-revision2-20261001\\media-index.json": "dc483ca83513c3cb5dcd6fa22785dcba3bb717582ecfe1adeacfe7a7214f8deb",
+  "raw-run.tar.gz": "fb866dfb0ea08215dde504bffdff4d2aa9f4e390f1d304fdc943b23951359287",
+  "README.md": "182270695ed9126f924188dfe27065b5a3b36432d20bce8deb21679801731751",
+  "startup-cpu-diagnosis.json": "fd248b581ba9eb1afcd3022d94abfdac7a8cb63f77983ce4817d657441840599"
+}

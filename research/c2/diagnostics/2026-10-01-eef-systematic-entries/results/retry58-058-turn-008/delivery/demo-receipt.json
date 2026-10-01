@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/eef-systematic-entries-20261001-r2/results/retry58-058-turn-008/delivery/online-raw.mp4",
+  "source_video_sha256": "62bd291ee8503799b8aae08a312bfbc6caac2b2e8420705c6efdfc84497498b2",
+  "source_result": "/home/pshuai/bvi-research/runs/eef-systematic-entries-20261001-r2/results/retry58-058-turn-008/result.json",
+  "source_result_sha256": "cec484cbb7f2b9a43e0fdaa48aeb696940fc7d4f50f3cb14ee83dcebbfcaf71a",
+  "output": "/home/pshuai/bvi-research/runs/eef-systematic-entries-20261001-r2/results/retry58-058-turn-008/delivery/online-tcp-demo.mp4",
+  "output_sha256": "e09c8f8bfdb3d3fe700c4088c9bd79099765fe2bec6009af0b3a1604c56f4450",
+  "frames": 125,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 58,
+  "source_status": "completed",
+  "source_strict_pick_success": false,
+  "source_mode": "systematic-entry-api0",
+  "kind_label": "online frozen prefix and entry settling; evaluation only",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

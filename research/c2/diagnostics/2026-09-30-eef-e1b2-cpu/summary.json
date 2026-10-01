@@ -1,0 +1,192 @@
+{
+  "status": "stopped_on_api_censor",
+  "new_group": {
+    "frozen_n": 3,
+    "strict_success_observed": 0,
+    "completed_failure": 1,
+    "api_censored": 1,
+    "not_started": 1,
+    "complete_group_rate_available": false
+  },
+  "paired_group": {
+    "frozen_n": 4,
+    "strict_success_observed": 0,
+    "not_started": 4,
+    "complete_group_rate_available": false,
+    "optimistic_design_warning": true
+  },
+  "cases": [
+    {
+      "position": 55,
+      "group": "new",
+      "stratum": "outside",
+      "strict_pick_success": false,
+      "censored": false,
+      "reflection_status": "valid",
+      "first_base_forward_m": 0.25,
+      "translation_call_count": 2,
+      "multiple_translation_segments": true,
+      "all_nonzero_segments_at_most_03_m": true,
+      "segmentation_scope": "descriptive; obstacle proximity must be checked against the contemporaneous sensor images",
+      "paired_optimism_warning": false,
+      "attribution": {
+        "category": "模型推理有误",
+        "decisive_notes": [
+          {
+            "turn": 1,
+            "tool": "move_base",
+            "note": "The reach test failed as expected. Head depth places the visible near furniture boundary roughly 0.7–0.9 m ahead, with the center corridor partly occluded, so I will advance only 0.25 m and reassess clearance.",
+            "requested": {
+              "forward_m": 0.25,
+              "gripper": null,
+              "hindsight": "",
+              "note": "The reach test failed as expected. Head depth places the visible near furniture boundary roughly 0.7–0.9 m ahead, with the center corridor partly occluded, so I will advance only 0.25 m and reassess clearance.",
+              "poses": [],
+              "tool": "move_base",
+              "turn_rad": 0
+            },
+            "measured_result": {
+              "accepted": true,
+              "arrived": true,
+              "reason": "ok",
+              "steps_used": 24,
+              "requested_turn_rad": 0.0,
+              "requested_forward_m": 0.25,
+              "actual_turn_rad": -1.2159347534179674e-05,
+              "actual_forward_m": 0.2447041582729651,
+              "position_error_m": 0.005295944371156547,
+              "rotation_error_rad": 1.2159347534179674e-05,
+              "official_terminated": false
+            }
+          },
+          {
+            "turn": 2,
+            "tool": "move_base",
+            "note": "Odometry places the box 1.40 m ahead, still outside the arm's geometric reach. The furniture edges remain to either side of the center floor strip; I will make another bounded advance while retaining chassis-front clearance.",
+            "requested": {
+              "forward_m": 0.3,
+              "gripper": null,
+              "hindsight": "",
+              "note": "Odometry places the box 1.40 m ahead, still outside the arm's geometric reach. The furniture edges remain to either side of the center floor strip; I will make another bounded advance while retaining chassis-front clearance.",
+              "poses": [],
+              "tool": "move_base",
+              "turn_rad": 0
+            },
+            "measured_result": {
+              "accepted": true,
+              "arrived": false,
+              "reason": "official_terminated",
+              "steps_used": 18,
+              "requested_turn_rad": 0.0,
+              "requested_forward_m": 0.3,
+              "actual_turn_rad": 0.044994354248046875,
+              "actual_forward_m": 0.04221104797867649,
+              "position_error_m": 0.2580539267830678,
+              "rotation_error_rad": 0.044994354248046875,
+              "official_terminated": true
+            }
+          }
+        ],
+        "hindsight": [
+          {
+            "source": "post_terminal_reflection",
+            "hindsight": "The attempt ended in failure at the cumulative force limit during the second forward-base command. The initial grasp-path test returned ik_not_found, and the first 0.25 m advance was accepted with approximately 0.245 m of measured travel. I then commanded another 0.30 m because the target remained beyond reach. My notes inferred chassis clearance from a narrow visible floor strip despite substantial occlusion and nearby furniture; that evidence was insufficient to establish a safe base corridor. The termination is consistent with excessive contact, but the available feedback does not identify the contact location or how far the second move progressed. A safer approach would have been to resolve the occlusion and verify the full chassis footprint before advancing further. No grasp or lift was confirmed."
+          }
+        ],
+        "review_status": "reviewed; notes are self-reports",
+        "sensor_evidence": [
+          "turn-002/head_rgb.png and head_depth.png: near furniture and robot occlude much of the forward view; no full-width clear corridor is established."
+        ],
+        "action_evidence": [
+          "First 0.25 m command measured 0.244704 m; next 0.30 m command measured only 0.042211 m before official force stop.",
+          "Evaluation-only base_link contact with scs-[0]_frl_apartment_table_01-5; final cumulative force 5283.408203125."
+        ],
+        "decisive_turns": [
+          1,
+          2
+        ],
+        "qualification": "Evidence supports an unsupported clearance inference, not a numerical depth-error measurement or proof that another action would succeed. No automatic controller/torso blame."
+      }
+    },
+    {
+      "position": 58,
+      "group": "new",
+      "stratum": "outside",
+      "strict_pick_success": false,
+      "censored": true,
+      "reflection_status": "not_required",
+      "first_base_forward_m": null,
+      "translation_call_count": 0,
+      "multiple_translation_segments": false,
+      "all_nonzero_segments_at_most_03_m": null,
+      "segmentation_scope": "descriptive; obstacle proximity must be checked against the contemporaneous sensor images",
+      "paired_optimism_warning": false,
+      "attribution": null
+    }
+  ],
+  "not_started": [
+    61,
+    1,
+    14,
+    26,
+    42
+  ],
+  "api_attempts": 6,
+  "valid_provider_responses": 5,
+  "unknown_provider_outcomes": 1,
+  "known_usage_estimate_usd": "0.2249250",
+  "unknown_request_reserve_usd": "0.5848",
+  "actual_provider_bill_usd": null,
+  "conservative_outstanding_usd": "0.8097250",
+  "gpu_process_seconds": 147.53476371988654,
+  "simulator_actions": 56,
+  "nominal_unused_requests_closed": 176,
+  "nominal_unused_gpu_seconds_closed": 12452.465236280113,
+  "nominal_unused_usd_closed": "919.1902750",
+  "request_audits": [
+    {
+      "position": 55,
+      "turn": 0,
+      "kind": "tool",
+      "wire_sha256": "769708e48bdd5103c3c78791360f8f495fd1441b1da4d170a15054d70050a01c",
+      "audit_passed": true
+    },
+    {
+      "position": 55,
+      "turn": 1,
+      "kind": "tool",
+      "wire_sha256": "010819f9ff0d8e34181b166848be45d2ebb193bf51c8d26634f06128c14e63fd",
+      "audit_passed": true
+    },
+    {
+      "position": 55,
+      "turn": 2,
+      "kind": "tool",
+      "wire_sha256": "397b96759aafec40223890a9dce97991852f39e6eb6ac15506c9ba70672468f4",
+      "audit_passed": true
+    },
+    {
+      "position": 55,
+      "turn": 3,
+      "kind": "reflection",
+      "wire_sha256": "7960e1ce78b5a8427fdc9c11de57ce82d10d9a7bfd3bc7308af00f04faf4ffff",
+      "audit_passed": true
+    },
+    {
+      "position": 58,
+      "turn": 0,
+      "kind": "tool",
+      "wire_sha256": "b9b2cc0bf4a168568d79f92ca99fe81fce276e95d02053cbbc2737a8596aa3ef",
+      "audit_passed": true
+    },
+    {
+      "position": 58,
+      "turn": 1,
+      "kind": "tool",
+      "wire_sha256": "6474289e7c9a9c2457593e16d37efa4b70a40dd38658a8f7e8bb10db5f07a59c",
+      "audit_passed": true
+    }
+  ],
+  "promotion": "not established; batch incomplete, no G2/E2 start",
+  "no_automatic_retry": true
+}

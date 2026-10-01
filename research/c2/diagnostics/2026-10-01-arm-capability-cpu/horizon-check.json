@@ -1,0 +1,46 @@
+{
+  "mshab_commit": "e9ff3d23496d38e4431c8d913e147ffa007f7f72",
+  "source_sha256": {
+    "pick.py": "6bc10aac584b1907ed21c098421bb43120276ee6d1b15df38cc909e0c3321bd4",
+    "subtask.py": "6f4dbee7f4eaee9971d7c151179d72a7aa2c0f5e3a048634d6b0cca01b61500c",
+    "sequential_task.py": "47fd4999f7326568a550890caa48eac070901525373fac667ff56384eeb2a6be",
+    "make.py": "eef28ada5ec58b8701cc7342b8198e09c23022ab58b6b72c624d3b0f0ceb825e",
+    "planner.py": "0cfa45e63081561b45f09e588f6665222a8c9078e09650a0c158545f7f254857"
+  },
+  "configuration": {
+    "max_episode_steps": 600,
+    "env_kwargs": {
+      "task_cfgs": {
+        "pick": {
+          "horizon": 600
+        }
+      },
+      "target_randomization": false
+    }
+  },
+  "sac_configuration": {
+    "max_episode_steps": 200,
+    "env_kwargs": {
+      "task_cfgs": {
+        "pick": {
+          "horizon": 200
+        }
+      },
+      "target_randomization": false
+    }
+  },
+  "source_route_passed": true,
+  "actual_checker_truth_table_cases": 64,
+  "checker_identical_at_both_horizons": true,
+  "gym_clock_checks": {
+    "200": true,
+    "600": true
+  },
+  "official_pick_checker_source": "def _pick_check_success(\n        self,\n        obj: Actor,\n        env_idx: torch.Tensor,\n    ):\n        is_grasped = self.agent.is_grasping(obj, max_angle=30)[env_idx]\n        ee_rest = (\n            torch.norm(\n                self.agent.tcp_pose.p[env_idx] - self.ee_rest_world_pose.p[env_idx],\n                dim=1,\n            )\n            <= self.pick_cfg.ee_rest_thresh\n        )\n        robot_rest_dist = torch.abs(\n            self.agent.robot.qpos[env_idx, 3:-2] - self.resting_qpos\n        )\n        robot_rest = torch.all(\n            robot_rest_dist < self.pick_cfg.robot_resting_qpos_tolerance_grasping, dim=1\n        )\n        is_static = self.agent.is_static(threshold=0.2, base_threshold=0.05)[env_idx]\n        cumulative_force_within_limit = (\n            self.robot_cumulative_force[env_idx]\n            < self.pick_cfg.robot_cumulative_force_limit\n        )\n        subtask_checkers = dict(\n            is_grasped=is_grasped,\n            ee_rest=ee_rest,\n            robot_rest=robot_rest,\n            is_static=is_static,\n            cumulative_force_within_limit=cumulative_force_within_limit,\n        )\n        if self._add_event_tracker_info:\n            subtask_checkers[\"robot_target_pairwise_force\"] = torch.norm(\n                self.scene.get_pairwise_contact_forces(self.agent.finger1_link, obj)[\n                    env_idx\n                ],\n                dim=1,\n            ) + torch.norm(\n                self.scene.get_pairwise_contact_forces(self.agent.finger2_link, obj)[\n                    env_idx\n                ],\n                dim=1,\n            )\n        return (\n            is_grasped\n            & ee_rest\n            & robot_rest\n            & is_static\n            & cumulative_force_within_limit,\n            subtask_checkers,\n        )",
+  "fresh_process_per_condition_required": "task_cfgs updates class-held config objects; never construct SAC after a 600-step env in the same process",
+  "runtime_physics_verified": false,
+  "gpu_runs": 0,
+  "api_calls": 0,
+  "simulator_steps": 0,
+  "cuda_initialized": false
+}

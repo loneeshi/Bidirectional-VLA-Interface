@@ -1,0 +1,23 @@
+{
+  "kind": "eef_tcp_trajectory_synchronized_demo",
+  "source_video": "/home/pshuai/bvi-research/runs/eef-systematic-entries-20261001-r2/results/handoff-061/delivery/online-raw.mp4",
+  "source_video_sha256": "65955f5cc17bd7a81fb55247b34c1fd39f24fade0e591891f2c68cc94a9a7e3f",
+  "source_result": "/home/pshuai/bvi-research/runs/eef-systematic-entries-20261001-r2/results/handoff-061/result.json",
+  "source_result_sha256": "79eabcef0b77a362617cd2c7b392d32fa845030eb244df44cf03882ba481f345",
+  "output": "/home/pshuai/bvi-research/runs/eef-systematic-entries-20261001-r2/results/handoff-061/delivery/online-tcp-demo.mp4",
+  "output_sha256": "1054b1ecca1686be978613f2baeae68225a40d9d5f2c75129bb2bd19ede5fad5",
+  "frames": 6,
+  "fps": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "position": 61,
+  "source_status": "completed",
+  "source_strict_pick_success": false,
+  "source_mode": "systematic-entry-api0",
+  "kind_label": "online frozen prefix and entry settling; evaluation only",
+  "api_requests_for_visualization": 0,
+  "plot_frame": "attempt-start base_link from archived robot qpos and FK",
+  "evaluation_only": true
+}

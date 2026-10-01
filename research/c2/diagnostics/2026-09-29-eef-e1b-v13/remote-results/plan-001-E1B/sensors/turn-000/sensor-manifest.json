@@ -1,0 +1,30 @@
+{
+  "head_rgb": {
+    "camera": "fetch_head",
+    "modality": "rgb",
+    "sha256": "e2f5100aa751ab7db2f61eb370c536ad235a8b7e5b9cbbb9006cf1e0b2f67961",
+    "width": 128,
+    "height": 128
+  },
+  "head_depth": {
+    "camera": "fetch_head",
+    "modality": "depth",
+    "sha256": "8a7fd1180a0e0a479a7044292e744d54db18d60d2d14da7930b0a4927ded1e11",
+    "width": 128,
+    "height": 128
+  },
+  "hand_rgb": {
+    "camera": "fetch_hand",
+    "modality": "rgb",
+    "sha256": "75521e1a0336c51e2372e6f9fa0a394728e8069207dc7316416fea03deaf670b",
+    "width": 128,
+    "height": 128
+  },
+  "hand_depth": {
+    "camera": "fetch_hand",
+    "modality": "depth",
+    "sha256": "b60d550aa94ba50c8bef8683a4ca40acf98e56d495dae1eddd3e83e22b9b1c65",
+    "width": 128,
+    "height": 128
+  }
+}

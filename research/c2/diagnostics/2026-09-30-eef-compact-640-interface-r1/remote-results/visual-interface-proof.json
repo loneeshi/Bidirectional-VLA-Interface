@@ -1,0 +1,33 @@
+{
+  "all_passed": true,
+  "positions": [
+    5,
+    55,
+    58
+  ],
+  "cameras": {
+    "head": {
+      "valid_pixels": 1168,
+      "target_pixels": 1168,
+      "max_frame_p95_m": 0.007559828464124059,
+      "max_error_m": 0.007645355661631374,
+      "extrinsic_max_abs": 4.6564359490464113e-07,
+      "passed": true,
+      "invalid_fraction": 0.0
+    },
+    "hand": {
+      "valid_pixels": 5189,
+      "target_pixels": 5189,
+      "max_frame_p95_m": 0.0016302364521965666,
+      "max_error_m": 0.0020820394278087684,
+      "extrinsic_max_abs": 8.686972463034515e-07,
+      "passed": true,
+      "invalid_fraction": 0.0
+    }
+  },
+  "gate": "each visible frame P95 <= 0.01 m; both cameras need data; FK <= 1e-5",
+  "strict_pick_success_claimed": false,
+  "astra_capability_claimed": false,
+  "context_version": "eef-compact-640-v1",
+  "resolution": 640
+}

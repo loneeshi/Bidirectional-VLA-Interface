@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "381b53af1ca0db8a793ed193d181356b57562103861ba64db00b4d3301936d3c",
+  "source_files": 97,
+  "imports_passed": true,
+  "unapproved_scope_rejected": true,
+  "cuda_initialized": false,
+  "simulator_steps": 0,
+  "provider_sends": 0,
+  "physical_runtime_checked": false,
+  "python": "3.11.13 (main, Sep 18 2025, 19:46:39) [Clang 20.1.4 ]"
+}

@@ -1,0 +1,2327 @@
+{
+  "rows": [
+    {
+      "id": "005-table",
+      "kind": "table",
+      "entry": "handoff-005",
+      "original_clock_steps_left": 197,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 6,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.22824221508708373,
+                0.562000036239624,
+                -0.9758009019756009,
+                0.5725677400536324,
+                0.9022265356152068,
+                -0.297817782958016,
+                1.7328714418105575,
+                0.20636915344545814,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 0.00042984307920937643,
+              "rotation_error_rad": 0.00018585395665514842,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.06798351659040902,
+              "torso_delta": 0.0028699729532002125,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.23346451126417692,
+                0.562000036239624,
+                -0.9765891021061888,
+                0.5708849926431987,
+                0.9629075950388929,
+                -0.30838687819957045,
+                1.6576544824768256,
+                0.2279023515137122,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 0.000616057296209193,
+              "rotation_error_rad": 0.0002645937714557478,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.07521695933373174,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 87,
+          "reference_steps": 86,
+          "cpu_seconds": 0.5858396999537945
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 8,
+          "tails": [
+            {
+              "start": [
+                0.6095807263146842,
+                0.0012909518610931814,
+                0.9129805990434796
+              ],
+              "goal": [
+                0.65,
+                0.0,
+                0.8
+              ],
+              "length_m": 0.12000000000908176
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.23240544472857752,
+                0.562000036239624,
+                -0.9935412162897528,
+                0.574195791883902,
+                0.9378633688118145,
+                -0.3032951032653748,
+                1.6975019422640065,
+                0.22476833655513007,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 0.0005215639259811731,
+              "rotation_error_rad": 0.00022928859003942546,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.04135302104619676,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.23352269698168007,
+                0.562000036239624,
+                -0.9765927711070929,
+                0.5710099344182891,
+                0.9629654435114151,
+                -0.30844736734074507,
+                1.657630618304856,
+                0.2279603910588528,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 0.0006088507667113293,
+              "rotation_error_rad": 0.0002616608229087396,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.03987132395915083,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 141,
+          "reference_steps": 140,
+          "cpu_seconds": 0.26498480001464486
+        }
+      }
+    },
+    {
+      "id": "005-ground",
+      "kind": "ground",
+      "entry": "handoff-005",
+      "original_clock_steps_left": 197,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 25,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.051358647346969655,
+                0.562000036239624,
+                -0.2959541069245192,
+                0.07922502433093603,
+                1.6627455464711225,
+                -0.32373726469010666,
+                0.22617730228349028,
+                0.2830333316786686,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 2.5501569806217513e-13,
+              "rotation_error_rad": 1.4527244260997043e-12,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.052956457905377174,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.038784809603635485,
+                0.562000036239624,
+                -0.24237211032569297,
+                0.06254809765552771,
+                1.6305057468443684,
+                -0.3222110906613054,
+                0.19281581971195944,
+                0.2928801149801532,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 2.520680878233345e-13,
+              "rotation_error_rad": 1.3682177147794178e-12,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.05358199659882601,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 2.5465219999896362
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 24,
+          "tails": [
+            {
+              "start": [
+                0.5429320990580186,
+                0.0006109013101419647,
+                0.3697901146834065
+              ],
+              "goal": [
+                0.55,
+                0.0,
+                0.25
+              ],
+              "length_m": 0.12000000000000031
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.048302549392281124,
+                0.562000036239624,
+                -0.2899458705482944,
+                0.07826254884431627,
+                1.66761036221678,
+                -0.37165134743829986,
+                0.20779351870331642,
+                0.3384668831076634,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 4.172458671835333e-15,
+              "rotation_error_rad": 3.4278653100265707e-15,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.048156398746835194,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.0,
+                0.0005793996388092637,
+                -0.0453699353535152,
+                0.562000036239624,
+                -0.24178881675739541,
+                0.07317809507952644,
+                1.630357323186892,
+                -0.37304971174929147,
+                0.196025005899717,
+                0.33871477168737973,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 1.5649911841788343e-14,
+              "rotation_error_rad": 1.428871969228588e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.048157053790899074,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 0.7401600000448525
+        }
+      }
+    },
+    {
+      "id": "005-vertical",
+      "kind": "vertical",
+      "entry": "handoff-005",
+      "original_clock_steps_left": 197,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 2,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.30448081168084395,
+                0.0005793996388092637,
+                -0.3569658997697519,
+                0.562000036239624,
+                -0.9754855261536147,
+                0.6899384399062121,
+                1.0113312897013054,
+                -0.06612199723918621,
+                2.1020134770130157,
+                0.022887436086567625,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 5.730023721391371e-05,
+              "rotation_error_rad": 1.790428663645256e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0030355487251831903,
+              "torso_delta": 0.019016117633489316,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.2854737313471206,
+                0.0005793996388092637,
+                -0.3574521701354862,
+                0.562000036239624,
+                -0.9753951154993442,
+                0.6901041317611631,
+                1.0143812448107326,
+                -0.06639743016190458,
+                2.099058285338393,
+                0.022535472965142578,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 6.687870952561279e-05,
+              "rotation_error_rad": 1.6579839931631827e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0030499551094269606,
+              "torso_delta": 0.019007080333723336,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 45,
+          "reference_steps": 44,
+          "cpu_seconds": 0.13123880000784993
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 2,
+          "tails": [
+            {
+              "start": [
+                0.49139004839504485,
+                0.00506584578883329,
+                1.2433490695441094
+              ],
+              "goal": [
+                0.4912732738941843,
+                0.0054892092454251196,
+                1.123589571365644
+              ],
+              "length_m": 0.11976030342671258
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.30448081168084395,
+                0.0005793996388092637,
+                -0.3569658997697519,
+                0.562000036239624,
+                -0.9754855261536147,
+                0.6899384399062121,
+                1.0113312897013054,
+                -0.06612199723918621,
+                2.1020134770130157,
+                0.022887436086567625,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 5.730023721391371e-05,
+              "rotation_error_rad": 1.790428663645256e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0030355487251831903,
+              "torso_delta": 0.019016117633489316,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.2854737313471206,
+                0.0005793996388092637,
+                -0.3574521701354862,
+                0.562000036239624,
+                -0.9753951154993442,
+                0.6901041317611631,
+                1.0143812448107326,
+                -0.06639743016190458,
+                2.099058285338393,
+                0.022535472965142578,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 6.687870952561279e-05,
+              "rotation_error_rad": 1.6579839931631827e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0030499551094269606,
+              "torso_delta": 0.019007080333723336,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 45,
+          "reference_steps": 44,
+          "cpu_seconds": 0.13067029998637736
+        }
+      }
+    },
+    {
+      "id": "005-small",
+      "kind": "small",
+      "entry": "handoff-005",
+      "original_clock_steps_left": 197,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": false,
+          "reason": "ik_not_found",
+          "last_records": [
+            {
+              "accepted": false,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.38615,
+                0.0005793996388092637,
+                -0.22297228914485984,
+                0.562000036239624,
+                -0.9946232240754533,
+                0.41498812942412,
+                0.9377646661939556,
+                -9.013245570788087e-06,
+                2.16,
+                -0.14643612229332525,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 0.009559540870988896,
+              "rotation_error_rad": 0.002605461065464531,
+              "reason": "ik_not_found",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.2997337886819591,
+              "torso_delta": 7.849683761596005e-05,
+              "candidate_count": 0,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "cpu_seconds": 0.8049900999758393
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "ik_not_found",
+          "tails": [
+            {
+              "start": [
+                0.49139004839504485,
+                0.00506584578883329,
+                1.2433490695441094
+              ],
+              "goal": [
+                0.5212732738941843,
+                0.0054892092454251196,
+                1.2435895713656442
+              ],
+              "length_m": 0.029887191972063187
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": false,
+              "qpos": [
+                1.4998624324798584,
+                -1.1310230493545532,
+                -0.49844399094581604,
+                0.38615,
+                0.0005793996388092637,
+                -0.22297228914485984,
+                0.562000036239624,
+                -0.9946232240754533,
+                0.41498812942412,
+                0.9377646661939556,
+                -9.013245570788087e-06,
+                2.16,
+                -0.14643612229332525,
+                0.02237986959517002,
+                0.022402117028832436
+              ],
+              "position_error_m": 0.009559540870988896,
+              "rotation_error_rad": 0.002605461065464531,
+              "reason": "ik_not_found",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.2997337886819591,
+              "torso_delta": 7.849683761596005e-05,
+              "candidate_count": 0,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "independent_endpoint_search": [
+            {
+              "accepted": false,
+              "position_error_m": 0.019681033237091437,
+              "rotation_error_rad": 0.005412462551582972
+            },
+            {
+              "accepted": false,
+              "position_error_m": 0.01968088621069611,
+              "rotation_error_rad": 0.0054129349398591535
+            }
+          ],
+          "unreachable_proven": false,
+          "cpu_seconds": 1.5190237000351772
+        }
+      }
+    },
+    {
+      "id": "058-table",
+      "kind": "table",
+      "entry": "handoff-058",
+      "original_clock_steps_left": 189,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 6,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.2282102638577467,
+                0.5619731545448303,
+                -0.976470587133273,
+                0.5732098806410209,
+                0.9025068363843468,
+                -0.29840807529860447,
+                1.732097580667925,
+                0.2046373835444335,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 0.0004302002836183089,
+              "rotation_error_rad": 0.00018615633029650587,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.06774941009766566,
+              "torso_delta": 0.002734154407400516,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.23346531293294812,
+                0.5619731545448303,
+                -0.9765891258431072,
+                0.5708864689374273,
+                0.9629082196912414,
+                -0.3083875976590522,
+                1.6576542275253556,
+                0.22790285625014617,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 0.0006160102549654275,
+              "rotation_error_rad": 0.0002645708456366622,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.07444335314256945,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 95,
+          "reference_steps": 94,
+          "cpu_seconds": 0.5687187999719754
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 8,
+          "tails": [
+            {
+              "start": [
+                0.6109636466704532,
+                0.0022571916043762075,
+                0.9134507303027122
+              ],
+              "goal": [
+                0.65,
+                0.0,
+                0.8
+              ],
+              "length_m": 0.12000000000594505
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.23180019709382965,
+                0.5619731545448303,
+                -0.9929360775878593,
+                0.5739434908758683,
+                0.9366358952462172,
+                -0.3034865339438868,
+                1.6980682365185948,
+                0.2247741301356685,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 0.0005191643985103585,
+              "rotation_error_rad": 0.00022839055880033115,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.04192796727123005,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.23352111660084665,
+                0.5619731545448303,
+                -0.9765924454338807,
+                0.5710068960740204,
+                0.9629636328107759,
+                -0.3084460266850222,
+                1.657631387233746,
+                0.22795902284218306,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 0.000609032389287842,
+              "rotation_error_rad": 0.00026173119629818004,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.04043684928484881,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 147,
+          "reference_steps": 146,
+          "cpu_seconds": 0.27169719990342855
+        }
+      }
+    },
+    {
+      "id": "058-ground",
+      "kind": "ground",
+      "entry": "handoff-058",
+      "original_clock_steps_left": 189,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 25,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.0516384333292982,
+                0.5619731545448303,
+                -0.2952745709103078,
+                0.0800980940852778,
+                1.662810770183439,
+                -0.33038161909154784,
+                0.22502544545260325,
+                0.288523805377205,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 1.9948113088441287e-13,
+              "rotation_error_rad": 4.529323451878045e-13,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.05238891821576708,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.03958340463534076,
+                0.5619731545448303,
+                -0.24230625805835201,
+                0.0638369921697981,
+                1.6304889840461374,
+                -0.32845767979829077,
+                0.19318074079845973,
+                0.29852040677332203,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 1.7832941781272583e-13,
+              "rotation_error_rad": 3.7657397304095576e-13,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.0529683128519558,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 2.516782599966973
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 24,
+          "tails": [
+            {
+              "start": [
+                0.5434284793726541,
+                0.0010727638760549274,
+                0.36981512548218026
+              ],
+              "goal": [
+                0.55,
+                0.0,
+                0.25
+              ],
+              "length_m": 0.12000000000000001
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.04835742970167786,
+                0.5619731545448303,
+                -0.29797256397345767,
+                0.07866968976585209,
+                1.6732983487010673,
+                -0.3685432998953244,
+                0.21007474500922238,
+                0.3359162422260251,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 2.847945897306047e-15,
+              "rotation_error_rad": 1.2787588137201358e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.05612796205548776,
+              "torso_delta": 5.569094402180784e-06,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.0,
+                0.0030035150703042746,
+                -0.045003239254902704,
+                0.5619731545448303,
+                -0.2418237098197464,
+                0.0725860384302397,
+                1.6303661985394238,
+                -0.3702598462629223,
+                0.19583447725840405,
+                0.3362038359837607,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 5.670308539927419e-14,
+              "rotation_error_rad": 5.317182591049481e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.05614885415371118,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 0.6276842999504879
+        }
+      }
+    },
+    {
+      "id": "058-vertical",
+      "kind": "vertical",
+      "entry": "handoff-058",
+      "original_clock_steps_left": 189,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 2,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.30642116351434157,
+                0.0030035150703042746,
+                -0.35144930493971416,
+                0.5619731545448303,
+                -0.9867203854976565,
+                0.707469288442081,
+                1.0002053944047842,
+                -0.08407296179242874,
+                2.097286375157618,
+                -0.017804944364370634,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 3.649520910602422e-05,
+              "rotation_error_rad": 1.1341153318760604e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.002988036668087446,
+              "torso_delta": 0.019025793264600577,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.2874035515287786,
+                0.0030035150703042746,
+                -0.35216655199850433,
+                0.5619731545448303,
+                -0.9868343330717484,
+                0.7076418743122224,
+                1.003208136442718,
+                -0.08427829701402434,
+                2.094471335096088,
+                -0.01810247221463923,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 4.730388603446276e-05,
+              "rotation_error_rad": 9.890935584849273e-06,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0030027420379337144,
+              "torso_delta": 0.019017611985562954,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 55,
+          "reference_steps": 54,
+          "cpu_seconds": 0.11423599999397993
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 2,
+          "tails": [
+            {
+              "start": [
+                0.4951508811228892,
+                0.008953810952057939,
+                1.2500355219917993
+              ],
+              "goal": [
+                0.49493938944736215,
+                0.008774241704698982,
+                1.13078879488751
+              ],
+              "length_m": 0.11924704985419256
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.30642116351434157,
+                0.0030035150703042746,
+                -0.35144930493971416,
+                0.5619731545448303,
+                -0.9867203854976565,
+                0.707469288442081,
+                1.0002053944047842,
+                -0.08407296179242874,
+                2.097286375157618,
+                -0.017804944364370634,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 3.649520910602422e-05,
+              "rotation_error_rad": 1.1341153318760604e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.002988036668087446,
+              "torso_delta": 0.019025793264600577,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.2874035515287786,
+                0.0030035150703042746,
+                -0.35216655199850433,
+                0.5619731545448303,
+                -0.9868343330717484,
+                0.7076418743122224,
+                1.003208136442718,
+                -0.08427829701402434,
+                2.094471335096088,
+                -0.01810247221463923,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 4.730388603446276e-05,
+              "rotation_error_rad": 9.890935584849273e-06,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0030027420379337144,
+              "torso_delta": 0.019017611985562954,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 55,
+          "reference_steps": 54,
+          "cpu_seconds": 0.11659110011532903
+        }
+      }
+    },
+    {
+      "id": "058-small",
+      "kind": "small",
+      "entry": "handoff-058",
+      "original_clock_steps_left": 189,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": false,
+          "reason": "ik_not_found",
+          "last_records": [
+            {
+              "accepted": false,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.38615,
+                0.0030035150703042746,
+                -0.19893978948485205,
+                0.5619731545448303,
+                -1.011327637890867,
+                0.3847563227520632,
+                0.9203600443514712,
+                -6.182326828252371e-08,
+                2.16,
+                -0.2087352764860313,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 0.009368628050032836,
+              "rotation_error_rad": 0.0025715247372714222,
+              "reason": "ik_not_found",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.24186784421342145,
+              "torso_delta": 0.000332323217391961,
+              "candidate_count": 0,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "cpu_seconds": 0.7984995000297204
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "ik_not_found",
+          "tails": [
+            {
+              "start": [
+                0.4951508811228892,
+                0.008953810952057939,
+                1.2500355219917993
+              ],
+              "goal": [
+                0.5249393894473622,
+                0.008774241704698982,
+                1.2507887948875098
+              ],
+              "length_m": 0.029798572002148124
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": false,
+              "qpos": [
+                0.189820796251297,
+                -0.921049177646637,
+                -1.9569034576416016,
+                0.38615,
+                0.0030035150703042746,
+                -0.19893978948485205,
+                0.5619731545448303,
+                -1.011327637890867,
+                0.3847563227520632,
+                0.9203600443514712,
+                -6.182326828252371e-08,
+                2.16,
+                -0.2087352764860313,
+                0.03183753788471222,
+                0.03184736892580986
+              ],
+              "position_error_m": 0.009368628050032836,
+              "rotation_error_rad": 0.0025715247372714222,
+              "reason": "ik_not_found",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.24186784421342145,
+              "torso_delta": 0.000332323217391961,
+              "candidate_count": 0,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "independent_endpoint_search": [
+            {
+              "accepted": false,
+              "position_error_m": 0.019209156442054003,
+              "rotation_error_rad": 0.005321429420837456
+            },
+            {
+              "accepted": false,
+              "position_error_m": 0.01920935772317675,
+              "rotation_error_rad": 0.005320712732900043
+            }
+          ],
+          "unreachable_proven": false,
+          "cpu_seconds": 1.5138283999403939
+        }
+      }
+    },
+    {
+      "id": "061-table",
+      "kind": "table",
+      "entry": "handoff-061",
+      "original_clock_steps_left": 195,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 7,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.2295159833551909,
+                0.5620179176330566,
+                -0.9755525036025373,
+                0.573318856284275,
+                0.9011049292091214,
+                -0.2963152442416175,
+                1.7315698033778177,
+                0.20433145190307256,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 0.00042899601845331555,
+              "rotation_error_rad": 0.0001851654068414041,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.06647350320380863,
+              "torso_delta": 0.003004878979946701,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.233458021063428,
+                0.5620179176330566,
+                -0.9765928255826632,
+                0.5708663198284203,
+                0.9629086266143828,
+                -0.30837571969637345,
+                1.6576521507517032,
+                0.2278945994420396,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 0.0006161136138397861,
+              "rotation_error_rad": 0.00026463132170669154,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.07391765262611472,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 96,
+          "reference_steps": 95,
+          "cpu_seconds": 0.6192789999768138
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 8,
+          "tails": [
+            {
+              "start": [
+                0.6132115610106323,
+                0.0013408322363301917,
+                0.9142138911260715
+              ],
+              "goal": [
+                0.65,
+                0.0,
+                0.8
+              ],
+              "length_m": 0.1200000000021605
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.23139963747318035,
+                0.5620179176330566,
+                -0.9919487391732466,
+                0.5735451049505209,
+                0.934636906058984,
+                -0.3038049731343624,
+                1.6989914587489492,
+                0.2242078062984887,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 0.0005150144631567139,
+              "rotation_error_rad": 0.0002268035316488206,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0428679053631833,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.23351861681827438,
+                0.5620179176330566,
+                -0.9765919678547305,
+                0.5710018816638986,
+                0.9629607538835697,
+                -0.30844377276467805,
+                1.6576325972351882,
+                0.22795667865297942,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 0.0006093433099884612,
+              "rotation_error_rad": 0.00026185311752805103,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.041358861513761,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 145,
+          "reference_steps": 144,
+          "cpu_seconds": 0.2784066000021994
+        }
+      }
+    },
+    {
+      "id": "061-ground",
+      "kind": "ground",
+      "entry": "handoff-061",
+      "original_clock_steps_left": 195,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 25,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.05178278212389482,
+                0.5620179176330566,
+                -0.2952706103561367,
+                0.07888001683397183,
+                1.6623828307340318,
+                -0.3195742275497131,
+                0.22444223699576343,
+                0.27791853284947354,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 3.373917167608257e-13,
+              "rotation_error_rad": 1.400613701876406e-12,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.052218228800207545,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.038177701574214816,
+                0.5620179176330566,
+                -0.24242127104007177,
+                0.06156829448118328,
+                1.6305182618048477,
+                -0.3174478382017263,
+                0.1925429536638548,
+                0.28857768702455644,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 2.2645981485714458e-13,
+              "rotation_error_rad": 1.3506976535352897e-12,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.05284933931606517,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 2.6348285999847576
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 23,
+          "tails": [
+            {
+              "start": [
+                0.5446142364657796,
+                0.0006332428511699462,
+                0.36987740635601374
+              ],
+              "goal": [
+                0.55,
+                0.0,
+                0.25
+              ],
+              "length_m": 0.11999999999999975
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.04838431288193983,
+                0.5620179176330566,
+                -0.2979016952666971,
+                0.07850818190645414,
+                1.6726195938567436,
+                -0.36684160247564135,
+                0.21058465448919272,
+                0.3341268128020549,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 1.7627887609283468e-14,
+              "rotation_error_rad": 1.2171550619368457e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.0560207895479663,
+              "torso_delta": 3.2705901158708777e-06,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.0,
+                0.0012567507801577449,
+                -0.04477295263613749,
+                0.5620179176330566,
+                -0.2418454772805406,
+                0.07221423204612654,
+                1.6303717355041645,
+                -0.3685052572526386,
+                0.1957155272026239,
+                0.3346243982287924,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 7.766882949817305e-14,
+              "rotation_error_rad": 5.697888203067498e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.056056217986156565,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 0.6397154999431223
+        }
+      }
+    },
+    {
+      "id": "061-vertical",
+      "kind": "vertical",
+      "entry": "handoff-061",
+      "original_clock_steps_left": 195,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 2,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.31144289443620643,
+                0.0012567507801577449,
+                -0.3804757571715549,
+                0.5620179176330566,
+                -0.9534761043484392,
+                0.706206652754374,
+                0.9775527247494189,
+                -0.04504124803080556,
+                2.0798122234771066,
+                -0.019838616769259243,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 3.22739981232068e-05,
+              "rotation_error_rad": 2.8126675156999127e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.002952358847440717,
+              "torso_delta": 0.019035280523655107,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.2924161998964463,
+                0.0012567507801577449,
+                -0.3810745505630812,
+                0.5620179176330566,
+                -0.9534406464673251,
+                0.7063216952271532,
+                0.9805194813396939,
+                -0.0453119737692127,
+                2.0769667313331177,
+                -0.02027312096646705,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 3.839119757921464e-05,
+              "rotation_error_rad": 2.75790178456798e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0029667565902751214,
+              "torso_delta": 0.019026694539760136,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 62,
+          "reference_steps": 61,
+          "cpu_seconds": 0.13990100007504225
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 2,
+          "tails": [
+            {
+              "start": [
+                0.5050757065769229,
+                0.0052820714227950205,
+                1.2499339450601166
+              ],
+              "goal": [
+                0.5050034477372236,
+                0.005399750884386378,
+                1.1303509321522145
+              ],
+              "length_m": 0.11958309264242613
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.31144289443620643,
+                0.0012567507801577449,
+                -0.3804757571715549,
+                0.5620179176330566,
+                -0.9534761043484392,
+                0.706206652754374,
+                0.9775527247494189,
+                -0.04504124803080556,
+                2.0798122234771066,
+                -0.019838616769259243,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 3.22739981232068e-05,
+              "rotation_error_rad": 2.8126675156999127e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.002952358847440717,
+              "torso_delta": 0.019035280523655107,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.2924161998964463,
+                0.0012567507801577449,
+                -0.3810745505630812,
+                0.5620179176330566,
+                -0.9534406464673251,
+                0.7063216952271532,
+                0.9805194813396939,
+                -0.0453119737692127,
+                2.0769667313331177,
+                -0.02027312096646705,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 3.839119757921464e-05,
+              "rotation_error_rad": 2.75790178456798e-05,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0029667565902751214,
+              "torso_delta": 0.019026694539760136,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 62,
+          "reference_steps": 61,
+          "cpu_seconds": 0.14235440001357347
+        }
+      }
+    },
+    {
+      "id": "061-small",
+      "kind": "small",
+      "entry": "handoff-061",
+      "original_clock_steps_left": 195,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": false,
+          "reason": "ik_not_found",
+          "last_records": [
+            {
+              "accepted": false,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.38615,
+                0.0012567507801577449,
+                -0.27964410935508927,
+                0.5620179176330566,
+                -0.9577028455141148,
+                0.5245462536350418,
+                0.8785605704353201,
+                -5.104626215057806e-07,
+                2.16,
+                -0.13499175592517165,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 0.011291729443492495,
+              "rotation_error_rad": 0.0031487901399763927,
+              "reason": "ik_not_found",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.16226596836889495,
+              "torso_delta": 0.00018971910476683895,
+              "candidate_count": 0,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "cpu_seconds": 0.8328832999104634
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "ik_not_found",
+          "tails": [
+            {
+              "start": [
+                0.5050757065769229,
+                0.0052820714227950205,
+                1.2499339450601166
+              ],
+              "goal": [
+                0.5350034477372236,
+                0.005399750884386378,
+                1.2503509321522144
+              ],
+              "length_m": 0.029930877328414797
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": false,
+              "qpos": [
+                3.752633810043335,
+                -3.4129724502563477,
+                -0.9633930921554565,
+                0.38615,
+                0.0012567507801577449,
+                -0.27964410935508927,
+                0.5620179176330566,
+                -0.9577028455141148,
+                0.5245462536350418,
+                0.8785605704353201,
+                -5.104626215057806e-07,
+                2.16,
+                -0.13499175592517165,
+                0.028368312865495682,
+                0.028386246412992477
+              ],
+              "position_error_m": 0.011291729443492495,
+              "rotation_error_rad": 0.0031487901399763927,
+              "reason": "ik_not_found",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.16226596836889495,
+              "torso_delta": 0.00018971910476683895,
+              "candidate_count": 0,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": [
+                "pose_tolerance",
+                "pose_tolerance"
+              ]
+            }
+          ],
+          "independent_endpoint_search": [
+            {
+              "accepted": false,
+              "position_error_m": 0.02271002067223533,
+              "rotation_error_rad": 0.006372063083175318
+            },
+            {
+              "accepted": false,
+              "position_error_m": 0.02270998284010954,
+              "rotation_error_rad": 0.006372197486941584
+            }
+          ],
+          "unreachable_proven": false,
+          "cpu_seconds": 1.536545499926433
+        }
+      }
+    },
+    {
+      "id": "r3-005-turn-005",
+      "kind": "historical",
+      "entry": "r3-005-turn-005",
+      "original_clock_steps_left": 194,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 8,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.04274979683987059,
+                0.0005759604391641915,
+                -0.481120037589203,
+                0.562000036239624,
+                -1.221,
+                0.689587803104931,
+                0.3737314897423131,
+                -0.2633424155692974,
+                1.771370077478439,
+                -0.07431884513062759,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 0.0007258107700050915,
+              "rotation_error_rad": 0.00033833130565807235,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.051623769307386436,
+              "torso_delta": 0.03135359411095922,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.01173134589491233,
+                0.0005759604391641915,
+                -0.47388925866133536,
+                0.562000036239624,
+                -1.221,
+                0.6704736550720884,
+                0.33186093339029415,
+                -0.2710729066935822,
+                1.7177505543869989,
+                -0.07803710717995305,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 0.0007040485241274586,
+              "rotation_error_rad": 0.0003476188877447621,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.05361952309144025,
+              "torso_delta": 0.03101845094495826,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 57,
+          "reference_steps": 56,
+          "cpu_seconds": 0.5270466000074521
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 19,
+          "tails": [
+            {
+              "start": [
+                0.5645511110670303,
+                -0.05857563866493781,
+                1.209490528231324
+              ],
+              "goal": [
+                0.65,
+                -0.133,
+                1.17
+              ],
+              "length_m": 0.11999999999999961
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.0020903577422446556,
+                0.0005759604391641915,
+                -0.42546082043752265,
+                0.562000036239624,
+                -1.0696705882244033,
+                -0.9011789678652797,
+                -0.2000119904733936,
+                1.2822866402193926,
+                1.9504905273312727,
+                -0.008401318263930424,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 1.5537000043297593e-14,
+              "rotation_error_rad": 1.4126599434084039e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.02795244004247488,
+              "torso_delta": 0.0012260446557862494,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 2,
+              "fallback_reasons": [
+                "jump",
+                "jump"
+              ]
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.004005992681169416,
+                0.0005759604391641915,
+                -0.43719322567590146,
+                0.562000036239624,
+                -1.0410651407372251,
+                -0.9009293902264583,
+                -0.19808324328632482,
+                1.2816476970050252,
+                1.9240043124277058,
+                -0.027034946358516887,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 3.3325189318763902e-15,
+              "rotation_error_rad": 1.2493869115927264e-14,
+              "reason": "ok",
+              "fallback_unregularized": true,
+              "max_rotation_delta": 0.028605447487178193,
+              "torso_delta": 0.0019156349389247602,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 2,
+              "fallback_reasons": [
+                "jump",
+                "jump"
+              ]
+            }
+          ],
+          "reference_count": 120,
+          "reference_steps": 119,
+          "cpu_seconds": 0.7709197000367567
+        }
+      }
+    },
+    {
+      "id": "r2-005-turn-006",
+      "kind": "historical",
+      "entry": "r2-005-turn-006",
+      "original_clock_steps_left": 194,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 7,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.07023883696098523,
+                0.0005759604391641915,
+                -0.5070156205999705,
+                0.562000036239624,
+                -1.221,
+                0.6657962635437027,
+                0.5039757425772087,
+                -0.2221641886336907,
+                1.6438893196552669,
+                -0.07027101513913969,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 0.00024276734052686302,
+              "rotation_error_rad": 0.00025260709794335315,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.05058978724168339,
+              "torso_delta": 0.03124662044116329,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.039438640346684636,
+                0.0005759604391641915,
+                -0.5039230670119735,
+                0.562000036239624,
+                -1.221,
+                0.6541433413945934,
+                0.4699413783033518,
+                -0.23252196084315857,
+                1.5839284139445056,
+                -0.06929758796204677,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 0.00021577209255912544,
+              "rotation_error_rad": 0.000269547746499469,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.05996090571076129,
+              "torso_delta": 0.0308001966143006,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 47,
+          "reference_steps": 46,
+          "cpu_seconds": 1.209117399994284
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 17,
+          "tails": [
+            {
+              "start": [
+                0.5884745600526882,
+                -0.06802277277847824,
+                1.2055701556105773
+              ],
+              "goal": [
+                0.68,
+                -0.137,
+                1.17
+              ],
+              "length_m": 0.12000000001199637
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.02928609902833627,
+                0.0005759604391641915,
+                -0.4705863331575086,
+                0.562000036239624,
+                -1.221,
+                0.6633190921403336,
+                0.3971716857517319,
+                -0.2650481135920333,
+                1.6539072476738161,
+                -0.06104603030850697,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 0.00046472405922293815,
+              "rotation_error_rad": 0.00031190016059309464,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.07205178525870393,
+              "torso_delta": 0.008366175101402664,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                1.500830888748169,
+                -1.1315531730651855,
+                -0.4984068274497986,
+                0.03938604833129393,
+                0.0005759604391641915,
+                -0.5035512963058293,
+                0.562000036239624,
+                -1.221,
+                0.6532684302373029,
+                0.46958085961600865,
+                -0.2320140185943349,
+                1.5841662269920942,
+                -0.06950628415263349,
+                0.026413239538669586,
+                0.02641970105469227
+              ],
+              "position_error_m": 0.0002040182792362155,
+              "rotation_error_rad": 0.0002654036456815401,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0724091738642767,
+              "torso_delta": 0.01009994930295766,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 212,
+          "reference_steps": 211,
+          "cpu_seconds": 1.088685299968347
+        }
+      }
+    },
+    {
+      "id": "retry58-058-turn-008",
+      "kind": "historical",
+      "entry": "retry58-058-turn-008",
+      "original_clock_steps_left": 76,
+      "cpu_new_attempt_budget": 600,
+      "conditions": {
+        "arm-coordinated-v2-600": {
+          "accepted": true,
+          "reason": "ok",
+          "minimum_steps": 22,
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                -0.2560097873210907,
+                -2.0170023441314697,
+                -1.9569858312606812,
+                0.0,
+                0.0029479784425348043,
+                -0.3794660415052972,
+                0.561984121799469,
+                0.10107490726203874,
+                0.2883296635733026,
+                0.8720432595355345,
+                -0.48483578419562967,
+                0.6524121478291621,
+                -0.012655746086157826,
+                0.03448900207877159,
+                0.034491028636693954
+              ],
+              "position_error_m": 0.0018475312438318192,
+              "rotation_error_rad": 0.0010133244166000155,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.05735776335139775,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                -0.2560097873210907,
+                -2.0170023441314697,
+                -1.9569858312606812,
+                0.0,
+                0.0029479784425348043,
+                -0.3738722802495266,
+                0.561984121799469,
+                0.15674402295065112,
+                0.2894825326810473,
+                0.8080683855679985,
+                -0.47980806204337645,
+                0.6572372010957923,
+                -0.029265156510758672,
+                0.03448900207877159,
+                0.034491028636693954
+              ],
+              "position_error_m": 0.0017907955907123722,
+              "rotation_error_rad": 0.0009470402274937559,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.0639748739675361,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "reference_count": 431,
+          "reference_steps": 430,
+          "cpu_seconds": 2.3648716000607237
+        },
+        "arm-joint-approach-candidate-v1": {
+          "accepted": false,
+          "reason": "reference_timing_infeasible",
+          "minimum_steps": 29,
+          "tails": [
+            {
+              "start": [
+                0.6398961558197043,
+                -0.1524501408779529,
+                0.41613500466197684
+              ],
+              "goal": [
+                0.66,
+                -0.175,
+                0.3
+              ],
+              "length_m": 0.12000000002119654
+            },
+            {
+              "start": [
+                0.6599999999999759,
+                -0.17499999999993193,
+                0.29000000000000015
+              ],
+              "goal": [
+                0.66,
+                -0.175,
+                0.17
+              ],
+              "length_m": 0.12000000000000013
+            }
+          ],
+          "last_records": [
+            {
+              "accepted": true,
+              "qpos": [
+                -0.2560097873210907,
+                -2.0170023441314697,
+                -1.9569858312606812,
+                0.0,
+                0.0029479784425348043,
+                -0.37904549308282237,
+                0.561984121799469,
+                0.10526783155376393,
+                0.28833879854750943,
+                0.8673621176552616,
+                -0.4844686659752049,
+                0.6526381431635915,
+                -0.0138515387896323,
+                0.03448900207877159,
+                0.034491028636693954
+              ],
+              "position_error_m": 0.0018427650056379152,
+              "rotation_error_rad": 0.0010091706013150264,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.053593526540651304,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            },
+            {
+              "accepted": true,
+              "qpos": [
+                -0.2560097873210907,
+                -2.0170023441314697,
+                -1.9569858312606812,
+                0.0,
+                0.0029479784425348043,
+                -0.3738675035787134,
+                0.561984121799469,
+                0.15674746633256073,
+                0.28947183486176264,
+                0.8080583194159315,
+                -0.4797874596464484,
+                0.6572396308309387,
+                -0.029277893565459845,
+                0.03448900207877159,
+                0.034491028636693954
+              ],
+              "position_error_m": 0.0017908284007569133,
+              "rotation_error_rad": 0.0009473745304604277,
+              "reason": "ok",
+              "fallback_unregularized": false,
+              "max_rotation_delta": 0.059303798239330074,
+              "torso_delta": 0.0,
+              "candidate_count": 2,
+              "rejected_jump_candidates": 0,
+              "fallback_reasons": []
+            }
+          ],
+          "detail": "joint reference exceeds 600-step horizon",
+          "cpu_seconds": 1.156975399935618
+        }
+      }
+    }
+  ],
+  "candidate_all_15_planned": false,
+  "candidate_table_at_most60": false,
+  "planning_gate_passed": false,
+  "selected_executor": "arm-coordinated-v2-600",
+  "selection_final_pending_regression": true,
+  "gpu_runs": 0,
+  "api_calls": 0,
+  "simulator_steps": 0,
+  "unreachable_exemptions": [],
+  "note": "A bounded IK search failure is not proof of unreachable target. No exemptions invented."
+}

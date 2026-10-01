@@ -1,0 +1,54 @@
+{
+  "id": "C2-VISUAL-PILOT-2026-09-30-r2",
+  "status": "closed_censored",
+  "authorization_sha256": "b44769ebde00b3ee7aa5b5afe2bc6fcbbf636367a2372a00afdf626c3735e9a6",
+  "authorization_evidence": "User explicitly instructed start after r2 proposal: 5/55/58, 78 requests, GPU1 5400 process seconds, USD1010 cap; old balance0.",
+  "scope": {
+    "gpu_seconds": 5400,
+    "requests": 78,
+    "usd": "1010",
+    "old_balance_transferred": 0
+  },
+  "entries": [
+    {
+      "request_id": "005-tool-000",
+      "position": 5,
+      "turn": 0,
+      "kind": "tool",
+      "status": "unknown_provider_outcome",
+      "reserve_usd": "0.6378",
+      "estimated_usd": null,
+      "request_sha256": "03de7a486cfdce8a52a36cc6e4e0b3c5b7852f5016af45024443d79fa9677578",
+      "request_bundle_sha256": "83540a71772e9214605b6f9ec1e2a341306973f2d7bc5de7993bd3fe31db996a",
+      "reserved_at_utc": "2026-09-30T16:55:58.941218+00:00",
+      "error_type": "URLError",
+      "transport_error": {
+        "exception_type": "URLError",
+        "reason_type": "ConnectionResetError",
+        "reason_errno": 10054,
+        "category": "connection"
+      }
+    }
+  ],
+  "lab_project_charge": {
+    "amount": 0,
+    "basis": "User confirmed no project charge, no invoice"
+  },
+  "provider_billed_usd": null,
+  "gpu_process_seconds": 50.18852736055851,
+  "api_attempts": 1,
+  "simulator_actions": 0,
+  "known_usage_estimate_usd": "0",
+  "unknown_request_reserved_usd": "0.6378",
+  "remaining_usd_closed": "1009.3622",
+  "remaining_gpu_seconds_closed": 5349.8114726394415,
+  "final_resource_check": {
+    "pids_absent": {
+      "1752747": true,
+      "1752886": true
+    },
+    "compute": "GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 672548, 46316 MiB\n",
+    "gpu": "0, GPU-360ba128-ef60-8e86-ad71-07fc723dc3a3, 46349 MiB, 0 %\n1, GPU-b7ebba23-7824-7601-df32-be55628936c3, 15 MiB, 0 %\n"
+  },
+  "closed_at_utc": "2026-09-30T17:07:09.378955+00:00"
+}
