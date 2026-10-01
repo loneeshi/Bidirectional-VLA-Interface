@@ -56,3 +56,5 @@ private/
 .idea/
 .DS_Store
 Thumbs.db
+/PUBLICATION.md
+/docs/public/publication-rules.md

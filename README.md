@@ -6,7 +6,6 @@
 
 - [实验结果](docs/log/README.md)：正式日志及各实验的结论边界。
 - [当前研究](research/c2/README.md)：当前方法、设计和待解决问题。
-- [公开发布原则](PUBLICATION.md)：文件范围与发布前检查。
 - [演示](docs/media/README.md)：保留成功、失败标签的录像。
 - [文档目录](docs/README.md)：安装、协议和历史记录。
 
@@ -30,7 +29,3 @@ bvi-eval --help
 ```
 
 MS-HAB、ManiSkill、数据、资产和 PPO/SAC 检查点为外部依赖。安装与执行条件见 [复现说明](docs/reproduction.md)。历史三设置实验均为完整任务 0/16；[完整日志](docs/log/2026-09-21-tidyhouse-three-settings.md)保留局部物体完成数与限制。
-
-## 公开文件的范围
-
-公开页面保留经过检查的结果、方法说明、最小摘要、精选媒体和可运行的代码入口。运行前设计、工作交接、内部决策和原始实验附件限于本地，不从公开索引链接到历史版本。发布前检查见 [公开发布原则](PUBLICATION.md)。
