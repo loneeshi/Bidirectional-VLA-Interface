@@ -1,5 +1,15 @@
 # 演示与图像证据
 
+## 官方状态字段复测 5 例（official-state，2026-10-01）
+
+[同场景目标路径 / 实际轨迹演示清单](c2-pick-arm-official-state-2026-10-01-r1/README.md)：同 5 例，模型另得官方目标位姿、末端位姿与抓持状态；严格 Pick 200 步 2/5、600 步 5/5。原在线录像的 CPU 后处理，无动作重放；颜色含义同下。清单内另有每例的轨迹、逐步记录与接触分析页。实验说明见[日志](../log/2026-10-01-c2-arm-official-state.md)。
+
+- arm-dev-000 成功（第 213 步）：[astra-commanded-vs-executed-3d-demo.mp4](c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-3e756bde/delivery/astra-commanded-vs-executed-3d-demo.mp4)
+- arm-dev-001 成功（第 239 步）：[astra-commanded-vs-executed-3d-demo.mp4](c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-4beb91ee/delivery/astra-commanded-vs-executed-3d-demo.mp4)
+- arm-dev-002 成功（第 123 步）：[astra-commanded-vs-executed-3d-demo.mp4](c2-pick-arm-2026-10-01-arm-dev-002-V-mobile-eecf43b2/delivery/astra-commanded-vs-executed-3d-demo.mp4)
+- arm-dev-003 成功（第 257 步）：[astra-commanded-vs-executed-3d-demo.mp4](c2-pick-arm-2026-10-01-arm-dev-003-V-mobile-691cb7ae/delivery/astra-commanded-vs-executed-3d-demo.mp4)
+- arm-dev-004 成功（第 145 步）：[astra-commanded-vs-executed-3d-demo.mp4](c2-pick-arm-2026-10-01-arm-dev-004-V-mobile-4d31155e/delivery/astra-commanded-vs-executed-3d-demo.mp4)
+
 ## 夹爪几何复测 5 例（WP2，2026-10-01）
 
 [同场景目标路径 / 实际轨迹演示清单](c2-pick-arm-wp2-2026-10-01-r1/README.md)：提示追加夹爪几何后的同 5 例，严格 Pick 2/5。原在线录像的 CPU 后处理，无动作重放；颜色含义同下。实验说明见[日志](../log/2026-10-01-c2-arm-wp2-gripper-geometry.md)。

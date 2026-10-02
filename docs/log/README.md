@@ -7,6 +7,7 @@
 
 ## 当前日志
 
+- [C2 加入官方状态字段后的抓取复测：开发组 5 例](2026-10-01-c2-arm-official-state.md)
 - [C2 提示补充夹爪几何后的抓取复测：开发组 5 例](2026-10-01-c2-arm-wp2-gripper-geometry.md)
 - [C2 官方出生站位抓取能力测评：开发组 5 例](2026-10-01-c2-arm-capability-dev.md)
 - [TidyHouse 三设置：Fixed / GPT / Teleport](2026-09-21-tidyhouse-three-settings.md)

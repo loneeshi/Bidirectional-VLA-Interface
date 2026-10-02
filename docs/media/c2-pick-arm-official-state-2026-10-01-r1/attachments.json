@@ -1,0 +1,17 @@
+[
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-3e756bde/delivery/trajectory.html", "sha256": "8366590ebb2f92fff9621c19c066e9d2af746b2aad7baeef81a4554077c9c0d6"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-3e756bde/delivery/history.html", "sha256": "c71ba3d67b7f09d570430ac04744edf3d72c052cccf6e571a3b84affecc43338"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-3e756bde/delivery/contacts.html", "sha256": "b3338f471e7d5032881b8d38d7c23bc19658755691c806b1162e17a50c68abe5"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-4beb91ee/delivery/trajectory.html", "sha256": "b153d6779eef783c45cb37a096bbe4fac73ebdfdf8256210a0e21bfa79aba9e8"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-4beb91ee/delivery/history.html", "sha256": "19bd6358715612d365461dd81c634763dc52a8e35a5e5ef0de95bc93f1455908"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-4beb91ee/delivery/contacts.html", "sha256": "a946415a1319be7071e6640a7d25b621e3398d59e7d836e13e16163a228e9c93"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-002-V-mobile-eecf43b2/delivery/trajectory.html", "sha256": "6c7bed2070a6b694e818689c7c75eec20fbc6263306194d52b17299d32bc4a88"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-002-V-mobile-eecf43b2/delivery/history.html", "sha256": "6082ee20384466b7b602b35fd42b75c06f17e208be1ec60457e336ee35284f72"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-002-V-mobile-eecf43b2/delivery/contacts.html", "sha256": "55ac6f9e90bc3f0d1288a0c369f597d4c906f9417cb5a9c4115d5b57203a6498"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-003-V-mobile-691cb7ae/delivery/trajectory.html", "sha256": "1033b48aef768a77a643b04d4c96dd34fb2452387597df1cb921167ff5f22b66"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-003-V-mobile-691cb7ae/delivery/history.html", "sha256": "c7fb045342058aa9c09a7125cb3b520018ae13e37f237a500556fd0cdb68b92a"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-003-V-mobile-691cb7ae/delivery/contacts.html", "sha256": "8b684a39f5f969f9e66f7ff63282df8adc1a1d4bc40fe93642c97a1ca5b6060d"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-004-V-mobile-4d31155e/delivery/trajectory.html", "sha256": "59284475b46ce02444cd35dffca87b424db8038d6cf83b12a468c5b53202ca16"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-004-V-mobile-4d31155e/delivery/history.html", "sha256": "3777fa211ef15e4e22a9bbb877d49c8513830a3be25702b4d4e73cb3e4ce0e4b"},
+  {"path": "c2-pick-arm-2026-10-01-arm-dev-004-V-mobile-4d31155e/delivery/contacts.html", "sha256": "5af772ce1215609d9d9146f4e84463a392999c84a71275186bb8d52d06dc738d"}
+]

@@ -92,6 +92,19 @@
     },
     {
       "filename": "astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-3e756bde/delivery/astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "fefba069b82f5ee60334fe15446bb5178610d92b7e5e23809311f77a04ab779e",
+      "bytes": 3039867,
+      "recorded_at_utc": "2026-10-01T22:03:51.975034+00:00",
+      "case_id": "arm-dev-000",
+      "condition": "V-mobile",
+      "strict_pick_success": true,
+      "termination_category": "official_success",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "astra-commanded-vs-executed-3d-demo.mp4",
       "path": "c2-pick-arm-2026-10-01-arm-dev-000-V-mobile-8a8902b7/delivery/astra-commanded-vs-executed-3d-demo.mp4",
       "sha256": "13f30022a792bc24a51d3cb77315f96751b7c22a13e56096aa1cd76256fe0f1e",
       "bytes": 2399153,
@@ -126,6 +139,19 @@
     },
     {
       "filename": "astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-4beb91ee/delivery/astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "8e27c07fae2c2faf24e699dbb6946cab583ef923798d1f7247a36887a4e1baea",
+      "bytes": 4468162,
+      "recorded_at_utc": "2026-10-01T22:09:58.739792+00:00",
+      "case_id": "arm-dev-001",
+      "condition": "V-mobile",
+      "strict_pick_success": true,
+      "termination_category": "official_success",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "astra-commanded-vs-executed-3d-demo.mp4",
       "path": "c2-pick-arm-2026-10-01-arm-dev-001-V-mobile-90194498/delivery/astra-commanded-vs-executed-3d-demo.mp4",
       "sha256": "44ca30857398146d9067758c79f18bcc229c3fcbec3a74f510e0f27ea5cfed88",
       "bytes": 8082570,
@@ -152,6 +178,32 @@
     },
     {
       "filename": "astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-002-V-mobile-eecf43b2/delivery/astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "dcd31b87f8e1cc2e7dd848635662c1255945ea552a17b857b97353b937538795",
+      "bytes": 2039746,
+      "recorded_at_utc": "2026-10-01T22:15:33.414286+00:00",
+      "case_id": "arm-dev-002",
+      "condition": "V-mobile",
+      "strict_pick_success": true,
+      "termination_category": "official_success",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-003-V-mobile-691cb7ae/delivery/astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "37184a3346835b88eb0a6c914da0227654a932221eee1df487df1c2fccf648a8",
+      "bytes": 5112620,
+      "recorded_at_utc": "2026-10-01T22:18:49.162073+00:00",
+      "case_id": "arm-dev-003",
+      "condition": "V-mobile",
+      "strict_pick_success": true,
+      "termination_category": "official_success",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "astra-commanded-vs-executed-3d-demo.mp4",
       "path": "c2-pick-arm-2026-10-01-arm-dev-003-V-mobile-83a042d7/delivery/astra-commanded-vs-executed-3d-demo.mp4",
       "sha256": "de6b400ca6ec22f9842ec85799c6cf8da3edccdfa38862fb97a22e06e2c2b2f1",
       "bytes": 6629518,
@@ -160,6 +212,19 @@
       "condition": "V-mobile",
       "strict_pick_success": false,
       "termination_category": "done",
+      "kind": "Astra issued vs executed 3D scene demo",
+      "source_kind": "online recording, postprocessed; no action replay"
+    },
+    {
+      "filename": "astra-commanded-vs-executed-3d-demo.mp4",
+      "path": "c2-pick-arm-2026-10-01-arm-dev-004-V-mobile-4d31155e/delivery/astra-commanded-vs-executed-3d-demo.mp4",
+      "sha256": "84b93e01a2c50e84663dee31934e55a4abe65d6a0645fdcea5d383ca43e73f66",
+      "bytes": 2216663,
+      "recorded_at_utc": "2026-10-01T22:25:35.472775+00:00",
+      "case_id": "arm-dev-004",
+      "condition": "V-mobile",
+      "strict_pick_success": true,
+      "termination_category": "official_success",
       "kind": "Astra issued vs executed 3D scene demo",
       "source_kind": "online recording, postprocessed; no action replay"
     },
