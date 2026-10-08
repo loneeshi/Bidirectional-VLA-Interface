@@ -1,0 +1,2550 @@
+{
+ "scope": "read-only archive statistics; evaluation-side truth only",
+ "summary": {
+  "target_threshold_m": 0.05,
+  "complete": 17,
+  "first_selection_is_target": [
+   "000",
+   "002",
+   "003",
+   "005",
+   "006",
+   "007",
+   "015"
+  ],
+  "selected_target_late": [
+   "009",
+   "016"
+  ],
+  "never_selected_target": [
+   "001",
+   "004",
+   "008",
+   "010",
+   "011",
+   "012",
+   "013",
+   "014",
+   "017",
+   "018",
+   "019"
+  ],
+  "verifier_confusion": {
+   "confirmed|is_target=None": 1,
+   "confirmed|is_target=True": 6,
+   "like|is_target=False": 29,
+   "like|is_target=True": 12,
+   "unclear|is_target=False": 3,
+   "unlike|is_target=False": 4,
+   "unlike|is_target=None": 1
+  },
+  "check_path_total": {
+   "ik_not_found": 53,
+   "ok": 23,
+   "jump_rejected": 2
+  },
+  "tools_total": {
+   "return_to_rest": 17,
+   "move_to": 45,
+   "locate_point": 105,
+   "check_path": 78,
+   "move_base": 83,
+   "set_gripper": 19,
+   "give_up": 6,
+   "look": 64,
+   "move_eef_chunk": 3,
+   "done": 2,
+   "INVALID": 2,
+   "verify_target": 1
+  }
+ },
+ "cases": {
+  "000": {
+   "object": "008_pudding_box-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.4129666044610008,
+   "censored": false,
+   "termination": "give_up",
+   "steps": 265,
+   "decisions": 23,
+   "base_target_start_m": 1.41,
+   "base_target_end_m": 0.97,
+   "selections": [
+    {
+     "turn": 2,
+     "dist_m": 0.002
+    },
+    {
+     "turn": 5,
+     "dist_m": 0.002
+    },
+    {
+     "turn": 8,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 12,
+     "dist_m": 0.0
+    },
+    {
+     "turn": 14,
+     "dist_m": 0.0
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 2,
+   "last_selection_is_target": true,
+   "tools": {
+    "return_to_rest": 2,
+    "move_to": 5,
+    "locate_point": 5,
+    "check_path": 5,
+    "move_base": 2,
+    "set_gripper": 3,
+    "give_up": 1
+   },
+   "check_path": {
+    "ik_not_found": 3,
+    "ok": 2
+   },
+   "first_locate_turn": 2,
+   "first_locate_step": 72,
+   "closes": [
+    {
+     "turn": 17,
+     "reason": "close_alignment_failed",
+     "finger_distance_m": null,
+     "stable": null,
+     "held_eval_only": [],
+     "steps": [
+      190,
+      202
+     ]
+    },
+    {
+     "turn": 19,
+     "reason": "ok",
+     "finger_distance_m": 0.046965328976511955,
+     "stable": false,
+     "held_eval_only": [],
+     "steps": [
+      209,
+      219
+     ]
+    }
+   ],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": true,
+    "is_grasped": true,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "001": {
+   "object": "002_master_chef_can-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.9625908677292412,
+   "censored": false,
+   "termination": "give_up",
+   "steps": 377,
+   "decisions": 24,
+   "base_target_start_m": 1.96,
+   "base_target_end_m": 2.31,
+   "selections": [
+    {
+     "turn": 3,
+     "dist_m": 3.009
+    },
+    {
+     "turn": 8,
+     "dist_m": 2.948
+    },
+    {
+     "turn": 9,
+     "dist_m": 2.734
+    },
+    {
+     "turn": 13,
+     "dist_m": 2.734
+    },
+    {
+     "turn": 16,
+     "dist_m": 2.529
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "return_to_rest": 2,
+    "look": 3,
+    "locate_point": 5,
+    "check_path": 6,
+    "move_base": 4,
+    "move_to": 1,
+    "set_gripper": 1,
+    "move_eef_chunk": 1,
+    "give_up": 1
+   },
+   "check_path": {
+    "ik_not_found": 4,
+    "jump_rejected": 1,
+    "ok": 1
+   },
+   "first_locate_turn": 3,
+   "first_locate_step": 70,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "002": {
+   "object": "009_gelatin_box-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.8285718455943398,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 286,
+   "decisions": 21,
+   "base_target_start_m": 1.83,
+   "base_target_end_m": 1.1,
+   "selections": [
+    {
+     "turn": 1,
+     "dist_m": 0.003
+    },
+    {
+     "turn": 6,
+     "dist_m": 0.003
+    },
+    {
+     "turn": 8,
+     "dist_m": 0.002
+    },
+    {
+     "turn": 10,
+     "dist_m": 0.002
+    },
+    {
+     "turn": 14,
+     "dist_m": 0.0
+    },
+    {
+     "turn": 18,
+     "dist_m": 0.0
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 1,
+   "last_selection_is_target": true,
+   "tools": {
+    "look": 3,
+    "locate_point": 6,
+    "check_path": 5,
+    "move_base": 3,
+    "set_gripper": 1,
+    "move_to": 3
+   },
+   "check_path": {
+    "ik_not_found": 2,
+    "ok": 3
+   },
+   "first_locate_turn": 1,
+   "first_locate_step": 27,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": true,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5071.8
+  },
+  "003": {
+   "object": "024_bowl-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.548989436304068,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 176,
+   "decisions": 9,
+   "base_target_start_m": 1.55,
+   "base_target_end_m": 0.86,
+   "selections": [
+    {
+     "turn": 0,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 4,
+     "dist_m": 0.0
+    },
+    {
+     "turn": 6,
+     "dist_m": 0.001
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 0,
+   "last_selection_is_target": true,
+   "tools": {
+    "locate_point": 3,
+    "check_path": 2,
+    "look": 1,
+    "move_base": 3
+   },
+   "check_path": {
+    "ik_not_found": 2
+   },
+   "first_locate_turn": 0,
+   "first_locate_step": 0,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": false,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5050.5
+  },
+  "004": {
+   "object": "003_cracker_box-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.8431894308940615,
+   "censored": false,
+   "termination": "give_up",
+   "steps": 253,
+   "decisions": 12,
+   "base_target_start_m": 1.84,
+   "base_target_end_m": 1.84,
+   "selections": [
+    {
+     "turn": 4,
+     "dist_m": 5.743
+    },
+    {
+     "turn": 10,
+     "dist_m": 6.267
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "return_to_rest": 1,
+    "look": 4,
+    "locate_point": 2,
+    "check_path": 2,
+    "move_base": 1,
+    "move_to": 1,
+    "give_up": 1
+   },
+   "check_path": {
+    "ik_not_found": 1,
+    "ok": 1
+   },
+   "first_locate_turn": 4,
+   "first_locate_step": 118,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "005": {
+   "object": "008_pudding_box-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.4984872452463596,
+   "censored": false,
+   "termination": "official_success",
+   "steps": 245,
+   "decisions": 19,
+   "base_target_start_m": 1.5,
+   "base_target_end_m": 0.82,
+   "selections": [
+    {
+     "turn": 0,
+     "dist_m": 0.002
+    },
+    {
+     "turn": 4,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 6,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 9,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 13,
+     "dist_m": 0.001
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 0,
+   "last_selection_is_target": true,
+   "tools": {
+    "locate_point": 5,
+    "check_path": 3,
+    "look": 1,
+    "move_base": 3,
+    "set_gripper": 2,
+    "move_to": 4,
+    "return_to_rest": 1
+   },
+   "check_path": {
+    "ik_not_found": 2,
+    "ok": 1
+   },
+   "first_locate_turn": 0,
+   "first_locate_step": 0,
+   "closes": [
+    {
+     "turn": 16,
+     "reason": "ok",
+     "finger_distance_m": 0.07105154544115067,
+     "stable": true,
+     "held_eval_only": [
+      "env-0_008_pudding_box-0"
+     ],
+     "steps": [
+      198,
+      207
+     ]
+    }
+   ],
+   "held_at_end_eval_only": [
+    "env-0_008_pudding_box-0"
+   ],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": true,
+    "is_grasped": true,
+    "grasped_lift_5cm": true,
+    "strict_success": true
+   },
+   "cumulative_force": 0.0
+  },
+  "006": {
+   "object": "003_cracker_box-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.8242058716944125,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 330,
+   "decisions": 24,
+   "base_target_start_m": 1.82,
+   "base_target_end_m": 0.82,
+   "selections": [
+    {
+     "turn": 2,
+     "dist_m": 0.009
+    },
+    {
+     "turn": 5,
+     "dist_m": 0.008
+    },
+    {
+     "turn": 7,
+     "dist_m": 0.009
+    },
+    {
+     "turn": 9,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 12,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 17,
+     "dist_m": 0.002
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 2,
+   "last_selection_is_target": true,
+   "tools": {
+    "return_to_rest": 2,
+    "move_to": 5,
+    "locate_point": 6,
+    "check_path": 4,
+    "move_base": 4,
+    "set_gripper": 3
+   },
+   "check_path": {
+    "ik_not_found": 3,
+    "ok": 1
+   },
+   "first_locate_turn": 2,
+   "first_locate_step": 46,
+   "closes": [
+    {
+     "turn": 19,
+     "reason": "close_alignment_failed",
+     "finger_distance_m": null,
+     "stable": null,
+     "held_eval_only": [],
+     "steps": [
+      270,
+      282
+     ]
+    },
+    {
+     "turn": 21,
+     "reason": "ok",
+     "finger_distance_m": 0.06881150975823402,
+     "stable": false,
+     "held_eval_only": [],
+     "steps": [
+      294,
+      308
+     ]
+    }
+   ],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": true,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5027.2
+  },
+  "007": {
+   "object": "004_sugar_box-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.3736457809708351,
+   "censored": true,
+   "termination": "operator_stop",
+   "steps": 141,
+   "decisions": 15,
+   "base_target_start_m": 1.37,
+   "base_target_end_m": 0.75,
+   "selections": [
+    {
+     "turn": 1,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 5,
+     "dist_m": 0.001
+    },
+    {
+     "turn": 8,
+     "dist_m": 0.002
+    },
+    {
+     "turn": 9,
+     "dist_m": 0.0
+    },
+    {
+     "turn": 12,
+     "dist_m": 0.0
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 1,
+   "last_selection_is_target": true,
+   "tools": {
+    "look": 2,
+    "locate_point": 5,
+    "check_path": 5,
+    "move_base": 3
+   },
+   "check_path": {
+    "ik_not_found": 5
+   },
+   "first_locate_turn": 1,
+   "first_locate_step": 35,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": null,
+   "cumulative_force": 0.0
+  },
+  "008": {
+   "object": "007_tuna_fish_can-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.7089286034436557,
+   "censored": false,
+   "termination": "done",
+   "steps": 487,
+   "decisions": 25,
+   "base_target_start_m": 1.71,
+   "base_target_end_m": 0.71,
+   "selections": [
+    {
+     "turn": 2,
+     "dist_m": 0.7
+    },
+    {
+     "turn": 5,
+     "dist_m": 0.713
+    },
+    {
+     "turn": 7,
+     "dist_m": 0.7
+    },
+    {
+     "turn": 10,
+     "dist_m": 0.703
+    },
+    {
+     "turn": 13,
+     "dist_m": 0.222
+    },
+    {
+     "turn": 16,
+     "dist_m": 0.236
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "return_to_rest": 2,
+    "move_to": 2,
+    "locate_point": 6,
+    "check_path": 5,
+    "move_base": 4,
+    "look": 1,
+    "set_gripper": 3,
+    "move_eef_chunk": 1,
+    "done": 1
+   },
+   "check_path": {
+    "ik_not_found": 4,
+    "ok": 1
+   },
+   "first_locate_turn": 2,
+   "first_locate_step": 112,
+   "closes": [
+    {
+     "turn": 21,
+     "reason": "close_alignment_failed",
+     "finger_distance_m": null,
+     "stable": null,
+     "held_eval_only": [],
+     "steps": [
+      411,
+      423
+     ]
+    },
+    {
+     "turn": 22,
+     "reason": "ok",
+     "finger_distance_m": 0.07238823547959328,
+     "stable": true,
+     "held_eval_only": [
+      "env-0_002_master_chef_can-1"
+     ],
+     "steps": [
+      423,
+      438
+     ]
+    }
+   ],
+   "held_at_end_eval_only": [
+    "env-0_002_master_chef_can-1"
+   ],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 371.1
+  },
+  "009": {
+   "object": "002_master_chef_can-0",
+   "distance_band": "near",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 1.7526373002091777,
+   "censored": false,
+   "termination": "give_up",
+   "steps": 262,
+   "decisions": 24,
+   "base_target_start_m": 1.75,
+   "base_target_end_m": 0.95,
+   "selections": [
+    {
+     "turn": 2,
+     "dist_m": 0.849
+    },
+    {
+     "turn": 5,
+     "dist_m": 0.842
+    },
+    {
+     "turn": 7,
+     "dist_m": 0.842
+    },
+    {
+     "turn": 9,
+     "dist_m": 0.838
+    },
+    {
+     "turn": 12,
+     "dist_m": 0.835
+    },
+    {
+     "turn": 16,
+     "dist_m": 0.832
+    },
+    {
+     "turn": 18,
+     "dist_m": 0.001
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 18,
+   "last_selection_is_target": true,
+   "tools": {
+    "look": 3,
+    "locate_point": 7,
+    "check_path": 4,
+    "move_base": 4,
+    "set_gripper": 1,
+    "move_to": 2,
+    "move_eef_chunk": 1,
+    "return_to_rest": 1,
+    "give_up": 1
+   },
+   "check_path": {
+    "ik_not_found": 2,
+    "ok": 2
+   },
+   "first_locate_turn": 2,
+   "first_locate_step": 56,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "010": {
+   "object": "024_bowl-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 3.9248945387646152,
+   "censored": true,
+   "termination": "infrastructure_censored",
+   "steps": 678,
+   "decisions": 26,
+   "base_target_start_m": 3.92,
+   "base_target_end_m": 4.47,
+   "selections": [
+    {
+     "turn": 3,
+     "dist_m": 3.781
+    },
+    {
+     "turn": 6,
+     "dist_m": 3.784
+    },
+    {
+     "turn": 14,
+     "dist_m": 5.111
+    },
+    {
+     "turn": 20,
+     "dist_m": 5.107
+    },
+    {
+     "turn": 22,
+     "dist_m": 5.121
+    },
+    {
+     "turn": 25,
+     "dist_m": 5.121
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "look": 11,
+    "locate_point": 6,
+    "check_path": 3,
+    "move_to": 1,
+    "return_to_rest": 1,
+    "move_base": 4
+   },
+   "check_path": {
+    "ok": 1,
+    "ik_not_found": 2
+   },
+   "first_locate_turn": 3,
+   "first_locate_step": 99,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": null,
+   "cumulative_force": 0.0
+  },
+  "011": {
+   "object": "004_sugar_box-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 4.896510276204041,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 532,
+   "decisions": 28,
+   "base_target_start_m": 4.9,
+   "base_target_end_m": 6.19,
+   "selections": [
+    {
+     "turn": 1,
+     "dist_m": 6.583
+    },
+    {
+     "turn": 7,
+     "dist_m": 6.586
+    },
+    {
+     "turn": 9,
+     "dist_m": 6.589
+    },
+    {
+     "turn": 12,
+     "dist_m": 6.59
+    },
+    {
+     "turn": 14,
+     "dist_m": 6.591
+    },
+    {
+     "turn": 17,
+     "dist_m": 6.592
+    },
+    {
+     "turn": 18,
+     "dist_m": 6.618
+    },
+    {
+     "turn": 19,
+     "dist_m": 6.623
+    },
+    {
+     "turn": 26,
+     "dist_m": 7.772
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "look": 4,
+    "locate_point": 9,
+    "check_path": 4,
+    "move_base": 7,
+    "INVALID": 1,
+    "set_gripper": 1,
+    "move_to": 1,
+    "return_to_rest": 1
+   },
+   "check_path": {
+    "ik_not_found": 3,
+    "ok": 1
+   },
+   "first_locate_turn": 1,
+   "first_locate_step": 35,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5063.5
+  },
+  "012": {
+   "object": "007_tuna_fish_can-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 5.3589081725046945,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 31,
+   "decisions": 3,
+   "base_target_start_m": 5.36,
+   "base_target_end_m": 5.41,
+   "selections": [
+    {
+     "turn": 0,
+     "dist_m": 6.042
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "locate_point": 1,
+    "check_path": 1,
+    "move_base": 1
+   },
+   "check_path": {
+    "ik_not_found": 1
+   },
+   "first_locate_turn": 0,
+   "first_locate_step": 0,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": false,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5356.8
+  },
+  "013": {
+   "object": "007_tuna_fish_can-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 3.7152304040535786,
+   "censored": false,
+   "termination": "give_up",
+   "steps": 505,
+   "decisions": 32,
+   "base_target_start_m": 3.72,
+   "base_target_end_m": 4.71,
+   "selections": [
+    {
+     "turn": 2,
+     "dist_m": 5.24
+    },
+    {
+     "turn": 5,
+     "dist_m": 5.238
+    },
+    {
+     "turn": 9,
+     "dist_m": 5.237
+    },
+    {
+     "turn": 12,
+     "dist_m": 5.236
+    },
+    {
+     "turn": 15,
+     "dist_m": 5.239
+    },
+    {
+     "turn": 19,
+     "dist_m": 5.256
+    },
+    {
+     "turn": 21,
+     "dist_m": 5.238
+    },
+    {
+     "turn": 24,
+     "dist_m": 5.237
+    },
+    {
+     "turn": 28,
+     "dist_m": 5.869
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "return_to_rest": 2,
+    "move_to": 5,
+    "locate_point": 9,
+    "check_path": 7,
+    "move_base": 6,
+    "set_gripper": 1,
+    "look": 1,
+    "give_up": 1
+   },
+   "check_path": {
+    "ik_not_found": 4,
+    "ok": 2,
+    "jump_rejected": 1
+   },
+   "first_locate_turn": 2,
+   "first_locate_step": 75,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "014": {
+   "object": "009_gelatin_box-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 5.6770207180451004,
+   "censored": false,
+   "termination": "done",
+   "steps": 414,
+   "decisions": 30,
+   "base_target_start_m": 5.68,
+   "base_target_end_m": 5.84,
+   "selections": [
+    {
+     "turn": 1,
+     "dist_m": 6.095
+    },
+    {
+     "turn": 5,
+     "dist_m": 6.095
+    },
+    {
+     "turn": 8,
+     "dist_m": 6.099
+    },
+    {
+     "turn": 11,
+     "dist_m": 6.103
+    },
+    {
+     "turn": 14,
+     "dist_m": 6.106
+    },
+    {
+     "turn": 16,
+     "dist_m": 6.105
+    },
+    {
+     "turn": 19,
+     "dist_m": 6.103
+    },
+    {
+     "turn": 22,
+     "dist_m": 6.103
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "look": 2,
+    "locate_point": 8,
+    "check_path": 5,
+    "move_base": 3,
+    "move_to": 7,
+    "set_gripper": 3,
+    "return_to_rest": 1,
+    "done": 1
+   },
+   "check_path": {
+    "ik_not_found": 3,
+    "ok": 2
+   },
+   "first_locate_turn": 1,
+   "first_locate_step": 34,
+   "closes": [
+    {
+     "turn": 24,
+     "reason": "close_alignment_failed",
+     "finger_distance_m": null,
+     "stable": null,
+     "held_eval_only": [],
+     "steps": [
+      331,
+      343
+     ]
+    },
+    {
+     "turn": 26,
+     "reason": "ok",
+     "finger_distance_m": 0.06842542439699173,
+     "stable": true,
+     "held_eval_only": [
+      "env-0_008_pudding_box-0"
+     ],
+     "steps": [
+      345,
+      350
+     ]
+    }
+   ],
+   "held_at_end_eval_only": [
+    "env-0_008_pudding_box-0"
+   ],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "015": {
+   "object": "003_cracker_box-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 4.4184817746878835,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 624,
+   "decisions": 24,
+   "base_target_start_m": 4.42,
+   "base_target_end_m": 0.91,
+   "selections": [
+    {
+     "turn": 5,
+     "dist_m": 0.015
+    },
+    {
+     "turn": 13,
+     "dist_m": 0.01
+    },
+    {
+     "turn": 17,
+     "dist_m": 0.009
+    },
+    {
+     "turn": 21,
+     "dist_m": 0.001
+    }
+   ],
+   "first_selection_is_target": true,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 5,
+   "last_selection_is_target": true,
+   "tools": {
+    "look": 6,
+    "locate_point": 4,
+    "check_path": 4,
+    "move_base": 8,
+    "move_to": 1,
+    "INVALID": 1
+   },
+   "check_path": {
+    "ik_not_found": 3,
+    "ok": 1
+   },
+   "first_locate_turn": 5,
+   "first_locate_step": 195,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5013.8
+  },
+  "016": {
+   "object": "024_bowl-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 5.317321568871733,
+   "censored": false,
+   "termination": "give_up",
+   "steps": 663,
+   "decisions": 26,
+   "base_target_start_m": 5.32,
+   "base_target_end_m": 3.98,
+   "selections": [
+    {
+     "turn": 9,
+     "dist_m": 6.086
+    },
+    {
+     "turn": 13,
+     "dist_m": 6.088
+    },
+    {
+     "turn": 18,
+     "dist_m": 0.008
+    },
+    {
+     "turn": 23,
+     "dist_m": 0.002
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": true,
+   "first_target_selection_turn": 18,
+   "last_selection_is_target": true,
+   "tools": {
+    "look": 9,
+    "check_path": 3,
+    "move_to": 1,
+    "move_base": 7,
+    "locate_point": 4,
+    "verify_target": 1,
+    "give_up": 1
+   },
+   "check_path": {
+    "ok": 1,
+    "ik_not_found": 2
+   },
+   "first_locate_turn": 9,
+   "first_locate_step": 311,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 0.0
+  },
+  "017": {
+   "object": "002_master_chef_can-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 4.441456038279017,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 312,
+   "decisions": 9,
+   "base_target_start_m": 4.44,
+   "base_target_end_m": 4.11,
+   "selections": [
+    {
+     "turn": 1,
+     "dist_m": 2.982
+    },
+    {
+     "turn": 7,
+     "dist_m": 2.984
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "look": 2,
+    "locate_point": 2,
+    "check_path": 1,
+    "move_base": 3,
+    "move_to": 1
+   },
+   "check_path": {
+    "ik_not_found": 1
+   },
+   "first_locate_turn": 1,
+   "first_locate_step": 40,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": false,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5021.4
+  },
+  "018": {
+   "object": "004_sugar_box-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 3.425195616194379,
+   "censored": false,
+   "termination": "cumulative_force_limit",
+   "steps": 431,
+   "decisions": 18,
+   "base_target_start_m": 3.43,
+   "base_target_end_m": 5.69,
+   "selections": [
+    {
+     "turn": 4,
+     "dist_m": 6.678
+    },
+    {
+     "turn": 8,
+     "dist_m": 6.686
+    },
+    {
+     "turn": 10,
+     "dist_m": 6.689
+    },
+    {
+     "turn": 13,
+     "dist_m": 6.672
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "move_to": 3,
+    "check_path": 3,
+    "locate_point": 4,
+    "move_base": 6,
+    "look": 2
+   },
+   "check_path": {
+    "ok": 1,
+    "ik_not_found": 2
+   },
+   "first_locate_turn": 4,
+   "first_locate_step": 55,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": {
+    "check_path_accepted": true,
+    "tcp_near_bbox": false,
+    "is_grasped": false,
+    "grasped_lift_5cm": false,
+    "strict_success": false
+   },
+   "cumulative_force": 5020.0
+  },
+  "019": {
+   "object": "005_tomato_soup_can-0",
+   "distance_band": "far",
+   "visibility": "unmeasured",
+   "route": "unmeasured",
+   "roster_distance_m": 3.7047101813579846,
+   "censored": true,
+   "termination": "budget_exhausted",
+   "steps": 774,
+   "decisions": 33,
+   "base_target_start_m": 3.7,
+   "base_target_end_m": 5.63,
+   "selections": [
+    {
+     "turn": 3,
+     "dist_m": 6.269
+    },
+    {
+     "turn": 9,
+     "dist_m": 6.271
+    },
+    {
+     "turn": 11,
+     "dist_m": 6.402
+    },
+    {
+     "turn": 12,
+     "dist_m": 6.084
+    },
+    {
+     "turn": 16,
+     "dist_m": 6.082
+    },
+    {
+     "turn": 18,
+     "dist_m": 6.083
+    },
+    {
+     "turn": 21,
+     "dist_m": 6.085
+    },
+    {
+     "turn": 27,
+     "dist_m": 6.022
+    }
+   ],
+   "first_selection_is_target": false,
+   "ever_selected_target": false,
+   "first_target_selection_turn": null,
+   "last_selection_is_target": false,
+   "tools": {
+    "look": 9,
+    "locate_point": 8,
+    "check_path": 6,
+    "move_base": 7,
+    "move_to": 2,
+    "return_to_rest": 1
+   },
+   "check_path": {
+    "ik_not_found": 4,
+    "ok": 2
+   },
+   "first_locate_turn": 3,
+   "first_locate_step": 115,
+   "closes": [],
+   "held_at_end_eval_only": [],
+   "funnel": null,
+   "cumulative_force": 0.0
+  }
+ },
+ "reviews": [
+  {
+   "case": "000",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.002,
+   "is_target": true
+  },
+  {
+   "case": "000",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "JELL-O",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "000",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "confirmed",
+   "label_text": "JELL-O; CHOCOLATE",
+   "truth_dist_m": null,
+   "is_target": null
+  },
+  {
+   "case": "001",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "unclear",
+   "label_text": "无",
+   "truth_dist_m": 3.009,
+   "is_target": false
+  },
+  {
+   "case": "001",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "unlike",
+   "label_text": "无",
+   "truth_dist_m": 2.948,
+   "is_target": false
+  },
+  {
+   "case": "001",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 2.734,
+   "is_target": false
+  },
+  {
+   "case": "001",
+   "trigger": "selection",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 2.529,
+   "is_target": false
+  },
+  {
+   "case": "002",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.003,
+   "is_target": true
+  },
+  {
+   "case": "002",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "confirmed",
+   "label_text": "JELL-O",
+   "truth_dist_m": 0.0,
+   "is_target": true
+  },
+  {
+   "case": "003",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "003",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.0,
+   "is_target": true
+  },
+  {
+   "case": "003",
+   "trigger": "selection",
+   "camera": "hand",
+   "verdict": "confirmed",
+   "label_text": "无",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "004",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 5.743,
+   "is_target": false
+  },
+  {
+   "case": "004",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.267,
+   "is_target": false
+  },
+  {
+   "case": "005",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.002,
+   "is_target": true
+  },
+  {
+   "case": "005",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "JELL-O",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "006",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "confirmed",
+   "label_text": "CHEEZ-IT",
+   "truth_dist_m": 0.009,
+   "is_target": true
+  },
+  {
+   "case": "007",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "007",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "Domino",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "007",
+   "trigger": "selection",
+   "camera": "hand",
+   "verdict": "confirmed",
+   "label_text": "Domino\nSUGAR",
+   "truth_dist_m": 0.0,
+   "is_target": true
+  },
+  {
+   "case": "008",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.7,
+   "is_target": false
+  },
+  {
+   "case": "008",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "unlike",
+   "label_text": "无",
+   "truth_dist_m": 0.703,
+   "is_target": false
+  },
+  {
+   "case": "008",
+   "trigger": "selection",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.222,
+   "is_target": false
+  },
+  {
+   "case": "009",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.849,
+   "is_target": false
+  },
+  {
+   "case": "009",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.842,
+   "is_target": false
+  },
+  {
+   "case": "009",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.832,
+   "is_target": false
+  },
+  {
+   "case": "009",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.001,
+   "is_target": true
+  },
+  {
+   "case": "010",
+   "trigger": "selection",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 3.781,
+   "is_target": false
+  },
+  {
+   "case": "010",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "unlike",
+   "label_text": "无",
+   "truth_dist_m": 3.784,
+   "is_target": false
+  },
+  {
+   "case": "010",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 5.111,
+   "is_target": false
+  },
+  {
+   "case": "011",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.583,
+   "is_target": false
+  },
+  {
+   "case": "011",
+   "trigger": "growth",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.589,
+   "is_target": false
+  },
+  {
+   "case": "011",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "unclear",
+   "label_text": "无",
+   "truth_dist_m": 6.618,
+   "is_target": false
+  },
+  {
+   "case": "011",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "unclear",
+   "label_text": "无",
+   "truth_dist_m": 7.772,
+   "is_target": false
+  },
+  {
+   "case": "012",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.042,
+   "is_target": false
+  },
+  {
+   "case": "013",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 5.24,
+   "is_target": false
+  },
+  {
+   "case": "013",
+   "trigger": "growth",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 5.239,
+   "is_target": false
+  },
+  {
+   "case": "013",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 5.256,
+   "is_target": false
+  },
+  {
+   "case": "013",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 5.869,
+   "is_target": false
+  },
+  {
+   "case": "014",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.095,
+   "is_target": false
+  },
+  {
+   "case": "014",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.099,
+   "is_target": false
+  },
+  {
+   "case": "014",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "JELL-O",
+   "truth_dist_m": 6.106,
+   "is_target": false
+  },
+  {
+   "case": "015",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.015,
+   "is_target": true
+  },
+  {
+   "case": "015",
+   "trigger": "growth",
+   "camera": "head",
+   "verdict": "confirmed",
+   "label_text": "CHEEZ-IT",
+   "truth_dist_m": 0.009,
+   "is_target": true
+  },
+  {
+   "case": "016",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.086,
+   "is_target": false
+  },
+  {
+   "case": "016",
+   "trigger": "growth",
+   "camera": "hand",
+   "verdict": "unlike",
+   "label_text": "JELL-O",
+   "truth_dist_m": null,
+   "is_target": null
+  },
+  {
+   "case": "016",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "confirmed",
+   "label_text": "无",
+   "truth_dist_m": 0.008,
+   "is_target": true
+  },
+  {
+   "case": "016",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 0.002,
+   "is_target": true
+  },
+  {
+   "case": "017",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 2.982,
+   "is_target": false
+  },
+  {
+   "case": "018",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.678,
+   "is_target": false
+  },
+  {
+   "case": "018",
+   "trigger": "growth",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.686,
+   "is_target": false
+  },
+  {
+   "case": "019",
+   "trigger": "selection",
+   "camera": "hand",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.269,
+   "is_target": false
+  },
+  {
+   "case": "019",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "unlike",
+   "label_text": "无",
+   "truth_dist_m": 6.402,
+   "is_target": false
+  },
+  {
+   "case": "019",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.084,
+   "is_target": false
+  },
+  {
+   "case": "019",
+   "trigger": "growth",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.083,
+   "is_target": false
+  },
+  {
+   "case": "019",
+   "trigger": "selection",
+   "camera": "head",
+   "verdict": "like",
+   "label_text": "无",
+   "truth_dist_m": 6.022,
+   "is_target": false
+  }
+ ],
+ "grasp_finger_contacts_eval_only": {
+  "000_fail": [
+   {
+    "step": 215,
+    "force_N": [
+     44.6,
+     36.5
+    ],
+    "angle_deg": [
+     1.4,
+     27.1
+    ]
+   },
+   {
+    "step": 216,
+    "force_N": [
+     48.7,
+     41.4
+    ],
+    "angle_deg": [
+     0.8,
+     26.1
+    ]
+   },
+   {
+    "step": 217,
+    "force_N": [
+     43.2,
+     38.2
+    ],
+    "angle_deg": [
+     2.1,
+     20.9
+    ]
+   },
+   {
+    "step": 218,
+    "force_N": [
+     42.4,
+     39.1
+    ],
+    "angle_deg": [
+     1.9,
+     20.1
+    ]
+   },
+   {
+    "step": 220,
+    "force_N": [
+     7.1,
+     6.4
+    ],
+    "angle_deg": [
+     45.2,
+     46.8
+    ]
+   },
+   {
+    "step": 221,
+    "force_N": [
+     2.9,
+     2.6
+    ],
+    "angle_deg": [
+     43.7,
+     49.3
+    ]
+   }
+  ],
+  "006_fail": [
+   {
+    "step": 294,
+    "force_N": [
+     57.5,
+     0.0
+    ],
+    "angle_deg": [
+     43.6,
+     null
+    ]
+   },
+   {
+    "step": 295,
+    "force_N": [
+     36.9,
+     46.9
+    ],
+    "angle_deg": [
+     42.3,
+     56.0
+    ]
+   },
+   {
+    "step": 296,
+    "force_N": [
+     29.2,
+     21.6
+    ],
+    "angle_deg": [
+     42.2,
+     56.1
+    ]
+   },
+   {
+    "step": 297,
+    "force_N": [
+     20.4,
+     10.2
+    ],
+    "angle_deg": [
+     42.3,
+     56.0
+    ]
+   },
+   {
+    "step": 304,
+    "force_N": [
+     58.3,
+     58.8
+    ],
+    "angle_deg": [
+     43.9,
+     53.9
+    ]
+   },
+   {
+    "step": 305,
+    "force_N": [
+     64.7,
+     63.5
+    ],
+    "angle_deg": [
+     44.1,
+     53.1
+    ]
+   },
+   {
+    "step": 306,
+    "force_N": [
+     68.0,
+     60.9
+    ],
+    "angle_deg": [
+     44.2,
+     52.5
+    ]
+   },
+   {
+    "step": 307,
+    "force_N": [
+     47.6,
+     73.1
+    ],
+    "angle_deg": [
+     44.2,
+     52.1
+    ]
+   },
+   {
+    "step": 308,
+    "force_N": [
+     61.7,
+     66.2
+    ],
+    "angle_deg": [
+     44.3,
+     51.7
+    ]
+   },
+   {
+    "step": 309,
+    "force_N": [
+     44.5,
+     67.0
+    ],
+    "angle_deg": [
+     44.3,
+     53.3
+    ]
+   },
+   {
+    "step": 310,
+    "force_N": [
+     39.3,
+     62.4
+    ],
+    "angle_deg": [
+     47.0,
+     52.6
+    ]
+   }
+  ],
+  "005_success": [
+   {
+    "step": 205,
+    "force_N": [
+     41.4,
+     41.4
+    ],
+    "angle_deg": [
+     8.0,
+     9.1
+    ]
+   },
+   {
+    "step": 206,
+    "force_N": [
+     42.6,
+     42.7
+    ],
+    "angle_deg": [
+     7.1,
+     8.4
+    ]
+   },
+   {
+    "step": 207,
+    "force_N": [
+     41.8,
+     41.7
+    ],
+    "angle_deg": [
+     6.9,
+     8.3
+    ]
+   },
+   {
+    "step": 208,
+    "force_N": [
+     42.1,
+     41.9
+    ],
+    "angle_deg": [
+     4.8,
+     6.4
+    ]
+   },
+   {
+    "step": 209,
+    "force_N": [
+     42.7,
+     42.5
+    ],
+    "angle_deg": [
+     4.5,
+     6.1
+    ]
+   },
+   {
+    "step": 210,
+    "force_N": [
+     43.8,
+     43.5
+    ],
+    "angle_deg": [
+     4.2,
+     5.8
+    ]
+   },
+   {
+    "step": 211,
+    "force_N": [
+     43.8,
+     43.5
+    ],
+    "angle_deg": [
+     4.2,
+     5.8
+    ]
+   },
+   {
+    "step": 212,
+    "force_N": [
+     42.7,
+     42.5
+    ],
+    "angle_deg": [
+     4.5,
+     6.1
+    ]
+   },
+   {
+    "step": 213,
+    "force_N": [
+     43.6,
+     43.4
+    ],
+    "angle_deg": [
+     4.2,
+     5.8
+    ]
+   },
+   {
+    "step": 214,
+    "force_N": [
+     42.7,
+     42.5
+    ],
+    "angle_deg": [
+     4.5,
+     6.1
+    ]
+   },
+   {
+    "step": 215,
+    "force_N": [
+     43.6,
+     43.4
+    ],
+    "angle_deg": [
+     4.2,
+     5.8
+    ]
+   },
+   {
+    "step": 216,
+    "force_N": [
+     42.7,
+     42.5
+    ],
+    "angle_deg": [
+     4.5,
+     6.1
+    ]
+   }
+  ],
+  "014_wrong_object_held": [
+   {
+    "step": 348,
+    "force_N": [
+     42.1,
+     41.9
+    ],
+    "angle_deg": [
+     1.4,
+     0.2
+    ]
+   },
+   {
+    "step": 349,
+    "force_N": [
+     43.1,
+     43.7
+    ],
+    "angle_deg": [
+     1.7,
+     0.6
+    ]
+   },
+   {
+    "step": 350,
+    "force_N": [
+     43.1,
+     43.2
+    ],
+    "angle_deg": [
+     2.0,
+     0.5
+    ]
+   },
+   {
+    "step": 351,
+    "force_N": [
+     43.1,
+     43.2
+    ],
+    "angle_deg": [
+     2.1,
+     0.4
+    ]
+   },
+   {
+    "step": 352,
+    "force_N": [
+     43.1,
+     43.2
+    ],
+    "angle_deg": [
+     2.1,
+     0.3
+    ]
+   },
+   {
+    "step": 353,
+    "force_N": [
+     43.1,
+     43.2
+    ],
+    "angle_deg": [
+     2.1,
+     0.3
+    ]
+   },
+   {
+    "step": 354,
+    "force_N": [
+     43.1,
+     43.2
+    ],
+    "angle_deg": [
+     2.1,
+     0.3
+    ]
+   },
+   {
+    "step": 355,
+    "force_N": [
+     43.1,
+     43.1
+    ],
+    "angle_deg": [
+     2.1,
+     0.3
+    ]
+   },
+   {
+    "step": 356,
+    "force_N": [
+     41.0,
+     41.1
+    ],
+    "angle_deg": [
+     2.1,
+     0.3
+    ]
+   },
+   {
+    "step": 357,
+    "force_N": [
+     42.8,
+     42.9
+    ],
+    "angle_deg": [
+     2.0,
+     0.2
+    ]
+   },
+   {
+    "step": 358,
+    "force_N": [
+     42.8,
+     42.9
+    ],
+    "angle_deg": [
+     2.1,
+     0.3
+    ]
+   },
+   {
+    "step": 359,
+    "force_N": [
+     42.8,
+     42.9
+    ],
+    "angle_deg": [
+     2.0,
+     0.2
+    ]
+   }
+  ],
+  "008_wrong_object_held": [
+   {
+    "step": 436,
+    "force_N": [
+     43.8,
+     45.3
+    ],
+    "angle_deg": [
+     0.1,
+     0.3
+    ]
+   },
+   {
+    "step": 437,
+    "force_N": [
+     44.6,
+     44.9
+    ],
+    "angle_deg": [
+     0.1,
+     0.3
+    ]
+   },
+   {
+    "step": 438,
+    "force_N": [
+     44.6,
+     44.9
+    ],
+    "angle_deg": [
+     0.1,
+     0.3
+    ]
+   },
+   {
+    "step": 439,
+    "force_N": [
+     44.6,
+     44.9
+    ],
+    "angle_deg": [
+     0.1,
+     0.3
+    ]
+   },
+   {
+    "step": 440,
+    "force_N": [
+     44.6,
+     44.9
+    ],
+    "angle_deg": [
+     0.1,
+     0.3
+    ]
+   },
+   {
+    "step": 441,
+    "force_N": [
+     45.7,
+     43.4
+    ],
+    "angle_deg": [
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "step": 442,
+    "force_N": [
+     44.9,
+     44.3
+    ],
+    "angle_deg": [
+     1.0,
+     1.0
+    ]
+   },
+   {
+    "step": 443,
+    "force_N": [
+     44.7,
+     44.6
+    ],
+    "angle_deg": [
+     0.9,
+     0.9
+    ]
+   },
+   {
+    "step": 444,
+    "force_N": [
+     44.5,
+     44.8
+    ],
+    "angle_deg": [
+     0.9,
+     0.9
+    ]
+   },
+   {
+    "step": 445,
+    "force_N": [
+     43.3,
+     45.9
+    ],
+    "angle_deg": [
+     0.8,
+     0.9
+    ]
+   },
+   {
+    "step": 446,
+    "force_N": [
+     44.2,
+     45.0
+    ],
+    "angle_deg": [
+     0.8,
+     0.9
+    ]
+   },
+   {
+    "step": 447,
+    "force_N": [
+     44.9,
+     44.4
+    ],
+    "angle_deg": [
+     0.7,
+     0.9
+    ]
+   }
+  ]
+ }
+}
