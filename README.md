@@ -18,7 +18,9 @@
 - 根目录 `src/`：三种 TidyHouse setting 的 `bvi-eval`。
 - `research/c2/src/`：早期 C2 feedback recovery 实现；历史使用说明见 [代码说明](research/c2/CODE.md)。
 
-当前 Astra 实验的完整执行器、资产和冻结运行包在本地研究工作目录保存；公开仓库不再放缺少依赖的一部分运行脚本。各次实验的条件、结论和冻结哈希继续公开记录。训练完成、原生任务成功和部署检查分别报告。
+- `research/astra_pick/`：当前 Astra Pick 的决策循环、提示和机器人侧执行代码，供阅读和复核，不能独立运行（缺底层控制器、MS-HAB 环境和资产）；见[代码说明](research/astra_pick/README.md)。
+
+冻结运行包和原始资产仍在本地研究工作目录保存。各次实验的条件、结论和冻结哈希继续公开记录。训练完成、原生任务成功和部署检查分别报告。
 
 ```bash
 python -m venv .venv

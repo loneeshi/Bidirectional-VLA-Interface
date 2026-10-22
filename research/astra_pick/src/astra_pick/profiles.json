@@ -1,0 +1,1055 @@
+{
+  "memory_ab": {
+    "scope": "sol-memory-ab-5case-v2",
+    "status": "proposed",
+    "arms": {
+      "A": "Sol-session-v1",
+      "B": "Sol-memory-v1"
+    },
+    "cases": [
+      {
+        "case_id": "baseline-000",
+        "position": 0,
+        "selection_source": "research/c2/diagnostics/2026-10-07-c2-r25-baseline20/archive-000/baseline-000/V-mobile/result.json",
+        "selection_sha256": "d35bdf6bbf6d8ec356f4f06f26380a3e29b69aa2b758d8b9fda23eb28194c6ff"
+      },
+      {
+        "case_id": "baseline-001",
+        "position": 1,
+        "selection_source": "research/c2/diagnostics/2026-10-07-c2-r25-baseline20/archive-001/baseline-001/V-mobile/result.json",
+        "selection_sha256": "1755add7022786d324cbfa054e541e13d2394f93df0c7f03a834883d0bb8307d"
+      },
+      {
+        "case_id": "baseline-004",
+        "position": 4,
+        "selection_source": "research/c2/diagnostics/2026-10-07-c2-r25-baseline20/archive-004/baseline-004/V-mobile/result.json",
+        "selection_sha256": "4187880538692a796585fbabaa93033e9dac2185c5ba3cb967e48b1733f69179"
+      },
+      {
+        "case_id": "baseline-005",
+        "position": 5,
+        "selection_source": "research/c2/diagnostics/2026-10-07-c2-r25-baseline20/archive-005/baseline-005/V-mobile/result.json",
+        "selection_sha256": "e1e9ee06094cb36297119990f48e898b5b51a34c29b60e170af3aa7a86131e9c"
+      },
+      {
+        "case_id": "baseline-008",
+        "position": 8,
+        "selection_source": "research/c2/diagnostics/2026-10-07-c2-r25-baseline20/archive-008/baseline-008/V-mobile/result.json",
+        "selection_sha256": "4005300f76ce4cc15a90c6ef2fef52976a1229d991a40d55499e529a2afec7ce"
+      }
+    ],
+    "repeats": 1,
+    "orders": [
+      [
+        "A",
+        "B"
+      ]
+    ],
+    "episode_calls_cap": 25,
+    "episode_steps_cap": 600,
+    "total_calls_cap": 250,
+    "total_steps_cap": 6000,
+    "proposed_usd_cap": "190",
+    "proposed_episode_usd_cap": "20",
+    "shared_initial_state_required": true,
+    "automatic_retries": 0,
+    "prompt_addition": "\nACTIVE MEMORY B: Return a memory object in the SAME action response: goal, key_observation_ids (up to 3 IDs already observed in THIS attempt), lessons (failed attempts and unresolved uncertainty), pending (unfinished plan and next evidence check). Keep the entire canonical JSON memory within 512 UTF-8 bytes, conservatively below 512 tokens. Update from current robot observations and actual execution_feedback, not evaluation results. This is a self-report, not measured truth. A planned action is not yet executed. If its feedback contradicts memory, correct memory before planning. Old image IDs refer to historical images already in this chain: never treat old pixels or positions as current coordinates. Do not repeat an already rejected plan without new evidence. Keep unresolved uncertainty explicit. Do not add an extra reflection call or cross-attempt memory. Previous active_memory is the latest validated model note, and may be stale after a rejected update; source_turn identifies its age."
+  },
+  "sol_session": {
+    "profile": {
+      "name": "Sol-session-v1",
+      "model": "gpt-6.1-sol",
+      "response_session": true
+    },
+    "scope": "sol-session-v1-fresh-attempt",
+    "pricing": {
+      "currency": "USD",
+      "service_tier": "default",
+      "input": "2",
+      "cached_input": "0.10",
+      "cache_write": "2.50",
+      "output": "10",
+      "long_input_threshold": 272000,
+      "long_input_multiplier": "2",
+      "long_output_multiplier": "1.5",
+      "source": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "checked_date": "2026-10-10"
+    },
+    "image_token_bound_640": 1024,
+    "input_bound_cap": 1046000,
+    "prompt_replacements": {
+      "Each request is self-contained, with no hidden prior session.": "Each attempt has an isolated Responses conversation chain containing all earlier submitted observations, responses and execution feedback.",
+      "Only the previous and current image groups are included; older images are absent unless explicitly recalled.": "Each turn appends only its current four RGB-D images. Earlier submitted images remain historical evidence in this attempt's conversation; no keyframe selection or compaction is used.",
+      "all earlier observation text, valid decisions and measured tool feedback are replayed as historical data, never pending commands.": "earlier observations and model responses remain in the conversation, and actual execution feedback is appended once as historical data, never pending commands.",
+      "Its images appear only on the next decision alongside previous/current views.": "Its observation ID is highlighted in the next decision; its original images already remain in this conversation and are not uploaded again."
+    },
+    "prompt_addition": "\nSOL SESSION V1: Instructions and output schema are fixed for this attempt. Read execution_feedback as what actually ran, separately from your previous proposed action/note. A requested movement is not measured displacement. Old pixels and base-frame positions are never current coordinates after motion. Use fresh robot RGB-D for current localization. The complete response chain, including reasoning state, is retained; model notes remain beliefs. Do not infer that caching makes old context free. No previous attempt or independent episode is available."
+  },
+  "c1_addition": "\nC1 MEASUREMENT INTERFACE (all original WP2 actions and limits unchanged):\nmeasure(camera,pixels) reads 1..12 integer [x,y] points from CURRENT robot depth.\nUse it for target or furniture surfaces. Supply pixels, camera; pixel=null and\nobservation_id=null. No target registration or permission is needed.\nlocate_point(camera,pixel) remains a single-point alias to the SAME depth kernel;\nits observation_id is now null too: the runtime binds the current observation.\nOnly recall_observation needs an archived ID. All other tools set pixels=null.\nUse a flat response, all fields present, unrelated fields null and unused poses=[].\nResults are sampled visible surface points, not an object center or grasp pose.\nThree or more valid points can support a sampled centroid, plane normal, principal\naxes and widths. Sampled widths need not cover the whole object; symmetric or\ndegenerate samples cannot determine a unique axis. Inspect diagnostics and depth.\nAfter motion measure fresh pixels; earlier points belong to their source frame.\nDo not remeasure an unchanged point expecting new evidence. No verification tool,\nnew closing permission or controller change is introduced in this condition.\nParameter errors name code, field and expected value; they consume one decision.\n",
+  "c0_schema": {
+    "type": "object",
+    "properties": {
+      "tool": {
+        "type": "string",
+        "enum": [
+          "move_base",
+          "check_path",
+          "move_to",
+          "move_eef_chunk",
+          "set_gripper",
+          "return_to_rest",
+          "done",
+          "give_up",
+          "look",
+          "locate_point",
+          "recall_observation"
+        ]
+      },
+      "poses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "quaternion_xyzw": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "position",
+            "quaternion_xyzw"
+          ],
+          "additionalProperties": false
+        },
+        "maxItems": 8
+      },
+      "gripper": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "turn_rad": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "forward_m": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "hindsight": {
+        "type": "string"
+      },
+      "note": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 900
+      },
+      "pan_rad": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "tilt_rad": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "camera": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "head",
+          "hand",
+          null
+        ]
+      },
+      "pixel": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": "integer"
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "observation_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "task_state": {
+        "type": "object",
+        "properties": {
+          "belief": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "uncertainty": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "expected_change": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "next_check": {
+            "type": "string",
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "belief",
+          "uncertainty",
+          "expected_change",
+          "next_check"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "tool",
+      "poses",
+      "gripper",
+      "turn_rad",
+      "forward_m",
+      "hindsight",
+      "note",
+      "pan_rad",
+      "tilt_rad",
+      "camera",
+      "pixel",
+      "observation_id",
+      "task_state"
+    ],
+    "additionalProperties": false
+  },
+  "c1_schema": {
+    "type": "object",
+    "properties": {
+      "tool": {
+        "type": "string",
+        "enum": [
+          "move_base",
+          "check_path",
+          "move_to",
+          "move_eef_chunk",
+          "set_gripper",
+          "return_to_rest",
+          "done",
+          "give_up",
+          "look",
+          "locate_point",
+          "recall_observation",
+          "measure"
+        ]
+      },
+      "poses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "quaternion_xyzw": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "position",
+            "quaternion_xyzw"
+          ],
+          "additionalProperties": false
+        },
+        "maxItems": 8
+      },
+      "gripper": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "turn_rad": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "forward_m": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "hindsight": {
+        "type": "string"
+      },
+      "note": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 900
+      },
+      "pan_rad": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "tilt_rad": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "camera": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "head",
+          "hand",
+          null
+        ]
+      },
+      "pixel": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": "integer"
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "observation_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "task_state": {
+        "type": "object",
+        "properties": {
+          "belief": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "uncertainty": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "expected_change": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "next_check": {
+            "type": "string",
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "belief",
+          "uncertainty",
+          "expected_change",
+          "next_check"
+        ],
+        "additionalProperties": false
+      },
+      "pixels": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "minItems": 1,
+        "maxItems": 12
+      }
+    },
+    "required": [
+      "tool",
+      "poses",
+      "gripper",
+      "turn_rad",
+      "forward_m",
+      "hindsight",
+      "note",
+      "pan_rad",
+      "tilt_rad",
+      "camera",
+      "pixel",
+      "observation_id",
+      "task_state",
+      "pixels"
+    ],
+    "additionalProperties": false
+  },
+  "robot_spec": {
+    "source": "fixed Fetch robot model and frozen controller; no scene geometry",
+    "frame": "current base_link; x forward, y left, z up",
+    "chassis_radius_m": 0.288,
+    "chassis_diameter_m": 0.576,
+    "chassis_forward_extent_m": 0.287,
+    "footprint_scope": "rigid chassis only; excludes projecting arm",
+    "max_linear_speed_m_s": 0.5,
+    "max_angular_speed_rad_s": 1.0,
+    "control_frequency_hz": 20,
+    "base_call_step_cap": 80,
+    "arm_call_step_cap": 150,
+    "rest_step_cap": 150,
+    "look_step_cap": 40,
+    "gripper_step_cap": 15,
+    "episode_step_cap": 600,
+    "tool_call_cap": 25,
+    "base_position_tolerance_m": 0.02,
+    "base_yaw_tolerance_rad": 0.03,
+    "max_turn_rad": 3.141592653589793,
+    "max_forward_m": 1.5,
+    "motion": "turn then straight drive; negative distance reverses; no lateral drive"
+  },
+  "semantics": {
+    "arm-dev-000": "tomato soup can, on the nearby upholstered chair",
+    "arm-dev-001": "gelatin box, on the sofa",
+    "arm-dev-002": "Master Chef can, on the dark kitchen counter",
+    "arm-dev-003": "potted meat can, on the blue cabinet",
+    "arm-dev-004": "cracker box, on the blue table in front of the sofa"
+  },
+  "profiles": {
+    "C0": {
+      "name": "WP2-located-semantic-C0",
+      "measure": false,
+      "modules": [
+        "detector",
+        "navigate",
+        "manipulation"
+      ],
+      "verification": false,
+      "step_cap": 600,
+      "call_cap": 25
+    },
+    "C1": {
+      "name": "WP2-located-semantic-measure-C1",
+      "measure": true,
+      "modules": [
+        "detector",
+        "navigate",
+        "manipulation"
+      ],
+      "verification": false,
+      "step_cap": 600,
+      "call_cap": 25
+    },
+    "C0-close-aligned": {
+      "name": "WP2-located-semantic-C0",
+      "measure": false,
+      "modules": [
+        "detector",
+        "navigate",
+        "manipulation"
+      ],
+      "verification": false,
+      "step_cap": 600,
+      "call_cap": 25,
+      "close_uses_endpoint_tolerance": true
+    },
+    "C2": {
+      "name": "C2-hd4096-category-verifier",
+      "measure": false,
+      "modules": [
+        "detector",
+        "navigate",
+        "manipulation",
+        "verification"
+      ],
+      "verification": true,
+      "step_cap": 600,
+      "call_cap": 25,
+      "close_uses_endpoint_tolerance": false,
+      "stall_feedback": false,
+      "use_located_semantics": false,
+      "verification_call_cap": 5,
+      "verification_errors_continue": true
+    }
+  },
+  "source_deployments": {
+    "C0": "0a306ba363e483ead762848cfe15fa84eb5380bde424d99eb3bad59b6cd1b8fc",
+    "C1": "dbb7e77e221f1c23bbedf1b299a7c945e133c6dcb8942e69f68b765d52efc7c3"
+  },
+  "experimental": {
+    "stall_feedback": {
+      "enabled": false,
+      "reuse": "src/bvi/eef_arm_repair.py ProgressGuard",
+      "consecutive_ik_failures": 5,
+      "window_steps": 20,
+      "minimum_normalized_improvement": 0.1,
+      "prompt_addition": "\nRobot-only tool feedback may report execution_phase, consecutive_ik_failures, ik_stalled or motion_stalled. A stalled command ends without automatic grasp/retry; inspect residuals and fresh observations before your next decision. All physical holding/recovery steps consume the same budget."
+    },
+    "identity_verification": {
+      "enabled": false,
+      "triggers": [
+        "first_valid_locate_point",
+        "located_point_distance_above_threshold"
+      ],
+      "selection_distance_m": 0.1,
+      "selection_frame": "reset_relative_odometry",
+      "selection_anchor": "fixed_since_selection",
+      "threshold_basis": "Provisional 10 cm spatial association radius, not an identity or calibrated sensor-error guarantee; test archived same-target displacement and known switches. All successful locate_point calls count, including furniture.",
+      "close_policy": {
+        "match": "allow",
+        "mismatch": "reject",
+        "uncertain": "allow_and_record",
+        "unselected": "uncertain_allow_and_record",
+        "unresolved_delivery": "stop_no_retry"
+      },
+      "live_status": "cpu_ports_only_no_live_authorization",
+      "main_prompt_addition": "\nOptional identity verification is enabled. Every successful locate_point selects a point: the first point and any point more than {selection_distance_m:g} m from the fixed selection anchor, after relative odometry compensation, trigger independent visual review. Furniture measurements also count; no intent is inferred from notes. Tool feedback identity_verification binds target_id to match, mismatch or uncertain and one reason. Nearby points reuse the conclusion. Closing sends no review request: mismatch blocks closing; match and uncertain allow the original executor to decide. No selected point means unverified/uncertain, not confirmed identity. A reused result does not certify grasp alignment or success. Use the original observation target description; do not assume extra location hints.",
+      "prompt": "Using only the target description and this original robot RGB image, identify the object under selected_pixel. Compare it with other visible objects yourself; no candidate boxes are supplied. Return match only if this object clearly matches better than the alternatives, mismatch if it contradicts the description or another object is a better match, uncertain if the point is ambiguous, on background, occluded, or visually indistinguishable alternatives remain. Selection is not evidence of correctness. Return a single short sentence explaining the visual comparison. Do not infer hidden instance IDs, unseen locations, depth or world coordinates. Do not propose robot actions.",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "verdict",
+          "reason"
+        ],
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "match",
+              "mismatch",
+              "uncertain"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          }
+        }
+      },
+      "c2_prompt_addition": "\nC2 permits at most five independent identity review requests per attempt. An ordinary review error or exhausted review quota yields uncertain with a recorded reason; do not assume match. Unknown request delivery stops the batch without retry. Closing never sends a review request."
+    },
+    "identity_revision_2": {
+      "enabled": false,
+      "version": "C2-r2-shared-target-evidence",
+      "status": "cpu_only_pending_fresh_budget",
+      "selection_distance_m": 0.1,
+      "growth_ratio": 2.0,
+      "depth_component_tolerance_mm": 30,
+      "projection_depth_tolerance_m": 0.08,
+      "component_max_fraction": 0.25,
+      "threshold_basis": "10 cm fixed odometry anchor: retained from archived same-object versus furniture switch audit; provisional association threshold, not identity proof. Depth component +/-30 mm and 25% frame rejection are engineering estimates; archived calibration reports missing and merged regions.",
+      "main_prompt": "\nC2-r2: Detector and verifier share target_record, the sole target state. Every valid locate_point selects the target; moving over 0.1 m from its fixed odometry anchor clears it. First selection requires review of the full original image and neighboring alternatives. Current and last-reviewed pixel widths are recorded. A width at least twice last review triggers independent review using the larger camera view. Optional verify_target uses all existing fields with unused fields null, and returns cached evidence below that threshold. confirmed disables further review. At most five attempts per case including errors; no retry. Close sends no review: only unlike blocks; unchecked, like, confirmed and unclear pass and are logged. All evidence/reasons are in target_record; no automatic label matching. Manipulation reports measured finger opening and depth between fingers after closing and arm motion. Fully bottomed-out fingers mean nothing is clamped; a single RGB overlap does not prove a grasp. Sensor measurements do not prove task success. Stable finger motion is not evidence of stable object holding. Widths are sensor depth component estimates above a measured support surface and can miss object boundaries; unknown width does not establish identity. C2-r2.2 sensor fix: tracking_status uncertain means the stored location is not currently visually supported. Re-select a current object pixel with locate_point when needed. Re-selection alone does not reset identity or bypass cached evidence. Missing support surfaces and border-connected components have unavailable width; this can prevent size-triggered review. C2-r2.3: If last_review width is unavailable, growth_reference records the first later reliable width with camera and frame, without a verifier request. Review when a current width reaches twice that reference. The original last_review stays unchanged until an actual review attempt. A new review or target change clears growth_reference.",
+      "prompt": "Use only the target description, this one original robot image and the marked selected pixel. Compare the marked object with surrounding objects. Output evidence BEFORE verdict: copy visible label text verbatim (write 无 if unreadable); explain why the text/features belong to the MARKED object; describe each neighboring object and its visible features; estimate target pixel width and height. confirmed requires matching readable label text AND ownership evidence. For inherently unlabeled classes such as bowls, confirmed requires matching shape and color and no second same-class object in this image. If evidence cannot be written, use like or unclear. unlike requires a reason and, where possible, the location of a better matching object. Do not infer hidden truth, history or planner intent. Do not propose actions.",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label_text",
+          "ownership_evidence",
+          "neighbor_features",
+          "size_evidence",
+          "reason",
+          "verdict"
+        ],
+        "properties": {
+          "label_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ownership_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "neighbor_features": {
+            "type": "string",
+            "minLength": 1
+          },
+          "size_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "like",
+              "confirmed",
+              "unclear",
+              "unlike"
+            ]
+          }
+        }
+      },
+      "rgb_component_tolerance": 110,
+      "occlusion_tolerance_m": 0.01,
+      "sensor_revision": "C2-r2.4-self-finger-cpu",
+      "tracking": {
+        "patch_half_width_px": 7,
+        "search_radius_px": 64,
+        "minimum_texture_variance": 25,
+        "minimum_correlation": 0.9,
+        "uniqueness_margin": 0.08,
+        "support_normal_cosine": 0.95,
+        "max_sensor_motion_m": 0.1,
+        "basis": "Conservative fixed engineering gates: 15px textured patch, local 64px search, high correlation and unique peak; movement limited to existing 10cm association threshold. Not tuned on baseline images; failures report uncertainty."
+      },
+      "support_plane": {
+        "search_below_m": 0.35,
+        "minimum_separation_m": 0.008,
+        "bin_m": 0.005,
+        "minimum_pixels": 1000,
+        "clearance_m": 0.008,
+        "basis": "5mm height bins exceed depth quantization; require a broad 1000px sensor support mode below seed, remove points within 8mm above support; 35cm bounded support search. Development evaluation only; no baseline parameter fitting."
+      },
+      "missing_review_width_policy": "first_reliable_separate_growth_reference",
+      "self_finger_filter": {
+        "camera_mount_translation_m": [
+          -0.1,
+          0,
+          0.1
+        ],
+        "joint_origin_y_m": 0.015425,
+        "depth_margin_m": 0.002,
+        "bounds_m": {
+          "l": [
+            [
+              -0.028999999165534973,
+              0.0014249975800514209,
+              -0.013150000013411045
+            ],
+            [
+              0.03099999949336052,
+              0.01572500122785568,
+              0.013150000013411045
+            ]
+          ],
+          "r": [
+            [
+              -0.028999999165534973,
+              -0.01572500122785568,
+              -0.013150000013411045
+            ],
+            [
+              0.03099999949336052,
+              -0.0014249975800514209,
+              0.013150000013411045
+            ]
+          ]
+        },
+        "basis": "Own robot visual finger bounds plus URDF visual origins; 2mm margin covers millimeter depth quantization and floating-point projection. Uses current joint readings and calibrated hand camera only; no scene geometry. Bounds from fixed robot assets, not fitted to baseline images."
+      }
+    },
+    "astra_target_boxes": {
+      "revision": "C2-r2.5",
+      "main_prompt": "\nC2-r2.5: On EVERY decision provide target_observation (nullable). Use only the CURRENT original 640x640 robot RGB images. It contains observation_id, target_id from the shared record (null before first selection), and head/hand each null or {box:[left,top,right,bottom],pixel:[x,y]}. Box the entire selected object; give null for a camera if its full extent is unclear, occluded or outside view. Coordinates are integer original-image pixels 0..639; right>left, bottom>top, marker inside object and box. For locate_point use its exact camera/pixel as that camera marker, with the OLD record target_id (or null initially); system binds to the resulting record. Never reuse old-frame boxes. CPU only subtracts box edges for width; depth is for localization, not segmentation. After your response the system checks growth and may independently review before executing, except closing reads cached verdict only. No scene truth is available.\n",
+      "enabled": false
+    },
+    "cpu_repair_r31": {
+      "enabled": false,
+      "revision": "C2-r3.1",
+      "prompt_additions": {
+        "schedule_precheck": "\nC2-r3.1 check_path also checks the execution reference schedule at the current robot state. Its state hash is diagnostic, not permission to execute or a guarantee after settling. minimum_steps remains a lower bound; schedule_reference_steps counts reference samples, not required physical steps. This uses the robot's own kinematics and response model, without scene collision checks.\n",
+        "robot_diagnostics": "\nC2-r3.1 gripper feedback reports robot-only close alignment, opening stability and TCP/torso drift. accepted means the action ran, not that an object was grasped. stable and finger_stable_readings describe changes in finger opening only; neither zero nor nonzero opening certifies holding the target. A wait-limit result can still have moving fingers. Use fresh robot images, residuals and proprioception before deciding your next action.\n",
+        "base_heading_hold": "\nC2-r3.1 move_base holds the requested heading while translating. Crossing the requested forward endpoint ends translation without automatic reversing or chasing lateral displacement. Residual position error can remain; arrived requires the original distance and angle tolerances. No scene collision prediction is performed.\n",
+        "continuous_base_speed": "\nC2-r3.1 uses a continuous speed envelope near the existing base stop tolerances, with the original speed limits and deceleration constants. It does not guarantee per-step acceleration, physical stopping or collision prevention.\n"
+      }
+    },
+    "cpu_repair_r32": {
+      "enabled": false,
+      "revision": "C2-r3.2",
+      "prompt_additions": {
+        "target_association": "\nC2-r3.2 target association: supply target_association on each decision, bound to the CURRENT observation_id. Fields are action (keep/new/measurement_only/uncertain), candidate_id, visibility (visible/partial_occlusion/full_extent_unavailable/historical_only), reason, evidence_frame, evidence_point_id and model_verdict (null or unlike). keep refers to the existing candidate; new starts a different candidate unchecked and cannot reuse its predecessor's review. Measurement-only does not change the grasp target. uncertain leaves the association unresolved until a later valid current keep or new. Surface points have separate point IDs; a distance change alone does not prove a change of object. For visible association provide valid current target_observation markers. When only part of the object is supported by current images and its full box cannot be given, head/hand may be null: explicitly keep the same candidate, state partial_occlusion/full_extent_unavailable with current evidence, and reference that candidate's recorded evidence_frame/evidence_point_id. This is model-asserted continuity, not system-certified identity. A null complete box alone does not block closing. historical_only without current visual support, an unresolved association or an invalid evidence reference cannot authorize closing; rejection uses zero physical steps and one decision. Historical like can be used; confirmed does not prove current identity. Closing sends no new review. Explicit verify_target may refresh confirmed once on a new frame, within the original five-attempt limit; no retry. No scene truth or automatic semantic identifier is available.\n",
+        "target_evidence_diagnostics": "\nC2-r3.2 evidence diagnostics: candidate, point and review sources are distinct. Review records retain their actual frame, camera, marker, request and send status; a new point does not rewrite a past verdict. Evidence age and robot motion are diagnostics, not an identity guarantee. Explicit model/verifier unlike evidence remains in attempt-local negative memory without filtering candidates; reconsider using new evidence and state your reason. Resources report decisions, physical steps, reviews and ledger budget separately. Unknown budget stays unknown. Ledger projections are local reservation/accounting estimates, not reconciled provider charges. Invalid center depth stays invalid with no replacement pixel, interpolation or fabricated point.\n",
+        "base_progress_monitor": "\nC2-r3.2 move_base records command-relative signed progress in translation and turning, lateral drift, measurement quality and expected versus observed progress. A drive phase with zero forward demand and nonzero turn demand monitors turning. Motion in a side or reverse direction does not count as forward progress. Startup, braking, goal arrival, stale samples and phase changes have separate states. These robot-only diagnostics neither identify a collision nor guarantee physical stopping.\n",
+        "base_response_corroboration": "\nC2-r3.3 additionally permits a single-sample interruption only when body velocity and the same-step odometry displacement both show a signed execution deficit against the original robot response limits. These readings are corroborating robot measurements, not independent sensors or contact evidence. Original two-sample response checks remain. A zero velocity target does not prove rest or absence of contact.\n",
+        "base_response_monitor": "\nC2-r3.2 additionally compares measured body-forward and yaw joint velocity with a declared first-order response of the robot's own base. The model uses the previous measured robot velocity and the current command, including startup and braking. Persistent discrepancies may interrupt move_base when the independent abort switch is enabled. The empirical contract was fixed from existing robot calibration and contact-free development commands before checking contact-command discrepancies; it is not a collision detector, physical safety guarantee or proof of force reduction. Targets, force and scene geometry are not used by this check.\n",
+        "base_response_debt_monitor": "\nC2-r3.2 separately tracks accumulated absolute velocity error against an open-loop nominal base response. After initialization this nominal response propagates its own predicted velocity rather than repeatedly adopting the measured velocity, so a persistent execution deficit remains visible. Limits are fixed from contact-free development commands plus the original tool tolerances; they are empirical diagnostic limits, not guarantees for new scenes. This check uses only robot commands and joint measurements. With the independent abort switch it may set the base velocity target to zero and exit; it does not identify a collision, predict force or add recovery actions.\n",
+        "base_progress_abort": "\nC2-r3.2 move_base can also end with base_motion_aborted when sustained command-relative progress is insufficient under the declared monitor contract. The base velocity target is set to zero; the last measured robot velocity and its sampling step are reported separately. No automatic reverse, retry or recovery follows. The original A_spin/B_slip and official termination remain; an official termination on the same step is the primary reason. Cumulative force is not supplied to you.\n",
+        "execution_lifecycle": "\nC2-r3.2 execution feedback separates start, execution, completion, rejection, interruption and step-limit/official termination. Tracking reports use robot joint readings and the existing reference schedule. Requested and actual quantities and residuals remain visible. Completion, finger stability or a nonzero opening do not certify holding the intended object; use robot images and your stated target evidence.\n"
+      }
+    },
+    "base_motion_abort": {
+      "enabled": false,
+      "drive_angular_rad_s": 0.9,
+      "slip_m_s": 0.08,
+      "consecutive_steps": 3,
+      "prompt_addition": "\nC2-r3 overrides \"No force or stalled-progress event interrupts a command\" for move_base: robot-only commanded angular saturation while driving or measured sliding with zero commanded translation while turning/settling can end the command with base_motion_aborted and base_abort_rule A_spin or B_slip. The base velocity target is set to zero; this proves neither collision nor physical rest. Inspect residuals and fresh observations before choosing your next action. No automatic reverse or retry occurs. Cumulative force and scene geometry are unavailable.\n"
+    }
+  },
+  "task_handoff": {
+    "status": "cpu_candidate",
+    "scope": "sol-handoff-v1-fresh-attempt",
+    "stages": [
+      "approach",
+      "grasp",
+      "place"
+    ],
+    "card_bytes_cap": 512,
+    "exception_trigger_enabled": false,
+    "default_plan": {
+      "initial_stage": "approach",
+      "initial_target": "target-0",
+      "targets": {
+        "target-0": "The target specified by this task."
+      }
+    },
+    "schema": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "from_stage": {
+          "type": "string",
+          "enum": [
+            "approach",
+            "grasp",
+            "place"
+          ]
+        },
+        "to_stage": {
+          "type": "string",
+          "enum": [
+            "approach",
+            "grasp",
+            "place"
+          ]
+        },
+        "from_visit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "target_id": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "replan",
+            "target_change"
+          ]
+        },
+        "depends_on_action": {
+          "type": "boolean"
+        },
+        "completion_claim": {
+          "type": "string",
+          "enum": [
+            "unconfirmed",
+            "action_completed",
+            "action_failed"
+          ]
+        },
+        "card": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "goal": {
+              "type": "string",
+              "maxLength": 160
+            },
+            "progress": {
+              "type": "string",
+              "maxLength": 160
+            },
+            "lessons": {
+              "type": "string",
+              "maxLength": 160
+            },
+            "pending": {
+              "type": "string",
+              "maxLength": 160
+            },
+            "uncertainty": {
+              "type": "string",
+              "maxLength": 160
+            },
+            "key_observation_ids": {
+              "type": "array",
+              "maxItems": 3,
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "goal",
+            "progress",
+            "lessons",
+            "pending",
+            "uncertainty",
+            "key_observation_ids"
+          ]
+        }
+      },
+      "required": [
+        "from_stage",
+        "to_stage",
+        "from_visit",
+        "target_id",
+        "reason",
+        "depends_on_action",
+        "completion_claim",
+        "card"
+      ]
+    },
+    "prompt_addition": "\nTASK HANDOFF V1: Use complete conversation history during each semantic subtask. Return handoff=null for ordinary actions; never rewrite notes every turn. On an explicit switch among approach, grasp and place, propose a handoff in the SAME action response. Use task_stage.stage and stage_visit_id as from_stage/from_visit. Tool changes alone are not stage changes. Recognition corrections keep the same target; target_change is only between task-declared handoff_plan targets. The runtime commits after feedback and presents a card once at next-stage entry. completed requires depends_on_action=true; failed dependent actions prevent transition. replan may be independent of action success. completion_claim describes command execution ONLY, never semantic success or possession. Card limit512 UTF-8 bytes, at most3 already observed IDs. progress is an unverified self-report; keep uncertainties explicit. closure_command_completed does NOT prove a grasp. Never include evaluator signals. Old coordinates/images are historical: reobserve before metric actions. Current observations/feedback override old cards. No reflection calls, per-turn rewriting, failure-triggered memory, cross-episode memory or extra image uploads. done/give_up use handoff=null."
+  },
+  "weekly_visual_identity_prompt": "Use only the target description, this original robot image and the marked pixel. Judge the MARKED object, not the most plausible object elsewhere. Write evidence before the verdict: transcribe only actually readable label text (write 无 if unreadable); explain which visible features belong to the marked object; describe neighboring alternatives; estimate pixel width and height. confirmed means the visible evidence distinguishes the requested category or described instance from plausible alternatives. Readable matching category text is strong evidence, but is not mandatory: distinct shape, material, package graphics and visible contents can jointly establish a category when you explain why plausible alternative categories do not fit. A shared brand name, color, generic box shape or prior familiarity alone is insufficient. Do not guess unreadable words. If a competing category remains plausible, use like; if evidence is insufficient or ownership is ambiguous, use unclear. Use unlike for a mismatch and explain the evidence. For multiple same-category objects, do not claim an instance-specific match unless the target description distinguishes that instance. Do not infer hidden truth, history, planner intent or suggest actions.",
+  "weekly_pick": {
+    "status": "implemented_pending_acceptance",
+    "scope": "sol-single-pick-weekly-v1",
+    "buffer_cases": [
+      "baseline-008",
+      "baseline-014",
+      "baseline-015"
+    ],
+    "representative_cases": [
+      "baseline-005",
+      "baseline-006",
+      "baseline-007",
+      "baseline-008",
+      "baseline-014",
+      "baseline-015",
+      "baseline-016"
+    ],
+    "audit_cases": [
+      "baseline-005",
+      "baseline-013",
+      "baseline-015",
+      "baseline-016"
+    ],
+    "buffer_profiles": [
+      "Sol-pick-buffer600-v1",
+      "Sol-pick-buffer1200-v1"
+    ],
+    "candidate_profile": "Sol-pick-stability-v1",
+    "primary_requests": 40,
+    "primary_steps": 800,
+    "recovery_requests": 20,
+    "recovery_steps": 400,
+    "verification_requests_cap": 4,
+    "rest_steps": 122,
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "control_hz": 20,
+    "physics_hz": 100,
+    "automatic_retries": 0,
+    "budget_authorized": false,
+    "usd_cap": null,
+    "metric": "official strict Pick; extended horizon reported separately"
+  },
+  "weekly_multiview_identity_prompt": "You are an independent visual identity reviewer. Use only the target description and the supplied original current robot images. Each image has its own camera and selected pixel identifying the proposed same object. There is no planner history or simulator truth. First establish pixel ownership separately in each view. If the markers select inconsistent objects, use unclear. An obscured secondary view adds no evidence; do not substitute a nearby object. Inspect physical evidence BEFORE category: rigid metal rims, rounded end caps, pull tabs, seams and reflective surfaces versus folded paperboard edges, flaps and printed flat faces. Do not call a metal container a carton just because its printed sides are rectangular. Then examine the visible product graphics or contents, overall shape and actually readable words. Transcribe only readable text; write 无 if none, never fill in small blurred words. Combine complementary visible evidence across views, explaining which features support the requested category and which realistic competing category they exclude. Confirm at the specificity requested by the target description: for a category, exact brand, flavor and every label word are unnecessary. Distinctive product imagery plus compatible package structure may establish category even if small text is unreadable. Shared brand, color or generic box shape alone cannot establish it. Do not invent a competing category merely because fine print is blurred; name a specific visible ambiguity when withholding confirmation. A clear material, shape or content contradiction means unlike. Use confirmed when the visible combination establishes the requested category or instance; like for a plausible match with a concrete unresolved alternative; unclear for insufficient visibility or uncertain marker ownership. For same-category instances require the distinguishing description. Write evidence fields before the verdict: readable label_text, ownership_evidence for each usable view, neighbor_features, approximate size_evidence, then the verdict and reason. Explain uncertainty honestly. Do not suggest actions or infer hidden truth.",
+  "pick_dev_r1": {
+    "profile": "Sol-pick-dev-r1-interface-v1",
+    "parent": "Sol-session-pick20-aligned-v1",
+    "flags": [
+      "view_occlusion_guidance",
+      "approach_point",
+      "multi_locate",
+      "session_usage_anchor",
+      "strict_tool_errors"
+    ],
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "steps": 600,
+    "calls": 40,
+    "wall_seconds": 1800,
+    "budget_authorized": false,
+    "native_gate": "baseline-005 r2 API-free executor replay, then fresh explicit R1 scope"
+  },
+  "pick_dev_r1_budget1600": {
+    "profile": "Sol-pick-dev-r1-budget1600-v1",
+    "derived_from": "Sol-session-pick20-aligned-v1",
+    "scope": "sol-pick-dev-r1-budget1600-near10",
+    "step_cap": 1600,
+    "call_cap": 50,
+    "r1_extended_budget": true,
+    "default_enabled": false,
+    "status": "cpu_preparation_no_gpu_or_api_authorization",
+    "proposed_usd_cap": "15",
+    "proposed_worker_seconds": 4800,
+    "rest_reserved_steps": 122
+  },
+  "pick_dev_r1_budget1600_parallel": {
+    "profile": "Sol-pick-dev-r1-budget1600-parallel-v1",
+    "derived_from": "Sol-session-pick20-aligned-v1",
+    "default_enabled": false,
+    "step_cap": 1600,
+    "call_cap": 50,
+    "max_workers": 10,
+    "request_serialization": true,
+    "gpu_min_free_mib": 8192,
+    "initialization_stagger_seconds": 30,
+    "worker_seconds_cap": 4800,
+    "total_worker_seconds_cap": 48000,
+    "usd_cap": "15",
+    "authorization": "Explicit signed run scope and matching native replay required"
+  },
+  "r15_protocol": {
+    "status": "cpu_candidate_not_authorized",
+    "candidate": "Sol-pick-dev-r15",
+    "control": "Sol-aligned-v1-new-limits",
+    "parent": "Sol-session-pick20-aligned-v1",
+    "look": 150,
+    "base_segment": 250,
+    "arm_call": 300,
+    "rest": 300,
+    "rest_reserved": 300,
+    "steps": 1600,
+    "calls": 50,
+    "worker_seconds": 4800,
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium"
+  },
+  "r2a_protocol": {
+    "status": "cpu_candidate_pending_run_approval",
+    "candidate": "Sol-pick-dev-r2a",
+    "control": "Sol-aligned-v1-new-limits",
+    "mainline": "Sol-aligned-v1-new-limits",
+    "parent": "Sol-aligned-v1-new-limits",
+    "enabled": [
+      "r2a_identity",
+      "r2a_close",
+      "r2a_feedback"
+    ],
+    "excluded": [
+      "D1a",
+      "D2",
+      "D7",
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "steps": 1600,
+    "calls": 50,
+    "worker_seconds": 4800,
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "verifier_requests_included": true,
+    "max_verifier_requests": 2,
+    "max_identity_candidates": 3,
+    "g1_position_m": 0.02,
+    "g1_rotation_rad": 0.1,
+    "paired_cases": 20,
+    "proposed_usd_cap": "30",
+    "proposed_gpu_process_seconds_cap": 96000,
+    "isolate_case_outcomes": true
+  },
+  "r2b_protocol": {
+    "status": "cpu_complete_with_reported_false_conflicts_waiting_approval",
+    "candidate": "Sol-pick-dev-r2b",
+    "control": "Sol-pick-dev-r2a",
+    "parent": "Sol-pick-dev-r2a",
+    "enabled": [
+      "r2b_clearance",
+      "r2b_grip_monitor",
+      "r2b_test_lift"
+    ],
+    "steps": 1600,
+    "calls": 50,
+    "worker_seconds": 4800,
+    "model": "gpt-6.1-sol",
+    "reasoning": "medium",
+    "proposed_usd_cap": "30",
+    "proposed_gpu_process_seconds_cap": 96000,
+    "isolate_case_outcomes": true,
+    "clearance_report_only": true,
+    "grip_drop_m": 0.015,
+    "grip_min_m": 0.003
+  },
+  "v3_lean_protocol": {
+    "profile": "Sol-pick-v3-lean",
+    "derived_from": "Sol-session-pick20-aligned-v1",
+    "status": "cpu_only_prompt_review_pending",
+    "prompt_integrated": false,
+    "default_enabled": false,
+    "steps": 1600,
+    "calls": 80,
+    "worker_seconds": 4800,
+    "min_workers": 4,
+    "max_workers": 8,
+    "batches": 2,
+    "cases_each_batch": "baseline-000..009, once each",
+    "cache_forecast_basis": "90 percent of minimum cached tokens in two recent settled same-prefix responses, else cold",
+    "reservation_formula": "ceil_cent(min(W,F+max(0.02,0.25*F))); F=cache forecast with full output ceiling; W=all-cold input with full output ceiling",
+    "hard_reservation_basis": "separate pending worst_case_usd and next exact-count cold exposure protect both case and shared caps even on complete cache miss",
+    "retained_repairs": ["r15_completion", "r15_incremental", "arm_tools_lock_base", "base_tracking_exit", "compound_feedback", "dual_reachability", "r2b_grip_monitor", "case_failure_isolation", "structured_close_evidence", "identity_confirmed_persistence"],
+    "budget_authorized": false,
+    "prompt_draft": "plan/2026-10-20-v3-lean-prompt.draft.md"
+  },
+  "identity_confirmation_protocol": {
+    "status": "cpu_candidate_pending_run_approval",
+    "candidate": "Sol-pick-dev-r2e-identity-confirmation",
+    "parent": "Sol-pick-dev-r2e-candidate-priority",
+    "flag": "identity_confirmation",
+    "default": false,
+    "identity_attempt_recovery": false,
+    "steps": 1600,
+    "calls": 80,
+    "worker_seconds": 4800,
+    "verifier_requests_included": true,
+    "repeated_review_requires_fresh_physical_observation": true,
+    "automatic_retry": false,
+    "proposed_usd_cap": "24",
+    "proposed_gpu_worker_seconds_cap": 48000,
+    "rest_joint_target": true,
+    "uncertain_close_allowed": false,
+    "rest_joint_target_default": false
+  },
+  "v3_lean_prompt": {
+    "version": "sol-pick-v3-s1-approved-v1",
+    "source_path": "plan/2026-10-20-v3-lean-prompt.draft.md",
+    "source_sha256": "b6d692d93f17bf5080af287754a905432fa90b6577320b0fc3c8356e7d531d9e",
+    "prompt_sha256": "2613fa9bb3b672cb6c11496de7cb413d3284d284aa15b38785f664218b40a57a",
+    "instructions": "Pick the specified object and carry it to rest through search, confirmation, stance, grasp, exit and rest. Choose poses/directions from head/hand RGB-D, joints and attempt-relative odometry. Appearance cards contain no scene location. No object ground truth, navmesh, collision meshes, evaluator contact identities or is_grasped enters planning.\n\nReturn one schema-valid tool call per turn. Its note states evidence and intended effect in 1–3 sentences. task_state contains belief, uncertainty, expected_change and next_check, each ≤160 characters; these are self-reports. Unused parameters are null and poses=[] unless required. done/give_up require hindsight and immediately end the attempt. No search_memory or extra fields.\n\nThe attempt has at most 1,600 control steps, 80 total generation requests and 4,800 seconds wall time. Main decisions and independent identity reviews both count toward the request cap. Zero-step queries consume requests. One control step is 0.05 simulated seconds; API waiting consumes wall time. Dollar balances are as-of ledger snapshots and may change during parallel admission. Let F be the cache-based forecast with the full output ceiling, and W the all-cold cost with that same ceiling. The displayed request reserve is R = ceil-cent(min(W, F + max(USD0.02, 0.25F))). The ledger separately holds ceil-cent(W) for every pending request to protect case and batch hard caps; R and W are not added twice. Cache hits are not guaranteed and never raise authorization. Reserve 300 shared steps for rest and enough requests for rest, the final independent review and done. Reserves do not guarantee completion. All motion uses the shared step budget. An official stop ends physical execution immediately.\n\nS1 uses previous_response_id: old images/replies remain in the chain. They are historical, not current measurements. After movement, refresh geometry; old pixels/points remain bound to their source frame. recall_observation retrieves this attempt's archived image group, using one request and zero steps; it does not make that frame current for locate_point.\n\nAll pose tools use CURRENT base_link: x forward, y left, z up, in meters. Position is the gripper_link origin; quaternion [x,y,z,w] has unit length. Gripper local +x points through the fingers and the fingers separate along local y. Odometry is displacement relative to the attempt's starting base frame; it does not update object locations. accepted=true means a command was accepted. Motion feedback status is arrived, step_cap_reached, blocked or official_terminated, with requested/actual/residual measurements. arrived or closure_command_completed does not establish object possession, identity or official success. After blocked or step_cap_reached, inspect fresh sensors and replan; no motion is retried automatically. Read reason, current measurements, incomplete stages and remaining budgets after each command.\n\nJoint display rounds to three decimals; 静止 means velocities round to zero, not exact rest. Residuals/gates retain precision. TCP coordinate deltas use successive base frames, not a world frame. Clearance groups give minimum distance, worst segment and maximum unknown fraction; raw per-link geometry remains archived. No summary certifies a free route. Memory/execution_call_changes are path/value or remove edits against the prior state/call; no edits means unchanged.\n## 1. Search\n\nUse target description, appearance cards and robot images to distinguish candidates. Occlusion means unknown, not absent. Choose a useful head/hand view when evidence is insufficient; unchanged queries add no evidence. No program-supplied candidate priority applies.\n\nlook(pan_rad,tilt_rad) sets absolute head joint angles: pan [-1.57,1.57], tilt [-0.76,1.45] radians. It holds torso/arm targets and gripper and has a 150-step timeout. \n\nlocate_point(camera,pixel,observation_id) accepts head or hand and an integer [x,y] pixel in the latest 640×640 image, origin top-left, coordinates 0..639. It uses that frame's raw depth, camera intrinsics and robot FK. The result is an observed surface point in current base_link, not an object center or a grasp pose. Invalid depth remains invalid.  locate_point is read-only and uses zero physical steps.\n\nRobot geometry: chassis horizontal radius 0.288 m and forward extent 0.287 m. This does not bound the projecting arm. Shoulder origin is approximately [0.03265,0,0.72601+torso_lift] m, with torso_lift in [0,0.386] m. Shoulder-to-gripper length bound is 1.10994 m; this upper bound does not establish feasible reach. At rest, the head camera is approximately [0.167310,0,1.414161] m and looks forward/down by 0.562 rad. Its pose changes with head and torso motion. The field of view is 2 rad. Displayed depth encodes 0–4 m, saturates beyond 4 m, and 0 is invalid; raw depth queries retain their own validity rules.\n\n## 2. Confirm identity\n\nUse these appearance cards. Readable text is not required if other evidence distinguishes the category; color alone is insufficient.\n\n- Master Chef can: medium cylindrical coffee can, blue body, light label/illustration and round metal lid; MASTER CHEF / COFFEE lettering. Distinguish from red-and-white soup cans.\n- cracker box: large tall rectangular carton, mainly red with yellow/light panels and cracker pictures; CHEEZ-IT lettering.\n- sugar box: medium rectangular carton, yellow/white with blue accents; DOMINO and SUGAR lettering. A red cracker carton is not a sugar box.\n- tomato soup can: medium cylinder with red upper label and cream/white lower label; Campbell's and TOMATO SOUP lettering.\n- tuna fish can: short wide round metal can, silver/gray circular lid and printed side label; TUNA wording if readable. Shape alone does not confirm identity.\n- pudding box: small rectangular carton, brown dessert picture, red/white JELL-O branding; PUDDING if readable.\n- gelatin box: small rectangular carton, red/light panels, JELL-O and GELATIN wording and a red gelatin dessert picture. Distinguish from pudding using text and dessert appearance.\n- potted meat can: squat rounded rectangular metal can, blue label, large yellow SPAM wording and sliced-meat picture.\n- bowl: round open bowl with red inner/outer surface and an open curved rim; no packaging text is required.\n\nI1 uses one verify_target before closing and one before done. Supply CURRENT observation_id, verify_phase=before_close or before_done, and identity_candidates containing 1..3 {camera,pixel} markers. Set the separate camera and pixel fields to null. Candidate 0 is the intended closing object before_close or the held object before_done; include visible alternatives. The review may select any candidate or none; close only on its selected candidate. For the I1 candidate binding, cite the review observation ID and the literal phrase candidate N in the close note, where N is its selected index. This reference identifies the reviewed candidate; the current hand-image closing claim uses close_evidence below, not a phrase-matching rule. You may reposition to that selected object after review; do not transfer its identity permission to another object.\n\nA null selection creates no new identity confirmation. A confirmed identity survives a later uncertain view only when it is explicitly associated with the SAME candidate. For that later verify_target, provide same_identity_candidate={observation_id: ORIGINAL confirmed observation ID, candidate_index: ORIGINAL selected index, current_candidate_index: index in this review, association_evidence: concrete continuity evidence from robot views}. Indices are integers 0..2; association_evidence is a nonempty string up to 900 characters. Matching index, color or location alone is not an association. Use null when no valid same-object association exists, and for all other tools. Explicit rejected with visible counterevidence revokes the linked confirmation. Release or grip_lost invalidates the held-object association.\n\nThere are still exactly two reviews, one per phase, with no extra review or automatic retry. Before_done requires current hand candidate 0, maintained grasp and a fresh review after the last physical action, including rest. Its effective identity can retain the original confirmation under the explicit continuity rule; historical identity alone is not possession. Its permission expires after physical movement. The withdrawn identity_confirmation tightening and multiview requirements remain off: a later uncertain result does not by itself replace a valid same-candidate confirmation.\n\n## 3. Choose a stance and path\n\nUse current RGB-D to assess furniture, chassis corridor and projecting arm. Account for camera tilt/height and chassis extent; target distance or camera depth alone is not clearance. Near furniture, prefer observed |forward_m|<=0.3 m segments. Unknown depth is not free space.\n\nmove_base(turn_rad,forward_m) turns then drives relative to its entry pose; negative distance reverses and it cannot move sideways. Bounds are ±pi rad and ±1.5 m. Speed targets are up to 0.6 rad/s and 0.25 m/s, completion tolerances 0.02 rad and 0.015 m, and timeout is 250 steps. It holds upper-body targets and gripper. No scene collision filter rejects the command. A valid command may time out before arrival.\n\nArm tools and test lifts use fixed-base planning and zero base drive. needs_base_reposition means private fixed-base IK did not resolve the proposed goal. Its suggested turn/distance is robot geometry, not a cleared route or proof that the target is unreachable. Choose any base movement explicitly after checking current RGB-D. A wrist-to-shoulder horizontal radius of 0.50–0.65 m and bearing within 0.6 rad is a planning reference, not a guarantee of reach. Wrist/grasp rotation, base rotation and a small base approach are distinct options; choose using the current scene evidence.\n\ncheck_path(poses) uses robot-only IK at the current torso height. It reports ordinary_move reachability at 0.010 m / 0.05 rad separately from strict_grasp reachability at 0.002 m / 0.02 rad. Ordinary reachability does not certify strict grasp alignment. IK unresolved means no solution found, not impossibility. Neither IK result checks scene collision or guarantees execution. Check the proposed pregrasp and grasp poses; revise the plan when strict alignment is unresolved rather than silently loosening the gate. The query uses zero physical steps.\n\ncheck_clearance reports sensor-derived clearance and unknown coverage; it never vetoes motion. For arm paths, pass 1..8 poses and rest=false. For rest, use poses=[] and rest=true. For a base preview, use poses=[], rest=false and explicit turn_rad/forward_m. Unused turn/distance fields are null. The tool uses zero steps and one request. Near furniture, inspect the relevant swept region before pregrasp, lifting, exit, retraction or base travel. Low reported clearance, incomplete preview, stale evidence or unobserved links are unresolved risk, even when one distance is positive. Use a relevant new view or a different route when needed; repeating the same preview without changed evidence cannot resolve it. A changed pose, route or base position invalidates the old report. Future tracking error is unknown; a preview is not proof of safe execution.\n\nIf a base command stops for path deviation or stalled progress, read actual forward/lateral displacement, completed=false and requires_replan. Reassess furniture spacing and current object geometry before choosing the next motion; there is no automatic retreat. The arm's commanded base lock does not guarantee absence of physical drift.\n\n## 4. Grasp\n\nChoose pregrasp, approach and closing poses from shape/depth. move_to uses one pose; move_eef_chunk uses 1..8 waypoints sharing 300 steps. Use separate calls for intermediate views. A timeout is neither a predicted duration nor a safety margin.\n\nprepare_grasp with one pose sets the locked final grasp goal. replan_grasp with one pose and evidence-linked note explicitly revises it. Generic move_to/move_eef_chunk cannot change that goal. Do not replace the goal with current TCP merely to pass a gate. Strict grasp localization and ordinary closing require <=0.002 m position error, <=0.02 rad orientation error and torso change <0.001 m per tick. Closing rechecks the locked goal. A timeout is not arrival.\n\nGripper geometry is robot-only: opposing finger inner surfaces span local x from -0.029 to +0.029 m and local z approximately -0.01115 to +0.01115 m. Their longitudinal center is x=0. The mounting origins are [0,-0.015425,0] and [0,+0.015425,0] m; their separation is not the current free opening. Use current sensor evidence to place the object between the opposed surfaces over this span. Geometry does not guarantee contact or retention.\n\nset_gripper accepts only 1=open or 0=closed. For normal closing use close_after_blocked=false. For other tools, including opening, close_after_blocked=null. G1 permits an explicit experimental close_after_blocked=true only immediately after prepare_grasp/replan_grasp reports compliance_blocked at the still-current physical step, with a locked goal, open gripper, goal error <=0.020 m and <=0.1 rad, and sufficient close/rest budget. For EVERY close request, normal or G1, provide close_evidence={fingers_bracket_object: true, observation_id: CURRENT observation ID} only when the current HAND image shows the object bracketed by both fingers. False or stale evidence cannot close. Use close_evidence=null for opening and every other tool. The note explains evidence and intent; the hand-image claim is read from these fields, not a required wording pattern. G1 closes at the measured pose; it is not strict arrival and does not relax other grasp gates. An uncalibrated insertion-depth rule is not enabled.\n\ncompliance_blocked is the controller's contact-related deflection estimate, not a contacted-object identity or proof of a grasp. motion_stalled means measured error failed to improve; moving joints alone do not mean progress toward the goal. error_progress describes the trend and waypoint_progress refers to the current waypoint, not necessarily the final waypoint. Inspect the new view and revise position, orientation, stance or approach as supported. No waypoint is silently skipped and no retreat or retry is automatic.\n\nAfter closing, test-lift 0.02–0.03 m and inspect hand imagery/finger distance. Arrival, completed closure or one unchanged image does not prove possession.\n\n## 5. Exit with the object\n\nClear furniture before retracting. Include the held object's image-estimated extent; robot-only IK excludes its scene clearance. Use intermediate poses to go around obstacles; one direct endpoint does not execute a detour.\n\ngrip_lost interrupts motion. Inspect fresh hand images and finger measurements; it is a loss warning, not object identity. Earlier closure cannot justify continuing to carry. After blocking, choose an evidence-supported alternative or give_up; repeated unchanged adjustments do not improve the route.\n\n## 6. Return to rest and finish\n\nreturn_to_rest retains the gripper and returns torso/head/arm toward official rest, not the base's starting point. Its timeout is 300 steps. Exit furniture first. motion_stalled uses joint residuals; incomplete rest is not success. Read rest progress/current view and honor strict gates and official termination.\n\nAfter the last physical action, use before_done on the held object. done requires current possession/rest evidence and a valid I1 permit; the evaluator determines official success. Otherwise give_up with evidence-based hindsight distinguishing identity, reach/stance, retention, exit obstruction or exhausted budget.\n"
+  }
+}
