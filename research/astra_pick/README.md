@@ -2,7 +2,7 @@
 
 MS-HAB 的 Pick 任务（Fetch 移动机械臂）上，由语言模型决策、系统执行的工具闭环。模型只看机器人自己的传感器，每一轮给出一个工具调用；系统执行，并把实测结果交回模型。
 
-**这份代码用于阅读和复核方法，不能独立运行。** 缺少底层控制器模块（`fetch_*`）、MS-HAB／ManiSkill 环境和 4096×4096 包装纹理资产，这些不在本仓库。
+**这份代码用于阅读和复核方法，不能独立运行。** 本仓库包含决策循环、机器人侧执行代码和实验用到的底层控制器，但不包含 MS-HAB／ManiSkill 环境、4096×4096 包装纹理资产、模型 API 账号和实验室服务器配置。
 
 ## 一轮决策
 
@@ -44,6 +44,8 @@ MS-HAB 的 Pick 任务（Fetch 移动机械臂）上，由语言模型决策、�
 | `robot/executor.py`、`robot/motion.py`、`robot/arm.py` | 动作执行、到位判定、受阻和失持出口 |
 | `robot/clearance.py` | 只用机器人 RGB-D 的间隙报告；只报告，不否决动作 |
 | `robot/sensing.py`、`robot/dynamics.py` | 传感读取与控制参数 |
+
+`controller/` 是实验加载的底层控制器：`full-stack/fetch_*.py` 为运行时、回合、跟踪和驱动，`full-stack/upstream/flowsde_ctrl/` 为整身末端跟踪控制器库，`preflight.py`、`task_rules.py` 为启动前检查和任务规则；`scripts/` 为快照导出与恢复核对。`run_case.py` 按 `controller/full-stack` 的目录布局把它们加入模块搜索路径。
 
 `research/astra_pick/src/bvi/pick_system/` 是 `run_case.py` 用到的最小依赖：跨进程快照工具及其诊断。
 

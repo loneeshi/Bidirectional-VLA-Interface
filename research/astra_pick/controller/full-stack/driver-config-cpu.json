@@ -1,0 +1,86 @@
+{
+  "status": "SDK config CPU PASS",
+  "groups": {
+    "arm": {
+      "class_name": "PDJointPosVelControllerConfig",
+      "controller": "PDJointPosVelController",
+      "joints": [
+        "shoulder_pan_joint",
+        "shoulder_lift_joint",
+        "upperarm_roll_joint",
+        "elbow_flex_joint",
+        "forearm_roll_joint",
+        "wrist_flex_joint",
+        "wrist_roll_joint"
+      ],
+      "lower": -0.1,
+      "upper": 0.1,
+      "damping": 100.0,
+      "force_limit": 100,
+      "friction": 0.0
+    },
+    "gripper": {
+      "class_name": "PDJointPosMimicControllerConfig",
+      "controller": "PDJointPosMimicController",
+      "joints": [
+        "l_gripper_finger_joint",
+        "r_gripper_finger_joint"
+      ],
+      "lower": -0.01,
+      "upper": 0.05,
+      "damping": 100.0,
+      "force_limit": 100,
+      "friction": 0.0
+    },
+    "base": {
+      "class_name": "PDBaseForwardVelControllerConfig",
+      "controller": "PDBaseForwardVelController",
+      "joints": [
+        "root_x_axis_joint",
+        "root_y_axis_joint",
+        "root_z_rotation_joint"
+      ],
+      "lower": [
+        -1,
+        -3.14
+      ],
+      "upper": [
+        1,
+        3.14
+      ],
+      "damping": 1000,
+      "force_limit": 500,
+      "friction": 0.0
+    },
+    "head": {
+      "class_name": "PDJointPosControllerConfig",
+      "controller": "PDJointPosController",
+      "joints": [
+        "head_pan_joint",
+        "head_tilt_joint"
+      ],
+      "lower": -0.1,
+      "upper": 0.1,
+      "damping": 100.0,
+      "force_limit": 100,
+      "friction": 0.0
+    },
+    "torso": {
+      "class_name": "PDJointVelControllerConfig",
+      "controller": "PDJointVelController",
+      "joints": [
+        "torso_lift_joint"
+      ],
+      "lower": -0.1,
+      "upper": 0.1,
+      "damping": 100.0,
+      "force_limit": 100.0,
+      "friction": 0.0
+    }
+  },
+  "legacy_body_unchanged": true,
+  "agent_instances": 0,
+  "task_environments": 0,
+  "physics_steps": 0,
+  "live_driver_readback": false
+}
